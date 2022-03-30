@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="/url/of/next/page" method="post">
+      <h1 class="govuk-heading-xl">Choose employment model</h1>
+
+      <p class="govuk-body govuk-!-font-size-19"><strong>Game programmer</strong> can be completed by the apprentice moving between multiple employment contracts, known as a <u>portable flexi-job apprenticeship</u>.</p>
+
+  <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend">
+      Select an option
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          <strong>Portable flexi-job</strong>
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          The apprentice will complete their training with multiple employers
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          <strong>1 employer</strong>
+        </label>
+        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+          The apprentice will complete their training with a single employer
+        </div>
+      </div>
+      </div>
+      </fieldset>
+    </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select a standard</h1>
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        <div class="govuk-form-group">
+  <h3 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+      Apprenticeship training course
+    </label>
+  </h3>
+  <div id="event-name-hint" class="govuk-hint">
+  Start typing the name of the course or choose an option from the list
+  </div>
+  <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint" id="CourseCode" name="CourseCode">
+            <option value="">Please select an option</option>
+            <option value="274">Abattoir worker, Level: 2</option>
+            <option value="272">Academic professional, Level: 7</option>
+            <option value="176">Accident repair technician, Level: 3</option>
+            <option value="204">Accountancy or taxation professional, Level: 7</option>
+            <option value="454-3-1">Accounting, Level: 2 (Framework)</option>
+            <option value="454-2-1">Accounting, Level: 3 (Framework)</option>
+            <option value="454-20-1">Accounting, Level: 4 (Framework)</option>
+            <option value="488">Accounts or finance assistant, Level: 2</option>
+            <option value="463">Acoustics technician, Level: 4</option>
+            <option value="460-3-3">Activity Leadership: Coaching, Level: 2 (Framework)</option>
+</select>
+</div>
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

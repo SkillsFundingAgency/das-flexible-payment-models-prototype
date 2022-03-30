@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm your employer
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Approve apprentice details</h1>
+
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Employer:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            APPLE INC
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Cohort reference:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            BB98DJ
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status:
+          </dt>
+          <dd class="govuk-summary-list__value">
+            New request
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-s">Message:</h2>
+      <div class="govuk-inset-text">
+                <span>No message added.</span>
+        </div>
+      </div>
+    </div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">1 x Game programmer, Level: 7
+    </h3>
+
+    <table class="govuk-table das-table--responsive">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header das-table-cell-width-25">Name</th>
+                <th scope="col" class="govuk-table__header das-table-cell-width-25">Unique learner number</th>
+                <th scope="col" class="govuk-table__header das-table-cell-width-25">Date of birth</th>
+                <th scope="col" class="govuk-table__header das-table-cell-width-30">Training dates</th>
+                <th scope="col" class="govuk-table__header das-table-cell-width-10">Price</th>
+                <th scope="col" class="govuk-table__header das-table-cell-width-10"><span class="govuk-visually-hidden">Action</span></th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Name">
+                            <span class="das-table-cell--highlight das-breakable">Georgina Howard</span>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Unique learner number">2261631370</td>
+                    <td class="govuk-table__cell" data-label="Date of birth">24 Jun 2000</td>
+                    <td class="govuk-table__cell" data-label="Training dates">
+    Jan 2022 to May 2022                </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£1,200</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        <a class="govuk-link edit-apprentice" href="/10005760/unapproved/MLYGR8/apprentices/7GDB4L/edit">
+                            Edit
+                            <span class="govuk-visually-hidden">Benji O's details</span>
+                        </a>
+                        <br><br>
+                            <a class="govuk-link delete-apprentice" href="/10005760/unapproved/MLYGR8/apprentices/7GDB4L/Delete">
+                                Delete <span class="govuk-visually-hidden">Benji O </span>
+                            </a>
+                    </td>
+                </tr>
+            </tbody>
+         </table>
+
+         <table class="govuk-table">
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+                <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price <br>(excluding VAT)</th>
+                <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£1200</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+            <a href="https://securefunding.pp-pas.apprenticeships.education.gov.uk/10005760/reservations/754ZJE/select?cohortReference=MLYGR8&amp;encodedPledgeApplicationId=" class="govuk-link add-apprentice">Add another apprentice</a>
+        <a class="govuk-link delete-cohort" id="delete-cohort" href="/10005760/unapproved/MLYGR8/details/delete" style="float:right">
+            Delete this cohort
+        </a>
+    </p>
+
+<hr class="govuk-section-break govuk-section-break--l">
+<div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form id="submitCohort" novalidate="" method="post">
+                <div class="govuk-form-group  ">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h3 class="govuk-fieldset__heading">Submit to employer?</h3>
+                        </legend>
+                        <span class="field-validation-valid govuk-error-message" data-valmsg-for="Selection" data-valmsg-replace="true" id="error-message-Selection"></span>
+                        <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label" for="approve-details">
+                                            Leave APPLE INC  LTD a message (optional)
+                                        </label>
+                                        <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5"></textarea>
+                                    </div>
+                                </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="radio-send" name="selection" type="radio" value="Send" aria-controls="conditional-send" aria-expanded="true">
+                                <label class="govuk-label govuk-radios__label" for="radio-send">
+                                    Yes, send to employer to review or add details
+                                </label>
+                            </div>
+                            <div class="govuk-radios__conditional" id="conditional-send">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="send-details">
+                                        Leave APPLE INC  LTD a message (optional)
+                                    </label>
+                                    <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
+                                </div>
+                            </div>
+
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="radio-home" name="selection" type="radio" value="ApprenticeRequest">
+                                    <label class="govuk-label govuk-radios__label" for="radio-home">
+                                        No, save and return to apprentice requests
+                                    </label>
+                                </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+                <br>
+                <a class="govuk-link" id="save-and-exit-cohort" href="/10005760/unapproved">
+                    Save and exit
+                </a>
+
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8CDvJ8JOSXJHgE01o9RQjU0L4qdBOOBHQBmAAbQFzqadrS1fLfxPWMNVRiVj80Jc04u-E6SG8CAHaJnorr_S3QUf3AqCO1JrozfgOe07NHIxRO1m7gZF8yuLPySQhmDNwQh4n7ibXEXvNXMavWkZRwE7YzVDSPPLltfsqj-TPMxT0AjHcdj4g3Jd6-7nNYSTFQ"></form>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+{% endblock %}
