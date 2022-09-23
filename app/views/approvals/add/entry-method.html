@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% set pageTitle = "Add apprentice details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/approvals/add/action/entry-method" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h1 class="govuk-fieldset__heading">
+              {{ pageTitle }}
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio" value="csv-file" aria-describedby="add-apprentice-details-item-hint">
+              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
+                Upload a CSV file
+              </label>
+              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
+                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices for 1 or more employers.
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="add-apprentice-details-2" name="add-apprentice-details" type="radio" value="manually" aria-describedby="add-apprentice-details-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-2">
+                Manually
+              </label>
+              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
+                You can add new apprentices into an existing cohort or create a new one.
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
