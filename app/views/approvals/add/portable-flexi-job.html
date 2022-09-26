@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set pageTitle = "Select the apprenticeship delivery model" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -48,47 +48,45 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/approvals/add/action/entry-method" method="post" class="form">
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+    <div class="govuk-inset-text">
+      <p class="govuk-body"><strong>Game programmer</strong> can be completed by the apprentice moving between multiple employment contracts, known as a portable flexi-job apprenticeship. </p>
+    </div>
 
+    <form id="addApprenticeship" action="/approvals/add/personal-details" method="post" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              {{ pageTitle }}
-            </h1>
+
+        <fieldset class="govuk-fieldset" role="group"">
+            <legend class=" govuk-fieldset__legend govuk-fieldset__legend--s">
+          Select delivery model
           </legend>
-
           <div class="govuk-radios" data-module="govuk-radios">
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio" value="csv-file" aria-describedby="add-apprentice-details-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Upload a CSV file
+              <input class="govuk-radios__input" id="delivery-method" name="delivery-method" type="radio" value="regular" aria-describedby="delivery-method-item-hint">
+              <label class="govuk-label govuk-radios__label" for="delivery-method">
+                Regular
               </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices for 1 or more employers.
+              <div id="delivery-method-item-hint" class="govuk-hint govuk-radios__hint">
+                The apprentice will have a single employment contract.
               </div>
             </div>
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-2" name="add-apprentice-details" type="radio" value="manually" aria-describedby="add-apprentice-details-2-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-2">
-                Manually
+              <input class="govuk-radios__input" id="delivery-method-2" name="delivery-method" type="radio" value="portable-flexi-job" aria-describedby="delivery-method-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="delivery-method-2">
+                Portable flexi-job
               </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into an existing cohort or create a new one.
+              <div id="delivery-method-2-item-hint" class="govuk-hint govuk-radios__hint">
+                The apprentice will move between multiple employment contracts.
               </div>
             </div>
-
           </div>
-
         </fieldset>
+
       </div>
-
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-
+      <button type="submit" class="govuk-button">Save and continue</button>
     </form>
-
   </div>
-</div>
-{% endblock %}
+
+
+
+  {% endblock %}
