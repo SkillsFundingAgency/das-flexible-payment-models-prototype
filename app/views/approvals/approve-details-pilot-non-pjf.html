@@ -76,10 +76,10 @@
         </dd>
       </div>
     </dl>
-    <h2 class="govuk-heading-s">Message:</h2>
+    <!-- <h2 class="govuk-heading-s">Message from LAND ROVER EXPERIENCE LIMITED:</h2>
     <div class="govuk-inset-text">
       <span>No message added.</span>
-    </div>
+    </div> -->
   </div>
 </div>
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -89,32 +89,33 @@
 <table class="govuk-table das-table--responsive">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header das-table-cell-width-25">Name</th>
-      <th scope="col" class="govuk-table__header das-table-cell-width-25">Unique learner number</th>
-      <th scope="col" class="govuk-table__header das-table-cell-width-25">Date of birth</th>
-      <th scope="col" class="govuk-table__header das-table-cell-width-30">Training dates</th>
-      <th scope="col" class="govuk-table__header das-table-cell-width-10">Price</th>
-      <th scope="col" class="govuk-table__header das-table-cell-width-10"><span class="govuk-visually-hidden">Action</span></th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Pilot</th>
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell" data-label="Name">
-        <span class="das-table-cell--highlight das-breakable">Georgina Howard</span>
+        <span class="das-table-cell--highlight das-breakable">{{ data['FirstName'] or 'Georgina' }} {{ data['LastName'] or 'Howard' }}</span>
       </td>
-      <td class="govuk-table__cell" data-label="Unique learner number">2261631370</td>
+      <td class="govuk-table__cell" data-label="Unique learner number">{{ data['Uln'] or '2261631370'}}</td>
       <td class="govuk-table__cell" data-label="Date of birth">24 Jun 2000</td>
-      <td class="govuk-table__cell" data-label="Training dates">
-        Jan 2022 to May 2022 </td>
+      <td class="govuk-table__cell" data-label="Training dates">1 Jan 2022 to May 2022 </td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£1,200</td>
+      <td class="govuk-table__cell" data-label="Pilot">{{ data['pilot-program'] or 'Yes' }}</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link edit-apprentice" href="#">
+        <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/personal-details">
           Edit
-          <span class="govuk-visually-hidden">Benji O's details</span>
+          <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard }}</span>
         </a>
         <br><br>
-        <a class="govuk-link delete-apprentice" href="#">
-          Delete <span class="govuk-visually-hidden">Benji O </span>
+        <a class="govuk-link govuk-link--no-visited-state" href="#">
+          Delete <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard }}</span>
         </a>
       </td>
     </tr>
@@ -125,14 +126,14 @@
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price <br>(excluding VAT)</th>
-      <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£1200</strong></td>
+      <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£1,200</strong></td>
     </tr>
   </tbody>
 </table>
 
 <p>
-  <a href="#" class="govuk-link add-apprentice">Add another apprentice</a>
-  <a class="govuk-link delete-cohort" id="delete-cohort" href="#" style="float:right">
+  <a href="#" class="govuk-link add-apprentice govuk-link--no-visited-state">Add another apprentice</a>
+  <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort" href="/approvals/add/entry-method" style="float:right">
     Delete this cohort
   </a>
 </p>
@@ -176,9 +177,9 @@
 
       <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
       <br>
-      <a class="govuk-link" id="save-and-exit-cohort" href="/approvals/apprentice-requests">
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/approvals/apprentice-requests">
         Save and exit
-      </a>
+      </a></p>
 
     </form>
   </div>

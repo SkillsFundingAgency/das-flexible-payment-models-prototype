@@ -49,12 +49,6 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
-
-    <h1 class="govuk-heading-xl">Pilot: {{ data['pilot-program'] }}</h1>
-    <h1 class="govuk-heading-xl">PFJ: {{ data['delivery-method'] }}</h1>
-
-
-
     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Apprenticeship training course</p>
     <p class="govuk-body govuk-!-margin-bottom-6">
       Abattoir worker, Level: 2
@@ -63,8 +57,8 @@
 
     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Apprenticeship delivery model</p>
     <p class="govuk-body govuk-!-margin-bottom-6">
-      Regular
-      <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/select-course">Change<span class="govuk-visually-hidden"> apprenticeship delivery model</span></a>
+      Portable flexi-job
+      <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/portable-flexi-job">Change<span class="govuk-visually-hidden"> apprenticeship delivery model</span></a>
     </p>
 
     <form id="addApprenticeship" action="/approvals/recognise-prior-learning" method="post">
@@ -78,15 +72,12 @@
           </div>
 
           <div class="govuk-date-input">
-            {% if data['pilot-program'] == "yes" %}
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartDay">Day</label>
                 <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="StartDay" name="StartDay" value="">
               </div>
             </div>
-            {% endif %}
-
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
@@ -103,36 +94,6 @@
         </fieldset>
       </div>
 
-      <!-- if not pilot -->
-      {% if data['delivery-method'] == "regular" %}
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint" role="group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Planned training end date
-          </legend>
-          <div id="finish-date-hint" class="govuk-hint">
-            For example, 09 2019
-          </div>
-          <div class="govuk-date-input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="EndMonth" name="EndMonth" value="">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="EndYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="EndYear" name="EndYear" value="">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-      {% endif %}
-
-      {% if data['pilot-program'] == "yes" %}
-      {% if data['delivery-method'] == "portable-flexi-job" %}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="projected-finish-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -157,11 +118,7 @@
           </div>
         </fieldset>
       </div>
-      {% endif %}
-      {% endif %}
 
-      {% if data['pilot-program'] == "yes" %}
-      {% if data['delivery-method'] == "portable-flexi-job" %}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="planned-training-end-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -186,8 +143,6 @@
           </div>
         </fieldset>
       </div>
-      {% endif %}
-      {% endif %}
 
 
       <div class="govuk-form-group ">
@@ -201,8 +156,6 @@
         </div>
       </div>
 
-      {% if data['pilot-program'] == "yes" %}
-      {% if data['delivery-method'] == "portable-flexi-job" %}
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-!-font-weight-bold" for="agreed-price">Agreed price for this employment contract (excluding VAT)</label>
         <div id="agreed-price-hint" class="govuk-hint">
@@ -213,8 +166,6 @@
           <input class="govuk-input govuk-input--width-5" type="number" id="agreed-price" name="agreed-price" spellcheck="false">
         </div>
       </div>
-      {% endif %}
-      {% endif %}
 
       <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
         <div class="govuk-form-group ">

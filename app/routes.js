@@ -40,11 +40,56 @@ router.post('/approvals/add/action/confirm-employer', function (req, res) {
 
 router.post('/approvals/action/recognise-prior-learning', function (req, res) {
   var priorLearning = req.session.data['prior-learning']
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
 
   if (priorLearning == "yes"){
     res.redirect('/approvals/recognise-prior-learning-details')
   }
   else if (priorLearning == "no"){
-    res.redirect('/approvals/approve-details')
+    if (pilotProgram == "No"){
+      res.redirect('/approvals/approve-details-non-pilot')
+    }
+    else {
+      if (deliveryMethod == "portable-flexi-job"){
+        res.redirect('/approvals/approve-details-pilot-pjf')
+      }
+      else{
+        res.redirect('/approvals/approve-details-pilot-non-pjf')
+      }
+    }
+  }
+})
+router.post('/approvals/action/recognise-prior-learning-details', function (req, res) {
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
+
+  if (pilotProgram == "No"){
+    res.redirect('/approvals/approve-details-non-pilot')
+  }
+  else {
+    if (deliveryMethod == "portable-flexi-job"){
+      res.redirect('/approvals/approve-details-pilot-pjf')
+    }
+    else{
+      res.redirect('/approvals/approve-details-pilot-non-pjf')
+    }
+  }
+})
+
+router.post('/approvals/add/action/personal-details', function (req, res) {
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
+
+  if (pilotProgram == "No"){
+    res.redirect('/approvals/add/training-details-non-pilot')
+  }
+  else {
+    if (deliveryMethod == "portable-flexi-job"){
+      res.redirect('/approvals/add/training-details-pilot-pfj')
+    }
+    else{
+      res.redirect('/approvals/add/training-details-pilot-non-pfj')
+    }
   }
 })

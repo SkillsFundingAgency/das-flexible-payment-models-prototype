@@ -54,7 +54,6 @@
       <ul>
         <li>first name</li>
         <li>last name</li>
-        <li>email address</li>
       </ul>
       <p class="govuk-body">Please fill in as many other fields as you can. You'll be able to return later to make changes or add more information.</p>
       <p class="govuk-body">You can only receive payments for this apprentice if:</p>
@@ -68,7 +67,7 @@
       <dt class="das-definition-list__title">Employer</dt>
       <dd class="das-definition-list__definition">LAND ROVER EXPERIENCE LIMITED</dd>
     </dl>
-    <form id="addApprenticeship" action="/approvals/add/training-details" method="post">
+    <form id="addApprenticeship" action="/approvals/add/action/personal-details" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -77,19 +76,19 @@
           </legend>
           <div class="govuk-form-group ">
             <label class="govuk-label" for="Uln">Unique learner number</label>
-            <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="">
+            <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="{{ data['Uln'] }}">
           </div>
           <div class="govuk-form-group ">
             <label class="govuk-label" for="FirstName">First name</label>
-            <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name">
+            <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name" value="{{ data['FirstName'] }}">
           </div>
           <div class="govuk-form-group ">
             <label class="govuk-label" for="LastName">Last name</label>
-            <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name">
+            <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name" value="{{ data['LastName'] }}">
           </div>
           <div class="govuk-form-group ">
             <label class="govuk-label" for="Email">Email address</label>
-            <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email">
+            <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email" value="{{ data['Email'] }}">
           </div>
           <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -122,19 +121,19 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
-                <input min="1" max="31" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthDay" name="BirthDay" value="">
+                <input min="1" max="31" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthMonth" name="BirthMonth" value="">
+                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="BirthYear" name="BirthYear" value="">
+                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
               </div>
             </div>
           </div>
@@ -151,13 +150,21 @@
           </div>
           <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pilot-program" name="pilot-program" type="radio" value="yes">
+              {% if data['pilot-program'] == "Yes" %}
+              <input class="govuk-radios__input" id="pilot-program" name="pilot-program" type="radio" value="Yes" selected>
+              {% else %}
+              <input class="govuk-radios__input" id="pilot-program" name="pilot-program" type="radio" value="Yes">
+              {% endif %}
               <label class="govuk-label govuk-radios__label" for="pilot-program">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pilot-program-2" name="pilot-program" type="radio" value="no">
+              {% if data['pilot-program'] == "Yes" %}
+              <input class="govuk-radios__input" id="pilot-program-2" name="pilot-program" type="radio" value="No" selected>
+              {% else %}
+              <input class="govuk-radios__input" id="pilot-program-2" name="pilot-program" type="radio" value="No">
+              {% endif %}
               <label class="govuk-label govuk-radios__label" for="pilot-program-2">
                 No
               </label>
