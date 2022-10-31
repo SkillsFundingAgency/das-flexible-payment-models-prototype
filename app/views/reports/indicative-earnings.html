@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set pageTitle = "Indicative earnings report" %}
+{% set pageTitle = "Apps indicative earnings report" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -52,8 +52,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">This report should help you understand how much you can <strong>expect to get paid</strong>, based on the data you have entered into the Digital apprenticeship service, and to reconcile your internal
-      forecasts.</p>
+    <p class="govuk-body">This report should help you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>understand how much you can expect to be paid</li>
+      <li>reconcile your internal forecasts</li>
+    </ul>
+<p class="govuk-body">It is only an estimate, based on the data you have entered into the Apprenticeship service.</p>
     <div class="govuk-inset-text">This report has moved from the Submit Learner Data platform.</div>
   </div>
   <div class="govuk-grid-column-one-third">
@@ -63,20 +67,20 @@
   </div>
 </div>
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-m">Expected total program earnings</h2>
+    <h2 class="govuk-heading-m">Expected total program earnings – Current academic year (2022 to 2023)</h2>
     <div class="transfer-values-prototype mvs-version">
       <div class="transfer-values">
         <div class="half-width">
-          <p>Current academic year (2022 to 2023)</p>
+          <p>Total earnings</p>
           <p class="number">£2,003,345</p>
         </div>
       </div>
     </div>
 
     <div class="transfer-values-prototype mvs-version govuk-!-margin-top-8">
-      <h3 class="govuk-heading-s">Levy vs Non-levy – Current academic year (2022 to 2023)</h3>
+      <!-- <h3 class="govuk-heading-s">Levy vs Non-levy – Current academic year (2022 to 2023)</h3> -->
       <div class="transfer-values">
         <div class="transfer-funds half-width">
           <p>Levy</p>
@@ -87,6 +91,7 @@
           <p class="number">£601,002</p>
         </div>
       </div>
+      <h3 class="govuk-heading-s">Non-levy breakdown</h3>
       <div class="transfer-values">
         <div class="transfer-funds half-width">
           <p>Non-levy government contribution</p>
@@ -99,7 +104,7 @@
       </div>
     </div>
 
-    <div class="transfer-values-prototype mvs-version govuk-!-margin-top-8">
+    <!-- <div class="transfer-values-prototype mvs-version govuk-!-margin-top-8">
       <h3 class="govuk-heading-s">Period breakdown</h3>
       <div class="transfer-values">
         <div class="transfer-funds half-width">
@@ -121,7 +126,7 @@
           <p class="number">£1,065,908</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
