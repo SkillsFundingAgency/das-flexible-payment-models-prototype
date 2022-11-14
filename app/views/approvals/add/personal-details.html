@@ -53,7 +53,7 @@
       <p class="govuk-body">You can only receive payments for this apprentice if:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>all the fields have been completed - either by yourself or the employer</li>
-        <li>the data matches the individualised learner record (ILR) data you send us</li>
+        <li>the data matches the individual learner record (ILR) data you send us</li>
       </ul>
     </div>
 
@@ -65,7 +65,7 @@
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             Apprentice personal details
           </legend>
           <div class="govuk-form-group ">
@@ -135,14 +135,11 @@
       </div>
       <h2 class="govuk-heading-m govuk-!-margin-top-9">Pilot program</h2>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="pilot-program-hint" role="group"">
+        <fieldset class="govuk-fieldset"  role="group"">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Will this apprentice be part of the Flexible Payments pilot program?
           </legend>
-          <div id="pilot-program-hint" class="govuk-hint">
-            Once this apprentice has been approved, you will need to get in touch with the Flexible Payments team to take them off the pilot.
-          </div>
-          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               {% if data['pilot-program'] == "Yes" %}
               <input class="govuk-radios__input" id="pilot-program" name="pilot-program" type="radio" value="Yes" selected>
@@ -169,7 +166,7 @@
         </fieldset>
       </div>
 
-      <button type="submit" class="govuk-button">Save and continue</button>
+      <button type="submit" class="govuk-button">Continue</button>
 
     </form>
 
