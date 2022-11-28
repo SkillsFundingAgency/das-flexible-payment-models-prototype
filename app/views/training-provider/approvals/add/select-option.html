@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 {% set pageTitle = "Select a standard option" %}
 
 {% block header %}
@@ -8,24 +9,24 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/index">Home</a>
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -50,7 +51,7 @@
 
     <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
     <div class="govuk-inset-text">
-      <p class="govuk-body">For more information visit <a href="#" class="govuk-link" target="_blank">IfATE page for this standard (opens in a new tab)</a></p>
+      <p class="govuk-body">For more information visit <a href="/{{version}}/#" class="govuk-link" target="_blank">IfATE page for this standard (opens in a new tab)</a></p>
     </div>
 
     <dl class="govuk-summary-list">
@@ -72,7 +73,7 @@
       </div>
     </dl>
 
-    <form id="addApprenticeship" action="/approvals/add/portable-flexi-job" method="post" class="govuk-!-margin-top-8">
+    <form id="addApprenticeship" action="/{{version}}//approvals/add/portable-flexi-job" method="post" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group"">
             <legend class=" govuk-fieldset__legend govuk-fieldset__legend--s">

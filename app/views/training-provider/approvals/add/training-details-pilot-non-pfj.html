@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 {% set pageTitle = "Add training details" %}
 
 {% block header %}
@@ -8,24 +9,24 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/index">Home</a>
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -49,19 +50,20 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Apprenticeship training course</p>
     <p class="govuk-body govuk-!-margin-bottom-6">
       Abattoir worker, Level: 2
-      <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/select-course">Edit<span class="govuk-visually-hidden"> apprenticeship training course</span></a>
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/select-course">Edit<span class="govuk-visually-hidden"> apprenticeship training course</span></a>
     </p>
 
     <p class="govuk-!-font-weight-bold govuk-!-margin-bottom-0">Apprenticeship delivery model</p>
     <p class="govuk-body govuk-!-margin-bottom-6">
-      Portable flexi-job
-      <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/portable-flexi-job">Edit<span class="govuk-visually-hidden"> apprenticeship delivery model</span></a>
+      Regular
+      <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/portable-flexi-job">Edit<span class="govuk-visually-hidden"> apprenticeship delivery model</span></a>
     </p>
 
-    <form id="addApprenticeship" action="/approvals/recognise-prior-learning" method="post">
+    <form id="addApprenticeship" action="/{{version}}//approvals/recognise-prior-learning" method="post">
       <div class="govuk-form-group  ">
         <fieldset class="govuk-fieldset" aria-describedby="start-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -95,55 +97,29 @@
       </div>
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="projected-finish-date-hint" role="group">
+        <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Projected training finish date
           </legend>
-          <div id="projected-finish-date-hint" class="govuk-hint">
-            For example, 12 2022
+          <div id="finish-date-hint" class="govuk-hint">
+            For example, 09 2019
           </div>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="projected-EndMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="projected-EndMonth" name="projected-EndMonth" value="">
+                <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
+                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="EndMonth" name="EndMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="projected-EndYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="projected-EndYear" name="projected-EndYear" value="">
+                <label class="govuk-label govuk-date-input__label" for="EndYear">Year</label>
+                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="EndYear" name="EndYear" value="">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="planned-training-end-date-hint" role="group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Planned training end date for this employment contract
-          </legend>
-          <div id="planned-training-end-date-hint" class="govuk-hint">
-            For example, 12 2022
-          </div>
-          <div class="govuk-date-input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-EndMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="planned-training-end-date-EndMonth" name="planned-training-end-date-EndMonth" value="">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-EndYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="planned-training-end-date-EndYear" name="planned-training-end-date-EndYear" value="">
-              </div>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
 
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Total agreed apprenticeship price (excluding VAT)</label>
@@ -153,17 +129,6 @@
         <div class="govuk-input__wrapper govuk-!-margin-top-3">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
           <input class="govuk-input govuk-input--width-5" type="number" id="Cost" name="Cost" spellcheck="false">
-        </div>
-      </div>
-
-      <div class="govuk-form-group ">
-        <label class="govuk-label govuk-!-font-weight-bold" for="agreed-price">Agreed price for this employment contract (excluding VAT)</label>
-        <div id="agreed-price-hint" class="govuk-hint">
-          Enter the price in whole pounds. For example, for £1,500 enter 1500
-        </div>
-        <div class="govuk-input__wrapper govuk-!-margin-top-3">
-          <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" type="number" id="agreed-price" name="agreed-price" spellcheck="false">
         </div>
       </div>
 
@@ -180,7 +145,7 @@
 
       <div class="govuk-inset-text">
         <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
-        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link" href="https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank"
+        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link" href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank"
             title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
       </div>
 

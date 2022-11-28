@@ -1,22 +1,23 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <a class="govuk-back-link" href="/{{version}}/javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="/url/of/next/page" method="post">
+      <form class="form" action="/{{version}}//url/of/next/page" method="post">
       <h1 class="govuk-heading-xl">Select a standard</h1>
 
       <div class="govuk-inset-text">
-        For more information visit <a class="govuk-link" href="#">IfATEpage for this standard (opens in a new tab)</a>
+        For more information visit <a class="govuk-link" href="/{{version}}/#">IfATEpage for this standard (opens in a new tab)</a>
       </div>
 
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">

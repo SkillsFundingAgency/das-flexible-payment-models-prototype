@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 {% set pageTitle = "Choose an employer" %}
 
 {% block header %}
@@ -8,24 +9,24 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/index">Home</a>
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -50,7 +51,7 @@
     <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
     <p class="govuk-body">Choose an employer you want to add apprentice details on behalf of.</p>
 
-    <form action="/antibody/r1/thank-you" method="post">
+    <form action="#" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label" for="searchTerm">Search employer name or account name</label>
         <div id="employer-container"></div>
@@ -86,7 +87,7 @@
           <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3D8KEM</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">LAND ROVER EXPERIENCE LIMITED</span>
             </a>
           </td>
@@ -96,7 +97,7 @@
           <td class="govuk-table__cell" data-label="Account name">TENNIS ANGELS LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">WD82KV</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">TENNIS ANGELS LTD</span>
             </a>
           </td>
@@ -106,7 +107,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3GV5RY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">COVENTRY LTD</span>
             </a>
           </td>
@@ -116,7 +117,7 @@
           <td class="govuk-table__cell" data-label="Account name">SHAHZAD &amp; CO LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">XRG8N2</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">SHAHZAD &amp; CO LTD</span>
             </a>
           </td>
@@ -126,7 +127,7 @@
           <td class="govuk-table__cell" data-label="Account name">ONA CONSULTING LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7DG2B6</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ONA CONSULTING LTD</span>
             </a>
           </td>
@@ -136,7 +137,7 @@
           <td class="govuk-table__cell" data-label="Account name">FENDI LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">76X9MV</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">FENDI LTD</span>
             </a>
           </td>
@@ -146,7 +147,7 @@
           <td class="govuk-table__cell" data-label="Account name">DEPARTMENT OF EDUCATION_Levy Payer</td>
           <td class="govuk-table__cell" data-label="Agreement ID">79D8GJ</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">DEPARTMENT OF EDUCATION LTD</span>
             </a>
           </td>
@@ -156,7 +157,7 @@
           <td class="govuk-table__cell" data-label="Account name">SUPER &amp; PRESTIGE MOTOR SERVICES LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7498YM</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">SOMEONE ELSE LIMITED</span>
             </a>
           </td>
@@ -166,7 +167,7 @@
           <td class="govuk-table__cell" data-label="Account name">ATOL DEVELOPMENTS LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">ZMXMBD</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ATOL DEVELOPMENTS LIMITED</span>
             </a>
           </td>
@@ -176,7 +177,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">2BMPV9</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ESFA LTD</span>
             </a>
           </td>
@@ -186,7 +187,7 @@
           <td class="govuk-table__cell" data-label="Account name">SECOND LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">668WVV</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">SECOND LIMITED</span>
             </a>
           </td>
@@ -196,7 +197,7 @@
           <td class="govuk-table__cell" data-label="Account name">WAT (UK) LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7JX65V</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">WAT (UK) LIMITED</span>
             </a>
           </td>
@@ -206,7 +207,7 @@
           <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3GJMM4</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ASSOCIATION OF LAND ROVER CLUBS LIMITED</span>
             </a>
           </td>
@@ -216,7 +217,7 @@
           <td class="govuk-table__cell" data-label="Account name">AutomationTestForSingleOrgAorn720</td>
           <td class="govuk-table__cell" data-label="Agreement ID">D25PJV</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">AutomationTestForSingleOrgAorn720</span>
             </a>
           </td>
@@ -226,7 +227,7 @@
           <td class="govuk-table__cell" data-label="Account name">ZZA CONSULTING LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">4E5GV5</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ZZA CONSULTING LIMITED</span>
             </a>
           </td>
@@ -236,7 +237,7 @@
           <td class="govuk-table__cell" data-label="Account name">UK TOYS R US LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">PY8EDY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">UK TOYS R US LIMITED</span>
             </a>
           </td>
@@ -246,7 +247,7 @@
           <td class="govuk-table__cell" data-label="Account name">COVENTRY AIRPORT LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">D2P85M</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">COVENTRY AIRPORT LIMITED</span>
             </a>
           </td>
@@ -256,7 +257,7 @@
           <td class="govuk-table__cell" data-label="Account name">Skills Funding Agency_Levy Receiver</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3PEKJJ</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">Skills Funding Agency</span>
             </a>
           </td>
@@ -266,7 +267,7 @@
           <td class="govuk-table__cell" data-label="Account name">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE_Levy Receiver</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3YBKWV</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</span>
             </a>
           </td>
@@ -276,7 +277,7 @@
           <td class="govuk-table__cell" data-label="Account name">SUPER LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7YPMMY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">HMV APPAREL LIMITED</span>
             </a>
           </td>
@@ -286,7 +287,7 @@
           <td class="govuk-table__cell" data-label="Account name">BARBERRY COVENTRY LIMITED_Non-Levy</td>
           <td class="govuk-table__cell" data-label="Agreement ID">75492K</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">BARBERRY COVENTRY LIMITED</span>
             </a>
           </td>
@@ -296,7 +297,7 @@
           <td class="govuk-table__cell" data-label="Account name">SUPER AGILE LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">66VM2Z</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">SUPER AGILE LTD</span>
             </a>
           </td>
@@ -306,7 +307,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7X9582</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ESFA LTD</span>
             </a>
           </td>
@@ -316,7 +317,7 @@
           <td class="govuk-table__cell" data-label="Account name">BOWLAND SNAILS LANCASHIRE (5) LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">WDVBEY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">BOWLAND SNAILS LANCASHIRE (5) LTD</span>
             </a>
           </td>
@@ -326,7 +327,7 @@
           <td class="govuk-table__cell" data-label="Account name">Coventry City Council_Levy Payer</td>
           <td class="govuk-table__cell" data-label="Agreement ID">36Z825</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">Coventry City Council</span>
             </a>
           </td>
@@ -336,7 +337,7 @@
           <td class="govuk-table__cell" data-label="Account name">APPLE INC LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">754ZJE</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">APPLE INC LTD</span>
             </a>
           </td>
@@ -346,7 +347,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">YGXMDJ</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ESFA LTD</span>
             </a>
           </td>
@@ -356,7 +357,7 @@
           <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">79WR4G</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">RANGE ROVER BADGES LTD</span>
             </a>
           </td>
@@ -366,7 +367,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">ZM6EJP</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ESFA LTD</span>
             </a>
           </td>
@@ -376,7 +377,7 @@
           <td class="govuk-table__cell" data-label="Account name">ALPHABET LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">WDMG2D</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ALPHABET LIMITED</span>
             </a>
           </td>
@@ -386,7 +387,7 @@
           <td class="govuk-table__cell" data-label="Account name">COVENTRY NEWSPAPERS_Non Levy</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7RBJ6V</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">COVENTRY NEWSPAPERS LIMITED</span>
             </a>
           </td>
@@ -396,7 +397,7 @@
           <td class="govuk-table__cell" data-label="Account name">LOAD ESTATES LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">D2P2GE</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">LOAD ESTATES LIMITED</span>
             </a>
           </td>
@@ -406,7 +407,7 @@
           <td class="govuk-table__cell" data-label="Account name">EIGHT BRANDS LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">WDM9V9</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">EIGHT BRANDS LIMITED</span>
             </a>
           </td>
@@ -416,7 +417,7 @@
           <td class="govuk-table__cell" data-label="Account name">DEPARTMENT OF EDUCATION_Levy Payer</td>
           <td class="govuk-table__cell" data-label="Agreement ID">EYVXNG</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">AA LIMITED</span>
             </a>
           </td>
@@ -426,7 +427,7 @@
           <td class="govuk-table__cell" data-label="Account name">ASDA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">PY6GRY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ASDA LTD</span>
             </a>
           </td>
@@ -436,7 +437,7 @@
           <td class="govuk-table__cell" data-label="Account name">BOSE ACCOUNTANCY LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">3PJZ55</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">BOSE ACCOUNTANCY LTD</span>
             </a>
           </td>
@@ -446,7 +447,7 @@
           <td class="govuk-table__cell" data-label="Account name">SCIENCE RESEARCH LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">WDNWGW</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">SCIENCE RESEARCH LIMITED</span>
             </a>
           </td>
@@ -456,7 +457,7 @@
           <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7E5698</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">TESCO PLC</span>
             </a>
           </td>
@@ -466,7 +467,7 @@
           <td class="govuk-table__cell" data-label="Account name">ONA CONSULTING LTD</td>
           <td class="govuk-table__cell" data-label="Agreement ID">4EX6ER</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">Essex Police</span>
             </a>
           </td>
@@ -476,7 +477,7 @@
           <td class="govuk-table__cell" data-label="Account name">WAT (UK) LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">9V9R6Y</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">ALL TRADES TRAINING LIMITED</span>
             </a>
           </td>
@@ -486,7 +487,7 @@
           <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">7K5MMY</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">LAND ROVER DIAGNOSTICS LIMITED</span>
             </a>
           </td>
@@ -496,7 +497,7 @@
           <td class="govuk-table__cell" data-label="Account name">A NAGESH LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">YGXXX5</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">A NAGESH LIMITED</span>
             </a>
           </td>
@@ -506,7 +507,7 @@
           <td class="govuk-table__cell" data-label="Account name">LUCKY STARTS LIMITED</td>
           <td class="govuk-table__cell" data-label="Agreement ID">9VMKXX</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-            <a href="/approvals/add/confirm-employer" class="govuk-link">
+            <a href="/{{version}}/approvals/add/confirm-employer" class="govuk-link govuk-link--no-visited-state">
               Select <span class="govuk-visually-hidden">LUCKY STARTS LIMITED</span>
             </a>
           </td>

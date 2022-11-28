@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 {% if data['approve-details'] == "yes" %}
 {% set pageTitle = "Cohort approved and sent to employer" %}
 {% else %}
@@ -13,24 +14,24 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/index">Home</a>
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/manage/index">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -54,7 +55,7 @@
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">Manage your apprentices</h1>
 
-            <form method="get" action="">
+            <form method="get" action="/{{version}}/">
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
                         <div class="govuk-form-group">
@@ -214,44 +215,44 @@
 
                 </div>
                 <div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
-                    <a class="govuk-body govuk-link" aria-label="Download all data" href="">Download all data (CSV)</a>
+                    <a class="govuk-body govuk-link" aria-label="Download all data" href="/{{version}}/">Download all data (CSV)</a>
                 </div>
             </div>
             <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by apprentice name" href="">
+                            <a class="das-table__sort" title="Sort the table by apprentice name" href="/{{version}}/">
                                 Apprentice name
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by ULN" href="">
+                            <a class="das-table__sort" title="Sort the table by ULN" href="/{{version}}/">
                                 ULN
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by employer" href="">
+                            <a class="das-table__sort" title="Sort the table by employer" href="/{{version}}/">
                                 Employer
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by apprenticeship training course" href="">
+                            <a class="das-table__sort" title="Sort the table by apprenticeship training course" href="/{{version}}/">
                                 Apprenticeship training course
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by planned start date" href="">
+                            <a class="das-table__sort" title="Sort the table by planned start date" href="/{{version}}/">
                                 Planned start date
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by planned end date" href="">
+                            <a class="das-table__sort" title="Sort the table by planned end date" href="/{{version}}/">
                                 Planned end date
                             </a>
                         </th>
                         <th scope="col" class="govuk-table__header">
-                            <a class="das-table__sort" title="Sort the table by apprentice confirmation" href="">
+                            <a class="das-table__sort" title="Sort the table by apprentice confirmation" href="/{{version}}/">
                                 Apprentice confirmation
                             </a>
                         </th>
@@ -266,7 +267,7 @@
                 <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Euan Gray
                                 </a>
                             </td>
@@ -296,7 +297,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                   Rufus Kelly
                                 </a>
                             </td>
@@ -322,12 +323,12 @@
                                 <strong class="govuk-tag govuk-tag--blue">Live</strong>
                             </td>
                             <td class="govuk-table__cell" data-label="Alerts">
-                              <a class="govuk-link" href="details">Confirmation overdue</a>
+                              <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                   Ellis Watts
                                 </a>
                             </td>
@@ -353,14 +354,14 @@
                                 <strong class="govuk-tag govuk-tag--grey">Paused</strong>
                             </td>
                             <td class="govuk-table__cell" data-label="Alerts">
-                              <a class="govuk-link" href="details1">
+                              <a class="govuk-link" href="/{{version}}/details1">
                                   Changes requested
                               </a>
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Toby Holland
                                 </a>
                             </td>
@@ -386,12 +387,12 @@
                                 <strong class="govuk-tag govuk-tag--blue">Live</strong>
                             </td>
                             <td class="govuk-table__cell" data-label="Alerts">
-                              <a class="govuk-link" href="details">Confirmation overdue</a>
+                              <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                   Cohen Powell
                                 </a>
                             </td>
@@ -421,7 +422,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Zak Day
                                 </a>
                             </td>
@@ -451,7 +452,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Joey Fraser
                                 </a>
                             </td>
@@ -481,7 +482,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Hector Parker
                                 </a>
                             </td>
@@ -507,12 +508,12 @@
                                 <strong class="govuk-tag govuk-tag--blue">Live</strong>
                             </td>
                             <td class="govuk-table__cell" data-label="Alerts">
-                              <a class="govuk-link" href="details">Confirmation overdue</a>
+                              <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
                             </td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                     Isaac Sutton
                                 </a>
                             </td>
@@ -542,7 +543,7 @@
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell" data-label="Apprentice name">
-                                <a class="govuk-link" href="details">
+                                <a class="govuk-link" href="/{{version}}/details">
                                   Coby Harvey
                                 </a>
                             </td>
@@ -568,7 +569,7 @@
                                 <strong class="govuk-tag govuk-tag--blue">Live</strong>
                             </td>
                             <td class="govuk-table__cell" data-label="Alerts">
-                                    <a class="govuk-link" href="details1">
+                                    <a class="govuk-link" href="/{{version}}/details1">
                                         Changes requested
                                     </a>
                             </td>

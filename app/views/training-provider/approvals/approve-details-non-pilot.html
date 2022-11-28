@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set version = "training-provider" %}
 {% set pageTitle = "Approve apprentice details" %}
 
 {% block header %}
@@ -8,24 +9,24 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/index">Home</a>
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -107,12 +108,12 @@
       <td class="govuk-table__cell" data-label="Training dates">Jan 2022 to May 2022 </td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£1,200</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link govuk-link--no-visited-state" href="/approvals/add/personal-details">
+        <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/personal-details">
           Edit
           <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard }}</span>
         </a>
         <br><br>
-        <a class="govuk-link govuk-link--no-visited-state" href="#">
+        <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/#">
           Delete <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard }}</span>
         </a>
       </td>
@@ -130,8 +131,8 @@
 </table>
 
 <p>
-  <a href="#" class="govuk-link add-apprentice govuk-link--no-visited-state">Add another apprentice</a>
-  <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort" href="/approvals/add/entry-method" style="float:right">
+  <a href="/{{version}}/#" class="govuk-link add-apprentice govuk-link--no-visited-state">Add another apprentice</a>
+  <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort" href="/{{version}}/approvals/add/entry-method" style="float:right">
     Delete this cohort
   </a>
 </p>
@@ -139,7 +140,7 @@
 <hr class="govuk-section-break govuk-section-break--l">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/approvals/acknowledgement" method="post" class="form">
+    <form action="/{{version}}//approvals/acknowledgement" method="post" class="form">
       <div class="govuk-form-group  ">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -175,7 +176,7 @@
 
       <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
       <br>
-      <p><a class="govuk-link govuk-link--no-visited-state" href="/approvals/apprentice-requests">
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/apprentice-requests">
         Save and exit
       </a></p>
 
