@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "training-provider" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set pageTitle = "Will this apprentice be part of the Simplified Payments pilot?" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -49,29 +49,33 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/{{version}}/approvals/add/action/select-journey" method="post" class="form">
+    <form action="/{{version}}/approvals/add/select-course" method="post" class="form">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="pilot-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h1 class="govuk-fieldset__heading">
               {{ pageTitle }}
             </h1>
           </legend>
 
+          <div id="pilot-hint" class="govuk-hint">
+            To be eligible for the simplified payment pilot, an apprenticeship must start after [date service live]
+          </div>
+
           <div class="govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-2" name="add-apprentice-details-2" type="radio" value="existing-cohort">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Add to an existing cohort
+              <input class="govuk-radios__input" id="pamyents-simplification-pilot" name="pilot-program" type="radio" value="Yes" {{ checked("pilot-program", "Yes") }}>
+              <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot">
+                Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-2" name="add-apprentice-details-2" type="radio" value="new-cohort">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-2">
-                Create a new cohort
+              <input class="govuk-radios__input" id="pamyents-simplification-pilot-2" name="pilot-program" type="radio" value="No" {{ checked("pilot-program", "No") }}>
+              <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot-2">
+                No
               </label>
             </div>
 

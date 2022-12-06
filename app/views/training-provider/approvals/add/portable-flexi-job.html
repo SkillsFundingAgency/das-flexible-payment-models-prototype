@@ -54,7 +54,7 @@
       <p class="govuk-body"><strong>Game programmer</strong> can be completed by the apprentice moving between multiple employment contracts, known as a portable flexi-job apprenticeship. </p>
     </div>
 
-    <form id="addApprenticeship" action="/{{version}}/approvals/add/personal-details" method="post" class="govuk-!-margin-top-8">
+    <form id="addApprenticeship" action="/{{version}}/approvals/add/apprentice-details" method="post" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
 
         <fieldset class="govuk-fieldset" role="group"">
@@ -63,7 +63,7 @@
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="delivery-method" name="delivery-method" type="radio" value="regular" aria-describedby="delivery-method-item-hint">
+              <input class="govuk-radios__input" id="delivery-method" name="delivery-method" type="radio" value="Regular" aria-describedby="delivery-method-item-hint" {{ checked("delivery-method", "Regular") }}>
               <label class="govuk-label govuk-radios__label" for="delivery-method">
                 Regular
               </label>
@@ -72,7 +72,7 @@
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="delivery-method-2" name="delivery-method" type="radio" value="portable-flexi-job" aria-describedby="delivery-method-2-item-hint">
+              <input class="govuk-radios__input" id="delivery-method-2" name="delivery-method" type="radio" value="Portable flexi-job" aria-describedby="delivery-method-2-item-hint" {{ checked("delivery-method", "Portable flexi-job") }}>
               <label class="govuk-label govuk-radios__label" for="delivery-method-2">
                 Portable flexi-job
               </label>
