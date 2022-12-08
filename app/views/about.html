@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+<nav id="govuk-prototype-kit-manage-prototype-navigation" class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix" role="navigation"
+  aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
+  <ul class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/">
+        Home
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/training-provider">
+        Training Provider prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/#">
+        Employer prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/about">
+        About
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+  About simplified payments pilot
+</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Our vision</h2>
+    <p class="govuk-body">A payment product that is simple for user, adaptable to different payment models, responsive to new policy and cheaper to run.</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">What outcome will users get from this service?</h2>
+    <ol class="govuk-list govuk-list--number">
+      <li>Reduced admin effort and errors for training providers and employers</li>
+      <li>Reduced costs for training providers and employers</li>
+      <li>Faster payments to providers</li>
+      <li>Reduced lost funds</li>
+      <li>Increased transparency</li>
+    </ol>
+
+    <h2 class="govuk-heading-m">What outcome are we looking for?</h2>
+    <ol class="govuk-list govuk-list--number">
+      <li>Reduced complaints to AS
+      <li>Reduced funds trapped in DataLock disputes</li>
+      <li>Increased control over the payment process</li>
+      <li>More effective support to users</li>
+      <li>Reduced cost of running the service</li>
+    </ol>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-m">Prototype design team</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>User Researcher: Bola George</li>
+      <li>Business Analyst: Sam Wing/Jas Sahota</li>
+      <li>Interaction Designer: Lloyd Sutton</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Resources</h2>
+    <ul class="govuk-list">
+      <li><a href="https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pages/3480354918/Flexible+Payments+Models" class="govuk-link govuk-link--no-visited-state">Confluence</a></li>
+      <li><a href="https://lucid.app/lucidspark/ec068f2c-7231-4e8e-bf86-b97f745b2160/edit?invitationId=inv_b836704a-3eae-43c5-9d87-4c2b8ce36680#" class="govuk-link govuk-link--no-visited-state">Lucid board</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

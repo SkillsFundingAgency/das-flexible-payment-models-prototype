@@ -4,23 +4,159 @@
 Flex Payments Prototype Library
 {% endblock %}
 
+{% block beforeContent %}
+<nav id="govuk-prototype-kit-manage-prototype-navigation" class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix" role="navigation"
+  aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
+  <ul class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/">
+        Home
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/training-provider">
+        Training Provider prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/#">
+        Employer prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/about">
+        About
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
 {% block content %}
-
-<h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
-  Welcome to the Flex Payments Prototype Library
-</h1>
-
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m"><a href="training-provider/" class="govuk-link govuk-link--no-visited-state">Training provider account</a></h2>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+      Welcome to the Flex Payments Prototype Library
+    </h1>
+
+    <h2 class="govuk-heading-m">Our vision</h2>
+    <p class="govuk-body">A payment product that is simple for user, adaptable to different payment models, responsive to new policy and cheaper to run.</p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-l">End-to-end prototypes</h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m">Updated: 8 December 2022</span>
+    <h3 class="govuk-heading-m"><a href="training-provider/" class="govuk-link govuk-link--no-visited-state">Training provider account</a></h3>
     <p class="govuk-body">Full training provider account prototype</p>
     <a href="training-provider/" class="govuk-link govuk-link--no-visited-state">View training provider prototype</a>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">Employer account</h2>
+  <div class="govuk-grid-column-one-half">
+    <span class="govuk-caption-m"><strong class="govuk-tag govuk-tag--grey">In development</strong></span>
+    <h3 class="govuk-heading-m">Employer account</h3>
     <p class="govuk-body">The full employer account prototype is still in development</p>
   </div>
+</div>
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-xl">Continuous improvement</span>
+    <h2 class="govuk-heading-xl">Feature prototypes</h2>
+    <p class="govuk-body">Single and multi-page features for stakeholder review and testing.</p>
+
+    <span class="govuk-caption-m  govuk-!-margin-top-9">FLP-27</span>
+    <h3 class="govuk-heading-l">Validate Single Learner</h3>
+    <p class="govuk-body">Integrate ILR validation into the DAS service to ensure all learners adhear to the ILR validation rules.</p>
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              <span class="govuk-caption-m">FLP-105 </span>Training Provider | Validate apprentice age and actual training start date
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul class="govuk-list">
+            <p class='govuk-body'>As a training provider I need to know whether the learner’s current age makes them eligible for an apprenticeship so that I only claim payments for eligible learners.</p>
+            <li>
+              <a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-105">Jira ticket (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="/feature/flp-105/apprentice-details-v1">Prototype v1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+              <span class="govuk-caption-m">FLP-120 </span>Declaration
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul class="govuk-list">
+            <p class='govuk-body'>As a ESFA I need to ensure that the learner is eligible for an apprenticeship even when there is no data source against which to test the learner’s eligibility so that providers only claim for eligible learners in the pilot.</p>
+            <li>
+              <a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-120">Jira ticket (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="/feature/flp-120/approve-details-pilot-non-pjf-v1">Prototype v1</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+              <span class="govuk-caption-m">FLP-129 </span>Employer | Validate apprentice age and actual training start date
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul class="govuk-list">
+            <p class='govuk-body'>As an Employer when I enter/edit a learner’s date of birth and planned training start date (as month/year) I need to ensure that the learner’s current age makes them eligible for an Apprenticeship so that I only claim payments for eligible learners</p>
+            <li>
+              <a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-129">Jira ticket (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="https://80rin7.axshare.com/#id=s81rbp&p=e2_0_apprentice_details__pilot__1&c=1">Axure Prototype</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+              <span class="govuk-caption-m">FLP-130 </span>Training Provider | ULN entered can be found in LRS for a pilot apprenticeship
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <ul class="govuk-list">
+            <p class='govuk-body'>As a ESFA when learner personal details are entered/edited I need to ensure that learner details match those that we hold in LRS so that I can reduce the likelihood funding being claimed against invalid learner details</p>
+            <li>
+              <a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-130">Jira ticket (opens in new tab)</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="/feature/flp-130/apprentice-details-v1">Axure Prototype</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+  </div>
 </div>
 
 {% endblock %}

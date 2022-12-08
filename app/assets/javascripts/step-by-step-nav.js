@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+
+@ls-nomensa
+SkillsFundingAgency
+/
+das-flexible-payment-models-prototype
+Public
+Code
+Issues
+Pull requests
+2
+Actions
+Projects
+Wiki
+Security
+Insights
+das-flexible-payment-models-prototype/app/assets/javascripts/step-by-step-nav.js /
+@sselbie
+sselbie Adding in prototype files
+…
+Latest commit 32ff446 on Mar 30
+ History
+ 1 contributor
+425 lines (342 sloc)  14.5 KB
+
 // Based on https://github.com/alphagov/govuk_publishing_components/blob/v22.0.0/app/assets/javascripts/govuk_publishing_components/components/step-by-step-nav.js
 
 /* eslint-env jquery */
