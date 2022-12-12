@@ -60,19 +60,7 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#Uln">This unique learner number does not match with a learner</a>
-            </li>
-            <li>
-              <a href="#actual-start-date">The start date must be after 24 June 2023, when the learner has reached school leaving age</a>
-            </li>
-            <li>
-              <a href="#actual-start-date">The learner is already being funded for another apprenticeship during these dates</a>
-            </li>
-            <li>
-              <a href="#actual-start-date">The learner is already being funded for another programme during these dates</a>
-            </li>
-            <li>
-              <a href="#projected-finish-date">The duration of an apprenticeship must be at least 365 days</a>
+              <a href="#projected-end-date">The duration of an apprenticeship must be at least 365 days</a>
             </li>
           </ul>
         </div>
@@ -144,12 +132,9 @@
       </h2>
       <div class="govuk-form-group govuk-!-margin-bottom-0">
 
-        <div class="govuk-form-group govuk-form-group--error">
+        <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Uln">Unique learner number</label>
-          <p id="start-date-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> This unique learner number does not match with a learner
-          </p>
-          <input class="govuk-input  govuk-input--width-10 govuk-input--error" type="text" id="Uln" name="Uln" value="9359233306">
+          <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="{{ data['Uln'] }}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
@@ -188,7 +173,7 @@
           <div id="dob-hint" class="govuk-hint">
             For example, 27 3 2001
           </div>
-          <span class="field-validation-valid" data-valmsg-for="DateOfBirth" data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
+          <span class="field-validation-valid govuk-error-message" data-valmsg-for="DateOfBirth" data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -242,40 +227,31 @@
         </fieldset>
       </div>
       {% else %} -->
-      <div class="govuk-form-group govuk-form-group--error">
-        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint start-date-error start-date-error-2 start-date-error-3" role="group" id="actual-start-date">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint" role="group" id="actual-start-date">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Actual training start date
           </legend>
           <div id="start-date-hint" class="govuk-hint">
             For example, 21 9 2022.</br>The standard version will be based on the training start date provided
           </div>
-          <p id="start-date-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The start date must be after 24 June 2023, when the learner has reached school leaving age
-          </p>
-          <p id="start-date-error-2" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The learner is already being funded for another apprenticeship during these dates
-          </p>
-          <p id="start-date-error-3" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The learner is already being funded for another programme during these dates
-          </p>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartDay">Day</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="number" id="StartDay" name="StartDay" value="17">
+                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="StartDay" name="StartDay" value="14">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2  govuk-input--error" type="number" id="StartMonth" name="StartMonth" value="4">
+                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="StartMonth" name="StartMonth" value="7">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" type="number" id="StartYear" name="StartYear" value="2023">
+                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="StartYear" name="StartYear" value="2023">
               </div>
             </div>
           </div>
@@ -284,21 +260,21 @@
       <!-- {% endif %} -->
 
       <div class="govuk-form-group govuk-form-group--error">
-        <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint finish-date-error" role="group" id="projected-finish-date">
+        <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint end-date-error" role="group" id="projected-end-date">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Projected training finish date
           </legend>
           <div id="finish-date-hint" class="govuk-hint">
             For example, 6 2024
           </div>
-          <p id="finish-date-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The duration of an apprenticeship must be at least 365 days
-          </p>
+          <p id="end-date-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> The duration of an apprenticeship must be at least 365 days
+    </p>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="number" id="EndMonth" name="EndMonth" value="3">
+                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="number" id="EndMonth" name="EndMonth" value="5">
               </div>
             </div>
             <div class="govuk-date-input__item">
