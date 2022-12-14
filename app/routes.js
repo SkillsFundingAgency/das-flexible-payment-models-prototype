@@ -99,3 +99,26 @@ router.post('/training-provider/approvals/add/action/personal-details', function
     }
   }
 })
+
+// Employer
+router.post('/employer/apprentice/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider']
+
+  if (useProvider == "No"){
+    res.redirect('/employer/apprentice/add/provider-details')
+  }
+  else {
+    res.redirect('/employer/apprentice/add/start-adding-apprentices')
+  }
+})
+
+router.post('/employer/apprentice/add/action/start-adding-apprentices', function (req, res) {
+  var whoIsAddingApprentices = req.session.data['WhoIsAddingApprentices']
+
+  if (whoIsAddingApprentices == "Provider"){
+    res.redirect('/employer/apprentice/add/message-for-training-provider')
+  }
+  else {
+    res.redirect('/employer/apprentice/add/select-standard')
+  }
+})

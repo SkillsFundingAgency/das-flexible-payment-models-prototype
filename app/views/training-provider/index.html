@@ -4,7 +4,7 @@
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/account-header.html" %}
+{% include "includes/training-provider-account-header.html" %}
 <nav class="das-navigation" style="margin-bottom: 40px;">
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
@@ -21,12 +21,12 @@
         <a class="das-navigation__link" href="approvals/manage-apprentices">Manage your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="#">Recruit apprentices</a>
+        <a class="das-navigation__link" href="{{ version }}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="{{ version }}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="{{ version }}/#">Organisations and agreements</a>
           </li>
         </ul>
       </li>
@@ -81,7 +81,7 @@
 
         <div class="box">
           <h2 class="govuk-heading-m">
-            <a href="#">Manage your funding reserved for non-levy employers</a>
+            <a href="{{ version }}/#">Manage your funding reserved for non-levy employers</a>
           </h2>
           <p>Add apprentice information to funding you have already reserved for non-levy employers.</p>
         </div>

@@ -4,7 +4,7 @@
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/account-header.html" %}
+{% include "includes/training-provider-account-header.html" %}
 <nav class="das-navigation">
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
@@ -23,7 +23,7 @@
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="{{ version }}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
             <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
