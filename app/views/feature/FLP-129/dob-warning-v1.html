@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% set version = "employer" %}
+{% set pageTitle = "Is this date of birth correct?" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{ version }}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="/{{ version }}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{ version }}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+      <strong>8 November 2007</strong>.
+    </p>
+    <p class="govuk-body">
+      Based on this date of birth the learner will still be in school on the planned training start date of <strong>14 November 2022</strong>.
+    </p>
+    <p class="govuk-body">To continue, your training provider will need to delay the training course until after the learner has reached school leaving age.</p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with school leaving age
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        In England, you can leave school on the last Friday in June if you’ll be 16 by the end of the summer holidays.
+      </div>
+    </details>
+
+    <a role="button" draggable="false" class="govuk-button govuk-!-margin-top-7" data-module="govuk-button" href="/feature/FLP-129/approve-details-v1">Yes, continue</a>
+
+    <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/feature/FLP-129/apprentice-details-v1">No, change the date of birth</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

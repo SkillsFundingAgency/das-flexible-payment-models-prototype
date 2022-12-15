@@ -116,19 +116,19 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
-                <input min="1" max="31" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
-                <input min="1" max="12" class="govuk-input govuk-date-input__input govuk-input--width-2" type="number" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
-                <input min="1900" max="9999" class="govuk-input govuk-date-input__input govuk-input--width-4" type="number" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
+                <input  class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
               </div>
             </div>
           </div>
