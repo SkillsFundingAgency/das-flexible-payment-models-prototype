@@ -32,16 +32,16 @@
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
 {% block head %}
-  {% include "includes/head.html" %}
+{% include "includes/head.html" %}
 {% endblock %}
 
 {% block pageTitle %}
-  {{ pageTitle }} - Apprentice
+{{ pageTitle }} - Apprentice
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
+{# Set serviceName in config.js. #}
+{{ govukHeader({
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "/",
@@ -52,13 +52,17 @@
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
 {% if useAutoStoreData %}
-  {% block footer %}
-    {{ govukFooter({
+{% block footer %}
+{{ govukFooter({
       meta: {
         items: [
           {
             href: "https://govuk-prototype-kit.herokuapp.com/",
             text: "GOV.UK Prototype Kit " + releaseVersion
+          },
+          {
+            href: "/",
+            text: "Prototype dashboard"
           },
           {
             href: "/prototype-admin/clear-data",
@@ -68,13 +72,13 @@
         visuallyHiddenTitle: "Footer links"
       }
     }) }}
-  {% endblock %}
+{% endblock %}
 {% endif %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    {% include "includes/scripts.html" %}
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
-  <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
+{% block scripts %}
+{% include "includes/scripts.html" %}
+{% block pageScripts %}{% endblock %}
+{% endblock %}
+<!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
