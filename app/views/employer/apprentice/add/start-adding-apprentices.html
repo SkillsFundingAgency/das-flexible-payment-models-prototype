@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Start adding apprentices" %}
 
 {% block pageTitle %}
-Start adding apprentices
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -53,7 +54,7 @@ Start adding apprentices
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Start adding apprentices</h1>
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
         <p class="govuk-body-l">You can start adding details of your apprentices or ask your training provider to add them for you.</p>
         <p class="govuk-body-l">If you ask your training provider to add them, you need to check and agree the details before any payments are made.</p>

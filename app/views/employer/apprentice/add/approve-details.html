@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Approve apprentice details" %}
 
 {% block pageTitle %}
-Approve apprentice details
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -55,7 +56,7 @@ Approve apprentice details
     <div class="govuk-grid-row">
       <div>
 
-        <h1 class="govuk-heading-xl">Approve apprentice details</h1>
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
         <dl class="das-definition-list das-definition-list--inline">
           <dt class="das-definition-list__title govuk-!-margin-bottom-4">Organisation</dt>
@@ -82,9 +83,6 @@ Approve apprentice details
               <th scope="col" class="govuk-table__header">Name</th>
               <th scope="col" class="govuk-table__header">Date of birth</th>
               <th scope="col" class="govuk-table__header">Training dates</th>
-
-
-
               <th scope="col" class="govuk-table__header">Price</th>
               <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
             </tr>
@@ -98,7 +96,6 @@ Approve apprentice details
               <td class="govuk-table__cell" data-label="Date of birth">1 Jan 1922</td>
               <td class="govuk-table__cell" data-label="Training dates">
                 Sep 2023 to Jan 2024 </td>
-
 
               <td class="govuk-table__cell" data-label="Price">
                 £1,500 </td>
@@ -129,12 +126,12 @@ Approve apprentice details
         </table>
 
         <p>
-          <a href="#" class="govuk-link add-apprentice">Add another
+          <a href="/{{ version }}/apprentice/add/select-standard" class="govuk-link add-apprentice">Add another
             apprentice</a>
           <a class="govuk-link das-float-right" href="#">Delete this group</a>
         </p>
         <hr class="govuk-section-break govuk-section-break--l">
-        <form id="submitCohort" novalidate="" method="post" action="/{{ version }}/apprentice/add/notify-training-provider">
+        <form id="submitCohort" novalidate="" method="post" action="/{{ version }}/apprentice/add/action/approve-details">
           <div class="govuk-form-group  ">
 
             <fieldset class="govuk-fieldset">
@@ -180,7 +177,7 @@ Approve apprentice details
           <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
 
           <p>
-            <a href="/BB8W4N/unapproved/review" class="govuk-link">Save and exit</a>
+            <a href="#" class="govuk-link">Save and exit</a>
           </p>
 
       </div>

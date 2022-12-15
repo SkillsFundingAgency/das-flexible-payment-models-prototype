@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Select standard" %}
 
 {% block pageTitle %}
-Select standard
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -52,7 +53,7 @@ Select standard
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Select standard</h1>
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
         <form id="addApprenticeship" novalidate="" method="post" action="/{{ version }}/apprentice/add/personal-details">
           <div class="govuk-form-group ">
@@ -1359,7 +1360,7 @@ Select standard
           </div>
 
           <button type="submit" id="continue-button" class="govuk-button">Continue</button>
-</form>
+        </form>
       </div>
     </div>
 

@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Choose organisation" %}
 
 {% block pageTitle %}
-Choose organisation
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -45,10 +46,8 @@ Choose organisation
 
 <div class="govuk-width-container">
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.go(-1);"
-  }) }}
+  <a href="/{{ version }}/apprentice/" class="govuk-back-link">Back to Apprentices</a>
+
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">

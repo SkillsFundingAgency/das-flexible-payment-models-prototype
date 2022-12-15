@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Select a standard option" %}
 
 {% block pageTitle %}
-Select a standard option
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -54,7 +55,7 @@ Select a standard option
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Select a standard option</h1>
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
         <div class="govuk-inset-text">
           <p class="govuk-body">For more information visit <a class="govuk-link" href="https://www.instituteforapprenticeships.org/apprenticeship-standards/academic-professional-v1-0" target="_blank">the IfATE page for this standard (opens in a new

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
-{% set pageTitle = "Message for your training provider" %}
+{% set pageTitle = "Apprentice details approved and sent to training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -46,31 +46,46 @@
 
 <div class="govuk-width-container">
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.go(-1);"
-  }) }}
+  <a href="/{{ version }}/apprentice/" class="govuk-back-link">Back to apprentices</a>
+
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <h1 class="govuk-heading-xl">Message for your training provider</h1>
-        <p class="govuk-body-l">Let <b>SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)</b> know what you'd like them to do next.</p>
-        <form action="/{{ version }}/apprentice/add/cohort-sent" novalidate="" method="post">
-
-          <div class="govuk-form-group  ">
-            <label class="govuk-label govuk-!-font-weight-bold" for="Message">Message (optional)</label>
-            <textarea class="govuk-textarea" cols="40" id="Message" name="Message" rows="10"></textarea>
+      <div class="govuk-grid-column-full">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">{{ pageTitle }}</h1>
+        </div>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Reference</dt>
+            <dd class="govuk-summary-list__value">JJXYRN</dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Training provider</dt>
+            <dd class="govuk-summary-list__value">SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)</dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Approved by</dt>
+            <dd class="govuk-summary-list__value">Coventry City Council</dd>
+          </div>
+        </dl>
+        <h2 class="govuk-heading-m">What happens next?</h2>
 
-          <button id="continue-button" type="submit" class="govuk-button">Send</button>
-        </form>
+        <p class="govuk-body">Your training provider will review these apprentice details and either confirm the information is correct or contact you to suggest changes.</p>
+        <p>
+          <a class="govuk-link" href="/BB8W4N/unapproved/JJXYRN/details" id="next-back-link">Go back to view apprentice records.</a>
+        </p>
 
+        <div class="govuk-inset-text das-inset-text--filled">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Help us improve this section</h3>
+          <p class="govuk-body">Take a 3 minute survey about adding apprentices so that we can improve the service.</p>
+          <a target="_blank" class="govuk-button" href="https://www.smartsurvey.co.uk/s/apprenticeshipservicefeedback">Take the survey</a>
+        </div>
       </div>
     </div>
 
   </main>
+
 </div>
 
 {% endblock %}

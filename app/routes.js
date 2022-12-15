@@ -122,3 +122,14 @@ router.post('/employer/apprentice/add/action/start-adding-apprentices', function
     res.redirect('/employer/apprentice/add/select-standard')
   }
 })
+
+router.post('/employer/apprentice/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send"){
+    res.redirect('/employer/apprentice/add/notify-training-provider')
+  }
+  else {
+    res.redirect('/employer/apprentice/add/approved')
+  }
+})

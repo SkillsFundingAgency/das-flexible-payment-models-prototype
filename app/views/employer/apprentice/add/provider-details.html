@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Add training provider details" %}
 
 {% block pageTitle %}
-Add training provider details
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -53,7 +54,7 @@ Add training provider details
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Add training provider details</h1>
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
         <form action="/{{ version }}/apprentice/add/confirm-provider-details" method="post" novalidate>
 
@@ -87,7 +88,7 @@ Add training provider details
           <button id="continue-button" type="submit" class="govuk-button">
             Continue
           </button>
-          </form>
+        </form>
       </div>
     </div>
 

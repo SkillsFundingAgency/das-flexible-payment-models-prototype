@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Notification sent to training provider" %}
 
 {% block pageTitle %}
-Approve apprentice details
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -52,7 +53,7 @@ Approve apprentice details
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation">
-          <h1 class="govuk-panel__title">Notification sent to training provider</h1>
+          <h1 class="govuk-panel__title">{{ pageTitle }}</h1>
         </div>
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">

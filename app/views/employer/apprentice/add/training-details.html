@@ -1,8 +1,9 @@
 {% extends "layout.html" %}
 {% set version = "employer" %}
+{% set pageTitle = "Add training details" %}
 
 {% block pageTitle %}
-Add personal details
+{{pageTitle}}
 {% endblock %}
 
 {% block header %}
@@ -56,7 +57,7 @@ Add personal details
 
         <form action="/{{ version }}/apprentice/add/select-standard-option" novalidate method="post">
 
-          <h1 class="govuk-heading-xl">Add training details</h1>
+          <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
           <div class="govuk-form-group">
             <p class="govuk-label govuk-!-font-weight-bold">Apprenticeship training course</p>
