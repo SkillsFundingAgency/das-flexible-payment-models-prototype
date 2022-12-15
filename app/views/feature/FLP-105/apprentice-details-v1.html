@@ -2,11 +2,9 @@
 {% set version = "training-provider" %}
 {% set pageTitle = "Add apprentice details" %}
 
-
-
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/account-header.html" %}
+{% include "includes/training-provider-account-header.html" %}
 <nav class="das-navigation">
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
@@ -236,8 +234,8 @@
             For example, 21 9 2022.</br>The standard version will be based on the training start date provided
           </div>
           <p id="start-date-error" class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> The start date must be after 24 June 2023, when the learner has reached school leaving age
-    </p>
+            <span class="govuk-visually-hidden">Error:</span> The start date must be after 24 June 2023, when the learner has reached school leaving age
+          </p>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
