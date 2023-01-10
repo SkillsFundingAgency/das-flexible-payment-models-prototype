@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "training-provider" %}
-{% set pageTitle = "Will this apprentice be part of the Simplified Payments pilot?" %}
+{% set pageTitle = "Are these apprentice details correct?" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -48,46 +48,52 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+      Details provided do not match with the details for unique learner number <strong>9359233306</strong> on the learner record service (LRS). .
+    </p>
 
-    <form action="/{{version}}/approvals/add/select-course" method="post" class="form">
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="pilot-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              {{ pageTitle }}
-            </h1>
-          </legend>
-
-          <div id="pilot-hint" class="govuk-hint">
-            To be eligible for the simplified payment pilot, an apprenticeship must start after [date service live]
-          </div>
-
-          <div class="govuk-radios" data-module="govuk-radios">
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pamyents-simplification-pilot" name="pilot-program" type="radio" value="Yes" {{ checked("pilot-program", "Yes") }}>
-              <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot">
-                Yes
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pamyents-simplification-pilot-2" name="pilot-program" type="radio" value="No" {{ checked("pilot-program", "No") }}>
-              <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot-2">
-                No
-              </label>
-            </div>
-
-          </div>
-
-        </fieldset>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          George
+        </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          McTaffy
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          8 November 2007
+        </dd>
+      </div>
+    </dl>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <h2 class="govuk-heading-m">[Heading for risks of continuing]</h2>
+    <p class="govuk-body">[Details of what risks are if they don't match. Actions to address inconsistencies.]</p>
 
+    <form class="govuk-!-padding-top-7" action="/form-handler" method="post" novalidate>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Yes, continue
+        </button>
+        <a class="govuk-link" href="#">No, update details</a>
+      </div>
     </form>
-
   </div>
 </div>
+
 {% endblock %}

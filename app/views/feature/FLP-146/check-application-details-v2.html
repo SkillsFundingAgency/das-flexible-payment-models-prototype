@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% set version = "employer" %}
+{% set pageTitle = "Are these apprentice details correct?" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{ version }}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="/{{ version }}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{ version }}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{ pageTitle }}
+    </h1>
+    <p class="govuk-body">
+      Details provided do not match with the details for unique learner number <strong>9359233306</strong> on the learner record service (LRS). .
+    </p>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          George
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          McTaffy
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          8 November 2007
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">[Heading for risks of continuing]</h2>
+    <p class="govuk-body">[Details of what risks are if they don't match. Actions to address inconsistencies.]</p>
+
+    <form class="govuk-!-padding-top-7" action="/form-handler" method="post" novalidate>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Yes, continue
+        </button>
+        <a class="govuk-link" href="#">No, update details</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
