@@ -31,6 +31,10 @@
 {% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
+{% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/favicon.ico" type="image/x-icon" />
+{% endblock %}
+
 {% block head %}
 {% include "includes/head.html" %}
 {% endblock %}
