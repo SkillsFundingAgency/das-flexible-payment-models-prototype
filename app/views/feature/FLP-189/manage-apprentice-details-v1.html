@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+{% set version = "feature/FLP-189" %}
+{% set pageTitle = "George Ford" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{ version }}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="/{{ version }}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{ version }}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{ version }}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back to manage your apprentices",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+
+    <div class="govuk-inset-text">
+      This apprenticeship is part of the simplified payments pilot. To make any changes to this apprenticeship please contact your training provider.
+    </div>
+
+    <h2 class="govuk-heading-m">Apprentice status</h2>
+
+    <dl class="govuk-summary-list  govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--blue">
+            Live
+          </strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Apprentice confirmation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Overdue
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Training provider
+        </dt>
+        <dd class="govuk-summary-list__value">
+          EDUC8 TRAINING (ENGLAND) LIMITED
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cohort reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          XPPDYG
+        </dd>
+      </div>
+
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Apprentice details
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Anderson Vanessa
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          georgeford@gmail.com</br>
+          <a href="#" class="govuk-link">Resend invitation email</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unique learner number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3803436558
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 Nov 1998
+        </dd>
+      </div>
+    </dl>
+
+
+    <h2 class="govuk-heading-m">Apprenticeship details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Apprenticeship training course
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Travel consultant, Level: 3
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key">
+          Version </dt>
+        <dd class="govuk-summary-list__value">
+          1.1
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned training start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jun 2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned training start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jun 2020
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned training end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jun 2021
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total agreed apprenticeship price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,000
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row ">
+        <dt class="govuk-summary-list__key">
+          Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+{% endblock %}
