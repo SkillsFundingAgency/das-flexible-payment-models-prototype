@@ -242,11 +242,42 @@
       </div>
       {% endif %}
 
+      {% if data['delivery-method'] == "Portable flexi-job" %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="apprenticeship-training-finish-date-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Projected apprenticeship training finish date
+          </legend>
+          <div id="apprenticeship-training-finish-date-hint" class="govuk-hint">
+            For example, 6 2024
+          </div>
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-training-finish-date-end-month">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="apprenticeship-training-finish-date-end-month" name="apprenticeship-training-finish-date-end-month" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-training-finish-date-end-year">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="apprenticeship-training-finish-date-end-year" name="apprenticeship-training-finish-date-end-year" value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% else %}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Projected apprenticeship training finish date
+          </legend>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             Planned training finish date
           </legend>
+
           <div id="finish-date-hint" class="govuk-hint">
             For example, 6 2024
           </div>
@@ -266,6 +297,7 @@
           </div>
         </fieldset>
       </div>
+      {% endif %}
 
       {% if data['delivery-method'] == "Portable flexi-job" %}
       <div class="govuk-form-group">
@@ -320,8 +352,7 @@
 
       <div class="govuk-inset-text">
         <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
-        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link" href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank"
-            title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
+        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link" href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
       </div>
 
 
