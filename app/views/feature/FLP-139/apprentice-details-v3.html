@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% set version = "training-provider" %}
-{% set pageTitle = "Error: Add apprentice details" %}
-
+{% set pageTitle = "Add apprentice details" %}
+{% block pageTitle %}Error: {{ pageTitle }} - Manage apprenticeships{% endblock %}
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
