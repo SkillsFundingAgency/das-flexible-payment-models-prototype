@@ -58,7 +58,8 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#mismatch-error">The name or data of birth provided do not match with the details for unique learner number on the Learner Record Service</a>
+              <a href="#mismatch-error">First name does not match with this unique learner number on the Learner Record Service
+              </a>
             </li>
           </ul>
         </div>
@@ -132,21 +133,22 @@
 
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Uln">Unique learner number</label>
-          <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="{{ data['Uln'] }}">
+          <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="{{ data['Uln'] or 9359233306}}">
         </div>
         <div id="mismatch-error" class="govuk-form-group govuk-form-group--error">
           <p id="mismatch-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The name or data of birth provided do not match with the details for unique learner number on the Learner Record Service
+            <span class="govuk-visually-hidden">Error:</span> First name does not match with this unique learner number on the Learner Record Service
           </p>
           <div class="govuk-form-group ">
             <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
-            <input class="govuk-input govuk-input--error" type="text" id="FirstName" name="FirstName" autocomplete="given-name" value="{{ data['FirstName'] }}" aria-describedby="mismatch-error">
-          </div>
-          <div class="govuk-form-group ">
-            <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
-            <input class="govuk-input govuk-input--error" type="text" id="LastName" name="LastName" autocomplete="family-name" value="{{ data['LastName'] }}" aria-describedby="mismatch-error">
+            <input class="govuk-input govuk-input--error" type="text" id="FirstName" name="FirstName" autocomplete="given-name" value="{{ data['FirstName'] or 'Jack'}}" aria-describedby="mismatch-error">
           </div>
         </div>
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
+          <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name" value="{{ data['LastName'] or 'Smith'}}">
+        </div>
+
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
           <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email" value="{{ data['Email'] }}">
@@ -168,40 +170,36 @@
         </details>
 
       </div>
-      <div class="govuk-form-group govuk-form-group--error">
-        <fieldset class="govuk-fieldset" aria-describedby="dob-hint mismatch-error-2" role="group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Date of birth
-          </legend>
-          <div id="dob-hint" class="govuk-hint">
-            For example, 27 3 2001
-          </div>
-          <p id="mismatch-error-2" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The name or data of birth provided do not match with the details for unique learner number on the Learner Record Service
-          </p>
-          <span class="field-validation-valid govuk-error-message" data-valmsg-for="DateOfBirth" data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
-          <div class="govuk-date-input">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="text" inputmode="numeric" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}" aria-describedby="mismatch-error-2">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="text" inputmode="numeric" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}" aria-describedby="mismatch-error-2">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" type="text" inputmode="numeric" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}" aria-describedby="mismatch-error-2">
-              </div>
+
+      <fieldset class="govuk-fieldset" role="group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          Date of birth
+        </legend>
+        <div id="dob-hint" class="govuk-hint">
+          For example, 27 3 2001
+        </div>
+        <div class="govuk-date-input">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
             </div>
           </div>
-        </fieldset>
-      </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
 
       <h2 class="govuk-heading-l govuk-!-margin-top-9">
         Apprentice training details
