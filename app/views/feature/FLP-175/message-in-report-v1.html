@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+{% set version = "training-provider" %}
+{% set pageTitle = "Estimated earnings from apprentices on the Simplified Payments pilot" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+  </div>
+</div>
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-inset-text">
+      <p class="govuk-body">The simplified payments pilot is a small scale private test to improve the way in which you add and manage learners, reducing the reliance on the ILR.</p>
+
+      <p class="govuk-body">You will be able to view the indicative earnings report once this feature is in public beta.</p>
+
+      <a href="#" class="govuk-link">Return to home</a>
+
+    </div>
+  </div>
+</div> -->
+
+<div class=" govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>These estimates only include earnings from apprentices on the Simplified Payments pilot.</strong>
+    </div>
+    <p class="govuk-body">Use these estimates to understand how much you can expect to be paid. These estimates are based on the data you have provided to us.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Download estimated total monthly income by learner</h2>
+    <p class="govuk-body">This is a high level overview report that shows total expected monthly income by learner for this academic year.</p>
+    <a target="_blank" href="https://docs.google.com/spreadsheets/d/18wvhAs7BNW8h45iAeRCrZlHJN_aViozdGysMCkz3ZE4/edit?usp=sharing" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Download CSV report</a>
+  </div>
+</div>
+<div class=" govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">Expected earnings for academic year 2022 to 2023</h2>
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full">
+    <div class="transfer-values-prototype mvs-version">
+      <div class="transfer-values">
+        <div class="half-width">
+          <p>Total earnings</p>
+          <p class="number">£0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transfer-values-prototype mvs-version">
+      <!-- <h3 class="govuk-heading-s">Levy vs Non-levy – Current academic year (2022 to 2023)</h3> -->
+      <div class="transfer-values govuk-!-margin-bottom-8">
+        <div class="transfer-funds half-width">
+          <p>Levy earnings</p>
+          <p class="number">£0</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Non-levy earnings</p>
+          <p class="number">£0</p>
+        </div>
+      </div>
+      <h3 class="govuk-heading-s">Non-levy breakdown</h3>
+      <div class="transfer-values">
+        <div class="transfer-funds half-width">
+          <p>Non-levy government contribution</p>
+          <p class="number">£0</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Non-levy employer contribution</p>
+          <p class="number">£0</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
