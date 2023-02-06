@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "training-provider" %}
-{% set pageTitle = "Estimated earnings from apprentices on the simplified payments pilot" %}
+{% set pageTitle = "Estimate earnings from apprentices on the simplified payments pilot" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -58,20 +58,25 @@
       <strong class="govuk-warning-text__text">
         <span class="govuk-warning-text__assistive">Warning</span>These estimates only include earnings from apprentices on the simplified payments pilot.</strong>
     </div>
-    <p class="govuk-body">Use these estimates to understand how much you can expect to be paid. These estimates are based on the data you have provided to us.</p>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">Download estimated total monthly income by learner</h2>
-    <p class="govuk-body">This is a high level overview report that shows total expected monthly income by learner for this academic year.</p>
-    <a target="_blank" href="https://docs.google.com/spreadsheets/d/18wvhAs7BNW8h45iAeRCrZlHJN_aViozdGysMCkz3ZE4/edit?usp=sharing" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Download CSV report</a>
+    <p class="govuk-body">These estimates are based on the details you’ve provided to us.</p>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <h2 class="govuk-heading-m">Monthly estimated earnings for current academic year</h2>
+    <p class="govuk-body">Learn how much you’ll earn:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>each month approximately</li>
+      <li>for each apprentice approximately</li>
+    </ul>
+
+    <a target="_blank" href="https://docs.google.com/spreadsheets/d/18wvhAs7BNW8h45iAeRCrZlHJN_aViozdGysMCkz3ZE4/edit?usp=sharing" role="button" draggable="false" class="govuk-button" data-module="govuk-button">Download report (CSV)</a>
+
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Total estimated earnings for current academic year</h2>
   </div>
 </div>
-<div class=" govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-m">Expected earnings for academic year 2022 to 2023</h2>
-  </div>
-</div>
-<div class="govuk-grid-row govuk-!-margin-top-6">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="transfer-values-prototype mvs-version">
       <div class="transfer-values">
