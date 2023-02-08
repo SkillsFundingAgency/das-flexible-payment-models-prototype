@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+{% set version = "training-provider" %}
+{% set pageTitle = "View apprentice details" %}
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jonny
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Appleseed
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          jonny.appleseed@berkshirehathaway.com
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unique learner number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2261631370
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 Aug 1995
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Apprenticeship training course
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Game programer, Level 7
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Apprenticeship delivery model
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Regular
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1.0
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned apprenticeship training start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jan 2022
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Projected apprenticeship training finish date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          May 2023
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned end date for this employment
+        </dt>
+        <dd class="govuk-summary-list__value">
+          -
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          -
+        </dd>
+      </div>
+    </dl>
+
+    <a class="govuk-link" href="#">Return to cohort view</a>
+
+  </div>
+</div>
+
+{% endblock %}
