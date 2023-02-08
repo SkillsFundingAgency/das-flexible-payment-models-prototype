@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+<nav id="govuk-prototype-kit-manage-prototype-navigation" class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix" role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
+	<h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
+	<ul class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/">
+				Home
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/training-provider">
+				Training Provider prototype
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/employer">
+				Employer prototype
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/about">
+				About
+			</a>
+		</li>
+	</ul>
+</nav>
+
+{{ govukBackLink({
+	text: "Back",
+	href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<!-- Update "Planned training end date" -->
+		<span class="govuk-caption-m">No Epic</span>
+		<h1 class="govuk-heading-l">Update planned training end date</h1>
+		<p class="govuk-body">Capture full planned training end date including the day</p>
+
+		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+							<span class="govuk-caption-m">FLP-220 </span>Training Provider | Add planned training end date including day
+						</span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+					<ul class="govuk-list">
+						<li>
+							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-220">Jira ticket (opens in new tab)</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-220/apprentice-details-pilot-v1">Pilot prototype v1</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-220/apprentice-details-non-pilot-v1">Non-pilot prototype v1</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-220/apprentice-details-non-pilot-tp-v1">Non-pilot training provider prototype v1</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+							<span class="govuk-caption-m">FLP-221 </span>Employer | Edit planned training end date including day
+						</span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+					<ul class="govuk-list">
+						<li>
+							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-221">Jira ticket (opens in new tab)</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-221/apprentice-details-v1">Pilot prototype v1</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-221/apprentice-details-non-pilot-v1">Non-pilot (covers both learner and training provider) prototype v1</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="govuk-accordion__section ">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+							<span class="govuk-caption-m">FLP-222 </span>Training Provider | Edit planned training end date including day
+						</span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+					<ul class="govuk-list">
+						<li>
+							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-222">Jira ticket (opens in new tab)</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-222/apprentice-details-v1">Prototype v1</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
