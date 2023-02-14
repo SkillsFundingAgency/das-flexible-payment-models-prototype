@@ -58,7 +58,7 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#projected-end-date">The projected finish date should be no more than ten years in the future</a>
+              <a href="#projected-end-date">The planned training end date should be no more than ten years in the future</a>
             </li>
           </ul>
         </div>
@@ -260,15 +260,21 @@
       <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint end-date-error" role="group" id="projected-end-date">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Planned training finish date
+            Planned training end date
           </legend>
           <div id="finish-date-hint" class="govuk-hint">
             For example, 6 2024
           </div>
           <p id="end-date-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The projected finish date should be no more than ten years in the future
+            <span class="govuk-visually-hidden">Error:</span> The planned training end date should be no more than ten years in the future
           </p>
           <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="EndDay">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" type="text" inputmode="numeric" id="EndDay" name="EndDay" value="21">
+              </div>
+            </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
