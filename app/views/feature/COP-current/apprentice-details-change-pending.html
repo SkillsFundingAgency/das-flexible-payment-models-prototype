@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+{% set version = "feature/COP-current" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+	<div class="govuk-width-container">
+		<ul class="das-navigation__list ">
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/index">Home</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/approvals/apprentice-requests">Apprentice
+					requests</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link das-navigation__link--current" href="/{{version}}/manage/index">Manage
+					your apprentices</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+			</li>
+			<li class="das-navigation__priority-list-item" id="priority-list-menu"><a
+					class="das-navigation__priority-button" href="/{{version}}/#">More</a>
+				<ul class="das-navigation__priority-list govuk-visually-hidden">
+					<li class="das-navigation__list-item">
+						<a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h2 class="govuk-heading-m">
+			Changes to this apprenticeship
+		</h2>
+		<div class="govuk-inset-text">
+			<strong>Change request pending:</strong> Payment for George Ford can't be made until this is resolved.
+		</div>
+	</div>
+
+</div>
+
+<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+
+<h2 class="govuk-heading-m">Apprentice status</h2>
+
+<dl class="govuk-summary-list  govuk-!-margin-bottom-9">
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Status
+		</dt>
+		<dd class="govuk-summary-list__value">
+			Live
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Apprentice confirmation
+		</dt>
+		<dd class="govuk-summary-list__value">
+			Confirmed
+		</dd>
+	</div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Overview</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Employer
+		</dt>
+		<dd class="govuk-summary-list__value">
+			AUTOMATION &amp; OPTIMISATION LTD
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Reference
+		</dt>
+		<dd class="govuk-summary-list__value">
+			MNNRLD
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Agreement ID
+		</dt>
+		<dd class="govuk-summary-list__value">
+			7GXEKP
+		</dd>
+	</div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Apprentice</h2>
+<dl class="govuk-summary-list">
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Name
+		</dt>
+		<dd class="govuk-summary-list__value">
+			George Ford
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Email address
+		</dt>
+		<dd class="govuk-summary-list__value">
+			georgeford@gmail.com</br>
+			<a href="#" class="govuk-link">Resend invitation email</a>
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Date of birth
+		</dt>
+		<dd class="govuk-summary-list__value">
+			1 Jan 2000
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Unique learner number
+		</dt>
+		<dd class="govuk-summary-list__value">
+			5320150775
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Apprenticeship training course
+		</dt>
+		<dd class="govuk-summary-list__value">
+			Abattoir Worker, Level: 2 (Standard)
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Version
+		</dt>
+		<dd class="govuk-summary-list__value">
+			1.0
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Planned training start date
+		</dt>
+		<dd class="govuk-summary-list__value">
+			Dec 2018
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Planned training end date
+		</dt>
+		<dd class="govuk-summary-list__value">
+			Jul 2020
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Total agreed apprenticeship price
+		</dt>
+		<dd class="govuk-summary-list__value">
+			£1,234
+		</dd>
+	</div>
+	<div class="govuk-summary-list__row">
+		<dt class="govuk-summary-list__key">
+			Your reference
+		</dt>
+		<dd class="govuk-summary-list__value">
+
+		</dd>
+	</div>
+</dl>
+</div>
+</div>
+
+
+{% endblock %}

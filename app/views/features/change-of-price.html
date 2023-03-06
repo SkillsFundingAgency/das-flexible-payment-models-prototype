@@ -1,0 +1,108 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+<nav id="govuk-prototype-kit-manage-prototype-navigation"
+	class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix"
+	role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
+	<h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
+	<ul
+		class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
+		<li
+			class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+				href="/">
+				Home
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+				href="/training-provider">
+				Training Provider prototype
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+				href="/employer">
+				Employer prototype
+			</a>
+		</li>
+		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+				href="/about">
+				About
+			</a>
+		</li>
+	</ul>
+</nav>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<!-- Change of price -->
+		<!-- <span class="govuk-caption-m">FLP-96</span> -->
+		<h1 class="govuk-heading-l">Change of price</h1>
+		<p class="govuk-body">Allow for change of price to be requested via the DAS service. Allowing payments to
+			continue
+			at the original rate until both parties approve any updated prices.</p>
+
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-one-half">
+				<h3 class="govuk-heading-m"><a href="/feature/COP-current/manage-apprentices-v1"
+						class="govuk-link govuk-link--no-visited-state" target="_blank"
+						rel="noreferrer noopener">Current Journey<span class="govuk-visually-hidden">
+							(opens in new tab)</span></a></h3>
+				<p class="govuk-body">Change of price</p>
+				<a href="/feature/COP-current/manage-apprentices-v1" class="govuk-link govuk-link--no-visited-state"
+					target="_blank" rel="noreferrer noopener">View change of price current journey<span
+						class="govuk-visually-hidden">
+						(opens in new tab)</span></a>
+			</div>
+		</div>
+
+		<!-- <h2 class="govuk-heading-m govuk-!-margin-top-9">Features</h2>
+		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+			 <div class="govuk-accordion__section">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading">
+						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+							<span class="govuk-caption-m">FLP-187 </span>Training Provider | Show pilot status on edit
+							apprentice page in manage your apprentices
+						</span>
+					</h2>
+				</div>
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-1">
+					<ul class="govuk-list">
+						<p class='govuk-body'>As a pilot training provider when viewing an apprentice in manage your
+							apprentices, I want to see the pilot status of the apprenticeship so that I can
+							differentiate between apprenticeships that are in and out of the pilot</p>
+						<li>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-187">Jira ticket (opens in
+								new tab)</a>
+						</li>
+						<li>
+							<a class="govuk-link" href="/feature/FLP-187/manage-apprentice-details-v1.html">Pilot
+								prototype v1</a>
+						</li>
+
+					</ul>
+				</div>
+			</div> 
+		</div> -->
+	</div>
+</div>
+
+{% endblock %}

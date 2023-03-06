@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+{% set version = "feature/COP-current" %}
+{% set pageTitle = "Change apprentice details" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+	<div class="govuk-width-container">
+		<ul class="das-navigation__list ">
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/index">Home</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/approvals/apprentice-requests">Apprentice
+					requests</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link das-navigation__link--current" href="/{{version}}/manage/index">Manage
+					your apprentices</a>
+			</li>
+			<li class="das-navigation__list-item">
+				<a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+			</li>
+			<li class="das-navigation__priority-list-item" id="priority-list-menu"><a
+					class="das-navigation__priority-button" href="/{{version}}/#">More</a>
+				<ul class="das-navigation__priority-list govuk-visually-hidden">
+					<li class="das-navigation__list-item">
+						<a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back to apprentice details",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+
+		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+
+		<p>A request will be sent to ESFA LTD to approve the following changes in the apprenticeship service.</p>
+
+		<table class="govuk-table">
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<td scope="row" class="govuk-table__header">Name</td>
+					<td class="govuk-table__cell"> George Ford</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Unique learner number</th>
+					<td class="govuk-table__cell">5320150775</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+					<td class="govuk-table__cell">Express delivery manager (degree), Level: 6</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header"></th>
+					<th scope="col" class="govuk-table__header">Currently</th>
+					<th scope="col" class="govuk-table__header">Change to</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr>
+					<td class="govuk-table__cell">Price period</td>
+					<td class="govuk-table__cell">
+						From 1 Dec 2022 onwards
+					</td>
+					<td class="govuk-table__cell">From 1 Dec 2022 onwards</td>
+				</tr>
+				<tr>
+					<td class="govuk-table__cell">Total apprenticeship training price</td>
+					<td class="govuk-table__cell">
+						£1,056
+					</td>
+					<td class="govuk-table__cell">£1,156</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+
+
+		<form method="post" action="/{{version}}/apprentice-details-change-pending">
+			<fieldset class="govuk-fieldset">
+				<div class="govuk-form-group  ">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to request these changes?
+						</legend>
+						<span class="field-validation-valid govuk-error-message" data-valmsg-for="SubmitStatusViewModel"
+							data-valmsg-replace="true" id="error-message-SubmitStatusViewModel"></span>
+						<div class="govuk-radios">
+							<div class="govuk-radios__item">
+								<input value="Confirm" type="radio" class="govuk-radios__input"
+									id="SubmitStatusViewModel-Confirm" data-val="true"
+									data-val-required="Confirm if you want to make these changes"
+									name="SubmitStatusViewModel">
+								<label class="govuk-label govuk-radios__label" for="SubmitStatusViewModel-Confirm">
+									Yes, request these changes
+								</label>
+
+							</div>
+
+							<div class="govuk-radios__item">
+								<input value="None" type="radio" class="govuk-radios__input"
+									id="SubmitStatusViewModel-None" name="SubmitStatusViewModel">
+								<label class="govuk-label govuk-radios__label" for="SubmitStatusViewModel-None">
+									No, leave for now
+								</label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+
+
+				<div class="govuk-button-group" id="cont-cancel">
+					<button class="govuk-button" data-module="govuk-button" type="submit" id="finish-button">
+						Finish
+					</button>
+					<a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/apprentice-details/"
+						id="cancel-button">Cancel</a>
+				</div>
+
+			</fieldset>
+		</form>
+	</div>
+</div>
+{% endblock %}
