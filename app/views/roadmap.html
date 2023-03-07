@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+<nav id="govuk-prototype-kit-manage-prototype-navigation"
+  class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix"
+  role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
+  <h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
+  <ul
+    class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+        href="/">
+        Home
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+        href="/training-provider">
+        Training Provider prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+        href="/employer">
+        Employer prototype
+      </a>
+    </li>
+    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+        href="/about">
+        About
+      </a>
+    </li>
+    <li
+      class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
+      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
+        href="/roadmap">
+        Roadmap
+      </a>
+    </li>
+  </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">
+  Roadmap
+</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">This roadmap shows what we’re working on and planning to do.</p>
+
+    <p class="govuk-body">Last updated 7 March 2023.</p>
+
+    <h2 class="govuk-heading-l ">Recently shipped</h2>
+    <p class="govuk-body">We recently:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>released new commitments journey for providers & employers</li>
+      <li>added functionality to capture the specific planned end date (previously we only captured month/year) to
+        support more accurate on-programme earnings calculation</li>
+      <li>added a new indicative earnings report</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Working on now</h2>
+    <p class="govuk-body">We're working to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>improve earnings calculations using specific planned end date</li>
+      <li>generate unfunded payments</li>
+      <li>prepare for the pilot launch</li>
+      <li>design and test a new change of price journey that would enable payments to be made from changes to
+        Apprenticeship Service data</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Exploring</h2>
+    <p class="govuk-body">We’re getting ready to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>start working on the technical design of flexi payments integration with v2 to support comparison testing (no
+        production
+        payments)</li>
+      <li>design and test a new change of start date journey to enable payments to be made from changes to
+        Apprenticeship Service data</li>
+      <li>identify upstream (i.e Data Collections) and downstream reporting impacts from any new price change journey
+        with suggested mitigations</li>
+    </ul>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <h2 class="govuk-heading-m">Need help</h2>
+    <p class="govuk-body">If you’ve got a question about the roadmap, <a
+        href="https://skillsfundingagency.atlassian.net/wiki/spaces/NDL/pages/3480354918/Flexible+Payments+Models"
+        class="govuk-link govuk-link--no-visited-state" target="_blank">contact the team (opens in new tab)</a>.</p>
+  </div>
+</div>
+
+{% endblock %}
