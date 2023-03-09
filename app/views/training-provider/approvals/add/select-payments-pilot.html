@@ -12,7 +12,8 @@
         <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
@@ -23,7 +24,8 @@
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
             <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
@@ -38,8 +40,8 @@
 {% block beforeContent %}
 
 {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.go(-1);"
+text: "Back",
+href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
@@ -60,20 +62,22 @@
           </legend>
 
           <div id="pilot-hint" class="govuk-hint">
-            To be eligible for the simplified payment pilot, an apprenticeship must start after [date service live]
+            To be eligible for the simplified payment pilot, an apprenticeship must start after 13 March 2023
           </div>
 
           <div class="govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pamyents-simplification-pilot" name="pilot-program" type="radio" value="Yes" {{ checked("pilot-program", "Yes") }}>
+              <input class="govuk-radios__input" id="pamyents-simplification-pilot" name="pilot-program" type="radio"
+                value="Yes" {{ checked("pilot-program", "Yes" ) }}>
               <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot">
                 Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="pamyents-simplification-pilot-2" name="pilot-program" type="radio" value="No" {{ checked("pilot-program", "No") }}>
+              <input class="govuk-radios__input" id="pamyents-simplification-pilot-2" name="pilot-program" type="radio"
+                value="No" {{ checked("pilot-program", "No" ) }}>
               <label class="govuk-label govuk-radios__label" for="pamyents-simplification-pilot-2">
                 No
               </label>
