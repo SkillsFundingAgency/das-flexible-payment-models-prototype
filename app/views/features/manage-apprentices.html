@@ -5,35 +5,12 @@ Flex Payments Prototype Library
 {% endblock %}
 
 {% block beforeContent %}
-<nav id="govuk-prototype-kit-manage-prototype-navigation" class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix" role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
-	<h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
-	<ul class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/">
-				Home
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/training-provider">
-				Training Provider prototype
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/employer">
-				Employer prototype
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/about">
-				About
-			</a>
-		</li>
-	</ul>
-</nav>
+
+{% include "nav.html" %}
 
 {{ govukBackLink({
-	text: "Back",
-	href: "javascript:window.history.go(-1);"
+text: "Back",
+href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
@@ -52,18 +29,25 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-							<span class="govuk-caption-m">FLP-187 </span>Training Provider | Show pilot status on edit apprentice page in manage your apprentices
+							<span class="govuk-caption-m">FLP-187 </span>Training Provider | Show pilot status on edit
+							apprentice page in manage your apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-1">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a pilot training provider when viewing an apprentice in manage your apprentices, I want to see the pilot status of the apprenticeship so that I can differentiate between apprenticeships that are in and out of the pilot</p>
+						<p class='govuk-body'>As a pilot training provider when viewing an apprentice in manage your
+							apprentices, I want to see the pilot status of the apprenticeship so that I can
+							differentiate between apprenticeships that are in and out of the pilot</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-187">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-187">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-187/manage-apprentice-details-v1.html">Pilot prototype v1</a>
+							<a class="govuk-link" href="/feature/FLP-187/manage-apprentice-details-v1.html">Pilot
+								prototype v1</a>
 						</li>
 
 					</ul>
@@ -74,18 +58,25 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-							<span class="govuk-caption-m">FLP-188 </span>Training Provider | Filter list of learners by pilot status in manage your apprentices
+							<span class="govuk-caption-m">FLP-188 </span>Training Provider | Filter list of learners by
+							pilot status in manage your apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+				<div id="accordion-default-content-2" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-2">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a pilot training provider I want to be able to filter the list by the pilot status of the apprenticeships so that I can find which apprenticeships are in the pilot without having to check the details of every single learner </p>
+						<p class='govuk-body'>As a pilot training provider I want to be able to filter the list by the
+							pilot status of the apprenticeships so that I can find which apprenticeships are in the
+							pilot without having to check the details of every single learner </p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-188">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-188">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-188/manage-apprentices-v1.html">Pilot prototype v1</a>
+							<a class="govuk-link" href="/feature/FLP-188/manage-apprentices-v1.html">Pilot prototype
+								v1</a>
 						</li>
 
 					</ul>
@@ -96,18 +87,25 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-							<span class="govuk-caption-m">FLP-189 </span>Employer | Direct employers to contact provider to make changes to pilot learners in manage your apprentices
+							<span class="govuk-caption-m">FLP-189 </span>Employer | Direct employers to contact provider
+							to make changes to pilot learners in manage your apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+				<div id="accordion-default-content-3" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-3">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a an employer I want to see guidance about how to make changes to the apprenticeship (which is in the pilot) so that I know how to make changes to the apprenticeship</p>
+						<p class='govuk-body'>As a an employer I want to see guidance about how to make changes to the
+							apprenticeship (which is in the pilot) so that I know how to make changes to the
+							apprenticeship</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-189">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-189">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-189/manage-apprentice-details-v1.html">Pilot prototype v1</a>
+							<a class="govuk-link" href="/feature/FLP-189/manage-apprentice-details-v1.html">Pilot
+								prototype v1</a>
 						</li>
 
 					</ul>
@@ -118,18 +116,25 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-4">
-							<span class="govuk-caption-m">FLP-190 </span>Training Provider | Direct providers to contact support to make changes to pilot learners in manage your apprentices
+							<span class="govuk-caption-m">FLP-190 </span>Training Provider | Direct providers to contact
+							support to make changes to pilot learners in manage your apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+				<div id="accordion-default-content-4" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-4">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a pilot training provider I want to see guidance about how to make changes to apprenticeships that are in the pilot so that I can differentiate between apprenticeships that are in and out of the pilot</p>
+						<p class='govuk-body'>As a pilot training provider I want to see guidance about how to make
+							changes to apprenticeships that are in the pilot so that I can differentiate between
+							apprenticeships that are in and out of the pilot</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-190">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-190">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-190/manage-apprentice-details-v1.html">Pilot prototype v1</a>
+							<a class="govuk-link" href="/feature/FLP-190/manage-apprentice-details-v1.html">Pilot
+								prototype v1</a>
 						</li>
 
 					</ul>
@@ -140,18 +145,25 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-5">
-							<span class="govuk-caption-m">FLP-196 </span>Training Provider | Content for data lock warning in manage your apprentices
+							<span class="govuk-caption-m">FLP-196 </span>Training Provider | Content for data lock
+							warning in manage your apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+				<div id="accordion-default-content-5" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-5">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a pilot training provider when viewing a data lock (ILR data mismatch) error for a learner that is in the pilot I want to know how to solve the error so that I can remove data locks preventing payment for the learner</p>
+						<p class='govuk-body'>As a pilot training provider when viewing a data lock (ILR data mismatch)
+							error for a learner that is in the pilot I want to know how to solve the error so that I can
+							remove data locks preventing payment for the learner</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-196">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-196">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-196/manage-apprentice-details-v1.html">Pilot prototype v1</a>
+							<a class="govuk-link" href="/feature/FLP-196/manage-apprentice-details-v1.html">Pilot
+								prototype v1</a>
 						</li>
 
 					</ul>

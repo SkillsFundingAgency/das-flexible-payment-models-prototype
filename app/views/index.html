@@ -5,45 +5,9 @@ Flex Payments Prototype Library
 {% endblock %}
 
 {% block beforeContent %}
-<nav id="govuk-prototype-kit-manage-prototype-navigation"
-  class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix"
-  role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
-  <h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
-  <ul
-    class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
-    <li
-      class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
-        href="/">
-        Home
-      </a>
-    </li>
-    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
-        href="/training-provider">
-        Training Provider prototype
-      </a>
-    </li>
-    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
-        href="/employer">
-        Employer prototype
-      </a>
-    </li>
-    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
-        href="/about">
-        About
-      </a>
-    </li>
-    <li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-      <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link"
-        href="/roadmap">
-        Roadmap
-      </a>
-    </li>
-  </ul>
-</nav>
+
+{% include "nav.html" %}
+
 {% endblock %}
 
 {% block content %}

@@ -5,35 +5,12 @@ Flex Payments Prototype Library
 {% endblock %}
 
 {% block beforeContent %}
-<nav id="govuk-prototype-kit-manage-prototype-navigation" class="govuk-prototype-kit-manage-prototype-navigation js-govuk-prototype-kit-manage-prototype-navigation govuk-clearfix" role="navigation" aria-labelledby="govuk-prototype-kit-manage-prototype-navigation-heading">
-	<h2 class="govuk-visually-hidden" id="govuk-prototype-kit-manage-prototype-navigation-heading">Menu</h2>
-	<ul class="govuk-prototype-kit-manage-prototype-navigation__list govuk-prototype-kit-manage-prototype-width-container">
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item govuk-prototype-kit-manage-prototype-navigation__list-item--current">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/">
-				Home
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/training-provider">
-				Training Provider prototype
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/employer">
-				Employer prototype
-			</a>
-		</li>
-		<li class="govuk-prototype-kit-manage-prototype-navigation__list-item ">
-			<a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline govuk-prototype-kit-manage-prototype-navigation__link js-govuk-prototype-kit-manage-prototype-navigation__link" href="/about">
-				About
-			</a>
-		</li>
-	</ul>
-</nav>
+
+{% include "nav.html" %}
 
 {{ govukBackLink({
-	text: "Back",
-	href: "javascript:window.history.go(-1);"
+text: "Back",
+href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
@@ -52,15 +29,20 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-							<span class="govuk-caption-m">FLP-161</span> Training Provider | Inform training providers that the earnings report only applies to pilot apprentices
+							<span class="govuk-caption-m">FLP-161</span> Training Provider | Inform training providers
+							that the earnings report only applies to pilot apprentices
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-1">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a training provider I want to know which of my apprentices the earnings report applies to so that I can better understand the earnings report</p>
+						<p class='govuk-body'>As a training provider I want to know which of my apprentices the earnings
+							report applies to so that I can better understand the earnings report</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-161">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-161">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
 							<a class="govuk-link" href="/feature/FLP-161/indicative-earnings">Earnings report v1</a>
@@ -72,21 +54,29 @@ Flex Payments Prototype Library
 				<div class="govuk-accordion__section-header">
 					<h2 class="govuk-accordion__section-heading">
 						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-							<span class="govuk-caption-m">FLP-175</span> Training Provider | Inform training providers without pilot apprentices that the earnings report is a testing feature
+							<span class="govuk-caption-m">FLP-175</span> Training Provider | Inform training providers
+							without pilot apprentices that the earnings report is a testing feature
 						</span>
 					</h2>
 				</div>
-				<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
+					aria-labelledby="accordion-default-heading-1">
 					<ul class="govuk-list">
-						<p class='govuk-body'>As a training provider I want to know what this new feature is used for so that I understand why it’s not available if I do not yet have any approved pilot apprentices</p>
+						<p class='govuk-body'>As a training provider I want to know what this new feature is used for so
+							that I understand why it’s not available if I do not yet have any approved pilot apprentices
+						</p>
 						<li>
-							<a class="govuk-link" target="_blank" href="https://skillsfundingagency.atlassian.net/browse/FLP-175">Jira ticket (opens in new tab)</a>
+							<a class="govuk-link" target="_blank"
+								href="https://skillsfundingagency.atlassian.net/browse/FLP-175">Jira ticket (opens in
+								new tab)</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-175/no-pilot-apprentices">No pilot apprentices v1</a>
+							<a class="govuk-link" href="/feature/FLP-175/no-pilot-apprentices">No pilot apprentices
+								v1</a>
 						</li>
 						<li>
-							<a class="govuk-link" href="/feature/FLP-175/home-message-in-report-v1">Message in report v1</a>
+							<a class="govuk-link" href="/feature/FLP-175/home-message-in-report-v1">Message in report
+								v1</a>
 						</li>
 					</ul>
 				</div>
