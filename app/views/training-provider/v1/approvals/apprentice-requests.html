@@ -1,0 +1,346 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Apprentice requests" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+    <div class="govuk-width-container">
+        <ul class="das-navigation__list ">
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link das-navigation__link--current"
+                    href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+                    funding</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your
+                    apprentices</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+            </li>
+            <li class="das-navigation__priority-list-item" id="priority-list-menu"><a
+                    class="das-navigation__priority-button" href="/training-provider/{{version}}/#">More</a>
+                <ul class="das-navigation__priority-list govuk-visually-hidden">
+                    <li class="das-navigation__list-item">
+                        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and
+                            agreements</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-">
+        <div class="govuk-width-container">
+
+            <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+            <div class="das-tabs-boxes">
+                <ul class="das-tabs-boxes__list">
+
+                    <li class="das-tabs-boxes__list-item  das-tabs-boxes__list-item--selected">
+                        <span class="das-tabs-boxes__tab"
+                            href="/training-provider/{{version}}/10005760/unapproved/review" id="Review">
+                            <span class="das-tabs-boxes__figure">2498</span>
+                            <span class="das-text-capitalise">Ready for review</span>
+                        </span>
+                    </li>
+
+
+                    <li class="das-tabs-boxes__list-item">
+                        <a class="das-tabs-boxes__tab"
+                            href="/training-provider/{{version}}/10005760/unapproved/with-employer" id="WithEmployer">
+                            <span class="das-tabs-boxes__figure">197</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise">With employers</span>
+                        </a>
+                    </li>
+
+
+                    <li class="das-tabs-boxes__list-item">
+                        <a class="das-tabs-boxes__tab" href="/training-provider/{{version}}/10005760/unapproved/draft"
+                            id="Draft">
+                            <span class="das-tabs-boxes__figure">136</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise">Drafts</span>
+                        </a>
+                    </li>
+
+                    <li class="das-tabs-boxes__list-item">
+                        <a class="das-tabs-boxes__tab"
+                            href="/training-provider/{{version}}/10005760/unapproved/with-transfer-sender"
+                            id="WithTransferSender">
+                            <span class="das-tabs-boxes__figure">9</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise">With transfer sending
+                                employers</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header das-table-cell-width-25" aria-sort="none">
+
+                Employer
+
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-10" aria-sort="none">
+
+                Cohort reference
+
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15" aria-sort="none">
+
+                Date received
+
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15 govuk-table__header--numeric">Number of
+                apprentices</th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-20">Last message</th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15 govuk-table__header--numeric"></th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" data-cohort="M9WWPJ">
+            <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+            <td class="govuk-table__cell" data-label="Reference">M9WWPJ</td>
+            <td class="govuk-table__cell" data-label="DateReceived">15 Jun 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M9WWPJ" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="M7KJJK">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+            <td class="govuk-table__cell" data-label="Reference">M7KJJK</td>
+            <td class="govuk-table__cell" data-label="DateReceived">22 Jun 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M7KJJK" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VK9PYP">
+            <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+            <td class="govuk-table__cell" data-label="Reference">VK9PYP</td>
+            <td class="govuk-table__cell" data-label="DateReceived">3 Jul 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VK9PYP" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VRG4XP">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+            <td class="govuk-table__cell" data-label="Reference">VRG4XP</td>
+            <td class="govuk-table__cell" data-label="DateReceived">6 Jul 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">0</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VRG4XP" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MW747D">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MW747D</td>
+            <td class="govuk-table__cell" data-label="DateReceived">29 Jul 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MW747D" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VYDB4D">
+            <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+            <td class="govuk-table__cell" data-label="Reference">VYDB4D</td>
+            <td class="govuk-table__cell" data-label="DateReceived">6 Aug 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VYDB4D" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="M7XKYX">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">M7XKYX</td>
+            <td class="govuk-table__cell" data-label="DateReceived">14 Aug 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">2</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M7XKYX" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MNJ4PY">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MNJ4PY</td>
+            <td class="govuk-table__cell" data-label="DateReceived">5 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">0</td>
+            <td class="govuk-table__cell" data-label="Last Message">10005760</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MNJ4PY" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MK6YR9">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+            <td class="govuk-table__cell" data-label="Reference">MK6YR9</td>
+            <td class="govuk-table__cell" data-label="DateReceived">24 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MK6YR9" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="M7PBNJ">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">M7PBNJ</td>
+            <td class="govuk-table__cell" data-label="DateReceived">25 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M7PBNJ" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MLYN66">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MLYN66</td>
+            <td class="govuk-table__cell" data-label="DateReceived">25 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MLYN66" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MR7P9B">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MR7P9B</td>
+            <td class="govuk-table__cell" data-label="DateReceived">25 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MR7P9B" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/10005760/unapproved/MR7P9B">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MWPXB7">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MWPXB7</td>
+            <td class="govuk-table__cell" data-label="DateReceived">25 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MWPXB7" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="V4YPBN">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">V4YPBN</td>
+            <td class="govuk-table__cell" data-label="DateReceived">26 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_V4YPBN" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MB7K76">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MB7K76</td>
+            <td class="govuk-table__cell" data-label="DateReceived">27 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MB7K76" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MB7KDW">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MB7KDW</td>
+            <td class="govuk-table__cell" data-label="DateReceived">27 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MB7KDW" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VB7WN6">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">VB7WN6</td>
+            <td class="govuk-table__cell" data-label="DateReceived">27 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VB7WN6" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VXXJKY">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">VXXJKY</td>
+            <td class="govuk-table__cell" data-label="DateReceived">27 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VXXJKY" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MK6XYL">
+            <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MK6XYL</td>
+            <td class="govuk-table__cell" data-label="DateReceived">28 Nov 2020</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell" data-label="Last Message">No message added</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MK6XYL" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "TRAINING PROVIDER LIMITED" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation" style="margin-bottom: 40px;">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current" href="index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="manage-apprentices">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="{{ version }}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="{{ version }}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">{{ pageTitle }}</h1>
+      <p class="govuk-caption-m govuk-!-font-weight-bold">UKPRN: 00004520</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="boxes">
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/approvals/add/entry-method">Add
+              new
+              apprentices</a>
+          </h2>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>upload a CSV file</li>
+            <li>manually enter details</li>
+            <li>create a new cohort</li>
+            <li>add to an existing cohort</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/#">Get funding for non-levy
+              employers</a>
+          </h2>
+          <p>Secure funding for a non-levy employer to train an apprentice.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state"
+              href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice
+              requests</a>
+          </h2>
+          <p>Review, edit and approve apprentices.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a href="{{ version }}/#">Manage your funding reserved for non-levy employers</a>
+          </h2>
+          <p>Add apprentice information to funding you have already reserved for non-levy employers.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/manage-apprentices">Manage your
+              apprentices</a>
+          </h2>
+          <p>View and update approved apprentice records.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+          </h2>
+          <p>Create a vacancy to recruit an apprentice and manage applications.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/#">Find employers that need a
+              training
+              provider</a>
+          </h2>
+          <p>View employers and share your contact details with them.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state" href="/training-provider/{{version}}/#">Organisations and
+              agreements</a>
+          </h2>
+          <p>Find and view organisations and their agreement IDs.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a href="/training-provider/{{version}}/#">Manage exployer invitations</a>
+          </h2>
+          <p>Invite employers to create an apprenticeship service account.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a href="/training-provider/{{version}}/#">Recruit trainees</a>
+          </h2>
+          <p>Create a traineeship vacancy and manage applications.</p>
+        </div>
+
+        <div class="box">
+          <h2 class="govuk-heading-m">
+            <a class="govuk-link--no-visited-state"
+              href="/training-provider/{{version}}/reports/indicative-earnings">Indicative earnings
+              report</a>
+          </h2>
+          <p>View your expected earnings based on your submission to the Digital apprenticeship service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h3 class="govuk-heading-m  govuk-!-margin-top-8">Instructions for the apprentices' employer</h3>
+      <p class="govuk-body">Employers need to <a href="https://www.gov.uk/guidance/manage-apprenticeship-funds"
+          target="_blank" title="Register to manage their apprenticeship funds">register to manage their apprenticeship
+          funds</a>. </p>
+      <p class="govuk-body">Once they've registered they need to:</p>
+      <ol class="govuk-list govuk-list--number  govuk-!-margin-bottom-8">
+        <li>Add the PAYE schemes that the apprentices will be paid through.</li>
+        <li>Add the employer organisations that will contract with the training provider.</li>
+        <li>Accept agreements for their organisations so that they can spend levy funds.</li>
+        <li>Add apprentices to their account so they can authorise payments to you. </li>
+      </ol>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

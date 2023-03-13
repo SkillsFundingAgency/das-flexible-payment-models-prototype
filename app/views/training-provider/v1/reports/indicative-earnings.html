@@ -1,0 +1,142 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Apps indicative earnings report" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice
+          requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="{{ version }}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">This report should help you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>understand how much you can expect to be paid</li>
+      <li>reconcile your internal forecasts</li>
+    </ul>
+    <p class="govuk-body">It is only an estimate, based on the data you have entered into the Apprenticeship service.
+    </p>
+    <div class="govuk-inset-text">This report has moved from the Submit Learner Data platform.</div>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Download summary report</h2>
+    <p class="govuk-body">This is a high level overview report that shows total expected monthly income by learner for
+      this academic year.</p>
+    <a target="_blank"
+      href="https://docs.google.com/spreadsheets/d/18wvhAs7BNW8h45iAeRCrZlHJN_aViozdGysMCkz3ZE4/edit?usp=sharing"
+      role="button" draggable="false" class="govuk-button" data-module="govuk-button">Download CSV Summary report</a>
+  </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m">Expected total on-program earnings in current academic year (2022 to 2023)</h2>
+    <div class="transfer-values-prototype mvs-version">
+      <div class="transfer-values">
+        <div class="half-width">
+          <p>Total earnings</p>
+          <p class="number">£2,003,345</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="transfer-values-prototype mvs-version">
+      <!-- <h3 class="govuk-heading-s">Levy vs Non-levy – Current academic year (2022 to 2023)</h3> -->
+      <div class="transfer-values govuk-!-margin-bottom-8">
+        <div class="transfer-funds half-width">
+          <p>Levy earnings</p>
+          <p class="number">£1,402,343</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Non-levy earnings</p>
+          <p class="number">£601,002</p>
+        </div>
+      </div>
+      <h3 class="govuk-heading-s">Non-levy breakdown</h3>
+      <div class="transfer-values">
+        <div class="transfer-funds half-width">
+          <p>Non-levy government contribution</p>
+          <p class="number">£570,952</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Non-levy employer contribution</p>
+          <p class="number">£30,050</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="transfer-values-prototype mvs-version govuk-!-margin-top-8">
+      <h3 class="govuk-heading-s">Period breakdown</h3>
+      <div class="transfer-values">
+        <div class="transfer-funds half-width">
+          <p>Current month (July)</p>
+          <p class="number">£94,550</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Next month (August 2022)</p>
+          <p class="number">£120,456</p>
+        </div>
+      </div>
+      <div class="transfer-values">
+        <div class="transfer-funds half-width">
+          <p>Next 3 months (Aug 2022 to Oct 2022)</p>
+          <p class="number">£534,004</p>
+        </div>
+        <div class="transfer-funds half-width">
+          <p>Next 6 months (Aug 2022 to Jan 2023)</p>
+          <p class="number">£1,065,908</p>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</div>
+
+{% endblock %}

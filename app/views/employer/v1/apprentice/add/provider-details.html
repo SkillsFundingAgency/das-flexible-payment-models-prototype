@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Add training provider details" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+        <form action="/employer/{{version}}/apprentice/add/confirm-provider-details" method="post" novalidate>
+
+          <input type="hidden" id="AccountHashedId" name="AccountHashedId" value="BB8W4N">
+          <input type="hidden" data-val="true" data-val-required="'Account Legal Entity Hashed Id' must not be empty."
+            id="AccountLegalEntityHashedId" name="AccountLegalEntityHashedId" value="36Z825">
+          <input type="hidden" id="ReservationId" name="ReservationId" value="">
+          <input type="hidden" id="CourseCode" name="CourseCode" value="">
+          <input type="hidden" id="StartMonthYear" name="StartMonthYear" value="">
+          <input type="hidden" id="TransferSenderId" name="TransferSenderId" value="">
+          <input type="hidden" id="LegalEntityName" name="LegalEntityName" value="Coventry City Council">
+          <input type="hidden" id="EncodedPledgeApplicationId" name="EncodedPledgeApplicationId" value="">
+
+          <div class="govuk-form-group ">
+            <label class="govuk-heading-s " for="error-message-ProviderId">
+              UK Provider Reference Number
+            </label>
+
+            <input class="govuk-input " id="error-message-ProviderId" type="text" name="ProviderId" value="">
+          </div>
+
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                What is a UK Provider Reference Number?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              A UK Provider Reference Number (UKPRN) is a unique, 8-digit number that identifies a training provider.
+              Your training provider can tell you their UKPRN.
+            </div>
+          </details>
+          <button id="continue-button" type="submit" class="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+{% endblock %}

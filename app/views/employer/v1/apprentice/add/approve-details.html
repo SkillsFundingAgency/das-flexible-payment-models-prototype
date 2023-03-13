@@ -1,0 +1,194 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Check apprentice details" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+        <dl class="das-definition-list das-definition-list--inline">
+          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Organisation</dt>
+          <dd class="das-definition-list__definition govuk-!-margin-bottom-4">Coventry City Council</dd>
+          <dt class="das-definition-list__title">Reference</dt>
+          <dd class="das-definition-list__definition govuk-!-margin-bottom-4">66RWLD</dd>
+          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Status</dt>
+          <dd id="cohortStatus" class="das-definition-list__definition">New request</dd>
+        </dl>
+
+        <h2 class="govuk-heading-s">Message from SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE):</h2>
+        <div class="govuk-inset-text">
+          <span>No message added.</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h3 class="govuk-heading-m">
+      1 x Academic professional, Level: 7
+    </h3>
+    <table class="govuk-table das-table--responsive">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+          <th scope="col" class="govuk-table__header">Training dates</th>
+          <th scope="col" class="govuk-table__header">Price</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">
+            <span class="das-breakable">John Smith</span>
+          </td>
+          <td class="govuk-table__cell" data-label="Date of birth">1 Jan 1922</td>
+          <td class="govuk-table__cell" data-label="Training dates">
+            14 Sep 2023 to Jan 2024 </td>
+          <td class="govuk-table__cell" data-label="Price">
+            £1,500 </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link edit-apprentice" href="#">
+              Edit
+              <span class="govuk-visually-hidden">John Smith's details</span>
+            </a>
+            <br>
+            <a class="govuk-link view-apprentice" href="#">View</a>
+            <br>
+            <a class="govuk-link delete-apprentice" href="#">
+              Delete <span class="govuk-visually-hidden">John Smith's details</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price
+            <br>(excluding VAT)
+          </th>
+          <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-10"><strong>£1,500</strong>
+          </td>
+          <td class="govuk-table__cell das-table-cell-width-10" aria-hidden="true"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="govuk-body">
+      <a href="/employer/{{version}}/apprentice/add/select-standard" class="govuk-link add-apprentice">Add another
+        apprentice</a>
+      <a class="govuk-link das-float-right" href="#">Delete this group</a>
+    </p>
+    <hr class="govuk-section-break govuk-section-break--l">
+    <form id="submitCohort" novalidate="" method="post"
+      action="/employer/{{version}}/apprentice/add/action/approve-details">
+      <div class="govuk-form-group  ">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-approve" name="selection" type="radio" value="Approve"
+                aria-controls="conditional-approve">
+              <label class="govuk-label govuk-radios__label" for="radio-approve">
+                Yes, approve and notify training provider
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="approve-details">
+                  Leave SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE) a message (optional)
+                </label>
+                <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-send" name="selection" type="radio" value="Send"
+                aria-controls="conditional-send">
+              <label class="govuk-label govuk-radios__label" for="radio-send">
+                No, request changes from training provider
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="send-details">
+                  Leave SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE) a message (optional)
+                </label>
+                <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+
+      <p>
+        <a href="#" class="govuk-link">Save and exit</a>
+      </p>
+
+  </main>
+
+</div>
+
+{% endblock %}
+
+{% endblock %}
