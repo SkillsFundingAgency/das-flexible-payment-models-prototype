@@ -4,9 +4,11 @@
 Flex Payments Prototype Library
 {% endblock %}
 
+{% set feature = "/feature/COP" %}
+
 {% block beforeContent %}
 
-{% include "nav.html" %}
+{% include "includes/nav.html" %}
 
 {{ govukBackLink({
 text: "Back",
@@ -26,51 +28,47 @@ href: "javascript:window.history.go(-1);"
 			continue
 			at the original rate until both parties approve any updated prices.</p>
 
-		<div class="govuk-grid-row">
-			<div class="govuk-grid-column-one-half">
-				<h3 class="govuk-heading-m"><a href="/feature/COP-current/manage-apprentices-v1"
-						class="govuk-link govuk-link--no-visited-state" target="_blank"
-						rel="noreferrer noopener">Current Journey<span class="govuk-visually-hidden">
-							(opens in new tab)</span></a></h3>
-				<p class="govuk-body">Change of price</p>
-				<a href="/feature/COP-current/manage-apprentices-v1" class="govuk-link govuk-link--no-visited-state"
-					target="_blank" rel="noreferrer noopener">View change of price current journey<span
-						class="govuk-visually-hidden">
-						(opens in new tab)</span></a>
-			</div>
-		</div>
 
-		<!-- <h2 class="govuk-heading-m govuk-!-margin-top-9">Features</h2>
-		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-			 <div class="govuk-accordion__section">
-				<div class="govuk-accordion__section-header">
-					<h2 class="govuk-accordion__section-heading">
-						<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-							<span class="govuk-caption-m">FLP-187 </span>Training Provider | Show pilot status on edit
-							apprentice page in manage your apprentices
-						</span>
-					</h2>
-				</div>
-				<div id="accordion-default-content-1" class="govuk-accordion__section-content"
-					aria-labelledby="accordion-default-heading-1">
-					<ul class="govuk-list">
-						<p class='govuk-body'>As a pilot training provider when viewing an apprentice in manage your
-							apprentices, I want to see the pilot status of the apprenticeship so that I can
-							differentiate between apprenticeships that are in and out of the pilot</p>
-						<li>
-							<a class="govuk-link" target="_blank"
-								href="https://skillsfundingagency.atlassian.net/browse/FLP-187">Jira ticket (opens in
-								new tab)</a>
-						</li>
-						<li>
-							<a class="govuk-link" href="/feature/FLP-187/manage-apprentice-details-v1.html">Pilot
-								prototype v1</a>
-						</li>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="col">Version</th>
+					<th class="govuk-table__header" scope="col">Updates</th>
+					<th class="govuk-table__header" scope="col" colspan="2">Action</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">Original<p>01/03/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li><strong>Current version</strong></li>
+							<li>Update to summary cards</li>
+							<li><a class="govuk-link" href="{{feature}}/v1/documentation">View the changelog</a> for all
+								updates
+							</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/v1/manage-apprentices-v1">Start now</a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">Original<p>01/03/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li>Original journey</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/current/manage-apprentices-v1">Start now</a>
+					</td>
+				</tr>
 
-					</ul>
-				</div>
-			</div> 
-		</div> -->
+
+			</tbody>
+		</table>
+
 	</div>
 </div>
 

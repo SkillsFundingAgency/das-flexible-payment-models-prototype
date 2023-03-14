@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <!-- Change of price -->
+        <!-- <span class="govuk-caption-m">FLP-96</span> -->
+        <h1 class="govuk-heading-l">Changelog v1</h1>
+
+        <h2 class="govuk-heading-l">General</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Use summary card on apprentice details </li>
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}
