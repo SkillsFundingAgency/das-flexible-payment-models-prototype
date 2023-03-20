@@ -434,7 +434,7 @@ href: "javascript:window.history.go(-1);"
 
         <div class="govuk-grid-column-full">
 
-          <table class="govuk-table das-table--responsive das-table--double-arrows">
+          <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header govuk-!-width-one-third">
@@ -447,16 +447,25 @@ href: "javascript:window.history.go(-1);"
                   Employer
                 </th>
                 <th scope="col" class="govuk-table__header govuk-!-width-one-third">
-                  Planned training dates
+                  Apprentiship training course
+                </th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                  Planned start date
+                </th>
+                <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                  Planned end date
                 </th>
                 <th scope="col" class="govuk-table__header">
                   Status
+                </th>
+                <th scope="col" class="govuk-table__header">
+                  Alerts
                 </th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" data-label="Apprentice name">
+                <th scope="row" class="govuk-table__header govuk-!-padding-left-2" data-label="Apprentice name">
                   <a class="govuk-link" href="/{{version}}/apprentice-details">
                     George Ford
                   </a>
@@ -467,8 +476,15 @@ href: "javascript:window.history.go(-1);"
                 <td class="govuk-table__cell" data-label="Employer">
                   Lockheed Martin Aeronautical Systems Support Company
                 </td>
+                <td class="govuk-table__cell" data-label="Employer">
+                  Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+                  Industry, Level: 4
+                </td>
                 <td class="govuk-table__cell" data-label="Planned start date">
-                  Jan 2019 to Aug 2021
+                  Jan 2019
+                </td>
+                <td class="govuk-table__cell" data-label="Planned end date">
+                  Aug 2021
                 </td>
                 <td class="govuk-table__cell" data-label="Status">
                   <strong class="govuk-tag govuk-tag--blue">Live</strong>
@@ -476,89 +492,33 @@ href: "javascript:window.history.go(-1);"
                 <td class="govuk-table__cell" data-label="Alerts">
                 </td>
               </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" data-label="Apprentice name">
-                  <a class="govuk-link" href="/{{version}}/apprentice-details">
-                    Cohen Powell
-                  </a>
-                </th>
-                <td class="govuk-table__cell" data-label="ULN">
-                  9900007300
-                </td>
-                <td class="govuk-table__cell" data-label="Employer">
-                  Lockheed Martin Aeronautical Systems Support Company
-                </td>
-                <td class="govuk-table__cell" data-label="Planned start date">
-                  Jan 2019 to Aug 2021
-                </td>
-                <td class="govuk-table__cell" data-label="Status">
-                  <strong class="govuk-tag govuk-tag--blue">Live</strong>
-                </td>
-                <td class="govuk-table__cell" data-label="Alerts">
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" data-label="Apprentice name">
-                  <a class="govuk-link" href="/{{version}}/apprentice-details">
-                    Zak Day
-                  </a>
-                </th>
-                <td class="govuk-table__cell" data-label="ULN">
-                  9900007408
-                </td>
-                <td class="govuk-table__cell" data-label="Employer">
-                  Lockheed Martin Aeronautical Systems Support Company
-                </td>
-                <td class="govuk-table__cell" data-label="Planned start date">
-                  Jan 2019 to Aug 2021
-                </td>
-                <td class="govuk-table__cell" data-label="Status">
-                  <strong class="govuk-tag govuk-tag--blue">Live</strong>
-                </td>
-                <td class="govuk-table__cell" data-label="Alerts">
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header" data-label="Apprentice name">
-                  <a class="govuk-link" href="/{{version}}/apprentice-details">
-                    Joey Fraser
-                  </a>
-                </th>
-                <td class="govuk-table__cell" data-label="ULN">
-                  9900007505
-                </td>
-                <td class="govuk-table__cell" data-label="Employer">
-                  Lockheed Martin Aeronautical Systems Support Company
-                </td>
-                <td class="govuk-table__cell" data-label="Planned start date">
-                  Jan 2019 to Aug 2021
-                </td>
-                <td class="govuk-table__cell" data-label="Status">
-                  <strong class="govuk-tag govuk-tag--blue">Live</strong>
-                </td>
-                <td class="govuk-table__cell" data-label="Alerts">
-                </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-padding-left-2" data-label="Apprentice name"
-                  style="border-left:10px #d4351c solid;">
-                  <a class="govuk-link" href="/{{version}}/apprentice-details">
-                    Hector Parker
-                  </a>
-                  <strong class="govuk-tag govuk-tag--red govuk-!-static-margin-top-2">Confirmation Overdue</strong>
-                </th>
-                <td class="govuk-table__cell" data-label="ULN">
-                  9900007602
-                </td>
-                <td class="govuk-table__cell" data-label="Employer">
-                  Lockheed Martin Aeronautical Systems Support Company
-                </td>
-                <td class="govuk-table__cell" data-label="Planned start date">
-                  Jan 2019 to Aug 2021
-                </td>
-                <td class="govuk-table__cell" data-label="Status">
-                  <strong class="govuk-tag govuk-tag--blue">Live</strong>
-                </td>
+              <th scope="row" class="govuk-table__header govuk-!-padding-left-2" data-label="Apprentice name"
+                style="border-left:10px #d4351c solid;">
+                <a class="govuk-link" href="/{{version}}/apprentice-details">
+                  Hector Parker
+                </a>
+              </th>
+              <td class="govuk-table__cell" data-label="ULN">
+                9900007602
+              </td>
+              <td class="govuk-table__cell" data-label="Employer">
+                Lockheed Martin Aeronautical Systems Support Company
+              </td>
+              <td class="govuk-table__cell" data-label="Employer">
+                Actuarial technician, Level: 4 (Standard)
+              </td>
+              <td class="govuk-table__cell" data-label="Planned start date">
+                18 Jan 2019
+              </td>
+              <td class="govuk-table__cell" data-label="Planned end date">
+                15 Aug 2021
+              </td>
+              <td class="govuk-table__cell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--blue">Live</strong>
+              </td>
+              <td class="govuk-table__cell" data-label="Alerts">
+                <strong class="govuk-tag govuk-tag--red">Confirmation Overdue</strong>
+              </td>
               </tr>
             </tbody>
           </table>
