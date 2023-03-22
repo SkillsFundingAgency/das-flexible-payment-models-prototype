@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+{% set version = "feature/SAND" %}
+{% set pageTitle = "Check your apprentice details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Personal details</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> personal details</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Unique learner number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2261631370
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Apprentice name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Georgina Howard
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              georgeford@gmail.com
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+              24 Jun 2000
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Course details</h2>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Employer
+            </dt>
+            <dd class="govuk-summary-list__value">
+              LAND ROVER EXPERIENCE LIMITED
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/select-course">
+                Change<span class="govuk-visually-hidden"> employer</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Training course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Abattoir worker, Level: 2
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/select-course">
+                Change<span class="govuk-visually-hidden"> training course</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Delivery model
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['delivery-method'] or 'Regular' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/portable-flexi-job">
+                Change<span class="govuk-visually-hidden"> delivery model</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Simplified payments pilot
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['pilot-program'] or 'Yes' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link govuk-link--no-visited-state"
+                href="/{{version}}/approvals/add/select-payments-pilot">
+                Change<span class="govuk-visually-hidden"> simplified payments pilot</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Training details</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> training details</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Actual training start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1 Jan 2022
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Planned training end date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              3 May 2024
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total agreed apprenticeship price (excluding VAT)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £1,200
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reference (optional)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Non provided
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8">
+      Payments for this apprentice
+    </h2>
+
+    <p class="govuk-body">You can only receive payments for this apprentice if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>all the fields have been completed - either by yourself or the employer</li>
+      <li>the data matches the individual learner record (ILR) data you send us</li>
+    </ul>
+
+
+    <form action="/{{version}}/CYA/approve-details" method="post" novalidate>
+      <button class="govuk-button" data-module="govuk-button">
+        Add to cohort
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

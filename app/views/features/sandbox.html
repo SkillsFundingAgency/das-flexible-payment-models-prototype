@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/SAND" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">Sandbox</h1>
+		<p class="govuk-body">Area for research and exploring.</p>
+
+
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="col">Version</th>
+					<th class="govuk-table__header" scope="col">Description</th>
+					<th class="govuk-table__header" scope="col" colspan="2">Action</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">Audit<p>22/03/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li>Options for displaying an audit trail</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/audit/apprentice-details">Start now</a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">Apprentice CYA<p>21/03/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li>Add apprentice check your answers</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/CYA/apprentice-details">Start now</a>
+					</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+{% endblock %}
