@@ -22,7 +22,7 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<span class="govuk-caption-m"><strong
-				class="govuk-tag govuk-tag--red govuk-!-margin-bottom-2">Stopped</strong></span>
+				class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2">Live</strong></span>
 		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -54,7 +54,7 @@ href: "javascript:window.history.go(-1);"
 							Status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--red">Stopped</strong>
+							<strong class="govuk-tag govuk-tag--blue">Live</strong>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -112,11 +112,11 @@ href: "javascript:window.history.go(-1);"
 					<div class="govuk-grid-column-two-thirds">
 						<h2 class="govuk-heading-m">Apprentice details</h2>
 					</div>
-					<div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
+					<!-- <div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
 						<a id="edit-apprentice-link" href="/10005310/apprentices/JJXKDY/edit"
 							class="govuk-link govuk-body">Edit
 							apprentice</a>
-					</div>
+					</div> -->
 				</div>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -168,18 +168,18 @@ href: "javascript:window.history.go(-1);"
 							Abattoir Worker, Level: 2 (Standard)
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Version
 						</dt>
 						<dd class="govuk-summary-list__value">
 							1.0
 						</dd>
-						<dd class="govuk-summary-list__actions">
+						<!-- <dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">
 								Change<span class="govuk-visually-hidden"> version</span>
 							</a>
-						</dd>
+						</dd> -->
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -197,12 +197,17 @@ href: "javascript:window.history.go(-1);"
 							3 Jul 2020
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Total agreed apprenticeship price
 						</dt>
 						<dd class="govuk-summary-list__value">
 							£1,234
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="update-price">
+								Change<span class="govuk-visually-hidden"> total agreed apprenticeship price</span>
+							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -219,15 +224,6 @@ href: "javascript:window.history.go(-1);"
 				<h2 class="govuk-heading-m">History</h2>
 
 				<ol class="hmrc-timeline">
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship stopped</h3>
-						<p class="hmrc-timeline__byline">by Joe Bloggs</p>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">8 May
-								2021</span></time>
-						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Stopped</strong>
-						</div>
-					</li>
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship price increase</h3>
 						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">15 July

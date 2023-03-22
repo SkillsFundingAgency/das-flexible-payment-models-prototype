@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% set version = "feature/SAND/audit" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Update the total agreed apprenticeship price
+    </h1>
+    <p class="govuk-body">
+      The current total agreed apprenticeship price is currently <strong>£1,234</strong>.
+    </p>
+    <form action="/form-handler" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What is the new total agreed apprenticeship price?
+          </legend>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="cost-per-item" type="text"
+              spellcheck="false">
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="javascript:window.history.go(-1);">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
