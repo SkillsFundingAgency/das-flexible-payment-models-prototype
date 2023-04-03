@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/SAND/audit" %}
+{% set version = "feature/COP/v2" %}
 {% set pageTitle = "George Ford" %}
 
 
@@ -21,9 +21,7 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<span class="govuk-caption-m"><strong
-				class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2">Live</strong></span>
-		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
 			<h2 class="govuk-tabs__title">
@@ -57,14 +55,34 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--blue">Live</strong>
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Stop applies from
 						</dt>
 						<dd class="govuk-summary-list__value">
 							May 2021
 						</dd>
+					</div> -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Apprentice confirmation
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Confirmed
+						</dd>
 					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Simplified payments pilot
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Yes
+						</dd>
+					</div>
+				</dl>
+				<h2 class="govuk-heading-m">Overview</h2>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Employer
@@ -75,10 +93,10 @@ href: "javascript:window.history.go(-1);"
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Apprentice confirmation
+							Cohort Reference
 						</dt>
 						<dd class="govuk-summary-list__value">
-							N/A
+							MNNRLD
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -89,50 +107,27 @@ href: "javascript:window.history.go(-1);"
 							7GXEKP
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Cohort Reference
-						</dt>
-						<dd class="govuk-summary-list__value">
-							MNNRLD
-						</dd>
-					</div>
-
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Simplified payments pilot
-						</dt>
-						<dd class="govuk-summary-list__value">
-							Yes
-						</dd>
-					</div>
 				</dl>
-
 				<div class="govuk-grid-row">
 					<div class="govuk-grid-column-two-thirds">
 						<h2 class="govuk-heading-m">Apprentice details</h2>
 					</div>
-					<!-- <div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
-						<a id="edit-apprentice-link" href="/10005310/apprentices/JJXKDY/edit"
-							class="govuk-link govuk-body">Edit
-							apprentice</a>
-					</div> -->
 				</div>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-						<dt class="govuk-summary-list__key">
-							Name
-						</dt>
-						<dd class="govuk-summary-list__value">
-							George Ford
-						</dd>
-					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Unique learner number
 						</dt>
 						<dd class="govuk-summary-list__value">
 							5320150775
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							George Ford
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -152,6 +147,7 @@ href: "javascript:window.history.go(-1);"
 							1 Jan 2000
 						</dd>
 					</div>
+
 				</dl>
 			</div>
 
@@ -175,11 +171,6 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 							1.0
 						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
-								Change<span class="govuk-visually-hidden"> version</span>
-							</a>
-						</dd> -->
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -222,29 +213,78 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
 				<h2 class="govuk-heading-m">History</h2>
-
 				<ol class="hmrc-timeline">
 					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship price increase</h3>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">15 July
-								2020</span></time>
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
+						</p>
 						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
-							<p class="govuk-body govuk-body-s">Total agreed apprenticeship price updated from
-								<strong>£1,000</strong>
-								to <strong>£1,234</strong>
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
 							</p>
 						</div>
 					</li>
 					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship price increase</h3>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">8 July
-								2020</span></time>
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
 						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--orange govuk-!-margin-bottom-3">Requested</strong>
-							<p class="govuk-body govuk-body-s">Total agreed apprenticeship price updated from
-								<strong>£1,000</strong>
-								to <strong>£1,234</strong>
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--red">Declined</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£10,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
 							</p>
 						</div>
 					</li>

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% set version = "feature/SAND/audit" %}
-{% set pageTitle = "Confirm changes" %}
+{% set version = "feature/COP/v1" %}
+{% set pageTitle = "Check your changes before sending your change request" %}
 
 
 {% block header %}
@@ -23,7 +23,7 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
-		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<dl class="govuk-summary-list">
 			<div class="govuk-summary-list__row">
@@ -50,11 +50,19 @@ href: "javascript:window.history.go(-1);"
 					1 Jan 2000
 				</dd>
 			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
 		</dl>
 
 
 
-		<table class="govuk-table govuk-!-margin-top-9">
+		<table class="govuk-table govuk-!-margin-top-9 govuk-!-margin-bottom-9">
 			<caption class="govuk-table__caption govuk-table__caption--m">Proposed changes</caption>
 			<thead>
 				<tr>
@@ -72,21 +80,40 @@ href: "javascript:window.history.go(-1);"
 			</tbody>
 		</table>
 
+		<h2 class="govuk-heading-m">Now send your change request</h2>
+		<p class="govuk-body">
+			Employer approval is required for apprenticeship changes. The apprentice will be alerted to confirm their
+			details on My apprenticeship service only after approval.
+		</p>
+		<div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-warning-text__assistive">Warning</span>
+				This change will affect your payments schedule. Your current payment schedule remains in effect until
+				the changes have been approved.
+			</strong>
+		</div>
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<button class="govuk-button" data-module="govuk-button">
+				Send change request
+			</button>
+		</form>
 
-		<form method="post" action="/{{version}}/action/details-of-mismatch">
+		<!-- <form method="post" action="/{{version}}/review-changes">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group  ">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to make these changes?
+							Do you want to request this change?
 						</legend>
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
 								<input class="govuk-radios__input" id="confirmation" name="confirmation" type="radio"
 									value="yes" data-aria-controls="confirmation-reason">
 								<label class="govuk-label govuk-radios__label" for="yes">
-									Yes, change these details
+									Yes, send the request to AUTOMATION & OPTIMISATION LTD
 								</label>
 							</div>
 							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
@@ -106,7 +133,7 @@ href: "javascript:window.history.go(-1);"
 								<input value="no" type="radio" class="govuk-radios__input" id="confirmation-2"
 									name="confirmation">
 								<label class="govuk-label govuk-radios__label" for="SubmitStatusViewModel-None">
-									No, don't change these
+									No, cancel this change
 								</label>
 							</div>
 						</div>
@@ -118,7 +145,7 @@ href: "javascript:window.history.go(-1);"
 					Continue
 				</button>
 			</fieldset>
-		</form>
+		</form> -->
 	</div>
 </div>
 
