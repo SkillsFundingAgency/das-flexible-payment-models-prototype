@@ -22,58 +22,30 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Total training price</h1>
-    <form action="reason-for-update" method="post" novalidate>
-      <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--s" for="new-apprenticeship-price">
-          New total training price
-        </label>
-        <div id="new-apprenticeship-price-hint" class="govuk-hint">
-          The current total training price is £6,000
-        </div>
-        <div class="govuk-input__wrapper">
-          <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" id="new-apprenticeship-price" name="new-apprenticeship-price"
-            type="text" aria-describedby="new-apprenticeship-price-hint" value="7000">
-        </div>
-      </div>
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="effective-from-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Effective from date
+    <p class="govuk-body">
+      The total training price is the cost for the delivery of the apprenticeship programme and should not include the
+      cost for the end point assessment.
+    </p>
+    <p class="govuk-body">
+      The current total training price is £6,000.
+    </p>
+
+    <form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class=" govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What is the new total training price?
           </legend>
-          <div id="effective-from-hint" class="govuk-hint">
-            For example, 31 3 2024
+
+          <div id="apprenticeship-price-hint" class="govuk-hint">
+            The total price should not include VAT
           </div>
-          <div class="govuk-date-input" id="effective-from">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="effective-from-day">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-day"
-                  name="effective-from-day" type="text" inputmode="numeric" value="1">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="effective-from-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-month"
-                  name="effective-from-month" type="text" inputmode="numeric" value="12">
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="effective-from-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="effective-from-year"
-                  name="effective-from-year" type="text" inputmode="numeric" value="2022">
-              </div>
-            </div>
+
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
+              type="text" aria-describedby="apprenticeship-price-hint" value="7000">
           </div>
-        </fieldset>
       </div>
       <button class="govuk-button" data-module="govuk-button">
         Continue
