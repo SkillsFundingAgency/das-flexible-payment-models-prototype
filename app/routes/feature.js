@@ -35,6 +35,6 @@ router.post('/feature/COP/v3/training-provider/action/view-changes', function (r
         res.redirect('/feature/COP/v3/training-provider/withdrawal-confirmation')
     }
     else {
-        res.redirect('/feature/COP/v3/training-provider/confirmation')
+        res.redirect('/feature/COP/v3/training-provider/apprentice-details-request')
     }
 })
