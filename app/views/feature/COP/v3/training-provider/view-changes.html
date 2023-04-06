@@ -105,28 +105,28 @@ href: "javascript:window.history.go(-1);"
 			</div>
 		</dl>
 
-		<form method="post" action="/{{version}}/review-changes">
+		<form method="post" action="/{{version}}/action/view-changes">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group  ">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to undo this change?
+							Do you want to withdraw this request?
 						</legend>
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="confirmation" name="confirmation" type="radio"
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
 									value="yes">
-								<label class="govuk-label govuk-radios__label" for="yes">
-									Yes, undo this change
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, withdraw the request
 								</label>
 							</div>
 
 							<div class="govuk-radios__item">
-								<input value="no" type="radio" class="govuk-radios__input" id="confirmation-2"
-									name="confirmation">
-								<label class="govuk-label govuk-radios__label" for="SubmitStatusViewModel-None">
-									No, keep these changes
+								<input value="no" type="radio" class="govuk-radios__input" id="withdraw-2"
+									name="withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+									No, keep the request
 								</label>
 							</div>
 						</div>

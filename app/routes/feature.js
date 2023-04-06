@@ -28,3 +28,13 @@ router.post('/feature/COP/v1/action/details-of-mismatch', function (req, res) {
         res.redirect('/feature/COP/v1/apprentice-details')
     }
 })
+router.post('/feature/COP/v3/training-provider/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COP/v3/training-provider/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COP/v3/training-provider/confirmation')
+    }
+})
