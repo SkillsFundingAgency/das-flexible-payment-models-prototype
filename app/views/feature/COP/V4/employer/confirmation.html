@@ -1,0 +1,456 @@
+{% extends "layout.html" %}
+{% set version = "feature/COP/v4/employer" %}
+{% set pageTitle = "George Ford" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<h3 class="govuk-notification-banner__heading">
+					Change request sent to training provider
+				</h3>
+				<p class="govuk-body">You have made a change which needs to be approved by the training provider.</p>
+				<p class="govuk-body"><a href="view-changes" class="govuk-link">View change request</a></p>
+			</div>
+		</div>
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<div class="govuk-tabs" data-module="govuk-tabs">
+			<h2 class="govuk-tabs__title">
+				Contents
+			</h2>
+			<ul class="govuk-tabs__list">
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#change-request">
+						Change requests (1)
+					</a>
+				</li>
+				<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+					<a class="govuk-tabs__tab" href="#overview">
+						Overview
+					</a>
+				</li>
+				<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+					<a class="govuk-tabs__tab" href="#course">
+						Course details
+					</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#history">
+						History
+					</a>
+				</li>
+			</ul>
+			<div class="govuk-tabs__panel" id="overview">
+				<h2 class="govuk-heading-m">Apprentice status</h2>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--blue">Live</strong>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Apprentice confirmation
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Confirmed
+						</dd>
+					</div>
+				</dl>
+				<h2 class="govuk-heading-m">Overview</h2>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training provider
+						</dt>
+						<dd class="govuk-summary-list__value">
+							EDUC8 TRAINING (ENGLAND) LIMITED
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Cohort Reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							MNNRLD
+						</dd>
+					</div>
+				</dl>
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-two-thirds">
+						<h2 class="govuk-heading-m">Apprentice details</h2>
+					</div>
+				</div>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Unique learner number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							5320150775
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							George Ford
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							georgeford@gmail.com<br>
+							<a href="#" class="govuk-link">Resend invitation email</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Date of birth
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1 Jan 2000
+						</dd>
+					</div>
+
+				</dl>
+			</div>
+
+			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
+				<h2 class="govuk-heading-m">Course</h2>
+
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Apprenticeship training course
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Abattoir Worker, Level: 2 (Standard)
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Version
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1.0
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Actual training start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							12 Dec 2018
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Planned training end date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							3 Jul 2020
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total agreed apprenticeship price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£1,234
+							<strong class="govuk-tag govuk-tag--yellow">Change request</strong>
+
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="view-changes">
+								View request<span class="govuk-visually-hidden"> for total agreed apprenticeship
+									price</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Your reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Nothing provided
+						</dd>
+					</div>
+				</dl>
+			</div>
+
+			<div class="govuk-tabs__panel" id="change-request">
+				<h2 class="govuk-heading-m">Change requests</h2>
+
+				<div class="govuk-summary-card">
+					<div class="govuk-summary-card__title-wrapper">
+						<h2 class="govuk-summary-card__title">Total agreed apprenticeship price</h2>
+						<ul class="govuk-summary-card__actions">
+							<li class="govuk-summary-card__action"> <a class="govuk-link" href="view-changes">
+									View request<span class="govuk-visually-hidden"> total agreed apprenticeship
+										price</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="govuk-summary-card__content">
+						<dl class="govuk-summary-list">
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request status
+								</dt>
+								<dd class="govuk-summary-list__value">
+									<strong class="govuk-tag govuk-tag--yellow">Pending provider
+										review</strong>
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request date
+								</dt>
+								<dd class="govuk-summary-list__value">
+									15 Feb 2023
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Current
+								</dt>
+								<dd class="govuk-summary-list__value">
+									£1,234
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request
+								</dt>
+								<dd class="govuk-summary-list__value">
+									£1,500
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Effective from date
+								</dt>
+								<dd class="govuk-summary-list__value">
+									From 1 Dec 2022 onwards
+								</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+
+				<div class="govuk-summary-card">
+					<div class="govuk-summary-card__title-wrapper">
+						<h2 class="govuk-summary-card__title">Start date</h2>
+						<ul class="govuk-summary-card__actions">
+							<li class="govuk-summary-card__action"> <a class="govuk-link" href="view-changes">
+									View request<span class="govuk-visually-hidden"> total agreed apprenticeship
+										price</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="govuk-summary-card__content">
+						<dl class="govuk-summary-list">
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request status
+								</dt>
+								<dd class="govuk-summary-list__value">
+									<strong class="govuk-tag govuk-tag--purple">Pending your
+										review</strong>
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request date
+								</dt>
+								<dd class="govuk-summary-list__value">
+									15 Feb 2023
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Current
+								</dt>
+								<dd class="govuk-summary-list__value">
+									17 April 2023
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Request
+								</dt>
+								<dd class="govuk-summary-list__value">
+									21 April 2023
+								</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
+				<h2 class="govuk-heading-m">History</h2>
+				<ol class="hmrc-timeline">
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2023-02-15">15 February 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,234</b>
+								to
+								<b>£1,500</b> effective from <b><time datetime="2020-07-22">1 December 2022</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--red">Declined</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£10,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total agreed apprenticeship price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total agreed apprenticeship price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£1,234</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">28 June
+								2020</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Started</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship paused</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">23 June
+								2020</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Paused</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship agreed</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">8
+								September
+								2019</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
+							<p class="govuk-body govuk-body-s">Apprenticeship agreed
+							</p>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
