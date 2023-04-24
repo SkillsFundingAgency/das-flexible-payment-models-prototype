@@ -104,6 +104,13 @@ href: "javascript:window.history.go(-1);"
 			Employer approval is required for apprenticeship changes. The apprentice will be alerted to confirm their
 			details on My apprenticeship service only after approval.
 		</p>
+
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<button class="govuk-button" data-module="govuk-button">
+				Send change request
+			</button>
+		</form>
 		<div class="govuk-warning-text">
 			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
 			<strong class="govuk-warning-text__text">
@@ -112,13 +119,6 @@ href: "javascript:window.history.go(-1);"
 				the changes have been approved.
 			</strong>
 		</div>
-		<form action="confirmation" method="post" novalidate>
-			<input type="hidden" name="answers-checked" value="true">
-			<button class="govuk-button" data-module="govuk-button">
-				Send change request
-			</button>
-		</form>
-
 	</div>
 </div>
 

@@ -112,7 +112,7 @@ href: "javascript:window.history.go(-1);"
 			<tbody>
 				<tr>
 					<td class="govuk-table__cell">From 1 Dec 2022 onwards</td>
-					<td class="govuk-table__cell">£1,500</td>
+					<td class="govuk-table__cell">£{{ data['new-apprenticeship-price'] or '1,500'}}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -122,40 +122,55 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
-		<form method="post" action="/{{version}}/review-changes">
+		<form method="post" action="/{{version}}/action/view-changes">
 			<fieldset class="govuk-fieldset">
 
-				<div class="govuk-form-group  ">
+
+
+
+				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to undo this change?
+							Do you want to withdraw this request?
 						</legend>
+
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="confirmation" name="confirmation" type="radio"
-									value="yes">
-								<label class="govuk-label govuk-radios__label" for="yes">
-									Yes, undo this change
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, withdraw the request
 								</label>
 							</div>
-
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to withdraw this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
 							<div class="govuk-radios__item">
-								<input value="no" type="radio" class="govuk-radios__input" id="confirmation-2"
-									name="confirmation">
-								<label class="govuk-label govuk-radios__label" for="SubmitStatusViewModel-None">
-									No, keep these changes
+								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+									No, keep the request
 								</label>
 							</div>
-						</div>
 
+						</div>
 					</fieldset>
 				</div>
-
 				<button class="govuk-button" type="submit" data-module="govuk-button">
 					Continue
 				</button>
 			</fieldset>
 		</form>
+
+
+
 	</div>
 </div>
 
