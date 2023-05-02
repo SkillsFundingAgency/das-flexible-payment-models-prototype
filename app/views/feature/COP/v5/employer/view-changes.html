@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+{% set version = "feature/COP/v4/employer" %}
+{% set pageTitle = "View change request" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Request status
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Pending provider review</strong>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Unique learner number
+				</dt>
+				<dd class="govuk-summary-list__value">
+					5320150775
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Date of birth
+				</dt>
+				<dd class="govuk-summary-list__value">
+					1 Jan 2000
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Training provider
+				</dt>
+				<dd class="govuk-summary-list__value">
+					EDUC8 TRAINING (ENGLAND) LIMITED
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Change request</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for request
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Agreed with Julia on 14 Jan, that you will be increasing the price as part of the updates to all
+					apprentices effective of the 2024-2025 academic year.
+				</dd>
+			</div>
+		</dl>
+	</div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+	<div class="govuk-grid-column-one-half">
+		<table class="govuk-table">
+			<caption class="govuk-table__caption govuk-table__caption--m">Current</caption>
+			<thead>
+				<tr>
+					<th scope="col" class="govuk-table__header">Effective from date</th>
+					<th scope="col" class="govuk-table__header">Total apprenticeship <br>training price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="govuk-table__cell">Current price</td>
+					<td class="govuk-table__cell">£1,234</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="govuk-grid-column-one-half">
+		<table class="govuk-table">
+			<caption class="govuk-table__caption govuk-table__caption--m">Requested</caption>
+			<thead>
+				<tr>
+					<th scope="col" class="govuk-table__header">Effective from date</th>
+					<th scope="col" class="govuk-table__header">Total apprenticeship <br>training price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="govuk-table__cell">From 1 Dec 2022 onwards</td>
+					<td class="govuk-table__cell">£{{ data['new-apprenticeship-price'] or '1,500'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form method="post" action="/{{version}}/action/view-changes">
+			<fieldset class="govuk-fieldset">
+
+
+
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to withdraw this request?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, withdraw the request
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to withdraw this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+									No, keep the request
+								</label>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+		</form>
+
+
+
+	</div>
+</div>
+
+
+{% endblock %}
