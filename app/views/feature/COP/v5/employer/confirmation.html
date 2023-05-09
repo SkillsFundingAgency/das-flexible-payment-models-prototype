@@ -447,6 +447,11 @@ href: "javascript:window.history.go(-1);"
 				</ol>
 			</div>
 		</div>
+		{% from "govuk/components/button/macro.njk" import govukButton %}
+
+		{{ govukButton({
+		text: "Review amendments"
+		}) }}
 	</div>
 </div>
 
