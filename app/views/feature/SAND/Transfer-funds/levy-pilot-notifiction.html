@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Choose organisation" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  <a href="/employer/{{version}}/apprentice/" class="govuk-back-link">Back to Apprentices</a>
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Do you want to use transfer funds to pay fo this training?</h1>
+
+        <form action="/employer/{{version}}/apprentice/add/provider-details" method="post" novalidate>
+
+          <div class="govuk-form-group  ">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item" id="radio-item-legal-entity-code">
+                  <input class="govuk-radios__input" id="LegalEntityId" name="LegalEntityId" type="radio" value="">
+                  <label class="govuk-label govuk-radios__label" for="LegalEntityId">
+                    Yes, I will use transfer funds from Coventry City Council_Levy Payer
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Please note: This apprentice will not be placed into the pilot if you transfer the funds.
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item" id="radio-item-legal-entity-code">
+                  <input class="govuk-radios__input" id="LegalEntityId_2" name="LegalEntityId" type="radio" value="">
+                  <label class="govuk-label govuk-radios__label" for="LegalEntityId_2">
+                    No, I don't want to use transfer funds
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <button type="submit" class="govuk-button" id="submit-legal-entity">Continue</button>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
+
+{% endblock %}
