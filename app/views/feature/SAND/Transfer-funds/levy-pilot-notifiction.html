@@ -1,49 +1,22 @@
 {% extends "layout.html" %}
-{% set version = "v1" %}
-{% set pageTitle = "Choose organisation" %}
-
-{% block pageTitle %}
-{{pageTitle}}
-{% endblock %}
+{% set version = "feature/COP/v3/training-provider" %}
+{% set pageTitle = "George Ford" %}
 
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/employer-account-header.html" %}
-<nav class="das-navigation">
-  <div class="govuk-width-container">
-    <ul class="das-navigation__list ">
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/{{version}}/index">Home</a>
-      </li>
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
-      </li>
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
-      </li>
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current"
-          href="/employer/{{version}}/apprentice/">Apprentices</a>
-      </li>
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
-      </li>
-      <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
-      </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
-          href="/employer/{{version}}/#">More</a>
-        <ul class="das-navigation__priority-list govuk-visually-hidden">
-          <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
-{% block main %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container">
@@ -90,7 +63,5 @@
 
   </main>
 </div>
-
-{% endblock %}
 
 {% endblock %}
