@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% set version = "feature/COP/v3/training-provider" %}
+{% set pageTitle = "levy-pilot-notification" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">Do you want to use transfer funds to pay fo this training?</h1>
+
+        <form action="/employer/{{version}}/apprentice/add/provider-details" method="post" novalidate>
+
+          <div class="govuk-form-group  ">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-radios">
+                <div class="govuk-radios__item" id="radio-item-legal-entity-code">
+                  <input class="govuk-radios__input" id="LegalEntityId" name="LegalEntityId" type="radio" value="">
+                  <label class="govuk-label govuk-radios__label" for="LegalEntityId">
+                    Yes, I will use transfer funds from Coventry City Council_Levy Payer
+                  </label>
+                  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                    Please note: This apprentice will not be placed into the pilot if you transfer the funds.
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item" id="radio-item-legal-entity-code">
+                  <input class="govuk-radios__input" id="LegalEntityId_2" name="LegalEntityId" type="radio" value="">
+                  <label class="govuk-label govuk-radios__label" for="LegalEntityId_2">
+                    No, I don't want to use transfer funds
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <button type="submit" class="govuk-button" id="submit-legal-entity">Continue</button>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+{% endblock %}
