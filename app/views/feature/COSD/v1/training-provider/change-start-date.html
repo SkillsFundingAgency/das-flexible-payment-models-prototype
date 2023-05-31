@@ -26,7 +26,7 @@ href: "javascript:window.history.go(-1);"
       The current training date is 12 Dec 2018.
     </p>
 
-    <form action="reason-for-change-start-date" method="post" novalidate class="govuk-!-margin-top-7">
+    <form action="/{{version}}/change-start-date" method="post" novalidate class="govuk-!-margin-top-7">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="effective-from-hint">
@@ -57,23 +57,23 @@ href: "javascript:window.history.go(-1);"
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="effective-from-year">
+                <label class="govuk-label govuk-date-input__label" for="EffectiveFromYear">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="effective-from-year"
-                  name="effective-from-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="EffectiveFromYear"
+                  name="EffectiveFromYear" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
+          <br>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
         </fieldset>
       </div>
-      <br>
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
+
+
     </form>
-
-
 
   </div>
 </div>

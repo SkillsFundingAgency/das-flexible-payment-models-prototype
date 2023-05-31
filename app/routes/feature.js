@@ -81,4 +81,48 @@ router.post('/feature/COP/v5/employer/action/view-changes', function (req, res) 
 })
 
 
+router.post('/feature/COSD/v1/training-provider/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COSD/v1/training-provider/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COSD/v1/training-provider/apprentice-details-request')
+    }
+})
+
+router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COST/v1/employer/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COST/v1/employer/apprentice-details-request')
+    }
+})
+
+router.post('/feature/COSD/v1/training-provider/change-start-date', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/COSD/v1/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/COSD/v1/training-provider/reason-for-change-start-date')
+    }
+})
+
+router.post('/feature/COSD/v1/training-provider/change-start-date-error', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/COSD/v1/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/COSD/v1/training-provider/reason-for-change-start-date')
+    }
+})
+
 
