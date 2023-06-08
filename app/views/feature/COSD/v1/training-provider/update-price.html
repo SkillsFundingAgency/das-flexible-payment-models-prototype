@@ -21,24 +21,43 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Total training price</h1>
-    <p class="govuk-body">
-      The total training price is the cost for the delivery of the apprenticeship programme and should not include the
-      cost for the end point assessment.
-    </p>
-    <p class="govuk-body">
-      The current total training price is £6,000.
-    </p>
+    <h1 class="govuk-heading-l">Total Price</h1>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why do I need to update both training and assesment price?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      You might only need to update one price, in which case please re-enter the current price to the relevent section. There may be times when updated the training price would mean the total price will exceed the funding band, in which case you might need to amend the assesment price as well. 
+    </div>
+  </details>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        What happens if the new price exceeds the funding band?
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      If the true cost of delivery exceeds the funding band maximum (before any deductions for prior learning have been
+      made),
+      the provider must agree off-line (outside of the ILR and apprenticeship service) how the employer will pay this
+      difference. We do not need to know about the amount of this difference and VAT can be charged on this amount. This
+      difference must not be funded from the apprenticeship service account or co-investment.
+    </div>
+  </details>
 
     <form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            What is the new total training price?
+            What is the new training price?
           </legend>
 
           <div id="apprenticeship-price-hint" class="govuk-hint">
-            The total price should not include VAT. <br> <br> Total training price must include pence, like 123.45 or 5000.00.
+            The total price should not include VAT. <br> <br> The current training price is £6,000.
           </div>
 
           <div class="govuk-input__wrapper">
@@ -46,6 +65,22 @@ href: "javascript:window.history.go(-1);"
             <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
               type="text" aria-describedby="apprenticeship-price-hint">
           </div>
+          <br><br><br>
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              What is the new assessment price?
+
+            </legend>
+
+            <div id="apprenticeship-price-hint" class="govuk-hint">
+              The total price should not include VAT. <br> <br> The current assessment price is £2,500.
+            </div>
+
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true">£</div>
+              <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
+                type="text" aria-describedby="apprenticeship-price-hint">
+            </div>
       </div>
       <button class="govuk-button" data-module="govuk-button">
         Continue
