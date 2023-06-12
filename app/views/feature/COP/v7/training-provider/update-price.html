@@ -23,40 +23,40 @@ href: "javascript:window.history.go(-1);"
 
     <h1 class="govuk-heading-l">Total Price</h1>
 
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Current training price
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £6,000
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Current assessment price
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £2,500
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Total cost
-    </dt>
-    <dd class="govuk-summary-list__value">
-      £8,500
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Funding band maximum
-    </dt>
-    <dd class="govuk-summary-list__value">
-      <p class="govuk-body">£9,000</p>
-    </dd>
-  </div>
-</dl>  
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current training price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £6,000
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current assessment price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,500
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £8,500
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Funding band maximum
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">£9,000</p>
+        </dd>
+      </div>
+    </dl>
     <form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -65,7 +65,7 @@ href: "javascript:window.history.go(-1);"
           </legend>
 
           <div id="apprenticeship-price-hint" class="govuk-hint">
-            The total price should not include VAT.  
+            The total price should not include VAT.
           </div>
 
           <div class="govuk-input__wrapper">
@@ -81,7 +81,7 @@ href: "javascript:window.history.go(-1);"
             </legend>
 
             <div id="apprenticeship-price-hint" class="govuk-hint">
-              The total price should not include VAT. 
+              The total price should not include VAT.
             </div>
 
             <div class="govuk-input__wrapper">
@@ -92,9 +92,9 @@ href: "javascript:window.history.go(-1);"
       </div>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              What date is this valid from?
-            </legend>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What date is this valid from?
+          </legend>
           <div id="passport-valid-from-hint" class="govuk-hint">
             For example, 27 3 2007
           </div>
@@ -104,8 +104,9 @@ href: "javascript:window.history.go(-1);"
                 <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-day">
                   Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="apprenticeship-price-valid-from-day"
-                  name="passport-valid-from-day" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-day" name="passport-valid-from-day" type="text"
+                  inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -113,8 +114,9 @@ href: "javascript:window.history.go(-1);"
                 <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-month">
                   Month
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="apprenticeship-price-valid-from-month"
-                  name="apprenticeship-price-valid-from-month" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
+                  inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -122,8 +124,9 @@ href: "javascript:window.history.go(-1);"
                 <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-year">
                   Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="apprenticeship-price-valid-from-year"
-                  name="apprenticeship-price-valid-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-year" type="text"
+                  inputmode="numeric">
               </div>
             </div>
           </div>
@@ -134,22 +137,22 @@ href: "javascript:window.history.go(-1);"
         Continue
       </button>
     </form>
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        What happens if the new price exceeds the funding band?
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      If the true cost of delivery exceeds the funding band maximum (before any deductions for prior learning have
-      been
-      made),
-      the provider must agree off-line (outside of the ILR and apprenticeship service) how the employer will pay this
-      difference. We do not need to know about the amount of this difference and VAT can be charged on this amount.
-      This
-      difference must not be funded from the apprenticeship service account or co-investment.
-    </div>
-  </details>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What happens if the new price exceeds the funding band?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        If the true cost of delivery exceeds the funding band maximum (before any deductions for prior learning have
+        been
+        made),
+        the provider must agree off-line (outside of the ILR and apprenticeship service) how the employer will pay this
+        difference. We do not need to know about the amount of this difference and VAT can be charged on this amount.
+        This
+        difference must not be funded from the apprenticeship service account or co-investment.
+      </div>
+    </details>
 
 
   </div>
