@@ -125,6 +125,28 @@ router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res)
     }
 })
 
+router.post('/feature/COSD/v1/training-provider/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw-2']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COSD/v1/training-provider/change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COSD/v1/training-provider/apprentice-details-request')
+    }
+})
+
+router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw-2']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COST/v1/employer/change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COST/v1/employer/apprentice-details-request')
+    }
+})
+
 router.post('/feature/COSD/v1/training-provider/change-start-date', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 

@@ -72,26 +72,25 @@ href: "javascript:window.history.go(-1);"
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Request date
+					Previous training start date
 				</dt>
 				<dd class="govuk-summary-list__value">
-					15 Feb 2023
+					12 Dec 2018
+				</dd>
+				<dd class="govuk-summary-list__actions">
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Current training start date
+					Updated training start date
 				</dt>
 				<dd class="govuk-summary-list__value">
-					3 Jul 2020
+					{{ data['confirm-change-start-date'] or '12 Jan 2019'}}
 				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Request training start date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					1 Feb 2023
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
+						Change<span class="govuk-visually-hidden"> total training price</span>
+					</a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -99,7 +98,12 @@ href: "javascript:window.history.go(-1);"
 					Reason for request
 				</dt>
 				<dd class="govuk-summary-list__value">
-						Apprentice had a delayed start to employment and training.
+					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and training.'}}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change-start-date">
+						Change<span class="govuk-visually-hidden"> reason for request</span>
+					</a>
 				</dd>
 			</div>
 		</dl>
@@ -114,7 +118,7 @@ href: "javascript:window.history.go(-1);"
 
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
 									value="yes" data-aria-controls="conditional-withdraw">
 								<label class="govuk-label govuk-radios__label" for="withdraw">
 									Yes, withdraw the request
