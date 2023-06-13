@@ -72,37 +72,50 @@ href: "javascript:window.history.go(-1);"
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Request date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					15 Feb 2023
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Current
+					Old training price
 				</dt>
 				<dd class="govuk-summary-list__value">
 					£6,000
 				</dd>
+				<dd class="govuk-summary-list__actions">
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Request
+					New training price
 				</dt>
 				<dd class="govuk-summary-list__value">
 					£7,000
 				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> training price</span>
+					</a>
+				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Reason for request
+					Reason for change
 				</dt>
 				<dd class="govuk-summary-list__value">
-					Agreed with Julia on 14 Jan, we will be increasing the price as part of the updates to all
-					apprentices effective of the 2024-2025 academic year.
+					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
+					with the Julia.'}}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-update">
+						Change<span class="govuk-visually-hidden"> reason for request</span>
+					</a>
 				</dd>
 			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Updated total price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£9,500
+				</dd>
+			</div>
+		</dl>
 		</dl>
 		<form method="post" action="/{{version}}/action/view-changes">
 			<fieldset class="govuk-fieldset">

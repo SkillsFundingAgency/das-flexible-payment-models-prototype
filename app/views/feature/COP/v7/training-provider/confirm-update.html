@@ -22,9 +22,7 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
-
 		<h2 class="govuk-heading-m">Apprenticeship details</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
@@ -76,30 +74,38 @@ href: "javascript:window.history.go(-1);"
 				</dd>
 			</div>
 		</dl>
-
 		<h2 class="govuk-heading-m">Change request</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Total training price
+					Old training price
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£{{ data['apprenticeship-price'] or '7,000'}}
+					£6,000
+				</dd>
+				<dd class="govuk-summary-list__actions">
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					New training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£7,000
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
-						Change<span class="govuk-visually-hidden"> total training price</span>
+						Change<span class="govuk-visually-hidden"> training price</span>
 					</a>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Reason for request
+					Reason for change
 				</dt>
 				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-update'] or 'Agreed with Julia on 14 Jan, we will be increasing the price as
-					part of the updates to all
-					apprentices effective of the 2024-2025 academic year.'}}
+					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
+					with the Julia.'}}
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-update">
@@ -107,30 +113,33 @@ href: "javascript:window.history.go(-1);"
 					</a>
 				</dd>
 			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Updated total price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£9,500
+				</dd>
+			</div>
 		</dl>
 	</div>
 </div>
-
-
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
 		<h2 class="govuk-heading-m">Now send your change request</h2>
 		<p class="govuk-body">
-			Employer approval is required for apprenticeship changes. The apprentice will be alerted to confirm their
-			details on My apprenticeship service only after approval.
+			Your change request will be sent to the employer
 		</p>
 
 		<div class="govuk-inset-text">
-			This change will affect your payments schedule. Your current payment schedule remains in effect until
-			the changes have been approved.</div>
+			Your payment schedule will not change until the employer approves this change request</div>
 		<form action="confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<button class="govuk-button" data-module="govuk-button">
 				Send change request
 			</button>
 		</form>
-
 	</div>
 </div>
 

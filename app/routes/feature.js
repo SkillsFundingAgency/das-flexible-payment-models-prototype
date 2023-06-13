@@ -81,6 +81,28 @@ router.post('/feature/COP/v5/employer/action/view-changes', function (req, res) 
 })
 
 
+router.post('/feature/COP/v7/training-provider/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COP/v7/training-provider/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COP/v7/training-provider/apprentice-details-request')
+    }
+})
+
+router.post('/feature/COP/v7/employer/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/COP/v7/employer/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/COP/v7/employer/apprentice-details-request')
+    }
+})
+
 router.post('/feature/COSD/v1/training-provider/action/view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
 
