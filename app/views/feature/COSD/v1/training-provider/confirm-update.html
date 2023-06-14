@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "feature/COSD/v1/training-provider" %}
-{% set pageTitle = "Check your changes before sending your change request" %}
+{% set pageTitle = "Check your changes before sending to the employer" %}
 
 
 {% block header %}
@@ -114,29 +114,37 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Updated total price
+					End point assessment price
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£9,500
+					£2,500
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> training price</span>
+					</a>
 				</dd>
 			</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Updated total price
+					</dt>
+					<dd class="govuk-summary-list__value">
+						£9,500
+					</dd>
+				</div>
 		</dl>
 	</div>
 </div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-
-		<h2 class="govuk-heading-m">Now send your change request</h2>
-		<p class="govuk-body">
-			Your change request will be sent to the employer
-		</p>
-
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
 		<div class="govuk-inset-text">
-			Your payment schedule will not change until the employer approves this change request</div>
+			Your payment schedule will not change until the employer approves this change request.</div>
 		<form action="confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<button class="govuk-button" data-module="govuk-button">
-				Send change request
+				Send
 			</button>
 		</form>
 	</div>

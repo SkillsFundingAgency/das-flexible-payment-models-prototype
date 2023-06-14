@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "feature/COSD/v1/training-provider" %}
-{% set pageTitle = "View change request" %}
+{% set pageTitle = "View change of start date" %}
 
 
 {% block header %}
@@ -107,7 +107,7 @@ href: "javascript:window.history.go(-1);"
 				</dd>
 			</div>
 		</dl>
-		<form method="post" action="/{{version}}/action/view-changes">
+		<form method="post" action="/{{version}}/action/view-start-date-change">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group">
@@ -118,7 +118,7 @@ href: "javascript:window.history.go(-1);"
 
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
 									value="yes" data-aria-controls="conditional-withdraw">
 								<label class="govuk-label govuk-radios__label" for="withdraw">
 									Yes, withdraw the request
@@ -135,9 +135,9 @@ href: "javascript:window.history.go(-1);"
 								</div>
 							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
 									value="no">
-								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
 									No, keep the request
 								</label>
 							</div>

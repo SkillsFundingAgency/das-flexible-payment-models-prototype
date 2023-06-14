@@ -18,25 +18,8 @@ href: "javascript:window.history.go(-1);"
 
 {% endblock %}
 
-{% block content %}
-<div class="govuk-grid-row">
+{% block content %}<div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-			<div class="govuk-notification-banner__header">
-				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
-				</h2>
-			</div>
-			<div class="govuk-notification-banner__content">
-				<h3 class="govuk-notification-banner__heading">
-					Change of start date withdrawn
-				</h3>
-				<p class="govuk-body">Your change of start date has been withdraw. The employer has been notified of this
-					update.</p>
-			</div>
-		</div>
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -85,7 +68,6 @@ href: "javascript:window.history.go(-1);"
 				</dl>
 				<h2 class="govuk-heading-m">Overview</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Employer
@@ -173,16 +155,17 @@ href: "javascript:window.history.go(-1);"
 							1.0
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row ">
 						<dt class="govuk-summary-list__key">
 							Actual training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							12 Dec 2018
+							12 Jan 2019 <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="change-start-date">
-								Change<span class="govuk-visually-hidden"> actual training start date</span>
+							<a class="govuk-link" href="change-start-date-view-changes">
+								View request<span class="govuk-visually-hidden">for change of total training
+									price</span>
 							</a>
 						</dd>
 					</div>
@@ -205,13 +188,15 @@ href: "javascript:window.history.go(-1);"
 				</dl>
 				<h2 class="govuk-heading-m">Price</h2>
 				<dl class="govuk-summary-list">
-				
+
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Training price
 						</dt>
 						<dd class="govuk-summary-list__value">
 							£6,000
+						</dd>
+						<dd class="govuk-summary-list__actions">
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -222,10 +207,10 @@ href: "javascript:window.history.go(-1);"
 							£2,500
 						</dd>
 						<!-- <dd class="govuk-summary-list__actions">
-																				<a class="govuk-link" href="update-price">
-																					Change<span class="govuk-visually-hidden"> total assessment price</span>
-																				</a>
-																			</dd> -->
+																					<a class="govuk-link" href="update-price">
+																						Change<span class="govuk-visually-hidden"> total assessment price</span>
+																					</a>
+																				</dd> -->
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -240,6 +225,7 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
+				</dl>
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
 			</div>
@@ -251,33 +237,16 @@ href: "javascript:window.history.go(-1);"
 							increase
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--grey">Withdrawn</strong> by
-							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2023-02-15">15 February 2023</time>
+							<strong class="govuk-tag govuk-tag--yellow">Pending</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2023-02-15">15 Feb 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							<p class="govuk-body">
 								Total training start date from
 								<b>12 Dec 2018</b>
 								to
-								<b>12 Jan 2019 (withdrawn)</b>
+								<b>12 Jan 2019</b>
 							</p>
-							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
-								<summary class="govuk-details__summary">
-									<span class="govuk-details__summary-text">
-										More details
-									</span>
-								</summary>
-								<div class="govuk-details__text">
-									<ul class="govuk-list">
-										<li>
-											<strong class="govuk-tag govuk-tag--yellow">Date change
-												requested</strong> by
-											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2023-02-15">15 Feb
-												2023</time>
-										</li>
-									</ul>
-								</div>
-							</details>
 						</div>
 					</li>
 					<li class="hmrc-timeline__event">
@@ -350,7 +319,6 @@ href: "javascript:window.history.go(-1);"
 							</details>
 						</div>
 					</li>
-
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
 						<time class="hmrc-timeline__event-meta" datetime="2020-07-15">28 June
@@ -379,150 +347,7 @@ href: "javascript:window.history.go(-1);"
 					</li>
 				</ol>
 			</div>
-
-			<!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
-				<h2 class="govuk-heading-m">History</h2>
-				<ol class="hmrc-timeline">
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
-							increase
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--grey">Withdrawn</strong> by
-							TRAINING PROVIDER NAME on <time datetime="2023-02-15">15 February 2023</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Total training price
-								updated from
-								<b>£6,000</b>
-								to
-								<b>£7,000</b> effective from <b><time datetime="2020-07-22">1 December 2022</time></b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
-							increase
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--yellow">Change
-								requested</strong> by
-							TRAINING PROVIDER NAME on <time datetime="2023-02-15">15 February 2023</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Total training price
-								updated from
-								<b>£6,000</b>
-								to
-								<b>£7,000</b> effective from <b><time datetime="2020-07-22">1 December 2022</time></b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Start date update
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Start date
-								updated from
-								<b>4 October 2022</b>
-								to
-								<b>14 October 2022</b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Start date update
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--yellow">Change
-								requested</strong> by
-							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Start date
-								updated from
-								<b>4 October 2022</b>
-								to
-								<b>14 October 2022</b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
-							increase
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--red">Declined</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Total training price
-								updated from
-								<b>£5,500</b>
-								to
-								<b>£7,300</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
-							increase
-						</h3>
-						<p class="govuk-body-s govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--yellow">Change
-								requested</strong> by
-							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
-						</p>
-						<div class="hmrc-timeline__event-content">
-							<p class="govuk-body govuk-body-s">
-								Total training price
-								updated from
-								<b>£5,500</b>
-								to
-								<b>£7,300</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
-							</p>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">28 June
-								2020</span></time>
-						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Started</strong>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship paused</h3>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">23 June
-								2020</span></time>
-						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Paused</strong>
-						</div>
-					</li>
-					<li class="hmrc-timeline__event">
-						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship agreed</h3>
-						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">8
-								September
-								2019</span></time>
-						<div class="hmrc-timeline__event-content">
-							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
-							<p class="govuk-body govuk-body-s">Apprenticeship agreed
-							</p>
-						</div>
-					</li>
-				</ol>
-			</div> -->
 		</div>
-	</div>
-</div>
 
-{% endblock %}
+
+		{% endblock %}

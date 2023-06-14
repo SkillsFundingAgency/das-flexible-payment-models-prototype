@@ -125,25 +125,25 @@ router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res)
     }
 })
 
-router.post('/feature/COSD/v1/training-provider/action/view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw-2']
+router.post('/feature/COSD/v1/training-provider/action/view-start-date-change', function (req, res) {
+    var withdraw = req.session.data['withdraw']
 
     if (withdraw == "yes") {
         res.redirect('/feature/COSD/v1/training-provider/change-start-date-withdrawal-confirmation')
     }
     else {
-        res.redirect('/feature/COSD/v1/training-provider/apprentice-details-request')
+        res.redirect('/feature/COSD/v1/training-provider/change-start-date-request-apprentice-details')
     }
 })
 
-router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw-2']
+router.post('/feature/COSD/v1/employer/action/view-start-date-change', function (req, res) {
+    var withdraw = req.session.data['withdraw']
 
     if (withdraw == "yes") {
         res.redirect('/feature/COST/v1/employer/change-start-date-withdrawal-confirmation')
     }
     else {
-        res.redirect('/feature/COST/v1/employer/apprentice-details-request')
+        res.redirect('/feature/COST/v1/employer/change-start-date-request-apprentice-details')
     }
 })
 

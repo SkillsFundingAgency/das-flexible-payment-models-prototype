@@ -20,8 +20,10 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Total price</h1>
-
+    <h1 class="govuk-heading-l">Change the training price</h1>
+<div id="apprenticeship-price-hint" class="govuk-hint">
+VAT does not apply for these prices.
+</div>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -63,17 +65,37 @@ href: "javascript:window.history.go(-1);"
           <p class="govuk-body">12 Dec 2018</p>
         </dd>
     </dl>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If the total price is higher than the funding band maximum?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        The apprenticeship service will only contribute the funding band maximum towards the cost of this
+        apprenticeship.
+        <br><br>
+        Any cost beyond this figure must be worked out between you and the employer.
+        <br><br>
+        You don’t need to tell us about any money above the funding band maximum the employer is paying you.
+        <br><br>
+        To continue, set the total price of this apprentice’s training to be the same as the maximum funding band.
+        <a class="govuk-link" href="https://www.gov.uk/guidance/apprenticeship-funding-rules">
+          Learn more in the apprenticeship funding rules<span class="govuk-visually-hidden">apprenticeship funding
+            rules</span>
+        </a>
+      </div>
+    </details>
+    <h2 class="govuk-heading-l">Change the prices</h2>
     <form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            What is the new training price?
+            Training price
           </legend>
-
           <div id="apprenticeship-price-hint" class="govuk-hint">
             Do not include VAT.
           </div>
-
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
             <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
@@ -82,7 +104,7 @@ href: "javascript:window.history.go(-1);"
           <br><br><br>
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              What is the new end point assessment price?
+              Assessment price
             </legend>
             <div id="apprenticeship-price-hint" class="govuk-hint">
               Do not include VAT.
@@ -135,27 +157,7 @@ href: "javascript:window.history.go(-1);"
           </div>
         </fieldset>
       </div>
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            If the total price is higher than the funding band maximum?
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          The apprenticeship service will only contribute the funding band maximum towards the cost of this
-          apprenticeship.
-          <br><br>
-          Any cost beyond this figure must be worked out between you and the employer.
-          <br><br>
-          You don’t need to tell us about any money above the funding band maximum the employer is paying you.
-          <br><br>
-          To continue, set the total price of this apprentice’s training to be the same as the maximum funding band.
-          <a class="govuk-link" href="https://www.gov.uk/guidance/apprenticeship-funding-rules">
-            Learn more in the apprenticeship funding rules<span class="govuk-visually-hidden">apprenticeship funding
-              rules</span>
-          </a>
-        </div>
-      </details>
+      
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
