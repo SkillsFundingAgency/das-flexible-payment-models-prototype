@@ -12,7 +12,8 @@
         <a class="das-navigation__link" href="/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current" href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
@@ -23,7 +24,8 @@
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
       </li>
-      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button" href="/{{version}}/#">More</a>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
             <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
@@ -38,8 +40,8 @@
 {% block beforeContent %}
 
 {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.go(-1);"
+text: "Back",
+href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
@@ -120,15 +122,18 @@
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
-          <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name" value="{{ data['FirstName'] }}">
+          <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
+            value="{{ data['FirstName'] }}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
-          <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name" value="{{ data['LastName'] }}">
+          <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
+            value="{{ data['LastName'] }}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
-          <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email" value="{{ data['Email'] }}">
+          <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
+            value="{{ data['Email'] }}">
         </div>
         <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -137,7 +142,8 @@
             </span>
           </summary>
           <div class="govuk-details__text">
-            Your apprentice will receive an email alert inviting them to the My apprenticeship service. On the service, your apprentice will be able to:
+            Your apprentice will receive an email alert inviting them to the My apprenticeship service. On the service,
+            your apprentice will be able to:
             <ul class="govuk-list govuk-list--bullet">
               <li>review and confirm their apprenticeship details</li>
               <li>understand the roles and responsibilities of an apprentice, an employer and a training provider</li>
@@ -155,24 +161,28 @@
           <div id="dob-hint" class="govuk-hint">
             For example, 27 3 2001
           </div>
-          <span class="field-validation-valid govuk-error-message" data-valmsg-for="DateOfBirth" data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
+          <span class="field-validation-valid govuk-error-message" data-valmsg-for="DateOfBirth"
+            data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
               </div>
             </div>
           </div>
@@ -196,13 +206,15 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="StartMonth" name="StartMonth" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartMonth" name="StartMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="StartYear" name="StartYear" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="StartYear" name="StartYear" value="">
               </div>
             </div>
           </div>
@@ -222,19 +234,22 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartDay">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="StartDay" name="StartDay" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartDay" name="StartDay" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="StartMonth" name="StartMonth" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartMonth" name="StartMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="StartYear" name="StartYear" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="StartYear" name="StartYear" value="">
               </div>
             </div>
           </div>
@@ -254,19 +269,22 @@
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="EndDay">Day</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="EndDay" name="EndDay" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="EndDay" name="EndDay" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="EndMonth" name="EndMonth" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="EndMonth" name="EndMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="EndYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="EndYear" name="EndYear" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="EndYear" name="EndYear" value="">
               </div>
             </div>
           </div>
@@ -285,14 +303,17 @@
           <div class="govuk-date-input">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-EndMonth">Month</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric" id="planned-training-end-date-EndMonth" name="planned-training-end-date-EndMonth" value="">
+                <label class="govuk-label govuk-date-input__label"
+                  for="planned-training-end-date-EndMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="planned-training-end-date-EndMonth" name="planned-training-end-date-EndMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-EndYear">Year</label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric" id="planned-training-end-date-EndYear" name="planned-training-end-date-EndYear" value="">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="planned-training-end-date-EndYear" name="planned-training-end-date-EndYear" value="">
               </div>
             </div>
           </div>
@@ -309,21 +330,22 @@
         </div>
         <div class="govuk-input__wrapper govuk-!-margin-top-3">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
-          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
         </div>
       </div>
 
-    <div class="govuk-form-group ">
-      <label class="govuk-label govuk-!-font-weight-bold" for="Cost">End-point assessment price </label>
-      <div id="price-hint" class="govuk-hint">
-        Do not invlude VAT. Enter price in whole pounds. For example, for £1,500 enter 1500
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">End-point assessment price </label>
+        <div id="price-hint" class="govuk-hint">
+          Do not invlude VAT. Enter price in whole pounds. For example, for £1,500 enter 1500
+        </div>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
       </div>
-      <div class="govuk-input__wrapper govuk-!-margin-top-3">
-        <div class="govuk-input__prefix" aria-hidden="true">£</div>
-        <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
-          spellcheck="false">
-      </div>
-    </div>
 
 
 
@@ -334,13 +356,17 @@
             Add a reference, such as employee number or location - this won’t be seen by the employer
           </div>
 
-          <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text" id="Reference" name="Reference" value="">
+          <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text"
+            id="Reference" name="Reference" value="">
         </div>
       </div>
 
       <div class="govuk-inset-text">
         <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
-        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link" href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations" target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice. We'll do this before the end of the apprenticeship.</p>
+        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
+            href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
+            target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice.
+          We'll do this before the end of the apprenticeship.</p>
       </div>
 
 
