@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/Change-of-circs" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<!-- Change of start date -->
+		<!-- <span class="govuk-caption-m">FLP-96</span> -->
+		<h1 class="govuk-heading-l">Change of circumstances</h1>
+		<p class="govuk-body">info goes here</p>
+
+
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="col">Version</th>
+					<th class="govuk-table__header" scope="col">Updates</th>
+					<th class="govuk-table__header" scope="col" colspan="2">Action</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">Add apprentice (training provider)<p>20/04/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li><a class="govuk-link"
+									href="{{feature}}/add-apprentice-tp/documentation">View the
+									changelog</a>
+								for all
+								updates
+							</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/add-apprentice-tp/index">Start
+							now</a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th class="govuk-table__header" scope="row">COP & COSD<p>20/04/2023</p>
+					</th>
+					<td class="govuk-table__cell ">
+						<ul class="govuk-list govuk-list--bullet">
+							<li><a class="govuk-link" href="{{feature}}/cop-cosd/documentation">View the
+									changelog</a>
+								for all
+								updates
+							</li>
+						</ul>
+					</td>
+					<td class="govuk-table__cell "><a href="{{feature}}/cop-cosd/index">Start now</a>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+{% endblock %}
