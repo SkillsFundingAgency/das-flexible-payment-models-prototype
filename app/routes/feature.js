@@ -172,6 +172,50 @@ router.post('/feature/COSD/v1/training-provider/change-start-date-error', functi
     }
 })
 
+router.post('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop-cosd/training-provider/reason-for-change-start-date')
+    }
+})
+
+router.post('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date-error', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop-cosd/training-provider/reason-for-change-start-date')
+    }
+})
+
+router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cop-cosd/employer/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop-cosd/employer/reason-for-change-start-date')
+    }
+})
+
+router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date-error', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cop-cosd/employer/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop-cosd/employer/reason-for-change-start-date')
+    }
+})
+
 router.post('/feature/Change-of-circs/cop-cosd/training-provider/action/view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
 

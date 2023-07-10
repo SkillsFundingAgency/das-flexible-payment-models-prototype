@@ -18,12 +18,6 @@ href: "javascript:window.history.go(-1);"
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">Total Price</h1>
-
-    
 <div class="govuk-error-summary" data-module="govuk-error-summary">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
@@ -32,85 +26,133 @@ href: "javascript:window.history.go(-1);"
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#update-prices">Your training price and end point assesment price total more than your funding band. Amend the price or continue
-          outside of the funding band.</a>
+          <a href="#">Training price must be a whole number.</a>
         </li>
-      
+        <li>
+          <a href="#">End-point assessment price must be a whole number.</a>
+        </li>
       </ul>
     </div>
   </div>
 </div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-
-    <form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7" for="update-prices">
+    <h1 class="govuk-heading-l">Changing the training price</h1>
+    <div id="apprenticeship-price-hint" class="govuk-hint">
+      The funding band maximum for this apprenticeship is £9,000. This is the highest amount the apprenticeship service
+      will
+      pay towards the training.
+      <br><br>
+      If you raise the training price above the funding band maximum, this will need to be paid by the employer.
+    </div>
+    <form action="confirm-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            What is the new training price?
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
+            Training price
           </legend>
-
           <div id="apprenticeship-price-hint" class="govuk-hint">
-            The total price should not include VAT. <br> <br> The current training price is £6,000.
+            Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
           </div>
-
+          <p id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Price must be a whole number
+          </p>
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
-              type="text" aria-describedby="apprenticeship-price-hint">
+            <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price"
+              name="apprenticeship-price" type="text" value="6,000" aria-describedby="apprenticeship-price-hint">
           </div>
-          <br><br><br>
-          <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              What is the new end point assessment price?
-
-            </legend>
-
-            <div id="apprenticeship-price-hint" class="govuk-hint">
-              The total price should not include VAT. <br> <br> The current assessment price is £2,500.
-            </div>
-
-            <div class="govuk-input__wrapper">
-              <div class="govuk-input__prefix" aria-hidden="true">£</div>
-              <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
-                type="text" aria-describedby="apprenticeship-price-hint">
-            </div>
+        </fieldset>
       </div>
-    
-    
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </form>
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Why do I need to update both training and assesment price?
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      You might only need to update one price, in which case please re-enter the current price to the relevent section.
-      There may be times when updated the training price would mean the total price will exceed the funding band, in which
-      case you might need to amend the assesment price as well.
-    </div>
-  </details>
-  
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        What happens if the new price exceeds the funding band?
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      If the true cost of delivery exceeds the funding band maximum (before any deductions for prior learning have been
-      made),
-      the provider must agree off-line (outside of the ILR and apprenticeship service) how the employer will pay this
-      difference. We do not need to know about the amount of this difference and VAT can be charged on this amount. This
-      difference must not be funded from the apprenticeship service account or co-investment.
-    </div>
-  </details>
+      <fieldset class="govuk-fieldset">
+        <div class=" govuk-form-group govuk-form-group--error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            End-point assessment price
+          </legend>
+          <div id="apprenticeship-price-hint" class="govuk-hint">
+            Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500.
+          </div>
+          <p id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Price must be a whole number
+          </p>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price"
+              name="apprenticeship-price" type="text" value="2,500" aria-describedby="apprenticeship-price-hint">
+          </div>
+        </div>
+      </fieldset>
 
-
+      <div class="govuk-inset-text">
+        The total price visible to the employer is: £8,500.
+      </div>
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What date is this price valid from?
+          </legend>
+          <div id="passport-valid-from-hint" class="govuk-hint">
+            This much be after the training start date </div>
+          <div class="govuk-date-input" id="apprenticeship-price-valid-from">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-day" name="passport-valid-from-day" type="text" value="12"
+                  inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
+                  value="12" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-year" type="text"
+                  value="2018" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+          </br></br>
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
+                What was the reason for changing the price?
+              </legend>
+              <div id="reason-for-update-hint" class="govuk-hint">
+                If the total price changes, this reason will be shared with [employer name]. They will need to approve
+                the
+                change. </div>
+              <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
+                aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
+            </div>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+              You can enter up to 200 characters
+            </div>
+          </div>
+        </fieldset>
+      </div>
   </div>
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+</div>
 </div>
 
 
