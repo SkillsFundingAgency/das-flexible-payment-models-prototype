@@ -1,0 +1,401 @@
+{% extends "layout.html" %}
+{% set version = "feature/cop-cosd" %}
+{% set pageTitle = "Add apprentice details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/{{version}}/reserve-reservations-pro">Manage funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Training price must be a whole number.</a>
+        </li>
+        <li>
+          <a href="#">End-point assessment price must be a whole number.</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+    <div class="govuk-inset-text">
+      <p class="govuk-body">You can only receive payments for this apprentice if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>all the fields have been completed - either by yourself or the employer</li>
+        <li>the data matches the individual learner record (ILR) data you send us</li>
+      </ul>
+    </div>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer
+        </dt>
+        <dd class="govuk-summary-list__value">
+          LAND ROVER EXPERIENCE LIMITED
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Training course
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Abattoir worker, Level: 2
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/select-course">
+            Change<span class="govuk-visually-hidden"> training course</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Delivery model
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['delivery-method'] or 'Regular' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/portable-flexi-job">
+            Change<span class="govuk-visually-hidden"> delivery model</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Simplified payments pilot
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['pilot-program'] or 'Yes' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="/{{version}}/approvals/add/select-payments-pilot">
+            Change<span class="govuk-visually-hidden"> simplified payments pilot</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <form id="addApprenticeship" action="/{{version}}/approvals/recognise-prior-learning" method="post">
+      <h2 class="govuk-heading-l">
+        Apprentice personal details
+      </h2>
+      <div class="govuk-form-group govuk-!-margin-bottom-0">
+
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-label--s" for="Uln">Unique learner number</label>
+          <input class="govuk-input  govuk-input--width-10" type="text" id="Uln" name="Uln" value="{{ data['Uln'] }}">
+        </div>
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
+          <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
+            value="{{ data['FirstName'] }}">
+        </div>
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
+          <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
+            value="{{ data['LastName'] }}">
+        </div>
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-label--s" for="Email">Email address</label>
+          <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
+            value="{{ data['Email'] }}">
+        </div>
+        <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why do we need an email address?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            Your apprentice will receive an email alert inviting them to the My apprenticeship service. On the service,
+            your apprentice will be able to:
+            <ul class="govuk-list govuk-list--bullet">
+              <li>review and confirm their apprenticeship details</li>
+              <li>understand the roles and responsibilities of an apprentice, an employer and a training provider</li>
+              <li>find help and support during their apprenticeship</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Date of birth
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 27 3 2001
+          </div>
+          <span class="field-validation-valid govuk-error-message" data-valmsg-for="DateOfBirth"
+            data-valmsg-replace="true" id="error-message-DateOfBirth"></span>
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] }}">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] }}">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-l govuk-!-margin-top-9">
+        Apprentice training details
+      </h2>
+      {% if data['pilot-program'] == "No" %}
+      <div class="govuk-form-group  ">
+        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Planned training start date
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            For example, 09 2022.</br>The standard version will be based on the planned training start date provided
+          </div>
+
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartMonth" name="StartMonth" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="StartYear" name="StartYear" value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% else %}
+      <div class="govuk-form-group  ">
+        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Actual training start date
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            For example, 21 9 2022.</br>The standard version will be based on the training start date provided
+          </div>
+
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="StartDay">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartDay" name="StartDay" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="StartMonth" name="StartMonth" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="StartYear" name="StartYear" value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% endif %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="end-date-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Planned training end date
+          </legend>
+          <div id="end-date-hint" class="govuk-hint">
+            For example, 18 6 2024
+          </div>
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="EndDay">Day</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="EndDay" name="EndDay" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="EndMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="EndMonth" name="EndMonth" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="EndYear">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="EndYear" name="EndYear" value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {% if data['delivery-method'] == "Portable flexi-job" %}
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="planned-training-end-date-hint" role="group">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Planned training end date for this employment contract
+          </legend>
+          <div id="planned-training-end-date-hint" class="govuk-hint">
+            For example, 3 2023
+          </div>
+          <div class="govuk-date-input">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label"
+                  for="planned-training-end-date-EndMonth">Month</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
+                  id="planned-training-end-date-EndMonth" name="planned-training-end-date-EndMonth" value="">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-EndYear">Year</label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
+                  id="planned-training-end-date-EndYear" name="planned-training-end-date-EndYear" value="">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      {% endif %}
+
+
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Training price</label>
+        <div id="price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+        </div>
+        <p id="passport-issued-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Price must be a whole number
+        </p>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5 govuk-input--error" type="text" value="9,000" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
+      </div>
+
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">End-point assessment price </label>
+        <div id="price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £1,500 enter 1500.
+        </div>
+        <p id="passport-issued-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Price must be a whole number
+        </p>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5 govuk-input--error" type="text" value="3,000" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
+      </div>
+  <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="Reference">Reference (optional)</label>
+          <div id="reference-hint" class="govuk-hint">
+            Add a reference, such as employee number or location - this won’t be seen by the employer
+          </div>
+
+          <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text"
+            id="Reference" name="Reference" value="">
+        </div>
+      </div>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
+        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
+            href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
+            target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice.
+          We'll do this before the end of the apprenticeship.</p>
+      </div>
+
+
+      <button type="submit" class="govuk-button">Add</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
