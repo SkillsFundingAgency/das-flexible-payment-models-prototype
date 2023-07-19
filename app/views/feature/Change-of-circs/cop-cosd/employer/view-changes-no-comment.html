@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
 {% set pageTitle = "View change request" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@ href: "javascript:window.history.go(-1);"
 					Request status
 				</dt>
 				<dd class="govuk-summary-list__value">
-					<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
+					<strong class="govuk-tag govuk-tag--yellow">Pending provider review</strong>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -44,10 +44,10 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Employer
+					Training provider
 				</dt>
 				<dd class="govuk-summary-list__value">
-					AUTOMATION & OPTIMISATION LTD
+					EDUC8 TRAINING (ENGLAND) LIMITED
 				</dd>
 			</div>
 		</dl>
@@ -55,10 +55,10 @@ href: "javascript:window.history.go(-1);"
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Previous training price
+					Previous total price
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£6,000
+					£8,500
 				</dd>
 				<dd class="govuk-summary-list__actions">
 				</dd>
@@ -68,10 +68,14 @@ href: "javascript:window.history.go(-1);"
 					Updated training price
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£7,000
+					£9,500
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> training price</span>
+					</a>
 				</dd>
 			</div>
-			
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					Reason for change
@@ -80,22 +84,10 @@ href: "javascript:window.history.go(-1);"
 					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
 					with the Julia.'}}
 				</dd>
-				
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					End-point assessment price
-				</dt>
-				<dd class="govuk-summary-list__value">
-					£2,500
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Updated total price
-				</dt>
-				<dd class="govuk-summary-list__value">
-					£9,500
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-update">
+						Change<span class="govuk-visually-hidden"> reason for request</span>
+					</a>
 				</dd>
 			</div>
 		</dl>
@@ -117,20 +109,10 @@ href: "javascript:window.history.go(-1);"
 									Yes, cancel the request
 								</label>
 							</div>
-							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-								id="conditional-withdraw">
-								<div class="govuk-form-group">
-									<label class="govuk-label" for="withdraw-more-details">
-										Why do you want to cancel this request?
-									</label>
-									<textarea class="govuk-textarea" id="withdraw-more-details"
-										name="withdraw-more-details" rows="5"></textarea>
-								</div>
-							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
 									value="no">
-								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
 									No, keep the request
 								</label>
 							</div>

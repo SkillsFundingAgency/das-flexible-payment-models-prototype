@@ -39,20 +39,24 @@ href: "javascript:window.history.go(-1);"
               type="text" value="8500" aria-describedby="apprenticeship-price-hint">
           </div>
       </div>
-      <div class="govuk-form-group"><br>
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
-        
-          <div class="govuk-form-group">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
-              What was the reason for changing the price?
-            </legend>
-            <div id="reason-for-update-hint" class="govuk-hint">
-              This reason will be shared with [training provider name]. They will need to approve the
-              change. </div>
-            <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
-              aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
-          </div>
-        </fieldset>
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+              <div class="govuk-form-group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
+                  What was the reason for changing the price?
+                </legend>
+                <div id="reason-for-update-hint" class="govuk-hint">
+                This reason will be shared with [training provider name]. They will need to approve the
+                change. </div>
+                <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
+                  aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
+              </div>
+              <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                200 characters remaining
+              </div>
+            </div>
+          </fieldset>
       </div>
   </div>
   </fieldset>
