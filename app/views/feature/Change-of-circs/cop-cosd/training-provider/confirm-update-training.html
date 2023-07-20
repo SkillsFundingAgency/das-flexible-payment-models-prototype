@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set pageTitle = "Check your changes before confirming" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Apprenticeship training course
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Abattoir Worker, Level: 2 (Standard)
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Previous training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£7,000
+				</dd>
+				<dd class="govuk-summary-list__actions">
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Updated training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£8,500
+				</dd>
+				
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> training price</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['reason-for-update'] or 'The original price was entered incorrectly.'}}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> reason for request</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					End-point assessment
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£1,000
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="update-price">
+						Change<span class="govuk-visually-hidden"> training price</span>
+					</a>
+				</dd>
+			</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Total price
+					</dt>
+					<dd class="govuk-summary-list__value">
+						£9,500
+					</dd>
+				</div>
+		</dl>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<p class="govuk-body">The total price has not changed, the changes will be instant and the employer will not be notified.</p>
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<button class="govuk-button" data-module="govuk-button">
+				Confirm
+			</button>
+		</form>
+	</div>
+</div>
+
+
+
+{% endblock %}
