@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/Change-of-circs" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Version</th>
+                <th class="govuk-table__header" scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Name is sixth of table<p>24/07/2023</p>
+                </th>
+                <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts">Start
+                        now</a>
+                </td>
+            </tr>
+        </tbody>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row">Removed date of birth in table<p>24/07/2023</p>
+                    </th>
+                    <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts-no-dob">Start
+                            now</a>
+                    </td>
+                </tr>
+            </tbody>
+    </table>
+</div>
+
+{% endblock %}
