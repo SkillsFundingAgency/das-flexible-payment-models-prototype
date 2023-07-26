@@ -20,33 +20,77 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 
-
     <table class="govuk-table">
         <thead class="govuk-table__head">
             <tr class="govuk-table__row">
                 <th class="govuk-table__header" scope="col">Version</th>
+                <th class="govuk-table__header" scope="col">Updates</th>
                 <th class="govuk-table__header" scope="col" colspan="2">Action</th>
             </tr>
         </thead>
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="row">Name is sixth of table<p>24/07/2023</p>
+                <th class="govuk-table__header" scope="row">Version 4<p>12/07/2023</p>
                 </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Removed DOB, includes three prices
+                        </li>
+                            <li><a class="govuk-link" href="{{feature}}/approvals-no-dob/drafts-error">Error message</a>(no EPA)
+                            </li>
+                            <li><a class="govuk-link" href="{{feature}}/approvals-no-dob/drafts-error-1">Error message</a>(two apprentices)
+                            </li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts-no-dob">Start
+                        now</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Version 3<p>12/07/2023</p>
+                </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Added three prices, shorterned name coloum
+                        </li>
+                    </ul>
+                </td>
                 <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts">Start
                         now</a>
                 </td>
             </tr>
-        </tbody>
-            <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="row">Removed date of birth in table<p>24/07/2023</p>
+                    <th class="govuk-table__header" scope="row">Version 2<p>12/07/2023</p>
                     </th>
-                    <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts-no-dob">Start
+                    <td class="govuk-table__cell ">
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Changed table to summary cards
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="govuk-table__cell "><a href="{{feature}}/approvals/drafts-summary-cards">Start
                             now</a>
                     </td>
                 </tr>
-            </tbody>
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Version 1<p>12/07/2023
+                    </p>
+                </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Added two prices (training and EPA)</li>
+                    </ul>
+                </td>
+                <td class="govuk-table__cell "><a href="{{feature}}/add-apprentice-details/index">Start
+                        now</a>
+                </td>
+            </tr>
+            
+        </tbody>
     </table>
+
+
+   
 </div>
 
 {% endblock %}
