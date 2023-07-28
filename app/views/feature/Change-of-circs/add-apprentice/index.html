@@ -18,22 +18,44 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">Add apprentice - TRAINING PROVIDER - insert two prices</h2>
-        <div class="govuk-grid-row govuk-!-margin-top-7">
-            <div class="govuk-grid-column-one-half">
-                <h3 class="govuk-heading-m"><a href="add-apprentice-details"
-                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Training provider
-                        account</a></h3>
-                <p class="govuk-body">Two prices have been set</p>
-                <a href="add-apprentice-details" class="govuk-link govuk-link--no-visited-state"
-                    rel="noreferrer noopener">View training provider prototype</a>
-            </div>
-     
-        </div>
 
-    </div>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Version</th>
+                <th class="govuk-table__header" scope="col">Updates</th>
+                <th class="govuk-table__header" scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Version 2<p>12/07/2023</p>
+                </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Included a Total price and change the more details component for End-point assessment.
+                        </li>
+                </td>
+                <td class="govuk-table__cell "><a href="add-apprentice-details">Start
+                        now</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Version 1<p>12/07/2023</p>
+                </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Changed total price to Trianing price and End-point assessment price. 
+                        </li>
+                </td>
+                <td class="govuk-table__cell "><a href="details">Start
+                        now</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>
 
 {% endblock %}
