@@ -293,3 +293,29 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/change-start-date
         res.redirect('/feature/Change-of-circs/cop-cosd/employer/apprentice-details-request')
     }
 })
+
+
+/////////Review COP / accept or reject COP //////////
+
+
+router.post('/feature/Change-of-circs/review-cop/training-provider/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cop/training-provider/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cop/training-provider/rejected')
+    }
+})
+
+router.post('/feature/Change-of-circs/review-cop/employer/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cop/employer/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cop/employer/rejected')
+    }
+})
