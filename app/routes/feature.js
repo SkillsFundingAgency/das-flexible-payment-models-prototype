@@ -272,10 +272,10 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/view-changes', fu
 /////////Change of start date withdrawal //////////
 
 
-router.post('/feature/Change-of-circs/cop-cosd/training-provider/action/change-start-date-view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw']
+router.post('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date-view-changes', function (req, res) {
+    var withdraw2 = req.session.data['withdraw2']
 
-    if (withdraw == "yes") {
+    if (withdraw2 == "yes") {
         res.redirect('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date-withdrawal-confirmation')
     }
     else {
@@ -283,7 +283,7 @@ router.post('/feature/Change-of-circs/cop-cosd/training-provider/action/change-s
     }
 })
 
-router.post('/feature/Change-of-circs/cop-cosd/employer/action/change-start-date-view-changes', function (req, res) {
+router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date-view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
 
     if (withdraw == "yes") {
@@ -302,7 +302,7 @@ router.post('/feature/Change-of-circs/review-cop/training-provider/review', func
     var review = req.session.data['review']
 
     if (review == "yes") {
-        res.redirect('/feature/Change-of-circs/review-cop/training-provider/approved')
+        res.redirect('/feature/Change-of-circs/review-cop/training-provider/set-costs')
     }
     else {
         res.redirect('/feature/Change-of-circs/review-cop/training-provider/rejected')
