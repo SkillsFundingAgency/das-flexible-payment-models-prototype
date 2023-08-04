@@ -361,6 +361,20 @@ href: "javascript:window.history.go(-1);"
         <div id="price-hint" class="govuk-hint">
           Do not include VAT. Enter price in whole pounds. For example, for £1,500 enter 1500.
         </div>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              End-point assessments
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
+                href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
+                target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this
+              apprentice.
+              We'll do this before the end of the apprenticeship.</p>
+          </div>
+        </details>
         <p id="passport-issued-error" class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span> Price must be a whole number
         </p>
@@ -369,6 +383,9 @@ href: "javascript:window.history.go(-1);"
           <input class="govuk-input govuk-input--width-5 govuk-input--error" type="text" value="3,000" inputmode="numeric" id="Cost" name="Cost"
             spellcheck="false">
         </div>
+      </div>
+      <div class="govuk-inset-text">
+        Total price: £
       </div>
   <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
         <div class="govuk-form-group ">
@@ -382,14 +399,7 @@ href: "javascript:window.history.go(-1);"
         </div>
       </div>
 
-      <div class="govuk-inset-text">
-        <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
-        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
-            href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
-            target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice.
-          We'll do this before the end of the apprenticeship.</p>
-      </div>
-
+   
 
       <button type="submit" class="govuk-button">Add</button>
 

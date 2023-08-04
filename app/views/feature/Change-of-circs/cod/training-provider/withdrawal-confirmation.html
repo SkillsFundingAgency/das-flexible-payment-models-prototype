@@ -1,0 +1,518 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<h3 class="govuk-notification-banner__heading">
+					Your request to change the price has been cancelled </h3>
+				<p class="govuk-body">The employer has been notified.</p>
+			</div>
+		</div>
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<div class="govuk-tabs" data-module="govuk-tabs">
+			<h2 class="govuk-tabs__title">
+				Contents
+			</h2>
+			<ul class="govuk-tabs__list">
+				<li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+					<a class="govuk-tabs__tab" href="#overview">
+						Overview
+					</a>
+				</li>
+				<li class="govuk-tabs__list-item">
+					<a class="govuk-tabs__tab" href="#history">
+						History
+					</a>
+				</li>
+			</ul>
+			<div class="govuk-tabs__panel" id="overview">
+				<h2 class="govuk-heading-m">Apprentice status</h2>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--blue">Live</strong>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Apprentice confirmation
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Confirmed
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Simplified payments pilot
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Yes
+						</dd>
+					</div>
+				</dl>
+				<h2 class="govuk-heading-m">Overview</h2>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Employer
+						</dt>
+						<dd class="govuk-summary-list__value">
+							AUTOMATION &amp; OPTIMISATION LTD
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Cohort Reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							MNNRLD
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Agreement ID
+						</dt>
+						<dd class="govuk-summary-list__value">
+							7GXEKP
+						</dd>
+					</div>
+				</dl>
+				<div class="govuk-grid-row">
+					<div class="govuk-grid-column-two-thirds">
+						<h2 class="govuk-heading-m">Apprentice details</h2>
+					</div>
+				</div>
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Unique learner number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							5320150775
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							George Ford
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							georgeford@gmail.com<br>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+									apprentice</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+				<h2 class="govuk-heading-m">Course</h2>
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Apprenticeship training course
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Abattoir Worker, Level: 2 (Standard)
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Version
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1.0
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Actual training start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							12 Dec 2018
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="change-start-date">
+								Change<span class="govuk-visually-hidden"> actual training start date</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Planned training end date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							3 Jul 2020
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Your reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Nothing provided
+						</dd>
+					</div>
+				</dl>
+				<h2 class="govuk-heading-m">Price</h2>
+				<dl class="govuk-summary-list">
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£6,000
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£2,500
+						</dd>
+						<!-- <dd class="govuk-summary-list__actions">
+																<a class="govuk-link" href="update-price">
+																	Change<span class="govuk-visually-hidden"> total assessment price</span>
+																</a>
+															</dd> -->
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,500
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="update-price">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
+			</div>
+			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
+			</div>
+			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
+				<h2 class="govuk-heading-m">History</h2>
+				<ol class="hmrc-timeline">
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--grey">cancelled</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2023-02-15">15 February 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body">
+								Total training price
+								updated from
+								<b>£6,000</b>
+								to
+								<b>£7,000 (cancelled)</b>
+							</p>
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											<strong class="govuk-tag govuk-tag--yellow">Price Change</strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2023-02-15">15 Feb
+												2023</time>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body">
+								Total training price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£6,000</b>
+							</p>
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											<strong class="govuk-tag govuk-tag--yellow">Change
+												requested</strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+												2020</time>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--red">Declined</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body">
+								Total training price
+								updated from
+								<b>£1,000</b>
+								to
+								<b>£10,234</b>
+							</p>
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											<strong class="govuk-tag govuk-tag--yellow">Change
+												requested</strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+												2020</time>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</li>
+
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15">28 June
+							2020</time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Started</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship paused</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body">23 June
+								2020</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Paused</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship agreed</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body">8
+								September
+								2019</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
+
+						</div>
+					</li>
+				</ol>
+			</div>
+
+			<!-- <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
+				<h2 class="govuk-heading-m">History</h2>
+				<ol class="hmrc-timeline">
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--grey">Withdrawn</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2023-02-15">15 February 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total training price
+								updated from
+								<b>£6,000</b>
+								to
+								<b>£7,000</b> effective from <b><time datetime="2020-07-22">1 December 2022</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2023-02-15">15 February 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total training price
+								updated from
+								<b>£6,000</b>
+								to
+								<b>£7,000</b> effective from <b><time datetime="2020-07-22">1 December 2022</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Start date update
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Start date
+								updated from
+								<b>4 October 2022</b>
+								to
+								<b>14 October 2022</b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Start date update
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Start date
+								updated from
+								<b>4 October 2022</b>
+								to
+								<b>14 October 2022</b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--red">Declined</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total training price
+								updated from
+								<b>£5,500</b>
+								to
+								<b>£7,300</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+							increase
+						</h3>
+						<p class="govuk-body-s govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							TRAINING PROVIDER NAME on <time datetime="2020-07-5">5 July 2020</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							<p class="govuk-body govuk-body-s">
+								Total training price
+								updated from
+								<b>£5,500</b>
+								to
+								<b>£7,300</b> effective from <b><time datetime="2020-07-22">22 July 2020</time></b>
+							</p>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">28 June
+								2020</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Started</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship paused</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">23 June
+								2020</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Paused</strong>
+						</div>
+					</li>
+					<li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship agreed</h3>
+						<time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body-s">8
+								September
+								2019</span></time>
+						<div class="hmrc-timeline__event-content">
+							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
+							<p class="govuk-body govuk-body-s">Apprenticeship agreed
+							</p>
+						</div>
+					</li>
+				</ol>
+			</div> -->
+		</div>
+	</div>
+</div>
+
+{% endblock %}

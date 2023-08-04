@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set pageTitle = "View change request" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Request status
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Price changes you've requested</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Previous training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£6,000
+				</dd>
+				<dd class="govuk-summary-list__actions">
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Updated training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£7,000
+				</dd>
+			</div>
+			
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
+					with the Julia.'}}
+				</dd>
+				
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					End-point assessment price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£2,500
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Updated total price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£9,500
+				</dd>
+			</div>
+		</dl>
+		</dl>
+		<form method="post" action="/{{version}}/action/view-changes">
+			<fieldset class="govuk-fieldset">
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to cancel this request?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
+								</label>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+									No, keep the request
+								</label>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

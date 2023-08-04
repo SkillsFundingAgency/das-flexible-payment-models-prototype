@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <!-- Change of start date -->
+        <!-- <span class="govuk-caption-m">FLP-96</span> -->
+        <h1 class="govuk-heading-l">Changelog v1</h1>
+
+        <h2 class="govuk-heading-m">General</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Add in change of price journey to training provider and employer </li>
+        </ul>
+        <h2 class="govuk-heading-m">Apprentice details page</h2>
+        <ul class="govuk-list govuk-list--bullet">
+            <!-- <li>Use tags to display the status and reflect the component used in the table on the "Manage your
+                apprentices" (previous page)</li>
+            <li>Update "Reference" label to "Cohort Reference" to add clarity to the field and reflect other pages
+            </li>
+            <li>Update heading from "Apprentice" to "Apprentice details" to stay constant with other headings on the
+                page</li>
+            <li>Relocate learner number to the top of the apprentice details list</li>
+            <li>Add "Nothing provided" to the "Your reference" if nothing had been provided.</li> -->
+        </ul>
+
+    </div>
+</div>
+
+{% endblock %}
