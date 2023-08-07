@@ -27,25 +27,13 @@ href: "javascript:window.history.go(-1);"
 
 	<div class="govuk-grid-column-two-thirds">
 
-
-		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-			data-module="govuk-notification-banner">
-			<div class="govuk-notification-banner__header">
-				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Important
-				</h2>
-			</div>
-			<div class="govuk-notification-banner__content">
-				<p class="govuk-notification-banner__heading">
-					The new total price can't be approved until:
-				<ul class="govuk-list govuk-list--bullet">
-					<li>
-						The new total price of £9,500 is divided between Training price and End-point assessment price.
-					</li>
-				</ul>
-				</p>
-			</div>
-		</div>
+<h1 class="govuk-heading-l">Confirm new training and end-point assessment price</h1>
+<div id="apprenticeship-price-hint" class="govuk-hint"> Add the new training and end-point assessment price. The total of these two prices must match the new total price of
+£7,400.
+<br><br>
+The new total price cannot be approved until you confirm the training and end-point assessment price.<br><br>
+</div>
+		
 
 			<fieldset class="govuk-fieldset">
 		<form method="post" action="/{{version}}/approved">
