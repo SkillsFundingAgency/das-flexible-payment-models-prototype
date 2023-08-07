@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set version = "feature/Change-of-circs/cod/employer" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -20,7 +20,7 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Training start date</h1>
+    <h1 class="govuk-heading-l">Changing the training start date</h1>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -74,9 +74,23 @@ href: "javascript:window.history.go(-1);"
                   id="EffectiveFromYear" name="EffectiveFromYear" type="text" inputmode="numeric">
               </div>
             </div>
+            </fieldset>
           </div>
           <br>
-        </fieldset>
+
+              <h3 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="reason-for-change-start-date">
+                  Why is the start date changing?
+                </label>
+                </h1>
+                <div id="reason-for-change-start-date-hint" class="govuk-hint">
+                  This message will be shared with AUTOMATION & OPTIMISATION LTD
+                </div>
+                <textarea class="govuk-textarea" id="reason-for-change-start-date" name="reason-for-change-start-date" rows="5"
+                  aria-describedby="reason-for-change-start-date-hint">{{ data['reason-for-change-start-date'] }}</textarea>
+                </div>
+
+       
       </div>
       <button class="govuk-button" data-module="govuk-button">
         Continue

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -21,9 +21,9 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Change the training price</h1>
-<div id="apprenticeship-price-hint" class="govuk-hint">
-VAT does not apply for these prices.
-</div>
+    <div id="apprenticeship-price-hint" class="govuk-hint">
+      VAT does not apply for these prices.
+    </div>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -159,15 +159,16 @@ VAT does not apply for these prices.
       </div><br>
       <form action="confirm-update" method="post" novalidate>
         <div class="govuk-form-group">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-What was the reason for this price change request?        </legend>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What was the reason for this price change request? </legend>
           <div id="reason-for-update-hint" class="govuk-hint">
             This message will be shared with AUTOMATION & OPTIMISATION LTD
           </div>
           <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
             aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
         </div>
-<! --////*************************** this form will not connect with the rest of the prototype *************** -->
+        <! --////*************************** this form will not connect with the rest of the prototype ***************
+          -->
 
       </form>
       <button class="govuk-button" data-module="govuk-button">

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -20,30 +20,31 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-l">Training start date</h1>
-<dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Current training start date
-    </dt>
-    <dd class="govuk-summary-list__value">
-      12 December 2018
-    </dd>
-  </div>
-</dl>
+    <h1 class="govuk-heading-l">Training start date</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current training start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 December 2018
+        </dd>
+      </div>
+    </dl>
     <form action="/{{version}}/change-start-date-error" method="post" novalidate class="govuk-!-margin-top-7">
       <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Effective from date
-          </legend>
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Effective from date
+            </legend>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
             The current training date is 12 Dec 2018.
           </div>
           <p id="passport-issued-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> An apprentice has to be over 16 years of age, please enter the correct start date.
+            <span class="govuk-visually-hidden">Error:</span> An apprentice has to be over 16 years of age, please enter
+            the correct start date.
           </p>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -75,8 +76,8 @@ href: "javascript:window.history.go(-1);"
             </div>
           </div>
           <br>
-         </fieldset>
-        </div>
+        </fieldset>
+      </div>
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>

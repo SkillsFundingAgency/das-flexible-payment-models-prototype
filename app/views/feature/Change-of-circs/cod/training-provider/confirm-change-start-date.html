@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
 {% set pageTitle = "Check your changes before sending sending to the employer" %}
 
 
@@ -107,7 +107,8 @@ href: "javascript:window.history.go(-1);"
 					Reason for request
 				</dt>
 				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and training.'}}
+					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
+					training.'}}
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change-start-date">
@@ -129,7 +130,7 @@ href: "javascript:window.history.go(-1);"
 			details on My apprenticeship service only after approval.
 		</p>
 
-		
+
 		<form action="change-start-date-confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<button class="govuk-button" data-module="govuk-button">

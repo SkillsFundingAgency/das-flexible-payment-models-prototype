@@ -8,6 +8,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+
+
 router.post('/feature/COP/current/action/details-of-mismatch', function (req, res) {
     var SubmitStatusViewModel = req.session.data['SubmitStatusViewModel']
 
@@ -28,6 +30,10 @@ router.post('/feature/COP/v1/action/details-of-mismatch', function (req, res) {
         res.redirect('/feature/COP/v1/apprentice-details')
     }
 })
+
+///////// COP legacy - withdrawal //////////
+
+
 router.post('/feature/COP/v3/training-provider/action/view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
 
@@ -103,74 +109,9 @@ router.post('/feature/COP/v7/employer/action/view-changes', function (req, res) 
     }
 })
 
-router.post('/feature/COSD/v1/training-provider/action/view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw']
 
-    if (withdraw == "yes") {
-        res.redirect('/feature/COSD/v1/training-provider/withdrawal-confirmation')
-    }
-    else {
-        res.redirect('/feature/COSD/v1/training-provider/apprentice-details-request')
-    }
-})
-
-router.post('/feature/COSD/v1/employer/action/view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw']
-
-    if (withdraw == "yes") {
-        res.redirect('/feature/COST/v1/employer/withdrawal-confirmation')
-    }
-    else {
-        res.redirect('/feature/COST/v1/employer/apprentice-details-request')
-    }
-})
-
-
-
-router.post('/feature/COSD/v1/training-provider/action/view-start-date-change', function (req, res) {
-    var withdraw = req.session.data['withdraw']
-
-    if (withdraw == "yes") {
-        res.redirect('/feature/COSD/v1/training-provider/change-start-date-withdrawal-confirmation')
-    }
-    else {
-        res.redirect('/feature/COSD/v1/training-provider/change-start-date-request-apprentice-details')
-    }
-})
-
-router.post('/feature/COSD/v1/employer/action/view-start-date-change', function (req, res) {
-    var withdraw = req.session.data['withdraw']
-
-    if (withdraw == "yes") {
-        res.redirect('/feature/COST/v1/employer/change-start-date-withdrawal-confirmation')
-    }
-    else {
-        res.redirect('/feature/COST/v1/employer/change-start-date-request-apprentice-details')
-    }
-})
-
-
-router.post('/feature/COSD/v1/training-provider/change-start-date', function (req, res) {
-    var EffectiveFromYear = req.session.data['EffectiveFromYear']
-
-    if (EffectiveFromYear <= "2016") {
-        res.redirect('/feature/COSD/v1/training-provider/change-start-date-error')
-    }
-    else {
-        res.redirect('/feature/COSD/v1/training-provider/reason-for-change-start-date')
-    }
-})
-
-router.post('/feature/COSD/v1/training-provider/change-start-date-error', function (req, res) {
-    var EffectiveFromYear = req.session.data['EffectiveFromYear']
-
-    if (EffectiveFromYear <= "2016") {
-        res.redirect('/feature/COSD/v1/training-provider/change-start-date-error')
-    }
-    else {
-        res.redirect('/feature/COSD/v1/training-provider/reason-for-change-start-date')
-    }
-})
+///////// Change of circs //////////
+///////// COP journey- change of start date //////////
 
 router.post('/feature/Change-of-circs/cop-cosd/training-provider/change-start-date', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
@@ -194,6 +135,7 @@ router.post('/feature/Change-of-circs/cop-cosd/training-provider/change-start-da
     }
 })
 
+
 router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 
@@ -216,7 +158,7 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date-error'
     }
 })
 
-
+/////////COP journey - change of startdate withdrawal //////////
 
 router.post('/feature/Change-of-circs/cop-cosd/training-provider/action/change-start-date-view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
@@ -239,6 +181,79 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/change-start-date
         res.redirect('/feature/Change-of-circs/cop-cosd/employer/apprentice-details-request')
     }
 })
+
+///////// Change of circs - COD //////////
+///////// COD journey- change of start date //////////
+
+router.post('/feature/Change-of-circs/cod/training-provider/change-start-date', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/confirm-change-start-date')
+    }
+})
+
+router.post('/feature/Change-of-circs/cod/training-provider/change-start-date-error', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/confirm-change-start-date')
+    }
+})
+
+
+router.post('/feature/Change-of-circs/cod/employer/change-start-date', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cod/employer/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/employer/confirm-change-start-date')
+    }
+})
+
+router.post('/feature/Change-of-circs/cod/employer/change-start-date-error', function (req, res) {
+    var EffectiveFromYear = req.session.data['EffectiveFromYear']
+
+    if (EffectiveFromYear <= "2016") {
+        res.redirect('/feature/Change-of-circs/cod/employer/change-start-date-error')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/employer/confirm-change-start-date')
+    }
+})
+
+/////////Change of startdate withdrawal //////////
+
+router.post('/feature/Change-of-circs/cod/training-provider/change-start-date-view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-request-apprentice-details')
+    }
+})
+
+router.post('/feature/Change-of-circs/cod/employer/change-start-date-view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cod/employer//change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cod/employer/change-start-date-request-apprentice-details')
+    }
+})
+
 
 
 

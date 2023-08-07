@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set version = "feature/Change-of-circs/cod/employer" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -40,23 +40,23 @@ href: "javascript:window.history.go(-1);"
           </div>
       </div>
       <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
-            <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-              <div class="govuk-form-group">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
-                  What was the reason for changing the price?
-                </legend>
-                <div id="reason-for-update-hint" class="govuk-hint">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
+                What was the reason for changing the price?
+              </legend>
+              <div id="reason-for-update-hint" class="govuk-hint">
                 This reason will be shared with [training provider name]. They will need to approve the
                 change. </div>
-                <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
-                  aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
-              </div>
-              <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-                200 characters remaining
-              </div>
+              <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
+                aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
             </div>
-          </fieldset>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+              200 characters remaining
+            </div>
+          </div>
+        </fieldset>
       </div>
   </div>
   </fieldset>

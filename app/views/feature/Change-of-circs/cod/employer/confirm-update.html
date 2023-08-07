@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set version = "feature/Change-of-circs/cod/employer" %}
 {% set pageTitle = "Check your changes before sending to the training provider" %}
 
 
@@ -94,7 +94,8 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<h2 class="govuk-heading-m">Now send to the training provider for approval</h2>
-		<p class="govuk-body">Your payment schedule will not change until the training proivder approves your request.</p>
+		<p class="govuk-body">Your payment schedule will not change until the training proivder approves your request.
+		</p>
 		<form action="confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<button class="govuk-button" data-module="govuk-button">

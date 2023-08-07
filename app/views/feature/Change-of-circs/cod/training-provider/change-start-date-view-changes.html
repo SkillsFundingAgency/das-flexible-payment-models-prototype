@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
 {% set pageTitle = "View change of start date" %}
 
 
@@ -53,14 +53,6 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Date of birth
-				</dt>
-				<dd class="govuk-summary-list__value">
-					1 January 2000
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
 					Employer
 				</dt>
 				<dd class="govuk-summary-list__value">
@@ -87,61 +79,52 @@ href: "javascript:window.history.go(-1);"
 				<dd class="govuk-summary-list__value">
 					{{ data['confirm-change-start-date'] or '12 January 2019'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
-						Change<span class="govuk-visually-hidden"> total training price</span>
-					</a>
-				</dd>
+				
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					Reason for request
 				</dt>
 				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and training.'}}
+					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
+					training.'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change-start-date">
-						Change<span class="govuk-visually-hidden"> reason for request</span>
-					</a>
-				</dd>
+				
 			</div>
 		</dl>
-		<form method="post" action="/{{version}}/action/view-start-date-change">
+		<form method="post" action="/{{version}}/change-start-date-view-changes">
 			<fieldset class="govuk-fieldset">
-
+		
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 							Do you want to withdraw this request?
 						</legend>
-
+		
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw2" name="withdraw2" type="radio"
-									value="yes" data-aria-controls="conditional-withdraw2">
-								<label class="govuk-label govuk-radios__label" for="withdraw2">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio" value="yes"
+									data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
 									Yes, withdraw the request
 								</label>
 							</div>
-							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-								id="conditional-withdraw-start-date">
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-withdraw">
 								<div class="govuk-form-group">
-									<label class="govuk-label" for="withdraw-start-date-more-details">
+									<label class="govuk-label" for="withdraw-more-details">
 										Why do you want to withdraw this request?
 									</label>
-									<textarea class="govuk-textarea" id="withdraw-start-date-more-details"
-										name="withdraw-start-date-more-details" rows="5"></textarea>
+									<textarea class="govuk-textarea" id="withdraw-more-details" name="withdraw-more-details"
+										rows="5"></textarea>
 								</div>
 							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-start-date" name="withdraw-start-date" type="radio"
-									value="no">
-								<label class="govuk-label govuk-radios__label" for="withdraw-start-date">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio" value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
 									No, keep the request
 								</label>
 							</div>
-
+		
 						</div>
 					</fieldset>
 				</div>

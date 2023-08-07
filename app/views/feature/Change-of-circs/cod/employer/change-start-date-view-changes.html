@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set version = "feature/Change-of-circs/cod/employer" %}
 {% set pageTitle = "View change of start date" %}
 
 
@@ -32,7 +32,7 @@ href: "javascript:window.history.go(-1);"
 					Request status
 				</dt>
 				<dd class="govuk-summary-list__value">
-					<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
+					<strong class="govuk-tag govuk-tag--yellow">Pending training provider review</strong>
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -53,18 +53,10 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Date of birth
+					Training Provider
 				</dt>
 				<dd class="govuk-summary-list__value">
-					1 January 2000
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Employer
-				</dt>
-				<dd class="govuk-summary-list__value">
-					AUTOMATION & OPTIMISATION LTD
+					EDUC8 TRAINING (ENGLAND) LIMITED
 				</dd>
 			</div>
 		</dl>
@@ -87,11 +79,6 @@ href: "javascript:window.history.go(-1);"
 				<dd class="govuk-summary-list__value">
 					{{ data['confirm-change-start-date'] or '12 January 2019'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
-						Change<span class="govuk-visually-hidden"> total training price</span>
-					</a>
-				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
@@ -101,14 +88,10 @@ href: "javascript:window.history.go(-1);"
 					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
 					training.'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change-start-date">
-						Change<span class="govuk-visually-hidden"> reason for request</span>
-					</a>
-				</dd>
+				
 			</div>
 		</dl>
-		<form method="post" action="/{{version}}/action/view-start-date-change">
+		<form method="post" action="/{{version}}/change-start-date-view-changes">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group">
