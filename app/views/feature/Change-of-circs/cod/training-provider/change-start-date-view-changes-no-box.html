@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cod/employer" %}
-{% set pageTitle = "Check your changes before sending sending to the training provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
+{% set pageTitle = "View change of start date" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/employer-account-header.html" %}
-{% include "includes/nav-employer-apprentices" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,6 +29,14 @@ href: "javascript:window.history.go(-1);"
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
+					Request status
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
 					Name
 				</dt>
 				<dd class="govuk-summary-list__value">
@@ -45,23 +53,14 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Training provider
+					Employer
 				</dt>
 				<dd class="govuk-summary-list__value">
-					EDUC8 TRAINING (ENGLAND) LIMITED
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Apprenticeship training course
-				</dt>
-				<dd class="govuk-summary-list__value">
-					Abattoir Worker, Level: 2 (Standard)
+					AUTOMATION & OPTIMISATION LTD
 				</dd>
 			</div>
 		</dl>
-
-		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+		<h2 class="govuk-heading-m">Changes you've requested</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
@@ -80,48 +79,52 @@ href: "javascript:window.history.go(-1);"
 				<dd class="govuk-summary-list__value">
 					{{ data['confirm-change-start-date'] or '12 January 2019'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
-						Change<span class="govuk-visually-hidden"> total training price</span>
-					</a>
-				</dd>
+				
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Reason for change
+					Reason for request
 				</dt>
 				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-change-start-date'] or 'Apprentice had a delayed start to employment and
+					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
 					training.'}}
 				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
-						Change<span class="govuk-visually-hidden"> reason for request</span>
-					</a>
-				</dd>
+				
 			</div>
 		</dl>
-	</div>
-</div>
-
-
-<div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
-
-		<h2 class="govuk-heading-m">Now send to the training provider for approval</h2>
-		<p class="govuk-body">
-			This change will be sent to the training provider to approve. The apprentice will then need to confirm their details in their
-			apprenticeship account.
-		</p>
-
-
-		<form action="change-start-date-confirmation" method="post" novalidate>
-			<input type="hidden" name="answers-checked" value="true">
-			<button class="govuk-button" data-module="govuk-button">
-				Send
-			</button>
+		<form method="post" action="/{{version}}/change-start-date-view-changes">
+			<fieldset class="govuk-fieldset">
+		
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to cancel this request?
+						</legend>
+		
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio" value="yes"
+									>
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
+								</label>
+							</div>
+							
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio" value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									No, keep the request
+								</label>
+							</div>
+		
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
 		</form>
-
 	</div>
 </div>
 

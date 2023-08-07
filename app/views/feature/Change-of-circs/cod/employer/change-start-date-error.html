@@ -21,26 +21,18 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Changing the training start date</h1>
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Current training start date
-        </dt>
-        <dd class="govuk-summary-list__value">
-          12 December 2018
-        </dd>
-      </div>
-    </dl>
+    <div id="apprenticeship-price-hint" class="govuk-hint"> The current start date for the training is 12 December 2018.
+    </div>
     <form action="/{{version}}/change-start-date-error" method="post" novalidate class="govuk-!-margin-top-7">
       <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint passport-issued-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Effective from date
+              When does the training start?
             </legend>
           </legend>
-          <div id="passport-issued-hint" class="govuk-hint">
-            The current training date is 12 Dec 2018.
+          <div id="effective-from-hint" class="govuk-hint">
+            For example, 31 3 2024
           </div>
           <p id="passport-issued-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> An apprentice has to be over 16 years of age, please enter
@@ -74,29 +66,29 @@ href: "javascript:window.history.go(-1);"
                   id="EffectiveFromYear" name="EffectiveFromYear" type="text" inputmode="numeric">
               </div>
             </div>
-            </fieldset>
-          </div>
-          <br>
-
-              <h3 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--m" for="reason-for-change-start-date">
-                  Why is the start date changing?
-                </label>
-                </h1>
-                <div id="reason-for-change-start-date-hint" class="govuk-hint">
-                  This message will be shared with AUTOMATION & OPTIMISATION LTD
-                </div>
-                <textarea class="govuk-textarea" id="reason-for-change-start-date" name="reason-for-change-start-date" rows="5"
-                  aria-describedby="reason-for-change-start-date-hint">{{ data['reason-for-change-start-date'] }}</textarea>
-                </div>
-
-       
+        </fieldset>
       </div>
-      <button class="govuk-button" data-module="govuk-button">
-        Continue
-      </button>
-    </form>
+      <br>
+
+      <h3 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="reason-for-change-start-date">
+          Why is the start date changing?
+        </label>
+        </h1>
+        <div id="reason-for-change-start-date-hint" class="govuk-hint">
+          This message will be shared with AUTOMATION & OPTIMISATION LTD
+        </div>
+        <textarea class="govuk-textarea" id="reason-for-change-start-date" name="reason-for-change-start-date" rows="5"
+          aria-describedby="reason-for-change-start-date-hint">{{ data['reason-for-change-start-date'] }}</textarea>
   </div>
+
+
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+</div>
 </div>
 
 
