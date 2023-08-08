@@ -64,9 +64,11 @@ href: "javascript:window.history.go(-1);"
       You can't approve this apprentice request until:
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        The End-point assessment price is filled in.
+        The employer has changed the total price. Please edit and allocate the total price between Training price and End-point assessment price.
       </li>
-      <li>Training dates are not overlapping</li>
+      <li>
+        All apprentice records are complete.
+      </li>
     </ul>
     </p>
   </div>
@@ -110,9 +112,28 @@ href: "javascript:window.history.go(-1);"
     </div> -->
   </div>
 </div>
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 class="govuk-heading-m">1 x Game programmer, Level: 7
+<h3 class="govuk-heading-m">1 x Game programmer, Level: 7 <strong class="govuk-tag govuk-tag--dark-blue">Simplified
+payments Pilot</strong>
 </h3>
+<div class="govuk-inset-text" style="border-color: #1d70b8;">
+  <h3 class="govuk-heading-s">
+  Apprentice record incomplete
+</h3>
+You must complete the apprentice record to be able to approve.</div>
+
+<div class="govuk-inset-text" style="border-color: #1d70b8;">
+  <h3 class="govuk-heading-s">
+    The Training price and End-point assessment price are incomplete
+  </h3>
+  Please edit and allocate the total price between Training price and End-point assessment price.
+</div>
+
+
 <table class="govuk-table  das-table--responsive">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -121,7 +142,7 @@ href: "javascript:window.history.go(-1);"
       <th scope="col" class="govuk-table__header ">Training dates</th>
       <th scope="col" class="govuk-table__header ">Training price</th>
       <th scope="col" class="govuk-table__header ">End-point assessment price</th>
-      <th scope="col" class="govuk-table__header ">Total price</th>
+        <th scope="col" class="govuk-table__header ">Total price</th>
       <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
     </tr>
   </thead>
@@ -133,41 +154,15 @@ href: "javascript:window.history.go(-1);"
       </td>
       <td class="govuk-table__cell" data-label="Unique learner number">{{ data['Uln'] or '2261631370'}}</td>
       <td class="govuk-table__cell" data-label="Training dates">Jan 2022 to May 2022 </td>
-      <td class="govuk-table__cell " data-label="Training price">£1,200</td>
+      <td class="govuk-table__cell " data-label="Training price"><span class="govuk-!-width-one-half das-table-cell--highlight">-</span></td>
       <td class="govuk-table__cell " data-label="End-point assessment price"> <span
-          class="govuk-!-width-one-half das-table-cell--highlight ">-</span></td>
-      <td class="govuk-table__cell " data-label="Total price">£1,200</td>
+          class="govuk-!-width-one-quarter das-table-cell--highlight" >-</span></td>
+          <td class="govuk-table__cell " data-label="Training price">£7,200</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
           href="/training-provider/{{version}}/approvals/add/apprentice-details">
           Edit
           <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard
-            }}</span>
-        </a>
-        <br><br>
-        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
-          Delete <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard
-            }}</span>
-        </a>
-      </td>
-    </tr>
-  </tbody>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row ">
-      <td class="govuk-table__cell " data-label="Name">
-        <span class="das-table-cell--highlight das-breakable ">David Clark</span>
-      </td>
-      <td class="govuk-table__cell" data-label="Unique learner number">1241431370</td>
-      <td class="govuk-table__cell"><u style="text-decoration: none; border-bottom:6px solid #1d70b8;">Jul 2021 to Jul
-          2021</u></td>
-      <td class="govuk-table__cell " data-label="Training price">£6,200</td>
-      <td class="govuk-table__cell " data-label="End-point assessment price">£1,000</td>
-      <td class="govuk-table__cell " data-label="Total price">£7,200</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/add/apprentice-details">
-          Edit
-          <span class="govuk-visually-hidden"> {{ data['FirstName'] or David}} {{ data['LastName'] or Clark
             }}</span>
         </a>
         <br><br>
@@ -199,6 +194,8 @@ href: "javascript:window.history.go(-1);"
     Delete this cohort
   </a>
 </p>
+
+
 
 <hr class="govuk-section-break govuk-section-break--l">
 <div class="govuk-grid-row">

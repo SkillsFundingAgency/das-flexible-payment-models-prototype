@@ -52,25 +52,6 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 
 
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      You can't approve this apprentice request until:
-    <ul class="govuk-list govuk-list--bullet">
-      <li>
-        The End-point assessment price is filled in.
-      </li>
-      <li>Training dates are not overlapping</li>
-    </ul>
-    </p>
-  </div>
-</div>
 
 
 <div class="govuk-grid-row">
@@ -110,9 +91,17 @@ href: "javascript:window.history.go(-1);"
     </div> -->
   </div>
 </div>
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-<h3 class="govuk-heading-m">1 x Game programmer, Level: 7
+<h3 class="govuk-heading-m">1 x Game programmer, Level: 7 <strong class="govuk-tag govuk-tag--dark-blue">Simplified
+    payments Pilot</strong>
 </h3>
+
+
+
 <table class="govuk-table  das-table--responsive">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -128,15 +117,14 @@ href: "javascript:window.history.go(-1);"
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row ">
       <td class="govuk-table__cell " data-label="Name">
-        <span class="das-table-cell--highlight das-breakable ">{{ data['FirstName'] or 'Georgina' }} {{ data['LastName']
+        <span class=" das-breakable ">{{ data['FirstName'] or 'Georgina' }} {{ data['LastName']
           or 'Howard' }}</span>
       </td>
       <td class="govuk-table__cell" data-label="Unique learner number">{{ data['Uln'] or '2261631370'}}</td>
       <td class="govuk-table__cell" data-label="Training dates">Jan 2022 to May 2022 </td>
-      <td class="govuk-table__cell " data-label="Training price">£1,200</td>
-      <td class="govuk-table__cell " data-label="End-point assessment price"> <span
-          class="govuk-!-width-one-half das-table-cell--highlight ">-</span></td>
-      <td class="govuk-table__cell " data-label="Total price">£1,200</td>
+      <td class="govuk-table__cell " data-label="Training price">6,000</td>
+      <td class="govuk-table__cell " data-label="End-point assessment price">£1,200</td>
+      <td class="govuk-table__cell " data-label="Training price">£7,200</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
           href="/training-provider/{{version}}/approvals/add/apprentice-details">
@@ -152,22 +140,40 @@ href: "javascript:window.history.go(-1);"
       </td>
     </tr>
   </tbody>
+</table>
+
+
+<hr class="govuk-section-break govuk-section-break--l ">
+<h3 class="govuk-heading-m">1 x Game programmer, Level: 7
+</h3>
+
+<table class="govuk-table das-table--responsive">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+    </tr>
+  </thead>
   <tbody class="govuk-table__body">
-    <tr class="govuk-table__row ">
-      <td class="govuk-table__cell " data-label="Name">
-        <span class="das-table-cell--highlight das-breakable ">David Clark</span>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-label="Name">
+        <span class="das-breakable">{{ data['FirstName'] or 'David' }} {{ data['LastName']
+          or 'Clark' }}</span>
       </td>
-      <td class="govuk-table__cell" data-label="Unique learner number">1241431370</td>
-      <td class="govuk-table__cell"><u style="text-decoration: none; border-bottom:6px solid #1d70b8;">Jul 2021 to Jul
-          2021</u></td>
-      <td class="govuk-table__cell " data-label="Training price">£6,200</td>
-      <td class="govuk-table__cell " data-label="End-point assessment price">£1,000</td>
-      <td class="govuk-table__cell " data-label="Total price">£7,200</td>
+      <td class="govuk-table__cell" data-label="Unique learner number">{{ data['Uln'] or '2261631370'}}</td>
+      <td class="govuk-table__cell" data-label="Date of birth">14 Jan 2000</td>
+      <td class="govuk-table__cell" data-label="Training dates">Jan 2021 to Jul
+        2021</u> </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£1,200</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
           href="/training-provider/{{version}}/approvals/add/apprentice-details">
           Edit
-          <span class="govuk-visually-hidden"> {{ data['FirstName'] or David}} {{ data['LastName'] or Clark
+          <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard
             }}</span>
         </a>
         <br><br>
@@ -180,13 +186,15 @@ href: "javascript:window.history.go(-1);"
   </tbody>
 </table>
 
+
+<br><br>
 <table class="govuk-table">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship price
         <br>(excluding VAT)
       </th>
-      <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£1,200</strong></td>
+      <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£8,400</strong></td>
     </tr>
   </tbody>
 </table>
@@ -199,6 +207,7 @@ href: "javascript:window.history.go(-1);"
     Delete this cohort
   </a>
 </p>
+
 
 <hr class="govuk-section-break govuk-section-break--l">
 <div class="govuk-grid-row">
