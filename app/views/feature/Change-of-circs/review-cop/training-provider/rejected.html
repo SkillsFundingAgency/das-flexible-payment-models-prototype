@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/review-cop/training-provider" %}
 {% set pageTitle = "George Ford" %}
 
 
@@ -19,7 +19,12 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+
+
+
+
 <div class="govuk-grid-row">
+
 	<div class="govuk-grid-column-two-thirds">
 
 		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
@@ -31,12 +36,13 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					Request to change the price sent to employer
+					Changes rejected
 				</h3>
-				<p class="govuk-body">The employer now needs to approve the change.</p>
-				<p class="govuk-body"><a href="view-changes" class="govuk-link">View the price change you've requested</a></p>
+				<p class="govuk-body">The training provider has been notified that you have rejected their change of price
+					request.
 			</div>
 		</div>
+
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -48,15 +54,12 @@ href: "javascript:window.history.go(-1);"
 					<a class="govuk-tabs__tab" href="#overview">
 						Overview
 					</a>
-				</li>
 				<li class="govuk-tabs__list-item">
 					<a class="govuk-tabs__tab" href="#history">
 						History
 					</a>
 				</li>
 			</ul>
-
-			
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
@@ -68,6 +71,14 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--blue">Live</strong>
 						</dd>
 					</div>
+					<!-- <div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Stop applies from
+								</dt>
+								<dd class="govuk-summary-list__value">
+									May 2021
+								</dd>
+							</div> -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Apprentice confirmation
@@ -87,7 +98,7 @@ href: "javascript:window.history.go(-1);"
 				</dl>
 				<h2 class="govuk-heading-m">Overview</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-
+		
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Employer
@@ -144,22 +155,22 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">
-								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to apprentice</span>
+								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+									apprentice</span>
 							</a>
 						</dd>
 					</div>
-						<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-							<dt class="govuk-summary-list__key">
-								Date of birth
-							</dt>
-							<dd class="govuk-summary-list__value">
-								1 January 2000
-							</dd>
-						</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Date of birth
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1 January 2000
+						</dd>
+					</div>
+		
 				</dl>
-
 				<h2 class="govuk-heading-m">Course</h2>
-
 				<dl class="govuk-summary-list">
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -182,13 +193,13 @@ href: "javascript:window.history.go(-1);"
 							Actual training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							12 December 2022
+							12 December 2018
 						</dd>
-							<dd class="govuk-summary-list__actions">
-								<a class="govuk-link" href="change-start-date">
-									Change<span class="govuk-visually-hidden"> total training price</span>
-								</a>
-							</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="change-start-date">
+								Change<span class="govuk-visually-hidden"> actual training start date</span>
+							</a>
+						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -198,7 +209,6 @@ href: "javascript:window.history.go(-1);"
 							3 July 2020
 						</dd>
 					</div>
-
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Your reference
@@ -208,22 +218,17 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 				</dl>
-
+		
+		
 				<h2 class="govuk-heading-m">Price</h2>
 				<dl class="govuk-summary-list">
-
+		
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Training price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£7,000 <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="view-changes">
-								View request<span class="govuk-visually-hidden">for change of total training
-									price</span>
-							</a>
+							£8,500
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -231,56 +236,86 @@ href: "javascript:window.history.go(-1);"
 							End-point assessment price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£2,500
+							£1,000
 						</dd>
 						<!-- <dd class="govuk-summary-list__actions">
-																			<a class="govuk-link" href="update-price">
-																				Change<span class="govuk-visually-hidden"> total assessment price</span>
-																			</a>
-																		</dd> -->
+																	<a class="govuk-link" href="update-price">
+																		Change<span class="govuk-visually-hidden"> total assessment price</span>
+																	</a>
+																</dd> -->
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£9,500
+							£9,500 
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="update-price">
+							<a class="govuk-link" href="review">
 								Change<span class="govuk-visually-hidden"> total training price</span>
 							</a>
 						</dd>
 					</div>
 				</dl>
-
-
-
-			</div>
-			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
+		
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
 				<h2 class="govuk-heading-m">History</h2>
 				<ol class="hmrc-timeline">
+					<!-- <li class="hmrc-timeline__event">
+								<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+									increase
+								</h3>
+								<p class="govuk-body govuk-!-margin-bottom-3">
+									<strong class="govuk-tag govuk-tag--yellow">Change
+										requested</strong> by
+									EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+										2020</time>
+								</p>
+								<div class="hmrc-timeline__event-content">
+									<p class="govuk-body">
+										Total training price
+										updated from
+										<b>£1,000</b>
+										to
+										<b>£1,234</b>
+									</p>
+								</div>
+							</li> -->
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
 							increase
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--yellow">Pending</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2023-02-15">15 Febuary 2023</time>
+							<strong class="govuk-tag govuk-tag--green">Approved</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-15">3 August 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							<p class="govuk-body">
 								Total training price
 								updated from
-								<b>£6,000</b>
+								<b>£8,500</b>
 								to
-								<b>£7,000</b>
+								<b>£9,500</b>
 							</p>
-							<a class="govuk-link" href="#">
-								Resend notification to Employer<span class="govuk-visually-hidden">Resend invitation email to apprentice</span>
-							</a>
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											<strong class="govuk-tag govuk-tag--yellow">Change
+												requested</strong> by
+											AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July
+												2023</time>
+										</li>
+									</ul>
+								</div>
+							</details>
 						</div>
 					</li>
 					<li class="hmrc-timeline__event">
@@ -353,7 +388,6 @@ href: "javascript:window.history.go(-1);"
 							</details>
 						</div>
 					</li>
-
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
 						<time class="hmrc-timeline__event-meta" datetime="2020-07-15">28 June
@@ -377,15 +411,13 @@ href: "javascript:window.history.go(-1);"
 								2019</span></time>
 						<div class="hmrc-timeline__event-content">
 							<strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
-
+		
 						</div>
 					</li>
 				</ol>
 			</div>
-
+		
 		</div>
-		<p class="govuk-body govuk-!-margin-bottom-0"><a href="view-changes"
-				class="govuk-button govuk-!-margin-bottom-2">View price change</a></p>
 	</div>
 </div>
 
