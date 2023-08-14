@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/review-cop/training-provider" %}
+{% set version = "feature/Change-of-circs/review-cod/training-provider" %}
 {% set pageTitle = "Review changes" %}
 
 {% block header %}
@@ -79,52 +79,42 @@ href: "javascript:window.history.go(-1);"
         </dd>
       </div>
     </dl>
-  
-  
-  
+
+
+
     <form method="post" action="/{{version}}/review">
       <fieldset class="govuk-fieldset">
-  
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               Do you want to approve these changes?
             </legend>
-  
+
             <div class="govuk-radios" data-module="govuk-radios">
-  
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="review" name="review" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="review">
                   Yes, approve these changes
                 </label>
               </div>
-  
-  
+
+
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="review" name="review" type="radio"
-                  data-aria-controls="conditional-review">
+                <input class="govuk-radios__input" id="review" name="review" type="radio">
                 <label class="govuk-label govuk-radios__label" for="review">
                   No, reject these changes
                 </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-review"
-                data-aria-controls="conditional-review">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="review-more-details">
-                    Why do you want to reject these changes?
-                  </label>
-                  <textarea class="govuk-textarea" id="review-more-details" name="review-more-details"
-                    rows="5"></textarea>
-                </div>
-              </div>
-  
+
+
             </div>
-  
+
           </fieldset>
         </div>
         <button class="govuk-button" type="submit" data-module="govuk-button">
-          Save and continue
+          Send
         </button>
       </fieldset>
     </form>
@@ -133,4 +123,4 @@ href: "javascript:window.history.go(-1);"
 
 
 
-{% endblock %}
+  {% endblock %}

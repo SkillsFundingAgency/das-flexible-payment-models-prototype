@@ -334,3 +334,29 @@ router.post('/feature/Change-of-circs/review-cop/employer/review', function (req
         res.redirect('/feature/Change-of-circs/review-cop/employer/rejected')
     }
 })
+
+
+/////////Review COD / accept or reject COD //////////
+
+
+router.post('/feature/Change-of-circs/review-cod/training-provider/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cod/training-provider/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cod/training-provider/rejected')
+    }
+})
+
+router.post('/feature/Change-of-circs/review-cod/employer/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cod/employer/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cod/employer/rejected')
+    }
+})

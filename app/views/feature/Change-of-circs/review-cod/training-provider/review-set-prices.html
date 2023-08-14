@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/review-cop/training-provider" %}
+{% set version = "feature/Change-of-circs/review-cod/training-provider" %}
 {% set pageTitle = "Review changes" %}
 
 {% block header %}
@@ -68,6 +68,11 @@ href: "javascript:window.history.go(-1);"
         <dd class="govuk-summary-list__value">
           £9,500
         </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="update-price">
+            Change<span class="govuk-visually-hidden"> training price</span>
+          </a>
+        </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -77,30 +82,85 @@ href: "javascript:window.history.go(-1);"
           {{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
           with the Julia.'}}
         </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="update-price">
+            Change<span class="govuk-visually-hidden"> reason for request</span>
+          </a>
+        </dd>
       </div>
     </dl>
-  
-  
-  
+
+    <div class="govuk-inset-text">
+      <div id="price-hint" class="govuk-hint">
+        The new total price needs to be divided into the Training price and End-point assessment price.
+        <br><br>The employer has changed the total price to £9,500
+      </div>
+    </div>
+
     <form method="post" action="/{{version}}/review">
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Training price</label>
+        <div id="price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+        </div>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
+      </div>
+
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">End-point assessment price </label>
+        <div id="price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £1,500 enter 1500.
+        </div>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              End-point assessments
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
+                href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
+                target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for
+              this
+              apprentice.
+              We'll do this before the end of the apprenticeship.</p>
+          </div>
+        </details>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
+      </div>
+
+
+
+
+
+
+
       <fieldset class="govuk-fieldset">
-  
+
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               Do you want to approve these changes?
             </legend>
-  
+
             <div class="govuk-radios" data-module="govuk-radios">
-  
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="review" name="review" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="review">
                   Yes, approve these changes
                 </label>
               </div>
-  
-  
+
+
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="review" name="review" type="radio"
                   data-aria-controls="conditional-review">
@@ -118,19 +178,20 @@ href: "javascript:window.history.go(-1);"
                     rows="5"></textarea>
                 </div>
               </div>
-  
+
             </div>
-  
+
           </fieldset>
         </div>
         <button class="govuk-button" type="submit" data-module="govuk-button">
-          Save and continue
+          Send
         </button>
       </fieldset>
     </form>
+
   </div>
 
 
 
 
-{% endblock %}
+  {% endblock %}
