@@ -22,14 +22,17 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Training start date</h1>
-    <div id="apprenticeship-price-hint" class="govuk-hint"> The current start date for the training is 12 December 2018.
+    <div id="apprenticeship-price-hint" class="govuk-hint"> The current start date for the training is 12 December 2018.<br><br>You will not receive funding for apprenticeship activity in any academic year before [current
+    academic year]
     </div> 
+   
     <form action="/{{version}}/change-start-date" method="post" novalidate class="govuk-!-margin-top-7">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="effective-from-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
             When does the training start?
           </legend>
+          
           <div id="effective-from-hint" class="govuk-hint">
             For example, 31 3 2024
           </div>
