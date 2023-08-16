@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set version = "feature/Change-of-circs/sandbox" %}
 {% set pageTitle = "George Ford" %}
 
 
@@ -38,11 +38,12 @@ href: "javascript:window.history.go(-1);"
 					</a>
 				</li>
 			</ul>
-			<div class="govuk-tabs__panel" id="overview">
+			<div class="govuk-tabs__panel " id="overview">
 				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
+					
+					<div class="govuk-summary-list__row ">
+						<dt class="govuk-summary-list__key govuk-!-width-one-half">
 							Status
 						</dt>
 						<dd class="govuk-summary-list__value">
@@ -58,7 +59,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div> -->
 					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
+						<dt class="govuk-summary-list__key ">
 							Apprentice confirmation
 						</dt>
 						<dd class="govuk-summary-list__value">
@@ -68,9 +69,8 @@ href: "javascript:window.history.go(-1);"
 				</dl>
 				<h2 class="govuk-heading-m">Overview</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-
 					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
+						<dt class="govuk-summary-list__key govuk-!-width-one-half">
 							Training provider
 						</dt>
 						<dd class="govuk-summary-list__value">
@@ -86,14 +86,11 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 				</dl>
-				<div class="govuk-grid-row">
-					<div class="govuk-grid-column-two-thirds">
 						<h2 class="govuk-heading-m">Apprentice details</h2>
-					</div>
-				</div>
-				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-						<dt class="govuk-summary-list__key">
+				<dl class="govuk-summary-list govuk-!-margin-bottom-7 ">
+
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions ">
+						<dt class="govuk-summary-list__key govuk-!-width-one-half">
 							Unique learner number
 						</dt>
 						<dd class="govuk-summary-list__value">
@@ -108,19 +105,21 @@ href: "javascript:window.history.go(-1);"
 							George Ford
 						</dd>
 					</div>
-				<div class="govuk-summary-list__row">
-					<dt class="govuk-summary-list__key">
-						Email address
-					</dt>
-					<dd class="govuk-summary-list__value">
-						georgeford@gmail.com<br>
-					</dd>
-					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="#">
-							Resend invitation<span class="govuk-visually-hidden">Resend invitation email to apprentice</span>
-						</a>
-					</dd>
-				</div>
+					<div class="govuk-summary-list__row">
+
+						<dt class="govuk-summary-list__key govuk-!-width-one-half">
+							Email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							georgeford@gmail.com<br>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+									apprentice</span>
+							</a>
+						</dd>
+					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Date of birth
@@ -134,7 +133,7 @@ href: "javascript:window.history.go(-1);"
 				<h2 class="govuk-heading-m">Course</h2>
 				<dl class="govuk-summary-list">
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-						<dt class="govuk-summary-list__key">
+						<dt class="govuk-summary-list__key govuk-!-width-one-half">
 							Apprenticeship training course
 						</dt>
 						<dd class="govuk-summary-list__value">
@@ -156,7 +155,11 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 							12 December 2018
 						</dd>
-						
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="change-start-date">
+								Change<span class="govuk-visually-hidden"> actual training start date</span>
+							</a>
+						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -187,7 +190,7 @@ href: "javascript:window.history.go(-1);"
 							Nothing provided
 						</dd>
 					</div>
-						
+
 				</dl>
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">

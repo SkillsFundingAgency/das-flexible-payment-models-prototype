@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/Change-of-circs/sandbox" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+        <h2 class="govuk-heading-l">Version 1 - change of date & Change of start date</h2>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">Version</th>
+                <th class="govuk-table__header" scope="col">Updates</th>
+                <th class="govuk-table__header" scope="col" colspan="2">Action</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Version 2<p>12/07/2023</p>
+                </th>
+                
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Included a Total price and change the more details component for End-point assessment.
+                        </li>
+                        <li><a class="govuk-link" href="{{feature}}/add-apprentice/add-apprentice-details-error-1">Error message</a>(One much be a whole number)
+                        </li>
+                        <li><a class="govuk-link" href="{{feature}}/add-apprentice/add-apprentice-details-error-1-2">Error message</a>(both much be a whole number)
+                        </li>
+                        <li><a class="govuk-link" href="{{feature}}/add-apprentice/add-apprentice-details-error-3">Error message</a>(Cannot be more than £100,000)
+                        </li>
+                    </ul>
+                  
+                </td>
+                <td class="govuk-table__cell "><a href="add-apprentice-details">Start
+                        now</a>
+                </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="row">Apprentice details<p>16/08/2023</p>
+                </th>
+                <td class="govuk-table__cell ">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>Made all coloums half width rather than quarter.  
+                        </li>
+                </td>
+                <td class="govuk-table__cell "><a href="apprentice-details">Start
+                        now</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</div>
+
+{% endblock %}
