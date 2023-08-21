@@ -18,6 +18,8 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+
+
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
@@ -48,13 +50,15 @@ href: "javascript:window.history.go(-1);"
           Abattoir Worker, Level: 2 (Standard)
         </dd>
       </div>
+
     </dl>
 
-    <h2 class="govuk-heading-m">AUTOMATION & OPTIMISATION LTD has requested these changes</h2>
+    <h2 class="govuk-heading-m">Current prices</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Previous total price
+          Current Training price
         </dt>
         <dd class="govuk-summary-list__value">
           £8,500
@@ -64,24 +68,51 @@ href: "javascript:window.history.go(-1);"
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Updated total price
+          Current End-point assessment price
         </dt>
         <dd class="govuk-summary-list__value">
           £9,500
         </dd>
-
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Reason for change
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
-          with the Julia.'}}
-        </dd>
-      </div>
     </dl>
 
+
+    <div class="govuk-inset-text" style="border-color: #1d70b8;">
+
+
+      <h2 class="govuk-heading-m">AUTOMATION & OPTIMISATION LTD has requested these changes</h2>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+
+            </th>
+            <th scope="col" class="govuk-table__header app-custom-class">Previous</th>
+            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total price</th>
+            <td class="govuk-table__cell">£8,500</td>
+            <td class="govuk-table__cell">£9,500</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Reason for change
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
+            with the Julia.'}}
+          </dd>
+        </div>
+    </div>
+    </dl>
 
 
     <form method="post" action="/{{version}}/review">
@@ -124,12 +155,18 @@ href: "javascript:window.history.go(-1);"
             </div>
 
           </fieldset>
+          <br>
+          <p class="govuk-body">If you approve these changes you will be asked to enter the training and end-point
+            assessment price in the
+            next page.</p>
+
         </div>
         <button class="govuk-button" type="submit" data-module="govuk-button">
           Save and continue
         </button>
       </fieldset>
     </form>
+
   </div>
 
 
