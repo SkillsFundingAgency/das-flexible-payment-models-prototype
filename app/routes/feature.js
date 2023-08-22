@@ -158,7 +158,7 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date-error'
     }
 })
 
-/////////COP journey - change of startdate withdrawal //////////
+/////////COP journey - change of start date withdrawal //////////
 
 router.post('/feature/Change-of-circs/cop-cosd/training-provider/action/change-start-date-view-changes', function (req, res) {
     var withdraw = req.session.data['withdraw']
@@ -181,6 +181,7 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/change-start-date
         res.redirect('/feature/Change-of-circs/cop-cosd/employer/apprentice-details-request')
     }
 })
+
 
 ///////// Change of circs - COD //////////
 ///////// COD journey- change of start date //////////
@@ -282,6 +283,28 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/view-changes', fu
     }
 })
 
+
+router.post('/feature/Change-of-circs/cop/training-provider/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cop/training-provider/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop/training-provider/apprentice-details-request')
+    }
+})
+
+router.post('/feature/Change-of-circs/cop/employer/action/view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cop/employer/withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop/employer/apprentice-details-request')
+    }
+})
 
 
 /////////Change of start date withdrawal //////////

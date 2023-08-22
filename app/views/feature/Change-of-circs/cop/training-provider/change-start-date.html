@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Training start date</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 December 2018
+        </dd>
+      </div>
+    </dl>
+    <form action="/{{version}}/change-start-date" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="effective-from-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            Effective from date
+          </legend>
+          <div id="effective-from-hint" class="govuk-hint">
+            For example, 31 3 2024
+          </div>
+          <div class="govuk-date-input" id="effective-from">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="effective-from-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-day"
+                  name="effective-from-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="effective-from-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-month"
+                  name="effective-from-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="EffectiveFromYear">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="EffectiveFromYear"
+                  name="EffectiveFromYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+          <br>
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </fieldset>
+
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

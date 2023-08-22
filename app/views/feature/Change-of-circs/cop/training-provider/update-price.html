@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Change the training or end-point assessment price</h1>
+    <div id="apprenticeship-price-hint" class="govuk-hint">
+      The funding band maximum for this apprenticeship is £9,000. This is the highest amount the apprenticeship service
+      will pay towards the training and end-point assessment.
+      <br><br>
+      If you raise the training price above the funding band maximum, this will need to be paid by the employer.
+    </div>
+    <form action="confirm-update" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class=" govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Training price
+          </legend>
+          <div id="apprenticeship-price-hint" class="govuk-hint">
+            Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+          </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="apprenticeship-training-price" name="apprenticeship-training-price"
+              type="text" value="6000" aria-describedby="apprenticeship-price-hint">
+          </div>
+        </fieldset>
+      </div>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          End-point assessment price
+        </legend>
+        <div id="apprenticeship-price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="apprenticeship-epa-price" name="apprenticeship-epa-price"
+            type="text" value="2500" aria-describedby="apprenticeship-price-hint">
+        </div>
+      </fieldset>
+      <div class="govuk-inset-text">
+        The total price the employer will see is £8,500.
+      </div>
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
+                What was the reason for changing the price?
+              </legend>
+              <div id="reason-for-update-hint" class="govuk-hint">
+                If the total price changes, this reason will be shared with [employer name]. They will need to approve
+                the
+                change. </div>
+              <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
+                aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
+            </div>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+              200 characters remaining
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  </div>
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+</div>
+</div>
+
+
+
+{% endblock %}
