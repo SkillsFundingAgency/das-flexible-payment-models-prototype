@@ -52,36 +52,38 @@ href: "javascript:window.history.go(-1);"
 			</div>
 		</dl>
 		<h2 class="govuk-heading-m">Price changes you've requested</h2>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Previous total price
-				</dt>
-				<dd class="govuk-summary-list__value">
-					£8,500
-				</dd>
-				<dd class="govuk-summary-list__actions">
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Updated training price
-				</dt>
-				<dd class="govuk-summary-list__value">
-					£9,500
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Reason for change
-				</dt>
-				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
-					with the Julia.'}}
-				</dd>
-			</div>
-		</dl>
-		</dl>
+		
+		
+		<div id="apprenticeship-price-hint" class="govuk-hint">
+			Reason for change: "{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has
+			been
+			confirmed
+			with the training provider.'}}"
+		</div>
+		<br>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+		
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to
+					</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£{{ data['apprenticeship-price'] or
+						'£9,500'}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		
 		<form method="post" action="/{{version}}/action/view-changes">
 			<fieldset class="govuk-fieldset">
 

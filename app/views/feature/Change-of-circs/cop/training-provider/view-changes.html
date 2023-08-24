@@ -59,6 +59,8 @@ href: "javascript:window.history.go(-1);"
 			Reason for change: {{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been
 			confirmed
 			with the employer.'}}
+			<br><br>
+			Effective from date: {{ data['apprenticeship-price-valid-from-day'] or '24/08/2023' }}
 		</div>
 		<br>
 		<table class="govuk-table">
@@ -72,21 +74,29 @@ href: "javascript:window.history.go(-1);"
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
-		
+			
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Training price</th>
 					<td class="govuk-table__cell">£6,000</td>
-					<td class="govuk-table__cell">{{ data[£'apprenticeship-training-price'] or '£7,000'}}</td>
+					<td class="govuk-table__cell" id="TrainingPrice">£{{ data['apprenticeship-training-price'] or
+						'£7,000'}}</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">End-point assessment price</th>
 					<td class="govuk-table__cell">£2,500</td>
-					<td class="govuk-table__cell">{{ data[£'apprenticeship-training-price'] or '£2,500'}}</td>
+					<td class="govuk-table__cell" id="EndPointAssessmentPrice">£{{ data['apprenticeship-epa-price']
+						or '£2,500'}}</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
 					<td class="govuk-table__cell">£8,500</td>
-					<td class="govuk-table__cell">{{ data[£'apprenticeship-total-price'] or '£9,500'}}</td>
+					<td class="govuk-table__cell">£{{
+						data['apprenticeship-training-price']|float
+						+
+						data['apprenticeship-epa-price']|float }}
+			
+			
+					</td>
 				</tr>
 			</tbody>
 		</table>

@@ -39,7 +39,7 @@ href: "javascript:window.history.go(-1);"
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
             <input class="govuk-input govuk-input--width-5" id="apprenticeship-training-price"
-              name="apprenticeship-training-price" type="text" value="7,000"
+              name="apprenticeship-training-price" type="text" value="7000"
               aria-describedby="apprenticeship-price-hint" inputmode="numeric">
           </div>
         </fieldset>
@@ -54,18 +54,57 @@ href: "javascript:window.history.go(-1);"
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
           <input class="govuk-input govuk-input--width-5" id="apprenticeship-epa-price" name="apprenticeship-epa-price"
-            type="text" value="1,500" aria-describedby="apprenticeship-price-hint" inputmode="numeric">
+            type="text" value="1500" aria-describedby="apprenticeship-price-hint" inputmode="numeric">
         </div>
       </fieldset>
-      <div class="govuk-inset-text">
-        The total price the employer will see is {{ data['apprenticeship-epa-price'] + data['apprenticeship-epa-price'] or '£2,500'}}
-        </div>
 
-        <div class="govuk-inset-text">
-        The total price the employer will see is
-        <div id="apprenticeship-total-price" name="apprenticeship-total-price" onkeyup="calculateEditedTotalPrice()">
-         
+      <div class="govuk-inset-text">
+        The total price the employer will see is:
+        <div id="apprenticeship-total-price" name="apprenticeship-total-price">
         </div>
+      </div>
+
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What date is this valid from?
+          </legend>
+          <div id="apprenticeship-price-valid-from-hint" class="govuk-hint">
+            Any change of price will only be valid from after the training start date.
+          </div>
+          <div class="govuk-date-input" id="apprenticeship-price-valid-from" name="apprenticeship-price-valid-from">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-day" name="apprenticeship-price-valid-from-day" type="text" value="12"
+                   aria-describedby="apprenticeship-price-valid-from-hint" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
+                  value="12" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-year" type="text" value="2018"
+                  inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
       </div>
       <div class="govuk-form-group"><br>
         <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
@@ -97,13 +136,7 @@ href: "javascript:window.history.go(-1);"
 </div>
 </div>
 
-<script>
-  function calculateEditedTotalPrice() {
-    var trainingPrice = parseInt(document.getElementById("apprenticeship-training-price").value === "" ? 0 : document.getElementById("apprenticeship-training-price").value);
-    var epaPrice = parseInt(document.getElementById("apprenticeship-epa-price").value === "" ? 0 : document.getElementById("apprenticeship-epa-price").value);
-    document.getElementById("apprenticeship-total-price").innerText = trainingPrice + epaPrice;
-  }
-</script>
+
 
 
 {% endblock %}

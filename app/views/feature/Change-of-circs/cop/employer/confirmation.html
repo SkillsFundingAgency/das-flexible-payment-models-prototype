@@ -181,7 +181,8 @@ href: "javascript:window.history.go(-1);"
 							Total agreed apprenticeship price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£9,500 <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+							£{{ data['apprenticeship-price'] or
+							'£9,500'}} <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="view-changes">

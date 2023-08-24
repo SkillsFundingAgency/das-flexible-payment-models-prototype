@@ -211,22 +211,18 @@ href: "javascript:window.history.go(-1);"
 					</div>
 				</dl>
 
-				<h2 class="govuk-heading-m">Price</h2>
+				
 				<dl class="govuk-summary-list">
+<h2 class="govuk-heading-m">Price</h2>
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Training price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['apprenticeship-training-price'] or '£7,000'}} <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+							£{{ data['apprenticeship-training-price'] or '£7,000'}} 
 						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="view-changes">
-								View request<span class="govuk-visually-hidden">for change of total training
-									price</span>
-							</a>
-						</dd>
+						
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -243,14 +239,17 @@ href: "javascript:window.history.go(-1);"
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Total price
+							Total price 
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£9,500
+							£{{
+							data['apprenticeship-training-price']|float 
+							+
+							data['apprenticeship-epa-price']|float }}  <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="update-price">
-								Change<span class="govuk-visually-hidden"> total training price</span>
+							<a class="govuk-link" href="view-changes">
+								View request<span class="govuk-visually-hidden"> total training price</span>
 							</a>
 						</dd>
 					</div>
