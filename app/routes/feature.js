@@ -333,6 +333,32 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/change-start-date-view-c
 })
 
 
+/////////COP error message - over 100 //////////
+
+
+router.post('/feature/Change-of-circs/cop/training-provider/review', function (req, res) {
+    var review = req.session.data['apprenticeship-training-price']
+
+    if (apprenticeship-training-price >= "100001") {
+        res.redirect('/feature/Change-of-circs/cop/training-provider/update-price-error-2')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop/training-provider/confirm-update')
+    }
+})
+
+router.post('/feature/Change-of-circs/cop/employer/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/cop/employer/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cop/employer/rejected')
+    }
+})
+
+
 /////////Review COP / accept or reject COP //////////
 
 
@@ -357,7 +383,6 @@ router.post('/feature/Change-of-circs/review-cop/employer/review', function (req
         res.redirect('/feature/Change-of-circs/review-cop/employer/rejected')
     }
 })
-
 
 /////////Review COD / accept or reject COD //////////
 
