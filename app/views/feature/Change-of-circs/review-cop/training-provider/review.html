@@ -54,7 +54,7 @@ href: "javascript:window.history.go(-1);"
     <h2 class="govuk-heading-m">AUTOMATION & OPTIMISATION LTD has requested these changes</h2>
 
     <div id="apprenticeship-price-hint" class="govuk-hint">
-      Reason for change: {{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been
+      Reason for change: {{ 'The original price was entered incorrectly, this has been
       confirmed
       with the Training Provider.'}}
     </div>
@@ -74,12 +74,12 @@ href: "javascript:window.history.go(-1);"
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Training price</th>
           <td class="govuk-table__cell">£6,000</td>
-          <td class="govuk-table__cell">Undefined</td>
+          <td class="govuk-table__cell">Enter on next page</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">End-point assessment price</th>
           <td class="govuk-table__cell">£2,500</td>
-          <td class="govuk-table__cell">Undefined</td>
+          <td class="govuk-table__cell">Enter on next page</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Total price</th>
@@ -89,7 +89,7 @@ href: "javascript:window.history.go(-1);"
       </tbody>
     </table>
 
-
+<br>
     <form method="post" action="/{{version}}/review">
       <fieldset class="govuk-fieldset">
 
@@ -98,7 +98,9 @@ href: "javascript:window.history.go(-1);"
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               Do you want to approve these changes?
             </legend>
-
+      <div id="apprenticeship-price-hint" class="govuk-hint">
+       
+        Once you approve the new total price, you can enter the new training and end-point assessment price. </div>
             <div class="govuk-radios" data-module="govuk-radios">
 
               <div class="govuk-radios__item">
@@ -122,16 +124,14 @@ href: "javascript:window.history.go(-1);"
                   <label class="govuk-label" for="review-more-details">
                     Why do you want to reject these changes?
                   </label>
+                  
                   <textarea class="govuk-textarea" id="review-more-details" name="review-more-details"
                     rows="5"></textarea>
                 </div>
               </div>
             </div>
           </fieldset>
-          <div class="govuk-inset-text">
-            If you approve these changes you will be asked to enter the training and end-point
-            assessment price in the next page. </div>
-        </div>
+         <br>
         <button class="govuk-button" type="submit" data-module="govuk-button">
           Save and continue
         </button>
