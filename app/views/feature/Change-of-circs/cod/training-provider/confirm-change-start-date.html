@@ -62,45 +62,33 @@ href: "javascript:window.history.go(-1);"
 		</dl>
 
 		<h2 class="govuk-heading-m">Changes you're requesting</h2>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Previous training start date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					1 August 2023
-				</dd>
-				<dd class="govuk-summary-list__actions">
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Updated training start date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					{{ data['effective-from'] or '1 October 2023'}}
-				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="change-start-date">
-						Change<span class="govuk-visually-hidden"> total training price</span>
-					</a>
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Reason for change
-				</dt>
-				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
-					training.'}}
-				</dd>
-				<dd class="govuk-summary-list__actions">
-					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change-start-date">
-						Change<span class="govuk-visually-hidden"> reason for request</span>
-					</a>
-				</dd>
-			</div>
-		</dl>
+
+		<div id="apprenticeship-price-hint" class="govuk-hint">
+			Reason for change: "{{ data['reason-for-update'] or 'Apprentice can not start on original start date'}}"
+		
+		</div>
+		<br>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+		
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+		
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">1 August 2023</td>
+					<td class="govuk-table__cell">1 October 2023</td>
+				</tr>
+		
+			</tbody>
+		</table>
+		<br>
 	</div>
 </div>
 

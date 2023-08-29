@@ -49,37 +49,37 @@ href: "javascript:window.history.go(-1);"
 				</dd>
 			</div>
 		</dl>
-		<h2 class="govuk-heading-m">EDUC8 TRAINING (ENGLAND) LIMITED has requested these changes</h2>
-		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Previous training start date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					12 December 2018
-				</dd>
-				<dd class="govuk-summary-list__actions">
-				</dd>
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Updated training start date
-				</dt>
-				<dd class="govuk-summary-list__value">
-					12 January 2019
-				</dd>
-				
-			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Reason for change
-				</dt>
-				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-update'] or 'Apprentice could not start on original start date'}}
-				</dd>
-			</div>
-		</dl>
 
+		
+		<h2 class="govuk-heading-m">EDUC8 TRAINING (ENGLAND) LIMITED has requested these changes</h2>
+		
+		
+		<div id="apprenticeship-price-hint" class="govuk-hint">
+			Reason for change: "{{ data['reason-for-update'] or 'Apprentice can not start on original start date'}}"
+			
+		</div>
+		<br>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+		
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+		
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">1 August 2023</td>
+					<td class="govuk-table__cell">1 October 2023</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<br>
 
 
 		<form method="post" action="/{{version}}/review">
