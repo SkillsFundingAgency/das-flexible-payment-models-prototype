@@ -189,7 +189,7 @@ router.post('/feature/Change-of-circs/cop-cosd/employer/action/change-start-date
 router.post('/feature/Change-of-circs/cod/training-provider/change-start-date', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 
-    if (EffectiveFromYear <= "2016") {
+    if (EffectiveFromYear <= "2022") {
         res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-error')
     }
     else {
@@ -200,7 +200,7 @@ router.post('/feature/Change-of-circs/cod/training-provider/change-start-date', 
 router.post('/feature/Change-of-circs/cod/training-provider/change-start-date-error', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 
-    if (EffectiveFromYear <= "2016") {
+    if (EffectiveFromYear <= "2022") {
         res.redirect('/feature/Change-of-circs/cod/training-provider/change-start-date-error')
     }
     else {
@@ -212,7 +212,7 @@ router.post('/feature/Change-of-circs/cod/training-provider/change-start-date-er
 router.post('/feature/Change-of-circs/cod/employer/change-start-date', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 
-    if (EffectiveFromYear <= "2016") {
+    if (EffectiveFromYear <= "2022") {
         res.redirect('/feature/Change-of-circs/cod/employer/change-start-date-error')
     }
     else {
@@ -223,7 +223,7 @@ router.post('/feature/Change-of-circs/cod/employer/change-start-date', function 
 router.post('/feature/Change-of-circs/cod/employer/change-start-date-error', function (req, res) {
     var EffectiveFromYear = req.session.data['EffectiveFromYear']
 
-    if (EffectiveFromYear <= "2016") {
+    if (EffectiveFromYear <= "2022") {
         res.redirect('/feature/Change-of-circs/cod/employer/change-start-date-error')
     }
     else {
