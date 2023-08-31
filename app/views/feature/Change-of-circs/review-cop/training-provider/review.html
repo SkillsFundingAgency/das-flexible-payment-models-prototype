@@ -58,7 +58,8 @@ href: "javascript:window.history.go(-1);"
       confirmed
       with the Training Provider.'}}"
       <br><br>
-      Effective from date: 24/08/2023
+      Effective from date: {{ data['apprenticeship-price-valid-from-day'] or '24'}}/{{ data['apprenticeship-price-valid-from-month'] or '08'}}/{{
+      data['apprenticeship-price-valid-from-year'] or '2023'}}
     </div>
     <br>
     <table class="govuk-table">
