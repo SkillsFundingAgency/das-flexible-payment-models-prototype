@@ -60,8 +60,45 @@ href: "javascript:window.history.go(-1);"
 			confirmed
 			with the Training Provider.'}}"
 			<br><br>
-			Effective from date: {{ data['apprenticeship-price-valid-from-day'] or '24'}}/{{ data['apprenticeship-price-valid-from-month'] or '08'}}/{{
-			data['apprenticeship-price-valid-from-year'] or '2023'}}
+			Effective from date: {{ data['apprenticeship-price-valid-from-day'] or '24'}}
+			
+			{% if data['apprenticeship-price-valid-from-month'] == "1" or data['apprenticeship-price-valid-from-month'] == "01" %}
+			{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "2" or data['apprenticeship-price-valid-from-month'] == "02"
+			%}
+			{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "3" or data['apprenticeship-price-valid-from-month'] == "03"
+			%}
+			{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "4" or data['apprenticeship-price-valid-from-month'] == "04"
+			%}
+			{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "5" or data['apprenticeship-price-valid-from-month'] == "05"
+			%}
+			{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "6" or data['apprenticeship-price-valid-from-month'] == "06"
+			%}
+			{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "7" or data['apprenticeship-price-valid-from-month'] == "07"
+			%}
+			{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "8" or data['apprenticeship-price-valid-from-month'] == "08"
+			%}
+			{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "9" or data['apprenticeship-price-valid-from-month'] == "09"
+			%}
+			{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "10" %}
+			{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "11" %}
+			{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "12" %}
+			{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+			{% else %}
+			6 December 1976
+			{% endif %}
+			
+			{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
 		</div>
 		<br>
 		<table class="govuk-table">
