@@ -118,7 +118,7 @@ href: "javascript:window.history.go(-1);"
 					{% elseif data['effective-from-month'] == "12" %}
 					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
 					{% else %}
-					6 December 1976
+					October
 					{% endif %}
 					
 					{{ data['effective-from-year'] or '2023'}}</td>
@@ -143,9 +143,12 @@ href: "javascript:window.history.go(-1);"
 
 		<form action="change-start-date-confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
-			<button class="govuk-button" data-module="govuk-button">
-				Send
-			</button>
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Send
+				</button>
+				<a class="govuk-link" href="apprentice-details.html">Cancel and return</a>
+			</div>
 		</form>
 
 	</div>

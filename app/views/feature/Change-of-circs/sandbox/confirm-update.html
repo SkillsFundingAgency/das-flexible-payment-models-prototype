@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop/employer" %}
-{% set pageTitle = "Check your changes before sending to the training provider" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set pageTitle = "Check your changes before sending to the employer" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/employer-account-header.html" %}
-{% include "includes/nav-employer-apprentices" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,8 +17,13 @@ href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
+{% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
+{% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}
+{% set calculatedTotalPrice = (trainingPriceString + epaPriceString) | float %}
 
 {% block content %}
+
+
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
@@ -34,10 +39,10 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Training provider
+					Employer
 				</dt>
 				<dd class="govuk-summary-list__value">
-					EDUC8 TRAINING (ENGLAND) LIMITED
+					AUTOMATION & OPTIMISATION LTD
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
@@ -55,35 +60,36 @@ href: "javascript:window.history.go(-1);"
 			Reason for change: "{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has
 			been
 			confirmed
-			with the training provider.'}}"
+			with the employer.'}}"
 			<br><br>
 			Effective from date: {{ data['apprenticeship-price-valid-from-day'] or '24'}}
-			
-			{% if data['apprenticeship-price-valid-from-month'] == "1" or data['apprenticeship-price-valid-from-month'] == "01" %}
+
+			{% if data['apprenticeship-price-valid-from-month'] == "1" or data['apprenticeship-price-valid-from-month']
+			== "01" %}
 			{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "2" or data['apprenticeship-price-valid-from-month'] == "02"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "2" or
+			data['apprenticeship-price-valid-from-month'] == "02" %}
 			{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "3" or data['apprenticeship-price-valid-from-month'] == "03"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "3" or
+			data['apprenticeship-price-valid-from-month'] == "03" %}
 			{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "4" or data['apprenticeship-price-valid-from-month'] == "04"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "4" or
+			data['apprenticeship-price-valid-from-month'] == "04" %}
 			{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "5" or data['apprenticeship-price-valid-from-month'] == "05"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "5" or
+			data['apprenticeship-price-valid-from-month'] == "05" %}
 			{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "6" or data['apprenticeship-price-valid-from-month'] == "06"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "6" or
+			data['apprenticeship-price-valid-from-month'] == "06" %}
 			{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "7" or data['apprenticeship-price-valid-from-month'] == "07"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "7" or
+			data['apprenticeship-price-valid-from-month'] == "07" %}
 			{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "8" or data['apprenticeship-price-valid-from-month'] == "08"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "8" or
+			data['apprenticeship-price-valid-from-month'] == "08" %}
 			{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
-			{% elseif data['apprenticeship-price-valid-from-month'] == "9" or data['apprenticeship-price-valid-from-month'] == "09"
-			%}
+			{% elseif data['apprenticeship-price-valid-from-month'] == "9" or
+			data['apprenticeship-price-valid-from-month'] == "09" %}
 			{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
 			{% elseif data['apprenticeship-price-valid-from-month'] == "10" %}
 			{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
@@ -94,7 +100,7 @@ href: "javascript:window.history.go(-1);"
 			{% else %}
 			6 December 1976
 			{% endif %}
-			
+
 			{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
 		</div>
 		<br>
@@ -102,42 +108,68 @@ href: "javascript:window.history.go(-1);"
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-		
+
 					</th>
 					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
-					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to
+					<th scope="col" class="govuk-table__header app-custom-class ">Changed to
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">
 					</th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training price</th>
+					<td class="govuk-table__cell">£6,000</td>
+					<td class="govuk-table__cell" id="TrainingPrice">£{{ data['apprenticeship-training-price'] or
+						'£7,000'}}</td>
+						<td class="govuk-table__cell" id="TrainingPrice"></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">End-point assessment price</th>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell" id="EndPointAssessmentPrice">£{{ data['apprenticeship-epa-price']
+						or '£2,500'}}</td>
+						<td class="govuk-table__cell" id="TrainingPrice"></td>
+				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
 					<td class="govuk-table__cell">£8,500</td>
-					<td class="govuk-table__cell">£{{ data['apprenticeship-price'] or
-					'£9,500'}}
+					<td class="govuk-table__cell">£
+						{{
+						(data['apprenticeship-training-price']|float(format='0,0')
+						+
+						data['apprenticeship-epa-price']|float(format='0,0')) }}
 					</td>
+					<td class="govuk-table__cell" id="TotalPrice"><a class="govuk-link" href="#">
+						Change<span class="govuk-visually-hidden"> contact details</span>
+					</a></td>
+
 				</tr>
 			</tbody>
 		</table>
+
+
 
 	</div>
 </div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<h2 class="govuk-heading-m">Now send to the training provider for approval</h2>
-		<p class="govuk-body">Your payment schedule will not change until the training proivder approves your request.
-		</p>
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+		<p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p>
 		<form action="confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
-			<div class="govuk-button-group">
+			
 				<button class="govuk-button" data-module="govuk-button">
 					Send
 				</button>
-				<a class="govuk-link" href="apprentice-details.html">Cancel and return</a>
-			</div>
+				
 		</form>
 	</div>
 </div>
+
+</body>
 
 
 
