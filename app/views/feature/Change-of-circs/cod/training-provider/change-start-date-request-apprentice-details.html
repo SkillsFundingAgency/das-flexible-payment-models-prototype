@@ -162,7 +162,7 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 							{{ data['effective-from-day'] or '24'}}
-							
+
 							{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
 							{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
 							{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
@@ -196,10 +196,11 @@ href: "javascript:window.history.go(-1);"
 							{% elseif data['effective-from-month'] == "12" %}
 							{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
 							{% else %}
-							6 December 1976
+							August
 							{% endif %}
-							
-							{{ data['effective-from-year'] or '2023'}} <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+
+							{{ data['effective-from-year'] or '2023'}} <strong
+								class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="change-start-date-view-changes">
@@ -288,28 +289,36 @@ href: "javascript:window.history.go(-1);"
 								
 								{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
 								{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
+								{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] ==
+								"02"
 								%}
 								{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
+								{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] ==
+								"03"
 								%}
 								{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
+								{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] ==
+								"04"
 								%}
 								{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
+								{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] ==
+								"05"
 								%}
 								{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+								{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] ==
+								"06"
 								%}
 								{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
+								{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] ==
+								"07"
 								%}
 								{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
+								{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] ==
+								"08"
 								%}
 								{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
-								{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
+								{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] ==
+								"09"
 								%}
 								{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
 								{% elseif data['effective-from-month'] == "10" %}
@@ -319,7 +328,7 @@ href: "javascript:window.history.go(-1);"
 								{% elseif data['effective-from-month'] == "12" %}
 								{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
 								{% else %}
-								23 October 2023
+								August
 								{% endif %}
 								
 								{{ data['effective-from-year'] or '2023'}} </b>
