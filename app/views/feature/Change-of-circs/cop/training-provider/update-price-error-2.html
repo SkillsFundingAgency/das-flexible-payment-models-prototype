@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set version = "feature/Change-of-circs/cop-cosd/training-provider" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -46,20 +46,19 @@ href: "javascript:window.history.go(-1);"
     <form action="confirm-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group govuk-form-group--error">
         <p id="passport-issued-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Total price for training and end-point assessment cannot be
-          more than
+          <span class="govuk-visually-hidden">Error:</span>Total price for training and end-point assessment cannot be more than
           £100,000.
-
+        
         </p>
         <fieldset class="govuk-fieldset">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
+           
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
             Training price
           </legend>
           <div id="apprenticeship-price-hint" class="govuk-hint">
             Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
           </div>
-
+       
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
             <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price"
@@ -74,13 +73,13 @@ href: "javascript:window.history.go(-1);"
             </div>
             <div class="govuk-input__wrapper ">
               <div class="govuk-input__prefix " aria-hidden="true">£</div>
-              <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price"
-                name="apprenticeship-price" type="text" value="2500" aria-describedby="apprenticeship-price-hint">
+              <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price" name="apprenticeship-price" type="text"
+                value="2500" aria-describedby="apprenticeship-price-hint">
             </div>
           </div>
         </fieldset>
       </div>
-
+  
       <div class="govuk-inset-text">
         The total price visible to the employer is: £108500.
       </div>
@@ -98,7 +97,7 @@ href: "javascript:window.history.go(-1);"
                   Day
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                  id="apprenticeship-price-valid-from-day" name="passport-valid-from-day" type="text" value="12"
+                  id="apprenticeship-price-valid-from-day" name="passport-valid-from-day" type="text" value=""
                   inputmode="numeric">
               </div>
             </div>
@@ -109,7 +108,7 @@ href: "javascript:window.history.go(-1);"
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2"
                   id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
-                  value="12" inputmode="numeric">
+                  value="" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -119,7 +118,7 @@ href: "javascript:window.history.go(-1);"
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4"
                   id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-year" type="text"
-                  value="2018" inputmode="numeric">
+                  value="" inputmode="numeric">
               </div>
             </div>
           </div>
