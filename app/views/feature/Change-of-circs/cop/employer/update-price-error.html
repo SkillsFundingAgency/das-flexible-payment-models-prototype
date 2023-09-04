@@ -16,8 +16,7 @@ href: "javascript:window.history.go(-1);"
 
 {% endblock %}
 
-{% block content %}
-<div class="govuk-error-summary" data-module="govuk-error-summary">
+{% block content %}<div class="govuk-error-summary" data-module="govuk-error-summary">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
       There is a problem
@@ -42,9 +41,9 @@ href: "javascript:window.history.go(-1);"
       If you raise the training price above the funding band maximum, you will need to pay the training provider
       directly.
     </div>
-          <div class="govuk-inset-text">
-            The current total price is £8,500.
-          </div>
+    <div class="govuk-inset-text">
+      The current total price is £8,500.
+    </div>
     <form action="confirm-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset">
@@ -59,10 +58,53 @@ href: "javascript:window.history.go(-1);"
           </p>
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price" name="apprenticeship-price"
-              type="text" value="9,500" aria-describedby="apprenticeship-price-hint">
+            <input class="govuk-input govuk-input--width-5 govuk-input--error" id="apprenticeship-price"
+              name="apprenticeship-price" type="text" value="9,500" aria-describedby="apprenticeship-price-hint">
           </div>
       </div>
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What date is this valid from?
+          </legend>
+          <div id="apprenticeship-price-valid-from-hint" class="govuk-hint">
+            Any change of price will only be valid from after the training start date.
+          </div>
+          <div class="govuk-date-input" id="apprenticeship-price-valid-from" name="apprenticeship-price-valid-from">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-day" name="apprenticeship-price-valid-from-day" type="text"
+                  value="" aria-describedby="apprenticeship-price-valid-from-hint" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
+                  value="" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-from-year" type="text"
+                  value="" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <br>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
           <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
