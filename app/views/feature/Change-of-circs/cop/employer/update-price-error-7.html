@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set version = "feature/Change-of-circs/cop/employer" %}
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,7 +15,6 @@ href: "javascript:window.history.go(-1);"
 }) }}
 
 {% endblock %}
-
 {% block content %}
 
 <div class="govuk-error-summary" data-module="govuk-error-summary">
@@ -26,7 +25,7 @@ href: "javascript:window.history.go(-1);"
     <div class="govuk-error-summary__body">
       <ul class="govuk-list govuk-error-summary__list">
         <li>
-          <a href="#">Enter a date that is after the training start date</a>
+          <a href="#">Enter a date</a>
         </li>
       </ul>
     </div>
@@ -43,53 +42,35 @@ href: "javascript:window.history.go(-1);"
       <br><br>
       If you raise the training price above the funding band maximum, this will need to be paid by the employer.
     </div>
+      <div class="govuk-inset-text">
+        The current total price is £8,500.
+      </div>
     <form action="confirm-update" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
-            Training price
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Total price
           </legend>
           <div id="apprenticeship-price-hint" class="govuk-hint">
             Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
           </div>
-
           <div class="govuk-input__wrapper">
             <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price"
-              type="text" value="6,000" aria-describedby="apprenticeship-price-hint">
+            <input class="govuk-input govuk-input--width-5" id="apprenticeship-price" name="apprenticeship-price" type="text"
+              value="8500" aria-describedby="apprenticeship-price-hint">
           </div>
-        </fieldset>
       </div>
-      <fieldset class="govuk-fieldset">
-        <div class=" govuk-form-group">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            End-point assessment price
-          </legend>
-          <div id="apprenticeship-price-hint" class="govuk-hint">
-            Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500.
-          </div>
-
-          <div class="govuk-input__wrapper">
-            <div class="govuk-input__prefix" aria-hidden="true">£</div>
-            <input class="govuk-input govuk-input--width-5 " id="apprenticeship-price" name="apprenticeship-price"
-              type="text" value="2,500" aria-describedby="apprenticeship-price-hint">
-          </div>
-        </div>
-            <div class="govuk-inset-text">
-              The total price visible to the employer is: £8,500.
-            </div>
-      </fieldset>
       <div class="govuk-form-group govuk-form-group--error ">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             What date is this price valid from?
           </legend>
           <div id="passport-valid-from-hint" class="govuk-hint">
-          For example, 05 12 2022
-          <br>
-          The date you enter must be after the training start date</div>
+            For example, 05 12 2022
+            <br>
+            The date you enter must be after the training start date</div>
           <p id="" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span>Enter a date that is after the training start date
+            <span class="govuk-visually-hidden">Error:</span> Enter a date
           </p>
           <div class="govuk-date-input" id="apprenticeship-price-valid-from">
             <div class="govuk-date-input__item">
