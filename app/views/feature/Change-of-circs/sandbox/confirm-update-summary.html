@@ -1,0 +1,169 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set pageTitle = "Check your changes before sending to the employer" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+{% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
+{% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}
+{% set calculatedTotalPrice = (trainingPriceString + epaPriceString) | float %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Apprenticeship training course
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Abattoir Worker, Level: 2 (Standard)
+				</dd>
+			</div>
+		</dl>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Training Price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£6,000
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					End-point assessment price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£2,500
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Total price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£8,500
+				</dd>
+			</div>
+		</dl>
+		
+<div class="govuk-summary-card">
+	<div class="govuk-summary-card__title-wrapper">
+		<h2 class="govuk-summary-card__title">Changes you're requesting</h2>
+	</div>
+	<div class="govuk-summary-card__content">
+		<dl class="govuk-summary-list">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Training Price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£7,000
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">
+						Change<span class="govuk-visually-hidden"> age</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					End-point assessment
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£2,500
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">
+						Change<span class="govuk-visually-hidden"> nationality</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Total price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£9,500
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">
+						Change<span class="govuk-visually-hidden"> working situation</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Price valid from
+				</dt>
+				<dd class="govuk-summary-list__value">
+					24th August 2023
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="#">
+						Change<span class="govuk-visually-hidden"> working situation</span>
+					</a>
+				</dd>
+			</div>
+		</dl>
+	</div>
+</div>
+
+
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+		<p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p>
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">	
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Send
+				</button>
+				<a class="govuk-link" href="apprentice-details.html">Cancel and return</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+</body>
+
+
+
+{% endblock %}
