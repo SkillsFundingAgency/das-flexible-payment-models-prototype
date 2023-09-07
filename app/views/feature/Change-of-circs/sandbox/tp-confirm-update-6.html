@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set pageTitle = "Check your changes before sending to the employer" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+{% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
+{% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}
+{% set calculatedTotalPrice = (trainingPriceString + epaPriceString) | float %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Apprenticeship training course
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Abattoir Worker, Level: 2 (Standard)
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+		
+	<p class="govuk-body">Reason for change: "{{ data['reason-for-update'] or 'The original price was entered
+		incorrectly, this has
+		been
+		confirmed
+		with the employer.'}}"
+	</p>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-half">
+
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
+					<th scope="col" class="govuk-table__header app-custom-class ">Changed to
+					</th>
+					
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training price</th>
+					<td class="govuk-table__cell">£6,000</td>
+					<td class="govuk-table__cell" id="TrainingPrice">£7,000</td>
+					<td class="govuk-table__cell" id="TotalPrice"></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">End-point assessment price</th>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell" id="EndPointAssessmentPrice">£2,500</td>
+					<td class="govuk-table__cell" id="TotalPrice"></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£9,500
+					</td>
+					<td class="govuk-table__cell" id="TotalPrice"></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Effective from date:</th>
+					<td class="govuk-table__cell"></td>
+					<td class="govuk-table__cell">24 October 2023
+					</td>
+					<td class="govuk-table__cell" id="TotalPrice"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div>
+		</div>
+
+
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+		<p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p>
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+
+			<button class="govuk-button" data-module="govuk-button">
+				Send
+			</button>
+
+		</form>
+	</div>
+</div>
+
+</body>
+
+
+
+{% endblock %}
