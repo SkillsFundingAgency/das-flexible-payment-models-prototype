@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cosd/employer" %}
+{% set pageTitle = "Price change" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<h2 class="govuk-heading-m">Price details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Current training price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£6,000
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Current end point assesment price
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£2,500
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Total cost displayed to employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£8,500
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Funding Band
+				</dt>
+				<dd class="govuk-summary-list__value">
+					£8,750
+				</dd>
+			</div>
+
+		</dl>
+
+
+		<details class="govuk-details" data-module="govuk-details">
+			<summary class="govuk-details__summary">
+				<span class="govuk-details__summary-text">
+					What happens if the new price exceeds the funding band?
+				</span>
+			</summary>
+			<div class="govuk-details__text">
+				If the true cost of delivery exceeds the funding band maximum (before any deductions for prior learning
+				have been made),
+				the provider must agree off-line (outside of the ILR and apprenticeship service) how the employer will
+				pay this
+				difference. We do not need to know about the amount of this difference and VAT can be charged on this
+				amount. This
+				difference must not be funded from the apprenticeship service account or co-investment.
+			</div>
+		</details>
+	</div>
+	<div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+		<div class="govuk-grid-column-one-half">
+			<table class="govuk-table">
+				<form action="reason-for-update" method="post" novalidate class="govuk-!-margin-top-7">
+					<div class=" govuk-form-group">
+						<fieldset class="govuk-fieldset">
+							<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+								What is the new training price?
+							</legend>
+
+							<div id="apprenticeship-price-hint" class="govuk-hint">
+								The total price should not include VAT. <br> <br> If the price is the same please
+								re-enter the current price.
+							</div>
+
+							<div class="govuk-input__wrapper">
+								<div class="govuk-input__prefix" aria-hidden="true">£</div>
+								<input class="govuk-input govuk-input--width-5" id="apprenticeship-price"
+									name="apprenticeship-price" type="text"
+									aria-describedby="apprenticeship-price-hint">
+							</div>
+
+
+					</div>
+
+					<button class="govuk-button" data-module="govuk-button">
+						Continue
+					</button>
+				</form>
+
+			</table>
+		</div>
+		<div class="govuk-grid-column-one-half">
+			<table class="govuk-table">
+				<fieldset class="govuk-fieldset">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						What is the new assessment price?
+
+					</legend>
+
+					<div id="apprenticeship-price-hint" class="govuk-hint">
+						The total price should not include VAT. <br> <br> If the price is the same please re-enter the
+						current price.
+					</div>
+
+					<div class="govuk-input__wrapper">
+						<div class="govuk-input__prefix" aria-hidden="true">£</div>
+						<input class="govuk-input govuk-input--width-5" id="apprenticeship-price"
+							name="apprenticeship-price" type="text" aria-describedby="apprenticeship-price-hint">
+					</div>
+
+
+			</table>
+
+		</div>
+	</div>
+
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+
+
+
+
+		</div>
+	</div>
+
+
+	{% endblock %}

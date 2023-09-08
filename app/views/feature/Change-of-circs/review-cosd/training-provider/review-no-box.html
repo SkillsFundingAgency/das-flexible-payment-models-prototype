@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/review-cod/training-provider" %}
+{% set version = "feature/Change-of-circs/review-cosd/training-provider" %}
 {% set pageTitle = "Review changes" %}
 
 {% block header %}
@@ -102,29 +102,19 @@ href: "javascript:window.history.go(-1);"
 
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="review" name="review" type="radio"
-                  data-aria-controls="conditional-review">
+                <input class="govuk-radios__input" id="review" name="review" type="radio">
                 <label class="govuk-label govuk-radios__label" for="review">
                   No, reject these changes
                 </label>
               </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-review"
-                data-aria-controls="conditional-review">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="review-more-details">
-                    Why do you want to reject these changes?
-                  </label>
-                  <textarea class="govuk-textarea" id="review-more-details" name="review-more-details"
-                    rows="5"></textarea>
-                </div>
-              </div>
+
 
             </div>
 
           </fieldset>
         </div>
         <button class="govuk-button" type="submit" data-module="govuk-button">
-          Save and continue
+          Send
         </button>
       </fieldset>
     </form>

@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/review-cod/employer" %}
+{% set version = "feature/Change-of-circs/review-cosd/employer" %}
 {% set pageTitle = "Review changes" %}
 
 
@@ -50,59 +50,52 @@ href: "javascript:window.history.go(-1);"
 			</div>
 		</dl>
 
-		
+
 		<h2 class="govuk-heading-m">EDUC8 TRAINING (ENGLAND) LIMITED has requested these changes</h2>
-		
-		
-		<div id="apprenticeship-price-hint" class="govuk-hint">
-			Reason for change: "{{ data['reason-for-update'] or 'Apprentice can not start on original start date'}}"
-			
-		</div>
-		<br>
 		<table class="govuk-table">
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-		
+
 					</th>
-					<th scope="col" class="govuk-table__header app-custom-class">Previous</th>
-					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Changed to</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested</th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
-		
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Training start date</th>
 					<td class="govuk-table__cell">1 August 2023</td>
 					<td class="govuk-table__cell">24 August 2023</td>
 				</tr>
-				
 			</tbody>
 		</table>
-		<br>
-
-
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					Apprentice can not start on original start date
+				</dd>
+			</div>
+		</dl>
 		<form method="post" action="/{{version}}/review">
 			<fieldset class="govuk-fieldset">
-
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 							Do you want to approve these changes?
 						</legend>
-
 						<div class="govuk-radios" data-module="govuk-radios">
-							
 							<div class="govuk-radios__item">
 								<input class="govuk-radios__input" id="review" name="review" type="radio" value="yes">
 								<label class="govuk-label govuk-radios__label" for="review">
 									Yes, approve these changes
 								</label>
 							</div>
-
-
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="review" name="review" type="radio" 
+								<input class="govuk-radios__input" id="review" name="review" type="radio"
 									data-aria-controls="conditional-review">
 								<label class="govuk-label govuk-radios__label" for="review">
 									No, reject these changes
@@ -118,9 +111,7 @@ href: "javascript:window.history.go(-1);"
 										rows="5"></textarea>
 								</div>
 							</div>
-
 						</div>
-
 					</fieldset>
 				</div>
 				<button class="govuk-button" type="submit" data-module="govuk-button">

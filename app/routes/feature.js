@@ -256,6 +256,27 @@ router.post('/feature/Change-of-circs/cod/employer/change-start-date-view-change
 })
 
 
+router.post('/feature/Change-of-circs/cosd/training-provider/change-start-date-view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cosd/training-provider/change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cosd/training-provider/change-start-date-request-apprentice-details')
+    }
+})
+
+router.post('/feature/Change-of-circs/cosd/employer/change-start-date-view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/feature/Change-of-circs/cosd/employer//change-start-date-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/cosd/employer/change-start-date-request-apprentice-details')
+    }
+})
 
 
 /////////Change of price withdrawal //////////
@@ -406,6 +427,29 @@ router.post('/feature/Change-of-circs/review-cod/employer/review', function (req
     }
     else {
         res.redirect('/feature/Change-of-circs/review-cod/employer/rejected')
+    }
+})
+
+
+router.post('/feature/Change-of-circs/review-cosd/training-provider/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cosd/training-provider/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cosd/training-provider/rejected')
+    }
+})
+
+router.post('/feature/Change-of-circs/review-cosd/employer/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/feature/Change-of-circs/review-cosd/employer/approved')
+    }
+    else {
+        res.redirect('/feature/Change-of-circs/review-cosd/employer/rejected')
     }
 })
 

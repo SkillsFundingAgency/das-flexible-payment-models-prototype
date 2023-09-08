@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/review-cod/employer" %}
-{% set pageTitle = "Review changes" %}
+{% set version = "feature/Change-of-circs/cosd/employer" %}
+{% set pageTitle = "View change of start date" %}
 
 
 {% block header %}
@@ -19,11 +19,22 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
+
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
 		<h2 class="govuk-heading-m">Apprenticeship details</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Request status
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Pending training provider review</strong>
+				</dd>
+			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					Name
@@ -34,96 +45,97 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Training provider
+					Unique learner number
+				</dt>
+				<dd class="govuk-summary-list__value">
+					5320150775
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Training Provider
 				</dt>
 				<dd class="govuk-summary-list__value">
 					EDUC8 TRAINING (ENGLAND) LIMITED
 				</dd>
 			</div>
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Apprenticeship training course
-				</dt>
-				<dd class="govuk-summary-list__value">
-					Abattoir Worker, Level: 2 (Standard)
-				</dd>
-			</div>
 		</dl>
-		<h2 class="govuk-heading-m">EDUC8 TRAINING (ENGLAND) LIMITED has requested these changes</h2>
+		<h2 class="govuk-heading-m">Changes you've requested</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Previous total price
+					Previous training start date
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£8,500
+					12 December 2018
 				</dd>
 				<dd class="govuk-summary-list__actions">
 				</dd>
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Updated total price
+					Updated training start date
 				</dt>
 				<dd class="govuk-summary-list__value">
-					£9,500
+					{{ data['confirm-change-start-date'] or '12 January 2019'}}
 				</dd>
-
 			</div>
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Reason for change
+					Reason for request
 				</dt>
 				<dd class="govuk-summary-list__value">
-					{{ data['reason-for-update'] or 'The original price was entered incorrectly, this has been confirmed
-					with the Julia.'}}
+					{{ data['reason-for-change-of-date'] or 'Apprentice had a delayed start to employment and
+					training.'}}
 				</dd>
+
 			</div>
 		</dl>
-
-
-
-		<form method="post" action="/{{version}}/review">
+		<form method="post" action="/{{version}}/change-start-date-view-changes">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to approve these changes?
+							Do you want to cancel this request?
 						</legend>
 
 						<div class="govuk-radios" data-module="govuk-radios">
-
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="review" name="review" type="radio" value="yes">
-								<label class="govuk-label govuk-radios__label" for="review">
-									Yes, approve these changes
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
 								</label>
 							</div>
-
-
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to cancel this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="review" name="review" type="radio">
-								<label class="govuk-label govuk-radios__label" for="review">
-									No, reject these changes
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									No, keep the request
 								</label>
 							</div>
-
 
 						</div>
-
 					</fieldset>
 				</div>
 				<button class="govuk-button" type="submit" data-module="govuk-button">
-					Send
+					Continue
 				</button>
 			</fieldset>
 		</form>
 	</div>
-
-
 </div>
-
 
 
 {% endblock %}

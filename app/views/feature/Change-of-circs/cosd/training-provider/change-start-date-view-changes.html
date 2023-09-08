@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cosd/training-provider" %}
+{% set pageTitle = "View change of start date" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Request status
+				</dt>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Unique learner number
+				</dt>
+				<dd class="govuk-summary-list__value">
+					5320150775
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Changes you've requested</h2>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">1 August 2023</td>
+					<td class="govuk-table__cell">{{ data['effective-from-day'] or '24'}}
+
+						{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
+						{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
+						%}
+						{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
+						%}
+						{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
+						%}
+						{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
+						%}
+						{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+						%}
+						{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
+						%}
+						{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
+						%}
+						{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
+						%}
+						{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "10" %}
+						{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "11" %}
+						{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+						{% elseif data['effective-from-month'] == "12" %}
+						{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+						{% else %}
+						August
+						{% endif %}
+
+						{{ data['effective-from-year'] or '2023'}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
+			</div>
+		</dl>
+		<form method="post" action="/{{version}}/change-start-date-view-changes">
+			<fieldset class="govuk-fieldset">
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to cancel this request?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to cancel this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									No, keep the request
+								</label>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

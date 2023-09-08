@@ -93,7 +93,6 @@ href: "javascript:window.history.go(-1);"
 				</tr>
 			</tbody>
 		</table>
-
 		<dl class="govuk-summary-list govuk-summary-list--no-border">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
@@ -110,8 +109,9 @@ href: "javascript:window.history.go(-1);"
 				</dt>
 				<dd class="govuk-summary-list__value govuk-!-width-one-quarter">
 					{{ data['apprenticeship-price-valid-from-day'] or '24'}}
-					
-					{% if data['apprenticeship-price-valid-from-month'] == "1" or data['apprenticeship-price-valid-from-month']
+
+					{% if data['apprenticeship-price-valid-from-month'] == "1" or
+					data['apprenticeship-price-valid-from-month']
 					== "01" %}
 					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
 					{% elseif data['apprenticeship-price-valid-from-month'] == "2" or
@@ -147,12 +147,12 @@ href: "javascript:window.history.go(-1);"
 					{% else %}
 					August
 					{% endif %}
-					
+
 					{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
 				</dd>
-		
+
 			</div>
-		
+
 		</dl>
 	</div>
 </div>
@@ -161,7 +161,7 @@ href: "javascript:window.history.go(-1);"
 		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
 		<p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p>
 		<form action="confirmation" method="post" novalidate>
-			<input type="hidden" name="answers-checked" value="true">	
+			<input type="hidden" name="answers-checked" value="true">
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
 					Send
