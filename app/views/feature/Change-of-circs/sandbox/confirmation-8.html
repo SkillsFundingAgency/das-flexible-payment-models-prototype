@@ -210,43 +210,69 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 				</dl>
-
-
 				<dl class="govuk-summary-list">
 					<h2 class="govuk-heading-m">Price</h2>
-
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Training price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{ data['apprenticeship-training-price'] or '7,000'}}
+							£7,000
 						</dd>
-
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							End-point assessment price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£2,500
+							£1,500
 						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-																			<a class="govuk-link" href="update-price">
-																				Change<span class="govuk-visually-hidden"> total assessment price</span>
-																			</a>
-																		</dd> -->
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{
-							data['apprenticeship-training-price']|float
-							+
-							data['apprenticeship-epa-price']|float }} <strong
-								class="govuk-tag govuk-tag--yellow">Pending</strong>
+							£8,500
+						</dd>
+					</div>
+				</dl>
+
+
+
+			</div>
+
+			<div class="govuk-tabs" data-module="govuk-tabs">
+				<br><br>
+				<dd class="govuk-summary-list__value">
+					<strong class="govuk-tag govuk-tag--yellow">Change
+						requested</strong>
+				</dd><br>
+				<dl class="govuk-summary-list">
+					<h2 class="govuk-heading-m">Price</h2>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,000
+						</dd>
+
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							End-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£2,500
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£10,000
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="view-changes">
@@ -258,7 +284,13 @@ href: "javascript:window.history.go(-1);"
 
 
 
+
+
+
 			</div>
+
+
+			
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">

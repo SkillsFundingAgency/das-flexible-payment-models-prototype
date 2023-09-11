@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cosd/training-provider" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -18,26 +18,8 @@ href: "javascript:window.history.go(-1);"
 
 {% block content %}
 
-<div class="govuk-error-summary" data-module="govuk-error-summary">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="#">An apprentice has to be over 16 years of age, please enter the correct start date.</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-two-thirds">
-
-  
-    
     <h1 class="govuk-heading-l">Training start date</h1>
     <div id="apprenticeship-price-hint" class="govuk-hint"> The current start date for the training is 1 August 2023.
     </div>
@@ -49,9 +31,9 @@ href: "javascript:window.history.go(-1);"
               When does the training start?
             </legend>
           </legend>
-          <div id="effective-from-hint" class="govuk-hint">
-            For example, 31 3 2024
-          </div>
+        <div id="effective-from-hint" class="govuk-hint">
+          For example, 31 3 2024
+        </div>
           <p id="passport-issued-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> An apprentice has to be over 16 years of age, please enter
             the correct start date.
@@ -101,13 +83,13 @@ href: "javascript:window.history.go(-1);"
           aria-describedby="reason-for-change-start-date-hint">{{ data['reason-for-change-start-date'] }}</textarea>
   </div>
 </div>
-<button class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
 
 
-</form>
-
+  </form>
+   
 </div>
 </div>
 

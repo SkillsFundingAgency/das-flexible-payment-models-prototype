@@ -59,6 +59,8 @@ href: "javascript:window.history.go(-1);"
 
 
 			<div class="govuk-tabs__panel" id="overview">
+				
+				
 				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
 					<div class="govuk-summary-list__row">
@@ -210,53 +212,84 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 				</dl>
-
-
+				<h2 class="govuk-heading-m">Current price</h2>
+				
 				<dl class="govuk-summary-list">
-					<h2 class="govuk-heading-m">Price</h2>
-
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
-							Training price
+							Current training price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{ data['apprenticeship-training-price'] or '7,000'}}
+							£7,000
 						</dd>
-
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Current end-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£1,500
+						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							End-point assessment price
+							Current total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£2,500
-						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-																			<a class="govuk-link" href="update-price">
-																				Change<span class="govuk-visually-hidden"> total assessment price</span>
-																			</a>
-																		</dd> -->
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Total price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£{{
-							data['apprenticeship-training-price']|float
-							+
-							data['apprenticeship-epa-price']|float }} <strong
-								class="govuk-tag govuk-tag--yellow">Pending</strong>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="view-changes">
-								View request<span class="govuk-visually-hidden"> total training price</span>
-							</a>
+							£8,500
 						</dd>
 					</div>
 				</dl>
-
-
+				
+				<div class="govuk-summary-card">
+					<div class="govuk-summary-card__title-wrapper">
+						<h2 class="govuk-summary-card__title">Price change request</h2>
+					</div>
+					<div class="govuk-summary-card__content">
+						<dl class="govuk-summary-list">
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Training price
+								</dt>
+								<dd class="govuk-summary-list__value">
+									£8,000
+								</dd>
+								<dd class="govuk-summary-list__actions">
+									<a class="govuk-link" href="#">
+										Change<span class="govuk-visually-hidden"> age</span>
+									</a>
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									End-point assessment
+								</dt>
+								<dd class="govuk-summary-list__value">
+									£2,500
+								</dd>
+								<dd class="govuk-summary-list__actions">
+									<a class="govuk-link" href="#">
+										Change<span class="govuk-visually-hidden"> nationality</span>
+									</a>
+								</dd>
+							</div>
+							<div class="govuk-summary-list__row">
+								<dt class="govuk-summary-list__key">
+									Total price
+								</dt>
+								<dd class="govuk-summary-list__value">
+									£9,500
+								</dd>
+								<dd class="govuk-summary-list__actions">
+									<a class="govuk-link" href="#">
+										Change<span class="govuk-visually-hidden"> working situation</span>
+									</a>
+								</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+				
 
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
