@@ -72,24 +72,71 @@ href: "javascript:window.history.go(-1);"
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Training price</th>
 					<td class="govuk-table__cell">£6,000</td>
-					<td class="govuk-table__cell" id="TrainingPrice">£{{ data['apprenticeship-training-price'] or
-						'7,000'}}</td>
+					<td class="govuk-table__cell" id="TrainingPrice">
+						<script>
+							function numberWithCommas(x) {
+		x = x.toString();
+		var pattern = /(-?\d+)(\d{3})/;
+		while (pattern.test(x))
+			x = x.replace(pattern, "$1,$2");
+		return x;
+	}
+	
+	console.log(numberWithCommas(1000))
+	var tprice = '{{ data['apprenticeship-training-price']}}';
+	
+							document.write (numberWithCommas(tprice));
+							</script> 
+						
+						<!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
+					
+					</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">End-point assessment price</th>
 					<td class="govuk-table__cell">£2,500</td>
-					<td class="govuk-table__cell" id="EndPointAssessmentPrice">£{{ data['apprenticeship-epa-price']
-						or '2,500'}}</td>
+					<td class="govuk-table__cell" id="EndPointAssessmentPrice">
+						£<script>
+							function numberWithCommas(x) {
+		x = x.toString();
+		var pattern = /(-?\d+)(\d{3})/;
+		while (pattern.test(x))
+			x = x.replace(pattern, "$1,$2");
+		return x;
+	}
+	
+	console.log(numberWithCommas(1000))
+	var eprice = '{{ data['apprenticeship-epa-price']}}';
+	
+							document.write (numberWithCommas(eprice));
+							</script> 
+						
+						<!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
+					
+					</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
 					<td class="govuk-table__cell">£8,500</td>
 					<td class="govuk-table__cell">£
-						{{
+
+						<script>
+							var tprice = '{{ data['apprenticeship-training-price']}}';
+							var eprice = '{{ data['apprenticeship-epa-price']}}';;
+
+						
+							var numOne = parseInt(tprice);
+							var numTwo = parseInt(eprice);
+							var sum = numOne+numTwo;
+							document.write(" " + numberWithCommas(sum) );
+						  </script>
+
+
+						<!-- {{
 						(data['apprenticeship-training-price']|float(format='0,0')
 						+
 						data['apprenticeship-epa-price']|float(format='0,0')) }}
-					</td>
+					</td> -->
 				</tr>
 			</tbody>
 		</table>
