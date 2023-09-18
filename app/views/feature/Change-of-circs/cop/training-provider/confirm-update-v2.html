@@ -157,21 +157,7 @@ href: "javascript:window.history.go(-1);"
 			</tbody>
 		</table>
 		<dl class="govuk-summary-list govuk-summary-list--no-border">
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Reason for change:
-				</dt>
-				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
-					{{ data['reason-for-update'] or
-					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
-				</dd>
-
-                <dd class="govuk-summary-list__actions" style="text-align: right;">
-                    <a class="govuk-link" href="update-price">
-                      Change<span class="govuk-visually-hidden"> reason for change</span>
-                    </a>
-                  </dd>
-			</div>
+			
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					Effective from date:
@@ -224,6 +210,21 @@ href: "javascript:window.history.go(-1);"
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="update-price">
                       Change<span class="govuk-visually-hidden"> date</span>
+                    </a>
+                  </dd>
+			</div>
+            <div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
+
+                <dd class="govuk-summary-list__actions" style="text-align: right;">
+                    <a class="govuk-link" href="update-price">
+                      Change<span class="govuk-visually-hidden"> reason for change</span>
                     </a>
                   </dd>
 			</div>
