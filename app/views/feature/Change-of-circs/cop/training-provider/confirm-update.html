@@ -140,15 +140,7 @@ href: "javascript:window.history.go(-1);"
 			</tbody>
 		</table>
 		<dl class="govuk-summary-list govuk-summary-list--no-border">
-			<div class="govuk-summary-list__row">
-				<dt class="govuk-summary-list__key">
-					Reason for change:
-				</dt>
-				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
-					{{ data['reason-for-update'] or
-					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
-				</dd>
-			</div>
+			
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
 					Effective from date:
@@ -197,6 +189,16 @@ href: "javascript:window.history.go(-1);"
 					{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
 				</dd>
 
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
 			</div>
 
 		</dl>
