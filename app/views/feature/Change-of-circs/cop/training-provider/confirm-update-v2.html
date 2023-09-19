@@ -164,7 +164,7 @@ href: "javascript:window.history.go(-1);"
 				</dt>
 
     
-				<dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+				<dd class="govuk-summary-list__value govuk-!-width-one-quarter" style="margin-left:10px;">
 					{{ data['apprenticeship-price-valid-from-day'] or '24'}}
 
 					{% if data['apprenticeship-price-valid-from-month'] == "1" or
@@ -217,7 +217,7 @@ href: "javascript:window.history.go(-1);"
 				<dt class="govuk-summary-list__key">
 					Reason for change
 				</dt>
-				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters" style="margin-left:10px;">
 					{{ data['reason-for-update'] or
 					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
 				</dd>
