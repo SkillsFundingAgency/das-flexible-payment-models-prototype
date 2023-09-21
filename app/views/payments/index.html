@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/cop" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">End to End demo - Change of price</h2>
+        <div class="govuk-grid-row govuk-!-margin-top-7">
+            <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="01-apprentice-details"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Version 1 change of date & Change of start date</p>
+                <a href="01-apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View training provider prototype</a>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="employer/apprentice-details"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Employer account</a>
+                </h3>
+                <p class="govuk-body">Version 1 change of date & Change of start date</p>
+                <a href="employer/apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View
+                    employer prototype</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}
