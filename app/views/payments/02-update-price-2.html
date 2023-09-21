@@ -82,7 +82,7 @@ href: "javascript:window.history.go(-1);"
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2"
                   id="apprenticeship-price-valid-from-day" name="apprenticeship-price-valid-from-day" type="text"
-                  value="" aria-describedby="apprenticeship-price-valid-from-hint" inputmode="numeric">
+                  value="{{ data['apprenticeship-price-valid-from-day']}}" aria-describedby="apprenticeship-price-valid-from-hint" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -92,7 +92,7 @@ href: "javascript:window.history.go(-1);"
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2"
                   id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
-                  value="" inputmode="numeric">
+                  value="{{ data['apprenticeship-price-valid-from-month']}}" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -102,7 +102,7 @@ href: "javascript:window.history.go(-1);"
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4"
                   id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-from-year" type="text"
-                  value="" inputmode="numeric">
+                  value="{{ data['apprenticeship-price-valid-from-year']}}" inputmode="numeric">
               </div>
             </div>
           </div>
