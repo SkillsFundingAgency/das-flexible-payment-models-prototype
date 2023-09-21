@@ -453,4 +453,15 @@ router.post('/feature/Change-of-circs/review-cosd/employer/review', function (re
     }
 })
 
+router.post('/payments/review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/payments/approved')
+    }
+    else {
+        res.redirect('/payments/rejected')
+    }
+})
+
 

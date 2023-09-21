@@ -1,0 +1,232 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/review-cop/employer" %}
+{% set pageTitle = "Review changes" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Training provider
+				</dt>
+				<dd class="govuk-summary-list__value">
+					EDUC8 TRAINING (ENGLAND) LIMITED
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Apprenticeship training course
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Abattoir Worker, Level: 2 (Standard)
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">EDUC8 TRAINING (ENGLAND) LIMITED has requested these changes</h2>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+
+                    </th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Current</th>
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Training price</th>
+                    <td class="govuk-table__cell">£6,000</td>
+                    <td class="govuk-table__cell" id="TrainingPrice">
+                        £<script>
+                            function numberWithCommas(x) {
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+    
+    console.log(numberWithCommas(1000))
+    var tprice = '{{ data['apprenticeship-training-price']}}';
+    
+                            document.write (numberWithCommas(tprice));
+                            </script> 
+                        
+                        <!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
+                    
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">End-point assessment price</th>
+                    <td class="govuk-table__cell">£2,500</td>
+                    <td class="govuk-table__cell" id="EndPointAssessmentPrice">
+                        £<script>
+                            function numberWithCommas(x) {
+        x = x.toString();
+        var pattern = /(-?\d+)(\d{3})/;
+        while (pattern.test(x))
+            x = x.replace(pattern, "$1,$2");
+        return x;
+    }
+    
+    console.log(numberWithCommas(1000))
+    var eprice = '{{ data['apprenticeship-epa-price']}}';
+    
+                            document.write (numberWithCommas(eprice));
+                            </script> 
+                        
+                        <!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
+                    
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Total price</th>
+                    <td class="govuk-table__cell">£8,500</td>
+                    <td class="govuk-table__cell">
+                        £<script>
+                            var tprice = '{{ data['apprenticeship-training-price']}}';
+                            var eprice = '{{ data['apprenticeship-epa-price']}}';;
+
+                        
+                            var numOne = parseInt(tprice);
+                            var numTwo = parseInt(eprice);
+                            var sum = numOne+numTwo;
+                            document.write("" + numberWithCommas(sum) );
+                          </script>
+
+                        
+                        <!-- {{
+                        (data['apprenticeship-training-price']|float(format='0,0')
+                        +
+                        data['apprenticeship-epa-price']|float(format='0,0')) }}
+                    </td> -->
+                </tr>
+            </tbody>
+        </table>
+
+
+		<!-- <table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£9,500</td>
+				</tr>
+			</tbody>
+		</table>
+		<dl class="govuk-summary-list govuk-summary-list--no-border"> -->
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Effective from date:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+					24 August 2023
+				</dd>
+			</div>
+		</dl>
+		<form method="post" action="/{{version}}/review">
+			<fieldset class="govuk-fieldset">
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to approve these changes?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="review" name="review" type="radio" value="yes">
+								<label class="govuk-label govuk-radios__label" for="review">
+									Yes, approve these changes
+								</label>
+							</div>
+
+
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="review" name="review" type="radio"
+									data-aria-controls="conditional-review">
+								<label class="govuk-label govuk-radios__label" for="review">
+									No, reject these changes
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-review" data-aria-controls="conditional-review">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="review-more-details">
+										Why do you want to reject these changes?
+									</label>
+									<textarea class="govuk-textarea" id="review-more-details" name="review-more-details"
+										rows="5"></textarea>
+								</div>
+							</div>
+
+						</div>
+
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Send
+				</button>
+			</fieldset>
+		</form>
+	</div>
+
+
+</div>
+
+
+
+{% endblock %}
