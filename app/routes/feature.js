@@ -383,6 +383,21 @@ router.post('/feature/Change-of-circs/cop/employer/review', function (req, res) 
 /////////Review COP / accept or reject COP //////////
 
 
+
+router.post('/payments/c-02-review', function (req, res) {
+    var review = req.session.data['review']
+
+    if (review == "yes") {
+        res.redirect('/payments/c-03-set-costs')
+    }
+    else {
+        res.redirect('/payments/c-03-rejected')
+    }
+})
+
+
+
+
 router.post('/feature/Change-of-circs/review-cop/training-provider/review', function (req, res) {
     var review = req.session.data['review']
 
@@ -457,10 +472,10 @@ router.post('/payments/review', function (req, res) {
     var review = req.session.data['review']
 
     if (review == "yes") {
-        res.redirect('/payments/approved')
+        res.redirect('/feature/Change-of-circs/review-cosd/employer/approved')
     }
     else {
-        res.redirect('/payments/rejected')
+        res.redirect('/feature/Change-of-circs/review-cosd/employer/rejected')
     }
 })
 
