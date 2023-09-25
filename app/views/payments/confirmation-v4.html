@@ -231,7 +231,9 @@ href: "javascript:window.history.go(-1);"
                             <th scope="row" class="govuk-table__header">Training price</th>
                             <td class="govuk-table__cell">£6,000</td>
                             <td class="govuk-table__cell" id="TrainingPrice">
-                                £<script>
+                                £ 6,500
+								
+								<!-- <script>
                                     function numberWithCommas(x) {
                 x = x.toString();
                 var pattern = /(-?\d+)(\d{3})/;
@@ -244,7 +246,7 @@ href: "javascript:window.history.go(-1);"
             var tprice = '{{ data['apprenticeship-training-price']}}';
             
                                     document.write (numberWithCommas(tprice));
-                                    </script> 
+                                    </script>  -->
                                 
                                 <!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
                             
@@ -254,7 +256,9 @@ href: "javascript:window.history.go(-1);"
                             <th scope="row" class="govuk-table__header">End-point assessment price</th>
                             <td class="govuk-table__cell">£2,500</td>
                             <td class="govuk-table__cell" id="EndPointAssessmentPrice">
-                                £<script>
+                                £
+								2,000
+								<!-- <script>
                                     function numberWithCommas(x) {
                 x = x.toString();
                 var pattern = /(-?\d+)(\d{3})/;
@@ -267,7 +271,7 @@ href: "javascript:window.history.go(-1);"
             var eprice = '{{ data['apprenticeship-epa-price']}}';
             
                                     document.write (numberWithCommas(eprice));
-                                    </script> 
+                                    </script>  -->
                                 
                                 <!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
                             
@@ -277,7 +281,9 @@ href: "javascript:window.history.go(-1);"
                             <th scope="row" class="govuk-table__header">Total price</th>
                             <td class="govuk-table__cell">£8,500</td>
                             <td class="govuk-table__cell">
-                                £<script>
+                                £9,500
+								
+								<!-- <script>
                                     var tprice = '{{ data['apprenticeship-training-price']}}';
                                     var eprice = '{{ data['apprenticeship-epa-price']}}';;
         
@@ -286,7 +292,7 @@ href: "javascript:window.history.go(-1);"
                                     var numTwo = parseInt(eprice);
                                     var sum = numOne+numTwo;
                                     document.write("" + numberWithCommas(sum) );
-                                  </script>
+                                  </script> -->
         
                                 
                                 <!-- {{
