@@ -242,10 +242,13 @@ href: "javascript:window.history.go(-1);"
 							Total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{
+
+                            £{{ data['apprenticeship-total-price-b'] or
+					'9,500'}}
+							<!-- £{{
 							data['apprenticeship-training-price']|float
 							+
-							data['apprenticeship-epa-price']|float }} <strong
+							data['apprenticeship-epa-price']|float }} <strong -->
 								class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
