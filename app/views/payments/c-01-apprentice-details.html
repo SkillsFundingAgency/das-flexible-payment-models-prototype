@@ -249,7 +249,8 @@ href: "javascript:window.history.go(-1);"
 								Total price
 							</dt>
 							<dd class="govuk-summary-list__value">
-								£8,500 
+								£{{ data['apprenticeship-total-price-b'] or
+					'9,500'}} 
 							</dd>
 							<dd class="govuk-summary-list__actions">
 								<a class="govuk-link" href="c-02-review">
