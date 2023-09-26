@@ -233,29 +233,25 @@ href: "javascript:window.history.go(-1);"
                             <th scope="row" class="govuk-table__header">Total price</th>
                             <td class="govuk-table__cell">£8,500</td>
                             <td class="govuk-table__cell">
-
-								£
-                        
-                        
-								£<script>
-									function numberWithCommas(x) {
-				x = x.toString();
-				var pattern = /(-?\d+)(\d{3})/;
-				while (pattern.test(x))
-					x = x.replace(pattern, "$1,$2");
-				return x;
-			}
-			
-			console.log(numberWithCommas(1000))
-			var eprice = '{{ data['apprenticeship-total-price-b']}}';
-			
-									document.write (numberWithCommas(eprice));
-									</script> 
-
-
-                                <!-- £9,500 -->
+                                £9,500
 								
-								
+								<!-- <script>
+                                    var tprice = '{{ data['apprenticeship-training-price']}}';
+                                    var eprice = '{{ data['apprenticeship-epa-price']}}';;
+        
+                                
+                                    var numOne = parseInt(tprice);
+                                    var numTwo = parseInt(eprice);
+                                    var sum = numOne+numTwo;
+                                    document.write("" + numberWithCommas(sum) );
+                                  </script> -->
+        
+                                
+                                <!-- {{
+                                (data['apprenticeship-training-price']|float(format='0,0')
+                                +
+                                data['apprenticeship-epa-price']|float(format='0,0')) }}
+                            </td> -->
                         </tr>
                     </tbody>
                 </table>

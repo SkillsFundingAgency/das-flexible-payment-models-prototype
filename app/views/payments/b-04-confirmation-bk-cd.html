@@ -5,7 +5,7 @@
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/employer-account-header.html" %}
+{% include "includes/training-provider-account-header.html" %}
 {% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
@@ -31,10 +31,10 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					Request to change the price sent to Training provider
+					Request to change the price sent to employer
 				</h3>
-				<p class="govuk-body">The training provide now needs to approve the change.</p>
-				<p class="govuk-body"><a href="#view-price-change" class="govuk-link">View the price change you've
+				<p class="govuk-body">The employer now needs to approve the change.</p>
+				<p class="govuk-body"><a href="view-changes" class="govuk-link">View the price change you've
 						requested</a></p>
 			</div>
 		</div>
@@ -210,56 +210,9 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 				</dl>
-                <div style="border-left: 5px solid #1d70b8; padding:0 10px ;"> 
-
-                <h2 id="price-change" class="govuk-heading-m">Price change you've requested </h2>
-                <table class="govuk-table">
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-        
-                            </th>
-                            <th scope="col" class="govuk-table__header app-custom-class">Current</th>
-                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
-                            </th>
-        
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-        
-                        
-                       
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Total price</th>
-                            <td class="govuk-table__cell">£8,500</td>
-                            <td class="govuk-table__cell">
-
-								£
-                        
-                        
-								£<script>
-									function numberWithCommas(x) {
-				x = x.toString();
-				var pattern = /(-?\d+)(\d{3})/;
-				while (pattern.test(x))
-					x = x.replace(pattern, "$1,$2");
-				return x;
-			}
-			
-			console.log(numberWithCommas(1000))
-			var eprice = '{{ data['apprenticeship-total-price-b']}}';
-			
-									document.write (numberWithCommas(eprice));
-									</script> 
 
 
-                                <!-- £9,500 -->
-								
-								
-                        </tr>
-                    </tbody>
-                </table>
-				<dl class="govuk-summary-list" style="display: none;">
+				<dl class="govuk-summary-list">
 					<h2 class="govuk-heading-m">Price</h2>
 
 					<div class="govuk-summary-list__row">
@@ -289,10 +242,13 @@ href: "javascript:window.history.go(-1);"
 							Total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{
+
+                            £{{ data['apprenticeship-total-price-b'] or
+					'9,500'}}
+							<!-- £{{
 							data['apprenticeship-training-price']|float
 							+
-							data['apprenticeship-epa-price']|float }} <strong
+							data['apprenticeship-epa-price']|float }}--> <strong 
 								class="govuk-tag govuk-tag--yellow">Pending</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -303,7 +259,7 @@ href: "javascript:window.history.go(-1);"
 					</div>
 				</dl>
 
-</div>
+
 
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">

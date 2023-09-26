@@ -66,8 +66,26 @@ href: "javascript:window.history.go(-1);"
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
 					<td class="govuk-table__cell">£8,500</td>
-					<td class="govuk-table__cell">£{{ data['apprenticeship-total-price-b'] or
-					'9,500'}}
+					<td class="govuk-table__cell">£
+                        
+                        
+                        £<script>
+							function numberWithCommas(x) {
+		x = x.toString();
+		var pattern = /(-?\d+)(\d{3})/;
+		while (pattern.test(x))
+			x = x.replace(pattern, "$1,$2");
+		return x;
+	}
+	
+	console.log(numberWithCommas(1000))
+	var eprice = '{{ data['apprenticeship-total-price-b']}}';
+	
+							document.write (numberWithCommas(eprice));
+							</script> 
+                        
+                        <!-- {{ data['apprenticeship-total-price-b'] or
+					'9,500'}} -->
 					</td>
 				</tr>
 			</tbody>
@@ -77,7 +95,7 @@ href: "javascript:window.history.go(-1);"
 			
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Effective from date:
+					Effective from date
 				</dt>
 				<dd class="govuk-summary-list__value govuk-!-width-one-quarter">
 					{{ data['apprenticeship-price-valid-from-day'] or '24'}}
@@ -127,7 +145,7 @@ href: "javascript:window.history.go(-1);"
 
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
-					Reason for change:
+					Reason for change
 				</dt>
 				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
 					{{ data['reason-for-update'] or
@@ -151,7 +169,7 @@ href: "javascript:window.history.go(-1);"
 					<button class="govuk-button" data-module="govuk-button">
 						Send
 					</button>
-					<a class="govuk-link" href="update-price.html">Go back to edit changes</a>
+					<a class="govuk-link" href="b-02-update-price.html">Go back to edit changes</a>
 				</div>
 			</form>
 		</div>
