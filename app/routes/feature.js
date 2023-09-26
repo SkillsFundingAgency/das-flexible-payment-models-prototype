@@ -476,10 +476,10 @@ router.post('/payments/review', function (req, res) {
     var review = req.session.data['review']
 
     if (review == "yes") {
-        res.redirect('/feature/Change-of-circs/review-cosd/employer/approved')
+        res.redirect('approved')
     }
     else {
-        res.redirect('/feature/Change-of-circs/review-cosd/employer/rejected')
+        res.redirect('rejected')
     }
 })
 
