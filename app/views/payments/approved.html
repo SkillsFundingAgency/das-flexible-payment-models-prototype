@@ -193,7 +193,7 @@ href: "javascript:window.history.go(-1);"
 							Total agreed apprenticeship price
 						</dt>
 						<dd class="govuk-summary-list__value">
-                            £<script>
+                            <!-- £<script>
                                 var tprice = '{{ data['apprenticeship-training-price']}}';
                                 var eprice = '{{ data['apprenticeship-epa-price']}}';;
     
@@ -203,9 +203,9 @@ href: "javascript:window.history.go(-1);"
                                 var sum = numOne+numTwo;
                                 document.write("" + numberWithCommas(sum) );
                               </script>
-    
-							<!-- £{{ data['apprenticeship-total-price-b'] or
-					'11,500'}} -->
+     -->
+							£{{ data['apprenticeship-total-price-b'] or
+					'9,500'}}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="change">
