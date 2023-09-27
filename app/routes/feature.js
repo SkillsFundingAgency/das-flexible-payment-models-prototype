@@ -328,6 +328,20 @@ router.post('/feature/Change-of-circs/cop/employer/action/view-changes', functio
 })
 
 
+
+router.post('/payemnts/c-05-view-changes', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "yes") {
+        res.redirect('/payments/c-06-withdrawal-confirmation')
+    }
+    else {
+        res.redirect('/payments/c-07-apprentice-details-request')
+    }
+})
+
+
+
 /////////Change of start date withdrawal //////////
 
 
