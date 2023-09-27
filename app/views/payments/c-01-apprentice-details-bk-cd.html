@@ -218,43 +218,50 @@ href: "javascript:window.history.go(-1);"
 					</div>
 				</dl>
 
-<div style="border-left: 5px solid #1d70b8; padding:0 10px ;" id="price"> 
+<div style="border-left: 5px solid #1d70b8; padding:0 10px ;"> 
 
 
-	<h2 class="govuk-heading-m">AUTOMATION & OPTIMISATION LTD has requested these changes</h2>
-    <strong class="govuk-tag govuk-tag" style=" padding:10px; width:180px;  margin-top:-50px; float:right; ">Change requested</strong>
-	
-	<table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-
-          </th>
-          <th scope="col" class="govuk-table__header app-custom-class">Current</th>
-          <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Training price</th>
-          <td class="govuk-table__cell">£6,000</td>
-          <td class="govuk-table__cell">-</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">End-point assessment price</th>
-          <td class="govuk-table__cell">£2,500</td>
-          <td class="govuk-table__cell">-</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Total price</th>
-          <td class="govuk-table__cell">£8,500</td>
-          <td class="govuk-table__cell">£{{ data['apprenticeship-total-price-b'] or
-            '9,500'}}</td>
-        </tr>
-      </tbody>
-    </table>
-				
+    
+				<h2 id="price" class="govuk-heading-m">Price</h2>
+				<strong class="govuk-tag govuk-tag" style=" padding:10px; width:180px;  margin-top:-50px; float:right; ">Change requested</strong>
+				<dl class="govuk-summary-list">
+					
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<!-- £6,000 --> -
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<!-- £2,500 --> -
+						</dd>
+						<!-- <dd class="govuk-summary-list__actions">
+															<a class="govuk-link" href="update-price">
+																Change<span class="govuk-visually-hidden"> total assessment price</span>
+															</a>
+														</dd> -->
+					</div>
+						<div class="govuk-summary-list__row" >
+							<dt class="govuk-summary-list__key" style=" padding:10px;">
+								Total price
+							</dt>
+							<dd class="govuk-summary-list__value">
+								£{{ data['apprenticeship-total-price-b'] or
+					'9,500'}} 
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="c-02-review">
+									Review<span class="govuk-visually-hidden"> total training price</span>
+								</a>
+							</dd>
+						</div>
+				</dl>
 
             </div>
 				
