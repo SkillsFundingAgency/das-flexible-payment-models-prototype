@@ -330,9 +330,9 @@ router.post('/feature/Change-of-circs/cop/employer/action/view-changes', functio
 
 
 router.post('/payemnts/c-05-view-changes', function (req, res) {
-    var withdraw = req.session.data['withdraw']
+    var withdraw = req.session.data['withdraw-2']
 
-    if (withdraw == "yes") {
+    if (withdraw-2 == "yes") {
         res.redirect('/payments/c-06-withdrawal-confirmation')
     }
     else {
