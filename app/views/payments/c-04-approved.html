@@ -228,7 +228,23 @@ href: "javascript:window.history.go(-1);"
 							Training price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£8,000
+
+                            £<script>
+                                function numberWithCommas(x) {
+                x = x.toString();
+                var pattern = /(-?\d+)(\d{3})/;
+                while (pattern.test(x))
+                x = x.replace(pattern, "$1,$2");
+                return x;
+                }
+                
+                console.log(numberWithCommas(1000))
+                var eprice = '{{ data['a-cost']}}';
+                
+                                document.write (numberWithCommas(eprice));
+                                </script>
+
+							<!-- £8,000 -->
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -236,7 +252,23 @@ href: "javascript:window.history.go(-1);"
 							End-point assessment price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£1,000
+                            £<script>
+                                function numberWithCommas(x) {
+                x = x.toString();
+                var pattern = /(-?\d+)(\d{3})/;
+                while (pattern.test(x))
+                x = x.replace(pattern, "$1,$2");
+                return x;
+                }
+                
+                console.log(numberWithCommas(1000))
+                var eprice = '{{ data['a-e-cost']}}';
+                
+                                document.write (numberWithCommas(eprice));
+                                </script>
+                            
+
+							<!-- £1,000 -->
 						</dd>
 						<!-- <dd class="govuk-summary-list__actions">
 																	<a class="govuk-link" href="update-price">
@@ -249,8 +281,25 @@ href: "javascript:window.history.go(-1);"
 							Total price
 						</dt>
 						<dd class="govuk-summary-list__value">
-							£{{ data['apprenticeship-total-price-b'] or
-					'9,000'}}
+
+                            £<script>
+                                function numberWithCommas(x) {
+                x = x.toString();
+                var pattern = /(-?\d+)(\d{3})/;
+                while (pattern.test(x))
+                x = x.replace(pattern, "$1,$2");
+                return x;
+                }
+                
+                console.log(numberWithCommas(1000))
+                var eprice = '{{ data['apprenticeship-total-price-b']}}';
+                
+                                document.write (numberWithCommas(eprice));
+                                </script>
+                            
+
+							<!-- £{{ data['apprenticeship-total-price-b'] or
+					'9,000'}} -->
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="review">
