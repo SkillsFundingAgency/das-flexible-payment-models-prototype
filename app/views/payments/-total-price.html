@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Change the training or end-point assessment price</h1>
+    <div id="apprenticeship-price-hint" class="govuk-hint">
+      The funding band maximum for this apprenticeship is £9,000. This is the highest amount the apprenticeship service
+      will pay towards the training and end-point assessment.
+      <br><br>
+      If you raise the total price above the funding band maximum, this will need to be paid by the employer.
+    </div>
+    <form action="02-update-price-error-date" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class=" govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Training price
+          </legend>
+          <div id="apprenticeship-price-hint" class="govuk-hint">
+            Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+          </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="apprenticeship-training-price"
+              name="apprenticeship-training-price" type="text" value="6000" aria-describedby="apprenticeship-price-hint"
+              inputmode="numeric">
+          </div>
+        </fieldset>
+      </div>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          End-point assessment price
+        </legend>
+        <div id="apprenticeship-price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500. If the exact amount is unknown leave this field blank.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="apprenticeship-epa-price" name="apprenticeship-epa-price"
+            type="text" value="2500" aria-describedby="apprenticeship-price-hint" inputmode="numeric">
+        </div>
+      </fieldset>
+
+      <div class="govuk-inset-text">
+
+       Total price the employer will see is: £8,500
+        The total price the employer will see is:
+        <div id="apprenticeship-total-price" name="apprenticeship-total-price">
+        </div>
+      </div>
+
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            What date is this price effective from?
+          </legend>
+          <div id="passport-valid-from-hint" class="govuk-hint">
+            For example, 05 12 2022
+            <br>
+            The date you enter must be after the training start date
+          </div>
+          <div class="govuk-date-input" id="apprenticeship-price-valid-from" name="apprenticeship-price-valid-from">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-day" name="apprenticeship-price-valid-from-day" type="text"
+                  value="" aria-describedby="apprenticeship-price-valid-from-hint" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                  id="apprenticeship-price-valid-from-month" name="apprenticeship-price-valid-from-month" type="text"
+                  value="" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="apprenticeship-price-valid-from-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                  id="apprenticeship-price-valid-from-year" name="apprenticeship-price-valid-from-year" type="text"
+                  value="" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group"><br>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="apprenticeship-price-valid-from-hint">
+          <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+            <div class="govuk-form-group" id="reason-for-change">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m" for="reason-for-update">
+                What was the reason for changing the price?
+              </legend>
+              <div id="reason-for-update-hint" class="govuk-hint">
+                If the total price changes, this reason will be shared with [employer name]. They will need to approve
+                the
+                change. </div>
+              <textarea class="govuk-textarea" id="reason-for-update" name="reason-for-update" rows="5"
+                aria-describedby="reason-for-update-hint">{{ data['reason-for-update'] }}</textarea>
+            </div>
+            <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+              200 characters remaining
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  </div>
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+</div>
+</div>
+
+
+
+
+{% endblock %}
