@@ -64,7 +64,7 @@ href: "javascript:window.history.go(-1);"
       </thead>
       <tbody class="govuk-table__body">
 
-        <tr class="govuk-table__row">
+        <!-- <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Training price</th>
           <td class="govuk-table__cell">£6,000</td>
           <td class="govuk-table__cell">Enter on next page</td>
@@ -73,7 +73,7 @@ href: "javascript:window.history.go(-1);"
           <th scope="row" class="govuk-table__header">End-point assessment price</th>
           <td class="govuk-table__cell">£2,500</td>
           <td class="govuk-table__cell">Enter on next page</td>
-        </tr>
+        </tr> -->
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">Total price</th>
           <td class="govuk-table__cell">£8,500</td>
@@ -106,7 +106,13 @@ var eprice = '{{ data['apprenticeship-total-price-b']}}';
 
 
 <h2 class="govuk-heading-m">Enter training price and End-point assessment price, if you want to approve the change request</h2>
-    <table class="govuk-table">
+<div id="apprenticeship-price-hint" class="govuk-hint">
+       
+     New training and end-point assessment price should add up to the new requested price.
+
+</div>   
+
+<table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
@@ -122,20 +128,22 @@ var eprice = '{{ data['apprenticeship-total-price-b']}}';
             <th scope="row" class="govuk-table__header">Training price</th>
             <td class="govuk-table__cell">£6,000</td>
             <td class="govuk-table__cell">
-                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <div class="govuk-input__wrapper govuk-!-margin-top-3">
+                      <div class="govuk-input__prefix" aria-hidden="true">£</div>
 					<input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost"
 						name="a-cost" value="{{ data['a-cost']}}" spellcheck="false">
-                
+                </div>
                 </td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">End-point assessment price</th>
             <td class="govuk-table__cell">£2,500</td>
             <td class="govuk-table__cell">
-                
+                <div class="govuk-input__wrapper govuk-!-margin-top-3">
                 <div class="govuk-input__prefix" aria-hidden="true">£</div>
 					<input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost"
 						name="a-e-cost" value="{{ data['a-e-cost']}}" spellcheck="false">
+                        </div>
                 </td>
           </tr>
           
@@ -179,7 +187,9 @@ var eprice = '{{ data['apprenticeship-total-price-b']}}';
             </legend>
       <div id="apprenticeship-price-hint" class="govuk-hint">
        
-        Once you approve the new total price, you can enter the new training and end-point assessment price. </div>
+        <!-- Once you approve the new total price, you can enter the new training and end-point assessment price. -->
+    
+    </div>
             <div class="govuk-radios" data-module="govuk-radios">
 
               <div class="govuk-radios__item">
