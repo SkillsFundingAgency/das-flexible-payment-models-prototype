@@ -1,0 +1,255 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set pageTitle = "Check your changes before sending to the employer" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+{% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
+{% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}
+{% set calculatedTotalPrice = (trainingPriceString + epaPriceString) | float %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Name
+				</dt>
+				<dd class="govuk-summary-list__value">
+					George Ford
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Employer
+				</dt>
+				<dd class="govuk-summary-list__value">
+					AUTOMATION & OPTIMISATION LTD
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Apprenticeship training course
+				</dt>
+				<dd class="govuk-summary-list__value">
+					Abattoir Worker, Level: 2 (Standard)
+				</dd>
+			</div>
+		</dl>
+		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class " style="width=250px;">
+
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+					</th>
+                    <th scope="col" class="govuk-table__header app-custom-class ">
+					</th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training price</th>
+					<td class="govuk-table__cell">£6,000</td>
+					<td class="govuk-table__cell" id="TrainingPrice">
+						£<script>
+							function numberWithCommas(x) {
+		x = x.toString();
+		var pattern = /(-?\d+)(\d{3})/;
+		while (pattern.test(x))
+			x = x.replace(pattern, "$1,$2");
+		return x;
+	}
+	
+	console.log(numberWithCommas(1000))
+	var tprice = '{{ data['apprenticeship-training-price']}}';
+	
+							document.write (numberWithCommas(tprice));
+							</script> 
+						
+						<!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
+					
+					</td>
+
+
+                    <td class="govuk-table__cell" style="text-align: right;"><a class="govuk-link" href="02-update-price-2">
+                        Change<span class="govuk-visually-hidden"> Training price</span>
+                      </a></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">End-point assessment price</th>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell" id="EndPointAssessmentPrice">
+						£<script>
+							function numberWithCommas(x) {
+		x = x.toString();
+		var pattern = /(-?\d+)(\d{3})/;
+		while (pattern.test(x))
+			x = x.replace(pattern, "$1,$2");
+		return x;
+	}
+	
+	console.log(numberWithCommas(1000))
+	var eprice = '{{ data['apprenticeship-epa-price']}}';
+	
+							document.write (numberWithCommas(eprice));
+							</script> 
+						
+						<!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
+					
+					</td>
+
+                    <td class="govuk-table__cell" style="text-align: right;"><a class="govuk-link" href="02-update-price-2">
+                        Change<span class="govuk-visually-hidden"> End-point assessment price</span>
+                      </a></td>
+                    
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">
+						£<script>
+							var tprice = '{{ data['apprenticeship-training-price']}}';
+							var eprice = '{{ data['apprenticeship-epa-price']}}';;
+
+						
+							var numOne = parseInt(tprice);
+							var numTwo = parseInt(eprice);
+							var sum = numOne+numTwo;
+							document.write("" + numberWithCommas(sum) );
+						  </script>
+
+						
+						<!-- {{
+						(data['apprenticeship-training-price']|float(format='0,0')
+						+
+						data['apprenticeship-epa-price']|float(format='0,0')) }} -->
+					</td>
+
+                    <td class="govuk-table__cell">
+                        <!-- <a class="govuk-link" href="update-price">
+                        Change<span class="govuk-visually-hidden"> End-point assessment price</span>
+                      </a> -->
+                    </td>
+				</tr>
+			</tbody>
+		</table>
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+			
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Effective from date
+				</dt>
+
+    
+				<dd class="govuk-summary-list__value govuk-!-width-one-quarter" style="padding-left:10px;">
+					{{ data['apprenticeship-price-valid-from-day'] or '24'}}
+
+					{% if data['apprenticeship-price-valid-from-month'] == "1" or
+					data['apprenticeship-price-valid-from-month']
+					== "01" %}
+					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "2" or
+					data['apprenticeship-price-valid-from-month'] == "02" %}
+					{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "3" or
+					data['apprenticeship-price-valid-from-month'] == "03" %}
+					{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "4" or
+					data['apprenticeship-price-valid-from-month'] == "04" %}
+					{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "5" or
+					data['apprenticeship-price-valid-from-month'] == "05" %}
+					{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "6" or
+					data['apprenticeship-price-valid-from-month'] == "06" %}
+					{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "7" or
+					data['apprenticeship-price-valid-from-month'] == "07" %}
+					{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "8" or
+					data['apprenticeship-price-valid-from-month'] == "08" %}
+					{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "9" or
+					data['apprenticeship-price-valid-from-month'] == "09" %}
+					{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "10" %}
+					{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "11" %}
+					{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+					{% elseif data['apprenticeship-price-valid-from-month'] == "12" %}
+					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+					{% else %}
+					August
+					{% endif %}
+
+					{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
+				</dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="02-update-price-2#date">
+                      Change<span class="govuk-visually-hidden"> date</span>
+                    </a>
+                  </dd>
+			</div>
+            <div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters" style="padding-left:10px;">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
+
+                <dd class="govuk-summary-list__actions" style="text-align: right;">
+                    <a class="govuk-link" href="02-update-price-2#reason-for-change">
+                      Change<span class="govuk-visually-hidden"> reason for change</span>
+                    </a>
+                  </dd>
+			</div>
+
+		</dl>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h2 class="govuk-heading-m">As the total price is the same the employer dones't need to approve this change</h2>
+		<!-- <p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p> -->
+		<form action="confirmation" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Save
+				</button>
+				<a class="govuk-link" href="02-update-price-2">Go back to edit changes</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+</body>
+
+
+
+{% endblock %}
