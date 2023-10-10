@@ -48,8 +48,13 @@ href: "javascript:window.history.go(-1);"
 
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                     Pause an apprenticeship to 
-                    record a break in learning as agreed with the training provider or 
-                    freeze future payments to a training provider for a period of time.
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>record a break in learning as agreed with the training provider</li>
+                        <li>freeze future payments to a training provider for a period of time</li>
+                    
+                      </ul>
+                    
+                    
 
                   </div>
                 </div>
@@ -82,8 +87,15 @@ href: "javascript:window.history.go(-1);"
                     Stop
                   </label>
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    Stop an apprenticeship to to change your training provider during the lifetime of a course or 
-                    cancel all future payments
+                    Stop an apprenticeship to 
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>rchange your training provider during the lifetime of a course</li>
+                        <li>cancel all future payments</li>
+                    
+                      </ul>
+                    
+                    
+                   
 
                   </div>
                 </div>
@@ -135,6 +147,7 @@ href: "javascript:window.history.go(-1);"
                                 </label>
                               </div>
                           </div>
+                          <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
                           <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                             Apprenticeship never started
@@ -147,7 +160,7 @@ href: "javascript:window.history.go(-1);"
 
                   </div>
                 </div>
-                <div class="govuk-radios__item">
+                <div class="govuk-radios__item" style="display: none;">
                   <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
                   <label class="govuk-label govuk-radios__label" for="contact-3">
                    End this apprenticeship
