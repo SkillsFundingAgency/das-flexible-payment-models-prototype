@@ -62,7 +62,8 @@ href: "javascript:window.history.go(-1);"
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Made redundant </dt>
-                        <dd class="govuk-summary-list__value"> Yes </dd>
+                        <dd class="govuk-summary-list__value"> {{ data['redundant'] or
+                            'Yes'}} </dd>
                     </div>
     
                 </dl>
