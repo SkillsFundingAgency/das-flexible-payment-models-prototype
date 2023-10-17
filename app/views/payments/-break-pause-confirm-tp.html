@@ -64,7 +64,13 @@ href: "javascript:window.history.go(-1);"
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Date change takes effect </dt>
-                        <dd class="govuk-summary-list__value"> 17 Oct 2023 </dd>
+                        <dd class="govuk-summary-list__value"> {{ data['pause-day'] }} {{ data['pause-month'] }} {{ data['pause-year'] }} </dd>
+                    
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="-pause-date">
+                              Change<span class="govuk-visually-hidden"> reason for pause</span>
+                            </a>
+                          </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Reason for pause </dt>

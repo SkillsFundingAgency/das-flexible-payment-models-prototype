@@ -502,7 +502,7 @@ router.post('/payments/break-tp', function (req, res) {
     var stoptp = req.session.data['stoptp']
 
     if (stoptp == "yes") {
-        res.redirect('-break-pause-confirm-tp')
+        res.redirect('-pause-date-tp')
     }
     else {
         res.redirect('-stop-date-tp')

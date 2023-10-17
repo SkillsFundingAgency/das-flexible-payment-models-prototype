@@ -76,6 +76,19 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
+                    <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Effective from date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['pause-day'] }} {{ data['pause-month'] }} {{ data['pause-year'] }}
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="-pause-date">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
                     <!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Allow training provide to change status
