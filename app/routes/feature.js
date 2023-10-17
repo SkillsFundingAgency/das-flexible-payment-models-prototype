@@ -486,6 +486,19 @@ router.post('/feature/Change-of-circs/review-cosd/employer/review', function (re
     }
 })
 
+
+router.post('/payments/break', function (req, res) {
+    var stop = req.session.data['stop']
+
+    if (stop == "yes") {
+        res.redirect('-break-pause-confirm')
+    }
+    else {
+        res.redirect('stop-date')
+    }
+})
+
+
 router.post('/payments/review', function (req, res) {
     var review = req.session.data['review']
 
@@ -497,14 +510,7 @@ router.post('/payments/review', function (req, res) {
     }
 })
 
-router.post('/payments/break', function (req, res) {
-    var break = req.session.data['break']
 
-    if (break == "yes") {
-        res.redirect('-break-pause-confirm')
-    }
-    else {
-        res.redirect('-stop-date')
-    }
-})
+
+
 
