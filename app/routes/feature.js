@@ -494,7 +494,7 @@ router.post('/payments/break', function (req, res) {
         res.redirect('-break-pause-confirm')
     }
     else {
-        res.redirect('stop-date')
+        res.redirect('-stop-date')
     }
 })
 
