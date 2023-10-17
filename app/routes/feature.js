@@ -497,4 +497,14 @@ router.post('/payments/review', function (req, res) {
     }
 })
 
+router.post('/payments/break', function (req, res) {
+    var break = req.session.data['break']
+
+    if (break == "yes") {
+        res.redirect('-break-pause-confirm')
+    }
+    else {
+        res.redirect('-stop-date')
+    }
+})
 
