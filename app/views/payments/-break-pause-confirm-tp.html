@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+    
+
+	<div class="govuk-grid-column-two-thirds">
+
+        <form action="b-01-apprentice-details-pause-confirmed" method="post" novalidate class="govuk-!-margin-top-7">
+            
+            
+
+                <h1 class="govuk-heading-xl">Do you want to pause this apprenticeship?</h1>
+    
+
+
+                <p class="govuk-body">
+
+                    Payments to the training provider will be paused. All previous payments are unaffected.
+                    <!-- You’re about to pause this apprenticeship and all payments to the training provider. Any payments previously made to the training provider are unaffected. -->
+                </p>
+    
+                <p class="govuk-body">
+                    <a class="govuk-link" target="_blank" href="https://finance.demo-eas.apprenticeships.education.gov.uk/accounts/VK4GWM/finance/2023/10" id="view-transactions-link">View your transactions</a> to confirm all payments are up-to-date before pausing.
+                </p>
+    
+                <p class="govuk-body">You can resume the apprenticeship at any time.</p>
+    
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Name </dt>
+                        <dd class="govuk-summary-list__value"> George Ford</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Unique learner number </dt>
+                        <dd class="govuk-summary-list__value"> 7922744136</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Apprenticeship training course </dt>
+                        <dd class="govuk-summary-list__value"> Abattoir worker, Level: 2</dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Date change takes effect </dt>
+                        <dd class="govuk-summary-list__value"> 11 Oct 2023 </dd>
+                    </div>
+    
+                </dl>
+    
+                <div class="govuk-form-group ">
+                    <fieldset class="govuk-fieldset">
+     <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="PauseConfirmed" name="PauseConfirmed" type="radio" value="true">
+                                <label class="govuk-label govuk-radios__label" for="PauseConfirmed">
+                                    Yes, pause this apprenticeship
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="PauseConfirmed-no" name="PauseConfirmed" type="radio" value="false">
+                                <label class="govuk-label govuk-radios__label" for="PauseConfirmed-no">
+                                    No, go back to apprentice details
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+    
+                <button class="govuk-button" type="submit" id="submit-status-change">Save and confirm</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MV6lQIUbmFKkKXw6jyZla1acDyPuQBSfqTFyjyoX72U_Hoc2zG36lsqNCWv-v9IibVtRJLguFiZ6GqFbW0SZyoWnxAsjN6XB-YzTkSeDFAsYfow1TZQq6shHq6EWsuq0ZlqBsNJNSYKYOnXoG7bF9dtBabeOqOJ76MK7Xuat4I0ytFxwpZA8l9-cNyAWQoRmQ" />
+        </form>
+    
+        
+    
+
+              
+          </div>
+
+            
+            
+
+            
+           
+          
+        </form>
+	</div>
+
+</div>
+
+{% endblock %}

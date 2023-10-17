@@ -498,6 +498,17 @@ router.post('/payments/break', function (req, res) {
     }
 })
 
+router.post('/payments/break-tp', function (req, res) {
+    var stop = req.session.data['stop']
+
+    if (stop == "yes") {
+        res.redirect('-break-pause-confirm-tp')
+    }
+    else {
+        res.redirect('-stop-date-tp')
+    }
+})
+
 
 router.post('/payments/review', function (req, res) {
     var review = req.session.data['review']
