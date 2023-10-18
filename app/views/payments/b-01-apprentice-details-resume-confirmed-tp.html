@@ -69,7 +69,47 @@ href: "javascript:window.history.go(-1);"
 							Date resumed
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }}
+
+
+					{% if data['resume-month'] == "1" or
+					data['resume-month']
+					== "01" %}
+					{{ data['resume-day'] }} January {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "2" or
+					data['resume-month'] == "02" %}
+					{{ data['resume-day'] }} February {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "3" or
+					data['resume-valid-from-month'] == "03" %}
+					{{ data['resume-day'] }} March {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "4" or
+					data['resume-month'] == "04" %}
+					{{ data['resume-day'] }} April {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "5" or
+					data['resume-month'] == "05" %}
+					{{ data['resume-day'] }} May {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "6" or
+					data['resume-month'] == "06" %}
+					{{ data['resume-day'] }} June {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "7" or
+					data['resume-month'] == "07" %}
+					{{ data['resume-day'] }} July {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "8" or
+					data['resume-month'] == "08" %}
+					{{ data['resume-day'] }} August {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "9" or
+					data['resume-month'] == "09" %}
+					{{ data['resume-day'] }} September {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "10" %}
+					{{ data['resume-day'] }} October {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "11" %}
+					{{ data['resume-day'] }} November {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "12" %}
+					{{ data['resume-day'] }} December {{ data['resume-year'] }}
+					{% else %}
+					October
+					{% endif %}
+
+							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
 						</dd>
                         <dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="-resume-date-tp.html">
@@ -245,7 +285,7 @@ href: "javascript:window.history.go(-1);"
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
 							<strong class="govuk-tag govuk-tag--blue">Resumed</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">17 October 2023</time>
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">18 October 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							
@@ -259,7 +299,7 @@ href: "javascript:window.history.go(-1);"
 									<ul class="govuk-list">
 										<li>
 											Apprentice<strong class="govuk-tag govuk-tag--blue"> resumed </strong> by
-											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">17 October
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">18 October
 												2023</time>
 										</li>
 									</ul>
@@ -273,7 +313,7 @@ href: "javascript:window.history.go(-1);"
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
 							<strong class="govuk-tag govuk-tag--grey">paused</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">17 October 2023</time>
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">18 October 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							
@@ -287,7 +327,7 @@ href: "javascript:window.history.go(-1);"
 									<ul class="govuk-list">
 										<li>
 											Apprentice <strong class="govuk-tag govuk-tag--grey">paused </strong> by
-											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">17 October
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">18 October
 												2023</time>
 										</li>
 									</ul>
