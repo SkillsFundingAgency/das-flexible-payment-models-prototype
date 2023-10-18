@@ -77,61 +77,8 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
-				</div>
-				<div class="govuk-summary-list__row">
-					<dt class="govuk-summary-list__key">
-						Effective from date
-					</dt>
-					<dd class="govuk-summary-list__value">
 
-
-				{% if data['pause-month'] == "1" or
-				data['pause-month']
-				== "01" %}
-				{{ data['pause-day'] }} January {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "2" or
-				data['pause-month'] == "02" %}
-				{{ data['pause-day'] }} February {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "3" or
-				data['pause-month'] == "03" %}
-				{{ data['pause-day'] }} March {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "4" or
-				data['pause-month'] == "04" %}
-				{{ data['pause-day'] }} April {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "5" or
-				data['pause-month'] == "05" %}
-				{{ data['pause-day'] }} May {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "6" or
-				data['pause-month'] == "06" %}
-				{{ data['pause-day'] }} June {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "7" or
-				data['pause-month'] == "07" %}
-				{{ data['pause-day'] }} July {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "8" or
-				data['pause-month'] == "08" %}
-				{{ data['pause-day'] }} August {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "9" or
-				data['pause-month'] == "09" %}
-				{{ data['pause-day'] }} September {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "10" %}
-				{{ data['pause-day'] }} October {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "11" %}
-				{{ data['pause-day'] }} November {{ data['pause-year'] }}
-				{% elseif data['pause-month'] == "12" %}
-				{{ data['pause-day'] }} December {{ data['pause-year'] }}
-				{% else %}
-				October
-				{% endif %}
-						<!-- {{ data['pause-day'] }} {{ data['pause-month'] }} {{ data['pause-year'] }} -->
-					</dd>
-					<dd class="govuk-summary-list__actions">
-						<a class="govuk-link" href="-pause-date">
-							Change<span class="govuk-visually-hidden"> total training price</span>
-						</a>
-					</dd>
-				</div>
-
-
+					
                     <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Allow training provide to change status
