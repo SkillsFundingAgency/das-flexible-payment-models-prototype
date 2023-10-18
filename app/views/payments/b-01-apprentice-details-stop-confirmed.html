@@ -62,6 +62,62 @@ href: "javascript:window.history.go(-1);"
 							</a> -->
 						</dd>
 					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Date stopped
+						</dt>
+						<dd class="govuk-summary-list__value">
+
+
+					   
+							{% if data['stop-month'] == "1" or
+							data['stop-month']
+							== "01" %}
+							{{ data['stop-day'] }} January {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "2" or
+							data['stop-month'] == "02" %}
+							{{ data['stop-day'] }} February {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "3" or
+							data['stop-month'] == "03" %}
+							{{ data['stop-day'] }} March {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "4" or
+							data['stop-month'] == "04" %}
+							{{ data['stop-day'] }} April {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "5" or
+							data['stop-month'] == "05" %}
+							{{ data['stop-day'] }} May {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "6" or
+							data['stop-month'] == "06" %}
+							{{ data['stop-day'] }} June {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "7" or
+							data['stop-month'] == "07" %}
+							{{ data['stop-day'] }} July {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "8" or
+							data['stop-month'] == "08" %}
+							{{ data['stop-day'] }} August {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "9" or
+							data['stop-month'] == "09" %}
+							{{ data['stop-day'] }} September {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "10" %}
+							{{ data['stop-day'] }} October {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "11" %}
+							{{ data['stop-day'] }} November {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "12" %}
+							{{ data['stop-day'] }} December {{ data['stop-year'] }}
+							{% else %}
+							October
+							{% endif %}
+
+							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="-stop-date">
+								Change<span class="govuk-visually-hidden">date</span>
+							</a>
+						</dd>
+                        
+					</div>
+					
                     <!-- <div class="govuk-summary-list__row" >
 						<dt class="govuk-summary-list__key">
 							Allow training provide to change status
@@ -249,7 +305,7 @@ href: "javascript:window.history.go(-1);"
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
 							<strong class="govuk-tag govuk-tag--red">Stopped</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">16 Oct 2023</time>
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">18 Oct 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							<p class="govuk-body">
