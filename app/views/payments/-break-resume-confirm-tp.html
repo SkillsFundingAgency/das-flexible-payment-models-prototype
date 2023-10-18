@@ -60,7 +60,54 @@ href: "javascript:window.history.go(-1);"
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Resume date </dt>
-                        <dd class="govuk-summary-list__value">{{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd>
+                        <dd class="govuk-summary-list__value">
+                            
+
+
+                            {{ data['resume-day'] or '24'}}
+
+					{% if data['resume-month'] == "1" or
+					data['resume-month']
+					== "01" %}
+					{{ data['resume-day'] }} January {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "2" or
+					data['resume-month'] == "02" %}
+					{{ data['resume-day'] }} February {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "3" or
+					data['resume-valid-from-month'] == "03" %}
+					{{ data['resume-day'] }} March {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "4" or
+					data['resume-month'] == "04" %}
+					{{ data['resume-day'] }} April {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "5" or
+					data['resume-month'] == "05" %}
+					{{ data['resume-day'] }} May {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "6" or
+					data['resume-month'] == "06" %}
+					{{ data['resume-day'] }} June {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "7" or
+					data['resume-month'] == "07" %}
+					{{ data['resume-day'] }} July {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "8" or
+					data['resume-month'] == "08" %}
+					{{ data['resume-day'] }} August {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "9" or
+					data['resume-month'] == "09" %}
+					{{ data['resume-day'] }} September {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "10" %}
+					{{ data['resume-day'] }} October {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "11" %}
+					{{ data['resume-day'] }} November {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "12" %}
+					{{ data['resume-day'] }} December {{ data['resume-year'] }}
+					{% else %}
+					August
+					{% endif %}
+
+					{{ data['resume-year'] or '2023'}}
+                           
+                    
+                            <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="-resume-date-tp">
                               Change<span class="govuk-visually-hidden"> resume date</span>
