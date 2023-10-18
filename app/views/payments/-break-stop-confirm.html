@@ -58,7 +58,49 @@ href: "javascript:window.history.go(-1);"
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Date change takes effect </dt>
-                        <dd class="govuk-summary-list__value"> 17 Oct 2023 </dd>
+                        <dd class="govuk-summary-list__value"> 
+                            
+                        
+					{% if data['stop-month'] == "1" or
+					data['stop-month']
+					== "01" %}
+					{{ data['stop-day'] }} January {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "2" or
+					data['stop-month'] == "02" %}
+					{{ data['stop-day'] }} February {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "3" or
+					data['stop-month'] == "03" %}
+					{{ data['stop-day'] }} March {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "4" or
+					data['stop-month'] == "04" %}
+					{{ data['stop-day'] }} April {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "5" or
+					data['stop-month'] == "05" %}
+					{{ data['stop-day'] }} May {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "6" or
+					data['stop-month'] == "06" %}
+					{{ data['stop-day'] }} June {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "7" or
+					data['stop-month'] == "07" %}
+					{{ data['stop-day'] }} July {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "8" or
+					data['stop-month'] == "08" %}
+					{{ data['stop-day'] }} August {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "9" or
+					data['stop-month'] == "09" %}
+					{{ data['stop-day'] }} September {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "10" %}
+					{{ data['stop-day'] }} October {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "11" %}
+					{{ data['stop-day'] }} November {{ data['stop-year'] }}
+					{% elseif data['stop-month'] == "12" %}
+					{{ data['stop-day'] }} December {{ data['stop-year'] }}
+					{% else %}
+					October
+					{% endif %}
+
+                        
+                        </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Made redundant </dt>

@@ -74,7 +74,7 @@ href: "javascript:window.history.go(-1);"
 					data['resume-month'] == "02" %}
 					{{ data['resume-day'] }} February {{ data['resume-year'] }}
 					{% elseif data['resume-month'] == "3" or
-					data['resume-valid-from-month'] == "03" %}
+					data['resume-month'] == "03" %}
 					{{ data['resume-day'] }} March {{ data['resume-year'] }}
 					{% elseif data['resume-month'] == "4" or
 					data['resume-month'] == "04" %}
@@ -101,7 +101,7 @@ href: "javascript:window.history.go(-1);"
 					{% elseif data['resume-month'] == "12" %}
 					{{ data['resume-day'] }} December {{ data['resume-year'] }}
 					{% else %}
-					August
+					October
 					{% endif %}
 
 					<!-- {{ data['resume-year'] or '2023'}} -->
