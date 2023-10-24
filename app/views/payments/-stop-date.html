@@ -301,6 +301,35 @@ href: "javascript:window.history.go(-1);"
       
    {% endif %}
 
+
+   {% if  data['reason-for-stop'] == "apprenticeship-never-started" %}
+
+     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
+     
+      <h1 class="govuk-heading-l">
+        Apprenticeship never started
+    </h1>
+  
+    <p> To cancel this apprenticeship, we need to set the stop date to match the planned start date.
+    <br> <br>
+      Planned start date with set 10 August 2023
+    </p>
+       
+     <button class="govuk-button" data-module="govuk-button">
+       Save and continue
+     </button>
+       
+ 
+       
+      
+     
+   </form>
+   {% else %}
+     
+ 
+      
+   {% endif %}
+
        
 	</div>
 
