@@ -261,7 +261,8 @@ return x;
 }
 
 console.log(numberWithCommas(1000))
-var eprice = '{{ data['apprenticeship-total-price-b']}}';
+var eprice = '{{ data['apprenticeship-total-price-b'] or
+            '9,000'}}';
 
 				document.write (numberWithCommas(eprice));
 				</script> 
