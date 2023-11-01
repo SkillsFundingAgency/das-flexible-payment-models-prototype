@@ -139,7 +139,8 @@ href: "javascript:window.history.go(-1);"
 	</div>
 </div>
 
-
+{% if data['effective-from-month'] == "5" or data['effective-from-month'] == "05" %}
+					
 <div class="govuk-warning-text">
     <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
     <strong class="govuk-warning-text__text">
@@ -148,6 +149,22 @@ href: "javascript:window.history.go(-1);"
       academic year]
     </strong>
   </div>
+
+					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+					%}
+
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                          <span class="govuk-warning-text__assistive">Warning</span>
+                          You will not receive funding for apprenticeship activity in any academic year before [current
+                          academic year]
+                        </strong>
+                      </div>
+
+                      {% else %}
+					{% endif %}
+
 
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
