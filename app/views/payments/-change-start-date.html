@@ -57,7 +57,7 @@ href: "javascript:window.history.go(-1);"
                   Day
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-day"
-                  name="effective-from-day" type="text" inputmode="numeric">
+                  name="effective-from-day" value="{{ data['effective-from-day']}}" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -66,7 +66,7 @@ href: "javascript:window.history.go(-1);"
                   Month
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-month"
-                  name="effective-from-month" type="text" inputmode="numeric">
+                  name="effective-from-month" value="{{ data['effective-from-month']}}" type="text" inputmode="numeric">
               </div>
             </div>
             <div class="govuk-date-input__item">
@@ -75,7 +75,7 @@ href: "javascript:window.history.go(-1);"
                   Year
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="EffectiveFromYear"
-                  name="effective-from-year" type="text" inputmode="numeric">
+                  name="effective-from-year" value="{{ data['effective-from-year']}}" type="text" inputmode="numeric">
               </div>
             </div>
           </div>
