@@ -150,7 +150,7 @@ href: "javascript:window.history.go(-1);"
     </strong>
   </div>
 
-					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06" or data['effective-from-year'] <= "2022"
 					%}
 
                     <div class="govuk-warning-text">
@@ -182,7 +182,7 @@ href: "javascript:window.history.go(-1);"
 				<button class="govuk-button" data-module="govuk-button">
 					Send
 				</button>
-				<a class="govuk-link" href="apprentice-details.html">Cancel and return</a>
+				<a class="govuk-link" href="01-apprentice-details">Cancel and return</a>
 			</div>
 		</form>
 
