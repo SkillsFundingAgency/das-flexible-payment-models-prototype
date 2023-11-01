@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "feature/Change-of-circs/cod/training-provider" %}
-{% set pageTitle = "Check your changes before sending sending to the employer" %}
+{% set pageTitle = "Check your change before sending sending to the employer" %}
 
 
 {% block header %}
@@ -25,7 +25,7 @@ href: "javascript:window.history.go(-1);"
 
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
-		<h2 class="govuk-heading-m">Apprenticeship details</h2>
+		<!-- <h2 class="govuk-heading-m">Apprenticeship details</h2>
 		<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">
@@ -59,15 +59,12 @@ href: "javascript:window.history.go(-1);"
 					Abattoir Worker, Level: 2 (Standard)
 				</dd>
 			</div>
-		</dl>
+		</dl> -->
 
-		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+		<h2 class="govuk-heading-m">Change you're requesting</h2>
 
-		<div id="apprenticeship-price-hint" class="govuk-hint">
-			Reason for change: "{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"
 		
-		</div>
-		<br>
+		
 		<table class="govuk-table">
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
@@ -122,10 +119,20 @@ href: "javascript:window.history.go(-1);"
 					{% endif %}
 					
 					{{ data['effective-from-year'] or '2023'}}</td>
+
+                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
 				</tr>
-		
+                <tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reason for change</th>
+					<td class="govuk-table__cell">"{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"</td>
+                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
 			</tbody>
 		</table>
+
+        <div id="apprenticeship-price-hint" class="govuk-hint">
+			
+        
+		</div>
 		<br>
 	</div>
 </div>
@@ -150,7 +157,7 @@ href: "javascript:window.history.go(-1);"
 		</p>
 
 
-		<form action="change-start-date-confirmation" method="post" novalidate>
+		<form action="-change-start-date-confirmation" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
