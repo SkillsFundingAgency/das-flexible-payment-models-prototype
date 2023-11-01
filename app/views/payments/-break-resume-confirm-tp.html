@@ -35,7 +35,7 @@ href: "javascript:window.history.go(-1);"
             <form method="post">
             
 
-                <h1 class="govuk-heading-xl">Do you want to resume this apprenticeship?</h1>
+                <h1 class="govuk-heading-xl">Check your answers and confirm resume</h1>
     
                 <p class="govuk-body">
                     You’re about to resume this apprenticeship.
@@ -125,7 +125,7 @@ href: "javascript:window.history.go(-1);"
                           </dd>
                     </div>
                 </dl>
-                <div class="govuk-form-group ">
+                <div class="govuk-form-group " style="display: none;">
                     <fieldset class="govuk-fieldset">
      <div class="govuk-radios">
                             <div class="govuk-radios__item">
@@ -143,9 +143,15 @@ href: "javascript:window.history.go(-1);"
                         </div>
                     </fieldset>
                 </div>
+
+                <div class="govuk-button-group">
+                    <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button> 
     
-                <button class="govuk-button" type="submit" id="submit-status-change">Save and confirm</button>
-            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MV6lQIUbmFKkKXw6jyZla3c7VaZ-RTWoc_qR3nOECCFQKzFgnZym6oDp9BJG5Iov7OihGD8D-jvZDUgOyRHxj23km2SPVBnONeicEVZie1fzHcKCVVIutRTRMw6PczhM74NaNkQWiqfPrVLkFYVM5bN-rfx4UEGlc5ctZwHnzjJB4nkXxaAT-38dKTmsx4Egg" />
+                    <a class="govuk-link" href="01-apprentice-details" >Cancel and return</a>
+                    </div>
+    
+                <!-- <button class="govuk-button" type="submit" id="submit-status-change">Save and confirm</button>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8MV6lQIUbmFKkKXw6jyZla3c7VaZ-RTWoc_qR3nOECCFQKzFgnZym6oDp9BJG5Iov7OihGD8D-jvZDUgOyRHxj23km2SPVBnONeicEVZie1fzHcKCVVIutRTRMw6PczhM74NaNkQWiqfPrVLkFYVM5bN-rfx4UEGlc5ctZwHnzjJB4nkXxaAT-38dKTmsx4Egg" /> -->
     
         </form>
     
