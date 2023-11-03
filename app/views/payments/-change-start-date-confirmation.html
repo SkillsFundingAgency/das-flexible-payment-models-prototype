@@ -174,7 +174,76 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-key" style="border-left: 5px solid #1d70b8; padding:0 10px;">
-						<dt class="govuk-summary-list__key" style=" padding:0 10px;">
+						
+						
+						
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+		
+					</th>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested </th>
+                    <td class="govuk-table__cell"></td>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+		
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">1 August 2023</td>
+					<td class="govuk-table__cell">{{ data['effective-from-day'] or '24'}}
+					
+					{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
+					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
+					%}
+					{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
+					%}
+					{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
+					%}
+					{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
+					%}
+					{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+					%}
+					{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
+					%}
+					{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
+					%}
+					{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
+					%}
+					{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "10" %}
+					{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "11" %}
+					{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "12" %}
+					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+					{% else %}
+					August
+					{% endif %}
+					
+					{{ data['effective-from-year'] or '2023'}}</td>
+
+                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
+				</tr>
+                <tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reason for change</th>
+					<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}</td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
+			</tbody>
+		</table>
+						
+						<dt class="govuk-summary-list__key" style=" display: none;">
 							Actual training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
