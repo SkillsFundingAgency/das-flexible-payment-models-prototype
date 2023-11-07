@@ -121,8 +121,10 @@ href: "javascript:window.history.go(-1);"
 					
 					{{ data['effective-from-year'] or '2023'}} 
 				
-					<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 11px;">!</span>
-
+					<div class="govuk-warning-text">
+						<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 11px; line-height: 20px; min-width: 20px;
+						min-height: 20px; position: relative; margin: 2px;">!</span>
+						</div>
 				</td>
 
                     <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
@@ -135,6 +137,7 @@ href: "javascript:window.history.go(-1);"
 			</tbody>
 		</table>
 
+        <div id="apprenticeship-price-hint" class="govuk-hint">
 			
         
 		</div>
