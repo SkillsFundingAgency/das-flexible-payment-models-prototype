@@ -195,123 +195,21 @@ href: "javascript:window.history.go(-1);"
 
                     <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Total Price 
+							Total agreed apprenticeship price
 						</dt>
 						<dd class="govuk-summary-list__value">
 							£9,000
 						</dd>
+
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="b-02-update-price">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
 					</div>
 					
 
-					<div class="govuk-summary-list__row-1" style="display: none" >
-
-
-
-
-                        <h2 class="govuk-heading-m" id="price-change">Price  </h2>
-                        <!-- <strong class="govuk-tag govuk-tag">Pending</strong> -->
-                        <table class="govuk-table">
-                            <!-- <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-                
-                                    </th>
-                                    <th scope="col" class="govuk-table__header app-custom-class">Current</th>
-                                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
-                                    </th>
-                
-                                </tr>
-                            </thead> -->
-                            <tbody class="govuk-table__body">
-                
-                                <tr class="govuk-table__row" style="display: none;">
-                                    <th scope="row" class="govuk-table__header">Training price</th>
-                                    <td class="govuk-table__cell">£6,000</td>
-                                    <td class="govuk-table__cell" id="TrainingPrice">
-                                        £<script>
-                                            function numberWithCommas(x) {
-                        x = x.toString();
-                        var pattern = /(-?\d+)(\d{3})/;
-                        while (pattern.test(x))
-                            x = x.replace(pattern, "$1,$2");
-                        return x;
-                    }
-                    
-                    console.log(numberWithCommas(1000))
-                    var tprice = '{{ data['apprenticeship-training-price']}}';
-                    
-                                            document.write (numberWithCommas(tprice));
-                                            </script> 
-                                        
-                                        <!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
-                                    
-                                    </td>
-                                </tr>
-                                <tr class="govuk-table__row" style="display: none;">
-                                    <th scope="row" class="govuk-table__header">End-point assessment price</th>
-                                    <td class="govuk-table__cell">£2,500</td>
-                                    <!-- <td class="govuk-table__cell" id="EndPointAssessmentPrice">
-                                        £<script>
-                                            function numberWithCommas(x) {
-                        x = x.toString();
-                        var pattern = /(-?\d+)(\d{3})/;
-                        while (pattern.test(x))
-                            x = x.replace(pattern, "$1,$2");
-                        return x;
-                    }
-                    
-                    console.log(numberWithCommas(1000))
-                    var eprice = '{{ data['apprenticeship-epa-price']}}';
-                    
-                                            document.write (numberWithCommas(eprice));
-                                            </script> 
-                                        
-                                        
-                                    
-                                    </td> -->
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <th scope="row" class="govuk-table__header">Total price</th>
-                                    <td class="govuk-table__cell">£8,500</td>
-                                    <td class="govuk-table__cell">
-                                        £<script>
-                                            var tprice = '{{ data['apprenticeship-training-price']}}';
-                                            var eprice = '{{ data['apprenticeship-epa-price']}}';;
-                
-                                        
-                                            var numOne = parseInt(tprice);
-                                            var numTwo = parseInt(eprice);
-                                            var sum = numOne+numTwo;
-                                            document.write("" + numberWithCommas(sum) );
-                                          </script>
-                
-                                        
-                                        <!-- {{
-                                        (data['apprenticeship-training-price']|float(format='0,0')
-                                        +
-                                        data['apprenticeship-epa-price']|float(format='0,0')) }}
-                                    </td> -->
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <!-- <a class="govuk-link" href="review">
-                            Review price change<span class="govuk-visually-hidden"> total training price</span>
-                        </a> -->
-                        
-<!--                         
-						<dt class="govuk-summary-list__key">
-							Total agreed apprenticeship price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£9,500 <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="review">
-								Review<span class="govuk-visually-hidden"> total training price</span>
-							</a>
-						</dd> -->
-					</div>
+					
 
 
 
