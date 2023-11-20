@@ -123,14 +123,18 @@ href: "javascript:window.history.go(-1);"
 
                     <!-- <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td> -->
 				</tr>
-		
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reason for change</th>
+					<td class="govuk-table__cell">"{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"</td>
+				</tr>
 			</tbody>
 		</table>
 		<br>
-		<div id="apprenticeship-price-hint" class="govuk-hint">
-			Reason for change: "{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"
+		<!-- <div id="apprenticeship-price-hint" class="govuk-hint">
+			: 
 		
-		</div>
+		</div> -->
 		<form method="post" action="/{{version}}/change-start-date-view-changes">
 			<fieldset class="govuk-fieldset">
 		
