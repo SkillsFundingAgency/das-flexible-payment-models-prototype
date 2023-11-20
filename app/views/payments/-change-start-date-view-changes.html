@@ -63,11 +63,8 @@ href: "javascript:window.history.go(-1);"
 		<h2 class="govuk-heading-m">Changes you've requested</h2>
 
 		<strong class="govuk-tag govuk-tag--yellow">Pending employer review</strong>
-		<div id="apprenticeship-price-hint" class="govuk-hint">
-			Reason for change: "{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"
 		
-		</div>
-		<br>
+		
 		<table class="govuk-table">
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
@@ -130,6 +127,10 @@ href: "javascript:window.history.go(-1);"
 			</tbody>
 		</table>
 		<br>
+		<div id="apprenticeship-price-hint" class="govuk-hint">
+			Reason for change: "{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}"
+		
+		</div>
 		<form method="post" action="/{{version}}/change-start-date-view-changes">
 			<fieldset class="govuk-fieldset">
 		
