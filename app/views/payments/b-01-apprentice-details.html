@@ -49,7 +49,39 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--blue">
 
 
-								{{ data['stoptp'] or 'In learning'}}
+
+								
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								In learning
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								Break in learning
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+								Withdrawn
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								In learning
+								{% endif %}
+				
+								
+								<!-- {{ data['stoptp'] or 'In learning'}} -->
 
 							</strong>
 						</dd>
