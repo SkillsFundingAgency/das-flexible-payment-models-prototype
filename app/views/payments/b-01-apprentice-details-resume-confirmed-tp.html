@@ -49,7 +49,7 @@ href: "javascript:window.history.go(-1);"
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row">
+					<!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Status
 						</dt>
@@ -62,6 +62,108 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
                         
+					</div> -->
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Learner status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							
+								
+								
+								
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+
+								<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+								
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+								{% endif %}
+				
+							
+							
+						</dd>
+
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-tp">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Provider payments status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							
+								
+								
+								
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								<strong class="govuk-tag govuk-tag--blue">Active</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+
+								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+								
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								<strong class="govuk-tag govuk-tag--blue">Active</strong>
+								{% endif %}
+				
+							
+							
+						</dd>
+
+                        <dd class="govuk-summary-list__actions">
+							<!-- <a class="govuk-link" href="break-tp">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a> -->
+						</dd>
 					</div>
 
                     <div class="govuk-summary-list__row">
