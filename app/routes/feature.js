@@ -505,7 +505,8 @@ router.post('/payments/break-tp', function (req, res) {
         res.redirect('-pause-date-tp')
     }
 
-    if (stoptp == "continuing") {
+    else if 
+    (stoptp == "continuing") {
         res.redirect('01-apprentice-details')
     }
     else {
