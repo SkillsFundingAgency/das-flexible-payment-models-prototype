@@ -46,7 +46,12 @@ href: "javascript:window.history.go(-1);"
 							Status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--blue">Live</strong>
+							<strong class="govuk-tag govuk-tag--blue">
+
+
+								{{ data['stoptp'] or 'In learning'}}
+
+							</strong>
 						</dd>
                         <dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="break">
