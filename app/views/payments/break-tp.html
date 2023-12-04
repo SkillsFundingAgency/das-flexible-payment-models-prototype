@@ -171,35 +171,35 @@ href: "javascript:window.history.go(-1);"
                         </legend>
                         <div class="govuk-radios" data-module="govuk-radios">
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-pause" type="radio" value="Maternity leave">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-pause" type="radio" value="Maternity leave" {{ checked('reason-for-pause','Maternity leave') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                               Maternity leave
 
                             </label>
                           </div>
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-pause" type="radio" value="Long term illness">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-pause" type="radio" value="Long term illness" {{ checked('reason-for-pause','Long term illness') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                               Long term illness
 
                             </label>
                           </div>
                           <!-- <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-pause" type="radio" value="Work pressure">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-pause" type="radio" value="Work pressure" >
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
                               Work pressure 
 
                             </label>
                           </div> -->
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Mental health problems">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Mental health problems" {{ checked('reason-for-pause','Mental health problems') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                               Mental health problems
                             </label>
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Mental health problems" data-aria-controls="conditional-others">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Others" data-aria-controls="conditional-others" {{ checked('reason-for-pause',Others') }} >
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                               Other reason
                             </label>
