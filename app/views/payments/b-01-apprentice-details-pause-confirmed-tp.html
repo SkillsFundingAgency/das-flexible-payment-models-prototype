@@ -56,7 +56,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--grey">
+							<strong class="govuk-tag govuk-tag--red">
 								
 								
 								Break in learning </strong>
@@ -67,20 +67,6 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
-                    <div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Reason for break in learning
-						</dt>
-						<dd class="govuk-summary-list__value">
-							{{ data['reason-for-pause'] }}
-						</dd>
-                        <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break-tp">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a>
-						</dd>
-					</div>
-
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -132,6 +118,22 @@ href: "javascript:window.history.go(-1);"
 							</a> -->
 						</dd>
 					</div>
+                    <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Reason for break in learning
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['reason-for-pause'] }}
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-tp">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
+
+
+					
 
                     <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
