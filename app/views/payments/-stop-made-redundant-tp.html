@@ -46,20 +46,20 @@ href: "javascript:window.history.go(-1);"
                   </div> -->
                   <div class="govuk-radios govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="changedName" name="redundant" type="radio" value="Yes">
+                      <input class="govuk-radios__input" id="changedName" name="redundant" type="radio" value="Yes" {{ checked('redundant','Yes') }}>
                       <label class="govuk-label govuk-radios__label" for="changedName">
                         Yes
                       </label>
                     </div>
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="No">
+                      <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="No" {{ checked('redundant','No') }>
                       <label class="govuk-label govuk-radios__label" for="changedName-2">
                         No
                       </label>
                     </div>
 
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="Don't know">
+                        <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="Don't know" {{ checked('redundant','Don't know') }>
                         <label class="govuk-label govuk-radios__label" for="changedName-2">
                           I don't know
                         </label>
