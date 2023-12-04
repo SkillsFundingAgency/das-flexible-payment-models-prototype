@@ -33,7 +33,7 @@ href: "javascript:window.history.go(-1);"
             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Change the status of this apprenticeship
+                  Change the provider payment status
                 </h1>
               </legend>
               <div id="contact-hint" class="govuk-hint">
@@ -41,13 +41,13 @@ href: "javascript:window.history.go(-1);"
               </div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="break" name="stop" type="radio" value="yes" data-aria-controls="conditional-contact">
+                  <input class="govuk-radios__input" id="break" name="stop" type="radio" value="yes" data-aria-controls="conditional-contact-" {{ checked('stop','yes') }}>
                   <label class="govuk-label govuk-radios__label" for="contact">
-                   Pause this apprenticeship
+                   Active
                   </label>
 
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    to record a break in learning as agreed with the training provider and to freeze future payments to a training provider for a period of time.
+                    to continue payments to a training provider
                     <!-- <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
                         <li>to record a break in learning as agreed with the training provider</li>
                         <li>to freeze future payments to a training provider for a period of time</li>
@@ -139,12 +139,12 @@ href: "javascript:window.history.go(-1);"
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-2" name="stop" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                  <input class="govuk-radios__input" id="contact-2" name="stop" type="radio" value="no" data-aria-controls="conditional-contact-2" {{ checked('stop','no') }}>
                   <label class="govuk-label govuk-radios__label" for="contact-2">
-                    Withdraw this apprenticeship
+                   Inactive
                   </label>
                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    to change your training provider during the lifetime of a course and stop all future payments.
+                    to stop future payments.
                     <!-- <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
                         <li>to change your training provider during the lifetime of a course</li>
                         <li>to cancel all future payments</li>
@@ -163,14 +163,14 @@ href: "javascript:window.history.go(-1);"
                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                         <strong class="govuk-warning-text__text">
                           <span class="govuk-warning-text__assistive">Warning</span>
-                          You do not need to withdraw an apprenticeship after the training has been completed. If you do, this will prevent the completion payment due to your training provider. Contact your training provider. 
+                          You do not need to stop payments after the training has been completed. If you do, this will prevent the completion payment due to your training provider. Contact your training provider. 
                         </strong>
                       </div>
                     
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend">
-                            Why do you want to withdraw this apprenticeship?
+                            Why do you want to stop payments?
                           </legend>
                           <div id="with-hint-hint" class="govuk-hint">
                             Training provider will be notified about the change via email
