@@ -46,7 +46,41 @@ href: "javascript:window.history.go(-1);"
 							Status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--blue">Live</strong>
+							<strong class="govuk-tag govuk-tag--blue">
+								
+								
+								
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								In learning
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								Break in learning
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+								Withdrawn
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								In learning
+								{% endif %}
+				
+							
+							</strong>
 						</dd>
 
                         <dd class="govuk-summary-list__actions">
