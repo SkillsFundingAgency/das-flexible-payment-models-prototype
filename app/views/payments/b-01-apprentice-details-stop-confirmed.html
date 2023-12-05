@@ -24,7 +24,7 @@ href: "javascript:window.history.go(-1);"
 
         <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-              Apprenticeship Withdrawn
+              Training provider payments cancelled
             </h1>
             
           </div>
@@ -51,20 +51,111 @@ href: "javascript:window.history.go(-1);"
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Status
+							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+							
+
+
+
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+
+								<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+								
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+								{% endif %}
+				
+				
+								
+								<!-- {{ data['stoptp'] or 'In learning'}} -->
+
+							
 						</dd>
-                        <dd class="govuk-summary-list__actions">
-							<!-- <a class="govuk-link" href="-break-change-status-resume">
+                        <!-- <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break">
 								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a> -->
+							</a>
+						</dd> -->
+					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Provider payments status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							
+								
+								
+								
+								{% if  data['stoptp'] %}
+							
+				  
+								{% if  data['stoptp'] == "continuing" %}
+								<strong class="govuk-tag govuk-tag--blue">Active</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "yes" %}
+								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stoptp'] == "no" %}
+
+								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+								
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								<strong class="govuk-tag govuk-tag--blue">Active</strong>
+								{% endif %}
+				
+							
+							
+						</dd>
+
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Date withrawn
+							Cancellation date 
 						</dt>
 						<dd class="govuk-summary-list__value">
 
@@ -111,7 +202,7 @@ href: "javascript:window.history.go(-1);"
 							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
 						</dd>
                         <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="-stop-date">
+							<a class="govuk-link" href="break">
 								Change<span class="govuk-visually-hidden">date</span>
 							</a>
 						</dd>
