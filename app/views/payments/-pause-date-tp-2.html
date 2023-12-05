@@ -35,32 +35,32 @@ href: "javascript:window.history.go(-1);"
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                         When do you want the break in learning (BIL) to effect from? 
+                        <!-- When do you want the break in learning to effect from? -->
 
-                        <!-- What is the learning actual end date before the break in learning (BIL)? -->
+                        What is the learning actual end date before the break in learning (BIL)?
                     </h1>
                   </legend>
                   <div id="passport-issued-hint" class="govuk-hint">
 
 
                     <!-- The earliest date you can enter is this apprenticeship's start date of 10 July 2023. Any outstanding payments will be made for activity up to this date. -->
-                    <!-- A BIL must be agreed with the learner. There must also be supporting evidence of their intention to return otherwise the learner should be recorded as a withdrawal.
+                    A BIL must be agreed with the learner. There must also be supporting evidence of their intention to return otherwise the learner should be recorded as a withdrawal.
                     <br> 
                     You will need to provide the last date of learning before the break.
-                    <br> -->
+                    <br>
                     For example, 27 3 2023
 
                     
                   </div>
 
-                  <!-- <p><a href="https://guidance.submit-learner-data.service.gov.uk/22-23/ilr/entity/LearningDelivery/field/LearnActEndDate" target="_blank"> Refer to the ILR specification for guidance </a> about the learning actual end date</p> -->
+                  <p><a href="https://guidance.submit-learner-data.service.gov.uk/22-23/ilr/entity/LearningDelivery/field/LearnActEndDate" target="_blank"> Refer to the ILR specification for guidance </a> about the learning actual end date</p>
                   <div class="govuk-date-input" id="passport-issued">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="pause-day" value="{{ data['pause-day']}}" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="pause-day" value="{{ data['pause-day-2']}}" type="text" inputmode="numeric">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -68,7 +68,7 @@ href: "javascript:window.history.go(-1);"
                         <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="pause-month" value="{{ data['pause-month']}}" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="pause-month" value="{{ data['pause-month-2']}}" type="text" inputmode="numeric">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -76,7 +76,7 @@ href: "javascript:window.history.go(-1);"
                         <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="pause-year" value="{{ data['pause-year']}}" type="text" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="pause-year" value="{{ data['pause-year-2']}}" type="text" inputmode="numeric">
                       </div>
                     </div>
                   </div>

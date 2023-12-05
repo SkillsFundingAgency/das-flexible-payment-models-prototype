@@ -187,6 +187,61 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
+
+					<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Date BIL will end </dt>
+                        <dd class="govuk-summary-list__value">
+
+
+					{% if data['pause-month-2'] == "1" or
+					data['pause-month']
+					== "01" %}
+					{{ data['pause-day-2'] }} January {{ data['pause-year-2'] }}
+					{% elseif data['pause-month'] == "2" or
+					data['pause-month-2'] == "02" %}
+					{{ data['pause-day-2'] }} February {{ data['pause-year-2'] }}
+					{% elseif data['pause-month'] == "3" or
+					data['pause-month-2'] == "03" %}
+					{{ data['pause-day'] }} March {{ data['pause-year'] }}
+					{% elseif data['pause-month-2'] == "4" or
+					data['pause-month-2'] == "04" %}
+					{{ data['pause-day-2'] }} April {{ data['pause-year-2'] }}
+					{% elseif data['pause-month-2'] == "5" or
+					data['pause-month-2'] == "05" %}
+					{{ data['pause-day-2'] }} May {{ data['pause-year-2'] }}
+					{% elseif data['pause-month'] == "6" or
+					data['pause-month-2'] == "06" %}
+					{{ data['pause-day-2'] }} June {{ data['pause-year-2'] }}
+					{% elseif data['pause-month-2'] == "7" or
+					data['pause-month-2'] == "07" %}
+					{{ data['pause-day'] }} July {{ data['pause-year-2'] }}
+					{% elseif data['pause-month'] == "8" or
+					data['pause-month'] == "08" %}
+					{{ data['pause-day'] }} August {{ data['pause-year'] }}
+					{% elseif data['pause-month'] == "9" or
+					data['pause-month-2'] == "09" %}
+					{{ data['pause-day-2'] }} September {{ data['pause-year-2'] }}
+					{% elseif data['pause-month-2'] == "10" %}
+					{{ data['pause-day-2'] }} October {{ data['pause-year-2'] }}
+					{% elseif data['pause-month-2'] == "11" %}
+					{{ data['pause-day-2'] }} November {{ data['pause-year-2'] }}
+					{% elseif data['pause-month-2'] == "12" %}
+					{{ data['pause-day-2'] }} December {{ data['pause-year-2'] }}
+					{% else %}
+					6 December 2023
+					{% endif %}
+
+                            
+                            
+                            <!-- {{ data['pause-day'] }} {{ data['pause-month'] }} {{ data['pause-year'] }} </dd> -->
+                    
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="-pause-date-tp-2">
+                              Change<span class="govuk-visually-hidden"> reason for break in learning</span>
+                            </a>
+                          </dd>
+                    </div>
+
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Change date
