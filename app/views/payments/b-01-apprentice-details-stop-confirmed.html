@@ -112,36 +112,33 @@ href: "javascript:window.history.go(-1);"
 								
 								
 								
-								{% if  data['stoptp'] %}
-							
-				  
-								{% if  data['stoptp'] == "continuing" %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
-
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+								{	
+									{% if  data['stop'] %}
 								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-								{% endif %}
+					  
+									{% if  data['stop'] == "yes" %}
+									<strong class="govuk-tag govuk-tag--blue">Active</strong>
+	
+									{% else %}
+	
+									{% endif %}
+	
+									
+	
+									{% if  data['stop'] == "no" %}
+	
+									<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+									
+	
+									{% else %}
+	
+									{% endif %}
+	
+									
+									{% else %}
+									<strong class="govuk-tag govuk-tag--blue">Active</strong>
+									{% endif %}
+					
 				
 							
 							

@@ -104,24 +104,19 @@ href: "javascript:window.history.go(-1);"
 								
 								
 								
-								{% if  data['stoptp'] %}
+								{% if  data['stop'] %}
 							
 				  
-								{% if  data['stoptp'] == "continuing" %}
+								{% if  data['stop'] == "yes" %}
 								<strong class="govuk-tag govuk-tag--blue">Active</strong>
 
 								{% else %}
 
 								{% endif %}
 
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+								
 
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
+								{% if  data['stop'] == "no" %}
 
 								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
 								
