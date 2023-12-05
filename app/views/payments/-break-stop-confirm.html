@@ -55,7 +55,23 @@ href: "javascript:window.history.go(-1);"
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Apprenticeship training course </dt>
                         <dd class="govuk-summary-list__value"> Abattoir worker, Level: 2</dd>
-                    </div> -->
+                    </div>  -->
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Reason </dt>
+                        <dd class="govuk-summary-list__value"> 
+                            
+                            {{ data['reason-for-stop'] }}
+				
+                        
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break">
+								Change<span class="govuk-visually-hidden">date</span>
+							</a>
+						</dd>
+                    </div>
+
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Date change takes effect </dt>
                         <dd class="govuk-summary-list__value"> 

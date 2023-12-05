@@ -177,49 +177,49 @@ href: "javascript:window.history.go(-1);"
                           </div>
                           <div class="govuk-radios" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-stop" type="radio" value="apprentice-left">
+                              <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-stop" type="radio" value="apprentice-left"  {{ checked('reason-for-stop','apprentice-left') }}>
                               <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
                                 Apprentice left my employment
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-stop" type="radio" value="change-to-training-provider">
+                              <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-stop" type="radio" value="change-to-training-provider" {{ checked('reason-for-stop','change-to-training-provider') }}>
                               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
                                 Change to training provider
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-stop" type="radio" value="training-ended">
+                              <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-stop" type="radio" value="training-ended" {{ checked('reason-for-stop','training-ended') }}>
                               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
                                 Apprenticeship training has ended
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="apprentice-withdraw">
+                              <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="apprentice-withdraw" {{ checked('reason-for-stop','apprentice-withdraw') }}>
                               <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                 Apprentice has withdrawn from training
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="record-change">
+                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="record-change"  {{ checked('reason-for-stop','record-chang') }>
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                     Training provider request to correct apprenticeship record
                                 </label>
                               </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="apprenticeship-never-started">
+                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="apprenticeship-never-started" {{ checked('reason-for-stop','apprenticeship-never-started') }>
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                    Apprenticeship never started
                                 </label>
                               </div>
 
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="others" data-aria-controls="conditional-others">
+                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio" value="others" data-aria-controls="conditional-others-stop" {{ checked('reason-for-stop','others') }>
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                   Other reason
                                 </label>
                               </div>
-                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others">
+                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-stop">
                                 <div class="govuk-form-group">
                                   <label class="govuk-label" for="contact-by-email">
                                  Specify other reason. 
