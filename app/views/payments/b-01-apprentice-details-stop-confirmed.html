@@ -56,7 +56,11 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 							
 
+							{% if  data['stop'] == "no" %}
 
+							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+
+							{% else %}
 
 								{% if  data['stoptp'] %}
 							
@@ -88,7 +92,8 @@ href: "javascript:window.history.go(-1);"
 								{% else %}
 								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
 								{% endif %}
-				
+								
+								{% endif %}
 				
 								
 								<!-- {{ data['stoptp'] or 'In learning'}} -->
