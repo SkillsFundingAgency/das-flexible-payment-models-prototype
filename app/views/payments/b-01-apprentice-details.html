@@ -48,7 +48,11 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 							
 
+							{% if  data['reason-for-stop'] == "apprentice-left" %}
 
+							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+
+							{% else %}
 
 								{% if  data['stoptp'] %}
 							
@@ -82,7 +86,7 @@ href: "javascript:window.history.go(-1);"
 								{% endif %}
 				
 				
-								
+								{% endif %}
 								<!-- {{ data['stoptp'] or 'In learning'}} -->
 
 							
