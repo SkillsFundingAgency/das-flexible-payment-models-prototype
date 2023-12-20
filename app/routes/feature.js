@@ -515,6 +515,24 @@ router.post('/payments/break-tp', function (req, res) {
 })
 
 
+router.post('/payments/break-e', function (req, res) {
+    var stoptp = req.session.data['stoptp-e']
+
+    if (stoptp-e == "yes") {
+        res.redirect('-pause-date-e')
+    }
+
+    else if 
+    (stoptp-e == "continuing") {
+        res.redirect('-resume-date-e')
+    }
+    else {
+        res.redirect('-stop-date-e')
+    }
+})
+
+
+
 router.post('/payments/review', function (req, res) {
     var review = req.session.data['review']
 

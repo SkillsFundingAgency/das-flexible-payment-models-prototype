@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
 {% set pageTitle = "George Ford" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,9 +19,18 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              Apprenticeship status set to in learning
+            </h1>
+            
+          </div>
+
+		<h2 class="govuk-heading-l">{{pageTitle}}</h2>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
 			<h2 class="govuk-tabs__title">
@@ -39,8 +48,22 @@ href: "javascript:window.history.go(-1);"
 				</li>
 			</ul>
 			<div class="govuk-tabs__panel" id="overview">
-				<h2 class="govuk-heading-m">Apprenticeship status</h2>
+				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
+					<!-- <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-tp">
+								Change<span class="govuk-visually-hidden"> status</span>
+							</a>
+						</dd>
+                        
+					</div> -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Learner status
@@ -143,6 +166,74 @@ href: "javascript:window.history.go(-1);"
 							</a> -->
 						</dd>
 					</div>
+
+                    <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Return to learning date
+						</dt>
+						<dd class="govuk-summary-list__value">
+
+
+					{% if data['resume-month'] == "1" or
+					data['resume-month']
+					== "01" %}
+					{{ data['resume-day'] }} January {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "2" or
+					data['resume-month'] == "02" %}
+					{{ data['resume-day'] }} February {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "3" or
+					data['resume-valid-from-month'] == "03" %}
+					{{ data['resume-day'] }} March {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "4" or
+					data['resume-month'] == "04" %}
+					{{ data['resume-day'] }} April {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "5" or
+					data['resume-month'] == "05" %}
+					{{ data['resume-day'] }} May {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "6" or
+					data['resume-month'] == "06" %}
+					{{ data['resume-day'] }} June {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "7" or
+					data['resume-month'] == "07" %}
+					{{ data['resume-day'] }} July {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "8" or
+					data['resume-month'] == "08" %}
+					{{ data['resume-day'] }} August {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "9" or
+					data['resume-month'] == "09" %}
+					{{ data['resume-day'] }} September {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "10" %}
+					{{ data['resume-day'] }} October {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "11" %}
+					{{ data['resume-day'] }} November {{ data['resume-year'] }}
+					{% elseif data['resume-month'] == "12" %}
+					{{ data['resume-day'] }} December {{ data['resume-year'] }}
+					{% else %}
+					October
+					{% endif %}
+
+							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="-resume-date-tp.html">
+								Change<span class="govuk-visually-hidden">date</span>
+							</a>
+						</dd>
+                        
+					</div>
+                    <!-- <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Allow training provide to change status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Yes
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="-break-allow-status-change">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div> -->
 					<!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Stop applies from
@@ -159,24 +250,16 @@ href: "javascript:window.history.go(-1);"
 							Confirmed
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Simplified payments pilot
-						</dt>
-						<dd class="govuk-summary-list__value">
-							Yes
-						</dd>
-					</div>
 				</dl>
 				<h2 class="govuk-heading-m">Overview</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Employer
+							Training provider
 						</dt>
 						<dd class="govuk-summary-list__value">
-							AUTOMATION &amp; OPTIMISATION LTD
+							EDUC8 TRAINING (ENGLAND) LIMITED
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -185,14 +268,6 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 							MNNRLD
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Agreement ID
-						</dt>
-						<dd class="govuk-summary-list__value">
-							7GXEKP
 						</dd>
 					</div>
 				</dl>
@@ -267,18 +342,37 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 							1 August 2023
 						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="-change-start-date">
-								Change<span class="govuk-visually-hidden"> actual training start date</span>
-							</a>
-						</dd>
+<dd class="govuk-summary-list__actions">
+	<a class="govuk-link" href="#">
+		Change<span class="govuk-visually-hidden">training start date</span>
+	</a>
+</dd>
 					</div>
-					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-						<dt class="govuk-summary-list__key">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions" style="border-left:5px solid #1d70b8; padding-left: 10px;">
+						<dt class="govuk-summary-list__key" style="padding-left: 10px;">
 							Planned training end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							1 June 2024
+							5 December 2024
+						</dd>
+
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="">
+								Change<span class="govuk-visually-hidden"> training end date</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total agreed apprenticeship price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,500
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="b-02-update-price">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -289,52 +383,68 @@ href: "javascript:window.history.go(-1);"
 							Nothing provided
 						</dd>
 					</div>
+
 				</dl>
-
-
-				<h2 class="govuk-heading-m">Price</h2>
-				<dl class="govuk-summary-list">
-
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Training price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£6,000
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							End-point assessment price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£2,500
-						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-															<a class="govuk-link" href="update-price">
-																Change<span class="govuk-visually-hidden"> total assessment price</span>
-															</a>
-														</dd> -->
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Total price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£8,500
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="02-update-price">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a>
-						</dd>
-					</div>
-				</dl>
-
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
 				<h2 class="govuk-heading-m">History</h2>
 				<ol class="hmrc-timeline">
+                    <li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship  
+						</h3>
+						<p class="govuk-body govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--blue">Resumed</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">18 October 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											Apprentice<strong class="govuk-tag govuk-tag--blue"> resumed </strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">18 October
+												2023</time>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</li>
+
+                    <li class="hmrc-timeline__event">
+						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship  
+						</h3>
+						<p class="govuk-body govuk-!-margin-bottom-3">
+							<strong class="govuk-tag govuk-tag--grey">paused</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">14 November 2023</time>
+						</p>
+						<div class="hmrc-timeline__event-content">
+							
+							<details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+								<summary class="govuk-details__summary">
+									<span class="govuk-details__summary-text">
+										More details
+									</span>
+								</summary>
+								<div class="govuk-details__text">
+									<ul class="govuk-list">
+										<li>
+											Apprentice <strong class="govuk-tag govuk-tag--grey">paused </strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">14 November
+												2023</time>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</li>
+
 					<!-- <li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
 							increase
