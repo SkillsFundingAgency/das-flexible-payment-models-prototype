@@ -516,7 +516,7 @@ router.post('/payments/break-tp', function (req, res) {
 
 
 router.post('/payments/break-e', function (req, res) {
-    var stoptp = req.session.data['stoptp-e']
+    var stoptp-e = req.session.data['stoptp-e']
 
     if (stoptp-e == "yes") {
         res.redirect('-pause-date-e')
