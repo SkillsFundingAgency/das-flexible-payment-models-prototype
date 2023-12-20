@@ -516,14 +516,14 @@ router.post('/payments/break-tp', function (req, res) {
 
 
 router.post('/payments/break-e', function (req, res) {
-    var stoptp-e = req.session.data['stoptp-e']
+    var stope = req.session.data['stope']
 
-    if (stoptp-e == "yes") {
+    if (stope == "yes") {
         res.redirect('-pause-date-e')
     }
 
     else if 
-    (stoptp-e == "continuing") {
+    (stope == "continuing") {
         res.redirect('-resume-date-e')
     }
     else {
