@@ -27,49 +27,40 @@ href: "javascript:window.history.go(-1);"
 
 	<div class="govuk-grid-column-full">
 
-        <form action="-break-resume-confirm-e" method="post" novalidate class="govuk-!-margin-top-7">
+        <form action="-resume-date-e-planned-end-date-1" method="post" novalidate class="govuk-!-margin-top-7">
 		
-
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
-                        Confirm the new planned training end date
-                    </h1>
-                  </legend>
-                  <div id="passport-issued-hint" class="govuk-hint">
-                    The planned training end date has changed.<br> Review and confirm that the new planned end date shown below is correct.
-                    <br> If the system generated end date is incorrect, you can change it here.
-                  </div>
-                  <div class="govuk-date-input" id="passport-issued">
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                          Day
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="resume-day" value="15" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                          Month
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="resume-month" value="3" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                    <div class="govuk-date-input__item">
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                          Year
-                        </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="resume-year" value="2025" type="text" inputmode="numeric">
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you want change the planned training end date?
+                </h1>
+              </legend>
+              <!-- <div id="signIn-hint" class="govuk-hint">
+                You may need to change the planned training end date  
+              </div> -->
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="signIn" name="plannedenddate" type="radio" value="yes" aria-describedby="signIn-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="signIn">
+                    Yes, I want change the planned training end date
+                  </label>
+                  <!-- <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                    You’ll have a user ID if you’ve registered for Self Assessment or filed a tax return online before.
+                  </div> -->
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="signIn-2" name="plannedenddate" type="radio" value="no" aria-describedby="signIn-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="signIn-2">
+                    No, I don't want to change the planned training end date
+                  </label>
+                  <!-- <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+                    If you don’t have a GOV.UK One Login, you can create one.
+                  </div> -->
+                </div>
               </div>
-
+            </fieldset>
+          </div>
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
