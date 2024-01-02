@@ -24,7 +24,7 @@ href: "javascript:window.history.go(-1);"
 
         <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-			Training provider payments set to active 
+			Training provider payments set to Inactive 
             </h1>
             
           </div>
@@ -162,48 +162,48 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 
 
-					{% if data['pause-month'] == "1" or
-					data['pause-month']
+					{% if data['freeze-month'] == "1" or
+					data['freeze-month']
 					== "01" %}
-					{{ data['pause-day'] }} January {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "2" or
-					data['pause-month'] == "02" %}
-					{{ data['pause-day'] }} February {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "3" or
-					data['pause-month'] == "03" %}
-					{{ data['pause-day'] }} March {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "4" or
-					data['pause-month'] == "04" %}
-					{{ data['pause-day'] }} April {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "5" or
-					data['pause-month'] == "05" %}
-					{{ data['pause-day'] }} May {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "6" or
-					data['pause-month'] == "06" %}
-					{{ data['pause-day'] }} June {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "7" or
-					data['pause-month'] == "07" %}
-					{{ data['pause-day'] }} July {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "8" or
-					data['pause-month'] == "08" %}
-					{{ data['pause-day'] }} August {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "9" or
-					data['pause-month'] == "09" %}
-					{{ data['pause-day'] }} September {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "10" %}
-					{{ data['pause-day'] }} October {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "11" %}
-					{{ data['pause-day'] }} November {{ data['pause-year'] }}
-					{% elseif data['pause-month'] == "12" %}
-					{{ data['pause-day'] }} December {{ data['pause-year'] }}
+					{{ data['freeze-day'] }} January {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "2" or
+					data['freeze-month'] == "02" %}
+					{{ data['freeze-day'] }} February {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "3" or
+					data['freeze-month'] == "03" %}
+					{{ data['freeze-day'] }} March {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "4" or
+					data['freeze-month'] == "04" %}
+					{{ data['freeze-day'] }} April {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "5" or
+					data['freeze-month'] == "05" %}
+					{{ data['freeze-day'] }} May {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "6" or
+					data['freeze-month'] == "06" %}
+					{{ data['freeze-day'] }} June {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "7" or
+					data['freeze-month'] == "07" %}
+					{{ data['freeze-day'] }} July {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "8" or
+					data['freeze-month'] == "08" %}
+					{{ data['freeze-day'] }} August {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "9" or
+					data['freeze-month'] == "09" %}
+					{{ data['freeze-day'] }} September {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "10" %}
+					{{ data['freeze-day'] }} October {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "11" %}
+					{{ data['freeze-day'] }} November {{ data['freeze-year'] }}
+					{% elseif data['freeze-month'] == "12" %}
+					{{ data['freeze-day'] }} December {{ data['freeze-year'] }}
 					{% else %}
-					October
+					10 January 2024
 					{% endif %}
 							<!-- {{ data['pause-day'] }} {{ data['pause-month'] }} {{ data['pause-year'] }} -->
 						</dd>
                         <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="-pause-date-tp">
-								Change<span class="govuk-visually-hidden"> total training price</span>
+							<a class="govuk-link" href="-freeze-date">
+								Change<span class="govuk-visually-hidden"> freeze</span>
 							</a>
 						</dd>
 					</div>

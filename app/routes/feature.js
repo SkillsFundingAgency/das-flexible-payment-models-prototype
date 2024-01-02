@@ -498,6 +498,19 @@ router.post('/payments/break', function (req, res) {
     }
 })
 
+
+
+router.post('/payments/break-cancel-payments', function (req, res) {
+    var freeze = req.session.data['freeze']
+
+    if (freeze == "yes") {
+        res.redirect('-freeze-date')
+    }
+    else {
+        res.redirect('-break-e')
+    }
+})
+
 router.post('/payments/break-tp', function (req, res) {
     var stoptp = req.session.data['stoptp']
 
