@@ -512,7 +512,7 @@ router.post('/payments/break-freeze', function (req, res) {
 })
 
 router.post('/payments/break-unfreeze', function (req, res) {
-    var freeze = req.session.data['unfreeze']
+    var unfreeze = req.session.data['unfreeze']
 
     if (unfreeze == "yes") {
         res.redirect('-unfreeze-date')
