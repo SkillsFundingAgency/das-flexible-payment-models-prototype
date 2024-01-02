@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% set feature = "/feature/cop" %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Change of status </h1>
+        <h2 class="govuk-heading-l">Training changes status</h2>
+        <div class="govuk-grid-row govuk-!-margin-top-7">
+            <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="01-apprentice-details"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Training provide requests change of price</p>
+                <a href="01-apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View training provider prototype</a>
+            </div>
+            <!-- <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="e-1-manage"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Employer account</a>
+                </h3>
+                <p class="govuk-body">Employer reviews change</p>
+                <a href="e-1-manage" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View
+                    employer prototype</a>
+            </div> -->
+        </div>
+
+
+    </div>
+
+
+    <h2 class="govuk-heading-m" style="margin: 30px 0 0 0;"> Staus change notifications - training provider view</h2>
+                <a href="01-apprentice-details-status-paused" target="_blank"> Status change notification seen by the training provider </a>
+
+
+    <div class="govuk-grid-column-full" style="margin: 30px 0 0 0;">
+
+        
+        <h2 class="govuk-heading-l"> Employer changes status</h2>
+        <div class="govuk-grid-row govuk-!-margin-top-7">
+            <!-- <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="/payments/c-01-apprentice-details"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Training provide requests change of price</p>
+                <a href="/payments/c-01-apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View training provider prototype</a>
+            </div> -->
+            <div class="govuk-grid-column-one-half">
+                <h3 class="govuk-heading-m"><a href="/payments/b-01-apprentice-details"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Employer account</a>
+                </h3>
+                <p class="govuk-body">Employer changes status</p>
+                <a href="/payments/b-01-apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View
+                    employer prototype</a>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<h2 class="govuk-heading-m" style="margin: 30px 0 0 0;"> Staus change notifications - the employer view</h2>
+                <a href="e-status-pause-apprentice-details" target="_blank"> Status change notification seen by the employer </a>
+
+
+
+                
+
+               
+
+                <h2 class="govuk-heading-m" style="margin: 30px 0 0 0;"> Clear data </h2>
+                <a href="https://das-flexible-payment-models.herokuapp.com/manage-prototype/clear-data" target="_blank">  Clear data </a>
+
+
+               
+
+
+{% endblock %}
