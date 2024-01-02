@@ -37,11 +37,11 @@ href: "javascript:window.history.go(-1);"
                 </h1>
               </legend>
               <div id="contact-hint" class="govuk-hint">
-                If you have a dispute with the training provider you can freeze payment status here.
+                If you have a dispute with the training provider you can freeze payment status.
                 <br> 
 
                The apprentice status will not be changed. 
-                <!-- If you need to change apprentice status to break in learning or withdrawn, you can <a href="break-e">change apprentice status here. </a> -->
+                 If you need to change learner status to break in learning or withdrawn, you can <a href="break-e">change learner status here. </a> 
                   
                 <!-- The apprentice status will not get affected.  -->
                <!-- Change payment status if you need to freeze payments going to training provider.  -->
@@ -51,7 +51,7 @@ href: "javascript:window.history.go(-1);"
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="break" name="freeze" type="radio" value="yes" data-aria-controls="conditional-freeze" {{ checked('freeze','yes') }} >
+                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="yes" data-aria-controls="conditional-freeze" {{ checked('freeze','yes') }} >
                   <label class="govuk-label govuk-radios__label" for="contact">
                   Yes 
                   </label>
@@ -61,7 +61,7 @@ href: "javascript:window.history.go(-1);"
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-freeze">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-email">
-                        Specify reason to pause this apprenticeship 
+                        Specify reason to freeze training provider payments. 
                     </label>
                     <div id="with-hint-hint" class="govuk-hint">
                       Training provider will be notified about the change.
@@ -85,7 +85,7 @@ href: "javascript:window.history.go(-1);"
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact-2" name="freez" type="radio" value="no" data-aria-controls="conditional-freeze-no" {{ checked('freeze','no') }}>
+                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="no" data-aria-controls="conditional-freeze-no" {{ checked('freeze','no') }}>
                   <label class="govuk-label govuk-radios__label" for="contact-2">
                    No
                   </label>
