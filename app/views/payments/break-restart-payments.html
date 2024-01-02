@@ -28,20 +28,20 @@ href: "javascript:window.history.go(-1);"
 
 	<div class="govuk-grid-column-full">
 
-        <form action="break-freeze" method="post" novalidate class="govuk-!-margin-top-7">
+        <form action="break-unfreeze" method="post" novalidate class="govuk-!-margin-top-7">
 		<div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Do you want to freeze training provider payments?
+                  Do you want to retstart training provider payments?
                 </h1>
               </legend>
               <div id="contact-hint" class="govuk-hint">
-                Only use this if you have a dispute with the training provider and need to freeze training provider payment.
+               Only use this if you had changed training provider payment status because you had a dispute.
                 <br> 
 
                The learner status will not be changed. 
-                  If you need to change learner status to break in learning or withdrawn, you can select <a href="break-e">change learner status</a>. 
+                 If you need to change learner status to break in learning or withdrawn, you can select <a href="break-e">change learner status</a>. 
                   
                 <!-- The apprentice status will not get affected.  -->
                <!-- Change payment status if you need to freeze payments going to training provider.  -->
@@ -51,17 +51,17 @@ href: "javascript:window.history.go(-1);"
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="yes" data-aria-controls="conditional-freeze" {{ checked('freeze','yes') }} >
+                  <input class="govuk-radios__input" id="unfreeze" name="unfreeze" type="radio" value="yes" data-aria-controls="conditional-unfreeze" {{ checked('unfreeze','yes') }} >
                   <label class="govuk-label govuk-radios__label" for="contact">
                   Yes 
                   </label>
 
                   
                 </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-freeze">
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-unfreeze">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-email">
-                        Specify reason to freeze training provider payments. (Optional)
+                        Specify reason to unfreeze training provider payments. (Optional)
                     </label>
                     <div id="with-hint-hint" class="govuk-hint">
                       Training provider will be notified about the change.

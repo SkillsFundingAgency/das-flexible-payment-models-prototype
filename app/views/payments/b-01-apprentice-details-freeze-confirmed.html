@@ -133,7 +133,46 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 
                         <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break-freeze">
+							<a class="govuk-link" href="
+                            
+                            
+                            
+                           
+                            		
+							{% if  data['freeze'] %}
+							
+				  
+							{% if  data['freeze'] == "no" %}
+							 break-freeze
+
+							{% else %}
+
+							{% endif %}
+
+							
+
+							{% if  data['freeze'] == "yes" %}
+
+							break-unfreze
+							
+
+							{% else %}
+
+							{% endif %}
+
+							
+							{% else %}
+							break-freeze
+							{% endif %}
+			
+							
+                            
+                            
+                            
+                            
+                            
+                            
+                            ">
 								Change<span class="govuk-visually-hidden"> training provider payments</span>
 							</a>
 						</dd>

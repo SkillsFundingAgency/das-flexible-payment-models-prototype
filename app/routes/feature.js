@@ -511,6 +511,20 @@ router.post('/payments/break-freeze', function (req, res) {
     }
 })
 
+router.post('/payments/break-unfreeze', function (req, res) {
+    var freeze = req.session.data['unfreeze']
+
+    if (unfreeze == "yes") {
+        res.redirect('-unfreeze-date')
+    }
+    else {
+        res.redirect('b-01-apprentice-details')
+    }
+})
+
+
+
+
 router.post('/payments/break-tp', function (req, res) {
     var stoptp = req.session.data['stoptp']
 
