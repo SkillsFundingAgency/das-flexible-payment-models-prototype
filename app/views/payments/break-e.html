@@ -159,7 +159,7 @@ href: "javascript:window.history.go(-1);"
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="contact-by-email">
-                        Specify reason for break in learning
+                        Select reason for break in learning
                     </label>
                     
                     <div class="govuk-form-group">
@@ -198,7 +198,7 @@ href: "javascript:window.history.go(-1);"
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="others" data-aria-controls="conditional-others-pause" {{ checked('reason-for-stop','others') }}>
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="others" data-aria-controls="conditional-others-pause" {{ checked('reason-for-pause','others') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                               Other reason
                             </label>
@@ -276,7 +276,7 @@ href: "javascript:window.history.go(-1);"
                         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
                         <strong class="govuk-warning-text__text">
                           <span class="govuk-warning-text__assistive">Warning</span>
-                          You do not need to withdraw an apprenticeship after the training has been completed. If you do, this will prevent the completion payment due to you. 
+                          You do not need to withdraw an apprenticeship after the training has been completed. If you do, this will prevent the completion payment. 
                         </strong>
                       </div>
                     
@@ -313,18 +313,37 @@ href: "javascript:window.history.go(-1);"
                                 Apprentice has withdrawn from training
                               </label>
                             </div>
-                            <div class="govuk-radios__item">
+                            <!-- <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="record-change">
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                     Request to correct apprenticeship record
                                 </label>
-                              </div>
+                              </div> -->
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="apprenticeship-never-started">
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                    Apprenticeship never started
                                 </label>
                               </div>
+
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="others" data-aria-controls="conditional-others-stop" {{ checked('reason-for-stop','others') }}>
+                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                  Other reason
+                                </label>
+                              </div>
+                              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-stop">
+                                <div class="govuk-form-group">
+                                  <label class="govuk-label" for="contact-by-email">
+                                 Specify other reason. 
+                                 <!-- Keep it brief. -->
+                                  </label>
+                                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                                </div>
+                              </div>
+
+
+
                           </div>
                           
                     </div>
