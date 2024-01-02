@@ -507,7 +507,7 @@ router.post('/payments/break-freeze', function (req, res) {
         res.redirect('-freeze-date')
     }
     else {
-        res.redirect('-break-e')
+        res.redirect('b-01-apprentice-details')
     }
 })
 
