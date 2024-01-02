@@ -500,7 +500,7 @@ router.post('/payments/break', function (req, res) {
 
 
 
-router.post('/payments/break-cancel-payments', function (req, res) {
+router.post('/payments/break-freeze', function (req, res) {
     var freeze = req.session.data['freeze']
 
     if (freeze == "yes") {
