@@ -183,13 +183,13 @@ href: "javascript:window.history.go(-1);"
                             </label>
                           </div>
                           <!-- -->
-                          <div class="govuk-radios__item">
+                          <!-- <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-pause" type="radio" value="Work pressure" {{ checked('reason-for-pause','Work pressure') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
                               Work pressure 
 
                             </label>
-                          </div> 
+                          </div>  -->
                           <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Mental health problems" {{ checked('reason-for-pause','Mental health problems') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
@@ -198,6 +198,22 @@ href: "javascript:window.history.go(-1);"
                           </div>
 
                           <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="others" data-aria-controls="conditional-others-pause" {{ checked('reason-for-stop','others') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                              Other reason
+                            </label>
+                          </div>
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-pause">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label" for="contact-by-email">
+                             Specify other reason. 
+                             <!-- Keep it brief. -->
+                              </label>
+                              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                            </div>
+                          </div>
+
+                          <!-- <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Others" data-aria-controls="conditional-others" {{ checked('reason-for-pause','Others') }} >
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                               Other reason
@@ -207,11 +223,11 @@ href: "javascript:window.history.go(-1);"
                             <div class="govuk-form-group">
                               <label class="govuk-label" for="contact-by-email">
                              Specify other reason. 
-                             <!-- Keep it brief. -->
+                             Keep it brief.
                               </label>
                               <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
                             </div>
-                          </div>
+                          </div> -->
 
 
                         </div>
