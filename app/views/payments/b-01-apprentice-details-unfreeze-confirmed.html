@@ -24,7 +24,7 @@ href: "javascript:window.history.go(-1);"
 
         <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-			Training provider payments set to Inactive 
+			Training provider payments set to Active
             </h1>
             
           </div>
@@ -103,10 +103,10 @@ href: "javascript:window.history.go(-1);"
 								
 								
 									
-							{% if  data['freeze'] %}
+							{% if  data['unfreeze'] %}
 							
 				  
-							{% if  data['freeze'] == "no" %}
+							{% if  data['unfreeze'] == "no" %}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>
 
 							{% else %}
@@ -115,7 +115,7 @@ href: "javascript:window.history.go(-1);"
 
 							
 
-							{% if  data['freeze'] == "yes" %}
+							{% if  data['unfreeze'] == "yes" %}
 
 							<strong class="govuk-tag govuk-tag--red">Inactive</strong>
 							
