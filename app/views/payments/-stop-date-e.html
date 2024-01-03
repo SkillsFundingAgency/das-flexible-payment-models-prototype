@@ -91,6 +91,70 @@ href: "javascript:window.history.go(-1);"
   {% endif %}
 
 
+  {% if  data['reason-for-stop-tp'] == "others" %}
+
+  <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+  
+
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the effective date?
+            </h1>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+            The earliest date you can enter is this apprenticeship's start date of September 2023. Any outstanding payments will be made for activity up to this date.
+            <br> <br>
+            For example, 27 3 2024
+          </div>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="stop-day" value="{{ data['stop-day']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="stop-month" value="{{ data['stop-month']}}"  type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="stop-year"  value="{{ data['stop-year']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+    
+
+    
+   
+  
+</form>
+{% else %}
+  
+
+   
+{% endif %}
+
+
+
+
     {% if  data['reason-for-stop-tp'] == "training-ended" %}
 
     <h1 class="govuk-heading-l">
