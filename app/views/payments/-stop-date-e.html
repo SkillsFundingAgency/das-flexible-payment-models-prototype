@@ -31,7 +31,7 @@ href: "javascript:window.history.go(-1);"
 
     {% if  data['reason-for-stop-tp'] == "apprentice-left" %}
 
-    <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+    <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
 		
 
       <div class="govuk-form-group">
@@ -91,22 +91,22 @@ href: "javascript:window.history.go(-1);"
   {% endif %}
 
 
-  {% if  data['reason-for-stop-tp'] == "others" %}
+  {% if  data['reason-for-stop-tp'] == "other" %}
 
-  <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+  <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
   
 
     <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is the effective date?
+              What is the effective date ?
             </h1>
           </legend>
           <div id="passport-issued-hint" class="govuk-hint">
             The earliest date you can enter is this apprenticeship's start date of September 2023. Any outstanding payments will be made for activity up to this date.
             <br> <br>
-            For example, 27 3 2024
+            For example, 27 3 2007
           </div>
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
@@ -181,7 +181,7 @@ href: "javascript:window.history.go(-1);"
 
      {% if  data['reason-for-stop-tp'] == "change-to-training-provider" %}
 
-     <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
  
        <div class="govuk-form-group">
@@ -243,7 +243,7 @@ href: "javascript:window.history.go(-1);"
 
    {% if  data['reason-for-stop-tp'] == "apprentice-withdraw" %}
 
-     <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
  
        <div class="govuk-form-group">
@@ -306,7 +306,7 @@ href: "javascript:window.history.go(-1);"
 
    {% if  data['reason-for-stop-tp'] == "record-change" %}
 
-     <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
  
        <div class="govuk-form-group">
@@ -368,7 +368,7 @@ href: "javascript:window.history.go(-1);"
 
    {% if  data['reason-for-stop-tp'] == "apprenticeship-never-started" %}
 
-     <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
       <h1 class="govuk-heading-l">
         Apprenticeship never started
