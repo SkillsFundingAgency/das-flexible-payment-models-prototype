@@ -62,24 +62,24 @@ href: "javascript:window.history.go(-1);"
 
 							{% else %}
 
-								{% if  data['stoptp'] %}
+								{% if  data['stop'] %}
 							
 				  
-								{% if  data['stoptp'] == "continuing" %}
+								{% if  data['stop'] == "continuing" %}
 								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
 
 								{% else %}
 
 								{% endif %}
 
-								{% if  data['stoptp'] == "yes" %}
+								{% if  data['stop'] == "yes" %}
 								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
 
 								{% else %}
 
 								{% endif %}
 
-								{% if  data['stoptp'] == "no" %}
+								{% if  data['stop'] == "no" %}
 
 								<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
 								
@@ -100,11 +100,11 @@ href: "javascript:window.history.go(-1);"
 
 							
 						</dd>
-                        <!-- <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break">
-								Change<span class="govuk-visually-hidden"> total training price</span>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-e">
+								Change<span class="govuk-visually-hidden"> Learner</span>
 							</a>
-						</dd> -->
+						</dd>
 					</div>
 
 
@@ -118,10 +118,10 @@ href: "javascript:window.history.go(-1);"
 								
 								
 									
-									{% if  data['stop'] %}
+									{% if  data['stope'] %}
 								
 					  
-									{% if  data['stop'] == "yes" %}
+									{% if  data['stope'] == "yes" %}
 									<strong class="govuk-tag govuk-tag--blue">Active</strong>
 	
 									{% else %}
@@ -130,7 +130,7 @@ href: "javascript:window.history.go(-1);"
 	
 									
 	
-									{% if  data['stop'] == "no" %}
+									{% if  data['stope'] == "no" %}
 	
 									<strong class="govuk-tag govuk-tag--red">Inactive</strong>
 									
@@ -150,7 +150,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 
                         <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break">
+							<a class="govuk-link" href="break-freeze.html">
 								Change<span class="govuk-visually-hidden"> total training price</span>
 							</a>
 						</dd>
@@ -198,7 +198,7 @@ href: "javascript:window.history.go(-1);"
 							{% elseif data['stop-month'] == "12" %}
 							{{ data['stop-day'] }} December {{ data['stop-year'] }}
 							{% else %}
-							October
+							10 January 2023
 							{% endif %}
 
 							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
