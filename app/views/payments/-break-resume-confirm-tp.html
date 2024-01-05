@@ -56,7 +56,7 @@ href: "javascript:window.history.go(-1);"
                     </div> -->
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">  BIL date </dt>
-                        <dd class="govuk-summary-list__value"> 18 October 2023 </dd>
+                        <dd class="govuk-summary-list__value"> 10 January 2024 </dd>
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Return to learning date </dt>
@@ -110,6 +110,63 @@ href: "javascript:window.history.go(-1);"
                             <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
                         <dd class="govuk-summary-list__actions">
                             <a class="govuk-link" href="-resume-date-tp">
+                              Change<span class="govuk-visually-hidden"> resume date</span>
+                            </a>
+                          </dd>
+                    </div>
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Planned training end date </dt>
+                        <dd class="govuk-summary-list__value">
+                            
+
+
+                            <!-- {{ data['resume-day'] or '24'}} -->
+
+					{% if data['planned-end-month-tp'] == "1" or
+					data['planned-end-month-tp']
+					== "01" %}
+					{{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "2" or
+					data['planned-end-month-tp'] == "02" %}
+					{{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "3" or
+					data['planned-end-month-tp'] == "03" %}
+					{{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "4" or
+					data['planned-end-month-tp'] == "04" %}
+					{{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "5" or
+					data['planned-end-month-tp'] == "05" %}
+					{{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "6" or
+					data['planned-end-month-tp'] == "06" %}
+					{{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "7" or
+					data['planned-end-month-tp'] == "07" %}
+					{{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "8" or
+					data['planned-end-month-tp'] == "08" %}
+					{{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "9" or
+					data['planned-end-month-tp'] == "09" %}
+					{{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
+					{% elseif data['rplanned-end-month-tp'] == "10" %}
+					{{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "11" %}
+					{{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "12" %}
+					{{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+					{% else %}
+					10 January 2025
+					{% endif %}
+
+					<!-- {{ data['resume-year'] or '2023'}} -->
+                           
+                    
+                            <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="-resume-date-e-planned-end-date-1-tp">
                               Change<span class="govuk-visually-hidden"> resume date</span>
                             </a>
                           </dd>
