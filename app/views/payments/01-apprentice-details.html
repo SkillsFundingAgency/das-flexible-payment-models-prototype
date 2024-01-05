@@ -278,7 +278,46 @@ href: "javascript:window.history.go(-1);"
 							Planned training end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							1 June 2024
+
+
+					{% if data['planned-end-month-tp'] == "1" or
+					data['planned-end-month-tp']
+					== "01" %}
+					{{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "2" or
+					data['planned-end-month-tp'] == "02" %}
+					{{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "3" or
+					data['planned-end-month-tp'] == "03" %}
+					{{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "4" or
+					data['planned-end-month-tp'] == "04" %}
+					{{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "5" or
+					data['planned-end-month-tp'] == "05" %}
+					{{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "6" or
+					data['planned-end-month-tp'] == "06" %}
+					{{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "7" or
+					data['planned-end-month-tp'] == "07" %}
+					{{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "8" or
+					data['planned-end-month-tp'] == "08" %}
+					{{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "9" or
+					data['planned-end-month-tp'] == "09" %}
+					{{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
+					{% elseif data['rplanned-end-month-tp'] == "10" %}
+					{{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "11" %}
+					{{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
+					{% elseif data['planned-end-month-tp'] == "12" %}
+					{{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+					{% else %}
+					10 January 2025
+					{% endif %}
+						
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
