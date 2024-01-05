@@ -29,7 +29,7 @@ href: "javascript:window.history.go(-1);"
 	<div class="govuk-grid-column-full">
 
 
-    {% if  data['reason-for-stop-tp'] == "apprentice-left" %}
+    {% if  data['reason-for-stop'] == "Apprentice left" %}
 
     <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
 		
@@ -91,7 +91,7 @@ href: "javascript:window.history.go(-1);"
   {% endif %}
 
 
-  {% if  data['reason-for-stop-tp'] == "others" %}
+  {% if  data['reason-for-stop'] == "Others" %}
 
   <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
   
@@ -155,7 +155,7 @@ href: "javascript:window.history.go(-1);"
 
 
 
-    {% if  data['reason-for-stop-tp'] == "training-ended" %}
+    {% if  data['reason-for-stop'] == "Training ended" %}
 
     <h1 class="govuk-heading-l">
       Apprenticeship has not yet completed
@@ -179,7 +179,7 @@ href: "javascript:window.history.go(-1);"
 
 
 
-     {% if  data['reason-for-stop-tp'] == "change-to-training-provider" %}
+     {% if  data['reason-for-stop'] == "Change to training provider" %}
 
      <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
@@ -241,7 +241,7 @@ href: "javascript:window.history.go(-1);"
    {% endif %}
 
 
-   {% if  data['reason-for-stop-tp'] == "apprentice-withdraw" %}
+   {% if  data['reason-for-stop'] == "Apprentice withdraw" %}
 
      <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
@@ -304,7 +304,7 @@ href: "javascript:window.history.go(-1);"
 
 
 
-   {% if  data['reason-for-stop-tp'] == "record-change" %}
+   {% if  data['reason-for-stop'] == "Record change" %}
 
      <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
@@ -366,7 +366,7 @@ href: "javascript:window.history.go(-1);"
    {% endif %}
 
 
-   {% if  data['reason-for-stop-tp'] == "apprenticeship-never-started" %}
+   {% if  data['reason-for-stop'] == "Apprenticeship never started" %}
 
      <form action="-stop-made-redundant" method="post" novalidate class="govuk-!-margin-top-7">
      
