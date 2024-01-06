@@ -200,12 +200,12 @@ href: "javascript:window.history.go(-1);"
                           </div>
 
                           <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Others" data-aria-controls="conditional-others" {{ checked('reason-for-pause','Others') }} >
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio" value="Others" data-aria-controls="conditional-others-pause" {{ checked('reason-for-pause','Others') }}>
                             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                               Other reason
                             </label>
                           </div>
-                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others">
+                          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-pause">
                             <div class="govuk-form-group">
                               <label class="govuk-label" for="contact-by-email">
                              Specify other reason. 
@@ -214,6 +214,7 @@ href: "javascript:window.history.go(-1);"
                               <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
                             </div>
                           </div>
+
 
 
                         </div>
@@ -313,7 +314,7 @@ href: "javascript:window.history.go(-1);"
                               </div>
 
                               <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="others" data-aria-controls="conditional-others-stop-tp" {{ checked('reason-for-stop-tp','Others') }}>
+                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="Others" data-aria-controls="conditional-others-stop-tp" {{ checked('reason-for-stop-tp','Others') }}>
                                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
                                   Other reason
                                 </label>
