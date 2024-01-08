@@ -5,7 +5,7 @@
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
+{% include "includes/employer-account-header.html" %}
 {% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
@@ -24,7 +24,9 @@ href: "javascript:window.history.go(-1);"
 
         <div class="govuk-panel govuk-panel--confirmation">
             <h1 class="govuk-panel__title">
-				Apprenticeship withdrawn and made redundant
+              <!-- Training provider payments cancelled -->
+
+			  Apprentice withdrawn- made redundant
             </h1>
             
           </div>
@@ -54,14 +56,163 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--red"> Apprentice withdraw - made redundant</strong>
+							
+
+							{% if  data['stope'] == "no" %}
+
+							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+
+							{% else %}
+
+								{% if  data['stope'] %}
+							
+				  
+								{% if  data['stope'] == "continuing" %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stope'] == "yes" %}
+								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
+
+								{% else %}
+
+								{% endif %}
+
+								{% if  data['stope'] == "no" %}
+
+								<strong class="govuk-tag govuk-tag--red">Withdrawn - made redunddant</strong>
+								
+
+								{% else %}
+
+								{% endif %}
+
+								
+								{% else %}
+								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+								{% endif %}
+
+								{% endif %}
+				
+								
+								<!-- {{ data['stoptp'] or 'In learning'}} -->
+
+							
 						</dd>
                         <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break-tp">
-								Change<span class="govuk-visually-hidden"> total status</span>
+							<a class="govuk-link" href="break-e">
+								Change<span class="govuk-visually-hidden"> Learner</span>
 							</a>
 						</dd>
 					</div>
+
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Provider payments status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							
+								
+								
+                            <strong class="govuk-tag govuk-tag--blue"> Active till 10 April 2024 due to redundancy </strong>
+									
+									<!-- {% if  data['stope'] %}
+								
+					  
+									{% if  data['stope'] == "yes" %}
+									<strong class="govuk-tag govuk-tag--blue">Active</strong>
+	
+									{% else %}
+	
+									{% endif %}
+	
+									
+	
+									{% if  data['stope'] == "no" %}
+	
+									<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+									
+	
+									{% else %}
+	
+									{% endif %}
+	
+									
+									{% else %}
+									<strong class="govuk-tag govuk-tag--blue">Active</strong>
+									{% endif %}
+					
+				 -->
+							
+							
+						</dd>
+
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-freeze.html">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Cancellation date 
+						</dt>
+						<dd class="govuk-summary-list__value">
+
+
+					   
+							{% if data['stop-month'] == "1" or
+							data['stop-month']
+							== "01" %}
+							{{ data['stop-day'] }} January {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "2" or
+							data['stop-month'] == "02" %}
+							{{ data['stop-day'] }} February {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "3" or
+							data['stop-month'] == "03" %}
+							{{ data['stop-day'] }} March {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "4" or
+							data['stop-month'] == "04" %}
+							{{ data['stop-day'] }} April {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "5" or
+							data['stop-month'] == "05" %}
+							{{ data['stop-day'] }} May {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "6" or
+							data['stop-month'] == "06" %}
+							{{ data['stop-day'] }} June {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "7" or
+							data['stop-month'] == "07" %}
+							{{ data['stop-day'] }} July {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "8" or
+							data['stop-month'] == "08" %}
+							{{ data['stop-day'] }} August {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "9" or
+							data['stop-month'] == "09" %}
+							{{ data['stop-day'] }} September {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "10" %}
+							{{ data['stop-day'] }} October {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "11" %}
+							{{ data['stop-day'] }} November {{ data['stop-year'] }}
+							{% elseif data['stop-month'] == "12" %}
+							{{ data['stop-day'] }} December {{ data['stop-year'] }}
+							{% else %}
+							10 January 2023
+							{% endif %}
+
+							<!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} -->
+						</dd>
+                        <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break">
+								Change<span class="govuk-visually-hidden">date</span>
+							</a>
+						</dd>
+                        
+					</div>
+					
                     <!-- <div class="govuk-summary-list__row" >
 						<dt class="govuk-summary-list__key">
 							Allow training provide to change status
@@ -83,57 +234,6 @@ href: "javascript:window.history.go(-1);"
 							May 2021
 						</dd>
 					</div> -->
-
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Provider payments status
-						</dt>
-						<dd class="govuk-summary-list__value">
-							
-								
-                            <strong class="govuk-tag govuk-tag--blue"> Active till 10 April 2024 due to redundancy </strong>
-								
-								<!-- {% if  data['stoptp'] %}
-							
-				  
-								{% if  data['stoptp'] == "continuing" %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
-
-								<strong class="govuk-tag govuk-tag--red">Active till 10 April 2024</strong>
-								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-								{% endif %}
-				 -->
-							
-							
-						</dd>
-
-                        <dd class="govuk-summary-list__actions">
-							<!-- <a class="govuk-link" href="break-tp">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a> -->
-						</dd>
-					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Apprentice confirmation
@@ -229,7 +329,7 @@ href: "javascript:window.history.go(-1);"
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Actual training start date
+							Training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
 							1 August 2023
@@ -242,7 +342,7 @@ href: "javascript:window.history.go(-1);"
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
-							Planned training end date
+							Training end date
 						</dt>
 						<dd class="govuk-summary-list__value">
 							3 July 2024
@@ -299,8 +399,8 @@ href: "javascript:window.history.go(-1);"
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship 
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--red">withdrawn</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">14 November 2023</time>
+							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong> by
+							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">18 Oct 2023</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							<p class="govuk-body">
@@ -316,10 +416,10 @@ href: "javascript:window.history.go(-1);"
 								<div class="govuk-details__text">
 									<ul class="govuk-list">
 										<li>
-											<strong class="govuk-tag govuk-tag--yellow">Changed
-											</strong> by
-											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">14 November
-												2023</time>
+											<strong class="govuk-tag govuk-tag--yellow">Change
+												requested</strong> by
+											EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+												2020</time>
 										</li>
 									</ul>
 								</div>
