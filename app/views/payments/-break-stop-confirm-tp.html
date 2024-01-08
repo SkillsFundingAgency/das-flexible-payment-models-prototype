@@ -28,7 +28,19 @@ href: "javascript:window.history.go(-1);"
 
 	<div class="govuk-grid-column-full">
 
+
+        {% if  data['redundant'] == "Yes" %}
+
+        <form action="b-01-apprentice-details-stop-confirmed-tp-redundant" method="post" novalidate class="govuk-!-margin-top-7">
+
+
+        {% else %}
+    
         <form action="b-01-apprentice-details-stop-confirmed-tp" method="post" novalidate class="govuk-!-margin-top-7">
+     
+        {% endif %}
+
+       
             
             
 

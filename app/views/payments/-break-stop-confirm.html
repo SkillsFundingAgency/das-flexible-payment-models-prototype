@@ -28,7 +28,22 @@ href: "javascript:window.history.go(-1);"
 
 	<div class="govuk-grid-column-full">
 
+
+        {% if  data['redundant'] == "Yes" %}
+
+        <form action="b-01-apprentice-details-stop-confirmed-redundant" method="post" novalidate class="govuk-!-margin-top-7">
+
+
+        {% else %}
+    
         <form action="b-01-apprentice-details-stop-confirmed" method="post" novalidate class="govuk-!-margin-top-7">
+     
+        {% endif %}
+      
+      
+       
+
+       
             
             
 
@@ -126,10 +141,10 @@ href: "javascript:window.history.go(-1);"
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key"> Made redundant </dt>
                         <dd class="govuk-summary-list__value"> {{ data['redundant'] or
-                            'Yes'}} </dd>
+                            'Yes'}}  </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="-stop-made-redundant">
-                                    Change<span class="govuk-visually-hidden">redundancy</span>
+                                    Change <span class="govuk-visually-hidden">redundancy</span>
                                 </a>
                             </dd>
                     </div>
