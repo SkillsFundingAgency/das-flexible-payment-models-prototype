@@ -34,7 +34,7 @@ href: "javascript:window.history.go(-1);"
             <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  How would you prefer to be contacted?
+                  Has the apprentice been made redundant?
                 </h1>
               </legend>
               <div id="contact-hint" class="govuk-hint">
@@ -42,14 +42,16 @@ href: "javascript:window.history.go(-1);"
               </div>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="contact" name="redundant" type="radio" value="Yes" {{ checked('redundant','Yes') }} data-aria-controls="conditional-contact">
+                  <input class="govuk-radios__input" id="contact" name="redundant" type="radio" data-aria-controls="conditional-contact" value="Yes" {{ checked('redundant','Yes') }} >
                   <label class="govuk-label govuk-radios__label" for="contact">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                   <div class="govuk-form-group">
-                    
+                   <p> Apprentices dismissed through redundancy with less than six months left to complete their training or who have completed 75% of their programme can receive funding from the government to continue in their training for at least 12 weeks until they find alternative employment. </p>
+
+                    <a href="https://www.gov.uk/guidance/redundancy-support-for-apprentices" target="_blank"> Read about redundancy support for apprentices</a>
                   </div>
                 </div>
                 <div class="govuk-radios__item">
@@ -76,42 +78,7 @@ href: "javascript:window.history.go(-1);"
 
 
           
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    <h1 class="govuk-fieldset__heading">
-                      <!-- Do you want to allow training provider to be able to change apprentice status? -->
-
-                      <!-- Do you want give training provider the option to change apprentice status? -->
-                      Has the apprentice been made redundant?
-                    </h1>
-                  </legend>
-                  <!-- <div id="changedName-hint" class="govuk-hint">
-                    You will be notified via email when a training provide changes the status.
-                  </div> -->
-                  <div class="govuk-radios govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="changedName" name="redundant" type="radio" value="Yes" {{ checked('redundant','Yes') }}>
-                      <label class="govuk-label govuk-radios__label" for="changedName">
-                        Yes
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="No" {{ checked('redundant','No') }}>
-                      <label class="govuk-label govuk-radios__label" for="changedName-2">
-                        No
-                      </label>
-                    </div>
-
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="changedName-2" name="redundant" type="radio" value="Dont know" {{ checked('redundant','Dont know') }}>
-                        <label class="govuk-label govuk-radios__label" for="changedName-2">
-                          I don't know
-                        </label>
-                      </div>
-                  </div>
-                </fieldset>
-              </div>
+            
 
           <button class="govuk-button" data-module="govuk-button">
             Save and continue
