@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
-{% set version = "feature/Change-of-circs/cop/training-provider" %}
-{% set pageTitle = "Changing training provider" %}
+{% set version = "feature/Change-of-circs/cop/employer" %}
+{% set pageTitle = "Chaning training provider" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,9 +19,10 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<h1 class="govuk-heading-lx">{{pageTitle}}</h1>
+		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
 
         <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -47,7 +48,9 @@ href: "javascript:window.history.go(-1);"
     Continue
 </a>
 
-<a href="" rdraggable="false" class="govuk-link">
+<br> 
+
+<a href="b-01-apprentice-details" rdraggable="false" class="govuk-link">
     Cancel and return to account home
 </a>
  
