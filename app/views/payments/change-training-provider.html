@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "feature/Change-of-circs/cop/training-provider" %}
-{% set pageTitle = "Moving to a new employer" %}
+{% set pageTitle = "Changing training provider" %}
 
 
 {% block header %}
@@ -23,29 +23,32 @@ href: "javascript:window.history.go(-1);"
 	<div class="govuk-grid-column-full">
 		<h1 class="govuk-heading-lx">{{pageTitle}}</h1>
 
-
         <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-visually-hidden">Warning</span>
-              Apprenticeship record with the current employer will be stopped.
+              Apprenticeship record with the current training provider will be stopped.
             </strong>
           </div>
        
        
-       
-        <p class="govuk-body">If an apprentice you are training has moved to a new employer you should:</p>
+        <p class="govuk-body">Before you request this change, you must contact the new training provider to agree the new training dates and price.</p>
+        <p class="govuk-body">You should only change your apprentice's training provider if:</p>
         <ol class="govuk-list govuk-list--number">
-            <li>Contact the previous employer to let them know that the record will be stopped.</li>
-            <li>Speak to the new employer to agree new training dates and price.</li>
-            <li>Ask the new employer to give you permissions to move the apprentice to their apprenticeship service account.</li>
+            <li>you're not happy with their performance</li>
+            <li>they've stopped delivering the apprentice's training course</li>
+            <li>they're shutting down or have already shut down</li>
           </ol>
           <p class="govuk-body"> Once you have agreed these details you can continue to change the employer.</p>
 
  <p class="govuk-body"> It is important that you check that the apprentices’ details are correct before this action is taken.</p>
 		
- <a href="https://das-employer-prototype.herokuapp.com/training-provider/v1/change-employer/select-employer" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+ <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
     Continue
+</a>
+
+<a href="" rdraggable="false" class="govuk-link">
+    Cancel and return to account home
 </a>
  
 	</div>
