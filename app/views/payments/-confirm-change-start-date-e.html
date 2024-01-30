@@ -145,18 +145,11 @@ href: "javascript:window.history.go(-1);"
 
                     <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
 				</tr>
-                <tr class="govuk-table__row">
-					<th scope="row" class="govuk-table__header">Reason for change</th>
-					<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}</td>
-                    <td class="govuk-table__cell"></td>
-                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
-
-					</tr>
-
+               
 					<tr class="govuk-table__row">
-						<th scope="row" class="govuk-table__header">Training end date</th>
+						<th scope="row" class="govuk-table__header">Planned training end date</th>
 						<td class="govuk-table__cell">1 August 2024</td>
-						<td class="govuk-table__cell">{{ data['planned-end-day-tp-start'] or '24'}}
+						<td class="govuk-table__cell">{{ data['planned-end-day-tp-start'] or '25'}}
 					
 					{% if data['planned-end-month-tp-start'] == "1" or data['planned-end-month-tp-start'] == "01" %}
 					{{ data['planned-end-year-day-start'] }} January {{ data['planned-end-year-tp-start'] }}
@@ -191,7 +184,7 @@ href: "javascript:window.history.go(-1);"
 					{% elseif data['planned-end-month-tp-start'] == "12" %}
 					{{ data['planned-end-year-day-start'] }} December {{ data['planned-end-year-tp-start'] }}
 					{% else %}
-					August
+					October
 					{% endif %}
 					
 					{{ data['planned-end-year-tp-start'] or '2024'}} 
@@ -220,6 +213,15 @@ href: "javascript:window.history.go(-1);"
 
                     <td class="govuk-table__cell"><a href="-start-date-planned-end-date-1-tp">Change </a></td>
 				</tr>
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reason for change</th>
+					<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}</td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
+
+					</tr>
+
 			</tbody>
 		</table>
 
