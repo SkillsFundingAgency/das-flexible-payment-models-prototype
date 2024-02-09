@@ -93,6 +93,9 @@ href: "javascript:window.history.go(-1);"
 						<!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
 					
 					</td>
+					<td class="govuk-table__cell" style="text-align: right;"><a class="govuk-link" href="02-update-price-2">
+                        Change<span class="govuk-visually-hidden"> Training price</span>
+                      </a></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">End-point assessment price</th>
@@ -115,7 +118,11 @@ href: "javascript:window.history.go(-1);"
 						
 						<!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
 					
-					</td>
+					</td> 
+					
+					<td class="govuk-table__cell" style="text-align: right;"><a class="govuk-link" href="02-update-price-2">
+                        Change<span class="govuk-visually-hidden"> End-point assessment price</span>
+                      </a></td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
@@ -191,6 +198,13 @@ href: "javascript:window.history.go(-1);"
 					{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
 				</dd>
 
+				<dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="02-update-price-2#date">
+                      Change<span class="govuk-visually-hidden"> date</span>
+                    </a>
+                  </dd>
+			</div>
+
 			</div>
 
 			<div class="govuk-summary-list__row">
@@ -201,6 +215,11 @@ href: "javascript:window.history.go(-1);"
 					{{ data['reason-for-update'] or
 					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
 				</dd>
+				<dd class="govuk-summary-list__actions" style="text-align: right;">
+                    <a class="govuk-link" href="02-update-price-2#reason-for-change">
+                      Change<span class="govuk-visually-hidden"> reason for change</span>
+                    </a>
+                  </dd>
 			</div>
 
 		</dl>
