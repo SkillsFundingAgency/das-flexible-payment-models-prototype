@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    
+
+	<div class="govuk-grid-column-full">
+
+        <form action="-break-resume-confirm-tp" method="post" novalidate class="govuk-!-margin-top-7">
+		
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Confirm the planned training end date
+                    </h1>
+                  </legend>
+
+                  <p class="govuk-inset-text" style="font-weight: bold;">The planned training end date has changed to 10 3 2025.</p>
+                  <div id="passport-issued-hint" class="govuk-hint">
+
+                    When a new training start date is entered a new system generated training end date is calculated. You can review and confirm the new planned training end date is correct or you can change it here. The planned training end date needs to be on or after 25 10 2024.
+
+
+
+                     <!-- Review and confirm that the new planned end date shown is correct.
+                    <br> If the system generated end date is incorrect, you can change it here. <br> The planned end date needs to be on or after 10 3 2025. -->
+                  </div>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="planned-end-day-tp" value="10" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="planned-end-month-tp" value="3" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="planned-end-year-tp" value="2025" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+            
+
+            
+           
+          
+        </form>
+	</div>
+
+</div>
+
+{% endblock %}
