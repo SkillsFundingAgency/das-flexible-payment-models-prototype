@@ -536,6 +536,10 @@ router.post('/payments/break-tp', function (req, res) {
     (stoptp == "continuing") {
         res.redirect('-resume-date-tp')
     }
+    else if 
+    (stoptp == "redundancy") {
+        res.redirect('-stop-date-tp-redundant')
+    }
     else {
         res.redirect('-stop-date-tp')
     }
