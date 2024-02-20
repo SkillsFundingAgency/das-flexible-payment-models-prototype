@@ -51,7 +51,9 @@ href: "javascript:window.history.go(-1);"
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="yes" data-aria-controls="conditional-freeze-" {{ checked('freeze','yes') }} >
+                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="yes" data-aria-controls="conditional-freeze-" >
+
+                  <!-- {{ checked('freeze','yes') }}  -->
                   <label class="govuk-label govuk-radios__label" for="contact">
                   Yes, freeze future payments
                   </label>
@@ -85,7 +87,9 @@ href: "javascript:window.history.go(-1);"
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="no" data-aria-controls="conditional-freeze-no" {{ checked('freeze','no') }}>
+                  <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="no" data-aria-controls="conditional-freeze-no" >
+                  <!-- {{ checked('freeze','no') }} -->
+
                   <label class="govuk-label govuk-radios__label" for="contact-2">
                    No
                   </label>
