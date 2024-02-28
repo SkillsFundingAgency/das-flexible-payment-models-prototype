@@ -500,16 +500,16 @@ router.post('/payments/break', function (req, res) {
 
 
 
-router.post('/payments/break-freeze', function (req, res) {
-    var freeze = req.session.data['freeze']
+// router.post('/payments/break-freeze', function (req, res) {
+//     var freeze = req.session.data['freeze']
 
-    if (freeze == "yes") {
-        res.redirect('-freeze-date')
-    }
-    else {
-        res.redirect('b-01-apprentice-details')
-    }
-})
+//     if (freeze == "yes") {
+//         res.redirect('-freeze-date')
+//     }
+//     else {
+//         res.redirect('b-01-apprentice-details')
+//     }
+// })
 
 router.post('/payments/break-unfreeze', function (req, res) {
     var unfreeze = req.session.data['unfreeze']
