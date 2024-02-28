@@ -21,6 +21,13 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
+
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+			Training provider payments set to active
+            </h1>
+            
+          </div>
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -92,7 +99,7 @@ href: "javascript:window.history.go(-1);"
 							
 						</dd>
                         <dd class="govuk-summary-list__value" style="width: 370px; text-align: right;">
-							Contact training provider to change this 
+							
 							<!-- To change the leaner status, contact the training provider.  -->
 							<!-- Contact training provider to change this  -->
 							<!-- <a class="govuk-link" href="break-e">
@@ -152,7 +159,7 @@ href: "javascript:window.history.go(-1);"
 							
 				  
 							{% if  data['freeze'] == "no" %}
-							 break-freeze-v2
+							 break-freeze
 
 							{% else %}
 
@@ -162,7 +169,7 @@ href: "javascript:window.history.go(-1);"
 
 							{% if  data['freeze'] == "yes" %}
 
-							break-unfreeze-v2
+							break-unfreeze
 							
 
 							{% else %}
@@ -171,7 +178,7 @@ href: "javascript:window.history.go(-1);"
 
 							
 							{% else %}
-							break-freeze-v2
+							break-freeze
 							{% endif %}
 			
 						
