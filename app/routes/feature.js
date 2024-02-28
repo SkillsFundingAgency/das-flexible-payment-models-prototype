@@ -581,7 +581,7 @@ router.post('/payments/break-freeze', function (req, res) {
     var freeze = req.session.data['freeze']
 
     if (freeze == "yes") {
-        res.redirect('b-01-apprentice-details-freeze.html')
+        res.redirect('b-01-apprentice-details-freeze')
     }
     else {
         res.redirect('b-01-apprentice-details')
