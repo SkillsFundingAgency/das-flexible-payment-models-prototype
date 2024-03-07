@@ -4,20 +4,12 @@
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
   },
-  "name": "govuk-prototype-kit",
   "dependencies": {
-    "@dwp/dwp-frontend": "^2.4.0",
-    "@govuk-prototype-kit/common-templates": "^1.0.0",
-    "@govuk-prototype-kit/step-by-step": "^2.1.0",
-    "@govuk-prototype-kit/task-list": "^1.0.0",
-    "@x-govuk/govuk-prototype-filters": "^1.0.1",
-    "express": "^4.18.2",
-    "express-session": "^1.13.0",
-    "govuk-frontend": "^4.5.0",
-    "govuk-prototype-kit": "^13.5.0",
-    "hmrc-frontend": "^5.27.0",
-    "jquery": "^3.6.4",
-    "notifications-node-client": "^7.0.0",
-    "require-dir": "^1.0.0"
+    "@govuk-prototype-kit/common-templates": "2.0.1",
+    "@x-govuk/govuk-prototype-filters": "^1.3.0",
+    "accessible-autocomplete": "^2.0.4",
+    "govuk-frontend": "5.2.0",
+    "govuk-prototype-kit": "13.16.1",
+    "jquery": "3.7.1"
   }
 }
