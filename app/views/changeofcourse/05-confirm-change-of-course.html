@@ -67,6 +67,8 @@ href: "javascript:window.history.go(-1);"
 		
 		<table class="govuk-table">
 			<thead class="govuk-table__head">
+
+				
 				<tr class="govuk-table__row">
 					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
 		
@@ -77,74 +79,30 @@ href: "javascript:window.history.go(-1);"
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
+
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Course</th>
+					<td class="govuk-table__cell">
+						Abattoir Worker, Level: 5 (Standard)
+						
+						<!-- {{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}} -->
+					
+					</td>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell"><a href="-change-of-course>Change </a></td>
+
+					</tr>
+
 		
 					<tr class="govuk-table__row">
-						<th scope="row" class="govuk-table__header">Training start date</th>
-						<td class="govuk-table__cell">1 August 2023</td>
-						<td class="govuk-table__cell">{{ data['effective-from-day'] or '24'}}
+						<th scope="row" class="govuk-table__header">Price</th>
+						<td class="govuk-table__cell">£8,500</td>
+						<td class="govuk-table__cell">
+
+			
 					
-					{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
-					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
-					%}
-					{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
-					%}
-					{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
-					%}
-					{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
-					%}
-					{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
-					%}
-					{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
-					%}
-					{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
-					%}
-					{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
-					%}
-					{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "10" %}
-					{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "11" %}
-					{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
-					{% elseif data['effective-from-month'] == "12" %}
-					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
-					{% else %}
-					August
-					{% endif %}
-					
-					{{ data['effective-from-year'] or '2023'}} 
-				
-					{% if data['effective-from-year'] == "2023"  %}
 
-					{% if data['effective-from-month'] == "5" or data['effective-from-month'] == "05" or data['effective-from-month'] == "4" or data['effective-from-month'] == "04" or data['effective-from-month'] == "03" or data['effective-from-month'] == "03" or data['effective-from-month'] == "2" or data['effective-from-month'] == "02" or data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
-	
-<span style="width:26px; position: relative; float: left; margin:0px 4px 0px 0px">
-					<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/></g></svg>
-				</span>
-
-				{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06" or data['effective-from-year'] <= "2022"
-					%}
-
-					<span style="width:26px; position: relative; float: left; margin:0px 4px 0px 0px">
-						<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="M0 0h24v24H0z" fill="none"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/></g></svg>
-					</span>
-
-					{% else %}
-					{% endif %}
-	
-					{% else %}
-					{% endif %}
-					<!-- <div class="govuk-warning-text">
-						<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 14px; line-height: 20px; min-width: 25px;
-						min-height: 20px; position: relative; margin: 2px; float: right; border: 2px;">!</span>
-						</div> -->
+					£9,000
 				</td>
 
                     <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
