@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Updated the planned training end date
+    </h1>
+
+    <p class="govuk-body">The current planned training end date is 25 August 2024. Due to the change of course the
+      planned training end date needs to be <b>on or after 25
+        October
+        2024</b>.</p>
+    <form action="04-price-change" method="post" novalidate class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Would you like to set the planned training end date to 25 October 2024?
+            </h1>
+          </legend>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="start-date-update" name="start-date-update" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="start-date-update">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="start-date-update-2" name="start-date-update" type="radio"
+                value="no" data-aria-controls="conditional-start-date-update-2">
+              <label class="govuk-label govuk-radios__label" for="start-date-update-2">
+                No, enter a new planned training end date
+              </label>
+
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-start-date-update-2">
+
+              <div class="govuk-date-input" id="planned-training-start-date-issued"
+                aria-describedby="start-date-update-hint">
+                <div id="start-date-update-hint" class="govuk-hint">
+                  The planned training end date needs to be on or after 25 10 2024
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="planned-training-start-date-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="planned-training-start-date-day" name="planned-training-start-date-day" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="pplanned-training-start-date-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="planned-training-start-date-month" name="planned-training-start-date-month" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="planned-training-start-date-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="planned-training-start-date-year" name="planned-training-start-date-year" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

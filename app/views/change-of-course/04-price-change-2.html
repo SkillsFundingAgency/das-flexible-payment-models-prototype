@@ -22,17 +22,15 @@ href: "javascript:window.history.go(-1);"
 
     <h1 class="govuk-heading-l">
       Change the negotiated prices
-      
-      <!-- Change the training and/or end-point assessment price -->
-      <!-- Change the training or end-point assessment price -->
     </h1>
-    <div id="apprenticeship-price-hint" class="govuk-hint">
+    <p class="govuk-body">
       The funding band maximum for this apprenticeship is £9,000. This is the highest amount the apprenticeship service
       will pay towards the training and end-point assessment.
-      <br><br>
+    </p>
+    <p class="govuk-body">
       If you raise the total price above the funding band maximum, this will need to be paid by the employer.
-    </div>
-    <form action="02-update-price-error-date" method="post" novalidate class="govuk-!-margin-top-7">
+    </p>
+    <form action="05-confirm-change-of-course" method="post" novalidate class="govuk-!-margin-top-7">
       <div class=" govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -54,10 +52,8 @@ href: "javascript:window.history.go(-1);"
           End-point assessment price
         </legend>
         <div id="apprenticeship-price-hint" class="govuk-hint">
-          <!-- Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500. If the exact amount is unknown leave this field blank. -->
-          Do not include VAT. Enter price in whole pounds. For example, for £2500 enter 2500. If the exact amount is unknown leave this field blank. 
-          <!-- This should be recorded on a later date for completion payments to be made. -->
-        
+          Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500. If the exact amount is
+          unknown leave this field blank.
         </div>
         <div class="govuk-input__wrapper">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -78,9 +74,7 @@ href: "javascript:window.history.go(-1);"
             What date is this price effective from?
           </legend>
           <div id="passport-valid-from-hint" class="govuk-hint">
-            For example, 05 12 2022
-            <br>
-            The date you enter must be after the training start date
+            For example, 5 12 2022. The date you enter must be after the training start date
           </div>
           <div class="govuk-date-input" id="apprenticeship-price-valid-from" name="apprenticeship-price-valid-from">
             <div class="govuk-date-input__item">

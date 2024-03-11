@@ -46,112 +46,27 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							
-								
-								
-								
-								{% if  data['stoptp'] %}
-							
-				  
-								{% if  data['stoptp'] == "continuing" %}
-								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
-
-								<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-								{% endif %}
-				
-							
-							
+							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
 						</dd>
 
-                        <dd class="govuk-summary-list__actions">
+						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="break-tp">
-								Change<span class="govuk-visually-hidden"> total training price</span>
+								Change<span class="govuk-visually-hidden"> learner status</span>
 							</a>
 						</dd>
 					</div>
 
 
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Provider payments status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							
-								
-								
-								
-								{% if  data['stoptp'] %}
-							
-				  
-								{% if  data['stoptp'] == "continuing" %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
-
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-								{% endif %}
-				
-							
-							
-						</dd>
-
-                        <dd class="govuk-summary-list__actions">
-							<!-- <a class="govuk-link" href="break-tp">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a> -->
+							<strong class="govuk-tag govuk-tag--blue">Active</strong>
 						</dd>
 					</div>
-					<!-- <div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Stop applies from
-						</dt>
-						<dd class="govuk-summary-list__value">
-							May 2021
-						</dd>
-					</div> -->
-					<div class="govuk-summary-list__row">
+
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Apprentice confirmation
 						</dt>
@@ -159,7 +74,7 @@ href: "javascript:window.history.go(-1);"
 							Confirmed
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Simplified payments pilot
 						</dt>
@@ -180,11 +95,11 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="change-of-employer">
-								Change<span class="govuk-visually-hidden"> Employer</span>
+								Change<span class="govuk-visually-hidden"> employer</span>
 							</a>
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Cohort Reference
 						</dt>
@@ -192,7 +107,7 @@ href: "javascript:window.history.go(-1);"
 							MNNRLD
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Agreement ID
 						</dt>
@@ -232,7 +147,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">
-								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+								Resend invitation<span class="govuk-visually-hidden"> email to
 									apprentice</span>
 							</a>
 						</dd>
@@ -257,11 +172,11 @@ href: "javascript:window.history.go(-1);"
 							Abattoir Worker, Level: 2 (Standard)
 						</dd>
 
-						
+
 
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="02-change-of-course-tp">
-								Change<span class="govuk-visually-hidden"> course</span>
+								Change<span class="govuk-visually-hidden"> apprenticeship training course</span>
 							</a>
 						</dd>
 					</div>
@@ -278,7 +193,7 @@ href: "javascript:window.history.go(-1);"
 							</a>
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row " >
+					<div class="govuk-summary-list__row ">
 						<dt class="govuk-summary-list__key">
 							Training start date
 						</dt>
@@ -287,7 +202,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="-change-start-date">
-								Change<span class="govuk-visually-hidden"> actual training start date</span>
+								Change<span class="govuk-visually-hidden"> training start date</span>
 							</a>
 						</dd>
 					</div>
@@ -298,44 +213,44 @@ href: "javascript:window.history.go(-1);"
 						<dd class="govuk-summary-list__value">
 
 
-					{% if data['planned-end-month-tp'] == "1" or
-					data['planned-end-month-tp']
-					== "01" %}
-					{{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "2" or
-					data['planned-end-month-tp'] == "02" %}
-					{{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "3" or
-					data['planned-end-month-tp'] == "03" %}
-					{{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "4" or
-					data['planned-end-month-tp'] == "04" %}
-					{{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "5" or
-					data['planned-end-month-tp'] == "05" %}
-					{{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "6" or
-					data['planned-end-month-tp'] == "06" %}
-					{{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "7" or
-					data['planned-end-month-tp'] == "07" %}
-					{{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "8" or
-					data['planned-end-month-tp'] == "08" %}
-					{{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "9" or
-					data['planned-end-month-tp'] == "09" %}
-					{{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
-					{% elseif data['rplanned-end-month-tp'] == "10" %}
-					{{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "11" %}
-					{{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
-					{% elseif data['planned-end-month-tp'] == "12" %}
-					{{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
-					{% else %}
-					10 January 2025
-					{% endif %}
-						
+							{% if data['planned-end-month-tp'] == "1" or
+							data['planned-end-month-tp']
+							== "01" %}
+							{{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "2" or
+							data['planned-end-month-tp'] == "02" %}
+							{{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "3" or
+							data['planned-end-month-tp'] == "03" %}
+							{{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "4" or
+							data['planned-end-month-tp'] == "04" %}
+							{{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "5" or
+							data['planned-end-month-tp'] == "05" %}
+							{{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "6" or
+							data['planned-end-month-tp'] == "06" %}
+							{{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "7" or
+							data['planned-end-month-tp'] == "07" %}
+							{{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "8" or
+							data['planned-end-month-tp'] == "08" %}
+							{{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "9" or
+							data['planned-end-month-tp'] == "09" %}
+							{{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
+							{% elseif data['rplanned-end-month-tp'] == "10" %}
+							{{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "11" %}
+							{{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
+							{% elseif data['planned-end-month-tp'] == "12" %}
+							{{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+							{% else %}
+							10 January 2025
+							{% endif %}
+
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -352,7 +267,7 @@ href: "javascript:window.history.go(-1);"
 				<h2 class="govuk-heading-m">Price</h2>
 				<dl class="govuk-summary-list">
 
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Training price
 						</dt>
@@ -360,18 +275,13 @@ href: "javascript:window.history.go(-1);"
 							£6,000
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							End-point assessment price
 						</dt>
 						<dd class="govuk-summary-list__value">
 							£2,500
 						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-															<a class="govuk-link" href="update-price">
-																Change<span class="govuk-visually-hidden"> total assessment price</span>
-															</a>
-														</dd> -->
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -382,7 +292,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="02-update-price">
-								Change<span class="govuk-visually-hidden"> total training price</span>
+								Change<span class="govuk-visually-hidden"> total price</span>
 							</a>
 						</dd>
 					</div>

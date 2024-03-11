@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="03-planned-training-end" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is the new apprenticeship training course name?
+            </h1>
+          </legend>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="training-course">
+              Training course
+            </label>
+            <select class="govuk-select govuk-!-width-full" id="training-course" name="training-course">
+              <option value="level-7">Accountancy or taxation professional, Level: 7</option>
+              <option value="level-6" selected>Accountancy or taxation professional, Level: 6</option>
+              <option value="level-5">Accountancy or taxation professional, Level: 5</option>
+              <option value="level-4">Accountancy or taxation professional, Level: 4</option>
+            </select>
+          </div>
+
+          <details class="govuk-details govuk-!-margin-top-6">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Can't find your apprenticeship training course?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              If the apprenticeship training course is not listed you will need to add the standard to your account. Add
+              a training course on your <a href="#">standards you deliver</a> screen first.
+            </div>
+          </details>
+
+
+
+
+        </fieldset>
+        <br>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</form>
+</div>
+
+</div>
+
+{% endblock %}
