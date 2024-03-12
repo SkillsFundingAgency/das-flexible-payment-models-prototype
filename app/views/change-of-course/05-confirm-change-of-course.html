@@ -27,16 +27,15 @@ href: "javascript:window.history.go(-1);"
 
 	</div>
 	<div class="govuk-grid-column-full">
-		<h2 class="govuk-heading-m">Change you're requesting</h2>
-
-		<table class="govuk-table">
+		<table class="govuk-table govuk-table--small-text-until-tablet">
+			<caption class="govuk-table__caption govuk-table__caption--m">Change you're requesting</caption>
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 					<th scope="col" class="govuk-table__header govuk-!-width-one-third">
 					</th>
-					<th scope="col" class="govuk-table__header ">Current</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
 					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
-					<th scope="col" class="govuk-table__header  govuk-!-width-one-third"></th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-quarter"></th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
@@ -45,26 +44,9 @@ href: "javascript:window.history.go(-1);"
 					<td class="govuk-table__cell">
 						Abattoir Worker, Level: 5 (Standard)
 					</td>
-					<td class="govuk-table__cell">Abattoir Worker, Level: 7 (Standard)</td>
-					<td class="govuk-table__cell"><a href="-change-of-course">Change </a></td>
-
+					<td class="govuk-table__cell">{{data['training-course'] or '[course name]'}})</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-change-of-course">Change </a></td>
 					</tr>
-
-		
-					<tr class=" govuk-table__row">
-					<th scope="row" class="govuk-table__header">Price</th>
-					<td class="govuk-table__cell">£8,500</td>
-					<td class="govuk-table__cell">
-
-
-
-
-						£9,000
-					</td>
-
-					<td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
-				</tr>
-
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Planned training end date</th>
 					<td class="govuk-table__cell">1 August 2024</td>
@@ -113,28 +95,17 @@ href: "javascript:window.history.go(-1);"
 						{% else %}
 						October 2024
 						{% endif %}
-
-						<!-- {{ data['planned-end-year-tp-start'] or '2024'}}  -->
-
-
-
-						<!-- <div class="govuk-warning-text">
-						<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 14px; line-height: 20px; min-width: 25px;
-						min-height: 20px; position: relative; margin: 2px; float: right; border: 2px;">!</span>
-						</div> -->
 					</td>
 
-					<td class="govuk-table__cell"><a href="-start-date-planned-end-date-1-tp">Change </a></td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-start-date-planned-end-date-1-tp">Change </a></td>
+					</tr>
+					<tr class=" govuk-table__row">
+						<th scope="row" class="govuk-table__header">Price</th>
+						<td class="govuk-table__cell">£8,500</td>
+						<td class="govuk-table__cell">£9,000</td>
+						<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-change-start-date">Change </a></td>
 				</tr>
-
-				<tr class="govuk-table__row">
-					<th scope="row" class="govuk-table__header">Reason for change</th>
-					<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start
-						on original start date'}}</td>
-					<td class="govuk-table__cell"></td>
-					<td class="govuk-table__cell"><a href="-change-start-date">Change </a></td>
-
-				</tr>
+				
 
 			</tbody>
 		</table>
@@ -200,7 +171,7 @@ data['effective-from-month'] == "01" %}
 				<input type="hidden" name="answers-checked" value="true">
 				<div class="govuk-button-group">
 					<button class="govuk-button" data-module="govuk-button">
-						Send
+						Send for approval
 					</button>
 					<a class="govuk-link" href="01-apprentice-details">Cancel and return</a>
 				</div>

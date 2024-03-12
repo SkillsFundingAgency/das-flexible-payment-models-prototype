@@ -24,39 +24,51 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="05-confirm-change-of-course" method="post" novalidate>
+    <h1 class="govuk-heading-l">
+      Negotiated price
+    </h1>
+    
+    <p class="govuk-body">The current total price for the course is £8,500. The updates course
+      <b>{{data['training-course'] or '[course name]'}}</b> may have
+      a different price.
+    </p>
+    
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What makes up the total price?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        The total price is made up from the training price and the end-point assessment.
+      </div>
+    </details>
+    
+    <form action="/change-of-course/04-price-change/action" method="post" novalidate class="govuk-!-margin-top-8">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Do you want to change the negotiated prices?
-            </h1>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to change the negotiated price?
           </legend>
-
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn" name="plannedenddate" type="radio" value="yes"
-                aria-describedby="signIn-item-hint">
+              <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="signIn">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn-2" name="plannedenddate" type="radio" value="no"
-                aria-describedby="signIn-2-item-hint">
+              <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="signIn-2">
                 No
               </label>
-              <!-- <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                    If you don’t have a GOV.UK One Login, you can create one.
-                  </div> -->
             </div>
           </div>
         </fieldset>
       </div>
       <button class="govuk-button" data-module="govuk-button">
-        Save and continue
+        Continue
       </button>
 
 
