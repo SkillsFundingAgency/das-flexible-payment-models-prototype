@@ -31,7 +31,8 @@ href: "javascript:window.history.go(-1);"
 			<caption class="govuk-table__caption govuk-table__caption--m">Change you're requesting</caption>
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
-					<th scope="col" class="govuk-table__header govuk-!-width-one-third">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship detail</span>
 					</th>
 					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
 					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
@@ -45,68 +46,23 @@ href: "javascript:window.history.go(-1);"
 						Abattoir Worker, Level: 5 (Standard)
 					</td>
 					<td class="govuk-table__cell">{{data['training-course'] or '[course name]'}})</td>
-					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-change-of-course">Change </a></td>
-					</tr>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-course">Change </a></td>
+				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Planned training end date</th>
 					<td class="govuk-table__cell">1 August 2024</td>
-					<td class="govuk-table__cell">{{ data['planned-end-day-tp-start'] or '25'}}
-
-						{% if data['planned-end-month-tp-start'] == "1" or data['planned-end-month-tp-start'] == "01" %}
-						{{ data['planned-end-year-day-start'] }} January {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "2" or data['planned-end-month-tp-start'] ==
-						"02"
-						%}
-						{{ data['planned-end-year-day-start'] }} February {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "3" or data['planned-end-month-tp-start'] ==
-						"03"
-						%}
-						{{ data['planned-end-year-day-start'] }} March {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "4" or data['planned-end-month-tp-start'] ==
-						"04"
-						%}
-						{{ data['planned-end-year-day-start'] }} April {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "5" or data['planned-end-month-tp-start'] ==
-						"05"
-						%}
-						{{ data['planned-end-year-day-start'] }} May {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "6" or data['planned-end-month-tp-start'] ==
-						"06"
-						%}
-						{{ data['planned-end-year-day-start'] }} June {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "7" or data['planned-end-month-tp-start'] ==
-						"07"
-						%}
-						{{ data['planned-end-year-day-start'] }} July {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "8" or data['planned-end-month-tp-start'] ==
-						"08"
-						%}
-						{{ data['planned-end-year-day-start'] }} August {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "9" or data['planned-end-month-tp-start'] ==
-						"09"
-						%}
-						{{ data['planned-end-year-day-start'] }} September {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "10" %}
-						{{ data['planned-end-year-day-starty'] }} October {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "11" %}
-						{{ data['planned-end-year-day-start'] }} November {{ data['planned-end-year-tp-start'] }}
-						{% elseif data['planned-end-month-tp-start'] == "12" %}
-						{{ data['planned-end-year-day-start'] }} December {{ data['planned-end-year-tp-start'] }}
-						{% else %}
-						October 2024
-						{% endif %}
+					<td class="govuk-table__cell">25 October 2024
 					</td>
 
-					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-start-date-planned-end-date-1-tp">Change </a></td>
-					</tr>
-					<tr class=" govuk-table__row">
-						<th scope="row" class="govuk-table__header">Price</th>
-						<td class="govuk-table__cell">£8,500</td>
-						<td class="govuk-table__cell">£9,000</td>
-						<td class="govuk-table__cell govuk-table__cell--numeric"><a href="-change-start-date">Change </a></td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="planned-training-end">Change </a>
+					</td>
 				</tr>
-				
-
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Negotiated price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£9,000</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="price-change">Change </a></td>
+				</tr>
 			</tbody>
 		</table>
 
@@ -167,13 +123,13 @@ data['effective-from-month'] == "01" %}
 			</p>
 
 
-			<form action="06-change-course-confirmation" method="post" novalidate>
+			<form action="change-course-confirmation" method="post" novalidate>
 				<input type="hidden" name="answers-checked" value="true">
 				<div class="govuk-button-group">
 					<button class="govuk-button" data-module="govuk-button">
 						Send for approval
 					</button>
-					<a class="govuk-link" href="01-apprentice-details">Cancel and return</a>
+					<a class="govuk-link" href="index">Cancel and return</a>
 				</div>
 			</form>
 

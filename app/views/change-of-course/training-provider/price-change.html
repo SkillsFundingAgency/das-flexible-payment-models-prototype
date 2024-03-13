@@ -27,12 +27,12 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">
       Negotiated price
     </h1>
-    
+
     <p class="govuk-body">The current total price for the course is £8,500. The updates course
       <b>{{data['training-course'] or '[course name]'}}</b> may have
       a different price.
     </p>
-    
+
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -43,8 +43,9 @@ href: "javascript:window.history.go(-1);"
         The total price is made up from the training price and the end-point assessment.
       </div>
     </details>
-    
-    <form action="/change-of-course/04-price-change/action" method="post" novalidate class="govuk-!-margin-top-8">
+
+    <form action="/change-of-course/training-provider/price-change/action" method="post" novalidate
+      class="govuk-!-margin-top-8">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">

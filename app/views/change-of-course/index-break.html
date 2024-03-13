@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Change of course </h1>
+
+
+        <div class="govuk-grid-row govuk-!-margin-top-7">
+            <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-l">Employer changes status</h2>
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+                <span class="govuk-caption-m">Prior to qualifying period</span>
+                <h3 class="govuk-heading-m"><a href="/change-of-course/training-provider/"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Employer changes
+                        status</a>
+                </h3>
+                <p class="govuk-body">Employer can change the course up until the qualifying period of 42 days (for
+                    learing aim of 168 days or more)</p>
+                <a href="/change-of-course/training-provider/" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">View
+                    employer prototype</a>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+            <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-l">Training changes status</h2>
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+                    Pending
+                </strong>
+                <span class="govuk-caption-m">Prior to first payment data lock</span>
+                <h3 class="govuk-heading-m"><a href="#" class="govuk-link govuk-link--no-visited-state"
+                        rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Training provide can change the course up until the first payment data lock</p>
+                <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">View training
+                    provider prototype</a>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-l">Training changes status</h2>
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+                    Pending
+                </strong>
+                <span class="govuk-caption-m">Prior to qualifying period</span>
+                <h3 class="govuk-heading-m"><a href="#" class="govuk-link govuk-link--no-visited-state"
+                        rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Training provides cannot change the course after the first payment data lock</p>
+                <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">View
+                    training provider prototype</a>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Clear data</h2>
+        <p class="govuk-body">Clear data can now be found in the prototype footer</p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
