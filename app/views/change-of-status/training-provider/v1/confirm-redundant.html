@@ -31,9 +31,9 @@ href: "javascript:window.history.go(-1);"
                     <dt class="govuk-summary-list__key">Learner status</dt>
                     <dd class="govuk-summary-list__value">
                         {% if data['goverment-funded'] == 'Yes' %}
-                        In learning - made redundant
+                        <strong class="govuk-tag govuk-tag--blue"> In learning</strong> (made redundant)
                         {%else%}
-                        Withdrawn - made redundant
+                        <strong class="govuk-tag govuk-tag--red"> Withdrawn</strong> (made redundant)
                         {% endif %}
                     </dd>
                 </div>
