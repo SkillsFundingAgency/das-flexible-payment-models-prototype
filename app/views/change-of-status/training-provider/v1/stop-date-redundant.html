@@ -24,55 +24,62 @@ href: "javascript:window.history.go(-1);"
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="confirm-redundant" method="post" novalidate ">
-		
-
+    <form action="continue-after-redundancy" method="post" novalidate>
       <div class=" govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="date-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-
-            When was the apprentice made redundant?
-
-            <!-- What date did the apprentice leave their employment? -->
+          When does the learners employment contract end?
           </h1>
         </legend>
-        <div id="passport-issued-hint" class="govuk-hint">
-
-
+        <div id="date-hint" class="govuk-hint">
           For example, 27 3 2007
         </div>
-        <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input" id="redundant-date">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              <label class="govuk-label govuk-date-input__label" for="redundant-date-day">
                 Day
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="redundant-date-day"
                 name="stop-day" value="{{ data['stop-day']}}" type="text" inputmode="numeric">
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              <label class="govuk-label govuk-date-input__label" for="redundant-date-month">
                 Month
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="redundant-date-month"
                 name="stop-month" value="{{ data['stop-month']}}" type="text" inputmode="numeric">
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+              <label class="govuk-label govuk-date-input__label" for="redundant-date-year">
                 Year
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="redundant-date-year"
                 name="stop-year" value="{{ data['stop-year']}}" type="text" inputmode="numeric">
             </div>
           </div>
         </div>
       </fieldset>
   </div>
+
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with the employment contract end date
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <p class="govuk-body">The employment contract end is the date after any notice
+        periods and should have be specified by the learners employer.</p>
+  
+      <p class="govuk-body">This date is also sometimes refered to as the date of dismissal or finishing date</p>
+    </div>
+  </details>
 
   <button class="govuk-button" data-module="govuk-button">
     Continue

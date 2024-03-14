@@ -44,7 +44,7 @@ href: "javascript:window.history.go(-1);"
               </label>
 
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                The learner is continuing or intending to continue the learning activities leading to the learning aim.
+                The learner is continuing or intending to continue the learning activities leading to the learning aim
               </div>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-">
@@ -113,21 +113,6 @@ href: "javascript:window.history.go(-1);"
                   </fieldset>
                 </div>
 
-
-                <!-- <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-                        <div class="govuk-form-group">
-                         
-                          <div id="with-hint-hint" class="govuk-hint">
-                            Employer will be notified about the change via email
-                          </div>
-                          <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="reason-for-pause" rows="3" aria-describedby="with-hint-info with-hint-hint">{{ data['reason-for-pause'] }}</textarea>
-                        </div>
-                        <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-                          You can enter up to 200 characters
-                        </div>
-                      </div> -->
-
-
               </div>
             </div>
 
@@ -142,7 +127,7 @@ href: "javascript:window.history.go(-1);"
               </label>
 
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                The learner has temporarily withdrawn from the aim due to an agreed break in learning.
+                The learner has temporarily withdrawn from the aim due to an agreed break in learning
 
 
 
@@ -179,14 +164,7 @@ href: "javascript:window.history.go(-1);"
 
                         </label>
                       </div>
-                      <!-- -->
-                      <!-- <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-pause" type="radio" value="Work pressure" {{ checked('reason-for-pause','Work pressure') }}>
-                          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                            Work pressure 
-
-                          </label>
-                        </div>  -->
+              
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio"
                           value="Mental health problems" {{ checked('reason-for-pause','Mental health problems') }}>
@@ -232,7 +210,7 @@ href: "javascript:window.history.go(-1);"
                 Withdrawn
               </label>
               <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                The learner has withdrawn from the learning activities leading to the learning aim.
+                The learner has withdrawn from the learning activities leading to the learning aim
                 <!-- <ul class="govuk-list govuk-list--bullet govuk-hint govuk-radios__hint">
                         <li>to withdraw this apprenticeship</li>
                         <li>to cancel all future payments</li>
@@ -272,18 +250,7 @@ href: "javascript:window.history.go(-1);"
                           Apprentice left employment
                         </label>
                       </div>
-                      <!-- <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-stop-tp" type="radio" value="change of employer" {{ checked('reason-for-stop-tp','Change of employer') }}> 
-                              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                                Change of employer
-                              </label>
-                            </div> -->
-                      <!-- <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-stop-tp" type="radio" value="training-ended">
-                              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                                Apprenticeship training has ended
-                              </label>
-                            </div> -->
+                  
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
                           value="Apprentice withdraw" {{ checked('reason-for-stop-tp','Apprentice withdraw') }}>
@@ -291,12 +258,7 @@ href: "javascript:window.history.go(-1);"
                           Apprentice has withdrawn from training
                         </label>
                       </div>
-                      <!-- <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio" value="record-change">
-                                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                                    Request to correct apprenticeship record
-                                </label>
-                              </div> -->
+                    
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
                           value="apprenticeship-never-started" {{ checked('reason-for-stop-tp','Apprenticeship never
@@ -335,60 +297,29 @@ href: "javascript:window.history.go(-1);"
             </div>
 
 
-            <!-- 2 break in learning  -->
+            <!-- Redundant  -->
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="break" name="stoptp" type="radio" value="redundancy"
-                data-aria-controls="conditional-contact-r" {{ checked('stoptp','redundancy') }}>
+                 {{ checked('stoptp','redundancy') }} aria-describedby="redunant-hint">
               <label class="govuk-label govuk-radios__label" for="contact">
                 Made redundant
               </label>
 
-              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                The learner has had their apprenticeship agreement terminated by reason of redundancy.
-
-
-              </div>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-r">
-              <div class="govuk-form-group">
-
-                <p> Apprentices who have their apprenticeship agreement terminated by reason of redundancy who, on the
-                  day of dismissal, are within six months OR they have completed at least 75% of the apprenticeship
-                  practical period specified in the apprenticeship agreement: We will fund 100% of the remaining costs
-                  of the total price, up to the funding band maximum.
-
-                  <!-- Apprentices dismissed through redundancy with less than six months left to complete their training or who have completed 75% of their programme can receive funding from the government to continue in their training for at least 12 weeks until they find alternative employment.  -->
-
-                </p>
-
-                <a href="https://www.gov.uk/guidance/redundancy-support-for-apprentices" target="_blank"> Read about
-                  redundancy support for apprentices</a>
-
-
-
-                <!-- <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-                        <div class="govuk-form-group">
-                         
-                          <div id="with-hint-hint" class="govuk-hint">
-                            Employer will be notified about the change via email
-                          </div>
-                          <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="reason-for-pause" rows="3" aria-describedby="with-hint-info with-hint-hint">{{ data['reason-for-pause'] }}</textarea>
-                        </div>
-                        <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-                          You can enter up to 200 characters
-                        </div>
-                      </div> -->
-
+              <div id="redunant-hint" class="govuk-hint govuk-radios__hint">
+                The apprenticeship agreement has been terminated by reason of redundancy
 
               </div>
             </div>
 
         </fieldset>
-        <br>
-        <button class="govuk-button" data-module="govuk-button">
+        </div>
+        <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
       </div>
+      
 
 
   </div>

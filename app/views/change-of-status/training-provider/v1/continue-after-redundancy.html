@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Redundancy support for apprentices
+        </h1>
+        <p class="govuk-body">
+            The goverment will fund 100% of the remaining costs of this apprenticship as the apprencie has completed at
+            least 75% of the apprenticeship training (on the date the employment contract ends).
+        </p>
+        <p class="govuk-body">
+            If the funding is accepted, the learner can continue and complete their apprenticeship, including taking
+            the end-point assessment (EPA), even if
+            no new employer is found.
+        </p>
+        <p class="govuk-body">
+            <a href="Read about redundancy support for apprentices" class="govuk-link" target="_blank">Read about
+                redundancy support for apprentices (opens in new tab)</a>
+        </p>
+        <form action="confirm-redundant" method="post" novalidate class="govuk-!-margin-top-7">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Will the apprenticeship continue using the provided goverment funding?
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="goverment-funded" name="goverment-funded"
+                                type="radio" value="Yes">
+                            <label class="govuk-label govuk-radios__label" for="goverment-funded">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="goverment-funded-2" name="goverment-funded"
+                                type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="goverment-funded-2">
+                                No, the apprenticeship will stop and be marked 'Withdrawn'
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -25,19 +25,21 @@ href: "javascript:window.history.go(-1);"
 
         <form action="apprentice-details--stop-confirmed-redundant-funded" method="post" novalidate>
 
-
-
-
-            <h1 class="govuk-heading-l">Check and confirm redundancy date </h1>
-
-
+            <h1 class="govuk-heading-l">Check and confirm status</h1>
             <dl class="govuk-summary-list">
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key"> Redundancy date </dt>
+                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <dt class="govuk-summary-list__key">Learner status</dt>
                     <dd class="govuk-summary-list__value">
-
-                        <!-- {{ data['stop-day'] }} {{ data['stop-month'] }} {{ data['stop-year'] }}  -->
+                        {% if data['goverment-funded'] == 'Yes' %}
+                        In learning - made redundant
+                        {%else%}
+                        Withdrawn - made redundant
+                        {% endif %}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Employment contract end date</dt>
+                    <dd class="govuk-summary-list__value">
 
                         {% if data['stop-month'] == "1" or
                         data['stop-month']
@@ -77,17 +79,24 @@ href: "javascript:window.history.go(-1);"
                         10 January 2024
                         {% endif %}
 
-
-
-
-
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="stop-date-redundant">
-                            Change<span class="govuk-visually-hidden"> date</span>
+                            Change<span class="govuk-visually-hidden"> employerment contract end date</span>
                         </a>
                     </dd>
 
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Accept goverment funding</dt>
+                    <dd class="govuk-summary-list__value">
+                        {{data['goverment-funded']}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="continue-after-redundancy">
+                            Change<span class="govuk-visually-hidden"> reply to goverment funding</span>
+                        </a>
+                    </dd>
                 </div>
 
             </dl>
