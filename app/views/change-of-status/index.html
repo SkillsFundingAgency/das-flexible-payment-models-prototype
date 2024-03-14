@@ -1,0 +1,171 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Change of status </h1>
+
+
+        <div class="govuk-grid-row govuk-!-margin-top-7">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-l">Employer</h2>
+            </div>
+            <div class="govuk-grid-column-one-half">
+
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+                <h3 class="govuk-heading-m"><a href="/change-of-status/training-provider/v1/"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Employer account</a>
+                </h3>
+                <p class="govuk-body">Employer changes status
+                </p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Previous research
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list">
+                            <li>
+                                <a class="govuk-link" href="/payments/b-01-apprentice-details">Version 7</a> - Research
+                                round 14.1
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+                <h3 class="govuk-heading-m"><a href="/change-of-status/training-provider/v1/"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Status change
+                        notification</a>
+                </h3>
+                <p class="govuk-body">Status change notification seen by the employer
+                </p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Previous research
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list">
+                            <li>
+                                <a class="govuk-link" href="/payments/e-status-pause-apprentice-details">Version 7</a> -
+                                Research
+                                round 14.1
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-l">Training provider</h2>
+            </div>
+            <div class="govuk-grid-column-one-half">
+
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+
+                <h3 class="govuk-heading-m"><a href="#" class="govuk-link govuk-link--no-visited-state"
+                        rel="noreferrer noopener">Training provider
+                        account</a></h3>
+                <p class="govuk-body">Training provides change status</p>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Previous research
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list">
+                            <li>
+                                <a class="govuk-link" href="/payments/01-apprentice-details">Version 7</a> -
+                                Research
+                                round 14.1
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+            </div>
+            <div class="govuk-grid-column-one-half">
+
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+
+                <h3 class="govuk-heading-m"><a href="#" class="govuk-link govuk-link--no-visited-state"
+                        rel="noreferrer noopener">Status
+                        change notification</a></h3>
+                <p class="govuk-body">Status change notification seen by the training provider</p>
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            Previous research
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <ul class="govuk-list">
+                            <li>
+                                <a class="govuk-link" href="/payments/01-apprentice-details-status-paused">Version 7</a>
+                                -
+                                Research
+                                round 14.1
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Clear data</h2>
+        <p class="govuk-body">Clear data can now be found in the prototype footer</p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}
