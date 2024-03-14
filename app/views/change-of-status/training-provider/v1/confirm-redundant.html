@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="apprentice-details--stop-confirmed-redundant-funded" method="post" novalidate>
+
+
+
+
+            <h1 class="govuk-heading-l">Check and confirm redundancy date </h1>
+
+
+            <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key"> Redundancy date </dt>
+                    <dd class="govuk-summary-list__value">
+
+                        <!-- {{ data['stop-day'] }} {{ data['stop-month'] }} {{ data['stop-year'] }}  -->
+
+                        {% if data['stop-month'] == "1" or
+                        data['stop-month']
+                        == "01" %}
+                        {{ data['stop-day'] }} January {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "2" or
+                        data['stop-month'] == "02" %}
+                        {{ data['stop-day'] }} February {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "3" or
+                        data['stop-month'] == "03" %}
+                        {{ data['stop-day'] }} March {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "4" or
+                        data['stop-month'] == "04" %}
+                        {{ data['stop-day'] }} April {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "5" or
+                        data['stop-month'] == "05" %}
+                        {{ data['stop-day'] }} May {{ data['stop-year'] }}
+                        {% elseif data['pause-month'] == "6" or
+                        data['stop-month'] == "06" %}
+                        {{ data['stop-day'] }} June {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "7" or
+                        data['stop-month'] == "07" %}
+                        {{ data['stop-day'] }} July {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "8" or
+                        data['stop-month'] == "08" %}
+                        {{ data['stop-day'] }} August {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "9" or
+                        data['stop-month'] == "09" %}
+                        {{ data['stop-day'] }} September {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "10" %}
+                        {{ data['stop-day'] }} October {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "11" %}
+                        {{ data['stop-day'] }} November {{ data['stop-year'] }}
+                        {% elseif data['stop-month'] == "12" %}
+                        {{ data['stop-day'] }} December {{ data['stop-year'] }}
+                        {% else %}
+                        10 January 2024
+                        {% endif %}
+
+
+
+
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="stop-date-redundant">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+
+                </div>
+
+            </dl>
+
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
+
+                <a class="govuk-link" href="apprentice-details">Cancel and return</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
