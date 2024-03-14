@@ -10,7 +10,7 @@ router.post('/change-of-course/training-provider/price-change/action', function 
         res.redirect('/change-of-course/training-provider/confirm-change-of-course')
     }
     else {
-        res.redirect('/change-of-course//training-provider/update-price')
+        res.redirect('/change-of-course/training-provider/update-price')
     }
 })
 
