@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 {% set version = "feature/Change-of-circs/cop-cosd/employer" %}
-{% set pageTitle = "George Ford" %}
-
+{% set pageTitle = "What date did the learners employment end?" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -29,7 +29,7 @@ href: "javascript:window.history.go(-1);"
       <fieldset class="govuk-fieldset" aria-describedby="date-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-          When does the learners employment contract end?
+          {{pageTitle}}
           </h1>
         </legend>
         <div id="date-hint" class="govuk-hint">
@@ -74,10 +74,9 @@ href: "javascript:window.history.go(-1);"
       </span>
     </summary>
     <div class="govuk-details__text">
-      <p class="govuk-body">The employment contract end is the date after any notice
-        periods and should have be specified by the learners employer.</p>
-  
-      <p class="govuk-body">This date is also sometimes refered to as the date of dismissal or finishing date</p>
+      <p class="govuk-body">The date the leaners employment ended would be the finishing or dismissal date given by the
+        employer when notified they
+        will be made redundant.</p>
     </div>
   </details>
 
