@@ -27,7 +27,7 @@ href: "javascript:window.history.go(-1);"
 
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
             <dl class="govuk-summary-list">
-                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Learner status</dt>
                     <dd class="govuk-summary-list__value">
                         {% if data['goverment-funded'] == 'No' %}
@@ -36,6 +36,11 @@ href: "javascript:window.history.go(-1);"
                         <strong class="govuk-tag govuk-tag--blue"> In learning</strong> (made redundant)
                         
                         {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
+                            Change<span class="govuk-visually-hidden"> learner status</span>
+                        </a>
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -82,7 +87,7 @@ href: "javascript:window.history.go(-1);"
 
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="stop-date-redundant">
+                        <a class="govuk-link govuk-link--no-visited-state" href="stop-date-redundant">
                             Change<span class="govuk-visually-hidden"> date employment ended</span>
                         </a>
                     </dd>
@@ -94,7 +99,7 @@ href: "javascript:window.history.go(-1);"
                         {{data['goverment-funded'] or 'Yes'}}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="continue-after-redundancy">
+                        <a class="govuk-link govuk-link--no-visited-state" href="continue-after-redundancy">
                             Change<span class="govuk-visually-hidden"> government funded</span>
                         </a>
                     </dd>
@@ -106,7 +111,7 @@ href: "javascript:window.history.go(-1);"
             <div class="govuk-button-group">
                 <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
 
-                <a class="govuk-link" href="apprentice-details">Cancel</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="apprentice-details">Cancel</a>
             </div>
         </form>
 

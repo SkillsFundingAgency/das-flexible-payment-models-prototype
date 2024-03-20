@@ -26,12 +26,12 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
     
 
-	<div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
 
     {% if  data['reason-for-stop-tp'] == "Apprentice left" %}
 
-    <form action="-break-stop-confirm-tp" method="post" novalidate class="govuk-!-margin-top-7">
+    <form action="-break-stop-confirm-tp" method="post" novalidate>
 		
 
       <div class="govuk-form-group">
@@ -92,13 +92,11 @@ href: "javascript:window.history.go(-1);"
   </form>
   {% else %}
     
-
-     
   {% endif %}
 
   {% if  data['reason-for-stop-tp'] == "Others" %}
 
-  <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+  <form action="-stop-made-redundant-tp" method="post" novalidate>
   
 
     <div class="govuk-form-group">
@@ -143,7 +141,7 @@ href: "javascript:window.history.go(-1);"
       </div>
 
   <button class="govuk-button" data-module="govuk-button">
-    Save and continue
+    Continue
   </button>
     
 
@@ -246,7 +244,7 @@ href: "javascript:window.history.go(-1);"
 
    {% if  data['reason-for-stop-tp'] == "Apprentice withdraw" %}
 
-     <form action="-stop-made-redundant-tp" method="post" novalidate class="govuk-!-margin-top-7">
+    <form action="-stop-made-redundant-tp" method="post" novalidate>
      
  
        <div class="govuk-form-group">
@@ -291,13 +289,10 @@ href: "javascript:window.history.go(-1);"
          </div>
  
      <button class="govuk-button" data-module="govuk-button">
-       Save and continue
+      Continue
      </button>
        
  
-       
-      
-     
    </form>
    {% else %}
      
