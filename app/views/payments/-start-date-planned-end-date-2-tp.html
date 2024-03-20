@@ -25,9 +25,9 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
     
 
-	<div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-two-thirds">
 
-        <form action="-confirm-change-start-date-e" method="post" novalidate class="govuk-!-margin-top-7">
+        <form action="-confirm-change-start-date-e" method="post" novalidate>
 		
 
             <div class="govuk-form-group">
@@ -60,33 +60,27 @@ href: "javascript:window.history.go(-1);"
                       </div> -->
                       <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="confirm-date">
                           <label class="govuk-label govuk-radios__label" for="contact">
                            Confirm new planned traning date as 25 10 2024
                           </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-">
-                          <div class="govuk-form-group">
-                            <label class="govuk-label" for="contact-by-email">
-                              Email address
-                            </label>
-                            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                          </div>
-                        </div>
+                        
                         <div class="govuk-radios__item">
-                          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                          <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="change-date"
+                            data-aria-controls="conditional-date">
                           <label class="govuk-label govuk-radios__label" for="contact-2">
                            Enter a new planned training end date
                           </label>
                         </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-date">
                           <div class="govuk-form-group">
-                            <label class="govuk-label" for="contact-by-phone">
+                            <label class="govuk-label" for="change-date">
                              <!-- Enter new date -->
                              The planned training end date needs to be on or after 25 10 2024.
                             </label>
                             <!-- start date feild -->
-                            <div class="govuk-date-input" id="passport-issued">
+                            <div class="govuk-date-input" id="change-date">
                                 <div class="govuk-date-input__item">
                                   <div class="govuk-form-group">
                                     <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
@@ -123,17 +117,11 @@ href: "javascript:window.history.go(-1);"
                     </fieldset>
                   </div>
 
-
-
-                  
-
-
-
                 </fieldset>
               </div>
 
           <button class="govuk-button" data-module="govuk-button">
-            Save and continue
+            Continue
           </button>
             
 
