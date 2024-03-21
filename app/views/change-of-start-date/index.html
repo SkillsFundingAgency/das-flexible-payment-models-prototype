@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">Change of start date</h1>
+
+        <div class="govuk-grid-row govuk-!-margin-top-9">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-l">Training provider</h2>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <strong class="govuk-tag govuk-tag--light-blue govuk-!-margin-bottom-4">
+                    In design
+                </strong>
+                <h3 class="govuk-heading-m"><a href="/change-of-start-date/training-provider/v1/change-start-date"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Proposed updated</a>
+                </h3>
+                <p class="govuk-body">Updated designs to meet Government Design Principles and reflect scenarios with
+                    exiting end date being within the minimum duration</p>
+
+
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-4">
+                    Signed off
+                </strong>
+                <h3 class="govuk-heading-m"><a href="/payments/-change-start-date"
+                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Original designs
+                        (Sunil's designs)</a></h3>
+                <p class="govuk-body">Designs which have already been tested and signed off</p>
+
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-m">Clear data</h2>
+        <p class="govuk-body">Clear data can now be found in the prototype footer</p>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {% endblock %}

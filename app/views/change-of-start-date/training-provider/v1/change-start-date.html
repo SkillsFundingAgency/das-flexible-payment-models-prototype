@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Change training start date" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+    <div class="govuk-inset-text">
+      The current start date for the training is 1 Auguest 2023.
+    </div>
+
+
+    <form action="start-date-planned-end-date" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="effective-from-hint">
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Enter new planned training start date
+            </legend>
+
+            <div id="effective-from-hint" class="govuk-hint">
+              For example, 31 3 2024
+            </div>
+            <div class="govuk-date-input" id="effective-from">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="effective-from-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-day"
+                    name="effective-from-day" value="{{ data['effective-from-day']}}" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="effective-from-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="effective-from-month"
+                    name="effective-from-month" value="{{ data['effective-from-month']}}" type="text"
+                    inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="EffectiveFromYear">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="EffectiveFromYear"
+                    name="effective-from-year" value="{{ data['effective-from-year']}}" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-form-group govuk-!-margin-top-7">
+            <h3 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m" for="reason-for-change-start-date">
+                Why is the start date changing?
+              </label>
+              </h1>
+              <div id="reason-for-change-start-date-hint" class="govuk-hint">
+                This message will be shared with AUTOMATION & OPTIMISATION LTD
+              </div>
+              <textarea class="govuk-textarea" id="reason-for-change-start-date" name="reason-for-change-start-date"
+                rows="5"
+                aria-describedby="reason-for-change-start-date-hint">{{ data['reason-for-change-start-date'] }}</textarea>
+          </div>
+
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </fieldset>
+
+      </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+
+</div>
+
+
+{% endblock %}
