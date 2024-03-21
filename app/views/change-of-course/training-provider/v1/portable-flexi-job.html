@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "feature/Change-of-circs/cop-cosd/employer" %}
-{% set pageTitle = "Select the apprenticeship delivery model" %}
+{% set pageTitle = "Apprenticeship delivery model" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -24,18 +24,17 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">{{pageTitle}}</h1>
-    <div class="govuk-inset-text">
       <p class="govuk-body"><strong>Game programmer</strong> can be completed by the apprentice moving between multiple
         employment contracts, known as a portable flexi-job apprenticeship. </p>
-    </div>
+    
 
-    <form id="addApprenticeship" action="planned-training-start" method="post"
+    <form id="addApprenticeship" action="planned-training-date-start" method="post"
       class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
 
         <fieldset class="govuk-fieldset" role="group" "="">
             <legend class=" govuk-fieldset__legend govuk-fieldset__legend--m">
-          Select delivery model
+          Select the apprentceship delivery model
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">

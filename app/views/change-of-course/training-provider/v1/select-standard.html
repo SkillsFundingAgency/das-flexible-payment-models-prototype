@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "feature/Change-of-circs/cop-cosd/employer" %}
-{% set pageTitle = "Select a standard option" %}
+{% set pageTitle = "Standard options" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -24,10 +24,9 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-    <div class="govuk-inset-text">
       <p class="govuk-body">For more information visit <a href="#" class="govuk-link" target="_blank">IfATE
           page for this standard (opens in a new tab)</a></p>
-    </div>
+
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -51,8 +50,8 @@ href: "javascript:window.history.go(-1);"
     <form id="addApprenticeship" action="portable-flexi-job" method="post" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group"">
-            <legend class=" govuk-fieldset__legend govuk-fieldset__legend--s">
-          Select an option
+            <legend class=" govuk-fieldset__legend govuk-fieldset__legend--m">
+              Select a standard option
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
