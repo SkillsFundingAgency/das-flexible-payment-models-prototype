@@ -6,7 +6,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/change-of-course/training-provider/v1/price-change/action', function (req, res) {
     var useProvider = req.session.data['change-price']
 
-    if (useProvider == "no") {
+    if (useProvider == "yes") {
         res.redirect('/change-of-course/training-provider/v1/confirm-change-of-course')
     }
     else {
@@ -16,7 +16,7 @@ router.post('/change-of-course/training-provider/v1/price-change/action', functi
 router.post('/change-of-course/training-provider/v1/recognise-prior-learning/action', function (req, res) {
     var priorLearning = req.session.data['prior-learning']
 
-    if (priorLearning == "no") {
+    if (priorLearning == "yes") {
         res.redirect('/change-of-course/training-provider/v1/reason-for-change')
     }
     else {

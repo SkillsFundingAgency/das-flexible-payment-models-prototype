@@ -45,7 +45,15 @@ href: "javascript:window.history.go(-1);"
 					<td class="govuk-table__cell">
 						Abattoir Worker, Level: 5 (Standard)
 					</td>
-					<td class="govuk-table__cell">{{data['training-course'] or '[course name]'}})</td>
+					<td class="govuk-table__cell">{{data['training-course'] or '[course name]'}}</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-course">Change </a></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Standard option</th>
+					<td class="govuk-table__cell">
+						Game software programmer
+					</td>
+					<td class="govuk-table__cell">{{data['training-course'] or '[course name]'}}</td>
 					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-course">Change </a></td>
 				</tr>
 				<tr class="govuk-table__row">
