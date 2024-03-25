@@ -13,4 +13,13 @@ router.post('/change-of-course/training-provider/v1/price-change/action', functi
         res.redirect('/change-of-course/training-provider/v1/update-price')
     }
 })
+router.post('/change-of-course/training-provider/v1/recognise-prior-learning/action', function (req, res) {
+    var priorLearning = req.session.data['prior-learning']
 
+    if (priorLearning == "no") {
+        res.redirect('/change-of-course/training-provider/v1/reason-for-change')
+    }
+    else {
+        res.redirect('/change-of-course/training-provider/v1/recognise-prior-learning-details')
+    }
+})

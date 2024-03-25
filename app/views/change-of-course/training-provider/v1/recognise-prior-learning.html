@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "feature/Change-of-circs/cop/employer" %}
-{% set pageTitle = "Negotiated price" %}
+{% set version = "fetature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Recognition of prior learning (RPL)" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -20,82 +20,66 @@ href: "javascript:window.history.go(-1);"
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Negotiated price
+      {{pageTitle}}
     </h1>
 
-    <p class="govuk-body">The current total price for this apprenticeship is:
+    <p class="govuk-body">The current recognition of prior learning for this apprenticeship is:
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Training price
+          Current weeks reduced due to RPL
         </dt>
         <dd class="govuk-summary-list__value">
-          £6,000
+          6
         </dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          End-point assessment price
+          Current price reduced due to RPL
         </dt>
         <dd class="govuk-summary-list__value">
-          £2,500
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Total price
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £8,500
+          £2,000
         </dd>
       </div>
     </dl>
-    
+
     <p class="govuk-body">The updates course
       <b>{{data['training-course'] or '[course name]'}}</b> may have
-      a different price.
+      a different RPL.
     </p>
-
-    <form action="/change-of-course/training-provider/v1/price-change/action" method="post" novalidate
+    <form method="post" action="/change-of-course/training-provider/v1/recognise-prior-learning/action"
       class="govuk-!-margin-top-8">
-
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset" aria-describedby="prior-learning-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Do you want to change the negotiated price?
+            Do you want to change the recognised prior learning?
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="signIn">
+              <input class="govuk-radios__input" id="prior-learning" type="radio" value="yes" name="prior-learning">
+              <label class="govuk-label govuk-radios__label" for="prior-learning">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="signIn-2">
-                No
+              <input class="govuk-radios__input" id="prior-learning-2" type="radio" value="no" name="prior-learning">
+              <label class="govuk-label govuk-radios__label" for="prior-learning-2">
+                No, keep the current RPL
               </label>
             </div>
           </div>
         </fieldset>
       </div>
-      <button class="govuk-button" data-module="govuk-button">
+
+      <button class="govuk-button" type="submit">
         Continue
       </button>
-
-
-
-
-
     </form>
   </div>
-
 </div>
 
 {% endblock %}

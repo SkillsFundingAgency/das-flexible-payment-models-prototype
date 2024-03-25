@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "feature/Change-of-circs/cop/employer" %}
-{% set pageTitle = "Negotiated price" %}
+{% set pageTitle = "Reference (optional)" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -25,59 +25,49 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Negotiated price
+      {{pageTitle}}
     </h1>
 
-    <p class="govuk-body">The current total price for this apprenticeship is:
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Training price
+          Current reference
         </dt>
         <dd class="govuk-summary-list__value">
-          £6,000
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          End-point assessment price
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £2,500
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Total price
-        </dt>
-        <dd class="govuk-summary-list__value">
-          £8,500
+          Employee 1543
         </dd>
       </div>
     </dl>
-    
-    <p class="govuk-body">The updates course
-      <b>{{data['training-course'] or '[course name]'}}</b> may have
-      a different price.
-    </p>
 
-    <form action="/change-of-course/training-provider/v1/price-change/action" method="post" novalidate
-      class="govuk-!-margin-top-8">
-
+    <form method="post" action="confirm-change-of-course" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Do you want to change the negotiated price?
+            Do you want to change the reference for this apprentice?
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes">
+              <input class="govuk-radios__input" id="change-reference" name="change-reference" type="radio" value="yes"
+                data-aria-controls="conditional-reference">
               <label class="govuk-label govuk-radios__label" for="signIn">
                 Yes
               </label>
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reference">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="reference">
+                  New reference
+                </label>
+                <div id="reference-hint" class="govuk-hint">
+                  For example an employee number or location - this won't be seen by the employee
+                </div>
+                <input class="govuk-input govuk-input--width-20" id="reference" name="reference" type="text"
+                  maxlength="20" aria-describedby="reference-hint">
+              </div>
+            </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
+              <input class="govuk-radios__input" id="change-reference-2" name="change-reference" type="radio"
+                value="no">
               <label class="govuk-label govuk-radios__label" for="signIn-2">
                 No
               </label>
@@ -88,14 +78,12 @@ href: "javascript:window.history.go(-1);"
       <button class="govuk-button" data-module="govuk-button">
         Continue
       </button>
-
-
-
-
-
     </form>
-  </div>
 
+  </div>
 </div>
+
+
+
 
 {% endblock %}
