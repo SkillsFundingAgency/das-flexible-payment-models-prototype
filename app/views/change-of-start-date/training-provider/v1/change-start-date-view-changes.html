@@ -34,7 +34,6 @@ href: "javascript:window.history.go(-1);"
 					</th>
 					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current </th>
 					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Requested</th>
-					<th scope="col" class="govuk-table__header govuk-!-width-one-third"></th>
 				</tr>
 			</thead>
 			<tbody class="govuk-table__body">
@@ -82,7 +81,7 @@ href: "javascript:window.history.go(-1);"
 
 						{{ data['effective-from-year'] or '2023'}}</td>
 
-					<!-- <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td> -->
+					
 				</tr>
 
 
@@ -135,33 +134,27 @@ href: "javascript:window.history.go(-1);"
 						October
 						{% endif %}
 
-						<!-- {{ data['planned-end-year-tp-start'] or '2024'}}  -->
-
-
-
-						<!-- <div class="govuk-warning-text">
-					<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 14px; line-height: 20px; min-width: 25px;
-					min-height: 20px; position: relative; margin: 2px; float: right; border: 2px;">!</span>
-					</div> -->
 					</td>
 
-					<!-- <td class="govuk-table__cell"><a href="-start-date-planned-end-date-1-tp">Change </a></td> -->
-				</tr>
-
-				<tr class="govuk-table__row">
-					<th scope="row" class="govuk-table__header">Reason for change</th>
-					<td class="govuk-table__cell" style="width: 45%;">{{ data['reason-for-change-start-date'] or
-						'Apprentice can not start on original start date'}}</td>
-
-					<td class="govuk-table__cell" style="width: 35%;"></td>
 				</tr>
 			</tbody>
 		</table>
-		<br>
-		<!-- <div id="apprenticeship-price-hint" class="govuk-hint">
-			: 
+	</div>
+	<div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+		<h2 class="govuk-heading-m">Reason for change</h2>
+		<dl class="govuk-summary-list">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{data['reason-for-change-start-date'] or
+					'Apprentice can not start on original start date'}}
+				</dd>
+	
+			</div>
+		</dl>
 		
-		</div> -->
 		<form method="post" action="change-start-date-withdrawal-confirmation" class="govuk-!-margin-top-9">
 			<fieldset class="govuk-fieldset">
 				<div class="govuk-form-group">

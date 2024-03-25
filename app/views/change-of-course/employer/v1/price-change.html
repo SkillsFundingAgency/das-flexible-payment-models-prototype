@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop/employer" %}
+{% set pageTitle = "Total price" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">The current total price for this apprenticeship is <b>£8,500</b>.</p>
+
+    <p class="govuk-body">The funding band maximum for this apprenticeship is £9,000. This is the highest amount the
+      apprenticeship service will
+      pay.</p>
+
+    <p class="govuk-body">If you raise the total price above the funding band maximum, you will need to pay the training
+      provider directly.
+    </p>
+
+
+    <form action="reason-for-change" method="post" novalidate class="govuk-!-margin-top-8">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to request an update to the current total price?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes"
+                data-aria-controls="conditional-change-price">
+              <label class="govuk-label govuk-radios__label" for="change-price">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-change-price">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="reference">
+                  New total price
+                </label>
+                <div id="price-change-hint" class="govuk-hint">
+                  Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+                </div>
+                <div class="govuk-input__wrapper">
+                  <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                  <input class="govuk-input govuk-input--width-5" id="price-change" name="price-change" type="text"
+                    value="" aria-describedby="price-change-hint">
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="change-price-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+
+
+
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}
