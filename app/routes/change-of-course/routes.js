@@ -7,7 +7,7 @@ router.post('/change-of-course/training-provider/v1/price-change/action', functi
     var useProvider = req.session.data['change-price']
 
     if (useProvider == "yes") {
-        res.redirect('/change-of-course/training-provider/v1/confirm-change-of-course')
+        res.redirect('/change-of-course/training-provider/v1/recognise-prior-learning')
     }
     else {
         res.redirect('/change-of-course/training-provider/v1/update-price')
