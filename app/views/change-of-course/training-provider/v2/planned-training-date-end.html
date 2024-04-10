@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+{% set version = "fetature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Planned training end date" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Planned training end date
+    </h1>
+
+    <p class="govuk-body">The current planned training end date is <b>10 January 2025</b>.</p>
+    <p class="govuk-body">The start date and minimum duration means that the standard cannot end before 14
+      December 2024.
+    </p>
+
+    <form action="price-change" method="post" novalidate="" class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to change the current planned training end date?
+
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="keep-start-date"
+                data-aria-controls="conditional-start-date">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes, change the planned training end date
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-start-date">
+              <div class="govuk-form-group">
+                <div class="govuk-date-input" id="start-date-issued" aria-describedby="end-date-update-hint">
+                  <div id="end-date-update-hint" class="govuk-hint">
+                    The planned training end date needs to be on or after 14 12 2024
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day"
+                        name="start-date-day" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month"
+                        name="start-date-month" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year"
+                        name="start-date-year" type="text" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="change">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -23,3 +23,25 @@ router.post('/change-of-course/training-provider/v1/recognise-prior-learning/act
         res.redirect('/change-of-course/training-provider/v1/recognise-prior-learning-details')
     }
 })
+
+// Employer v2
+router.post('/change-of-course/training-provider/v2/price-change/action', function (req, res) {
+    var useProvider = req.session.data['change-price']
+
+    if (useProvider == "no") {
+        res.redirect('/change-of-course/training-provider/v2/recognise-prior-learning')
+    }
+    else {
+        res.redirect('/change-of-course/training-provider/v2/update-price')
+    }
+})
+router.post('/change-of-course/training-provider/v2/recognise-prior-learning/action', function (req, res) {
+    var priorLearning = req.session.data['prior-learning']
+
+    if (priorLearning == "no") {
+        res.redirect('/change-of-course/training-provider/v2/reason-for-change')
+    }
+    else {
+        res.redirect('/change-of-course/training-provider/v2/recognise-prior-learning-details')
+    }
+})

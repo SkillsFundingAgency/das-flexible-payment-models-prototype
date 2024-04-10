@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+{% set version = "fetature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Recognition of prior learning (RPL)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">The current recognition of prior learning for <b>{{data['training-course'] or 'Game
+        programmer, Level: 7'}}</b> is:
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total off-the-job training time for standard
+        </dt>
+        <dd class="govuk-summary-list__value">
+          70 hours
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Off-the-job training time reduction due to prior learning
+        </dt>
+        <dd class="govuk-summary-list__value">
+          14 hours
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Reduction in duration due to prior learning
+        </dt>
+        <dd class="govuk-summary-list__value">
+          2 weeks
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Price reduced due to prior learning
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,000
+        </dd>
+      </div>
+    </dl>
+
+    <form method="post" action="/change-of-course/training-provider/v2/recognise-prior-learning/action"
+      class="govuk-!-margin-top-8">
+      <div class="govuk-form-group ">
+        <fieldset class="govuk-fieldset" aria-describedby="prior-learning-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to change the current recognised prior learning?
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="prior-learning" type="radio" value="yes" name="prior-learning">
+              <label class="govuk-label govuk-radios__label" for="prior-learning">
+                Yes, change the RPL
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="prior-learning-2" type="radio" value="no" name="prior-learning">
+              <label class="govuk-label govuk-radios__label" for="prior-learning-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

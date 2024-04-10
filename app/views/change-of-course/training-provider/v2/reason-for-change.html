@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop/employer" %}
+{% set pageTitle = "Why is the standard changing? (optional)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="confirm-change-of-course" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="why-change-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="why-change-hint" class="govuk-hint">
+            This message will be shared with AUTOMATION & OPTIMISATION LTD
+          </div>
+          <textarea class="govuk-textarea" id="why-change" name="why-change" rows="5"></textarea>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

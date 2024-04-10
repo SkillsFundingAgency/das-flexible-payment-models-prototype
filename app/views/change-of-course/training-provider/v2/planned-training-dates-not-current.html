@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+{% set version = "fetature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Training dates" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">The standard <b>{{data['training-course'] or 'Game programmer, Level: 7'}}</b> is not
+      avaliable on the
+      current training start date of 25 June 2024.</p>
+
+    <p class="govuk-body">The new training start date must be after 1 August 2023.</p>
+
+    <form action="price-change" method="post" novalidate class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            New training start date
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            The training start date needs to be between 1 8 2023 and 31 8 2025
+          </div>
+          <div class="govuk-date-input" id="start-date-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day"
+                  name="start-date-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month"
+                  name="start-date-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year"
+                  name="start-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-8">
+        <fieldset class="govuk-fieldset" aria-describedby="start-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            New planned training end date
+          </legend>
+          <div id="start-date-hint" class="govuk-hint">
+            The planned training end date needs to be after on or after 2 9 2024
+          </div>
+          <div class="govuk-date-input" id="start-date-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day"
+                  name="start-date-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month"
+                  name="start-date-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="start-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year"
+                  name="start-date-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+  </div>
+
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+  <a href="planned-training-date-start" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    View current dates avalaible
+  </a>
+</div>
+
+{% endblock %}
