@@ -20,7 +20,6 @@ href: "javascript:window.history.go(-1);"
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -28,7 +27,8 @@ href: "javascript:window.history.go(-1);"
       Negotiated price
     </h1>
 
-    <p class="govuk-body">The current total price for this apprenticeship is:</p>
+    <p class="govuk-body">The current total price for <b>{{data['training-course'] or 'Game programmer, Level: 7'}}</b>
+      is:</p>
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -55,31 +55,26 @@ href: "javascript:window.history.go(-1);"
         </dd>
       </div>
     </dl>
-    
-    <p class="govuk-body">The updated course
-      <b>{{data['training-course'] or '[course name]'}}</b> may have
-      a different price.
-    </p>
 
-    <form action="/change-of-course/training-provider/v1/price-change/action" method="post" novalidate
+    <form action="/change-of-standard/training-provider/v2/price-change/action" method="post" novalidate
       class="govuk-!-margin-top-8">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Would you like to keep the current negotiated price?
+            Would you like to change the current negotiated price?
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="change-price">
-                Yes
+                Yes, change the negotiated price
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="change-price-2">
-                No, change the negotiated price
+                No
               </label>
             </div>
           </div>
