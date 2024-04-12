@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "What date did the apprentices employment end?" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="continue-after-redundancy" method="post" novalidate>
+      <div class=" govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="date-hint" class="govuk-hint">
+            For example, 27 3 2007
+          </div>
+          <div class="govuk-date-input" id="redundant-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="redundant-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="redundant-date-day"
+                  name="stop-day" value="{{ data['stop-day']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="redundant-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="redundant-date-month"
+                  name="stop-month" value="{{ data['stop-month']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="redundant-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="redundant-date-year"
+                  name="stop-year" value="{{ data['stop-year']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with the employment end date
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">The date the apprentices employment ends, is the finishing or dismissal date given by the
+            employer
+            when they notified the
+            apprentice they will be made redundant.</p>
+        </div>
+      </details>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+{% endblock %}

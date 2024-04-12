@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+    
+
+  <div class="govuk-grid-column-two-thirds">
+
+        <form action="-resume-date-e-planned-end-date-1-tp" method="post" novalidate">
+		
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        When did the apprentice status change to "In learning"?
+                    </h1>
+                  </legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+
+                    <!-- Enter the first date the apprentice started or intends to start their learning.  -->
+                    For example, 27 12 2023
+
+                    <!-- Specify date when the learners status changed to "In learning".
+                    For example, 27 12 2023 -->
+                  </div>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="resume-day" value="{{ data['resume-day']}}" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="resume-month" value="{{ data['resume-month']}}" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="resume-year" value="{{ data['resume-year']}}" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+            
+
+            
+           
+          
+        </form>
+	</div>
+
+</div>
+
+{% endblock %}
