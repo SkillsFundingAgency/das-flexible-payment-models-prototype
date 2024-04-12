@@ -29,7 +29,7 @@ href: "javascript:window.history.go(-1);"
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-				{% if data['goverment-funded'] == 'No' %}
+				{% if data['government-funded'] == 'No' %}
 				<h3 class="govuk-notification-banner__heading">
 					The training provider has changed this apprentice status to Withdrawn (made redundant)
 				</h3>
@@ -71,7 +71,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Withdrawn</strong> (made redundant)
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue"> In learning</strong> (made redundant)
@@ -83,7 +83,7 @@ href: "javascript:window.history.go(-1);"
 							Provider payments status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Inactive</strong>
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>

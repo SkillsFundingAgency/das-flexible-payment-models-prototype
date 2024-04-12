@@ -47,7 +47,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Withdrawn</strong> (made redundant)
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue"> In learning</strong>
@@ -59,7 +59,7 @@ href: "javascript:window.history.go(-1);"
 							Provider payments status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Inactive</strong>
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>
