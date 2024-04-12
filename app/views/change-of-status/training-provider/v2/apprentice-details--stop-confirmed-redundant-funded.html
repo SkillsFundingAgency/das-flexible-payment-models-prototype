@@ -29,7 +29,7 @@ href: "javascript:window.history.go(-1);"
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-				{% if data['goverment-funded'] == 'No' %}
+				{% if data['government-funded'] == 'No' %}
 				<h3 class="govuk-notification-banner__heading">
 					Learner status changed to Withdrawn (made redundant)
 				</h3>
@@ -41,7 +41,7 @@ href: "javascript:window.history.go(-1);"
 				<h3 class="govuk-notification-banner__heading">
 					Learner status changed to In learning (made redundant)
 				</h3>
-				<p class="govuk-body">goverment funding has been accepted until the planned training end date of 3 July
+				<p class="govuk-body">government funding has been accepted until the planned training end date of 3 July
 					2024.
 				</p>
 				<p class="govuk-body">The employer has been informed of this update.</p>
@@ -74,7 +74,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Withdrawn</strong> (made redundant)
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue"> In learning</strong> (made redundant)
@@ -91,11 +91,11 @@ href: "javascript:window.history.go(-1);"
 							Provider payments status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['goverment-funded'] == 'No' %}
+							{% if data['government-funded'] == 'No' %}
 							<strong class="govuk-tag govuk-tag--red"> Inactive</strong>
 							{%else%}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>
-							(funded by goverment until 3 July 2024)
+							(funded by government until 3 July 2024)
 							{% endif %}
 						</dd>
 					</div>
