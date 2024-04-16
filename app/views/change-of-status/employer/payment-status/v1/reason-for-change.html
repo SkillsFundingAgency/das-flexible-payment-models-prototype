@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-full">
+
+        <form action="freeze-confirmed" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Why do you want to stop payments?
+                        </h1>
+                    </legend>
+                    <div id="reason-hin" class="govuk-hint">
+                        Training provider will be notified about the change via email
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-stop" type="radio"
+                                value="apprentice-left" {{ checked('reason-for-stop','apprentice-left') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                Apprentice left my employment
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-stop" type="radio"
+                                value="change-to-training-provider" {{
+                                checked('reason-for-stop','change-to-training-provider') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                                Change to training provider
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="reason-for-stop" type="radio"
+                                value="training-ended" {{ checked('reason-for-stop','training-ended') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                                Apprenticeship training has ended
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio"
+                                value="apprentice-withdraw" {{ checked('reason-for-stop','apprentice-withdraw') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                Apprentice has withdrawn from training
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio"
+                                value="record-change" {{ checked('reason-for-stop','record-change') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                Training provider request to correct apprenticeship record
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio"
+                                value="apprenticeship-never-started" {{
+                                checked('reason-for-stop','apprenticeship-never-started') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                Apprenticeship never started
+                            </label>
+                        </div>
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop" type="radio"
+                                value="others" data-aria-controls="conditional-others-stop" {{
+                                checked('reason-for-stop','others') }}>
+                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                Other reason
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                            id="conditional-others-stop">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="contact-by-email">
+                                    Specify other reason
+                                    <!-- Keep it brief. -->
+                                </label>
+                                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email"
+                                    name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+            </div>
+
+            </fieldset>
+            <br>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+    </div>
+
+
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</form>
+</div>
+
+</div>
+
+{% endblock %}

@@ -90,14 +90,6 @@ href: "javascript:window.history.go(-1);"
 
 
 						</dd>
-						<dd class="govuk-summary-list__value" style="width: 370px; text-align: right;">
-
-							<!-- To change the leaner status, contact the training provider.  -->
-							<!-- Contact training provider to change this  -->
-							<!-- <a class="govuk-link" href="break-e">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a> -->
-						</dd>
 					</div>
 
 
@@ -107,12 +99,7 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 
-
-
-
 							{% if data['freeze'] %}
-
-
 							{% if data['freeze'] == "no" %}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>
 
@@ -120,12 +107,9 @@ href: "javascript:window.history.go(-1);"
 
 							{% endif %}
 
-
-
 							{% if data['freeze'] == "yes" %}
 
 							<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-
 
 							{% else %}
 
@@ -141,18 +125,14 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="
-                            
-                            
-                            
-                           
-                            		
-							{% if  data['freeze'] %}
-							
-				  
-							{% if  data['freeze'] == " no" %} break-freeze {% else %} {% endif %} {% if data['freeze']=="yes" %}
-								break-unfreeze {% else %} {% endif %} {% else %} break-freeze {% endif %} ">
-								Change<span class=" govuk-visually-hidden"> training provider payments</span>
+							<a class="govuk-link" href="  		
+																					
+							{% if data['freeze'] == "yes" %}
+								break-unfreeze
+							{% else %} 
+								break-freeze 
+							{% endif %} ">
+								Change<span class=" govuk-visually-hidden">  provider payments status</span>
 							</a>
 						</dd>
 					</div>
