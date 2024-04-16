@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "fetature/Change-of-circs/cop-cosd/employer" %}
-{% set pageTitle = "Planned training end date" %}
+{% set pageTitle = "Training start date" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -22,22 +22,17 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">
-      Planned training end date
+      {{pageTitle}}
     </h1>
 
-    <p class="govuk-body">The current planned training end date is <b>10 January 2025</b>.</p>
-    <p class="govuk-body">The start date and minimum duration means that the standard cannot end before 14
-      December 2024.
-    </p>
+    <p class="govuk-body">The current training start date for <b>Accounting, Level 2</b> is 1 August 2023.</p>
 
-    <form action="price-change" method="post" novalidate="" class="govuk-!-margin-top-8">
-      <div class="govuk-form-group">
+    <form action="planned-training-date-end" method="post" novalidate>
+      <div class="govuk-form-group govuk-!-margin-top-7">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            Would you like to change the current planned training end date?
-
+            Would you like to change the training start date?
           </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -45,14 +40,14 @@ href: "javascript:window.history.go(-1);"
               <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="keep-start-date"
                 data-aria-controls="conditional-start-date">
               <label class="govuk-label govuk-radios__label" for="contact">
-                Yes, change the planned training end date
+                Yes, change the training start date
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-start-date">
               <div class="govuk-form-group">
                 <div class="govuk-date-input" id="start-date-issued" aria-describedby="end-date-update-hint">
                   <div id="end-date-update-hint" class="govuk-hint">
-                    The planned training end date needs to be on or after 14 12 2024
+                    The training start date needs to be between 1 8 2022 and 31 8 2024
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
@@ -105,9 +100,9 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: fixed; right:20px; top:160px">
-  <a href="planned-training-date-end-v2" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+  <a href="planned-training-date-start" role="button" draggable="false" class="govuk-button govuk-button--secondary"
     data-module="govuk-button">
-    View variant 2
+    View variant 1
   </a>
 </div>
 
