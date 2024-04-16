@@ -17,10 +17,54 @@ href: "javascript:window.history.go(-1);"
 
 {% block content %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Change of standard </h1>
-        <div class="govuk-grid-row govuk-!-margin-top-7">
+        <p class="govuk-body">Training providers can change an apprentices standard. Employers can only approve requests
+            made by
+            providers.
+        </p>
+        </div>
+        </div>
+    <div class="govuk-grid-row govuk-!-margin-top-7">
+        <div class="govuk-grid-column-one-half">
+            <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-4">
+                For research
+            </strong>
+            {# <span class="govuk-caption-m">Prior to first payment data lock</span> #}
+            <h3 class="govuk-heading-s"><a href="/change-of-standard/training-provider/v2/"
+                    class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider requests change</a>
+            </h3>
+            <p class="govuk-body">Training provide can change the standard up until the first payment data lock</p>
+        
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Previous research
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <ul class="govuk-list">
+                        <li>
+                            <a class="govuk-link" href="/change-of-standard/training-provider/v1/">Version 1</a> -
+                            Research
+                            round 15 (March 2024)
+                        </li>
+                    </ul>
+                </div>
+            </details>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-4">
+                For research
+            </strong>
+            {# <span class="govuk-caption-m">Prior to qualifying period</span> #}
+            <h3 class="govuk-heading-s"><a href="employer/v2/notification" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">Employer's manage request from provider</a>
+            </h3>
+            <p class="govuk-body">Employer receieves a change of standard request by a training provider</p>
+        </div>
+        </div>
+        {# <div class="govuk-grid-row govuk-!-margin-top-7">
             <div class="govuk-grid-column-full">
                 <h2 class="govuk-heading-l">Employer</h2>
             </div>
@@ -101,7 +145,7 @@ href: "javascript:window.history.go(-1);"
                 <h3 class="govuk-heading-m">Manage request from employer</h3>
                 <p class="govuk-body">Training provides receieves a change of standard request by an employer</p>
             </div>
-        </div>
+        </div> #}
         <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
         <h2 class="govuk-heading-m">Clear data</h2>
         <p class="govuk-body">Clear data can now be found in the prototype footer</p>
