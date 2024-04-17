@@ -31,14 +31,14 @@ href: "javascript:window.history.go(-1);"
 			<div class="govuk-notification-banner__content">
 
 				<h3 class="govuk-notification-banner__heading">
-					Provider payments status set to Inactive
+					Provider payments status set to Active
 				</h3>
 				<p class="govuk-body">The training provider has been informed of this update. If you need to change
 					learner status,
 					contact the training provider.
 				</p>
-				</div>
-				</div>
+			</div>
+		</div>
 
 		<h2 class="govuk-heading-l">{{pageTitle}}</h2>
 
@@ -60,7 +60,7 @@ href: "javascript:window.history.go(-1);"
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprenticeship status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row  govuk-summary-list__row--no-actions">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Learner status
 						</dt>
@@ -74,10 +74,10 @@ href: "javascript:window.history.go(-1);"
 							Provider payments status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+							<strong class="govuk-tag govuk-tag--blue">Active</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break-unfreeze">
+							<a class="govuk-link" href="break-freeze">
 								Change<span class="govuk-visually-hidden"> training provider payments</span>
 							</a>
 						</dd>
@@ -152,7 +152,7 @@ href: "javascript:window.history.go(-1);"
 						</dd>
 					</div>
 
-<div class="govuk-summary-list__row" style="display:none">
+					<div class="govuk-summary-list__row" style="display:none">
 						<dt class="govuk-summary-list__key">
 							Allow training provide to change status
 						</dt>

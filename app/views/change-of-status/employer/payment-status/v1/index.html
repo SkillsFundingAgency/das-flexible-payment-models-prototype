@@ -45,50 +45,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-
-
-							{% if data['stop'] == "no" %}
-
-							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-
-							{% else %}
-
-							{% if data['stoptp'] %}
-
-
-							{% if data['stoptp'] == "continuing" %}
 							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-
-							{% else %}
-
-							{% endif %}
-
-							{% if data['stoptp'] == "yes" %}
-							<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
-
-							{% else %}
-
-							{% endif %}
-
-							{% if data['stoptp'] == "no" %}
-
-							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-
-
-							{% else %}
-
-							{% endif %}
-
-
-							{% else %}
-							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-							{% endif %}
-
-
-							{% endif %}
-							<!-- {{ data['stoptp'] or 'In learning'}} -->
-
-
 						</dd>
 					</div>
 
@@ -99,39 +56,12 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 
-							{% if data['freeze'] %}
-							{% if data['freeze'] == "no" %}
 							<strong class="govuk-tag govuk-tag--blue">Active</strong>
-
-							{% else %}
-
-							{% endif %}
-
-							{% if data['freeze'] == "yes" %}
-
-							<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-
-							{% else %}
-
-							{% endif %}
-
-
-							{% else %}
-							<strong class="govuk-tag govuk-tag--blue">Active</strong>
-							{% endif %}
-
-
-
+						
 						</dd>
 
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="  		
-																					
-							{% if data['freeze'] == "yes" %}
-								break-unfreeze
-							{% else %} 
-								break-freeze 
-							{% endif %} ">
+							<a class="govuk-link" href="break-freeze ">
 								Change<span class=" govuk-visually-hidden">  provider payments status</span>
 							</a>
 						</dd>

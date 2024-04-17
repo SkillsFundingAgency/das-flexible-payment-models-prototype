@@ -5,8 +5,8 @@
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/employer-account-header.html" %}
-{% include "includes/nav-employer-apprentices" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,12 +22,32 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
 
-        <div class="govuk-panel govuk-panel--confirmation">
-            <h1 class="govuk-panel__title">
-			Training provider payments set to inactive
-            </h1>
-            
-          </div>
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<p class="govuk-notification-banner__heading">
+					<!-- [Employer]  -->
+					AUTOMATION & OPTIMISATION LTD has paused payments on 10 January 2024
+				<ul class="govuk-list govuk-list--bullet-">
+					<li>
+						Reason: Not happy with the quality of the tarining.
+					</li>
+					<li>
+						You'll need to contact employer to get them to change the status or the date.
+					</li>
+				</ul>
+
+				<!-- <a href="#price-change">View change request</a> -->
+				</p>
+			</div>
+		</div>
+
+
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -48,159 +68,69 @@ href: "javascript:window.history.go(-1);"
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprenticeship status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
+					<div class="govuk-summary-list__row"
+						style="margin: 10px 0 20px 0;  border-left: 5px solid #1d70b8; padding:10px 10px ;">
+						<dt class="govuk-summary-list__key" style="padding-left:20px !important;">
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							
-
-							{% if  data['stop'] == "no" %}
-
-							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-
-							{% else %}
-
-								{% if  data['stoptp'] %}
-							
-				  
-								{% if  data['stoptp'] == "continuing" %}
-								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "yes" %}
-								<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								{% if  data['stoptp'] == "no" %}
-
-								<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">In learning</strong>
-								{% endif %}
-				
-				
-								{% endif %}
-								<!-- {{ data['stoptp'] or 'In learning'}} -->
-
-							
+							<strong class="govuk-tag govuk-tag--red">Paused</strong>
 						</dd>
-                        <dd class="govuk-summary-list__value" style="width: 370px; text-align: right;">
-							
-							<!-- To change the leaner status, contact the training provider.  -->
-							<!-- Contact training provider to change this  -->
-							<!-- <a class="govuk-link" href="break-e">
+						<dd class="govuk-summary-list__actions">
+							<!-- <a class="govuk-link" href="break">
+								Change<span class="govuk-visually-hidden"> total status</span>
+							</a>-->
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row"
+						style="margin: 10px 0 20px 0;  border-left: 5px solid #1d70b8; padding:10px 10px ;">
+						<dt class="govuk-summary-list__key" style="padding-left:20px !important;">
+							Provider payment status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<!-- <a class="govuk-link" href="break">
+								Change<span class="govuk-visually-hidden"> total status</span>
+							</a> -->
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row"
+						style="margin: 10px 0 20px 0;  border-left: 5px solid #1d70b8; padding:10px 10px ;">
+						<dt class="govuk-summary-list__key" style="padding-left:10px !important ;">
+							Reason
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Not happy with the quality of the tarining.
+						</dd>
+
+						<dd class="govuk-summary-list__actions">
+							<!-- <a class="govuk-link" href="break-tp">
 								Change<span class="govuk-visually-hidden"> total training price</span>
 							</a> -->
 						</dd>
 					</div>
 
 
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Provider payments status
+
+
+					<div class="govuk-summary-list__row"
+						style="margin: 10px 0 20px 0;  border-left: 5px solid #1d70b8; padding:10px 10px ;">
+						<dt class="govuk-summary-list__key" style="padding-left:10px !important ;">
+							Change date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							
-								
-								
-								
-								{% if  data['freeze'] %}
-							
-				  
-								{% if  data['freeze'] == "no" %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-
-								{% else %}
-
-								{% endif %}
-
-								
-
-								{% if  data['freeze'] == "yes" %}
-
-								<strong class="govuk-tag govuk-tag--red">Inactive</strong>
-								
-
-								{% else %}
-
-								{% endif %}
-
-								
-								{% else %}
-								<strong class="govuk-tag govuk-tag--blue">Active</strong>
-								{% endif %}
-				
-							
-							
+							14 November 2023
 						</dd>
 
-                        <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="
-                            
-                            
-                            
-                           
-                            		
-							{% if  data['freeze'] %}
-							
-				  
-							{% if  data['freeze'] == "no" %}
-							 break-freeze
-
-							{% else %}
-
-							{% endif %}
-
-							
-
-							{% if  data['freeze'] == "yes" %}
-
-							break-unfreeze
-							
-
-							{% else %}
-
-							{% endif %}
-
-							
-							{% else %}
-							break-freeze
-							{% endif %}
-			
-						
-                            
-                            ">
-								Change<span class="govuk-visually-hidden"> training provider payments</span>
-							</a>
-						</dd>
-					</div>
-
-                    <div class="govuk-summary-list__row" style="display: none;">
-						<dt class="govuk-summary-list__key">
-							Allow training provide to change status
-						</dt>
-						<dd class="govuk-summary-list__value">
-							Yes
-						</dd>
-                        <dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="break-allow-status-change">
+						<!-- <dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="break-tp">
 								Change<span class="govuk-visually-hidden"> total training price</span>
 							</a>
-						</dd>
+						</dd> -->
 					</div>
 					<!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -224,15 +154,10 @@ href: "javascript:window.history.go(-1);"
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Training provider
+							Employer
 						</dt>
 						<dd class="govuk-summary-list__value">
-							EDUC8 TRAINING (ENGLAND) LIMITED
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="change-training-provider">
-								Change<span class="govuk-visually-hidden"> training provider</span>
-							</a>
+							AUTOMATION &amp; OPTIMISATION LTD
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -241,6 +166,14 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 							MNNRLD
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Agreement ID
+						</dt>
+						<dd class="govuk-summary-list__value">
+							7GXEKP
 						</dd>
 					</div>
 				</dl>
@@ -310,16 +243,16 @@ href: "javascript:window.history.go(-1);"
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Training start date
+							Actual training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
 							1 August 2023
 						</dd>
-<dd class="govuk-summary-list__actions">
-	<a class="govuk-link" href="-change-start-date-e">
-		Change<span class="govuk-visually-hidden">training start date</span>
-	</a>
-</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="-change-start-date">
+								Change<span class="govuk-visually-hidden"> actual training start date</span>
+							</a>
+						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -327,19 +260,6 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 							3 July 2024
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Total agreed apprenticeship price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£8,500
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="b-02-update-price">
-								Change<span class="govuk-visually-hidden"> total training price</span>
-							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -350,8 +270,48 @@ href: "javascript:window.history.go(-1);"
 							Nothing provided
 						</dd>
 					</div>
-
 				</dl>
+
+
+				<h2 class="govuk-heading-m">Price</h2>
+				<dl class="govuk-summary-list">
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£6,000
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£2,500
+						</dd>
+						<!-- <dd class="govuk-summary-list__actions">
+															<a class="govuk-link" href="update-price">
+																Change<span class="govuk-visually-hidden"> total assessment price</span>
+															</a>
+														</dd> -->
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,500
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="02-update-price">
+								Change<span class="govuk-visually-hidden"> total training price</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
 				<h2 class="govuk-heading-m">History</h2>
