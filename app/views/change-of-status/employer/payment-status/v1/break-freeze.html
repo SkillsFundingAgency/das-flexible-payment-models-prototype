@@ -24,21 +24,13 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">
       Freezing payments
     </h1>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        You do not need to stop payments after the training has been completed. If you do, this will prevent
-        the completion payment due to your training provider
-      </strong>
-    </div>
     <p class="govuk-body">
       Only use this if you have a dispute with the training provider and need to freeze training provider payments.
     </p>
     <p class="govuk-body">
       The learner status will not be changed. If you need to change learner status, contact the training provider.
     </p>
-    <form action="freeze-confirmed" method="post" novalidate>
+    <form action="/change-of-status/employer/payment-status/v1/break-freeze/action" method="post" novalidate>
       <div class="govuk-form-group govuk-!-margin-top-7">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -84,25 +76,16 @@ href: "javascript:window.history.go(-1);"
               </label>
 
             </div>
-            
+
 
         </fieldset>
-        <br>
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
       </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+        </button>
 
-
-  </div>
-</div>
-
-</div>
-
-</div>
-</form>
-</div>
-
+    </form>
+    </div>
 </div>
 
 {% endblock %}
