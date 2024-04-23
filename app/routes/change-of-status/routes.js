@@ -62,3 +62,23 @@ router.post('/change-of-status/employer/payment-status/v1/break-unfreeze/action'
         res.redirect('../unfreeze-confirmed')
     }
 })
+
+// Version 3
+router.post('/change-of-status/training-provider/v3/edit-learner-status/action', function (req, res) {
+    var stoptp = req.session.data['stoptp']
+
+    if (stoptp == "yes") {
+        res.redirect('../pause-date')
+    }
+    else if 
+    (stoptp == "continuing") {
+        res.redirect('../resume-date')
+    }
+    else if 
+    (stoptp == "redundancy") {
+        res.redirect('../stop-date-redundant')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})

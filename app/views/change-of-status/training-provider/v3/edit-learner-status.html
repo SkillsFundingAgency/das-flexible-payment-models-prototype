@@ -1,0 +1,326 @@
+{% extends "layouts/main.html" %}{% set pageTitle = "Change the status of this apprenticeship" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/change-of-status/training-provider/v3/edit-learner-status/action" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="stoptp" type="radio" value="continuing"
+                data-aria-controls="conditional-contact" {{ checked('stoptp','continuing') }} checked="checked">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                In learning
+              </label>
+
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Continuing or intending to continue the learning activities leading to the learning aim.
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Specify reason for break in learning
+                </label>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-pause" type="radio"
+                          value="Maternity leave">
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                          Maternity leave
+
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-pause" type="radio"
+                          value="Long term illness">
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                          Long term illness
+
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio"
+                          value="Mental health problems">
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Mental health problems
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio"
+                          value="Mental health problems" data-aria-controls="conditional-others">
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Other reason
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Specify other reason.
+                            <!-- Keep it brief. -->
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
+                            type="email" spellcheck="false" autocomplete="email">
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </fieldset>
+                </div>
+
+              </div>
+            </div>
+
+
+
+            <!-- 2 break in learning  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="stoptp" type="radio" value="yes"
+                data-aria-controls="conditional-contact" {{ checked('stoptp','yes') }}>
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Break in learning
+              </label>
+
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Temporarily withdrawn from the aim due to an agreed break in learning
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+
+
+
+                <label class="govuk-label" for="contact-by-email">
+                  Select reason for break in learning (Optional)
+                </label>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-pause" type="radio"
+                          value="Maternity leave" {{ checked('reason-for-pause','Maternity leave') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                          Maternity/paternity leave
+
+                        </label>
+                      </div>
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-2" name="reason-for-pause" type="radio"
+                          value="Injury/illness" {{ checked('reason-for-pause','Injury/illness') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                          Injury/illness
+
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio"
+                          value="Mental health problems" {{ checked('reason-for-pause','Mental health problems') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Mental health problems
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-pause" type="radio"
+                          value="Others" data-aria-controls="conditional-others-pause" {{
+                          checked('reason-for-pause','Others') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Other reason
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-others-pause">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Specify other reason.
+                            <!-- Keep it brief. -->
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
+                            type="email" spellcheck="false" autocomplete="email">
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </fieldset>
+                </div>
+
+
+
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="stoptp" type="radio" value="no"
+                data-aria-controls="conditional-contact-2" {{ checked('stoptp','no') }}>
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                Withdrawn
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Withdrawn from the learning activities leading to the learning aim
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You do not need to withdraw an apprenticeship after the training has been completed. If you do, this
+                    will prevent the completion payment due to you.
+                  </strong>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">
+                      Why do you want to withdraw this apprenticeship?
+                    </legend>
+                    <div id="with-hint-hint" class="govuk-hint">
+                      Employer will be notified about the change via email
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-stop-tp" type="radio"
+                          value="Apprentice left" {{ checked('reason-for-stop-tp','Apprentice left') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                          Apprentice left employment
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="Apprentice withdraw" {{ checked('reason-for-stop-tp','Apprentice withdraw') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Apprentice has withdrawn from training
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="apprenticeship-never-started" {{ checked('reason-for-stop-tp','Apprenticeship never
+                          started') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Apprenticeship never started
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="Others" data-aria-controls="conditional-others-stop-tp" {{
+                          checked('reason-for-stop-tp','Others') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Other reason
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-others-stop-tp">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Specify other reason.
+                            <!-- Keep it brief. -->
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
+                            type="email" spellcheck="false" autocomplete="email">
+                        </div>
+                      </div>
+
+
+                    </div>
+
+
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Redundant  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="stoptp" type="radio" value="redundancy" {{
+                checked('stoptp','redundancy') }} aria-describedby="redunant-hint">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Made redundant
+              </label>
+
+              <div id="redunant-hint" class="govuk-hint govuk-radios__hint">
+                The apprenticeship agreement has been terminated by reason of redundancy
+
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
+      </div>
+
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</form>
+</div>
+
+</div>
+
+{% endblock %}

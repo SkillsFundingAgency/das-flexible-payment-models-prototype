@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-grid-row">
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="-break-pause-confirm-tp" method="post" novalidate>
+
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              When is the break in learning effective from?
+            </h1>
+          </legend>
+          <div id="passport-issued-hint" class="govuk-hint">
+
+
+            A break in learning (BIL) must be agreed with the learner. There must also be supporting evidence of their
+            intention to return otherwise the learner should be recorded as a withdrawal.
+            <br> <br>
+            You will need to provide the last date of learning before the break.
+
+            For example, 27 3 2023
+
+            <!-- The date that you enter here should be last date of active learning.
+                    For example, 27 3 2023 -->
+
+
+          </div>
+
+          <p><a
+              href="https://guidance.submit-learner-data.service.gov.uk/22-23/ilr/entity/LearningDelivery/field/LearnActEndDate"
+              target="_blank"> Refer to the ILR specification for guidance</a> about the learning actual end date</p>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                  name="pause-day" value="{{ data['pause-day']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month"
+                  name="pause-month" value="{{ data['pause-month']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year"
+                  name="pause-year" value="{{ data['pause-year']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+
+
+
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

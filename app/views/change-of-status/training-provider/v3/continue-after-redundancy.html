@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Redundancy support for apprentices" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            {{pageTitle}}
+        </h1>
+        <p class="govuk-body">
+            We have calculated the apprentice had completed at least 75% of their training by the date their employement
+            ended. </p>
+        <p class="govuk-body">This
+            means we will fund 100% of the remaining costs of this apprenticeship up to the funding band maximum.
+        </p>
+        <p class="govuk-body">
+            With this funding
+            you can continue to deliver training so the apprentice can complete their apprenticeship, including taking
+            the end-point
+            assessment (EPA), without being employed
+        </p>
+        <p class="govuk-body">
+            <a href="https://www.gov.uk/guidance/redundancy-support-for-apprentices" class="govuk-link"
+                target="_blank">Read about
+                redundancy support for apprentices (opens in new tab)</a>
+        </p>
+        <form action="confirm-redundant" method="post" novalidate class="govuk-!-margin-top-7">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Will the apprentice continue training to complete their apprenticeship?
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="government-funded" name="government-funded"
+                                type="radio" value="Yes (government)">
+                            <label class="govuk-label govuk-radios__label" for="government-funded">
+                                Yes, accept funding
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="government-funded-2" name="government-funded"
+                                type="radio" value="No">
+                            <label class="govuk-label govuk-radios__label" for="government-funded-2">
+                                No, the apprenticeship will stop and be marked 'Withdrawn'
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
