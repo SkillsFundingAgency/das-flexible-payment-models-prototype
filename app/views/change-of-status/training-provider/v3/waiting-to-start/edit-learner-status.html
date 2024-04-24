@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}{% set pageTitle = "Change the status of this apprenticeship" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/change-of-status/training-provider/v3/waiting-to-start/edit-learner-status/action" method="post"
+      novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="stoptp" type="radio" value="continuing"
+                data-aria-controls="conditional-contact" {{ checked('stoptp','continuing') }} checked="checked">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Waiting to start
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Intending to start the learning activities leading to the learning aim
+              </div>
+            </div>
+
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="stoptp" type="radio" value="no" {{
+                checked('stoptp','no') }}>
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                Withdrawn
+              </label>
+              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                Withdrawn from the learning activities leading to the learning aim
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
+      </div>
+
+
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+</form>
+</div>
+
+</div>
+
+{% endblock %}

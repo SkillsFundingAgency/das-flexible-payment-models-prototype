@@ -82,3 +82,14 @@ router.post('/change-of-status/training-provider/v3/edit-learner-status/action',
         res.redirect('../stop-date')
     }
 })
+
+router.post('/change-of-status/training-provider/v3/waiting-to-start/edit-learner-status/action', function (req, res) {
+    var stoptp = req.session.data['stoptp']
+if 
+    (stoptp == "continuing") {
+        res.redirect('../resume-date-planned-start-date')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})
