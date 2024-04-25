@@ -1,0 +1,21 @@
+{# Break in learning #}
+{% if data['learner-status'] == "break" %}
+<strong class="govuk-tag govuk-tag--red">Break in learning</strong>
+{# Redundant #}
+{% elseif data['learner-status'] == "redundant" %}
+    {% if data['government-funded'] == 'No' %}
+        <strong class="govuk-tag govuk-tag--red"> Withdrawn</strong> (made redundant)
+    {%else%}
+        <strong class="govuk-tag govuk-tag--blue">In learning</strong> (made
+redundant)
+{% endif %}
+{# Withdrawn #}
+{% elseif data['learner-status'] == "withdrawn" %}
+<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+{# Waiting to start #}
+{% elseif data['learner-status'] == "waiting-to-start" %}
+<strong class="govuk-tag govuk-tag--green">Waiting to start</strong>
+{# In learning #}
+{% else %}
+<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+{% endif %}

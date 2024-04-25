@@ -93,3 +93,37 @@ if
         res.redirect('../stop-date')
     }
 })
+
+
+
+// Version 4
+router.post('/change-of-status/training-provider/v4/edit-learner-status/action', function (req, res) {
+    var learnerstatus = req.session.data['learner-status']
+
+    if (learnerstatus == "break") {
+        res.redirect('../pause-date')
+    }
+    else if (learnerstatus == "in-learning") {
+        res.redirect('../resume-date')
+    }
+    else if (learnerstatus == "redundant") {
+        res.redirect('../stop-date-redundant')
+    }
+    else if (learnerstatus == "withdrawn") {
+        res.redirect('../stop-date')
+    }
+    else {
+        res.redirect('../edit-learner-status')
+    }
+})
+
+router.post('/change-of-status/training-provider/v4/waiting-to-start/edit-learner-status/action', function (req, res) {
+    var stoptp = req.session.data['stoptp']
+if 
+    (stoptp == "continuing") {
+        res.redirect('../resume-date-planned-start-date')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})

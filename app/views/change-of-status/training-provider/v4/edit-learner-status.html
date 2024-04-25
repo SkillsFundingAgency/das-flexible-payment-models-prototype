@@ -1,0 +1,169 @@
+{% extends "layouts/main.html" %}{% set pageTitle = "Change the status of this apprenticeship" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/change-of-status/training-provider/v4/edit-learner-status/action" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="status-update-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="in-learning" name="learner-status" type="radio" value="in-learning"
+                {{ checked('learner-status','in-learning') }} checked="checked" aria-describedby="in-learning-hint">
+              <label class="govuk-label govuk-radios__label" for="in-learning">
+                In learning
+              </label>
+
+              <div id="in-learning-hint" class="govuk-hint govuk-radios__hint">
+                Continuing or intending to continue the learning activities leading to the learning aim.
+              </div>
+            </div>
+
+
+            <!-- Break in learning  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="learner-status" type="radio" value="break" {{
+                checked('learner-status','break') }} aria-describedby="break-hint">
+              <label class="govuk-label govuk-radios__label" for="break">
+                Break in learning
+              </label>
+
+              <div id="break-hint" class="govuk-hint govuk-radios__hint">
+                Temporarily withdrawn from the aim due to an agreed break in learning
+              </div>
+            </div>
+
+            <!-- Withdrawal -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withdrawal" name="learner-status" type="radio" value="withdrawn"
+                data-aria-controls="conditional-contact-2" {{ checked('learner-status','withdrawn') }}
+                aria-describedby="withdrawal-hint">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                Withdrawn
+              </label>
+              <div id="withdrawal-hint" class="govuk-hint govuk-radios__hint">
+                Withdrawn from the learning activities leading to the learning aim
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You do not need to withdraw an apprenticeship after the training has been completed. If you do, this
+                    will prevent the completion payment due to you.
+                  </strong>
+                </div>
+
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend">
+                      Why do you want to withdraw this apprenticeship?
+                    </legend>
+                    <div id="with-hint-hint" class="govuk-hint">
+                      Employer will be notified about the change via email
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive" name="reason-for-stop-tp" type="radio"
+                          value="Apprentice left" {{ checked('reason-for-stop-tp','Apprentice left') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                          Apprentice left employment
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="Apprentice withdraw" {{ checked('reason-for-stop-tp','Apprentice withdraw') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Apprentice has withdrawn from training
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="apprenticeship-never-started" {{ checked('reason-for-stop-tp','Apprenticeship never
+                          started') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Apprenticeship never started
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="whereDoYouLive-4" name="reason-for-stop-tp" type="radio"
+                          value="Others" data-aria-controls="conditional-others-stop-tp" {{
+                          checked('reason-for-stop-tp','Others') }}>
+                        <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                          Other reason
+                        </label>
+                      </div>
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                        id="conditional-others-stop-tp">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="contact-by-email">
+                            Specify other reason.
+                            <!-- Keep it brief. -->
+                          </label>
+                          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
+                            type="email" spellcheck="false" autocomplete="email">
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Redundant  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="redundant" name="learner-status" type="radio" value="redundant" {{
+                checked('learner-status','redundant') }} aria-describedby="redundant-hint">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Made redundant
+              </label>
+              <div id="redundant-hint" class="govuk-hint govuk-radios__hint">
+                The apprenticeship agreement has been terminated by reason of redundancy
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

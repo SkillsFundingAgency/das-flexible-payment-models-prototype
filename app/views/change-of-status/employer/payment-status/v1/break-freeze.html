@@ -30,6 +30,17 @@ href: "javascript:window.history.go(-1);"
     <p class="govuk-body">
       The learner status will not be changed. If you need to change learner status, contact the training provider.
     </p>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What does freezing payments do?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    Freezing your payments suspends all transactions to the payment provider. If payments are frozen on the scheduled
+    payment day, no funds will be transferred to the provider for that specific period.
+  </div>
+</details>
     <form action="/change-of-status/employer/payment-status/v1/break-freeze/action" method="post" novalidate>
       <div class="govuk-form-group govuk-!-margin-top-7">
         <fieldset class="govuk-fieldset">
@@ -50,7 +61,7 @@ href: "javascript:window.history.go(-1);"
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-freeze">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="contact-by-email">
-                  Specify reason to freeze training provider payments. (Optional)
+                  Specify reason for freezing training provider payments (optional)
                 </label>
                 <div id="with-hint-hint" class="govuk-hint">
                   Training provider will be notified about the change
