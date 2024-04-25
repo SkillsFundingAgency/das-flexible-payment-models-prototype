@@ -119,12 +119,11 @@ router.post('/change-of-status/training-provider/v4/edit-learner-status/action',
 
 router.post('/change-of-status/training-provider/v4/waiting-to-start/edit-learner-status/action', function (req, res) {
     var learnerstatus = req.session.data['learner-status']
-if 
-    (stoptp == "in-learning") {
+    if (learnerstatus == "waiting-to-start") {
         res.redirect('../resume-date-planned-start-date')
     }
     else {
-        res.redirect('../stop-date')
+        res.redirect('../../reason--withdrawal')
     }
 })
     
