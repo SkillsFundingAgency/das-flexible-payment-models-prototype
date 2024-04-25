@@ -54,9 +54,25 @@ href: "javascript:window.history.go(-1);"
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Reason for withdrawal</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['reason-for-withdrawal'] == 'Other' %}
+                        Other - {{data['other-reason']}}
+                        {% else %}
+                        {{data['reason-for-withdrawal']}}
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="reason--withdrawal">
+                            Change<span class="govuk-visually-hidden"> reason for reason for withdrawal</span>
+                        </a>
+                    </dd>
+                    </div>
+                    {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
+                    <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Date change takes effect</dt>
                     <dd class="govuk-summary-list__value">
-
+                
                         {% if data['withdrawal-month'] == "1" or
                         data['withdrawal-month']
                         == "01" %}
@@ -94,30 +110,16 @@ href: "javascript:window.history.go(-1);"
                         {% else %}
                         10 January 2024
                         {% endif %}
-
+                
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
                             Change<span class="govuk-visually-hidden"> changes take effect</span>
                         </a>
                     </dd>
-
+                
                 </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Reason for withdrawal</dt>
-                    <dd class="govuk-summary-list__value">
-                        {% if data['reason-for-withdrawal'] == 'Other' %}
-                        Other - {{data['other-reason']}}
-                        {% else %}
-                        {{data['reason-for-withdrawal'] or 'Prefer not to say'}}
-                        {% endif %}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link govuk-link--no-visited-state" href="reason--withdrawal">
-                            Change<span class="govuk-visually-hidden"> reason for reason for withdrawal</span>
-                        </a>
-                    </dd>
-                </div>
+                {% endif %}
             </dl>
 
             <div class="govuk-button-group">
