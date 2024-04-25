@@ -110,7 +110,7 @@ router.post('/change-of-status/training-provider/v4/edit-learner-status/action',
         res.redirect('../stop-date-redundant')
     }
     else if (learnerstatus == "withdrawn") {
-        res.redirect('../stop-date')
+        res.redirect('../reason--withdrawal')
     }
     else {
         res.redirect('../edit-learner-status')
@@ -118,12 +118,24 @@ router.post('/change-of-status/training-provider/v4/edit-learner-status/action',
 })
 
 router.post('/change-of-status/training-provider/v4/waiting-to-start/edit-learner-status/action', function (req, res) {
-    var stoptp = req.session.data['stoptp']
+    var learnerstatus = req.session.data['learner-status']
 if 
-    (stoptp == "continuing") {
+    (stoptp == "in-learning") {
         res.redirect('../resume-date-planned-start-date')
     }
     else {
         res.redirect('../stop-date')
     }
 })
+    
+router.post('/change-of-status/training-provider/v4/reason--withdrawal/action', function (req, res) {
+    var reasonforwithdrawal = req.session.data['reason-for-withdrawal']
+if 
+    (reasonforwithdrawal == "Apprenticeship never started") {
+        res.redirect('../confirm--withdrawal')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})
+

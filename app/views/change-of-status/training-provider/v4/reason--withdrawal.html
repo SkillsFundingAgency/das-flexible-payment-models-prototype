@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "Select reason for break in learning (optional)" %}
+{% set pageTitle = "Why do you want to withdraw this apprenticeship?" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -23,7 +23,7 @@ href: "javascript:window.history.go(-1);"
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="confirm--break-in-learning" method="post" novalidate>
+    <form action="/change-of-status/training-provider/v4/reason--withdrawal/action" method="post" novalidate>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -34,42 +34,41 @@ href: "javascript:window.history.go(-1);"
           <div id="reason-hint" class="govuk-hint">
             Select one option
           </div>
-
-
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reason-for-pause" name="reason-for-pause" type="radio"
-                value="Maternity leave" {{ checked('reason-for-pause','Maternity leave') }}>
-              <label class="govuk-label govuk-radios__label" for="reason-for-pause">
-                Maternity/paternity leave
-
+              <input class="govuk-radios__input" id="reason-for-withdrawal" name="reason-for-withdrawal" type="radio"
+                value="Apprentice left employment" {{ checked('reason-for-withdrawal','Apprentice left employment') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal">
+                Apprentice left employment
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reason-for-pause-2" name="reason-for-pause" type="radio"
-                value="Injury/illness" {{ checked('reason-for-pause','Injury/illness') }}>
-              <label class="govuk-label govuk-radios__label" for="reason-for-pause-2">
-                Injury/illness
-
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reason-for-pause-3" name="reason-for-pause" type="radio"
-                value="Mental health problems" {{ checked('reason-for-pause','Mental health problems') }}>
-              <label class="govuk-label govuk-radios__label" for="reason-for-pause-4">
-                Mental health problems
+              <input class="govuk-radios__input" id="reason-for-withdrawal-2" name="reason-for-withdrawal" type="radio"
+                value="Apprentice has withdrawn from training" {{ checked('reason-for-withdrawal','Apprentice has
+                withdrawn from training') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-2">
+                Apprentice has withdrawn from training
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="reason-for-pause-4" name="reason-for-pause" type="radio"
-                value="Other" data-aria-controls="conditional-others-pause" {{ checked('reason-for-pause','Other') }}>
-              <label class="govuk-label govuk-radios__label" for="reason-for-pause-4">
+              <input class="govuk-radios__input" id="reason-for-withdrawal-3" name="reason-for-withdrawal" type="radio"
+                value="Apprenticeship never started" {{ checked('reason-for-withdrawal','Apprenticeship never started')
+                }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-4">
+                Apprenticeship never started
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-withdrawal-4" name="reason-for-withdrawal" type="radio"
+                value="Other" data-aria-controls="conditional-others-withdrawal" {{
+                checked('reason-for-withdrawal','Other') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-4">
                 Other reason
               </label>
             </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-pause">
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-withdrawal">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="other-reason">
                   Specify other reason
@@ -78,17 +77,6 @@ href: "javascript:window.history.go(-1);"
               </div>
             </div>
           </div>
-
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="reason-for-pause-5" name="reason-for-pause" type="radio"
-              value="Prefer not to say">
-            <label class="govuk-label govuk-radios__label" for="reason-for-pause-5">
-              Prefer not to say
-            </label>
-          </div>
-
-
         </fieldset>
       </div>
       <div class="govuk-button-group">

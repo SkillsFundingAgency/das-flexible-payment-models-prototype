@@ -50,14 +50,14 @@ href: "javascript:window.history.go(-1);"
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="government-funded" name="government-funded"
-                                type="radio" value="Yes (government)">
+                                type="radio" value="Yes (government)" {{ checked('government-funded','Yes (government)') }}>
                             <label class="govuk-label govuk-radios__label" for="government-funded">
                                 Yes, accept funding
                             </label>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="government-funded-2" name="government-funded"
-                                type="radio" value="No">
+                                type="radio" value="No" {{ checked('government-funded','No') }}>
                             <label class="govuk-label govuk-radios__label" for="government-funded-2">
                                 No, the apprenticeship will stop and be marked 'Withdrawn'
                             </label>
