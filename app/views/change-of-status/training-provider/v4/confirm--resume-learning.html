@@ -40,11 +40,6 @@ href: "javascript:window.history.go(-1);"
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key"> Return to learning date </dt>
                     <dd class="govuk-summary-list__value">
-
-
-
-                        <!-- {{ data['resume-day'] or '24'}} -->
-
                         {% if data['resume-month'] == "1" or
                         data['resume-month']
                         == "01" %}
@@ -81,12 +76,10 @@ href: "javascript:window.history.go(-1);"
                         {{ data['resume-day'] }} December {{ data['resume-year'] }}
                         {% else %}
                         10 March 2024
+                        <input type="hidden" name="resume-day" value="10">
+                        <input type="hidden" name="resume-month" value="3">
+                        <input type="hidden" name="resume-year" value="2024">
                         {% endif %}
-
-                        <!-- {{ data['resume-year'] or '2023'}} -->
-
-
-                        <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="resume-date">
                             Change<span class="govuk-visually-hidden"> resume date</span>

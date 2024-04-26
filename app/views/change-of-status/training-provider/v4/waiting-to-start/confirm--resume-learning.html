@@ -38,57 +38,47 @@ href: "javascript:window.history.go(-1);"
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key"> Return to learning date </dt>
+                    <dt class="govuk-summary-list__key">Training start date</dt>
                     <dd class="govuk-summary-list__value">
-
-
-
-                        <!-- {{ data['resume-day'] or '24'}} -->
-
-                        {% if data['resume-month'] == "1" or
-                        data['resume-month']
+                        {% if data['start-date-month'] == "1" or
+                        data['start-date-month']
                         == "01" %}
-                        {{ data['resume-day'] }} January {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "2" or
-                        data['resume-month'] == "02" %}
-                        {{ data['resume-day'] }} February {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "3" or
-                        data['resume-month'] == "03" %}
-                        {{ data['resume-day'] }} March {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "4" or
-                        data['resume-month'] == "04" %}
-                        {{ data['resume-day'] }} April {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "5" or
-                        data['resume-month'] == "05" %}
-                        {{ data['resume-day'] }} May {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "6" or
-                        data['resume-month'] == "06" %}
-                        {{ data['resume-day'] }} June {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "7" or
-                        data['resume-month'] == "07" %}
-                        {{ data['resume-day'] }} July {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "8" or
-                        data['resume-month'] == "08" %}
-                        {{ data['resume-day'] }} August {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "9" or
-                        data['resume-month'] == "09" %}
-                        {{ data['resume-day'] }} September {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "10" %}
-                        {{ data['resume-day'] }} October {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "11" %}
-                        {{ data['resume-day'] }} November {{ data['resume-year'] }}
-                        {% elseif data['resume-month'] == "12" %}
-                        {{ data['resume-day'] }} December {{ data['resume-year'] }}
+                        {{ data['start-date-day'] }} January {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "2" or
+                        data['start-date-month'] == "02" %}
+                        {{ data['start-date-day'] }} February {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "3" or
+                        data['start-date-month'] == "03" %}
+                        {{ data['start-date-day'] }} March {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "4" or
+                        data['start-date-month'] == "04" %}
+                        {{ data['start-date-day'] }} April {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "5" or
+                        data['start-date-month'] == "05" %}
+                        {{ data['start-date-day'] }} May {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "6" or
+                        data['start-date-month'] == "06" %}
+                        {{ data['start-date-day'] }} June {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "7" or
+                        data['start-date-month'] == "07" %}
+                        {{ data['start-date-day'] }} July {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "8" or
+                        data['start-date-month'] == "08" %}
+                        {{ data['start-date-day'] }} August {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "9" or
+                        data['start-date-month'] == "09" %}
+                        {{ data['start-date-day'] }} September {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "10" %}
+                        {{ data['start-date-day'] }} October {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "11" %}
+                        {{ data['start-date-day'] }} November {{ data['start-date-year'] }}
+                        {% elseif data['start-date-month'] == "12" %}
+                        {{ data['start-date-day'] }} December {{ data['start-date-year'] }}
                         {% else %}
                         1 August 2023
                         {% endif %}
-
-                        <!-- {{ data['resume-year'] or '2023'}} -->
-
-
-                        <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="resume-date">
+                        <a class="govuk-link" href="resume-date-planned-start-date">
                             Change<span class="govuk-visually-hidden"> resume date</span>
                         </a>
                     </dd>
@@ -100,50 +90,50 @@ href: "javascript:window.history.go(-1);"
 
 
 
-                        <!-- {{ data['resume-day'] or '24'}} -->
+                        <!-- {{ data['start-date-day'] or '24'}} -->
 
-                        {% if data['planned-end-month-tp'] == "1" or
-                        data['planned-end-month-tp']
+                        {% if data['end-date-month'] == "1" or
+                        data['end-date-month']
                         == "01" %}
-                        {{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "2" or
-                        data['planned-end-month-tp'] == "02" %}
-                        {{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "3" or
-                        data['planned-end-month-tp'] == "03" %}
-                        {{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "4" or
-                        data['planned-end-month-tp'] == "04" %}
-                        {{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "5" or
-                        data['planned-end-month-tp'] == "05" %}
-                        {{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "6" or
-                        data['planned-end-month-tp'] == "06" %}
-                        {{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "7" or
-                        data['planned-end-month-tp'] == "07" %}
-                        {{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "8" or
-                        data['planned-end-month-tp'] == "08" %}
-                        {{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "9" or
-                        data['planned-end-month-tp'] == "09" %}
-                        {{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
-                        {% elseif data['rplanned-end-month-tp'] == "10" %}
-                        {{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "11" %}
-                        {{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
-                        {% elseif data['planned-end-month-tp'] == "12" %}
-                        {{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+                        {{ data['end-date-day'] }} January {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "2" or
+                        data['end-date-month'] == "02" %}
+                        {{ data['end-date-day'] }} February {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "3" or
+                        data['end-date-month'] == "03" %}
+                        {{ data['end-date-day'] }} March {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "4" or
+                        data['end-date-month'] == "04" %}
+                        {{ data['end-date-day'] }} April {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "5" or
+                        data['end-date-month'] == "05" %}
+                        {{ data['end-date-day'] }} May {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "6" or
+                        data['end-date-month'] == "06" %}
+                        {{ data['end-date-day'] }} June {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "7" or
+                        data['end-date-month'] == "07" %}
+                        {{ data['end-date-day'] }} July {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "8" or
+                        data['end-date-month'] == "08" %}
+                        {{ data['end-date-day'] }} August {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "9" or
+                        data['end-date-month'] == "09" %}
+                        {{ data['end-date-day'] }} September {{ data['end-date-year'] }}
+                        {% elseif data['rend-date-month'] == "10" %}
+                        {{ data['end-date-day'] }} October {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "11" %}
+                        {{ data['end-date-day'] }} November {{ data['end-date-year'] }}
+                        {% elseif data['end-date-month'] == "12" %}
+                        {{ data['end-date-day'] }} December {{ data['end-date-year'] }}
                         {% else %}
                         10 March 2025
                         {% endif %}
 
-                        <!-- {{ data['resume-year'] or '2023'}} -->
+                        <!-- {{ data['start-date-year'] or '2023'}} -->
 
 
-                        <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
+                        <!-- {{ data['start-date-day'] }} {{ data['start-date-month'] }} {{ data['start-date-year'] }} </dd> -->
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="resume-date-planned-end-date">
                             Change<span class="govuk-visually-hidden"> planned training end date</span>

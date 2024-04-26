@@ -25,11 +25,19 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">
       {{pageTitle}}
     </h1>
+    {% if data['reason-for-withdrawal'] == 'Apprentice left employment' %}
+    <div class="govuk-inset-text">
+      If the apprentice you are training has been made redundant you need to <a class="govuk-link"
+        href="edit-learner-status"> change the learner status</a> to mark them as redundant.
+    </div>
+    {% endif %}
     <p class="govuk-body">
       The earliest date you can enter is this apprenticeship's start date of 1 August 2023.</p>
     <p class="govuk-body">Any outstanding payments will be
       made for activity up to this date.
     </p>
+    
+
     <form action="confirm--withdrawal" method="post" novalidate class="govuk-!-margin-top-7">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="withdrawal-date-hint">
