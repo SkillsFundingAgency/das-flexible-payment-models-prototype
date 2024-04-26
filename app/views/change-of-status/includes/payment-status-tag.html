@@ -1,8 +1,7 @@
 {# Employer freeze notifications #}
 {% if employerFreeze == true %}
 <strong class="govuk-tag govuk-tag--red">Inactive</strong>
-{% set employerFreezelink = true %}
-{% set employerFreeze = null %}
+
 {% else %}
 {# Break in learning #}
 {% if data['learner-status'] == "break" %}

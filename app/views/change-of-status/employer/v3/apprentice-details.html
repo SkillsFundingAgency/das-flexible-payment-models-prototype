@@ -22,7 +22,11 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
+		{% if data['employer-freeze'] == "true" %}
+		{% set employerFreeze = true %}
+		{% endif %}
 		{% include "change-of-status/employer/v3/includes/employer-apprentice-details-list" %}
+		<input type="hidden" name="employer-freeze" value="false">
 	</div>
 </div>
 

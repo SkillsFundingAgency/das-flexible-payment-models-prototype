@@ -143,7 +143,7 @@ router.post('/change-of-status/employer/v3/break-freeze/action', function (req, 
     var freeze = req.session.data['freeze']
 
     if (freeze == "no") {
-        res.redirect('../')
+        res.redirect('../apprentice-details?employer-freeze=false')
     }
     else {
         res.redirect('../freeze-confirmed')
@@ -153,7 +153,7 @@ router.post('/change-of-status/employer/v3/break-unfreeze/action', function (req
     var unfreeze = req.session.data['unfreeze']
 
     if (unfreeze == "no") {
-        res.redirect('../')
+        res.redirect('../apprentice-details?employer-freeze=true')
     }
     else {
         res.redirect('../unfreeze-confirmed')

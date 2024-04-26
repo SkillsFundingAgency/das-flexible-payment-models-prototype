@@ -34,42 +34,41 @@
                     {% include "change-of-status/includes/payment-status-tag" %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    {# Employer freeze notifications #}
-                    NEED TO WORK ON
-                    {# {{ employerFreezelink }}
-                    {% if employerFreezelink == true %}
-                    <a class="govuk-link govuk-link--no-visited-state" href="break-freeze">
-                        Changef<span class="govuk-visually-hidden"> payment
-                            status</span>
-                    </a>
-                    {% set employerFreeze = null %}
-                    {% else %} #}
+            
                     {# Break in learning #}
-                    {# {% if data['learner-status'] == "break" %}
-                    <strong class="govuk-tag govuk-tag--red">Inactive</strong> #}
+                    {% if data['learner-status'] == "break" %}
+                    <strong class="govuk-tag govuk-tag--red">Inactive</strong>
 
                     {# Redundant #}
-                    {# {% elseif data['learner-status'] == "redundant" %}
+                    {% elseif data['learner-status'] == "redundant" %}
                     {% if data['government-funded'] == 'No' %}
                     <strong class="govuk-tag govuk-tag--red"> Inactive</strong>
                     {%else%}
                     <strong class="govuk-tag govuk-tag--blue">Active</strong>
                     (funded by government until 3 July 2024)
-                    {% endif %} #}
+                    {% endif %}
 
                     {# Withdrawn #}
-                    {# {% elseif data['learner-status'] == "withdrawn" %}
-                    <strong class="govuk-tag govuk-tag--red">Inactive</strong> #}
+                    {% elseif data['learner-status'] == "withdrawn" %}
+                    <strong class="govuk-tag govuk-tag--red">Inactive</strong>
 
                     {# Waiting to start #}
-                    {# {% elseif data['learner-status'] == "waiting-to-start" %}
-                    <strong class="govuk-tag govuk-tag--red">Inactive</strong> #}
+                    {% elseif data['learner-status'] == "waiting-to-start" %}
 
                     {# In learning #}
-                    {# {% else %}
-                    <strong class="govuk-tag govuk-tag--blue">Active</strong>
+                    {% else %}
+                    {% if employerFreeze == true %}
+                    <a class="govuk-link govuk-link--no-visited-state" href="break-unfreeze">
+                        Change<span class="govuk-visually-hidden"> payment
+                            status</span>
+                    </a>
+                    {% else %}
+                    <a class="govuk-link govuk-link--no-visited-state" href="break-freeze">
+                        Change<span class="govuk-visually-hidden"> payment
+                            status</span>
+                    </a>
                     {% endif %}
-                    {% endif %} #}
+                    {% endif %}
                 </dd>
             </div>
 
