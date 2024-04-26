@@ -16,11 +16,12 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
+{# Redundancy #}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Change of status </h1>
 
-        <h2 class="govuk-heading-l">Record redundancy </h2>
+        <h2 class="govuk-heading-l">Record a redundancy </h2>
         <p class="govuk-body">Training providers can record apprentices as being made redundant by changing the learner
             status. Employers cannot set an apprentice as redundant.
         </p>
@@ -70,82 +71,84 @@ href: "javascript:window.history.go(-1);"
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+{# Break in learning #}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Record a "Break in learning"</h2>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+            In design
+        </strong>
+        <h3 class="govuk-heading-s"><a href="training-provider/v4/apprentice-details?learner-status=in-learning"
+                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider records a
+                Break in learning</a></h3>
+        <p class="govuk-body">Providers can change the learner status to record a break in learning.</p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Previous research
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="/payments/01-apprentice-details">Version 7</a> -
+                        Research round 14.1 (Feb 24)
+                    </li>
+
+                </ul>
+            </div>
+        </details>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+            In design
+        </strong>
+        <h3 class="govuk-heading-s"><a href="employer/v3/notification--resume-learning"
+                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Notify employer of learner
+                status
+                change</a>
+        </h3>
+        <p class="govuk-body">Notification the employer receives about the status change.
+        </p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Previous research
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="/payments/e-status-pause-apprentice-details">Version 7</a> -
+                        Research round 14.1 (Feb 24)
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+{# Withdrawal #}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-l">Record a "Withdrawal"</h2>
-        </div>
-        </div>
-        <div class="govuk-grid-row govuk-!-margin-top-4">
-            <div class="govuk-grid-column-one-half">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
-                    In design
-                </strong>
-                <h3 class="govuk-heading-s"><a href="training-provider/v4/apprentice-details"
-                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider records a
-                        Withdrawl</a></h3>
-                <p class="govuk-body">Providers can change the learner status to record a withdrawal.</p>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                            Previous research
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                        <ul class="govuk-list">
-                            <li>
-                                <a class="govuk-link" href="/payments/01-apprentice-details">Version 7</a> -
-                                Research round 14.1 (Feb 24)
-                            </li>
-        
-                        </ul>
-                    </div>
-                </details>
-            </div>
-            <div class="govuk-grid-column-one-half">
-                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
-                    In design
-                </strong>
-                <h3 class="govuk-heading-s"><a href="employer/v3/notification--resume-learning"
-                        class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Notify employer of learner
-                        status
-                        change</a>
-                </h3>
-                <p class="govuk-body">Notification the employer receives about the status change.
-                </p>
-                <details class="govuk-details">
-                    <summary class="govuk-details__summary">
-                        <span class="govuk-details__summary-text">
-                            Previous research
-                        </span>
-                    </summary>
-                    <div class="govuk-details__text">
-                        <ul class="govuk-list">
-                            <li>
-                                <a class="govuk-link" href="/payments/e-status-pause-apprentice-details">Version 7</a> -
-                                Research round 14.1 (Feb 24)
-                            </li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-        </div>
-        
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-        
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-heading-l">Apprentice "In Learning" status</h2>
-            </div>
-        </div>
-        <div class="govuk-grid-row govuk-!-margin-top-4">
-            <div class="govuk-grid-column-one-half">
-        <strong class="govuk-tag govuk-tag--pink govuk-!-margin-bottom-4">
-            For content review
-        </strong>
-        <h3 class="govuk-heading-s"><a href="training-provider/v3/apprentice-details"
-                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider changes the
-                status</a></h3>
-        <p class="govuk-body">Providers can change the status from In Learning.</p>
+    </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-one-half">
+            <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+                In design
+            </strong>
+        <h3 class="govuk-heading-s"><a href="training-provider/v4/apprentice-details?learner-status=in-learning"
+                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider records a
+                Withdrawl</a></h3>
+        <p class="govuk-body">Providers can change the learner status to record a withdrawal.</p>
         <details class="govuk-details">
             <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
@@ -160,10 +163,73 @@ href: "javascript:window.history.go(-1);"
                     </li>
         
                 </ul>
+                </div>
+                </details>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                    <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+                        In design
+                    </strong>
+                    <h3 class="govuk-heading-s"><a href="employer/v3/notification--resume-learning"
+                            class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Notify employer of learner
+                            status
+                            change</a>
+                    </h3>
+                    <p class="govuk-body">Notification the employer receives about the status change.
+                    </p>
+                    <details class="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Previous research
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <ul class="govuk-list">
+                                <li>
+                                    <a class="govuk-link" href="/payments/e-status-pause-apprentice-details">Version 7</a> -
+                                    Research round 14.1 (Feb 24)
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+        </div>
+        
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+{# In learning #}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">Apprentice "In Learning" status - resume learning</h2>
+        </div>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-top-4">
+            <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--pink govuk-!-margin-bottom-4">
+            For content review
+        </strong>
+        <h3 class="govuk-heading-s"><a href="training-provider/v4/apprentice-details?learner-status=break"
+                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Provider changes the
+                status to "In Learning"</a></h3>
+                <p class="govuk-body">Providers can change the status to In Learning.</p>
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Previous research
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                    <li>
+                        <a class="govuk-link" href="/payments/01-apprentice-details">Version 7</a> -
+                        Research round 14.1 (Feb 24)
+                    </li>
+
+                </ul>
             </div>
         </details>
-        </div>
-        <div class="govuk-grid-column-one-half">
+    </div>
+    <div class="govuk-grid-column-one-half">
         <strong class="govuk-tag govuk-tag--pink govuk-!-margin-bottom-4">
             For content review
         </strong>
@@ -219,6 +285,7 @@ href: "javascript:window.history.go(-1);"
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+{# Change payment status #}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-l">Employer changes payment status</h2>
@@ -248,8 +315,8 @@ href: "javascript:window.history.go(-1);"
                 </ul>
             </div>
         </details>
-        </div>
-        <div class="govuk-grid-column-one-half">
+    </div>
+    <div class="govuk-grid-column-one-half">
         <strong class="govuk-tag govuk-tag--pink govuk-!-margin-bottom-4">
             For content review
         </strong>
