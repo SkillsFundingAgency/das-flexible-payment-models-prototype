@@ -138,3 +138,25 @@ if
     }
 })
 
+// Payment Status v3
+router.post('/change-of-status/employer/v3/break-freeze/action', function (req, res) {
+    var freeze = req.session.data['freeze']
+
+    if (freeze == "no") {
+        res.redirect('../')
+    }
+    else {
+        res.redirect('../freeze-confirmed')
+    }
+})
+router.post('/change-of-status/employer/v3/break-unfreeze/action', function (req, res) {
+    var unfreeze = req.session.data['unfreeze']
+
+    if (unfreeze == "no") {
+        res.redirect('../')
+    }
+    else {
+        res.redirect('../unfreeze-confirmed')
+    }
+})
+

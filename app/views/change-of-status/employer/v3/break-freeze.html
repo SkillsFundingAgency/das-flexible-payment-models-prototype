@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Freeze training" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Freezing payments
+    </h1>
+    <p class="govuk-body">
+      Only use this if you have a dispute with the training provider and need to freeze training provider payments.
+    </p>
+    <p class="govuk-body">
+      The learner status will not be changed. If you need to change learner status, contact the training provider.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What does freezing payments do?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        Freezing your payments suspends all transactions to the payment provider. If payments are frozen on the
+        scheduled
+        payment day, no funds will be transferred to the provider for that specific period.
+      </div>
+    </details>
+    <form action="/change-of-status/employer/v3/break-freeze/action" method="post" novalidate>
+      <div class="govuk-form-group govuk-!-margin-top-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to freeze training provider payments?
+          </legend>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="yes"
+                data-aria-controls="conditional-freeze">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes, freeze future payments
+              </label>
+
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-freeze">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Specify reason for freezing training provider payments (optional)
+                </label>
+                <div id="with-hint-hint" class="govuk-hint">
+                  Training provider will be notified about the change
+                </div>
+
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                  <div class="govuk-form-group">
+                    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="reason-for-freeze"
+                      rows="3"
+                      aria-describedby="with-hint-info with-hint-hint">{{ data['reason-for-freeze'] }}</textarea>
+                  </div>
+                  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                    You can enter up to 400 characters
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="freeze" name="freeze" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+
+            </div>
+
+
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
