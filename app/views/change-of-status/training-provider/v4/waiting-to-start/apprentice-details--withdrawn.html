@@ -1,7 +1,6 @@
 {% extends "layouts/main.html" %}{% set version = "feature/Change-of-circs/cop/employer" %}
 {% set pageTitle = "George Ford" %}
 
-
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
@@ -20,23 +19,18 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-
 				<h3 class="govuk-notification-banner__heading">
-					Learner status changed to Withdrawn
+					Learner has been withdrawn
 				</h3>
-				<p class="govuk-body">The withdrawal was made on the 10 January 2024.</p>
-				<p class="govuk-body"> Payments have been set to inactive. The last month you receive payments for this apprenticeship
-					is December 2023.
-				</p>
-				<p class="govuk-body">The employer has been informed of this update.</p>
+			
 			</div>
 		</div>
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
@@ -64,7 +58,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% include "change-of-status/training-provider/v4/includes/learner-status-tag.html" %}
+							<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
@@ -442,7 +436,7 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="apprentice-details--withdrawn" role="button" draggable="false"
+	<a href="apprentice-details--withdrawal-confirmed" role="button" draggable="false"
 		class="govuk-button govuk-button--secondary" data-module="govuk-button">
 		View withdrawn apprenticeship page
 	</a>

@@ -26,12 +26,8 @@ href: "javascript:window.history.go(-1);"
 
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
             <p class="govuk-body">
-                Payments will be set to inactive. 
-                
-                {% if data['previous-learner-status'] != 'waiting-to-start' %}
-                    The last month you received payments for thisapprenticeship was December 2023.
-                {% endif %}
-                        
+                Payments will be set to inactive.
+                The last month you received payments for thisapprenticeship was December 2023.
             </p>
             <p class="govuk-body">
                 You can change status of the apprenticeship at any time.
@@ -44,12 +40,8 @@ href: "javascript:window.history.go(-1);"
                         {% include "change-of-status/training-provider/v4/includes/learner-status-tag.html" %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        {% if data['previous-learner-status'] == 'waiting-to-start' %}
-                        <a class="govuk-link govuk-link--no-visited-state" href="waiting-to-start/edit-learner-status">
-                        {% else %}
-                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
-                            {% endif %}
-                            Change<span class="govuk-visually-hidden"> learner status</span>
+                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">Change<span class="govuk-visually-hidden">
+                                learner status</span>
                         </a>
                     </dd>
                 </div>
@@ -67,8 +59,8 @@ href: "javascript:window.history.go(-1);"
                             Change<span class="govuk-visually-hidden"> reason for reason for withdrawal</span>
                         </a>
                     </dd>
-                    </div>
-                    {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
+                </div>
+                {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
                     <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Date change takes effect</dt>
                     <dd class="govuk-summary-list__value">

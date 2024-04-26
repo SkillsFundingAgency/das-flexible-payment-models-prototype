@@ -123,7 +123,7 @@ router.post('/change-of-status/training-provider/v4/waiting-to-start/edit-learne
         res.redirect('../resume-date-planned-start-date')
     }
     else {
-        res.redirect('../../reason--withdrawal')
+        res.redirect('../confirm--withdrawal')
     }
 })
     

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set pageTitle = "George Ford" %}
-{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -21,7 +21,6 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
-
 		<div class="govuk-tabs" data-module="govuk-tabs">
 			<h2 class="govuk-tabs__title">
 				Contents
@@ -45,7 +44,7 @@ href: "javascript:window.history.go(-1);"
 							Learner status
 						</dt>
 						<dd class="govuk-summary-list__value">
-							<strong class="govuk-tag govuk-tag--green">Waiting to start</strong>
+							{% include "change-of-status/training-provider/v4/includes/learner-status-tag.html" %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="edit-learner-status">
@@ -199,8 +198,6 @@ href: "javascript:window.history.go(-1);"
 							Planned training end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-
-
 							{% if data['planned-end-month-tp'] == "1" or
 							data['planned-end-month-tp']
 							== "01" %}
