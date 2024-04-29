@@ -1,0 +1,43 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Change log
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+{# Redundancy #}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Change log </h1>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--purple govuk-!-margin-bottom-4">
+            Concept work
+        </strong>
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="version-1">Version 1</a>
+            </li>
+        </ul>
+        
+    </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-s">Clear data</h2>
+<p class="govuk-body">Clear data can now be found in the prototype footer</p>
+</div>
+
+{% endblock %}

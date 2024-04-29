@@ -1,0 +1,336 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford (Version 1)" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<h3 class="govuk-notification-banner__heading">
+					Request to change the standard has been sent to employer
+				</h3>
+				<p class="govuk-body">The employer now needs to approve the following changes:</p>
+				<ul class="govuk-list govuk-list--bullet">
+					<li>Apprenticeship standard</li>
+					<li>Planned training end date</li>
+					<li>Total price</li>
+				</ul>
+				<p class="govuk-body"><a href="view-changes" class="govuk-link">View the changes
+						you've requested</a></p>
+			</div>
+		</div>
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+				<h2 class="govuk-summary-card__title">
+					Status
+				</h2>
+			</div>
+			<div class="govuk-summary-card__content">
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Learner status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
+						</dd>
+
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change<span class="govuk-visually-hidden"> learner status</span>
+							</a>
+						</dd>
+					</div>
+
+
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Provider payments status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							<strong class="govuk-tag govuk-tag--blue">Active</strong>
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+				<h2 class="govuk-summary-card__title">
+					Apprentice
+				</h2>
+			</div>
+			<div class="govuk-summary-card__content">
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Unique learner number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							5320150775
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Name
+						</dt>
+						<dd class="govuk-summary-list__value">
+							George Ford
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Email address
+						</dt>
+						<dd class="govuk-summary-list__value">
+							georgeford@gmail.com<br>
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+									apprentice</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Date of birth
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1 January 2000
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Apprentice confirmation
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Confirmed
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+				<h2 class="govuk-summary-card__title">
+					Employment
+				</h2>
+			</div>
+			<div class="govuk-summary-card__content">
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Employer
+						</dt>
+						<dd class="govuk-summary-list__value">
+							AUTOMATION &amp; OPTIMISATION LTD
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<ul class="govuk-summary-list__actions-list">
+								<li class="govuk-summary-list__actions-list-item">
+									<strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+								</li>
+								<li class="govuk-summary-list__actions-list-item">
+									<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">
+											employer</span></a>
+								</li>
+							</ul>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Cohort reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							MNNRLD
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Agreement ID
+						</dt>
+						<dd class="govuk-summary-list__value">
+							7GXEKP
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+				<h2 class="govuk-summary-card__title">
+					Apprenticeship
+				</h2>
+				<dd class="govuk-summary-list__actions">
+
+				</dd>
+				<ul class="govuk-summary-card__actions">
+					<li class="govuk-summary-card__action">
+						<a class="govuk-link" href="view-changes">Review pending request</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="govuk-summary-card__content">
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Standard
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Abattoir Worker, Level:
+							5
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<ul class="govuk-summary-list__actions-list">
+								<li class="govuk-summary-list__actions-list-item">
+									<strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+								</li>
+								<li class="govuk-summary-list__actions-list-item">
+									<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">
+											standard</span></a>
+								</li>
+							</ul>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key ">
+							Version
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1.0
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change<span class="govuk-visually-hidden"> version</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key ">
+							Training start date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1 August 2023 (Pending 24 August 2023)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<ul class="govuk-summary-list__actions-list">
+								<li class="govuk-summary-list__actions-list-item">
+									<strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+								</li>
+								<li class="govuk-summary-list__actions-list-item">
+									<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> training
+											start date</span></a>
+								</li>
+							</ul>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key ">
+							Planned training end date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							1 August 2024 (Pending 25 August 2024)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+						<dt class="govuk-summary-list__key">
+							Your reference
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Nothing provided
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+
+
+		<div class="govuk-summary-card">
+			<div class="govuk-summary-card__title-wrapper">
+				<h2 class="govuk-summary-card__title">
+					Price
+				</h2>
+			</div>
+			<div class="govuk-summary-card__content">
+				<dl class="govuk-summary-list">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Training price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£6,000 (Pending £6,500)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							End-point assessment price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£2,500 (Pending £3,000)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,500 (Pending £9,500)
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<ul class="govuk-summary-list__actions-list">
+								<li class="govuk-summary-list__actions-list-item">
+									<strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+								</li>
+								<li class="govuk-summary-list__actions-list-item">
+									<a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> total
+											price</span></a>
+								</li>
+							</ul>
+						</dd>
+					</div>
+				</dl>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
+{% endblock %}
