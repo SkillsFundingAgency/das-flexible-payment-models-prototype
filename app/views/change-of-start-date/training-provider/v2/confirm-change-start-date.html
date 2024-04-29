@@ -1,0 +1,278 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check your change before sending to the employer for approval" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		{% if data['effective-from-year'] == "2023" %}
+
+		{% if data['effective-from-month'] == "5" or data['effective-from-month'] == "05" or
+		data['effective-from-month'] == "4"
+		or data['effective-from-month'] == "04" or data['effective-from-month'] == "03" or data['effective-from-month']
+		== "03"
+		or data['effective-from-month'] == "2" or data['effective-from-month'] == "02" or data['effective-from-month']
+		== "1" or
+		data['effective-from-month'] == "01" %}
+
+		<div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-visually-hidden">Warning</span>
+				You will not receive funding for the apprenticeship activity before
+				1 August 2023
+				<!-- (start of the current academic year) -->
+			</strong>
+		</div>
+
+		{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06" or
+		data['effective-from-year']
+		<= "2022" %} <div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-visually-hidden">Warning</span>
+
+				You will not receive funding for the apprenticeship activity before
+				1 August 2023
+
+			</strong>
+	</div>
+
+	{% endif %}
+
+	{% endif %}
+	<table class="govuk-table">
+		<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Training dates
+		</caption>
+		<thead class="govuk-table__head">
+			<tr class="govuk-table__row">
+				<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+				</th>
+				<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+				<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested </th>
+				<td class="govuk-table__cell"></td>
+			</tr>
+		</thead>
+		<tbody class="govuk-table__body">
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Training start date</th>
+				<td class="govuk-table__cell">1 August 2023</td>
+				<td class="govuk-table__cell">{{ data['effective-from-day'] or '24'}}
+
+					{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
+					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
+					%}
+					{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
+					%}
+					{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
+					%}
+					{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
+					%}
+					{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+					%}
+					{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
+					%}
+					{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
+					%}
+					{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
+					%}
+					{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "10" %}
+					{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "11" %}
+					{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+					{% elseif data['effective-from-month'] == "12" %}
+					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+					{% else %}
+					August
+					{% endif %}
+
+					{{ data['effective-from-year'] or '2023'}}
+
+					{% if data['effective-from-year'] == "2023" %}
+
+					{% if data['effective-from-month'] == "5" or data['effective-from-month'] == "05" or
+					data['effective-from-month'] == "4" or data['effective-from-month'] == "04" or
+					data['effective-from-month'] == "03" or data['effective-from-month'] == "03" or
+					data['effective-from-month'] == "2" or data['effective-from-month'] == "02" or
+					data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
+
+					<span style="width:26px; position: relative; float: left; margin:0px 4px 0px 0px">
+						<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<g>
+								<path d="M0 0h24v24H0z" fill="none" />
+								<path
+									d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" />
+							</g>
+						</svg>
+					</span>
+
+					{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06" or
+					data['effective-from-year'] <= "2022" %} <span
+						style="width:26px; position: relative; float: left; margin:0px 4px 0px 0px">
+						<?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+							<g>
+								<path d="M0 0h24v24H0z" fill="none" />
+								<path
+									d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z" />
+							</g>
+						</svg>
+						</span>
+
+						{% else %}
+						{% endif %}
+
+						{% else %}
+						{% endif %}
+
+				</td>
+
+				<td class="govuk-table__cell"><a href="change-start-date">Change </a></td>
+			</tr>
+
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Planned training end date</th>
+				<td class="govuk-table__cell">1 August 2024</td>
+				<td class="govuk-table__cell">{{ data['planned-end-day-tp-start'] or '25'}}
+
+					{% if data['planned-end-month-tp-start'] == "1" or data['planned-end-month-tp-start'] == "01" %}
+					{{ data['planned-end-year-day-start'] }} January {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "2" or data['planned-end-month-tp-start'] ==
+					"02"
+					%}
+					{{ data['planned-end-year-day-start'] }} February {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "3" or data['planned-end-month-tp-start'] ==
+					"03"
+					%}
+					{{ data['planned-end-year-day-start'] }} March {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "4" or data['planned-end-month-tp-start'] ==
+					"04"
+					%}
+					{{ data['planned-end-year-day-start'] }} April {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "5" or data['planned-end-month-tp-start'] ==
+					"05"
+					%}
+					{{ data['planned-end-year-day-start'] }} May {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "6" or data['planned-end-month-tp-start'] ==
+					"06"
+					%}
+					{{ data['planned-end-year-day-start'] }} June {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "7" or data['planned-end-month-tp-start'] ==
+					"07"
+					%}
+					{{ data['planned-end-year-day-start'] }} July {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "8" or data['planned-end-month-tp-start'] ==
+					"08"
+					%}
+					{{ data['planned-end-year-day-start'] }} August {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "9" or data['planned-end-month-tp-start'] ==
+					"09"
+					%}
+					{{ data['planned-end-year-day-start'] }} September {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "10" %}
+					{{ data['planned-end-year-day-starty'] }} October {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "11" %}
+					{{ data['planned-end-year-day-start'] }} November {{ data['planned-end-year-tp-start'] }}
+					{% elseif data['planned-end-month-tp-start'] == "12" %}
+					{{ data['planned-end-year-day-start'] }} December {{ data['planned-end-year-tp-start'] }}
+					{% else %}
+					October 2024
+					{% endif %}
+
+					<!-- {{ data['planned-end-year-tp-start'] or '2024'}}  -->
+
+
+
+					<!-- <div class="govuk-warning-text">
+						<span class="govuk-warning-text__icon" aria-hidden="true" style="font-size: 14px; line-height: 20px; min-width: 25px;
+						min-height: 20px; position: relative; margin: 2px; float: right; border: 2px;">!</span>
+						</div> -->
+				</td>
+
+				<td class="govuk-table__cell"><a href="start-date-planned-end-date">Change </a></td>
+			</tr>
+
+			{# <tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Reason for change</th>
+				<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start
+					on original start date'}}</td>
+				<td class="govuk-table__cell"></td>
+				<td class="govuk-table__cell"><a href="change-start-date">Change </a></td>
+
+			</tr> #}
+
+		</tbody>
+	</table>
+</div>
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+	<h2 class="govuk-heading-m">Reason for change</h2>
+	<dl class="govuk-summary-list">
+		<div class="govuk-summary-list__row">
+			<dt class="govuk-summary-list__key">
+				Reason for change
+			</dt>
+			<dd class="govuk-summary-list__value">
+				Wrong dates initially set
+			</dd>
+			<dd class="govuk-summary-list__actions">
+				<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change">
+					Change<span class="govuk-visually-hidden"> reason for change</span>
+				</a>
+			</dd>
+		</div>
+	</dl>
+</div>
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+
+	<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+	<p class="govuk-body">
+		This change will be sent to the employer to approve. The apprentice will be able to review the changes
+		in their apprenticeship account.
+	</p>
+
+
+	<form action="change-start-date-confirmation" method="post" novalidate>
+		<input type="hidden" name="answers-checked" value="true">
+		<div class="govuk-button-group">
+			<button class="govuk-button" data-module="govuk-button">
+				Send for approval
+			</button>
+			<a class="govuk-link" href="apprentice-details">Cancel and return</a>
+		</div>
+	</form>
+
+</div>
+</div>
+
+
+{% endblock %}

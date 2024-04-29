@@ -1,0 +1,138 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Planned training end date" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Planned training end date
+    </h1>
+
+    <p class="govuk-body">The current planned training end date is 25 June 2024.</p>
+    <p class="govuk-body">The new start date and minimum course duration means that the course cannot end before 25 July
+      2025.
+    </p>
+
+    <form action="reason-for-change" method="post" novalidate class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            When would you like the new planned training end date to be?
+          </legend>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio" value="yes"
+                aria-describedby="earliest-date-hint">
+              <label class="govuk-label govuk-radios__label" for="end-date-update">
+                The earliest end date
+              </label>
+              <div id="earliest-date-hint" class="govuk-hint govuk-radios__hint">
+                25 July 2025
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio" value="yes"
+                aria-describedby="keep-duration-hint">
+              <label class="govuk-label govuk-radios__label" for="end-date-update">
+                Update the date to keep the existing course duration
+              </label>
+              <div id="keep-duration-hint" class="govuk-hint govuk-radios__hint">
+                25 October 2025
+              </div>
+            </div>
+
+            <div class="govuk-radios__divider">or</div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="end-date-update-2" name="end-date-update" type="radio" value="no"
+                data-aria-controls="conditional-end-date-update-2">
+              <label class="govuk-label govuk-radios__label" for="end-date-update-2">
+                Enter a different planned training end date
+              </label>
+
+
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-end-date-update-2">
+
+              <fieldset class="govuk-fieldset" role="group" id="planned-training-end-date-issued"
+                aria-describedby="end-date-update-hint">
+                <div id="end-date-update-hint" class="govuk-hint">
+                  The planned training end date needs to be after 24 7 2025
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="planned-training-end-date-day" name="planned-training-end-date-day" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="pplanned-training-end-date-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                      id="planned-training-end-date-month" name="planned-training-end-date-month" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="planned-training-end-date-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                      id="planned-training-end-date-year" name="planned-training-end-date-year" type="text"
+                      inputmode="numeric">
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+  </div>
+
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+  <a href="start-date-planned-end-date" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    View end date valid prototype
+  </a>
+</div>
+
+{% endblock %}
