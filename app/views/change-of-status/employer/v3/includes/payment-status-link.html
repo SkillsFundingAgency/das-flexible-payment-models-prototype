@@ -1,0 +1,32 @@
+{# Break in learning #}
+{% if data['learner-status'] == "break" %}
+{# No link #}
+
+{# Redundant #}
+{% elseif data['learner-status'] == "redundant" %}
+{# No link #}
+
+{# Withdrawn #}
+{% elseif data['learner-status'] == "withdrawn" %}
+{# No link #}
+
+{# Waiting to start #}
+{% elseif data['learner-status'] == "waiting-to-start" %}
+{# No link #}
+
+{# In learning #}
+{% else %}
+{# If currently frozen #}
+{% if employerFreeze == true %}
+<a class="govuk-link govuk-link--no-visited-state" href="break-unfreeze">
+    Change<span class="govuk-visually-hidden"> payment
+        status</span>
+</a>
+
+{% else %}
+<a class="govuk-link govuk-link--no-visited-state" href="break-freeze">
+    Change<span class="govuk-visually-hidden"> payment
+        status</span>
+</a>
+{% endif %}
+{% endif %}
