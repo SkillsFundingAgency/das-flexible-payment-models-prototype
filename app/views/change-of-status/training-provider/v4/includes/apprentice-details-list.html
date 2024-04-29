@@ -1,5 +1,3 @@
-{% set employerFreeze = null %}
-
 <h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 <div class="govuk-tabs" data-module="govuk-tabs">
@@ -29,7 +27,7 @@
                 </dd>
 
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="edit-learner-status">
+                    <a class="govuk-link" href="/change-of-status/training-provider/v4/edit-learner-status">
                         Change<span class="govuk-visually-hidden"> apprenticeship status</span>
                     </a>
                 </dd>
@@ -39,7 +37,7 @@
                     Provider payments status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {% include "change-of-status/includes/payment-status-tag.html" %}
+                    {% include "change-of-status/includes/payment-status-tag" %}
                 </dd>
             </div>
             <div class="govuk-summary-list__row">

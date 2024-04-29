@@ -1,11 +1,11 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "George Ford" %}
-{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
+{% set pageTitle = "George Ford" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
+{% include "includes/employer-account-header.html" %}
 {% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
@@ -21,7 +21,6 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-
 		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
 			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
@@ -30,24 +29,16 @@ href: "javascript:window.history.go(-1);"
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-				<p class="govuk-notification-banner__heading">
-					<!-- [Employer]  -->
-					Employer has set provider payments to Active
-
-				<p class="govuk-body">Payments were set to active on the 20 April 2024.
+				<h3 class="govuk-notification-banner__heading">
+					The training provider has changed this apprentice status to Waiting to start
+				</h3>
+				<p class="govuk-body">The planned training end date has been updated to 10 March 2025.
 				</p>
+				<p class="govuk-body">If you belive this was done in error please contact the training provider</p>
 			</div>
 		</div>
-
-		{% include "change-of-status/training-provider/v4/includes/apprentice-details-list" %}
+		{% include "change-of-status/employer/v3/includes/employer-apprentice-details-list" %}
 	</div>
-</div>
-
-<div style="position: absolute; right:20px; top:160px">
-	<a href="frozen-payments" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View frozen
-	</a>
 </div>
 
 {% endblock %}
