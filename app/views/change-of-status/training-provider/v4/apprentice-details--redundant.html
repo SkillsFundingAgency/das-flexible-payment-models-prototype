@@ -20,35 +20,20 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-				{% if data['government-funded'] == 'No' %}
 				<h3 class="govuk-notification-banner__heading">
-					Learner status changed to Withdrawn (made redundant)
+					Learner has been withdrawn
 				</h3>
-
 				<p class="govuk-body">The withdrawal was made on the 10 January 2024.</p>
-				<p class="govuk-body">Payments have been set to inactive. The last month you received payments for this
-					apprenticeship
-					was
-					December 2023.
+				<p class="govuk-body">The last month you received payments for this apprenticeship was December 2023.
 				</p>
-				<p class="govuk-body">The employer has been informed of this update.</p>
-				{% else %}
-				<h3 class="govuk-notification-banner__heading">
-					Learner status changed to In learning (made redundant)
-				</h3>
-				<p class="govuk-body">Government funding has been accepted until the planned training end date of 3 July
-					2024.
-				</p>
-				<p class="govuk-body">The employer has been informed of this update.</p>
-				{% endif %}
 			</div>
 		</div>
 
@@ -57,9 +42,9 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="apprentice-details--redundant" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View redundant withdrawn page
+	<a href="apprentice-details--redundant-confirmed" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		View redundant withdrawn success page
 	</a>
 </div>
 
