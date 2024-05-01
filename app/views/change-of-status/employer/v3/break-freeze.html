@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "Freeze training" %}
+{% set pageTitle = "Freeze provider payments" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -22,7 +22,7 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">
-      Freezing payments
+      {{pageTitle}}
     </h1>
     <p class="govuk-body">
       Only use this if you have a dispute with the training provider and need to freeze training provider payments.
@@ -64,17 +64,16 @@ href: "javascript:window.history.go(-1);"
                 <label class="govuk-label" for="contact-by-email">
                   Specify reason for freezing training provider payments (optional)
                 </label>
-                <div id="with-hint-hint" class="govuk-hint">
-                  Training provider will be notified about the change
+                <div id="reason-for-freeze-hint" class="govuk-hint">
+                  This reason will be shared with the training provider
                 </div>
-
                 <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
                   <div class="govuk-form-group">
-                    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="reason-for-freeze"
+                    <textarea class="govuk-textarea govuk-js-character-count" id="reason-for-freeze" name="reason-for-freeze"
                       rows="3"
-                      aria-describedby="with-hint-info with-hint-hint">{{ data['reason-for-freeze'] }}</textarea>
+                      aria-describedby="reason-for-freeze-hint">{{ data['reason-for-freeze'] }}</textarea>
                   </div>
-                  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+                  <div id="reason-for-freeze-info" class="govuk-hint govuk-character-count__message">
                     You can enter up to 400 characters
                   </div>
                 </div>

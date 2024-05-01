@@ -21,32 +21,31 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-
 				<h3 class="govuk-notification-banner__heading">
 					Provider payments have been set to Inactive
 				</h3>
-				<p class="govuk-body">The training provider has been informed of this update.
+				<p class="govuk-body">The payment freeze if effective from 10 January 2024.
 				</p>
 			</div>
 		</div>
 		{% set employerFreeze = true %}
 		{% include "change-of-status/employer/v3/includes/employer-apprentice-details-list" %}
-		
+
 	</div>
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="frozen" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+	<a href="freeze-confirmed" role="button" draggable="false" class="govuk-button govuk-button--secondary"
 		data-module="govuk-button">
-		View frozen apprenticeship
+		View freeze confirmed
 	</a>
 </div>
 
