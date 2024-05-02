@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% set pageTitle = "Reference (optional)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Current reference
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Employee 1543
+        </dd>
+      </div>
+    </dl>
+
+    <form method="post" action="confirm-change-of-course" class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to keep the current reference for this apprentice?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-reference" name="change-reference" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="change-reference">
+                Yes
+              </label>
+              </div>
+              
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="change-reference-2" name="change-reference" type="radio" value="no"
+                data-aria-controls="conditional-reference">
+              <label class="govuk-label govuk-radios__label" for="change-reference-2">
+                No, change the reference
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-reference">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="reference">
+                  New reference
+                </label>
+                <div id="reference-hint" class="govuk-hint">
+                  For example an employee number or location - this won't be seen by the employee
+                </div>
+                <input class="govuk-input govuk-input--width-20" id="reference" name="reference" type="text" maxlength="20"
+                  aria-describedby="reference-hint">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}

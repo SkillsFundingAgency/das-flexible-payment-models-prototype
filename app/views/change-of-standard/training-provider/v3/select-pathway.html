@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Pathway options" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+    <p class="govuk-body">For more information visit <a
+        href="https://www.instituteforapprenticeships.org/apprenticeship-standards/game-programmer-v1-2" class="govuk-link"
+        target="_blank">IfATE
+        page for this standard (opens in a new tab)</a></p>
+
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Standard
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Game programmer, Level: 7
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Version
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1.2
+        </dd>
+      </div>
+    </dl>
+
+    <form id="addApprenticeship" action="portable-flexi-job" method="post" class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group"">
+            <legend class=" govuk-fieldset__legend govuk-fieldset__legend--m">
+          Select a pathway option
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="standard-option" name="standard-option" type="radio"
+                value="Game software programmer">
+              <label class="govuk-label govuk-radios__label" for="standard-option">
+                Game software programmer
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="standard-option-2" name="standard-option" type="radio"
+                value="Game technology programmer">
+              <label class="govuk-label govuk-radios__label" for="standard-option-2">
+                Game technology programmer
+              </label>
+            </div>
+            <div class="govuk-radios__divider">or</div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="standard-option-3" name="standard-option" type="radio"
+                value="Later date">
+              <label class="govuk-label govuk-radios__label" for="standard-option-3">
+                Confirm pathway at a later date
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

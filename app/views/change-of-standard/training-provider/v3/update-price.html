@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set pageTitle = "Change the negotiated prices" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Change the negotiated prices
+    </h1>
+    <p class="govuk-body">
+      The funding band maximum for Game programmer, Level: 7 is £9,000. This is the highest amount the apprenticeship service
+      will pay towards the training and end-point assessment.
+    </p>
+    <p class="govuk-body">
+      If you raise the total price above the funding band maximum, this will need to be paid by the employer.
+    </p>
+    <form action="recognise-prior-learning" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class=" govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Training price
+          </legend>
+          <div id="apprenticeship-price-hint" class="govuk-hint">
+            Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
+          </div>
+          <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="apprenticeship-training-price"
+              name="apprenticeship-training-price" type="text" value="" aria-describedby="apprenticeship-price-hint"
+              inputmode="numeric">
+          </div>
+        </fieldset>
+      </div>
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          End-point assessment price
+        </legend>
+        <div id="apprenticeship-price-hint" class="govuk-hint">
+          Do not include VAT. Enter price in whole pounds. For example, for £2,500 enter 2500. If the exact amount is
+          unknown leave this field blank.
+        </div>
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" id="apprenticeship-epa-price" name="apprenticeship-epa-price"
+            type="text" value="" aria-describedby="apprenticeship-price-hint" inputmode="numeric">
+        </div>
+      </fieldset>
+
+      <div class="govuk-inset-text">
+        The total price the employer will see is:
+        <div id="apprenticeship-total-price" name="apprenticeship-total-price">
+        </div>
+      </div>
+
+  </div>
+  </fieldset>
+</div>
+<button class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+</form>
+</div>
+</div>
+
+
+{% endblock %}

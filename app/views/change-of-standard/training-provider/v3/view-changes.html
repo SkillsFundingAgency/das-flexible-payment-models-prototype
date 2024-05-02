@@ -1,0 +1,234 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+		<p class="govuk-body">Some of these updates will not be shared with the employer but will remain pending until
+			related
+			changes have been approved or declined.</p>
+	</div>
+	<div class="govuk-grid-column-full">
+		<table class="govuk-table govuk-table--small-text-until-tablet govuk-!-margin-top-5">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Course</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship
+							detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Standard</th>
+					<td class="govuk-table__cell">
+						Accounting, Level: 2
+					</td>
+					<td class="govuk-table__cell">{{data['training-course'] or 'Game technology: Level 2'}}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Pathway</th>
+					<td class="govuk-table__cell">
+						No applicable
+					</td>
+					<td class="govuk-table__cell">{{data['standard-option'] or 'Confirm at a later date'}}</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Apprenticeship delivery model</th>
+					<td class="govuk-table__cell">
+						Regular
+					</td>
+					<td class="govuk-table__cell">{{data['delivery-method'] or 'Regular'}}</td>
+
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Training dates
+			</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship
+							detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">1 August 2024</td>
+					<td class="govuk-table__cell">25 October 2024
+					</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Planned training end date</th>
+					<td class="govuk-table__cell">10 January 2025</td>
+					<td class="govuk-table__cell">25 October 2026
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Negotiated price
+			</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training price</th>
+					<td class="govuk-table__cell">£6,000</td>
+					<td class="govuk-table__cell">£7,000</td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">End-point assessment price</th>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell">£3,000</td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£10,000</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Recognition of prior
+				learning
+				(RPL)</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Weeks
+							reduced due to RPL</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total off-the-job training hours required for this
+						standard</th>
+					<td class="govuk-table__cell">70 hours</td>
+					<td class="govuk-table__cell">70 hours</td>
+
+				</tr>
+
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reduction in hours due to prior learning</th>
+					<td class="govuk-table__cell">14 hours</td>
+					<td class="govuk-table__cell">21 hours</td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reduction in duration due to prior learning</th>
+					<td class="govuk-table__cell">2 weeks</td>
+					<td class="govuk-table__cell">3 weeks</td>
+
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Price reduction due to prior learning</th>
+					<td class="govuk-table__cell">£2,000</td>
+					<td class="govuk-table__cell">£2,500</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+		<h2 class="govuk-heading-m">Reason for change</h2>
+		<dl class="govuk-summary-list">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{data['why-change'] or 'Agreed that this course is better suited to the apprentice needs'}}
+				</dd>
+
+			</div>
+	</div>
+	</dl>
+	<div class="govuk-grid-column-two-thirds">
+		<form method="post" action="change-course-confirmation" class="govuk-!-margin-top-9">
+			<fieldset class="govuk-fieldset">
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to cancel this request?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to cancel this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									No, keep the request
+								</label>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

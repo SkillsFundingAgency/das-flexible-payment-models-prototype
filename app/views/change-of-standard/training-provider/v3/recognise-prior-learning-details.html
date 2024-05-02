@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Add recognition of prior learning details" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post" action="reason-for-change">
+
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            {{pageTitle}}
+          </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <div class="govuk-form-group ">
+            <label class="govuk-label govuk-label--s" for="TotalTrainingTime">
+              Total off-the-job training hours required for this standard
+            </label>
+            <div id="total-time-hint" class="govuk-hint">
+              The training an apprentice on this standard receives away from their job role, before any reductions.
+              Enter the total in hours
+            </div>
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="TotalTrainingTime"
+                name="TotalTrainingTime" value="" aria-describedby="total-time-hint">
+              <div class="govuk-input__suffix" aria-hidden="true"> hours</div>
+            </div>
+          </div>
+
+          <div class="govuk-form-group ">
+            <label class="govuk-label govuk-label--s" for="ReductionTrainingTime">
+              Reduction in hours due to prior learning
+            </label>
+            <div id="reduction-time-hint" class="govuk-hint">
+              All reductions based on the apprentice's prior learning. Enter the reduction in hours
+            </div>
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="ReductionTrainingTime"
+                name="ReductionTrainingTime" value="" aria-describedby="reduction-time-hint">
+              <div class="govuk-input__suffix" aria-hidden="true"> hours</div>
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="ReductionTrainingTime">
+              Have you reduced the actual apprenticeship duration due to prior learning?
+            </label>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="reduced-duration" name="reduced-duration" type="radio"
+                  value="yes" data-aria-controls="conditional-reduced-duration">
+                <label class="govuk-label govuk-radios__label" for="reduced-duration">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-reduced-duration">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reduced-duration-weeks">
+                    How many weeks was the apprenticeship reduced by?
+                  </label>
+                  <div class="govuk-input__wrapper">
+                    <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric"
+                      id="reduced-duration-weeks" name="reduced-duration-weeks" value="">
+                    <div class="govuk-input__suffix" aria-hidden="true"> weeks</div>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="reduced-duration" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+              </div>
+
+
+
+            </div>
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="ReducedPrice">
+              Price reduction due to prior learning
+            </label>
+            <div id="price-hint" class="govuk-hint">
+              All reductions based on the apprentice's prior learning. Enter the price in whole pounds. For example, for
+              £1,500 enter 1500
+            </div>
+            <div class="govuk-input__wrapper">
+              <div class="govuk-input__prefix" aria-hidden="true" aria-describedby="price-hint">£</div><input
+                class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="ReducedPrice"
+                name="ReducedPrice">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="govuk-button" type="submit">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
