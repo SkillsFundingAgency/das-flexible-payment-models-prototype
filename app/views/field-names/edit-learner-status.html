@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "[BLANK]" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You do not need to withdraw an apprenticeship after the training has been completed. If you do, this
+        will prevent the completion payment due to you.
+      </strong>
+    </div>
+
+    <form action="#" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Change the [BLANK] of this apprenticeship
+          </legend>
+          <div id="status-update-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="in-learning" name="learner-status" type="radio" value="in-learning"
+                {{ checked('learner-status','in-learning') }} checked="checked" aria-describedby="in-learning-hint">
+              <label class="govuk-label govuk-radios__label" for="in-learning">
+                In learning
+              </label>
+
+              <div id="in-learning-hint" class="govuk-hint govuk-radios__hint">
+                Continuing or intending to continue the learning activities leading to the learning aim.
+              </div>
+            </div>
+
+
+            <!-- Break in learning  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="break" name="learner-status" type="radio" value="break" {{
+                checked('learner-status','break') }} aria-describedby="break-hint">
+              <label class="govuk-label govuk-radios__label" for="break">
+                Break in learning
+              </label>
+
+              <div id="break-hint" class="govuk-hint govuk-radios__hint">
+                Temporarily withdrawn from the aim due to an agreed break in learning
+              </div>
+            </div>
+
+            <!-- Withdrawal -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withdrawal" name="learner-status" type="radio" value="withdrawn" {{
+                checked('learner-status','withdrawn') }} aria-describedby="withdrawal-hint">
+              <label class="govuk-label govuk-radios__label" for="withdrawal">
+                Withdrawn
+              </label>
+              <div id="withdrawal-hint" class="govuk-hint govuk-radios__hint">
+                Withdrawn from the learning activities leading to the learning aim
+              </div>
+            </div>
+
+
+
+            <!-- Redundant  -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="redundant" name="learner-status" type="radio" value="redundant" {{
+                checked('learner-status','redundant') }} aria-describedby="redundant-hint">
+              <label class="govuk-label govuk-radios__label" for="redundant">
+                Made redundant
+              </label>
+              <div id="redundant-hint" class="govuk-hint govuk-radios__hint">
+                The apprenticeship agreement has been terminated by reason of redundancy
+              </div>
+            </div>
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="provider--apprentice-details">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

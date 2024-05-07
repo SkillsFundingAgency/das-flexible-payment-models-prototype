@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Field names
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+{# Redundancy #}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Field names</h1>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-4">
+            For research
+        </strong>
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="provider--apprentice-details">Training provider account</a>
+            </li>
+            <li>
+                <a class="govuk-link" href="employer--apprentice-details">Employer account</a>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-s">Clear data</h2>
+<p class="govuk-body">Clear data can now be found in the prototype footer</p>
+</div>
+
+{% endblock %}
