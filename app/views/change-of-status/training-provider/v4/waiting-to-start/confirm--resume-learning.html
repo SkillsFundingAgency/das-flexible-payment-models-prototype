@@ -127,7 +127,7 @@ href: "javascript:window.history.go(-1);"
                         {% elseif data['end-date-month'] == "12" %}
                         {{ data['end-date-day'] }} December {{ data['end-date-year'] }}
                         {% else %}
-                        10 March 2025
+                        10 January 2025
                         {% endif %}
 
                         <!-- {{ data['start-date-year'] or '2023'}} -->
@@ -151,6 +151,13 @@ href: "javascript:window.history.go(-1);"
 
     </div>
 
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+    <a href="confirm--resume-learning-changed-dates" role="button" draggable="false"
+        class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View changed dates version
+    </a>
 </div>
 
 {% endblock %}
