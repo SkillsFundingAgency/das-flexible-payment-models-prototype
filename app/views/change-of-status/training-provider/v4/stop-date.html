@@ -25,12 +25,12 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">
       {{pageTitle}}
     </h1>
-    {% if data['reason-for-withdrawal'] == 'Apprentice left employment' %}
+  
     <div class="govuk-inset-text">
       If the apprentice you are training has been made redundant you need to <a class="govuk-link"
         href="edit-learner-status"> change the learner status</a> to mark them as redundant.
     </div>
-    {% endif %}
+  
     <p class="govuk-body">
       The earliest date you can enter is this apprenticeship's start date of 1 August 2023.</p>
     <p class="govuk-body">Any outstanding payments will be
@@ -42,17 +42,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="withdrawal-date-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            {% if data['reason-for-withdrawal'] == 'Apprentice left employment' %}
             Enter the apprentice's last date of learning
-            {% elseif data['reason-for-withdrawal'] == 'Apprentice has withdrawn from training' %}
-            What date did the apprentice withdraw from training?
-            {% elseif data['reason-for-withdrawal'] == 'Apprenticeship never started' %}
-            Apprenticeship never started
-            {% elseif data['reason-for-withdrawal'] == 'Other' %}
-            What is the effective date?
-            {% else %}
-            [Title dependant on previous option]
-            {% endif %}
           </legend>
           <div id="withdrawal-date-hint" class="govuk-hint">
             For example, 27 3 2023
