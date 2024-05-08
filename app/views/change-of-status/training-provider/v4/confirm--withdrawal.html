@@ -26,7 +26,7 @@ href: "javascript:window.history.go(-1);"
 
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
             <p class="govuk-body">
-                Payments have been set to inactive and the last payment for this apprenticeship will be December 2023.
+                Payments will be set to inactive and the last payment for this apprenticeship will be December 2023.
             </p>
             <p class="govuk-body">
                 You can change status of the apprenticeship at any time.
@@ -61,7 +61,7 @@ href: "javascript:window.history.go(-1);"
                 </div>
                 {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
                     <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">Date change takes effect</dt>
+                    <dt class="govuk-summary-list__key">Last date of learning</dt>
                     <dd class="govuk-summary-list__value">
                 
                         {% if data['withdrawal-month'] == "1" or
@@ -105,7 +105,7 @@ href: "javascript:window.history.go(-1);"
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
-                            Change<span class="govuk-visually-hidden"> changes take effect</span>
+                            Change<span class="govuk-visually-hidden"> last date of learning</span>
                         </a>
                     </dd>
                 
