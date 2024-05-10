@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Functional skills</h1>
+        <p class="govuk-body">Adding functional skills English and Maths to support an apprenticeship.
+        </p>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-7">
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+            In design
+        </strong>
+        {# <span class="govuk-caption-m">Prior to first payment data lock</span> #}
+        <h3 class="govuk-heading-s"><a href="v1/" class="govuk-link govuk-link--no-visited-state"
+                rel="noreferrer noopener">Provider pre-approval</a>
+        </h3>
+        <p class="govuk-body">Training provide can add functional skills to an apprenticeship when initially setting it
+            up</p>
+
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+            In design
+        </strong>
+        {# <span class="govuk-caption-m">Prior to first payment data lock</span> #}
+        <h3 class="govuk-heading-s"><a href="pre-approvals-task/add/entry-method"
+                class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Concept - task list for
+                pre-approvals</a>
+        </h3>
+        <p class="govuk-body">Tighten up pre-approvals to make it easier to add information and come back to it</p>
+
+    </div>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-m">Clear data</h2>
+<p class="govuk-body">Clear data can now be found in the prototype footer</p>
+
+
+{% endblock %}

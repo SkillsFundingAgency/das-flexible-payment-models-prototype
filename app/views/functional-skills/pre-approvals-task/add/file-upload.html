@@ -1,0 +1,97 @@
+{% extends "layouts/main.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Using file upload" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Using file upload</h1>
+    <h2 class="govuk-heading-m">Before you start</h2>
+
+    <p class="govuk-body">There is a <a
+        href="/training-provider/{{version}}/https://www.gov.uk/government/publications/apprenticeship-service-bulk-upload-specification"
+        class="govuk-link govuk-link--no-visited-state">full specification</a> on uploading new apprentices using a CSV
+      file on GOV.UK.</p>
+
+    <p class="govuk-body">
+      You will need to know the employer agreement ID, this can be found on your <a
+        href="/training-provider/{{version}}/https://pp-pas.apprenticeships.education.gov.uk/10005760/agreements"
+        class="govuk-link govuk-link--no-visited-state">Organisations and agreements page</a>.
+    </p>
+
+    <p class="govuk-body">The CSV file is limited to 100 rows.</p>
+
+    <h2 class="govuk-heading-m">How it works</h2>
+
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>use file upload to add 1 or more apprentices for 1 or more employers</li>
+      <li>create new cohorts by leaving the 'CohortRef' field empty; the cohort reference will be created when you save
+        or approve cohorts (provided you have the correct employer permissions)</li>
+      <li>make reservations automatically (provided you have the correct employer permissions)</li>
+      <li>add apprentices to existing cohorts that have not yet been approved by the employer</li>
+      <li>check for errors</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Creating a CSV file</h2>
+
+    <p class="govuk-body">You can:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+      <li>use your learner management system (LMS) to create a CSV file</li>
+      <li>download our <a
+          href="/training-provider/{{version}}/https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/995464/ProviderBulkUploadSampleCSV_21Jun21.csv">template</a>
+        if you do not use a LMS</li>
+    </ul>
+
+    <a id="change-the-employer-button" class="govuk-button"
+      href="/training-provider/{{version}}/10005760/unapproved/add/file-upload/start">Continue to upload</a>
+  </div>
+
+</div>
+{% endblock %}

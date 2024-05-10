@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Apprentice price" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+    <form id="addApprenticeship" action="../task-list"
+      method="post">
+
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Total agreed apprenticeship price (excluding
+          VAT)</label>
+        <div id="price-hint" class="govuk-hint">
+          Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500
+        </div>
+        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
+            spellcheck="false">
+        </div>
+      </div>
+
+      <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="Reference">Reference (optional)</label>
+          <div id="reference-hint" class="govuk-hint">
+            Add a reference, such as employee number or location - this won’t be seen by the employer
+          </div>
+
+          <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text"
+            id="Reference" name="Reference" value="">
+        </div>
+      </div>
+
+      <div class="govuk-inset-text">
+        <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
+        <p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
+            href="/training-provider/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
+            target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice.
+          We'll do this before the end of the apprenticeship.</p>
+      </div>
+
+
+      <button type="submit" class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
