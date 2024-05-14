@@ -73,7 +73,7 @@
         </div>
         {% endif %}
 {# Withdrawn #}
-{% if data['learner-status'] == "in-learning" and data['resume-day'] != "" %}
+{# {% if data['learner-status'] == "in-learning" and data['resume-day'] != "" %}
 <h2 class="govuk-heading-m">Return to learning</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-7">
     <div class="govuk-summary-list__row">
@@ -131,7 +131,7 @@
     {% endif %}
     
     {# Break in learning #}
-    {% if data['learner-status'] == "break" %}
+    {# {% if data['learner-status'] == "break" %}
     <h2 class="govuk-heading-m">Break in learning</h2>
     <dl class="govuk-summary-list govuk-!-margin-bottom-7">
         <div class="govuk-summary-list__row">
@@ -217,10 +217,10 @@
                 </dd>
                 </div>
                 </dl>
-                {% endif %}
+                {% endif %} #}
                 
                 {# Withdrawn #}
-                {% if data['learner-status'] == "withdrawn" %}
+                {# {% if data['learner-status'] == "withdrawn" %}
                 <h2 class="govuk-heading-m">Withdrawal</h2>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-7">
                     <div class="govuk-summary-list__row">
@@ -307,10 +307,10 @@
     </dd>
 </div>
 </dl>
-{% endif %}
+{% endif %} #}
 
 {# Redundancy #}
-{% if data['learner-status'] == "redundant" %}
+{# {% if data['learner-status'] == "redundant" %}
 <h2 class="govuk-heading-m">Redundancy</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-7">
 <div class="govuk-summary-list__row">
@@ -364,7 +364,7 @@
     </dd>
     </div>
 </dl>
-{% endif %}
+{% endif %} #}
 
 <h2 class="govuk-heading-m">Overview</h2>
 <dl class="govuk-summary-list govuk-!-margin-bottom-7">
