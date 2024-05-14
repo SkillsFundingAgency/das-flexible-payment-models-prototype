@@ -59,40 +59,8 @@ href: "javascript:window.history.go(-1);"
 			</ul>
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprenticeship status</h2>
-				<div style="border-left: 5px solid #1d70b8; padding:15px; margin-bottom:20px;">
-					<table class="govuk-table">
-						<caption class="govuk-table__caption"><strong class="govuk-tag govuk-tag--yellow">Pending
-								approval</strong></caption>
-						<thead class="govuk-table__head">
-							<tr class="govuk-table__row">
-								<th scope="col" class="govuk-table__header govuk-!-width-one-third">
-									<span class="govuk-visually-hidden">Apprenticship detail</span>
-								</th>
-								<th scope="col" class="govuk-table__header govuk-!-width-one-third">
-									Current
-								</th>
-								<th scope="col" class="govuk-table__header govuk-!-width-one-third">
-									Requested
-								</th>
-								<td class="govuk-table__cell"><span class="govuk-visually-hidden">Action</span></td>
-							</tr>
-						</thead>
-						<tbody class="govuk-table__body">
-							<tr class="govuk-table__row">
-								<th scope="row" class="govuk-table__header">Learner status</th>
-								<td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">Break in
-										learning</strong></td>
-								<td class="govuk-table__cell">{% include "change-of-status/includes/learner-status-tag.html" %}
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<a class="govuk-link" href="view-changes">
-						View request<span class="govuk-visually-hidden">for change of start date</span>
-					</a>
-				</div>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
-					{# <div class="govuk-summary-list__row">
+					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Learner status
 						</dt>
@@ -105,7 +73,7 @@ href: "javascript:window.history.go(-1);"
 								Change<span class="govuk-visually-hidden"> apprenticeship status</span>
 							</a>
 						</dd>
-					</div> #}
+					</div>
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
 							Provider payments status
