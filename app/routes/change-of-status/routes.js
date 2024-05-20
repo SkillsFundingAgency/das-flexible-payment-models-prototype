@@ -160,3 +160,44 @@ router.post('/change-of-status/employer/v3/break-unfreeze/action', function (req
     }
 })
 
+// Version 5
+router.post('/change-of-status/training-provider/v5/edit-learner-status/action', function (req, res) {
+    var learnerstatus = req.session.data['learner-status']
+
+    if (learnerstatus == "break") {
+        res.redirect('../pause-date')
+    }
+    else if (learnerstatus == "in-learning") {
+        res.redirect('../resume-date')
+    }
+    else if (learnerstatus == "redundant") {
+        res.redirect('../stop-date-redundant')
+    }
+    else if (learnerstatus == "withdrawn") {
+        res.redirect('../withdrawal-warning')
+    }
+    else {
+        res.redirect('../edit-learner-status')
+    }
+})
+
+router.post('/change-of-status/training-provider/v5/waiting-to-start/edit-learner-status/action', function (req, res) {
+    var learnerstatus = req.session.data['learner-status']
+    if (learnerstatus == "waiting-to-start") {
+        res.redirect('../resume-date-planned-start-date')
+    }
+    else {
+        res.redirect('../confirm--withdrawal')
+    }
+})
+    
+router.post('/change-of-status/training-provider/v5/reason--withdrawal/action', function (req, res) {
+    var reasonforwithdrawal = req.session.data['reason-for-withdrawal']
+if 
+    (reasonforwithdrawal == "Apprenticeship never started") {
+        res.redirect('../confirm--withdrawal')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})

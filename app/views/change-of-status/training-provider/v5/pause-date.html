@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Break in learning" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+    <p class="govuk-body">
+      A break in learning (BIL) must be agreed with the learner. There must also be supporting evidence of their
+      intention to
+      return otherwise the learner should be recorded as a withdrawal.</p>
+    <p class="govuk-body">You will need to provide the last date of learning before the break.
+    </p>
+    <p class="govuk-body">
+      For more guidance refer to the <a
+        href="https://guidance.submit-learner-data.service.gov.uk/22-23/ilr/entity/LearningDelivery/field/LearnActEndDate"
+        target="_blank">ILR specification for the learning actual end date (opens in new tab)</a>
+
+    </p>
+    <form action="reason--break-in-learning" method="post" novalidate class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="pause-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            When is the break in learning effective from?
+          </legend>
+          <div id="pause-date-hint" class="govuk-hint">
+            For example, 27 3 2023
+          </div>
+          <div class="govuk-date-input" id="pause-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="pause-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pause-date-day"
+                  name="pause-day" value="{{ data['pause-day']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="pause-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pause-date-month"
+                  name="pause-month" value="{{ data['pause-month']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="pause-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="pause-date-year"
+                  name="pause-year" value="{{ data['pause-year']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

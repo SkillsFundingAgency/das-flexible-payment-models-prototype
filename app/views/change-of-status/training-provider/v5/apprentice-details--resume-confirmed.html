@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}{% set version = "feature/Change-of-circs/cop/employer" %}
+{% set pageTitle = "George Ford" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+
+				<h3 class="govuk-notification-banner__heading">
+					Learner status changed to In learning
+				</h3>
+				</p>
+				<p class="govuk-body">The employer has been informed of this update.</p>
+			</div>
+		</div>
+
+		{% include "change-of-status/training-provider/v5/includes/apprentice-details-list" %}
+	</div>
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+	<a href="apprentice-details--resume-confirmed--needs-approval" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		View needs approval
+	</a>
+</div>
+
+{% endblock %}

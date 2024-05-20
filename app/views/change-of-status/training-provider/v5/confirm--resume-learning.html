@@ -1,0 +1,167 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check and confirm status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="apprentice-details--resume-confirmed" method="post" novalidate>
+
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Learner status</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% include "change-of-status/includes/learner-status-tag.html" %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
+                            Change<span class="govuk-visually-hidden"> learner status</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key"> Return to learning date </dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['resume-month'] == "1" or
+                        data['resume-month']
+                        == "01" %}
+                        {{ data['resume-day'] }} January {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "2" or
+                        data['resume-month'] == "02" %}
+                        {{ data['resume-day'] }} February {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "3" or
+                        data['resume-month'] == "03" %}
+                        {{ data['resume-day'] }} March {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "4" or
+                        data['resume-month'] == "04" %}
+                        {{ data['resume-day'] }} April {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "5" or
+                        data['resume-month'] == "05" %}
+                        {{ data['resume-day'] }} May {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "6" or
+                        data['resume-month'] == "06" %}
+                        {{ data['resume-day'] }} June {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "7" or
+                        data['resume-month'] == "07" %}
+                        {{ data['resume-day'] }} July {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "8" or
+                        data['resume-month'] == "08" %}
+                        {{ data['resume-day'] }} August {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "9" or
+                        data['resume-month'] == "09" %}
+                        {{ data['resume-day'] }} September {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "10" %}
+                        {{ data['resume-day'] }} October {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "11" %}
+                        {{ data['resume-day'] }} November {{ data['resume-year'] }}
+                        {% elseif data['resume-month'] == "12" %}
+                        {{ data['resume-day'] }} December {{ data['resume-year'] }}
+                        {% else %}
+                        10 March 2024
+                        <input type="hidden" name="resume-day" value="10">
+                        <input type="hidden" name="resume-month" value="3">
+                        <input type="hidden" name="resume-year" value="2024">
+                        {% endif %}
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="resume-date">
+                            Change<span class="govuk-visually-hidden"> resume date</span>
+                        </a>
+                    </dd>
+                </div>
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key"> Planned training end date </dt>
+                    <dd class="govuk-summary-list__value">
+
+
+
+                        <!-- {{ data['resume-day'] or '24'}} -->
+
+                        {% if data['planned-end-month-tp'] == "1" or
+                        data['planned-end-month-tp']
+                        == "01" %}
+                        {{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "2" or
+                        data['planned-end-month-tp'] == "02" %}
+                        {{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "3" or
+                        data['planned-end-month-tp'] == "03" %}
+                        {{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "4" or
+                        data['planned-end-month-tp'] == "04" %}
+                        {{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "5" or
+                        data['planned-end-month-tp'] == "05" %}
+                        {{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "6" or
+                        data['planned-end-month-tp'] == "06" %}
+                        {{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "7" or
+                        data['planned-end-month-tp'] == "07" %}
+                        {{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "8" or
+                        data['planned-end-month-tp'] == "08" %}
+                        {{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "9" or
+                        data['planned-end-month-tp'] == "09" %}
+                        {{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
+                        {% elseif data['rplanned-end-month-tp'] == "10" %}
+                        {{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "11" %}
+                        {{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
+                        {% elseif data['planned-end-month-tp'] == "12" %}
+                        {{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+                        {% else %}
+                        25 June 2024
+                        {% endif %}
+
+                        <!-- {{ data['resume-year'] or '2023'}} -->
+
+
+                        <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="resume-date-planned-end-date">
+                            Change<span class="govuk-visually-hidden"> planned training end date</span>
+                        </a>
+                    </dd>
+                </div>
+
+            </dl>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+    <a href="confirm--resume-learning-changed-end-date" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        View changed end date version
+    </a>
+</div>
+
+{% endblock %}
