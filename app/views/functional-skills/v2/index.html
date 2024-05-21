@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+            {{pageTitle}}
+        </h1>
+
+        <p class="govuk-body">Content here to inform the user the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>there is a minumum English and maths requirment for apprenticeships at level 2 and above</li>
+            <li>the Education and Skills Funding Agency (ESFA) funds apprentices to achieve qualifications in English or
+                maths (or
+                both), if they do not already meet the minimum requirements for certification.</li>
+            <li>current and prior qualifications accepted as meeting the minimum English and maths requirements for
+                apprenticeships at
+                level 2 and above are here
+                https://www.gov.uk/government/publications/english-and-maths-requirements-in-apprenticeship-standards-at-level-2-and-above
+            </li>
+            <li><b>need to decide if users should be able to add functional skills which are above the minimum
+                    requirment. Also need to understand how this is funded.</b>
+            </li>
+        </ul>
+        <form action="select-aims" method="post" novalidate class="govuk-!-margin-top-7">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Do you want to add functional skills for this learner?
+                    </legend>
+                    <div id="status-update-hint" class="govuk-hint">
+                        Select one option
+                    </div>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="functional-skills" name="functional-skills"
+                                type="radio" value="functional-skills" {{
+                                checked('functional-skills','functional-skills') }} checked="checked"
+                                aria-describedby="functional-skills-hint">
+                            <label class="govuk-label govuk-radios__label" for="functional-skills">
+                                Yes
+                            </label>
+
+                            <div id="functional-skills-hint" class="govuk-hint govuk-radios__hint">
+                                This training will be funded by the ESFA
+                            </div>
+                        </div>
+
+
+
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="functional-skills-3" name="functional-skills"
+                                type="radio" value="break" {{ checked('functional-skills','no') }}>
+                            <label class="govuk-label govuk-radios__label" for="functional-skills-3">
+                                No
+                            </label>
+                        </div>
+
+
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                <a class="govuk-link" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

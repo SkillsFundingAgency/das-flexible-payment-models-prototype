@@ -1,0 +1,184 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check and confirm functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="approve-details" method="post" novalidate>
+
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                        English
+                    </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Start date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10 September 2024
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> start
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                End date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                9 September 2025
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> end
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Cost
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                £2,000
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="cost">Change<span
+                                        class="govuk-visually-hidden">cost</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Reduction in hours due to prior learning
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                6 hours
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rpl">Change<span class="govuk-visually-hidden"> reduction in
+                                        hours due to prior learning</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Reduction in hours due to prior learning
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                £500
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rpl">Change<span class="govuk-visually-hidden"> reduction in
+                                        hours due to prior learning</span></a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                        Maths
+                    </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Start date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10 September 2024
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> start
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                End date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                9 September 2025
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="dates">Change<span class="govuk-visually-hidden"> end
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Cost
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                £2,000
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="cost">Change<span
+                                        class="govuk-visually-hidden">cost</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Reduction in hours due to prior learning
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                6 hours
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rpl">Change<span class="govuk-visually-hidden"> reduction in
+                                        hours due
+                                        to prior learning</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Reduction in hours due to prior learning
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                £500
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="rpl">Change<span class="govuk-visually-hidden"> reduction in
+                                        hours due
+                                        to prior learning</span></a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm and continue</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
