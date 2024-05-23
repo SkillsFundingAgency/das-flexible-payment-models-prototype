@@ -1,0 +1,368 @@
+{% extends "layouts/main.html" %}
+{% set version = "v1" %}
+{% set pageTitle = "Check cohort details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          LAND ROVER EXPERIENCE LIMITED
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cohort reference:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BB98DJ
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          New request
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<h2 class="govuk-heading-s">Message</h2>
+<p class="govuk-body">
+  This is the message which has been sent by the employer when reviewing the cohort details.
+</p>
+<h2 class="govuk-heading-m govuk-!-margin-top-7">
+  2 x Game programmer, Level: 7
+</h2>
+{# <div class="govuk-inset-text das-inset-text--highlight"> #}
+  <div class="govuk-inset-text">
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">Apprentice record incomplete</h3>
+    <p>
+      You must complete the apprentice record to be able to approve
+    </p>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Georgina Howard
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link" href="#">Delete <span class="govuk-visually-hidden"> Georgina Howard</span></a>
+        </li>
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link govuk-link--no-visited-state" href="../task-list">Change<span
+              class="govuk-visually-hidden"> Georgina Howard</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--orange">
+              Incomplete
+            </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unique learner number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2261631370
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            24 Jun 2000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Training dates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 Jan 2022 to 24 May 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Price
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £1,200
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        George Ford
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link" href="#">Delete <span class="govuk-visually-hidden"> George Ford</span></a>
+        </li>
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link govuk-link--no-visited-state" href="../task-list">Change<span
+              class="govuk-visually-hidden"> George Ford</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--green">
+              Ready to share
+            </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unique learner number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8354631543
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 Dec 1999
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Training dates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 Jan 2022 to 24 May 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Price
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £1,200
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <h2 class="govuk-heading-m">
+    1 x AQA Functional Skills qualification in Mathematics at Level 2
+  </h2>
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">
+        Georgina Howard
+      </h2>
+      <ul class="govuk-summary-card__actions">
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link" href="#">Delete <span class="govuk-visually-hidden"> Georgina Howard</span></a>
+        </li>
+        <li class="govuk-summary-card__action">
+          <a class="govuk-link govuk-link--no-visited-state" href="../task-list">Change<span
+              class="govuk-visually-hidden"> Georgina Howard</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--green">
+              Ready to share
+            </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Unique learner number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            2261631370
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            24 Jun 2000
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Training dates
+          </dt>
+          <dd class="govuk-summary-list__value">
+            1 Jan 2022 to 24 May 2022
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Price
+          </dt>
+          <dd class="govuk-summary-list__value">
+            £500
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+  <p class="govuk-body">
+  <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Total apprenticeship training price (excluding VAT)
+      </dt>
+      <dd class="govuk-summary-list__value govuk-!-padding-left-2">
+        £2,900
+      </dd>
+    </div>
+  </dl>
+
+  <p>
+    <a href="/training-provider/{{version}}/#" class="govuk-link add-apprentice govuk-link--no-visited-state">Add
+      another
+      apprentice</a>
+    <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort"
+      href="/training-provider/{{version}}/approvals/add/entry-method" style="float:right">
+      Delete this cohort
+    </a>
+  </p>
+
+  <hr class="govuk-section-break govuk-section-break--l">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/training-provider/{{version}}/approvals/acknowledgement" method="post" class="form">
+        <div class="govuk-form-group  ">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">Submit to employer?</h3>
+            </legend>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="approve-details" name="approve-details" type="radio" value="yes"
+                  data-aria-controls="conditional-approve-details">
+                <label class="govuk-label govuk-radios__label" for="approve-details">
+                  Yes, send to employer to review or add details
+                </label>
+
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                  id="conditional-approve-details">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="approve-details">
+                      Leave LAND ROVER EXPERIENCE LIMITED a message (optional)
+                    </label>
+                    <textarea class="govuk-textarea" id="approve-details" name="approve-message" rows="5"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio"
+                  value="no">
+                <label class="govuk-label govuk-radios__label" for="approve-details-2">
+                  No, save and return to apprentice requests
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <button type="submit" id="continue-button" class="govuk-!-margin-top-5 govuk-button">Save and submit</button>
+        <br>
+        <p><a class="govuk-link govuk-link--no-visited-state"
+            href="/training-provider/{{version}}/approvals/apprentice-requests">
+            Save and exit
+          </a></p>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}
