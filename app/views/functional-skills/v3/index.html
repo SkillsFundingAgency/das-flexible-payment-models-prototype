@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+            {{pageTitle}}
+        </h1>
+
+        <p class="govuk-body">To qualify for apprenticeships at level 2 and above, learners must meet minimum English
+            and maths
+            requirements.</p>
+        <p class="govuk-body">If learners do not meet these requirements, the Education and Skills Funding Agency (ESFA)
+            will
+            fund them to achieve the
+            necessary qualifications in English, maths, or both.</p>
+        <p class="govuk-body">You can find a list of accepted qualifications on the <a
+                href="https://www.gov.uk/government/publications/english-and-maths-requirements-in-apprenticeship-standards-at-level-2-and-above"
+                target="_blank">English and maths requirements for apprenticeships</a> page.</p>
+        <form action="select-aims" method="post" novalidate class="govuk-!-margin-top-7">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Would you like to add any of these functional skills for this learner?
+                    </legend>
+                    <div id="status-update-hint" class="govuk-hint">
+                        Select one option
+                    </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="functional-skills" name="functional-skills"
+                                type="checkbox" value="English">
+                            <label class="govuk-label govuk-checkboxes__label" for="functional-skills">
+                                English
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="functional-skills-2" name="functional-skills"
+                                type="checkbox" value="Maths">
+                            <label class="govuk-label govuk-checkboxes__label" for="functional-skills-2">
+                                Mathematics
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__divider">or</div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="functional-skills-3" name="functional-skills"
+                                type="checkbox" value="None">
+                            <label class="govuk-label govuk-checkboxes__label" for="functional-skills-3">
+                                No, I do not need to add any functional skills
+                            </label>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                    Continue
+                </button>
+                <a class="govuk-link" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
