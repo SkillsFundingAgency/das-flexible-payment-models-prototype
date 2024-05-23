@@ -92,3 +92,13 @@ router.post('/training-provider/' + version + '/approvals/add/action/personal-de
         }
     }
 })
+router.post('/functional-skills/manage-functional-skils/v1/confirm-functional-skill/action', function (req, res) {
+    var IsCorrectFunctionalSkill = req.session.data['is-correct-functional-skill']
+
+    if (IsCorrectFunctionalSkill == "false") {
+        res.redirect('../select-functional-skill')
+    }
+    else {
+        res.redirect('../functional-skills?new-skill=yes')
+    }
+})

@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <h1 class="govuk-heading-xl" id="header-standards">Manage the functional skills you deliver</h1>
+        <p class="govuk-body">Check your functional skills are correct and add any missing information. Add any
+            functional skills that
+            you deliver that are not on the list.</p>
+        <p class="govuk-body">These skills are what you select from when adding and amending apprentices.</p>
+        <table class="govuk-table" aria-labelledby="header-standards">
+            <caption class="govuk-table__caption govuk-table__caption--m">English</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header das-table-cell-width-60" scope="col">Functional skill</th>
+                    <th class="govuk-table__header govuk-table__header--numeric das-table-cell-width-10" scope="col">
+                        Level</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <a class="govuk-link" href="#">
+                            AQA Functional Skills qualification in English at Level 1
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        Level 1
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <a class="govuk-link" href="#">
+                            AQA Functional Skills qualification in English at Level 2
+                        </a>
+                    </td>
+
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        Level 2
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="govuk-table" aria-labelledby="header-standards">
+            <caption class="govuk-table__caption govuk-table__caption--m">Mathematics</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header das-table-cell-width-60" scope="col">Functional skill</th>
+                    <th class="govuk-table__header govuk-table__header--numeric das-table-cell-width-10" scope="col">
+                        Level</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <a class="govuk-link" href="#">
+                            AQA Functional Skills qualification in Mathematics at Level 1
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        Level 1
+                    </td>
+                </tr>
+                {% if data['new-skill'] == 'yes' %}
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        <a class="govuk-link govuk-link--no-visited-state" href="manage-functional-skill">
+                            AQA Functional Skills qualification in Mathematics at Level 2
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">
+                        Level 2
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+        <p class="govuk-body">
+            <a href="select-functional-skill" role="button" draggable="false" class="govuk-button"
+                data-module="govuk-button">
+                Add a functional skill
+            </a>
+        </p>
+    </div>
+</div>
+
+{% endblock %}
