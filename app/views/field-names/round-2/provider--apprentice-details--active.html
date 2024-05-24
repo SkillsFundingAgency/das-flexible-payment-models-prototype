@@ -1,0 +1,746 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+        <div class="govuk-tabs" data-module="govuk-tabs">
+            <h2 class="govuk-tabs__title">
+                Contents
+            </h2>
+            <ul class="govuk-tabs__list">
+                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                    <a class="govuk-tabs__tab" href="#overview">
+                        Overview
+                    </a>
+                <li class="govuk-tabs__list-item">
+                    <a class="govuk-tabs__tab" href="#history">
+                        History
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-tabs__panel" id="overview">
+                <h2 class="govuk-heading-m">Apprenticeship status</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Learner status
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {% include "change-of-status/includes/learner-status-tag.html" %}
+                        </dd>
+
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="edit-learner-status">
+                                Change<span class="govuk-visually-hidden"> apprenticeship status</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Payments status
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <strong class="govuk-tag govuk-tag--blue">Active</strong>
+                        </dd>
+                    </div>
+
+                </dl>
+                {% if data['government-funded'] == 'Yes (government)' %}
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <details class="govuk-details govuk-">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Help with redundanct support for apprentices
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                <p class="govuk-body">We have calculated the apprentice had completed at least 75% of
+                                    their training by the date their employement ended. This
+                                    means we will fund 100% of the remaining costs of this apprenticeship up to the
+                                    funding band maximum.</p>
+                                <p class="govuk-body">With this funding
+                                    you can continue to deliver training so the apprentice can complete their
+                                    apprenticeship, including taking the end-point
+                                    assessment (EPA), without being employed.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                {% endif %}
+                {# Withdrawn #}
+                {% if data['learner-status'] == "in-learning" and data['resume-day'] != "" %}
+                <h2 class="govuk-heading-m">Return to learning</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key"> Return to learning date </dt>
+                        <dd class="govuk-summary-list__value">
+                            {% if data['resume-month'] == "1" or
+                            data['resume-month']
+                            == "01" %}
+                            {{ data['resume-day'] }} January {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "2" or
+                            data['resume-month'] == "02" %}
+                            {{ data['resume-day'] }} February {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "3" or
+                            data['resume-month'] == "03" %}
+                            {{ data['resume-day'] }} March {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "4" or
+                            data['resume-month'] == "04" %}
+                            {{ data['resume-day'] }} April {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "5" or
+                            data['resume-month'] == "05" %}
+                            {{ data['resume-day'] }} May {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "6" or
+                            data['resume-month'] == "06" %}
+                            {{ data['resume-day'] }} June {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "7" or
+                            data['resume-month'] == "07" %}
+                            {{ data['resume-day'] }} July {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "8" or
+                            data['resume-month'] == "08" %}
+                            {{ data['resume-day'] }} August {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "9" or
+                            data['resume-month'] == "09" %}
+                            {{ data['resume-day'] }} September {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "10" %}
+                            {{ data['resume-day'] }} October {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "11" %}
+                            {{ data['resume-day'] }} November {{ data['resume-year'] }}
+                            {% elseif data['resume-month'] == "12" %}
+                            {{ data['resume-day'] }} December {{ data['resume-year'] }}
+                            {% else %}
+                            10 March 2024
+                            {% endif %}
+
+                            <!-- {{ data['resume-year'] or '2023'}} -->
+
+
+                            <!-- {{ data['resume-day'] }} {{ data['resume-month'] }} {{ data['resume-year'] }} </dd> -->
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="resume-date">
+                                Change<span class="govuk-visually-hidden"> resume date</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+                {% endif %}
+
+                {# Break in learning #}
+                {% if data['learner-status'] == "break" %}
+                <h2 class="govuk-heading-m">Break in learning</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason for break in learning
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {% if data['reason-for-pause'] == 'Other' %}
+                            Other - {{data['other-reason']}}
+                            {% else %}
+                            {{data['reason-for-pause'] or 'Prefer not to say'}}
+                            {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="reason--break-in-learning">
+                                Change<span class="govuk-visually-hidden"> reason for break in learning</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Date change takes effect</dt>
+                        <dd class="govuk-summary-list__value">
+
+                            {% if data['pause-month'] == "1" or
+                            data['pause-month']
+                            == "01" %}
+                            {{ data['pause-day'] }} January {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "2" or
+                            data['pause-month'] == "02" %}
+                            {{ data['pause-day'] }} February {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "3" or
+                            data['pause-month'] == "03" %}
+                            {{ data['pause-day'] }} March {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "4" or
+                            data['pause-month'] == "04" %}
+                            {{ data['pause-day'] }} April {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "5" or
+                            data['pause-month'] == "05" %}
+                            {{ data['pause-day'] }} May {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "6" or
+                            data['pause-month'] == "06" %}
+                            {{ data['pause-day'] }} June {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "7" or
+                            data['pause-month'] == "07" %}
+                            {{ data['pause-day'] }} July {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "8" or
+                            data['pause-month'] == "08" %}
+                            {{ data['pause-day'] }} August {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "9" or
+                            data['pause-month'] == "09" %}
+                            {{ data['pause-day'] }} September {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "10" %}
+                            {{ data['pause-day'] }} October {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "11" %}
+                            {{ data['pause-day'] }} November {{ data['pause-year'] }}
+                            {% elseif data['pause-month'] == "12" %}
+                            {{ data['pause-day'] }} December {{ data['pause-year'] }}
+                            {% else %}
+                            10 January 2024
+                            {% endif %}
+
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link govuk-link--no-visited-state" href="pause-date">
+                                Change<span class="govuk-visually-hidden"> date changes take effect</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Last payment
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            December 2023
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Change date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            1 February 2024
+                        </dd>
+                    </div>
+                </dl>
+                {% endif %}
+
+                {# Withdrawn #}
+                {% if data['learner-status'] == "withdrawn" %}
+                <h2 class="govuk-heading-m">Withdrawal</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason for withdrawal
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {% if data['reason-for-withdrawal'] == 'Other' %}
+                            Other - {{data['other-reason']}}
+                            {% else %}
+                            {{data['reason-for-withdrawal'] or 'Prefer not to say'}}
+                            {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="reason--withdrawal">
+                                Change<span class="govuk-visually-hidden"> reason for withdrawal</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Date change takes effect</dt>
+                        <dd class="govuk-summary-list__value">
+
+                            {% if data['withdrawal-month'] == "1" or
+                            data['withdrawal-month']
+                            == "01" %}
+                            {{ data['withdrawal-day'] }} January {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "2" or
+                            data['withdrawal-month'] == "02" %}
+                            {{ data['withdrawal-day'] }} February {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "3" or
+                            data['withdrawal-month'] == "03" %}
+                            {{ data['withdrawal-day'] }} March {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "4" or
+                            data['withdrawal-month'] == "04" %}
+                            {{ data['withdrawal-day'] }} April {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "5" or
+                            data['withdrawal-month'] == "05" %}
+                            {{ data['withdrawal-day'] }} May {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "6" or
+                            data['withdrawal-month'] == "06" %}
+                            {{ data['withdrawal-day'] }} June {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "7" or
+                            data['withdrawal-month'] == "07" %}
+                            {{ data['withdrawal-day'] }} July {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "8" or
+                            data['withdrawal-month'] == "08" %}
+                            {{ data['withdrawal-day'] }} August {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "9" or
+                            data['withdrawal-month'] == "09" %}
+                            {{ data['withdrawal-day'] }} September {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "10" %}
+                            {{ data['withdrawal-day'] }} October {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "11" %}
+                            {{ data['withdrawal-day'] }} November {{ data['withdrawal-year'] }}
+                            {% elseif data['withdrawal-month'] == "12" %}
+                            {{ data['withdrawal-day'] }} December {{ data['withdrawal-year'] }}
+                            {% else %}
+                            10 January 2024
+                            {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
+                                Change<span class="govuk-visually-hidden"> changes take effect</span>
+                            </a>
+                        </dd>
+                    </div>
+                    {% endif %}
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Last payment
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            December 2023
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Change date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            1 February 2024
+                        </dd>
+                    </div>
+                </dl>
+                {% endif %}
+
+                {# Redundancy #}
+                {% if data['learner-status'] == "redundant" %}
+                <h2 class="govuk-heading-m">Redundancy</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">Date employment ended</dt>
+                        <dd class="govuk-summary-list__value">
+
+                            <!-- {{ data['stop-day'] }} {{ data['stop-month'] }} {{ data['stop-year'] }}  -->
+
+                            {% if data['stop-month'] == "1" or
+                            data['stop-month']
+                            == "01" %}
+                            {{ data['stop-day'] }} January {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "2" or
+                            data['stop-month'] == "02" %}
+                            {{ data['stop-day'] }} February {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "3" or
+                            data['stop-month'] == "03" %}
+                            {{ data['stop-day'] }} March {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "4" or
+                            data['stop-month'] == "04" %}
+                            {{ data['stop-day'] }} April {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "5" or
+                            data['stop-month'] == "05" %}
+                            {{ data['stop-day'] }} May {{ data['stop-year'] }}
+                            {% elseif data['pause-month'] == "6" or
+                            data['stop-month'] == "06" %}
+                            {{ data['stop-day'] }} June {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "7" or
+                            data['stop-month'] == "07" %}
+                            {{ data['stop-day'] }} July {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "8" or
+                            data['stop-month'] == "08" %}
+                            {{ data['stop-day'] }} August {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "9" or
+                            data['stop-month'] == "09" %}
+                            {{ data['stop-day'] }} September {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "10" %}
+                            {{ data['stop-day'] }} October {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "11" %}
+                            {{ data['stop-day'] }} November {{ data['stop-year'] }}
+                            {% elseif data['stop-month'] == "12" %}
+                            {{ data['stop-day'] }} December {{ data['stop-year'] }}
+                            {% else %}
+                            10 January 2024
+                            {% endif %}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="stop-date-redundant">
+                                Change<span class="govuk-visually-hidden"> date</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+                {% endif %}
+
+                <h2 class="govuk-heading-m">Overview</h2>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Employer
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {% if data['learner-status'] == "redundant" %}
+                            <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-1">Made
+                                redundant
+                            </strong>
+                            <br>
+                            {% endif %}
+                            AUTOMATION &amp; OPTIMISATION LTD
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="change-of-employer">
+                                Change<span class="govuk-visually-hidden"> Employer</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Cohort reference
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            MNNRLD
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Agreement ID
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            7GXEKP
+                        </dd>
+                    </div>
+                </dl>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <h2 class="govuk-heading-m">Apprentice details</h2>
+                    </div>
+                </div>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Unique learner number
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            5320150775
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Name
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            George Ford
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Email address
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            georgeford@gmail.com<br>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Resend invitation<span class="govuk-visually-hidden">Resend invitation email to
+                                    apprentice</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Date of birth
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            1 January 2000
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Apprentice confirmation
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Confirmed
+                        </dd>
+                    </div>
+
+                </dl>
+                <h2 class="govuk-heading-m">Course</h2>
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Standard
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Abattoir Worker, Level: 2
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="change-of-course">
+                                Change<span class="govuk-visually-hidden"> standard</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Version
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            1.0
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Training start date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            1 August 2023
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="change-start-date">
+                                Change<span class="govuk-visually-hidden"> actual training start date</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Planned training end date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+
+
+                            {% if data['planned-end-month-tp'] == "1" or
+                            data['planned-end-month-tp']
+                            == "01" %}
+                            {{ data['planned-end-day-tp'] }} January {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "2" or
+                            data['planned-end-month-tp'] == "02" %}
+                            {{ data['planned-end-day-tp'] }} February {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "3" or
+                            data['planned-end-month-tp'] == "03" %}
+                            {{ data['planned-end-day-tp'] }} March {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "4" or
+                            data['planned-end-month-tp'] == "04" %}
+                            {{ data['planned-end-day-tp'] }} April {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "5" or
+                            data['planned-end-month-tp'] == "05" %}
+                            {{ data['planned-end-day-tp'] }} May {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "6" or
+                            data['planned-end-month-tp'] == "06" %}
+                            {{ data['planned-end-day-tp'] }} June {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "7" or
+                            data['planned-end-month-tp'] == "07" %}
+                            {{ data['planned-end-day-tp'] }} July {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "8" or
+                            data['planned-end-month-tp'] == "08" %}
+                            {{ data['planned-end-day-tp'] }} August {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "9" or
+                            data['planned-end-month-tp'] == "09" %}
+                            {{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
+                            {% elseif data['rplanned-end-month-tp'] == "10" %}
+                            {{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "11" %}
+                            {{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
+                            {% elseif data['planned-end-month-tp'] == "12" %}
+                            {{ data['planned-end-day-tp'] }} December {{ data['planned-end-year-tp'] }}
+                            {% else %}
+                            10 January 2025
+                            {% endif %}
+
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                        <dt class="govuk-summary-list__key">
+                            Your reference
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Nothing provided
+                        </dd>
+                    </div>
+                </dl>
+
+
+                <h2 class="govuk-heading-m">Price</h2>
+                <dl class="govuk-summary-list">
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Training price
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            £6,000
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            End-point assessment price
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            £2,500
+                        </dd>
+                        <!-- <dd class="govuk-summary-list__actions">
+    															<a class="govuk-link" href="update-price">
+    																Change<span class="govuk-visually-hidden"> total assessment price</span>
+    															</a>
+    														</dd> -->
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Total price
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            £8,500
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="02-update-price">
+                                Change<span class="govuk-visually-hidden"> total training price</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+
+            </div>
+            <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
+                <h2 class="govuk-heading-m">History</h2>
+                <ol class="hmrc-timeline">
+                    <!-- <li class="hmrc-timeline__event">
+    						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+    							increase
+    						</h3>
+    						<p class="govuk-body govuk-!-margin-bottom-3">
+    							<strong class="govuk-tag govuk-tag--yellow">Change
+    								requested</strong> by
+    							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+    								2020</time>
+    						</p>
+    						<div class="hmrc-timeline__event-content">
+    							<p class="govuk-body">
+    								Total training price
+    								updated from
+    								<b>£1,000</b>
+    								to
+    								<b>£1,234</b>
+    							</p>
+    						</div>
+    					</li> -->
+                    <li class="hmrc-timeline__event">
+                        <h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+                            increase
+                        </h3>
+                        <p class="govuk-body govuk-!-margin-bottom-3">
+                            <strong class="govuk-tag govuk-tag--green">Approved</strong> by
+                            AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-15">15 July 2020</time>
+                        </p>
+                        <div class="hmrc-timeline__event-content">
+                            <p class="govuk-body">
+                                Total training price
+                                updated from
+                                <b>£1,000</b>
+                                to
+                                <b>£6,000</b>
+                            </p>
+                            <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+                                <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">
+                                        More details
+                                    </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                    <ul class="govuk-list">
+                                        <li>
+                                            <strong class="govuk-tag govuk-tag--yellow">Change
+                                                requested</strong> by
+                                            EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+                                                2020</time>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </li>
+                    <li class="hmrc-timeline__event">
+                        <h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
+                            increase
+                        </h3>
+                        <p class="govuk-body govuk-!-margin-bottom-3">
+                            <strong class="govuk-tag govuk-tag--red">Declined</strong> by
+                            AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2020-07-5">5 July 2020</time>
+                        </p>
+                        <div class="hmrc-timeline__event-content">
+                            <p class="govuk-body">
+                                Total training price
+                                updated from
+                                <b>£1,000</b>
+                                to
+                                <b>£10,234</b>
+                            </p>
+                            <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+                                <summary class="govuk-details__summary">
+                                    <span class="govuk-details__summary-text">
+                                        More details
+                                    </span>
+                                </summary>
+                                <div class="govuk-details__text">
+                                    <ul class="govuk-list">
+                                        <li>
+                                            <strong class="govuk-tag govuk-tag--yellow">Change
+                                                requested</strong> by
+                                            EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+                                                2020</time>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </li>
+                    <li class="hmrc-timeline__event">
+                        <h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
+                        <time class="hmrc-timeline__event-meta" datetime="2020-07-15">28 June
+                            2020</time>
+                        <div class="hmrc-timeline__event-content">
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Started</strong>
+                        </div>
+                    </li>
+                    <li class="hmrc-timeline__event">
+                        <h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship paused</h3>
+                        <time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body">23 June
+                                2020</span></time>
+                        <div class="hmrc-timeline__event-content">
+                            <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-3">Paused</strong>
+                        </div>
+                    </li>
+                    <li class="hmrc-timeline__event">
+                        <h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship agreed</h3>
+                        <time class="hmrc-timeline__event-meta" datetime="2020-07-15"><span class="govuk-body">8
+                                September
+                                2019</span></time>
+                        <div class="hmrc-timeline__event-content">
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-3">Approved</strong>
+
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+    <a href="provider--apprentice-details--inactive" role="button" draggable="false"
+        class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Change status
+    </a>
+</div>
+
+{% endblock %}
