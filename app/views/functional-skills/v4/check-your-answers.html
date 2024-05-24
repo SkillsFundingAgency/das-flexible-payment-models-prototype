@@ -5,7 +5,7 @@
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,12 +19,22 @@
 
         <form action="end-research" method="post" novalidate>
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            {% if data['added-another'] == "true" %}
+            <p class="govuk-body">You have added 2 functional skills</p>
+            {% else %}
             <p class="govuk-body">You have added 1 functional skill</p>
+            {% endif %}
             <div class="govuk-summary-card">
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">
                         English
                     </h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Remove skill<span class="govuk-visually-hidden">
+                                    English</span></a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="govuk-summary-card__content">
                     <dl class="govuk-summary-list">
@@ -90,6 +100,12 @@
                     <h2 class="govuk-summary-card__title">
                         Mathematics
                     </h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link govuk-link--no-visited-state" href="confirm-delete">Remove skill<span
+                                    class="govuk-visually-hidden"> English</span></a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="govuk-summary-card__content">
                     <dl class="govuk-summary-list">
@@ -150,23 +166,28 @@
                     </dl>
                 </div>
             </div>
-    </div>
 
-    {% endif %}
-</div>
+
+            {% endif %}
 <p class="govuk-body">You can add up to one English and one Mathematics functional skill</p>
-<div class="govuk-button-group">
-    <a href="learning-aim?added-another=true" role="button" draggable="false"
-        class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Add another functional skill
-    </a>
-</div>
-<div class="govuk-button-group govuk-!-margin-top-6">
-    <button class="govuk-button" type="submit" id="submit-status-change">Confirm and continue</button>
-</div>
-</form>
+            {% if data['added-another'] != "true" %}
+            <div class="govuk-button-group">
+                <a href="learning-aim?added-another=true" role="button" draggable="false"
+                    class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Add another functional skill
+                </a>
+            </div>
+            {% else %}
+            <div class="govuk-inset-text">No more functional skills can be added to this apprenticeship until the current ones
+                have been
+                completed or removed.</div>
+            {% endif %}
+            <div class="govuk-button-group govuk-!-margin-top-6">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm and continue</button>
+            </div>
+            </form>
 
-</div>
+    </div>
 
 </div>
 

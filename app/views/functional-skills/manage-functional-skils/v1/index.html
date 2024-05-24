@@ -5,7 +5,7 @@
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices" %}
+{% include "includes/nav-training-provider-home" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -40,8 +40,8 @@ href: "javascript:window.history.go(-1);"
     </div>
     <div class="govuk-grid-column-one-third">
         <div class="app-feature-box">
-            <h2 class="govuk-heading-s app-feature-box__heading"><a href="functional-skills"
-                    class="govuk-link">Functional skills</a>
+            <h2 class="govuk-heading-s app-feature-box__heading"><a href="functional-skills?new-skill=no&remove-skill=no"
+                    class="govuk-link govuk-link--no-visited-state">Functional skills</a>
             </h2>
             <p class="app-feature-box__content">Manage the functional skills your organisation delivers.</p>
         </div>

@@ -123,3 +123,13 @@ router.post('/functional-skills/v3/recognise-prior-learning-maths/action', funct
         res.redirect('../recognise-prior-learning-maths--add')
     }
 })
+router.post('/functional-skills/v4/confirm-delete/action', function (req, res) {
+    var DeleteSkill = req.session.data['delete']
+
+    if (DeleteSkill == "no") {
+        res.redirect('../check-your-answers?added-another=true')
+    }
+    else {
+        res.redirect('../check-your-answers?added-another=false')
+    }
+})
