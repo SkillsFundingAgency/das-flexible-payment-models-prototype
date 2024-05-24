@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<a href="{{ previousPageUrl }}" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="end-research" method="post" novalidate>
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <p class="govuk-body">You have added 1 functional skill</p>
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                        English
+                    </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Qualification
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                AQA Functional Skills qualification in English at Level 2
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state"
+                                    href="learning-aim-english">Change<span class="govuk-visually-hidden"> qualification
+                                        level</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Start date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10 September 2024
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state" href="dates-english">Change<span
+                                        class="govuk-visually-hidden"> start
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                End date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                9 September 2025
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state" href="dates-english">Change<span
+                                        class="govuk-visually-hidden"> end
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Previous training
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                60%
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state"
+                                    href="recognise-prior-learning">Change<span class="govuk-visually-hidden"> previous
+                                        training</span></a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+            {% if data['added-another'] == "true" %}
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                        Mathematics
+                    </h2>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Qualification
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                AQA Functional Skills qualification in Mathematics at Level 2
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state"
+                                    href="learning-aim-english">Change<span class="govuk-visually-hidden">
+                                        qualification
+                                        level</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Start date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                3 November 2024
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state" href="dates-english">Change<span
+                                        class="govuk-visually-hidden"> start
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                End date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                18 December 2024
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state" href="dates-english">Change<span
+                                        class="govuk-visually-hidden"> end
+                                        date</span></a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Previous training
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                None
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link govuk-link--no-visited-state"
+                                    href="recognise-prior-learning">Change<span class="govuk-visually-hidden">
+                                        previous
+                                        training</span></a>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+    </div>
+
+    {% endif %}
+</div>
+<p class="govuk-body">You can add up to one English and one Mathematics functional skill</p>
+<div class="govuk-button-group">
+    <a href="learning-aim?added-another=true" role="button" draggable="false"
+        class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add another functional skill
+    </a>
+</div>
+<div class="govuk-button-group govuk-!-margin-top-6">
+    <button class="govuk-button" type="submit" id="submit-status-change">Confirm and continue</button>
+</div>
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}
