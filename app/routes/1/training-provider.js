@@ -102,3 +102,24 @@ router.post('/functional-skills/manage-functional-skils/v1/confirm-functional-sk
         res.redirect('../functional-skills?new-skill=yes')
     }
 })
+
+router.post('/functional-skills/v3/recognise-prior-learning-english/action', function (req, res) {
+    var RPL = req.session.data['rpl']
+
+    if (RPL == "no") {
+        res.redirect('../learning-aim-maths')
+    }
+    else {
+        res.redirect('../recognise-prior-learning-english--add')
+    }
+})
+router.post('/functional-skills/v3/recognise-prior-learning-maths/action', function (req, res) {
+    var RPL = req.session.data['rpl']
+
+    if (RPL == "no") {
+        res.redirect('../check-your-answers')
+    }
+    else {
+        res.redirect('../recognise-prior-learning-maths--add')
+    }
+})

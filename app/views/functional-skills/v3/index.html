@@ -37,15 +37,13 @@ href: "javascript:window.history.go(-1);"
         <p class="govuk-body">You can find a list of accepted qualifications on the <a
                 href="https://www.gov.uk/government/publications/english-and-maths-requirements-in-apprenticeship-standards-at-level-2-and-above"
                 target="_blank">English and maths requirements for apprenticeships</a> page.</p>
-        <form action="select-aims" method="post" novalidate class="govuk-!-margin-top-7">
+        <form action="learning-aim-english" method="post" novalidate class="govuk-!-margin-top-7">
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+                <fieldset class="govuk-fieldset">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         Would you like to add any of these functional skills for this learner?
                     </legend>
-                    <div id="status-update-hint" class="govuk-hint">
-                        Select one option
-                    </div>
+        
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="functional-skills" name="functional-skills"
@@ -64,7 +62,7 @@ href: "javascript:window.history.go(-1);"
                         <div class="govuk-checkboxes__divider">or</div>
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="functional-skills-3" name="functional-skills"
-                                type="checkbox" value="None">
+                                type="checkbox" value="None" data-behaviour="exclusive">
                             <label class="govuk-label govuk-checkboxes__label" for="functional-skills-3">
                                 No, I do not need to add any functional skills
                             </label>
