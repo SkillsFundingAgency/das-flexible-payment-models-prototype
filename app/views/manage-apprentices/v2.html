@@ -1,0 +1,878 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+    <div class="govuk-width-container">
+        <ul class="das-navigation__list ">
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link"
+                    href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice
+                    requests</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+                    funding</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link das-navigation__link--current"
+                    href="/training-provider/{{version}}/manage/index">Manage
+                    your apprentices</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+            </li>
+            <li class="das-navigation__priority-list-item" id="priority-list-menu"><a
+                    class="das-navigation__priority-button" href="/training-provider/{{version}}/#">More</a>
+                <ul class="das-navigation__priority-list govuk-visually-hidden">
+                    <li class="das-navigation__list-item">
+                        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and
+                            agreements</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Manage your apprentices</h1>
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+        <div class="moj-filter">
+
+            <!-- MOJ filter START -->
+            <div class="moj-filter__header" style="background:none;">
+                <div class="moj-filter__header-title">
+                    <h2 class="govuk-heading-m">Filter</h2>
+                </div>
+            </div>
+            <div class="moj-filter__content">
+                {# <div class="moj-filter__selected">
+                    <div class="moj-filter__selected-heading">
+                        <div class="moj-filter__heading-title">
+                            <h2 class="govuk-heading-m">Selected filters</h2>
+                        </div>
+
+                        <div class="moj-filter__heading-action">
+                            <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear</a></p>
+                        </div>
+
+                    </div>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">What</h3>
+
+                    <ul class="moj-filter-tags">
+
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span
+                                    class="govuk-visually-hidden">Remove this
+                                    filter</span> Business</a></li>
+
+
+                    </ul>
+
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Where</h3>
+
+                    <ul class="moj-filter-tags">
+
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span
+                                    class="govuk-visually-hidden">Remove this
+                                    filter</span> Sheffield (within 10 miles)</a></li>
+
+                    </ul>
+                    <div class="govuk-!-padding-bottom-4"></div>
+
+
+
+
+
+
+                </div> #}
+
+                <div class="moj-filter__options">
+
+                    <div class="govuk-form-group">
+                        <label for="Keyword"
+                            class="govuk-fieldset__legend govuk-fieldset__legend--s govuk-!-margin-bottom-0">Keyword
+                            <p class="govuk-hint">Search apprentice name or unique learner number (ULN)
+                            </p>
+                        </label>
+                        <input name="keyword" type="search" title="Search" class="govuk-input" id="Keyword" value="">
+                    </div>
+
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5 ">
+
+                    {# Start accordion #}
+
+                    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                        <div class="govuk-accordion__section">
+                            <div class="govuk-accordion__section-header">
+                                <h2 class="govuk-accordion__section-heading">
+                                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                                        Employer
+                                    </span>
+                                </h2>
+                            </div>
+                            <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-1" name="levels"
+                                                    type="checkbox" value="2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-1">
+                                                    BENTLEY
+                                                    &amp; HART LLP
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-2" name="levels"
+                                                    type="checkbox" value="3">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-2">
+                                                    Department for Education
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-3" name="levels"
+                                                    type="checkbox" value="4">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-3">
+                                                    ESFA LTD
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-4" name="levels"
+                                                    type="checkbox" value="5">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-4">
+                                                    John Lewis and Partners LTD
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-5" name="levels"
+                                                    type="checkbox" value="6">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-5">
+                                                    LOCKHEED MARTIN
+                                                    AERONAUTICAL SYSTEMS SUPPORT COMPANY
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-6" name="levels"
+                                                    type="checkbox" value="7">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-6">
+                                                    MORRISONS LIMITED
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-accordion__section">
+                            <div class="govuk-accordion__section-header">
+                                <h2 class="govuk-accordion__section-heading">
+                                    <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                                        Standard
+                                    </span>
+                                </h2>
+                            </div>
+                            <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="standard-1" name="levels"
+                                                    type="checkbox" value="2">
+                                                <label class="govuk-label govuk-checkboxes__label" for="standard-1">
+                                                    Abattoir Worker,
+                                                    Level: 2
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="standard-2" name="levels"
+                                                    type="checkbox" value="3">
+                                                <label class="govuk-label govuk-checkboxes__label" for="standard-2">
+                                                    Able
+                                                    seafarer (deck),
+                                                    Level: 2
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="standard-3" name="levels"
+                                                    type="checkbox" value="4">
+                                                <label class="govuk-label govuk-checkboxes__label" for="standard-3">
+                                                    Accident Repair
+                                                    Technician, Level: 3
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="employer-4" name="levels"
+                                                    type="checkbox" value="5">
+                                                <label class="govuk-label govuk-checkboxes__label" for="employer-4">
+                                                    Accounting,
+                                                    Level: 2
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="standard-5" name="levels"
+                                                    type="checkbox" value="6">
+                                                <label class="govuk-label govuk-checkboxes__label" for="standard-5">
+                                                    Accounting,
+                                                    Level: 3
+                                                </label>
+                                            </div>
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="standard-6" name="levels"
+                                                    type="checkbox" value="7">
+                                                <label class="govuk-label govuk-checkboxes__label" for="standard-6">
+                                                    Accounting,
+                                                    Level: 4
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-accordion__section">
+                            <div class="govuk-accordion__section-header">
+                                <h2 class="govuk-accordion__section-heading">
+                                    <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                                        Status
+                                    </span>
+                                </h2>
+                            </div>
+                            <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+
+                                        <div class="govuk-checkboxes govuk-checkboxes--small"
+                                            data-module="govuk-checkboxes">
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type" name="type"
+                                                    type="checkbox" value="1" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type">
+                                                    Waiting to start (Beta) (18)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-2" name="type"
+                                                    type="checkbox" value="2" checked>
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                                    In learning (Beta) (15)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-3" name="type"
+                                                    type="checkbox" value="3">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                                                    Break in learning (Beta) (2)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-4" name="type"
+                                                    type="checkbox" value="4">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                                                    Withdrawn (Beta) (1)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-5" name="type"
+                                                    type="checkbox" value="5">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-5">
+                                                    Live (56)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-6" name="type"
+                                                    type="checkbox" value="6">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-6">
+                                                    Paused (6)
+                                                </label>
+                                            </div>
+
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="type-7" name="type"
+                                                    type="checkbox" value="7">
+                                                <label class="govuk-label govuk-checkboxes__label" for="type-7">
+                                                    Stopped (16)
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-accordion__section">
+                            <div class="govuk-accordion__section-header">
+                                <h2 class="govuk-accordion__section-heading">
+                                    <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                                        Date range
+                                    </span>
+                                </h2>
+                            </div>
+                            <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+                                <div class="govuk-form-group">
+                                    <label for="selectedStartDate" class="govuk-label govuk-label--s">Start date
+                                    </label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedStartDate"
+                                        name="selectedStartDate">
+                                        <option label="All" aria-label="All start dates" value="">All</option>
+                                        <option label="Jun 2017" value="2017-06-01">2017-06-01</option>
+                                        <option label="Aug 2017" value="2017-08-01">2017-08-01</option>
+                                        <option label="May 2018" value="2018-05-01">2018-05-01</option>
+                                        <option label="Jun 2018" value="2018-06-01">2018-06-01</option>
+                                        <option label="Aug 2018" value="2018-08-01">2018-08-01</option>
+                                        <option label="Dec 2018" value="2018-12-01">2018-12-01</option>
+                                        <option label="Jan 2019" value="2019-01-01">2019-01-01</option>
+                                        <option label="Feb 2019" value="2019-02-01">2019-02-01</option>
+                                        <option label="Apr 2019" value="2019-04-01">2019-04-01</option>
+                                        <option label="May 2019" value="2019-05-01">2019-05-01</option>
+                                        <option label="Jul 2019" value="2019-07-01">2019-07-01</option>
+                                        <option label="Aug 2019" value="2019-08-01">2019-08-01</option>
+                                        <option label="Sep 2019" value="2019-09-01">2019-09-01</option>
+                                        <option label="Oct 2019" value="2019-10-01">2019-10-01</option>
+                                        <option label="Dec 2019" value="2019-12-01">2019-12-01</option>
+                                        <option label="Jan 2020" value="2020-01-01">2020-01-01</option>
+                                        <option label="Feb 2020" value="2020-02-01">2020-02-01</option>
+                                        <option label="Mar 2020" value="2020-03-01">2020-03-01</option>
+                                        <option label="Apr 2020" value="2020-04-01">2020-04-01</option>
+                                        <option label="May 2020" value="2020-05-01">2020-05-01</option>
+                                        <option label="Jul 2020" value="2020-07-01">2020-07-01</option>
+                                    </select>
+                                </div>
+
+                                <div class="govuk-form-group">
+                                    <label for="selectedEndDate" class="govuk-label govuk-label--s">Planned end date
+                                    </label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedEndDate"
+                                        name="selectedEndDate">
+                                        <option label="All" aria-label="All end dates" value="">All</option>
+                                        <option label="Oct 2018" value="2018-10-01">2018-10-01</option>
+                                        <option label="Dec 2018" value="2018-12-01">2018-12-01</option>
+                                        <option label="May 2019" value="2019-05-01">2019-05-01</option>
+                                        <option label="Jun 2019" value="2019-06-01">2019-06-01</option>
+                                        <option label="Jul 2019" value="2019-07-01">2019-07-01</option>
+                                        <option label="Oct 2019" value="2019-10-01">2019-10-01</option>
+                                        <option label="Dec 2019" value="2019-12-01">2019-12-01</option>
+                                        <option label="Jan 2020" value="2020-01-01">2020-01-01</option>
+                                        <option label="Feb 2020" value="2020-02-01">2020-02-01</option>
+                                        <option label="Mar 2020" value="2020-03-01">2020-03-01</option>
+                                        <option label="Apr 2020" value="2020-04-01">2020-04-01</option>
+                                        <option label="May 2020" value="2020-05-01">2020-05-01</option>
+                                        <option label="Sep 2020" value="2020-09-01">2020-09-01</option>
+                                        <option label="Nov 2020" value="2020-11-01">2020-11-01</option>
+                                        <option label="Dec 2020" value="2020-12-01">2020-12-01</option>
+                                        <option label="Jan 2021" value="2021-01-01">2021-01-01</option>
+                                        <option label="Mar 2021" value="2021-03-01">2021-03-01</option>
+                                        <option label="May 2021" value="2021-05-01">2021-05-01</option>
+                                        <option label="Jun 2021" value="2021-06-01">2021-06-01</option>
+                                        <option label="Jul 2021" value="2021-07-01">2021-07-01</option>
+                                        <option label="Aug 2021" value="2021-08-01">2021-08-01</option>
+                                        <option label="Oct 2021" value="2021-10-01">2021-10-01</option>
+                                        <option label="May 2022" value="2022-05-01">2022-05-01</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# End accordion #}
+
+                    {# <div class="govuk-form-group">
+                        <label for="selectedEmployer" class="govuk-label govuk-label--s">Employer
+                        </label>
+                        <select class="govuk-select govuk-!-width-full" id="selectedEmployer" name="selectedEmployer">
+                            <option label="All" aria-label="All employers" value="">All</option>
+                            <option label="BENTLEY &amp; HART LLP" value="BENTLEY &amp; HART LLP">BENTLEY
+                                &amp; HART LLP</option>
+                            <option label="Department for Education" value="Department for Education">
+                                Department for Education</option>
+                            <option label="ESFA  LTD" value="ESFA  LTD">ESFA LTD</option>
+                            <option label="ESFA LTD" value="ESFA LTD">ESFA LTD</option>
+                            <option label="JOHN LEWIS PLC" value="JOHN LEWIS PLC">JOHN LEWIS PLC</option>
+                            <option label="LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY"
+                                value="LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY">LOCKHEED MARTIN
+                                AERONAUTICAL SYSTEMS SUPPORT COMPANY</option>
+                            <option label="MORRISONS LIMITED" value="MORRISONS LIMITED">MORRISONS LIMITED
+                            </option>
+                            <option label="NON  LTD" value="NON  LTD">NON LTD</option>
+                            <option label="RAGA LIMITED" value="RAGA LIMITED">RAGA LIMITED</option>
+                            <option label="SAINSBURY &amp; SAINSBURY  LIMITED"
+                                value="SAINSBURY &amp; SAINSBURY  LIMITED">SAINSBURY &amp;
+                                SAINSBURY LIMITED
+                            </option>
+                            <option label="SAINSBURY'S LIMITED" value="SAINSBURY'S LIMITED">SAINSBURY'S
+                                LIMITED</option>
+                            <option label="SATHISH LIMITED" value="SATHISH LIMITED">SATHISH LIMITED</option>
+                            <option label="SCIENCE RESEARCH  LIMITED" value="SCIENCE RESEARCH  LIMITED">
+                                SCIENCE RESEARCH LIMITED</option>
+                            <option label="SUBHA LIMITED" value="SUBHA LIMITED">SUBHA LIMITED</option>
+                            <option label="TESCO PLC" value="TESCO PLC">TESCO PLC</option>
+                            <option label="WALMART LIMITED" value="WALMART LIMITED">WALMART LIMITED</option>
+                        </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label for="selectedCourse" class="govuk-label govuk-label--s">Standard
+                        </label>
+                        <select class="govuk-select govuk-!-width-full" id="selectedCourse" name="selectedCourse">
+                            <option label="All" aria-label="All courses" value="">All</option>
+                            <option label="Abattoir Worker, Level: 2 (Standard)"
+                                value="Abattoir Worker, Level: 2 (Standard)">Abattoir Worker,
+                                Level: 2
+                                (Standard)</option>
+                            <option label="Able seafarer (deck), Level: 2 (Standard)"
+                                value="Able seafarer (deck), Level: 2 (Standard)">Able
+                                seafarer (deck),
+                                Level: 2 (Standard)</option>
+                            <option label="Academic Professional, Level: 7 (Standard)"
+                                value="Academic Professional, Level: 7 (Standard)">
+                                Academic Professional,
+                                Level: 7 (Standard)</option>
+                            <option label="Accident Repair Technician, Level: 3 (Standard)"
+                                value="Accident Repair Technician, Level: 3 (Standard)">Accident Repair
+                                Technician, Level: 3 (Standard)</option>
+                            <option label="Accounting, Level: 2" value="Accounting, Level: 2">Accounting,
+                                Level: 2</option>
+                            <option label="Accounting, Level: 3" value="Accounting, Level: 3">Accounting,
+                                Level: 3</option>
+                            <option label="Accounting, Level: 4" value="Accounting, Level: 4">Accounting,
+                                Level: 4</option>
+                            <option label="Activity Leadership: Exercise and Fitness, Level: 2"
+                                value="Activity Leadership: Exercise and Fitness, Level: 2">Activity
+                                Leadership: Exercise and Fitness, Level: 2</option>
+                            <option label="Actuarial technician, Level: 4 (Standard)"
+                                value="Actuarial technician, Level: 4 (Standard)">
+                                Actuarial technician,
+                                Level: 4 (Standard)</option>
+                            <option label="Assistant accountant, Level: 3 (Standard)"
+                                value="Assistant accountant, Level: 3 (Standard)">
+                                Assistant accountant,
+                                Level: 3 (Standard)</option>
+                            <option label="Barbering, Level: 2" value="Barbering, Level: 2">Barbering,
+                                Level: 2</option>
+                            <option label="Business Administrator, Level: 3 (Standard)"
+                                value="Business Administrator, Level: 3 (Standard)">
+                                Business Administrator,
+                                Level: 3 (Standard)</option>
+                            <option label="Butcher, Level: 2 (Standard)" value="Butcher, Level: 2 (Standard)">Butcher,
+                                Level: 2 (Standard)
+                            </option>
+                            <option label="Data analyst, Level: 4 (Standard)" value="Data analyst, Level: 4 (Standard)">
+                                Data analyst, Level: 4
+                                (Standard)
+                            </option>
+                            <option label="Data Scientist (degree), Level: 6 (Standard)"
+                                value="Data Scientist (degree), Level: 6 (Standard)">
+                                Data Scientist
+                                (degree), Level: 6 (Standard)</option>
+                            <option
+                                label="Furniture, Furnishings and Interiors Manufacturing: Restoring Furniture, Level: 2"
+                                value="Furniture, Furnishings and Interiors Manufacturing: Restoring Furniture, Level: 2">
+                                Furniture, Furnishings and Interiors Manufacturing: Restoring Furniture,
+                                Level: 2</option>
+                            <option label="Hair Professional, Level: 2 (Standard)"
+                                value="Hair Professional, Level: 2 (Standard)">Hair
+                                Professional, Level: 2
+                                (Standard)</option>
+                            <option label="IT, Software, Web and Telecoms Professionals, Level: 2"
+                                value="IT, Software, Web and Telecoms Professionals, Level: 2">IT, Software,
+                                Web and Telecoms Professionals, Level: 2</option>
+                            <option label="IT, Software, Web and Telecoms Professionals, Level: 4"
+                                value="IT, Software, Web and Telecoms Professionals, Level: 4">IT, Software,
+                                Web and Telecoms Professionals, Level: 4</option>
+                            <option
+                                label="Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology Industry, Level: 4"
+                                value="Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology Industry, Level: 4">
+                                Mineral Products Technology: Technical and Managerial Development in Mineral
+                                Products Technology Industry, Level: 4</option>
+                            <option label="Non-Destructive Testing Engineer, Level: 6 (Standard)"
+                                value="Non-Destructive Testing Engineer, Level: 6 (Standard)">
+                                Non-Destructive Testing Engineer, Level: 6 (Standard)</option>
+                            <option label="Professional accounting / taxation technician, Level: 4 (Standard)"
+                                value="Professional accounting / taxation technician, Level: 4 (Standard)">
+                                Professional accounting / taxation technician, Level: 4 (Standard)</option>
+                            <option label="Providing Financial Services: General Insurance, Level: 2"
+                                value="Providing Financial Services: General Insurance, Level: 2">Providing
+                                Financial Services: General Insurance, Level: 2</option>
+                            <option label="Software tester, Level: 4 (Standard)"
+                                value="Software tester, Level: 4 (Standard)">Software tester,
+                                Level: 4
+                                (Standard)</option>
+                        </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+
+                        <fieldset class="govuk-fieldset">
+
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                Status
+                            </legend>
+
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox"
+                                        value="1" checked>
+                                    <label class="govuk-label govuk-checkboxes__label" for="type">
+                                        Waiting to start (Beta) (18)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox"
+                                        value="2" checked>
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                        In learning (Beta) (15)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox"
+                                        value="3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                                        Break in learning (Beta) (2)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-4" name="type" type="checkbox"
+                                        value="4">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-4">
+                                        Withdrawn (Beta) (1)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-5" name="type" type="checkbox"
+                                        value="5">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-5">
+                                        Live (56)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-6" name="type" type="checkbox"
+                                        value="6">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-6">
+                                        Paused (6)
+                                    </label>
+                                </div>
+
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-7" name="type" type="checkbox"
+                                        value="7">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-7">
+                                        Stopped (16)
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </fieldset>
+
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label for="selectedStartDate" class="govuk-label govuk-label--s">Start date
+                        </label>
+                        <select class="govuk-select govuk-!-width-full" id="selectedStartDate" name="selectedStartDate">
+                            <option label="All" aria-label="All start dates" value="">All</option>
+                            <option label="Jun 2017" value="2017-06-01">2017-06-01</option>
+                            <option label="Aug 2017" value="2017-08-01">2017-08-01</option>
+                            <option label="May 2018" value="2018-05-01">2018-05-01</option>
+                            <option label="Jun 2018" value="2018-06-01">2018-06-01</option>
+                            <option label="Aug 2018" value="2018-08-01">2018-08-01</option>
+                            <option label="Dec 2018" value="2018-12-01">2018-12-01</option>
+                            <option label="Jan 2019" value="2019-01-01">2019-01-01</option>
+                            <option label="Feb 2019" value="2019-02-01">2019-02-01</option>
+                            <option label="Apr 2019" value="2019-04-01">2019-04-01</option>
+                            <option label="May 2019" value="2019-05-01">2019-05-01</option>
+                            <option label="Jul 2019" value="2019-07-01">2019-07-01</option>
+                            <option label="Aug 2019" value="2019-08-01">2019-08-01</option>
+                            <option label="Sep 2019" value="2019-09-01">2019-09-01</option>
+                            <option label="Oct 2019" value="2019-10-01">2019-10-01</option>
+                            <option label="Dec 2019" value="2019-12-01">2019-12-01</option>
+                            <option label="Jan 2020" value="2020-01-01">2020-01-01</option>
+                            <option label="Feb 2020" value="2020-02-01">2020-02-01</option>
+                            <option label="Mar 2020" value="2020-03-01">2020-03-01</option>
+                            <option label="Apr 2020" value="2020-04-01">2020-04-01</option>
+                            <option label="May 2020" value="2020-05-01">2020-05-01</option>
+                            <option label="Jul 2020" value="2020-07-01">2020-07-01</option>
+                        </select>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <label for="selectedEndDate" class="govuk-label govuk-label--s">Planned end date
+                        </label>
+                        <select class="govuk-select govuk-!-width-full" id="selectedEndDate" name="selectedEndDate">
+                            <option label="All" aria-label="All end dates" value="">All</option>
+                            <option label="Oct 2018" value="2018-10-01">2018-10-01</option>
+                            <option label="Dec 2018" value="2018-12-01">2018-12-01</option>
+                            <option label="May 2019" value="2019-05-01">2019-05-01</option>
+                            <option label="Jun 2019" value="2019-06-01">2019-06-01</option>
+                            <option label="Jul 2019" value="2019-07-01">2019-07-01</option>
+                            <option label="Oct 2019" value="2019-10-01">2019-10-01</option>
+                            <option label="Dec 2019" value="2019-12-01">2019-12-01</option>
+                            <option label="Jan 2020" value="2020-01-01">2020-01-01</option>
+                            <option label="Feb 2020" value="2020-02-01">2020-02-01</option>
+                            <option label="Mar 2020" value="2020-03-01">2020-03-01</option>
+                            <option label="Apr 2020" value="2020-04-01">2020-04-01</option>
+                            <option label="May 2020" value="2020-05-01">2020-05-01</option>
+                            <option label="Sep 2020" value="2020-09-01">2020-09-01</option>
+                            <option label="Nov 2020" value="2020-11-01">2020-11-01</option>
+                            <option label="Dec 2020" value="2020-12-01">2020-12-01</option>
+                            <option label="Jan 2021" value="2021-01-01">2021-01-01</option>
+                            <option label="Mar 2021" value="2021-03-01">2021-03-01</option>
+                            <option label="May 2021" value="2021-05-01">2021-05-01</option>
+                            <option label="Jun 2021" value="2021-06-01">2021-06-01</option>
+                            <option label="Jul 2021" value="2021-07-01">2021-07-01</option>
+                            <option label="Aug 2021" value="2021-08-01">2021-08-01</option>
+                            <option label="Oct 2021" value="2021-10-01">2021-10-01</option>
+                            <option label="May 2022" value="2022-05-01">2022-05-01</option>
+                        </select>
+                    </div> #}
+
+                    {#
+                    <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5 "> #}
+
+                    <div class="govuk-form-group">
+
+                        <button type="submit" class="govuk-button" id="filters-submit-second">Apply filters</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- END filter -->
+
+
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+                <p class="govuk-body">10 apprentice records found</p>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <p class="govuk-body govuk-!-text-align-right"><a class="govuk-link " aria-label="Download all data"
+                        href="/training-provider/{{version}}/">Download all
+                        data
+                        (CSV)</a></p>
+            </div>
+        </div>
+        <!-- Sort starts -->
+        <div class="govuk-form-group govuk-!-text-align-right govuk-!-margin-bottom-2">
+            <label class="govuk-label govuk-!-display-inline govuk-!-padding-right-3" for="sorting">Sort results</label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="recent" selected>Most recent</option>
+                <option value="name">Name</option>
+                <option value="standard">Standard</option>
+                <option value="employer">Employer</option>
+                <option value="start-date">Actual start date</option>
+            </select>
+        </div>
+        <!-- Sort ends -->
+
+
+        <!-- START cards -->
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-5 ">
+
+        <!-- Apprentice card start -->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-2">
+                            Break in learning
+                        </strong>
+                    </div>
+                    <div class="govuk-grid-column-one-half govuk-!-text-align-right ">
+                        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2">
+                            Beta
+                        </strong>
+                    </div>
+                </div>
+                <h2 class="govuk-heading-m das-search-results__heading govuk-!-margin-bottom-1">
+                    <a class="das-search-results__link" id="vacancy-aof" href="#">
+                        Euan Gray</a>
+
+                </h2>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                    Actuarial
+                    technician, Level: 4</p>
+                <p class="govuk-body" style="color:#505a5f">Lockheed Martin Aeronautical Systems Support Company</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>ULN</b> 9900008005</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>Actual start date</b> Jan 2019</p>
+                <p class="govuk-body govuk-!-margin-bottom-1"><b>Planned end date</b> Aug 2021</p>
+                <div class="govuk-inset-text">
+                    <a class="govuk-link" href="#">Confirmation overdue</a>
+                </div>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 ">
+        <!-- Apprentice card end -->
+
+        <!-- Apprentice card start -->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2">
+                            In learning
+                        </strong>
+                    </div>
+                    <div class="govuk-grid-column-one-half govuk-!-text-align-right ">
+                        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-2">
+                            Beta
+                        </strong>
+                    </div>
+                </div>
+                <h2 class="govuk-heading-m das-search-results__heading govuk-!-margin-bottom-1">
+                    <a class="das-search-results__link" id="vacancy-aof" href="#">
+                        Rufus Kelly</a>
+                </h2>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                    Actuarial
+                    technician, Level: 4</p>
+                <p class="govuk-body" style="color:#505a5f">Lockheed Martin Aeronautical Systems Support Company</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>ULN</b> 9900008102</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>Actual start date</b> Jan 2019</p>
+                <p class="govuk-body govuk-!-margin-bottom-1"><b>Planned end date</b> Aug 2021</p>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-top-4 govuk-!-margin-bottom-6 ">
+        <!-- Apprentice card end -->
+
+        <!-- Apprentice card start -->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-bottom-2">
+                    Paused
+                </strong>
+                <h2 class="govuk-heading-m das-search-results__heading govuk-!-margin-bottom-1">
+                    <a class="das-search-results__link" id="vacancy-aof" href="#">
+                        Ellis Watts</a>
+                </h2>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                    Actuarial
+                    technician, Level: 4</p>
+                <p class="govuk-body" style="color:#505a5f">Lockheed Martin Aeronautical Systems Support Company</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>ULN</b> 9900008307</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>Planned start date</b> Jan 2019</p>
+                <p class="govuk-body govuk-!-margin-bottom-1"><b>Planned end date</b> Aug 2021</p>
+                <div class="govuk-inset-text">
+                    <a class="govuk-link" href="#">Change requested</a>
+                </div>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 ">
+        <!-- Apprentice card end -->
+
+        <!-- Apprentice card start -->
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-2">
+                    Live
+                </strong>
+                <h2 class="govuk-heading-m das-search-results__heading govuk-!-margin-bottom-1">
+                    <a class="das-search-results__link" id="vacancy-aof" href="vacancy-page-aof.html">
+                        Toby Holland</a>
+                </h2>
+                <p class="govuk-body govuk-!-margin-bottom-0">
+                    Actuarial
+                    technician, Level: 4</p>
+                <p class="govuk-body" style="color:#505a5f">Lockheed Martin Aeronautical Systems Support Company</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>ULN</b> 9900007203</p>
+                <p class="govuk-body govuk-!-margin-bottom-1 "><b>Planned start date</b> Jan 2019</p>
+                <p class="govuk-body govuk-!-margin-bottom-1"><b>Planned end date</b> Aug 2021</p>
+                <div class="govuk-inset-text">
+                    <a class="govuk-link" href="/training-provider/v1/details">Confirmation overdue</a>
+                </div>
+            </div>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-6 ">
+        <!-- Apprentice card end -->
+
+
+
+        <!-- END cards -->
+
+
+
+        <nav class="govuk-pagination" role="navigation" aria-label="results">
+            <ul class="govuk-pagination__list">
+                <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                        1
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                        2
+                    </a>
+                </li>
+                <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                        3
+                    </a>
+                </li>
+            </ul>
+            <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span
+                        class="govuk-pagination__link-title">Next</span> <svg
+                        class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                        height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                        <path
+                            d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                        </path>
+                    </svg></a>
+            </div>
+        </nav>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
