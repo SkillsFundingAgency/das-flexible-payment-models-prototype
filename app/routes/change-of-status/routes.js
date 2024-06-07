@@ -120,10 +120,10 @@ router.post('/change-of-status/training-provider/v4/edit-learner-status/action',
 router.post('/change-of-status/training-provider/v4/waiting-to-start/edit-learner-status/action', function (req, res) {
     var learnerstatus = req.session.data['learner-status']
     if (learnerstatus == "waiting-to-start") {
-        res.redirect('../resume-date-planned-start-date')
+        res.redirect('../apprentice-details--resume-confirmed')
     }
     else {
-        res.redirect('../confirm--withdrawal')
+        res.redirect('../apprentice-details--withdrawal-confirmed')
     }
 })
     
