@@ -1,12 +1,12 @@
 {% extends "layouts/main.html" %}
-{% set version = "feature/Change-of-circs/cop/training-provider" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
 {% set pageTitle = "George Ford" %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,24 +19,33 @@ href: "javascript:window.history.go(-1);"
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-	<div class="govuk-grid-column-two-thirds">
 
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+
+
+<div class="govuk-grid-row">
+
+	<div class="govuk-grid-column-full">
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					Request to change the total agreed apprenticeship price sent to employer
+					The training provider has requested a change of actual training start date. You need to review and
+					approve.
 				</h3>
-				<p class="govuk-body">The employer now needs to approve the change.</p>
-				<p class="govuk-body"><a href="#price-changes" class="govuk-link">View then changes you've requested</a></p>
+				<p>
+					<a href="#">Review change request</a>
+				</p>
+				</ul>
+				</p>
 			</div>
 		</div>
+
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
 
 		<div class="govuk-tabs" data-module="govuk-tabs">
@@ -48,15 +57,12 @@ href: "javascript:window.history.go(-1);"
 					<a class="govuk-tabs__tab" href="#overview">
 						Overview
 					</a>
-				</li>
 				<li class="govuk-tabs__list-item">
 					<a class="govuk-tabs__tab" href="#history">
 						History
 					</a>
 				</li>
 			</ul>
-
-
 			<div class="govuk-tabs__panel" id="overview">
 				<h2 class="govuk-heading-m">Apprentice status</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
@@ -68,6 +74,14 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--blue">Live</strong>
 						</dd>
 					</div>
+					<!-- <div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Stop applies from
+						</dt>
+						<dd class="govuk-summary-list__value">
+							May 2021
+						</dd>
+					</div> -->
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Apprentice confirmation
@@ -76,24 +90,16 @@ href: "javascript:window.history.go(-1);"
 							Confirmed
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Simplified payments pilot
-						</dt>
-						<dd class="govuk-summary-list__value">
-							Yes
-						</dd>
-					</div>
 				</dl>
 				<h2 class="govuk-heading-m">Overview</h2>
 				<dl class="govuk-summary-list govuk-!-margin-bottom-7">
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Employer
+							Training provider
 						</dt>
 						<dd class="govuk-summary-list__value">
-							AUTOMATION &amp; OPTIMISATION LTD
+							EDUC8 TRAINING (ENGLAND) LIMITED
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -102,14 +108,6 @@ href: "javascript:window.history.go(-1);"
 						</dt>
 						<dd class="govuk-summary-list__value">
 							MNNRLD
-						</dd>
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Agreement ID
-						</dt>
-						<dd class="govuk-summary-list__value">
-							7GXEKP
 						</dd>
 					</div>
 				</dl>
@@ -154,13 +152,12 @@ href: "javascript:window.history.go(-1);"
 							Date of birth
 						</dt>
 						<dd class="govuk-summary-list__value">
-							1 January 2000
+							1 January 2005
 						</dd>
 					</div>
+
 				</dl>
-
 				<h2 class="govuk-heading-m">Course</h2>
-
 				<dl class="govuk-summary-list">
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -178,27 +175,187 @@ href: "javascript:window.history.go(-1);"
 							1.0
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row">
+					<!-- <div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Actual training start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							1 August 2023
+							1 August 2023 <strong class="govuk-tag govuk-tag--yellow">Change requested</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="change-start-date">
+							<a class="govuk-link" href="review">
+								Review<span class="govuk-visually-hidden"> actual training start date</span>
+							</a>
+						</dd>
+					</div> -->
+
+					<div id="change-of-start-date" class=""
+						style="border-left: 5px solid #1d70b8; padding:10px; width:900px !important ">
+
+
+
+						<table class="govuk-table">
+							<thead class="govuk-table__head">
+								<tr class="govuk-table__row">
+									<th scope="col"
+										class="govuk-table__header app-custom-class govuk-!-width-one-third">
+										<strong class="govuk-tag govuk-tag--yellow">Pending request</strong>
+									</th>
+									<th scope="col"
+										class="govuk-table__header app-custom-class govuk-!-width-one-third">Current
+									</th>
+									<th scope="col"
+										class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+									</th>
+									<td class="govuk-table__cell"></td>
+								</tr>
+							</thead>
+							<tbody class="govuk-table__body">
+
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Training start date</th>
+									<td class="govuk-table__cell">1 August 2023</td>
+									<td class="govuk-table__cell">{{ data['effective-from-day'] or '24'}}
+
+										{% if data['effective-from-month'] == "1" or data['effective-from-month'] ==
+										"01" %}
+										{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] ==
+										"02"
+										%}
+										{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] ==
+										"03"
+										%}
+										{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] ==
+										"04"
+										%}
+										{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] ==
+										"05"
+										%}
+										{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] ==
+										"06"
+										%}
+										{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] ==
+										"07"
+										%}
+										{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] ==
+										"08"
+										%}
+										{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] ==
+										"09"
+										%}
+										{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "10" %}
+										{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "11" %}
+										{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+										{% elseif data['effective-from-month'] == "12" %}
+										{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+										{% else %}
+										August
+										{% endif %}
+
+										{{ data['effective-from-year'] or '2023'}}</td>
+
+									<!-- <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td> -->
+								</tr>
+
+
+
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Planned training end date</th>
+									<td class="govuk-table__cell">1 August 2024</td>
+									<td class="govuk-table__cell">
+										25 October 2024
+									</td>
+
+									<!-- <td class="govuk-table__cell"><a href="-change-start-date">Change </a></td> -->
+								</tr>
+
+								<!-- <tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Reason for change</th>
+									<td class="govuk-table__cell">{{ data['reason-for-change-start-date'] or 'Apprentice can not start on original start date'}}</td>
+									<td class="govuk-table__cell"></td>
+									<td class="govuk-table__cell"><a href="-change-start-date">Change </a></td> -->
+							</tbody>
+						</table>
+						<a class="govuk-link" href="review">
+							Review request<span class="govuk-visually-hidden">for change of start date</span>
+						</a>
+
+						<!-- <dt class="govuk-summary-list__key" >
+											Actual training start date
+										</dt>
+										<dd class="govuk-summary-list__value">
+											{{ data['effective-from-day'] or '24'}}
+											
+											{% if data['effective-from-month'] == "1" or data['effective-from-month'] == "01" %}
+											{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "2" or data['effective-from-month'] == "02"
+											%}
+											{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "3" or data['effective-from-month'] == "03"
+											%}
+											{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "4" or data['effective-from-month'] == "04"
+											%}
+											{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "5" or data['effective-from-month'] == "05"
+											%}
+											{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06"
+											%}
+											{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "7" or data['effective-from-month'] == "07"
+											%}
+											{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "8" or data['effective-from-month'] == "08"
+											%}
+											{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "9" or data['effective-from-month'] == "09"
+											%}
+											{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "10" %}
+											{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "11" %}
+											{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
+											{% elseif data['effective-from-month'] == "12" %}
+											{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
+											{% else %}
+											August
+											{% endif %}
+											
+											{{ data['effective-from-year'] or '2023'}} <strong class="govuk-tag govuk-tag--yellow">Pending</strong>
+										</dd>
+										<dd class="govuk-summary-list__actions">
+											<a class="govuk-link" href="-change-start-date-view-changes">
+												View request<span class="govuk-visually-hidden">for change of start date</span>
+											</a>
+										</dd> -->
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Total agreed apprenticeship price
+						</dt>
+						<dd class="govuk-summary-list__value">
+							£8,500
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="update-price">
 								Change<span class="govuk-visually-hidden"> total training price</span>
 							</a>
 						</dd>
 					</div>
-					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-						<dt class="govuk-summary-list__key">
-							Planned training end date
-						</dt>
-						<dd class="govuk-summary-list__value">
-							3 July 2024
-						</dd>
-					</div>
+
+
 
 					<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
 						<dt class="govuk-summary-list__key">
@@ -208,171 +365,32 @@ href: "javascript:window.history.go(-1);"
 							Nothing provided
 						</dd>
 					</div>
+
 				</dl>
-                <div style="border-left: 5px solid #1d70b8; padding:0 10px ;"> 
-
-                <h2 id="price-changes" class="govuk-heading-m">Price changes you've requested </h2>
-                <table class="govuk-table">
-                    <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
-        
-                            </th>
-                            <th scope="col" class="govuk-table__header app-custom-class">Current</th>
-                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
-                            </th>
-        
-                        </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-        
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Training price</th>
-                            <td class="govuk-table__cell">£6,000</td>
-                            <td class="govuk-table__cell" id="TrainingPrice">
-                                £<script>
-                                    function numberWithCommas(x) {
-                x = x.toString();
-                var pattern = /(-?\d+)(\d{3})/;
-                while (pattern.test(x))
-                    x = x.replace(pattern, "$1,$2");
-                return x;
-            }
-            
-            console.log(numberWithCommas(1000))
-            var tprice = '{{ data['apprenticeship-training-price']}}';
-            
-                                    document.write (numberWithCommas(tprice));
-                                    </script> 
-                                
-                                <!-- £{{ data['apprenticeship-training-price'] or '7,000'}} -->
-                            
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">End-point assessment price</th>
-                            <td class="govuk-table__cell">£2,500</td>
-                            <td class="govuk-table__cell" id="EndPointAssessmentPrice">
-                                £<script>
-                                    function numberWithCommas(x) {
-                x = x.toString();
-                var pattern = /(-?\d+)(\d{3})/;
-                while (pattern.test(x))
-                    x = x.replace(pattern, "$1,$2");
-                return x;
-            }
-            
-            console.log(numberWithCommas(1000))
-            var eprice = '{{ data['apprenticeship-epa-price']}}';
-            
-                                    document.write (numberWithCommas(eprice));
-                                    </script> 
-                                
-                                <!-- £{{ data['apprenticeship-epa-price'] or '2,500'}} -->
-                            
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Total price</th>
-                            <td class="govuk-table__cell">£8,500</td>
-                            <td class="govuk-table__cell">
-                                £<script>
-                                    var tprice = '{{ data['apprenticeship-training-price']}}';
-                                    var eprice = '{{ data['apprenticeship-epa-price']}}';;
-        
-                                
-                                    var numOne = parseInt(tprice);
-                                    var numTwo = parseInt(eprice);
-                                    var sum = numOne+numTwo;
-                                    document.write("" + numberWithCommas(sum) );
-                                  </script>
-        
-                                
-                                <!-- {{
-                                (data['apprenticeship-training-price']|float(format='0,0')
-                                +
-                                data['apprenticeship-epa-price']|float(format='0,0')) }}
-                            </td> -->
-                        </tr>
-                    </tbody>
-                </table>
-				<a href="view-changes"
-				class="govuk-button- govuk-!-margin-bottom-2">View price changes you've requested</a>
-
-				<dl class="govuk-summary-list" style="display: none;">
-					<h2 class="govuk-heading-m">Price</h2>
-
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Training price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£{{ data['apprenticeship-training-price'] or '7,000'}}
-						</dd>
-
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							End-point assessment price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£2,500
-						</dd>
-						<!-- <dd class="govuk-summary-list__actions">
-																			<a class="govuk-link" href="update-price">
-																				Change<span class="govuk-visually-hidden"> total assessment price</span>
-																			</a>
-																		</dd> -->
-					</div>
-					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Total price
-						</dt>
-						<dd class="govuk-summary-list__value">
-							£{{
-							data['apprenticeship-training-price']|float
-							+
-							data['apprenticeship-epa-price']|float }} <strong
-								class="govuk-tag govuk-tag--yellow">Pending</strong>
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="view-changes">
-								View request<span class="govuk-visually-hidden"> total training price</span>
-							</a>
-						</dd>
-					</div>
-				</dl>
-
-</div>
-
-			</div>
-			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="course">
 			</div>
 			<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="history">
 				<h2 class="govuk-heading-m">History</h2>
 				<ol class="hmrc-timeline">
-					<li class="hmrc-timeline__event">
+					<!-- <li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
 							increase
 						</h3>
 						<p class="govuk-body govuk-!-margin-bottom-3">
-							<strong class="govuk-tag govuk-tag--yellow">Pending</strong> by
-							AUTOMATION &amp; OPTIMISATION LTD on <time datetime="2023-02-15">15 Febuary 2023</time>
+							<strong class="govuk-tag govuk-tag--yellow">Change
+								requested</strong> by
+							EDUC8 TRAINING (ENGLAND) LIMITED on <time datetime="2020-07-5">5 July
+								2020</time>
 						</p>
 						<div class="hmrc-timeline__event-content">
 							<p class="govuk-body">
 								Total training price
 								updated from
-								<b>£6,000</b>
+								<b>£1,000</b>
 								to
-								<b>£7,000</b>
+								<b>£1,234</b>
 							</p>
-							<a class="govuk-link" href="#">
-								Resend notification to Employer<span class="govuk-visually-hidden">Resend invitation
-									email to apprentice</span>
-							</a>
 						</div>
-					</li>
+					</li> -->
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Total training price
 							increase
@@ -443,7 +461,6 @@ href: "javascript:window.history.go(-1);"
 							</details>
 						</div>
 					</li>
-
 					<li class="hmrc-timeline__event">
 						<h3 class="hmrc-timeline__event-title govuk-heading-s">Apprenticeship started</h3>
 						<time class="hmrc-timeline__event-meta" datetime="2020-07-15">28 June
@@ -474,8 +491,6 @@ href: "javascript:window.history.go(-1);"
 			</div>
 
 		</div>
-		<!-- <p class="govuk-body govuk-!-margin-bottom-0"><a href="view-changes"
-				class="govuk-button govuk-!-margin-bottom-2">View price change</a></p> -->
 	</div>
 </div>
 
