@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Confirm functional skill" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-home" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-xl">Add a functional skill</span>
+
+        <h1 class="govuk-heading-xl">AQA Functional Skills qualification in Mathematics at Level 2
+        </h1>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Awarding organisation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    AQA Education
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Qualification number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    60342584
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Level
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Level 2
+                </dd>
+            </div>
+        </dl>
+
+
+        <form method="post" novalidate
+            action="/functional-skills/manage-functional-skils/v1/confirm-functional-skill/action">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">Is this the correct functional
+                        skill?
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="is-correct-functional-skill-yes"
+                                name="is-correct-functional-skill" type="radio" value="true">
+                            <label class="govuk-label govuk-radios__label" for="is-correct-functional-skill-yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="is-correct-functional-skill-no"
+                                name="is-correct-functional-skill" type="radio" value="false">
+                            <label class="govuk-label govuk-radios__label" for="is-correct-functional-skill-no">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="govuk-button-group">
+                <button id="submit" type="submit" class="govuk-button">Continue</button>
+                <a href="functional-skills" class="govuk-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

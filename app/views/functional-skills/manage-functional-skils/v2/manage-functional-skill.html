@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Manage functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-home" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <span class="govuk-caption-xl">Manage a functional skill</span>
+
+        <h1 class="govuk-heading-xl">AQA Functional Skills qualification in Mathematics at Level 2
+        </h1>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Awarding organisation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    AQA Education
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Qualification number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    60342584
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Level
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Level 2
+                </dd>
+            </div>
+        </dl>
+
+    </div>
+</div>
+<div class="das-highlight">
+    <h2 class="govuk-heading-m">Actions</h2>
+    <ul class="govuk-list govuk-!-margin-bottom-0">
+        <li><a href="functional-skills?new-skill=no&remove-skill=yes" class="govuk-link govuk-link--no-visited-state">Delete
+                functional skill</a> </li>
+    </ul>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-8">
+    <div class="govuk-grid-column-two-thirds">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body">
+            <a href="functional-skills?new-skill=yes" class="govuk-link govuk-link--no-visited-state">
+                Back to functional skills management
+            </a>
+        </p>
+    </div>
+</div>
+
+
+{% endblock %}

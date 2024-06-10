@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Add a functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-home" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-caption-xl">Add a functional skill</div>
+        <h1 class="govuk-heading-xl">Select a functional skill</h1>
+
+        <form method="post" enctype="multipart/form-data" novalidate="" action="confirm-functional-skill">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="SelectedLarsCode">
+                    To add a functional skill, start typing in the box and its name will appear.
+                </label>
+                <div class="govuk-form-group">
+                    <select class="govuk-select" id="country" name="country" data-module="autocomplete"
+                        data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values=""
+                        data-show-no-options-found="">
+                        <option value="" selected disabled>Start typing the name of the functional skill</option>
+                        {% if data['new-skill'] != 'yes' %}
+                        <option value="AQA Functional Skills qualification in Mathematics at Level 2">60342584 - AQA
+                            Functional Skills qualification in Mathematics at Level 2
+                        </option>
+                        {% endif %}
+                        <option value="City & Guilds Functional Skills Qualification in English at Entry Level 1">
+                            60359847 - City &
+                            Guilds Functional Skills Qualification in English at Entry Level 1
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in English at Entry Level 2">
+                            60359837 - City &
+                            Guilds Functional Skills Qualification in English at Entry Level 2</option>
+                        <option value="City & Guilds Functional Skills Qualification in English at Entry Level 3">
+                            60353347 - City &
+                            Guilds Functional Skills Qualification in English at Entry Level 3
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in English at Level 1">60353847 -
+                            City &
+                            Guilds Functional Skills Qualification in English at Level 1
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in English at Level 2">60356847 -
+                            City &
+                            Guilds Functional Skills Qualification in English at Level 2
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in Mathematics at Entry Level 2">
+                            60349847 - City & Guilds Functional Skills Qualification in Mathematics at Entry Level 2
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in Mathematics at Entry Level 3">
+                            60359447 - City & Guilds Functional Skills Qualification in Mathematics at Entry Level 3
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in Mathematics at Level 1">60359842
+                            - City &
+                            Guilds Functional Skills Qualification in Mathematics at Level 1
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualification in Mathematics at Level 2">60359247
+                            - City &
+                            Guilds Functional Skills Qualification in Mathematics at Level 2
+                        </option>
+                        <option value="City & Guilds Functional Skills Qualifications in Mathematics at Entry Level 1">
+                            60359447 - City & Guilds Functional Skills Qualifications in Mathematics at Entry Level 1
+                        </option>
+                        <option value="FAQ Level 1 Functional Skills Qualification in English
+">60359147 - FAQ Level 1 Functional Skills Qualification in English
+                        </option>
+                        <option value="FAQ Level 1 Functional Skills Qualification in Mathematics
+">60359147 - FAQ Level 1 Functional Skills Qualification in Mathematics
+                        </option>
+                        <option value="FAQ Level 2 Functional Skills Qualification in English
+">60359807 - FAQ Level 2 Functional Skills Qualification in English
+                        </option>
+                        <option value="FAQ Level 2 Functional Skills Qualification in Mathematics
+">60359247 - FAQ Level 2 Functional Skills Qualification in Mathematics
+                        </option>
+                        <option value="Highfield Functional Skills Qualification in English at Level 1">60359847 -
+                            Highfield
+                            Functional Skills Qualification in English at Level 1
+                        </option>
+                        <option value="Highfield Functional Skills Qualification in English at Level 2">60359947 -
+                            Highfield
+                            Functional Skills Qualification in English at Level 2
+                        </option>
+                        <option value="Highfield Functional Skills Qualification in Mathematics at Level 1">60059847 -
+                            Highfield
+                            Functional Skills Qualification in Mathematics at Level 1
+                        </option>
+                        <option value="Highfield Functional Skills Qualification in Mathematics at Level 2">60359897 -
+                            Highfield
+                            Functional Skills Qualification in Mathematics at Level 2
+                        </option>
+                        <option value="NCFE Entry Level 1 Functional Skills Qualification in English
+">61359847 - NCFE Entry Level 1 Functional Skills Qualification in English
+                        </option>
+                        <option value="NCFE Entry Level 1 Functional Skills Qualification in Mathematics
+">61359841 - NCFE Entry Level 1 Functional Skills Qualification in Mathematics
+                        </option>
+                        <option value="NCFE Entry Level 2 Functional Skills Qualification in English
+">61359842 - NCFE Entry Level 2 Functional Skills Qualification in English
+                        </option>
+                        <option value="NCFE Entry Level 2 Functional Skills Qualification in Mathematics
+">61359843 - NCFE Entry Level 2 Functional Skills Qualification in Mathematics
+                        </option>
+                        <option value="NCFE Entry Level 3 Functional Skills Qualification in English
+">61359844 - NCFE Entry Level 3 Functional Skills Qualification in English
+                        </option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div class="govuk-button-group">
+                <button id="submit" type="submit" class="govuk-button">Continue</button>
+                <a href="functional-skills" class="govuk-link">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
