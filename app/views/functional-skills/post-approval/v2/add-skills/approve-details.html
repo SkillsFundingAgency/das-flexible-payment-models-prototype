@@ -1,0 +1,210 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check apprentice details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          LAND ROVER EXPERIENCE LIMITED
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Cohort reference:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BB98DJ
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status:
+        </dt>
+        <dd class="govuk-summary-list__value">
+          New request
+        </dd>
+      </div>
+    </dl>
+    <h2 class="govuk-heading-s">Message:</h2>
+    <div class="govuk-inset-text">
+      <span>No message added.</span>
+    </div>
+  </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<h3 class="govuk-heading-m">1 x Game programmer, Level: 7
+</h3>
+
+<table class="govuk-table das-table--responsive">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-label="Name">
+        <span class="das-table-cell--highlight das-breakable">{{ data['FirstName'] or 'Georgina' }} {{ data['LastName']
+          or 'Howard' }}</span>
+      </td>
+      <td class="govuk-table__cell" data-label="Unique learner number">{{ data['Uln'] or '2261631370'}}</td>
+      <td class="govuk-table__cell" data-label="Date of birth">24 Jun 2000</td>
+      <td class="govuk-table__cell" data-label="Training dates">1 Jan 2022 to 24 May 2022 </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£1,200</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/add/apprentice-details">
+          Edit
+          <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard
+            }}</span>
+        </a>
+        <br><br>
+        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+          Delete <span class="govuk-visually-hidden"> {{ data['FirstName'] or Georgina}} {{ data['LastName'] or Howard
+            }}</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price
+        <br>(excluding VAT)
+      </th>
+      <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£1,200</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <a href="/training-provider/{{version}}/#" class="govuk-link add-apprentice govuk-link--no-visited-state">Add another
+    apprentice</a>
+  <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort"
+    href="/training-provider/{{version}}/approvals/add/entry-method" style="float:right">
+    Delete this cohort
+  </a>
+</p>
+
+<hr class="govuk-section-break govuk-section-break--l">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/training-provider/{{version}}/approvals/acknowledgement" method="post" class="form">
+      <div class="govuk-form-group  ">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="approve-details" name="approve-details" type="radio" value="yes"
+                data-aria-controls="conditional-approve-details">
+              <label class="govuk-label govuk-radios__label" for="approve-details">
+                Yes, approve and notify employer
+              </label>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve-details">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="approve-details">
+                    Leave LAND ROVER EXPERIENCE LIMITED a message (optional)
+                  </label>
+                  <textarea class="govuk-textarea" id="approve-details" name="approve-message" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="approve-details-2">
+                No, send to employer to review or add details
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">Now send your application</h2>
+      <p class="govuk-body">By submitting this application, you confirm that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to the best of your knowledge, the details you are providing are correct</li>
+        <li>this application meets the <a
+            href="https://www.gov.uk/guidance/apprenticeship-funding-rules-for-training-providers" target="_blank"
+            class="govuk-link">apprenticeship funding rules (opens in new tab)</a></li>
+      </ul>
+      <button type="submit" id="continue-button" class="govuk-!-margin-top-5 govuk-button">Accept and submit</button>
+      <br>
+      <p><a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">
+          Save and exit
+        </a></p>
+
+    </form>
+  </div>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

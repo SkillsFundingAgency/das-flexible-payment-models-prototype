@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Change status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <span class="govuk-caption-l">Functional skills English</span>
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <strong class="govuk-tag govuk-tag--blue">In learning</strong>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Qualification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          AQA Functional Skills qualification in English at Level 2
+        </dd>
+      </div>
+    </dl>
+
+    <form action="/change-of-status/training-provider/v5/edit-learner-status/action" method="post" novalidate
+      class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to withdraw this learner from this functional skill?
+          </legend>
+          <div id="status-update-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withdrawal" name="learner-status" type="radio" value="withdrawn"
+                aria-describedby="withdrawal-hint">
+              <label class="govuk-label govuk-radios__label" for="withdrawal">
+                Yes, withdrawn the learner
+              </label>
+              <div id="withdrawal-hint" class="govuk-hint govuk-radios__hint">
+                Warning: this action cannot be reveresed online
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="in-learning" name="learner-status" type="radio"
+                value="in-learning">
+              <label class="govuk-label govuk-radios__label" for="in-learning">
+                No
+              </label>
+            </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="index">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
