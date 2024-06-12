@@ -31,9 +31,11 @@ href: "javascript:window.history.go(-1);"
     <p class="govuk-body">Any outstanding payments will be
       made for activity up to this date.
     </p>
+    {{ "today" | duration(5) | govukDate }}
 
 
-    <form action="confirm--withdrawal" method="post" novalidate class="govuk-!-margin-top-7">
+    <form action="/change-of-status/training-provider/v5/stop-date/action" method="post" novalidate
+      class="govuk-!-margin-top-7">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="withdrawal-date-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
