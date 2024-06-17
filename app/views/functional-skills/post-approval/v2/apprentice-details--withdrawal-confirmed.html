@@ -21,8 +21,24 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<h3 class="govuk-notification-banner__heading">
+					Learner has been withdrawn from AQA Functional Skills qualification in English at
+					Level 2
+				</h3>
+				<p class="govuk-body">You will receive no more payments for this functional skill.
+				</p>
+				<p class="govuk-body">The employer has been informed of this update.</p>
+			</div>
+		</div>
 		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
-
 		<div class="govuk-tabs" data-module="govuk-tabs">
 			<h2 class="govuk-tabs__title">
 				Contents
