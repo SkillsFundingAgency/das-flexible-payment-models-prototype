@@ -25,23 +25,17 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
     <form action="/functional-skills/post-approval/v2/withdraw/action" method="post" novalidate>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
+        <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">{{pageTitle}}</h1>
           </legend>
-          <div id="status-update-hint" class="govuk-hint">
-            Select one option
-          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="continue-withdrawal" name="continue-withdrawal" type="radio" value="yes"
-                aria-describedby="continue-withdrawal-hint">
+              <input class="govuk-radios__input" id="continue-withdrawal" name="continue-withdrawal" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="continue-withdrawal">
                 Yes, withdrawn the learner
               </label>
-              <div id="continue-withdrawal-hint" class="govuk-hint govuk-radios__hint">
-                Warning: this action cannot be reveresed online
-              </div>
+            
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="continue-withdrawal-1" name="continue-withdrawal" type="radio" value="no">
