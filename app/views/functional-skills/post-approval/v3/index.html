@@ -206,8 +206,6 @@ href: "javascript:window.history.go(-1);"
 							Planned training end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-
-
 							{% if data['planned-end-month-tp'] == "1" or
 							data['planned-end-month-tp']
 							== "01" %}
@@ -236,7 +234,7 @@ href: "javascript:window.history.go(-1);"
 							{% elseif data['planned-end-month-tp'] == "9" or
 							data['planned-end-month-tp'] == "09" %}
 							{{ data['planned-end-day-tp'] }} September {{ data['planned-end-year-tp'] }}
-							{% elseif data['rplanned-end-month-tp'] == "10" %}
+							{% elseif data['planned-end-month-tp'] == "10" %}
 							{{ data['planned-end-day-tp'] }} October {{ data['planned-end-year-tp'] }}
 							{% elseif data['planned-end-month-tp'] == "11" %}
 							{{ data['planned-end-day-tp'] }} November {{ data['planned-end-year-tp'] }}
@@ -407,7 +405,7 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--blue">In learning</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="withdraw">
+							<a class="govuk-link govuk-link--no-visited-state" href="withdraw">
 								Change<span class="govuk-visually-hidden"> English funcitional skill status</span>
 							</a>
 						</dd>
@@ -473,7 +471,7 @@ href: "javascript:window.history.go(-1);"
 							<strong class="govuk-tag govuk-tag--green">Waiting to start</strong>
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="withdraw">
+							<a class="govuk-link  govuk-link--no-visited-state" href="withdraw">
 								Change<span class="govuk-visually-hidden"> maths learner status</span>
 							</a>
 						</dd>
