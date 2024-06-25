@@ -71,7 +71,7 @@ href: "javascript:window.history.go(-1);"
                         {{ data['withdrawal-month'] | monthName }}
                         {{ data['withdrawal-year'] }}
                         {% else %}
-                        10 January 2025
+                        {{ "today" | duration(-1, "days") | govukDate }}
                         {% endif %}
 
                     </dd>

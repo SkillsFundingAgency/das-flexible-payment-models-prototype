@@ -35,7 +35,14 @@ href: "javascript:window.history.go(-1);"
 				</h3>
 				<p class="govuk-body">You are no entitled to any funding payments for this functional skill after the
 					last day of
-					learning, 10 January 2025.
+					learning, {% if data['withdrawal-day'] != "" and data['withdrawal-month'] != "" and
+					data['withdrawal-year'] != "" %}
+					{{ data['withdrawal-day'] }}
+					{{ data['withdrawal-month'] | monthName }}
+					{{ data['withdrawal-year'] }}
+					{% else %}
+					{{ "today" | duration(-1, "days") | govukDate }}
+					{% endif %}.
 				</p>
 				<p class="govuk-body">The employer has been informed of this update.</p>
 			</div>
@@ -511,7 +518,7 @@ href: "javascript:window.history.go(-1);"
 							Start date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							10 September 2024
+							14 April 2024
 						</dd>
 
 					</div>
@@ -520,7 +527,14 @@ href: "javascript:window.history.go(-1);"
 							Last date of learning
 						</dt>
 						<dd class="govuk-summary-list__value">
-							10 January 2025
+							{% if data['withdrawal-day'] != "" and data['withdrawal-month'] != "" and
+							data['withdrawal-year'] != "" %}
+							{{ data['withdrawal-day'] }}
+							{{ data['withdrawal-month'] | monthName }}
+							{{ data['withdrawal-year'] }}
+							{% else %}
+							{{ "today" | duration(-1, "days") | govukDate }}
+							{% endif %}
 						</dd>
 					</div>
 
