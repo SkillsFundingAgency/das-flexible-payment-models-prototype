@@ -26,7 +26,7 @@ href: "javascript:window.history.go(-1);"
 
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
             <p class="govuk-body">
-                Payments will be set to inactive and the last payment for this apprenticeship will be December 2023.
+                You will not earn any funding for this apprenticeship, including learning support.
             </p>
             <p class="govuk-body">
                 You can change status of the apprenticeship at any time.
@@ -39,7 +39,8 @@ href: "javascript:window.history.go(-1);"
                         {% include "change-of-status/includes/learner-status-tag.html" %}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">Change<span class="govuk-visually-hidden">
+                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">Change<span
+                                class="govuk-visually-hidden">
                                 learner status</span>
                         </a>
                     </dd>
@@ -60,10 +61,10 @@ href: "javascript:window.history.go(-1);"
                     </dd>
                 </div>
                 {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
-                    <div class="govuk-summary-list__row">
+                <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">Last date of learning</dt>
                     <dd class="govuk-summary-list__value">
-                
+
                         {% if data['withdrawal-month'] == "1" or
                         data['withdrawal-month']
                         == "01" %}
@@ -101,14 +102,14 @@ href: "javascript:window.history.go(-1);"
                         {% else %}
                         10 January 2024
                         {% endif %}
-                
+
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
                             Change<span class="govuk-visually-hidden"> last date of learning</span>
                         </a>
                     </dd>
-                
+
                 </div>
                 {% endif %}
             </dl>
@@ -123,11 +124,10 @@ href: "javascript:window.history.go(-1);"
     </div>
 
 </div>
-
 <div style="position: fixed; right:20px; top:160px">
-    <a href="confirm--withdrawal-unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    <a href="confirm--withdrawal" role="button" draggable="false" class="govuk-button govuk-button--secondary"
         data-module="govuk-button">
-        View unfunded page</a>
+        View funded page</a>
 </div>
 
 {% endblock %}

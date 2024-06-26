@@ -220,6 +220,6 @@ if (continuewithdrawal == "no") {
         res.redirect('../apprentice-details')
     }
     else {
-        res.redirect('../confirm--withdrawal')
+        res.redirect('../confirm--withdrawal-unfunded')
     }
 })
