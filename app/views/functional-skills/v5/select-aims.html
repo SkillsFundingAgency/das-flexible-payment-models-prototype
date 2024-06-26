@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="learning-aim-english" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="functional-skills-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Which functional skill(s) would you like to add?
+                        </h1>
+                    </legend>
+                    <div id="functional-skills-hint" class="govuk-hint">
+                        Select all that apply
+                    </div>
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="functional-skills" name="functional-skills"
+                                type="checkbox" value="English">
+                            <label class="govuk-label govuk-checkboxes__label" for="functional-skills">
+                                English
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="functional-skills-2" name="functional-skills"
+                                type="checkbox" value="Maths">
+                            <label class="govuk-label govuk-checkboxes__label" for="functional-skills-2">
+                                Mathematics
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

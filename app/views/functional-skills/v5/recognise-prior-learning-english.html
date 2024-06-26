@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Recognition of prior learning (RPL)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="learning-aim-maths" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">Functional skills English</span>
+            <h1 class="govuk-fieldset__heading">
+              Has the learner completed any training for this course already?
+            </h1>
+          </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="rpl" name="rpl" type="radio" value="yes" data-aria-controls="rpl-percentage">
+            <label class="govuk-label govuk-radios__label" for="rpl">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="rpl-percentage">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="rpl-percentage">
+                What percentage is left to complete?
+              </label>
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-4" id="rpl-percentage" name="rpl-percentage" inputmode="numeric"
+                  type="text" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">%</div>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="rpl-2" name="rpl" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="rpl-2">
+              No
+            </label>
+          </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
