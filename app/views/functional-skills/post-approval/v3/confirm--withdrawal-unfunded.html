@@ -22,11 +22,12 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="apprentice-details--withdrawal-confirmed" method="post" novalidate>
+        <form action="apprentice-details--withdrawal-confirmed--unfunded" method="post" novalidate>
+
             <span class="govuk-caption-l">AQA Functional Skills qualification in English at Level 2</span>
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
             <p class="govuk-body">
-                You will not be entitled to any funding payments for this functional skill after the withdrawal date.
+                You will not earn any funding for this functional-skill, including learning support.
             </p>
 
             <dl class="govuk-summary-list govuk-!-margin-top-7">
@@ -95,11 +96,10 @@ href: "javascript:window.history.go(-1);"
     </div>
 
 </div>
-
 <div style="position: fixed; right:20px; top:160px">
-    <a href="confirm--withdrawal-unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    <a href="confirm--withdrawal" role="button" draggable="false" class="govuk-button govuk-button--secondary"
         data-module="govuk-button">
-        View unfunded page</a>
+        View funded page</a>
 </div>
 
 {% endblock %}

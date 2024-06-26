@@ -46,3 +46,22 @@ if
         res.redirect('../stop-date')
     }
 })
+router.post('/functional-skills/post-approval/v3/stop-date/action', function (req, res) {
+    var year = req.session.data['withdrawal-year']
+if (year >= "2024") {
+        res.redirect('../funding-warning')
+    }
+    else {
+        res.redirect('../confirm--withdrawal')
+    }
+})
+router.post('/functional-skills/post-approval/v3/funding-warning/action', function (req, res) {
+    var continuewithdrawal = req.session.data['continue-withdrawal']
+
+if (continuewithdrawal == "no") {
+        res.redirect('../apprentice-details')
+    }
+    else {
+        res.redirect('../confirm--withdrawal-unfunded')
+    }
+})

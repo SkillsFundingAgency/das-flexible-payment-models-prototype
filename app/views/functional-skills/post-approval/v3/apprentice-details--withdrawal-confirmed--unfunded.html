@@ -33,16 +33,8 @@ href: "javascript:window.history.go(-1);"
 					Learner has been withdrawn from AQA Functional Skills qualification in English at
 					Level 2
 				</h3>
-				<p class="govuk-body">You are not entitled to any funding payments for this functional skill after the
-					last day of
-					learning, {% if data['withdrawal-day'] != "" and data['withdrawal-month'] != "" and
-					data['withdrawal-year'] != "" %}
-					{{ data['withdrawal-day'] }}
-					{{ data['withdrawal-month'] | monthName }}
-					{{ data['withdrawal-year'] }}
-					{% else %}
-					{{ "today" | duration(-1, "days") | govukDate }}
-					{% endif %}.
+				<p class="govuk-body">You will not earn any funding for this functional-skill, including learning
+					support.
 				</p>
 				<p class="govuk-body">The employer has been informed of this update.</p>
 			</div>
@@ -546,9 +538,9 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: fixed; right:20px; top:160px">
-	<a href="apprentice-details--withdrawal-confirmed--unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View unfunded page</a>
+	<a href="apprentice-details--withdrawal-confirmed" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		View funded page</a>
 </div>
 
 {% endblock %}
