@@ -23,13 +23,17 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
     <form action="check-your-answers" method="post" novalidate>
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="prior-learning-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">Functional skills Maths</span>
             <h1 class="govuk-fieldset__heading">
-              Has the learner completed any training for this course already?
+              Has the learner completed any prior training for this course already?
             </h1>
           </legend>
+          <div id="prior-learning-hint" class="govuk-hint">
+            You should carry out an assessment to
+            identify if the apprentice has completed prior learning.
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="rpl" name="rpl" type="radio" value="yes"
@@ -41,7 +45,7 @@ href: "javascript:window.history.go(-1);"
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="rpl-percentage">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="rpl-percentage">
-                  What percentage is left to complete?
+                  What percentage of the learning is left to deliver?
                 </label>
                 <div class="govuk-input__wrapper">
                   <input class="govuk-input govuk-input--width-4" id="rpl-percentage" name="rpl-percentage"

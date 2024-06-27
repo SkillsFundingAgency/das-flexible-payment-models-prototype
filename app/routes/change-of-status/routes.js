@@ -195,7 +195,7 @@ router.post('/change-of-status/training-provider/v5/reason--withdrawal/action', 
     var reasonforwithdrawal = req.session.data['reason-for-withdrawal']
 if 
     (reasonforwithdrawal == "Apprenticeship never started") {
-        res.redirect('../confirm--withdrawal')
+        res.redirect('../confirm--withdrawal-unfunded')
     }
     else {
         res.redirect('../stop-date')
