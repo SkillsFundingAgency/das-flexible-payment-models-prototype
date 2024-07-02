@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "George Ford (Version 3)" %}
+{% set pageTitle = "George Ford (Version 3) - Standard" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -30,10 +30,10 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					The employer has requested a change to the total agreed apprenticeship price. You need to review and
-					approve.
+					The employer has requested a change to the standard. You need to review and approve.
 				</h3>
-				<p class="govuk-body"><a href="/payments/c-02-review" class="govuk-link govuk-link--no-visited-state">Review change
+				<p class="govuk-body"><a href="/change-of-standard/training-provider/v3/view-changes"
+						class="govuk-link govuk-link--no-visited-state">Review change
 						request</a></p>
 			</div>
 		</div>
@@ -72,7 +72,7 @@ href: "javascript:window.history.go(-1);"
 			</ul>
 
 			<div class="govuk-tabs__panel" id="change-request" role="tabpanel" aria-labelledby="tab_change-request">
-				<div class="govuk-grid-row">
+				{# <div class="govuk-grid-row">
 					<div class="govuk-grid-column-two-thirds">
 						<h2 class="govuk-heading-m" id="pending-your-review">Pending your review</h2>
 						<p class="govuk-body">The employer has made some updates which require your approval before they
@@ -82,7 +82,7 @@ href: "javascript:window.history.go(-1);"
 				</div>
 				<div class="govuk-summary-card">
 					<div class="govuk-summary-card__title-wrapper">
-						<h2 class="govuk-summary-card__title">Change to total agreed apprenticeship price</h2>
+						<h2 class="govuk-summary-card__title">Total agreed apprenticeship price</h2>
 						<ul class="govuk-summary-card__actions">
 							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--yellow"
 									style="max-width:none">Pending your
@@ -101,12 +101,12 @@ href: "javascript:window.history.go(-1);"
 									Request made
 								</dt>
 								<dd class="govuk-summary-list__value">
-									2 days ago ({{ "today" | duration(-2) | govukDate }})
+									Today (15 February 2023)
 								</dd>
 							</div>
 							<div class="govuk-summary-list__row">
 								<dt class="govuk-summary-list__key">
-									Current total price
+									Current
 								</dt>
 								<dd class="govuk-summary-list__value">
 									£8,000
@@ -114,7 +114,7 @@ href: "javascript:window.history.go(-1);"
 							</div>
 							<div class="govuk-summary-list__row">
 								<dt class="govuk-summary-list__key">
-									Requested total price
+									Request
 								</dt>
 								<dd class="govuk-summary-list__value">
 									£9,000
@@ -125,16 +125,14 @@ href: "javascript:window.history.go(-1);"
 									Effective from date
 								</dt>
 								<dd class="govuk-summary-list__value">
-									1 December 2023
+									1 December 2022
 								</dd>
 							</div>
 						</dl>
 					</div>
-				</div>
+				</div> #}
 
-
-
-				<div class="govuk-grid-row govuk-!-margin-top-8">
+				<div class="govuk-grid-row">
 					<div class="govuk-grid-column-two-thirds">
 						<h2 class="govuk-heading-m">Pending employer review</h2>
 						<p class="govuk-body">Some updates need approval from the employer before they can be updated.
@@ -144,15 +142,14 @@ href: "javascript:window.history.go(-1);"
 							listed for your reference.</p>
 					</div>
 				</div>
-				{# Arrow show change #}
 				<div class="govuk-summary-card">
 					<div class="govuk-summary-card__title-wrapper">
-						<h2 class="govuk-summary-card__title">Change to training dates</h2>
+						<h2 class="govuk-summary-card__title">Change to standard</h2>
 						<ul class="govuk-summary-card__actions">
 							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
 									employer</strong></li>
 							<li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state"
-									href="/change-of-start-date/training-provider/v2/change-start-date-view-changes">
+									href="/change-of-standard/training-provider/v3/view-changes">
 									View and manage request<span class="govuk-visually-hidden"> for training
 										dates</span>
 								</a>
@@ -166,129 +163,23 @@ href: "javascript:window.history.go(-1);"
 									Request made
 								</dt>
 								<dd class="govuk-summary-list__value">
-									2 weeks ago ({{ "today" | duration(-14) | govukDate }})
+									3 days ago (15 February 2024)
 								</dd>
 							</div>
 							<div class="govuk-summary-list__row">
 								<dt class="govuk-summary-list__key">
-									Actual training start date
+									Current
 								</dt>
 								<dd class="govuk-summary-list__value">
-									1 August 2024 &#x2794; 25 October 2024
+									Accounting, Level: 2
 								</dd>
 							</div>
 							<div class="govuk-summary-list__row">
 								<dt class="govuk-summary-list__key">
-									Planned training end date
+									Request
 								</dt>
 								<dd class="govuk-summary-list__value">
-									10 January 2025 &#x2794; 25 October 2026
-								</dd>
-							</div>
-						</dl>
-					</div>
-				</div>
-				
-				{# Current in brackets #}
-				<div class="govuk-summary-card">
-					<div class="govuk-summary-card__title-wrapper">
-						<h2 class="govuk-summary-card__title">Change to training dates</h2>
-						<ul class="govuk-summary-card__actions">
-							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
-									employer</strong></li>
-							<li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state"
-									href="/change-of-start-date/training-provider/v2/change-start-date-view-changes">
-									View and manage request<span class="govuk-visually-hidden"> for training
-										dates</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-					<div class="govuk-summary-card__content">
-						<dl class="govuk-summary-list">
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Request made
-								</dt>
-								<dd class="govuk-summary-list__value">
-									2 weeks ago (10 January 2023)
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Requested actual training start date
-								</dt>
-								<dd class="govuk-summary-list__value">
-									25 October 2024 (currently 1 August 2024)
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Requested planned training end date
-								</dt>
-								<dd class="govuk-summary-list__value">
-									25 October 2026 (currently 10 January 2025)
-								</dd>
-							</div>
-						</dl>
-					</div>
-				</div>
-				
-				{# Row per date #}
-									<div class="govuk-summary-card">
-										<div class="govuk-summary-card__title-wrapper">
-											<h2 class="govuk-summary-card__title">Change to training dates</h2>
-											<ul class="govuk-summary-card__actions">
-												<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
-														employer</strong></li>
-												<li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state"
-														href="/change-of-start-date/training-provider/v2/change-start-date-view-changes">
-														View and manage request<span class="govuk-visually-hidden"> for training
-															dates</span>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="govuk-summary-card__content">
-											<dl class="govuk-summary-list">
-												<div class="govuk-summary-list__row">
-													<dt class="govuk-summary-list__key">
-														Request made
-													</dt>
-													<dd class="govuk-summary-list__value">
-														2 weeks ago (10 January 2023)
-													</dd>
-												</div>
-												<div class="govuk-summary-list__row">
-													<dt class="govuk-summary-list__key">
-														Current actual training start date
-														</dt>
-														<dd class="govuk-summary-list__value">
-															1 August 2024
-														</dd>
-														</div>
-														<div class="govuk-summary-list__row">
-															<dt class="govuk-summary-list__key">
-														Requested actual training start date
-														</dt>
-														<dd class="govuk-summary-list__value">
-														25 October 2024
-														</dd>
-														</div>
-														<div class="govuk-summary-list__row">
-															<dt class="govuk-summary-list__key">
-																Current planned training end date
-															</dt>
-															<dd class="govuk-summary-list__value">
-																10 January 2025
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Requested planned training end date
-								</dt>
-								<dd class="govuk-summary-list__value">
-									25 October 2026
+									Game technology: Level 7
 								</dd>
 							</div>
 						</dl>
@@ -446,7 +337,7 @@ href: "javascript:window.history.go(-1);"
 							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
 									employer</strong></li>
 							<li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state"
-									href="/change-of-start-date/training-provider/v2/change-start-date-view-changes">
+									href="/change-of-standard/training-provider/v3/view-changes">
 									View and manage request<span class="govuk-visually-hidden"> for training
 										dates</span>
 								</a>
@@ -493,47 +384,68 @@ href: "javascript:window.history.go(-1);"
 						<h2 class="govuk-summary-card__title">
 							Programme
 						</h2>
-						{# <ul class="govuk-summary-card__actions">
-
-							<li class="govuk-summary-card__action">
-								<a class="govuk-link" href="#">Change programme</a>
+						<ul class="govuk-summary-card__actions">
+							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
+									employer</strong></li>
+							<li class="govuk-summary-card__action"><a class="govuk-link govuk-link--no-visited-state"
+									href="/change-of-standard/training-provider/v3/view-changes">
+									View and manage request<span class="govuk-visually-hidden"> for training
+										dates</span>
+								</a>
 							</li>
-						</ul> #}
+						</ul>
 					</div>
 					<div class="govuk-summary-card__content">
-						<dl class="govuk-summary-list">
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Standard
-								</dt>
-								<dd class="govuk-summary-list__value">
-									Game technology: Level 2
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link govuk-link--no-visited-state"
-										href="/change-of-standard/training-provider/v3/change-course">
-										Change<span class="govuk-visually-hidden"> standard</span>
-									</a>
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key ">
-									Version
-								</dt>
-								<dd class="govuk-summary-list__value">
-									1.0
-								</dd>
+						<table class="govuk-table">
+							<thead class="govuk-table__head">
+								<tr class="govuk-table__row">
+									<th scope="col" class="govuk-table__header govuk-!-width-one-third">
+										<span class="govuk-visually-hidden">Apprenticship detail</span>
+									</th>
+									<th scope="col" class="govuk-table__header ">
+										Current
+									</th>
+									<th scope="col" class="govuk-table__header ">
+										Requested
+									</th>
+								</tr>
 
-							</div>
-							<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key">
-									Your reference
-								</dt>
-								<dd class="govuk-summary-list__value">
-									Nothing provided
-								</dd>
-							</div>
-						</dl>
+							</thead>
+							<tbody class="govuk-table__body">
+
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Standard</th>
+									<td class="govuk-table__cell">Accounting, Level: 2</td>
+									<td class="govuk-table__cell">Game technology: Level 7</td>
+								</tr>
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Version
+									</th>
+									<td class="govuk-table__cell">1.0</td>
+									<td class="govuk-table__cell">1.4</td>
+								</tr>
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Pathway</th>
+									<td class="govuk-table__cell">
+										Not applicable
+									</td>
+									<td class="govuk-table__cell">Confirm at a later date</td>
+								</tr>
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Apprenticeship delivery model</th>
+									<td class="govuk-table__cell">
+										Regular
+									</td>
+									<td class="govuk-table__cell">Regular</td>
+								</tr>
+								<tr class="govuk-table__row">
+									<th scope="row" class="govuk-table__header">Your reference
+									</th>
+									<td class="govuk-table__cell">Nothing provided</td>
+									<td class="govuk-table__cell">Nothing provided</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 
@@ -542,12 +454,12 @@ href: "javascript:window.history.go(-1);"
 					<div class="govuk-summary-card__title-wrapper">
 						<h2 class="govuk-summary-card__title">Negotiated price</h2>
 						<ul class="govuk-summary-card__actions">
-							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--yellow"
-									style="max-width:none">Pending your
-									review</strong></li>
-							<li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state"
-									href="/payments/c-02-review">
-									Review change request<span class="govuk-visually-hidden"> training dates</span>
+							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
+									employer</strong></li>
+							<li class="govuk-summary-card__action"><a class="govuk-link govuk-link--no-visited-state"
+									href="/change-of-standard/training-provider/v3/view-changes">
+									View and manage request<span class="govuk-visually-hidden"> for training
+										dates</span>
 								</a>
 							</li>
 						</ul>
@@ -568,21 +480,21 @@ href: "javascript:window.history.go(-1);"
 									<th scope="row" class="govuk-table__header">Training price</th>
 									<td class="govuk-table__cell">£6,000</td>
 									<td class="govuk-table__cell" id="TrainingPrice">
-										-
+										£7,000
 									</td>
 								</tr>
 								<tr class="govuk-table__row">
 									<th scope="row" class="govuk-table__header">End-point assessment price</th>
-									<td class="govuk-table__cell">£2,000</td>
+									<td class="govuk-table__cell">£2,500</td>
 									<td class="govuk-table__cell" id="EndPointAssessmentPrice">
-										-
+										£3,000
 									</td>
 								</tr>
 								<tr class="govuk-table__row">
 									<th scope="row" class="govuk-table__header">Total price</th>
-									<td class="govuk-table__cell">£8,000</td>
+									<td class="govuk-table__cell">£8,500</td>
 									<td class="govuk-table__cell">
-										£9,000
+										£10,000
 									</td>
 								</tr>
 							</tbody>
@@ -595,58 +507,61 @@ href: "javascript:window.history.go(-1);"
 					<div class="govuk-summary-card__title-wrapper">
 						<h2 class="govuk-summary-card__title">
 							Recognition of prior learning (RPL)
-
 						</h2>
-						{# <ul class="govuk-summary-card__actions">
-							<li class="govuk-summary-card__action">
-								<a class="govuk-link" href="#">Change Recognition of prior learning (RPL)</a>
+						<ul class="govuk-summary-card__actions">
+							<li class="govuk-summary-card__action"><strong class="govuk-tag govuk-tag--grey">Pending
+									employer</strong></li>
+							<li class="govuk-summary-card__action"><a class="govuk-link govuk-link--no-visited-state"
+									href="/change-of-standard/training-provider/v3/view-changes">
+									View and manage request<span class="govuk-visually-hidden"> for training
+										dates</span>
+								</a>
 							</li>
-						</ul> #}
+						</ul>
 					</div>
 					<div class="govuk-summary-card__content">
-						<dl class="govuk-summary-list">
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Total off-the-job training hours required for this standard
-								</dt>
-								<dd class="govuk-summary-list__value">
-									70 hours
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key ">
-									Reduction in hours due to prior learning
-								</dt>
-								<dd class="govuk-summary-list__value">
-									14 hours
-								</dd>
-							</div>
+						<table class="govuk-table">
+							<thead class="govuk-table__head">
+								<tr class="govuk-table__row">
+									<th scope="col" class="govuk-table__header  govuk-!-width-one-third">
+									</th>
+									<th scope="col" class="govuk-table__header ">Current</th>
+									<th scope="col" class="govuk-table__header govuk-!-width-one-third">Requested
+									</th>
+								</tr>
+							</thead>
+							<tbody class="govuk-table__body">
+								<tr class=" govuk-table__row">
+									<th scope="row" class="govuk-table__header">Total off-the-job training hours
+										required for this
+										standard</th>
+									<td class="govuk-table__cell">70 hours</td>
+									<td class="govuk-table__cell">70 hours</td>
 
-							<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key">
-									Reduction in duration due to prior learning
-								</dt>
-								<dd class="govuk-summary-list__value">
-									2 weeks
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key">
-									Base price
-								</dt>
-								<dd class="govuk-summary-list__value">
-									£8,000
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row  govuk-summary-list__row--no-actions">
-								<dt class="govuk-summary-list__key">
-									Price reduction due to prior learning
-								</dt>
-								<dd class="govuk-summary-list__value">
-									£2,000
-								</dd>
-							</div>
-						</dl>
+								</tr>
+
+								<tr class=" govuk-table__row">
+									<th scope="row" class="govuk-table__header">Reduction in hours due to prior learning
+									</th>
+									<td class="govuk-table__cell">14 hours</td>
+									<td class="govuk-table__cell">21 hours</td>
+								</tr>
+								<tr class=" govuk-table__row">
+									<th scope="row" class="govuk-table__header">Reduction in duration due to prior
+										learning</th>
+									<td class="govuk-table__cell">2 weeks</td>
+									<td class="govuk-table__cell">3 weeks</td>
+
+								</tr>
+								<tr class=" govuk-table__row">
+									<th scope="row" class="govuk-table__header">Price reduction due to prior learning
+									</th>
+									<td class="govuk-table__cell">£2,000</td>
+									<td class="govuk-table__cell">£2,500</td>
+
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
