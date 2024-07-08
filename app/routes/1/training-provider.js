@@ -2,7 +2,7 @@ const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
 // CHANGE VERSION TO THE VERSION
-const version = 'v1'
+const version = 'v2'
 
 router.post('/training-provider/' + version + '/approvals/add/action/entry-method', function (req, res) {
     var addApprenticeDetails = req.session.data['add-apprentice-details']
@@ -90,46 +90,5 @@ router.post('/training-provider/' + version + '/approvals/add/action/personal-de
         else {
             res.redirect('/training-provider/' + version + '/approvals/add/training-details-pilot-non-pfj')
         }
-    }
-})
-router.post('/functional-skills/manage-functional-skils/v1/confirm-functional-skill/action', function (req, res) {
-    var IsCorrectFunctionalSkill = req.session.data['is-correct-functional-skill']
-
-    if (IsCorrectFunctionalSkill == "false") {
-        res.redirect('../select-functional-skill')
-    }
-    else {
-        res.redirect('../functional-skills?new-skill=yes')
-    }
-})
-
-router.post('/functional-skills/v3/recognise-prior-learning-english/action', function (req, res) {
-    var RPL = req.session.data['rpl']
-
-    if (RPL == "no") {
-        res.redirect('../learning-aim-maths')
-    }
-    else {
-        res.redirect('../recognise-prior-learning-english--add')
-    }
-})
-router.post('/functional-skills/v3/recognise-prior-learning-maths/action', function (req, res) {
-    var RPL = req.session.data['rpl']
-
-    if (RPL == "no") {
-        res.redirect('../check-your-answers')
-    }
-    else {
-        res.redirect('../recognise-prior-learning-maths--add')
-    }
-})
-router.post('/functional-skills/v4/confirm-delete/action', function (req, res) {
-    var DeleteSkill = req.session.data['delete']
-
-    if (DeleteSkill == "no") {
-        res.redirect('../check-your-answers?added-another=true')
-    }
-    else {
-        res.redirect('../check-your-answers?added-another=false')
     }
 })

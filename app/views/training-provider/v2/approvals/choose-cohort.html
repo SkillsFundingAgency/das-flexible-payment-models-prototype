@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+{% set pageTitle = "Choose a cohort" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-width-container">
+
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">
+            <a class="das-table__sort" title="Sort the table by Employer"
+              href="/training-provider/{{version}}/10005760/unapproved/choose-cohort?ReverseSort=False&amp;SortField=EmployerName">
+              Employer
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Cohort"
+              href="/training-provider/{{version}}/10005760/unapproved/choose-cohort?ReverseSort=False&amp;SortField=CohortReference">
+              Cohort
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Status"
+              href="/training-provider/{{version}}/10005760/unapproved/choose-cohort?ReverseSort=False&amp;SortField=Status">
+              Status
+            </a>
+          </th>
+
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number of apprentices</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+        </tr>
+
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" data-cohort="BNBKK9">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Reference">BNBKK9</td>
+          <td class="govuk-table__cell" data-label="Last Message">Draft</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+            <a id="details_link_BNBKK9" class="govuk-link cohort-details-link"
+              href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Select</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="L47PPX">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Reference">L47PPX</td>
+          <td class="govuk-table__cell" data-label="Last Message">Draft</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+            <a id="details_link_L47PPX" class="govuk-link cohort-details-link"
+              href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Select</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="XPDLLG">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Reference">XPDLLG</td>
+          <td class="govuk-table__cell" data-label="Last Message">Draft</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+            <a id="details_link_XPDLLG" class="govuk-link cohort-details-link"
+              href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Select</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="P9NYYP">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Reference">P9NYYP</td>
+          <td class="govuk-table__cell" data-label="Last Message">Draft</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+            <a id="details_link_P9NYYP" class="govuk-link cohort-details-link"
+              href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Select</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="G7X99D">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Reference">G7X99D</td>
+          <td class="govuk-table__cell" data-label="Last Message">Draft</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+            <a id="details_link_G7X99D" class="govuk-link cohort-details-link"
+              href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Select</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+{% endblock %}
