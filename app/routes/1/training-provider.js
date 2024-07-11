@@ -45,18 +45,20 @@ router.post('/training-provider/' + version + '/approvals/action/recognise-prior
     if (priorLearning == "yes") {
         res.redirect('/training-provider/' + version + '/approvals/recognise-prior-learning-details')
     }
-    else if (priorLearning == "no") {
-        if (pilotProgram == "No") {
-            res.redirect('/training-provider/' + version + '/approvals/approve-details-non-pilot')
-        }
-        else {
-            if (deliveryMethod == "portable-flexi-job") {
-                res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-pjf')
-            }
-            else {
-                res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-non-pjf')
-            }
-        }
+    else {
+        res.redirect('/training-provider/' + version + '/approvals/add/select-option')
+    // else if (priorLearning == "no") {
+    //     if (pilotProgram == "No") {
+    //         res.redirect('/training-provider/' + version + '/approvals/approve-details-non-pilot')
+    //     }
+    //     else {
+    //         if (deliveryMethod == "portable-flexi-job") {
+    //             res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-pjf')
+    //         }
+    //         else {
+    //             res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-non-pjf')
+    //         }
+    //     }
     }
 })
 router.post('/training-provider/' + version + '/approvals/action/recognise-prior-learning-details', function (req, res) {
@@ -89,6 +91,25 @@ router.post('/training-provider/' + version + '/approvals/add/action/personal-de
         }
         else {
             res.redirect('/training-provider/' + version + '/approvals/add/training-details-pilot-non-pfj')
+        }
+    }
+})
+
+router.post('/training-provider/' + version + '/approvals/action/portable-flexi-job', function (req, res) {
+    var priorLearning = req.session.data['prior-learning']
+    var pilotProgram = req.session.data['pilot-program']
+    var deliveryMethod = req.session.data['delivery-method']
+
+    
+    if (pilotProgram == "No") {
+        res.redirect('/training-provider/' + version + '/approvals/approve-details-non-pilot')
+        }
+    else {
+        if (deliveryMethod == "portable-flexi-job") {
+            res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-pjf')
+        }
+        else {
+            res.redirect('/training-provider/' + version + '/approvals/approve-details-pilot-non-pjf')
         }
     }
 })
