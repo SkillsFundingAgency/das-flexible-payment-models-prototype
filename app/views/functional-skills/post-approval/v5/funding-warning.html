@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skill ineligible for funding" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    {% if data['aim'] != "b" and data['aim'] != "c" %}
+    <p class="govuk-body">
+      The qualifying period for functional skills lasting more than 167 days is 42 days.
+    </p>
+    {% endif %}
+    {% if data['aim'] == "b" %}
+    <p class="govuk-body">
+      The qualifying period for functional skills lasting less than 14 days is 1 day.
+    </p>
+    {% endif %}
+    {% if data['aim'] == "c" %}
+    <p class="govuk-body">
+      The qualifying period for functional skills lasting 14 to 167 days is 14 days.
+    </p>
+    {% endif %}
+    <p class="govuk-body">
+      If the apprentice leaves before the qualifying period you will not earn any funding for this functional skill,
+      including learning support.
+    </p>
+
+    <form action="/functional-skills/post-approval/v4/funding-warning/action" method="post" novalidate
+      class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to continue to withdraw this apprentice?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes-withdraw" name="continue-withdrawal" type="radio" value="yes"
+                aria-describedby="yes-withdraw-hint">
+              <label class="govuk-label govuk-radios__label" for="yes-withdraw">
+                Yes, continue to withdraw from this functional skill
+              </label>
+              <div id="yes-withdraw-hint" class="govuk-hint govuk-radios__hint">
+                You will not earn any funding for this functional skill, including learning support
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-cancel" name="continue-withdrawal" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no-cancel">
+                No, cancel withdrawal
+              </label>
+            </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+  <a href="?aim=b" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    Aim < 14 days </a>
+      <a href="?aim=c" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        Aim 14 to 167 days </a>
+      <a href="?aim=a" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        Aim > 167 days </a>
+</div>
+
+{% endblock %}

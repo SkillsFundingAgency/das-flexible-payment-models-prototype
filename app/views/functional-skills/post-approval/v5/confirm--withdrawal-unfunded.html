@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check and confirm status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="apprentice-details--withdrawal-confirmed--unfunded" method="post" novalidate>
+
+            <span class="govuk-caption-l">AQA Functional Skills qualification in English at Level 2</span>
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <p class="govuk-body">
+                You will not earn any funding for this functional-skill, including learning support.
+            </p>
+
+            <dl class="govuk-summary-list govuk-!-margin-top-7">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Qualification</dt>
+                    <dd class="govuk-summary-list__value">
+                        AQA Functional Skills qualification in English at Level 2
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Updated status</dt>
+                    <dd class="govuk-summary-list__value">
+                        <strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Reason for withdrawal</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['reason-for-withdrawal'] == 'Other' %}
+                        Other - {{data['other-reason']}}
+                        {% else %}
+                        {{data['reason-for-withdrawal']}}
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="reason--withdrawal">
+                            Change<span class="govuk-visually-hidden"> reason for reason for withdrawal</span>
+                        </a>
+                    </dd>
+                </div>
+                {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Last date of learning</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['withdrawal-day'] != "" and data['withdrawal-month'] != "" and
+                        data['withdrawal-year'] != "" %}
+                        {{ data['withdrawal-day'] }}
+                        {{ data['withdrawal-month'] | monthName }}
+                        {{ data['withdrawal-year'] }}
+                        {% else %}
+                        {{ "today" | duration(-1, "days") | govukDate }}
+                        {% endif %}
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
+                            Change<span class="govuk-visually-hidden"> last date of learning</span>
+                        </a>
+                    </dd>
+
+                </div>
+                {% endif %}
+            </dl>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+<div style="position: fixed; right:20px; top:160px">
+    <a href="confirm--withdrawal" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        View funded page</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Functional skills" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="dates-english" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <span class="govuk-caption-l">Functional skills English</span>
+                        <h1 class="govuk-fieldset__heading">
+                            What is the English qualification?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="qualification-level" name="qualification-level"
+                                type="radio" value="AQA Functional Skills qualification in English at Level 1">
+                            <label class="govuk-label govuk-radios__label" for="qualification-level">
+                                AQA Functional Skills qualification in English at Level 1
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="qualification-level-2" name="qualification-level"
+                                type="radio" value="AQA Functional Skills qualification in English at Level 2">
+                            <label class="govuk-label govuk-radios__label" for="qualification-level-2">
+                                AQA Functional Skills qualification in English at Level 2
+                            </label>
+                        </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
