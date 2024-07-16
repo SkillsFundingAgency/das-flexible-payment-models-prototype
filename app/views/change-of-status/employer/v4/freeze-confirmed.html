@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Success
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+
+				<h3 class="govuk-notification-banner__heading">
+					Provider payments have been set to "Inactive"
+				</h3>
+				<p class="govuk-body">The training provider has been informed of this update.
+				</p>
+			</div>
+		</div>
+		{% set employerFreeze = true %}
+		{% include "change-of-status/employer/v4/includes/employer-apprentice-details-list" %}
+
+	</div>
+</div>
+
+<div style="position: absolute; right:20px; top:160px">
+	<a href="frozen" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+		data-module="govuk-button">
+		View frozen apprenticeship
+	</a>
+</div>
+
+{% endblock %}

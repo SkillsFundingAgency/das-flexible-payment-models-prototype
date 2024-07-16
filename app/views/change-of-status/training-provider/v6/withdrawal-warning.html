@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Before you continue" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You do not need to withdraw an apprenticeship after the training has been completed. If you do, this
+        will prevent the completion payment due to you.
+      </strong>
+    </div>
+
+    <p class="govuk-body">
+      If the apprentice you are training has been made redundant you need to <a class="govuk-link"
+        href="edit-learner-status"> change the learner status</a> to mark them as redundant.
+    </p>
+
+    <div class="govuk-button-group govuk-!-margin-top-8">
+      <a href="/change-of-status/training-provider/v6/reason--withdrawal" role="button" draggable="false"
+        class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+      <a class="govuk-link" href="apprentice-details">Cancel</a>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

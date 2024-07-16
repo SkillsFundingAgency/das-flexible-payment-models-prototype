@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check and confirm status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="apprentice-details--break-in-learning-confirmed" method="post" novalidate>
+
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <p class="govuk-body">
+                Payments will be set to inactive and the last payment for this apprenticeship will be December 2023.
+            </p>
+            <p class="govuk-body">
+                You can change status of the apprenticeship at any time.
+            </p>
+
+            <dl class="govuk-summary-list govuk-!-margin-top-7">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Learner status</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% include "change-of-status/includes/learner-status-tag.html" %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
+                            Change<span class="govuk-visually-hidden"> learner status</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Last date of learning</dt>
+                    <dd class="govuk-summary-list__value">
+
+                        {% if data['pause-month'] == "1" or
+                        data['pause-month']
+                        == "01" %}
+                        {{ data['pause-day'] }} January {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "2" or
+                        data['pause-month'] == "02" %}
+                        {{ data['pause-day'] }} February {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "3" or
+                        data['pause-month'] == "03" %}
+                        {{ data['pause-day'] }} March {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "4" or
+                        data['pause-month'] == "04" %}
+                        {{ data['pause-day'] }} April {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "5" or
+                        data['pause-month'] == "05" %}
+                        {{ data['pause-day'] }} May {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "6" or
+                        data['pause-month'] == "06" %}
+                        {{ data['pause-day'] }} June {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "7" or
+                        data['pause-month'] == "07" %}
+                        {{ data['pause-day'] }} July {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "8" or
+                        data['pause-month'] == "08" %}
+                        {{ data['pause-day'] }} August {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "9" or
+                        data['pause-month'] == "09" %}
+                        {{ data['pause-day'] }} September {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "10" %}
+                        {{ data['pause-day'] }} October {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "11" %}
+                        {{ data['pause-day'] }} November {{ data['pause-year'] }}
+                        {% elseif data['pause-month'] == "12" %}
+                        {{ data['pause-day'] }} December {{ data['pause-year'] }}
+                        {% else %}
+                        10 January 2024
+                        {% endif %}
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="pause-date">
+                            Change<span class="govuk-visually-hidden"> changes take effect</span>
+                        </a>
+                    </dd>
+
+                </div>
+            </dl>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
