@@ -180,3 +180,15 @@ if (continuewithdrawal == "no") {
         res.redirect('../confirm--withdrawal-unfunded')
     }
 })
+
+// Managing functional skills v3 
+router.post('/functional-skills/manage-functional-skils/v3/confirm-qualification/action', function (req, res) {
+    var IsCorrectFunctionalSkill = req.session.data['is-correct-functional-skill']
+
+    if (IsCorrectFunctionalSkill == "false") {
+        res.redirect('../select-qualification')
+    }
+    else {
+        res.redirect('../qualifications?new-skill=yes')
+    }
+})

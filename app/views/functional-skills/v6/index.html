@@ -43,11 +43,13 @@ href: "javascript:window.history.go(-1);"
             You can add English and maths qualifications now or at any time during the apprenticeship.</p>
         <form action="learning-aim-english" method="post" novalidate class="govuk-!-margin-top-7">
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
+                <fieldset class="govuk-fieldset" aria-describedby="qualification-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                        Would you like to add any English and maths qualifications for this apprentice now?
+                        Would you like to add any of these qualifications for this apprentice now?
                     </legend>
-
+                    <div id="qualification-hint" class="govuk-hint">
+                        Select all that apply
+                    </div>
                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                         <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="functional-skills" name="functional-skills"
@@ -69,7 +71,7 @@ href: "javascript:window.history.go(-1);"
                                 type="checkbox" value="None" data-behaviour="exclusive"
                                 aria-describedby="no-skills-hint">
                             <label class="govuk-label govuk-checkboxes__label" for="functional-skills-3">
-                                No, I do not want to add any English and maths qualifications now
+                                No, I do not want to add any qualifications now
                             </label>
                             <div id="no-skills-hint" class="govuk-hint govuk-radios__hint">
                                 You can still add English and maths qualifications at any point during the apprenticeship.
