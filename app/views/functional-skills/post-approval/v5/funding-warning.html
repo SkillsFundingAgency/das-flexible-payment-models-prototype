@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "Functional skill ineligible for funding" %}
+{% set pageTitle = "Qualification ineligible for funding" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -29,21 +29,21 @@ href: "javascript:window.history.go(-1);"
 
     {% if data['aim'] != "b" and data['aim'] != "c" %}
     <p class="govuk-body">
-      The qualifying period for functional skills lasting more than 167 days is 42 days.
+      The qualifying period for English and maths qualifications lasting more than 167 days is 42 days.
     </p>
     {% endif %}
     {% if data['aim'] == "b" %}
     <p class="govuk-body">
-      The qualifying period for functional skills lasting less than 14 days is 1 day.
+      The qualifying period for English and maths qualifications lasting less than 14 days is 1 day.
     </p>
     {% endif %}
     {% if data['aim'] == "c" %}
     <p class="govuk-body">
-      The qualifying period for functional skills lasting 14 to 167 days is 14 days.
+      The qualifying period for English and maths qualifications lasting 14 to 167 days is 14 days.
     </p>
     {% endif %}
     <p class="govuk-body">
-      If the apprentice leaves before the qualifying period you will not earn any funding for this functional skill,
+      If the apprentice leaves before the qualifying period you will not earn any funding for this qualification,
       including learning support.
     </p>
 
@@ -59,8 +59,7 @@ href: "javascript:window.history.go(-1);"
               <input class="govuk-radios__input" id="yes-withdraw" name="continue-withdrawal" type="radio" value="yes"
                 aria-describedby="yes-withdraw-hint">
               <label class="govuk-label govuk-radios__label" for="yes-withdraw">
-                Yes, continue to withdraw from this functional skill
-              </label>
+                Yes, continue to withdraw from this qualification</label>
               <div id="yes-withdraw-hint" class="govuk-hint govuk-radios__hint">
                 You will not earn any funding for this functional skill, including learning support
               </div>
