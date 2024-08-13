@@ -277,6 +277,56 @@ href: "javascript:window.history.go(-1);"
                                     </select>
                                 </div>
                             </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedAlert">Alert</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedAlert"
+                                        name="selectedAlert">
+                                        <option label="All" aria-label="All Alerts" value="">All</option>
+                                        <option label="Changes for review" value="ChangesForReview">Changes for review
+                                        </option>
+                                        <option label="Changes pending" value="ChangesPending">Changes pending</option>
+                                        <option label="Changes requested" value="ChangesRequested">Changes requested
+                                        </option>
+                                        <option label="ILR data mismatch" value="IlrDataMismatch">ILR data mismatch
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedStatus">Apprentice confirmation</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedApprenticeConfirmation"
+                                        name="selectedApprenticeConfirmation">
+                                        <option label="All" aria-label="All confirmations" value="">All</option>
+                                        <option label="Confirmed" value="Confirmed">Confirmed</option>
+                                        <option label="Unconfirmed" value="Unconfirmed">Unconfirmed</option>
+                                        <option label="Overdue" value="Overdue">Overdue</option>
+                                        <option label="N/A" value="NA">N/A</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedDeliveryModel">Apprenticeship delivery
+                                        model</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedDeliveryModel"
+                                        name="selectedDeliveryModel">
+                                        <option label="All" aria-label="All delivery models" value="">All</option>
+                                        <option label="Regular" value="Regular">Regular</option>
+                                        <option label="Portable flexi-job" value="PortableFlexiJob">Portable
+                                            flexi-job
+                                        </option>
+                                        <option label="Flexi-job agency" value="FlexiJobAgency">Flexi-job agency
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+
                         </div>
                         <button class="govuk-button govuk-!-margin-0" type="submit">Apply filters</button>
                     </div>
@@ -661,6 +711,45 @@ href: "javascript:window.history.go(-1);"
                 </tr>
             </tbody>
         </table>
+        <nav role="navigation" aria-label="Pagination">
+            <div class="das-pagination__summary">
+                Showing 101 to 200 of 348
+                apprentice records, 7 with alerts
+            </div>
+            <ul class="das-pagination">
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link " aria-label="Previous page" href="/BB8W4N/apprentices?PageNumber=1">
+                        Previous
+                    </a>
+                </li>
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link " aria-label="Page 1" href="/BB8W4N/apprentices?PageNumber=1">
+                        1
+                    </a>
+                </li>
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link current" aria-current="aria-current" aria-label="Page 2"
+                        href="/BB8W4N/apprentices?PageNumber=2">
+                        2
+                    </a>
+                </li>
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link " aria-label="Page 3" href="/BB8W4N/apprentices?PageNumber=3">
+                        3
+                    </a>
+                </li>
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link " aria-label="Page 4" href="/BB8W4N/apprentices?PageNumber=4">
+                        4
+                    </a>
+                </li>
+                <li class="das-pagination__item">
+                    <a class="das-pagination__link " aria-label="Next page" href="/BB8W4N/apprentices?PageNumber=3">
+                        Next
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
 {% endblock %}

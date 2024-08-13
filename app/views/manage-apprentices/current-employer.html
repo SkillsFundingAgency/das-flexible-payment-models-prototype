@@ -1,0 +1,813 @@
+{% extends "layouts/main.html" %}
+{% set version = "v1" %}
+{% if data['approve-details'] == "yes" %}
+{% set pageTitle = "Cohort approved and sent to employer" %}
+{% else %}
+{% set pageTitle = "Cohort sent to employer for review" %}
+{% endif %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">Manage your apprentices</h1>
+
+        <form method="get" action="/training-provider/{{version}}/">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+                        <label for="searchTerm" class="govuk-label">Search by apprentice name
+                        </label>
+                        <div class="das-search-form__group">
+                            <input class="govuk-input das-search-form__input" id="searchTerm" name="searchTerm"
+                                type="text">
+                            <div class="das-search-form__button-wrap">
+                                <button class="govuk-button das-search-form__button" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="das-pane govuk-!-margin-bottom-3">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedProvider">Training provider</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedProvider"
+                                        name="selectedProvider">
+                                        <option label="All" aria-label="All training providers" value="">All</option>
+                                        <option label="BARKING AND DAGENHAM COLLEGE"
+                                            value="BARKING AND DAGENHAM COLLEGE">BARKING AND DAGENHAM
+                                            COLLEGE</option>
+                                        <option label="BOOM TRAINING LIMITED" value="BOOM TRAINING LIMITED">BOOM
+                                            TRAINING LIMITED</option>
+                                        <option label="EASTON AND OTLEY COLLEGE" value="EASTON AND OTLEY COLLEGE">EASTON
+                                            AND OTLEY COLLEGE
+                                        </option>
+                                        <option label="EDUC8 TRAINING (ENGLAND) LIMITED"
+                                            value="EDUC8 TRAINING (ENGLAND) LIMITED">EDUC8 TRAINING
+                                            (ENGLAND) LIMITED</option>
+                                        <option label="HIT TRAINING LTD" value="HIT TRAINING LTD">HIT TRAINING LTD
+                                        </option>
+                                        <option label="SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)"
+                                            value="SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)">
+                                            SOUTHAMPTON ENGINEERING TRAINING
+                                            ASSOCIATION LIMITED (THE)</option>
+                                        <option label="UMBRELLA TRAINING AND EMPLOYMENT SOLUTIONS LIMITED"
+                                            value="UMBRELLA TRAINING AND EMPLOYMENT SOLUTIONS LIMITED">UMBRELLA TRAINING
+                                            AND EMPLOYMENT
+                                            SOLUTIONS LIMITED</option>
+                                        <option label="WOODSPEEN TRAINING LIMITED" value="WOODSPEEN TRAINING LIMITED">
+                                            WOODSPEEN TRAINING LIMITED
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedCourse">Apprenticeship training
+                                        course</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedCourse"
+                                        name="selectedCourse">
+                                        <option label="All" aria-label="All courses" value="">All</option>
+                                        <option label="Abattoir worker, Level: 2" value="Abattoir worker, Level: 2">
+                                            Abattoir worker, Level: 2
+                                        </option>
+                                        <option label="Abattoir Worker, Level: 2 (Standard)"
+                                            value="Abattoir Worker, Level: 2 (Standard)">
+                                            Abattoir Worker, Level: 2 (Standard)</option>
+                                        <option label="Able seafarer (deck), Level: 2"
+                                            value="Able seafarer (deck), Level: 2">Able seafarer
+                                            (deck), Level: 2</option>
+                                        <option label="Able seafarer (deck), Level: 2 (Standard)"
+                                            value="Able seafarer (deck), Level: 2 (Standard)">Able seafarer (deck),
+                                            Level: 2 (Standard)</option>
+                                        <option label="Academic professional, Level: 7"
+                                            value="Academic professional, Level: 7">Academic
+                                            professional, Level: 7</option>
+                                        <option label="Academic professional, Level: 7 (Standard)"
+                                            value="Academic professional, Level: 7 (Standard)">Academic professional,
+                                            Level: 7 (Standard)
+                                        </option>
+                                        <option label="Accident repair technician, Level: 3"
+                                            value="Accident repair technician, Level: 3">
+                                            Accident repair technician, Level: 3</option>
+                                        <option label="Accident Repair Technician, Level: 3 (Standard)"
+                                            value="Accident Repair Technician, Level: 3 (Standard)">Accident Repair
+                                            Technician, Level: 3
+                                            (Standard)</option>
+                                        <option label="Accounting, Level: 2" value="Accounting, Level: 2">Accounting,
+                                            Level: 2</option>
+                                        <option label="Accounting, Level: 3" value="Accounting, Level: 3">Accounting,
+                                            Level: 3</option>
+                                        <option label="Accounting, Level: 4" value="Accounting, Level: 4">Accounting,
+                                            Level: 4</option>
+                                        <option label="Acoustics technician, Level: 4"
+                                            value="Acoustics technician, Level: 4">Acoustics
+                                            technician, Level: 4</option>
+                                        <option label="Acoustics technician, Level: 4 (Standard)"
+                                            value="Acoustics technician, Level: 4 (Standard)">Acoustics technician,
+                                            Level: 4 (Standard)</option>
+                                        <option label="Activity Leadership: Coaching, Level: 2"
+                                            value="Activity Leadership: Coaching, Level: 2">
+                                            Activity Leadership: Coaching, Level: 2</option>
+                                        <option label="Activity Leadership: Leadership, Level: 2"
+                                            value="Activity Leadership: Leadership, Level: 2">Activity Leadership:
+                                            Leadership, Level: 2</option>
+                                        <option label="Actuary, Level: 7" value="Actuary, Level: 7">Actuary, Level: 7
+                                        </option>
+                                        <option label="Adult care worker, Level: 2" value="Adult care worker, Level: 2">
+                                            Adult care worker,
+                                            Level: 2</option>
+                                        <option label="Adult care worker, Level: 2 (Standard)"
+                                            value="Adult care worker, Level: 2 (Standard)">
+                                            Adult care worker, Level: 2 (Standard)</option>
+                                        <option label="Advanced and creative hair professional, Level: 3"
+                                            value="Advanced and creative hair professional, Level: 3">Advanced and
+                                            creative hair professional,
+                                            Level: 3</option>
+                                        <option label="Advanced Baker, Level: 3 (Standard)"
+                                            value="Advanced Baker, Level: 3 (Standard)">Advanced
+                                            Baker, Level: 3 (Standard)</option>
+                                        <option label="Advanced butcher, Level: 3 (Standard)"
+                                            value="Advanced butcher, Level: 3 (Standard)">
+                                            Advanced butcher, Level: 3 (Standard)</option>
+                                        <option label="Advanced carpentry and joinery, Level: 3"
+                                            value="Advanced carpentry and joinery, Level: 3">Advanced carpentry and
+                                            joinery, Level: 3</option>
+                                        <option label="Asset manager, Level: 4" value="Asset manager, Level: 4">Asset
+                                            manager, Level: 4</option>
+                                        <option label="Aviation ground operative, Level: 2 (Standard)"
+                                            value="Aviation ground operative, Level: 2 (Standard)">Aviation ground
+                                            operative, Level: 2
+                                            (Standard)</option>
+                                        <option label="Baker, Level: 2" value="Baker, Level: 2">Baker, Level: 2</option>
+                                        <option label="Barbering, Level: 2" value="Barbering, Level: 2">Barbering,
+                                            Level: 2</option>
+                                        <option label="Beauty Therapist, Level: 2 (Standard)"
+                                            value="Beauty Therapist, Level: 2 (Standard)">
+                                            Beauty Therapist, Level: 2 (Standard)</option>
+                                        <option label="Bespoke tailor and cutter, Level: 5 (Standard)"
+                                            value="Bespoke tailor and cutter, Level: 5 (Standard)">Bespoke tailor and
+                                            cutter, Level: 5
+                                            (Standard)</option>
+                                        <option label="Bricklayer, Level: 2 (Standard)"
+                                            value="Bricklayer, Level: 2 (Standard)">Bricklayer,
+                                            Level: 2 (Standard)</option>
+                                        <option label="Business Administrator, Level: 3 (Standard)"
+                                            value="Business Administrator, Level: 3 (Standard)">Business Administrator,
+                                            Level: 3 (Standard)
+                                        </option>
+                                        <option label="Business analyst, Level: 4" value="Business analyst, Level: 4">
+                                            Business analyst, Level: 4
+                                        </option>
+                                        <option label="Cabin crew, Level: 3" value="Cabin crew, Level: 3">Cabin crew,
+                                            Level: 3</option>
+                                        <option
+                                            label="Care Leadership and Management: General Adult Social Care, Level: 5 (Framework)"
+                                            value="Care Leadership and Management: General Adult Social Care, Level: 5 (Framework)">
+                                            Care
+                                            Leadership and Management: General Adult Social Care, Level: 5 (Framework)
+                                        </option>
+                                        <option label="Children and Young People's Workforce, Level: 2"
+                                            value="Children and Young People's Workforce, Level: 2">Children and Young
+                                            People's Workforce,
+                                            Level: 2</option>
+                                        <option label="Content creator, Level: 3" value="Content creator, Level: 3">
+                                            Content creator, Level: 3
+                                        </option>
+                                        <option label="Data analyst, Level: 4" value="Data analyst, Level: 4">Data
+                                            analyst, Level: 4</option>
+                                        <option label="Dietitian (integrated degree), Level: 6"
+                                            value="Dietitian (integrated degree), Level: 6">
+                                            Dietitian (integrated degree), Level: 6</option>
+                                        <option label="Dietitian, Level: 6" value="Dietitian, Level: 6">Dietitian,
+                                            Level: 6</option>
+                                        <option
+                                            label="Domestic Heating: Oil-Fired, Solid Fuel or Environmental Options, Level: 3"
+                                            value="Domestic Heating: Oil-Fired, Solid Fuel or Environmental Options, Level: 3">
+                                            Domestic Heating:
+                                            Oil-Fired, Solid Fuel or Environmental Options, Level: 3</option>
+                                        <option label="Driving Goods Vehicles: Van Driver, Level: 2"
+                                            value="Driving Goods Vehicles: Van Driver, Level: 2">Driving Goods Vehicles:
+                                            Van Driver, Level: 2
+                                        </option>
+                                        <option label="Early Years Educator, Level: 3 (Standard)"
+                                            value="Early Years Educator, Level: 3 (Standard)">Early Years Educator,
+                                            Level: 3 (Standard)</option>
+                                        <option label="Electrical power networks engineer, Level: 4"
+                                            value="Electrical power networks engineer, Level: 4">Electrical power
+                                            networks engineer, Level: 4
+                                        </option>
+                                        <option label="Engineer surveyor, Level: 4" value="Engineer surveyor, Level: 4">
+                                            Engineer surveyor,
+                                            Level: 4</option>
+                                        <option label="Engineering construction erector rigger, Level: 3"
+                                            value="Engineering construction erector rigger, Level: 3">Engineering
+                                            construction erector rigger,
+                                            Level: 3</option>
+                                        <option label="Engineering construction pipefitter, Level: 3"
+                                            value="Engineering construction pipefitter, Level: 3">Engineering
+                                            construction pipefitter, Level: 3
+                                        </option>
+                                        <option label="Engineering Manufacture: Automotive, Level: 3 (Framework)"
+                                            value="Engineering Manufacture: Automotive, Level: 3 (Framework)">
+                                            Engineering Manufacture:
+                                            Automotive, Level: 3 (Framework)</option>
+                                        <option
+                                            label="Engineering Manufacture: Engineering Technical Support, Level: 3 (Framework)"
+                                            value="Engineering Manufacture: Engineering Technical Support, Level: 3 (Framework)">
+                                            Engineering
+                                            Manufacture: Engineering Technical Support, Level: 3 (Framework)</option>
+                                        <option label="Engineering operative, Level: 2"
+                                            value="Engineering operative, Level: 2">Engineering
+                                            operative, Level: 2</option>
+                                        <option label="Fashion and Textiles: Saddlery, Level: 3"
+                                            value="Fashion and Textiles: Saddlery, Level: 3">Fashion and Textiles:
+                                            Saddlery, Level: 3</option>
+                                        <option label="Food and Drink: Meat and Poultry Industry Skills, Level: 2"
+                                            value="Food and Drink: Meat and Poultry Industry Skills, Level: 2">Food and
+                                            Drink: Meat and Poultry
+                                            Industry Skills, Level: 2</option>
+                                        <option label="Food and Drink: Meat and Poultry Industry Skills, Level: 3"
+                                            value="Food and Drink: Meat and Poultry Industry Skills, Level: 3">Food and
+                                            Drink: Meat and Poultry
+                                            Industry Skills, Level: 3</option>
+                                        <option label="Gas network craftsperson, Level: 3"
+                                            value="Gas network craftsperson, Level: 3">Gas
+                                            network craftsperson, Level: 3</option>
+                                        <option label="Gas network craftsperson, Level: 3 (Standard)"
+                                            value="Gas network craftsperson, Level: 3 (Standard)">Gas network
+                                            craftsperson, Level: 3 (Standard)
+                                        </option>
+                                        <option label="Golf greenkeeper, Level: 2" value="Golf greenkeeper, Level: 2">
+                                            Golf greenkeeper, Level: 2
+                                        </option>
+                                        <option label="IS Business Analyst, Level: 4 (Standard)"
+                                            value="IS Business Analyst, Level: 4 (Standard)">IS Business Analyst, Level:
+                                            4 (Standard)</option>
+                                        <option label="IT Application Specialist, Level: 3"
+                                            value="IT Application Specialist, Level: 3">IT
+                                            Application Specialist, Level: 3</option>
+                                        <option label="Junior Estate Agent, Level: 2 (Standard)"
+                                            value="Junior Estate Agent, Level: 2 (Standard)">Junior Estate Agent, Level:
+                                            2 (Standard)</option>
+                                        <option label="Nursing Assistants in a Veterinary Environment, Level: 2"
+                                            value="Nursing Assistants in a Veterinary Environment, Level: 2">Nursing
+                                            Assistants in a Veterinary
+                                            Environment, Level: 2</option>
+                                        <option label="Playwork, Level: 3" value="Playwork, Level: 3">Playwork, Level: 3
+                                        </option>
+                                        <option label="Playwork, Level: 3 (Framework)"
+                                            value="Playwork, Level: 3 (Framework)">Playwork, Level: 3
+                                            (Framework)</option>
+                                        <option label="Policing: Defence Policing, Level: 3"
+                                            value="Policing: Defence Policing, Level: 3">
+                                            Policing: Defence Policing, Level: 3</option>
+                                        <option label="Project controls professional, Level: 6"
+                                            value="Project controls professional, Level: 6">
+                                            Project controls professional, Level: 6</option>
+                                        <option label="Providing Financial Services: General Insurance, Level: 2"
+                                            value="Providing Financial Services: General Insurance, Level: 2">Providing
+                                            Financial Services:
+                                            General Insurance, Level: 2</option>
+                                        <option label="Retail team leader, Level: 3"
+                                            value="Retail team leader, Level: 3">Retail team leader,
+                                            Level: 3</option>
+                                        <option label="Smart home technician, Level: 3"
+                                            value="Smart home technician, Level: 3">Smart home
+                                            technician, Level: 3</option>
+                                        <option label="Software developer, Level: 4 (Standard)"
+                                            value="Software developer, Level: 4 (Standard)">
+                                            Software developer, Level: 4 (Standard)</option>
+                                        <option label="Specialist community public health nurse, Level: 7"
+                                            value="Specialist community public health nurse, Level: 7">Specialist
+                                            community public health nurse,
+                                            Level: 7</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedEndDate">Planned end date</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedEndDate"
+                                        name="selectedEndDate">
+                                        <option label="All" aria-label="All end dates" value="">All</option>
+                                        <option label="Nov 2025" value="2025-11-01">2025-11-01</option>
+                                        <option label="Aug 2022" value="2022-08-01">2022-08-01</option>
+                                        <option label="Mar 2021" value="2021-03-01">2021-03-01</option>
+                                        <option label="Apr 2021" value="2021-04-01">2021-04-01</option>
+                                        <option label="Jan 2024" value="2024-01-01">2024-01-01</option>
+                                        <option label="Jul 2025" value="2025-07-01">2025-07-01</option>
+                                        <option label="Nov 2020" value="2020-11-01">2020-11-01</option>
+                                        <option label="Jun 2026" value="2026-06-01">2026-06-01</option>
+                                        <option label="Mar 2023" value="2023-03-01">2023-03-01</option>
+                                        <option label="Dec 2021" value="2021-12-01">2021-12-01</option>
+                                        <option label="Aug 2020" value="2020-08-01">2020-08-01</option>
+                                        <option label="Jan 2022" value="2022-01-01">2022-01-01</option>
+                                        <option label="Sep 2024" value="2024-09-01">2024-09-01</option>
+                                        <option label="Jun 2021" value="2021-06-01">2021-06-01</option>
+                                        <option label="May 2024" value="2024-05-01">2024-05-01</option>
+                                        <option label="Jun 2018" value="2018-06-01">2018-06-01</option>
+                                        <option label="Sep 2021" value="2021-09-01">2021-09-01</option>
+                                        <option label="Oct 2022" value="2022-10-01">2022-10-01</option>
+                                        <option label="Dec 2023" value="2023-12-01">2023-12-01</option>
+                                        <option label="Apr 2020" value="2020-04-01">2020-04-01</option>
+                                        <option label="Apr 2025" value="2025-04-01">2025-04-01</option>
+                                        <option label="Feb 2021" value="2021-02-01">2021-02-01</option>
+                                        <option label="Jun 2023" value="2023-06-01">2023-06-01</option>
+                                        <option label="Oct 2020" value="2020-10-01">2020-10-01</option>
+                                        <option label="Nov 2022" value="2022-11-01">2022-11-01</option>
+                                        <option label="May 2021" value="2021-05-01">2021-05-01</option>
+                                        <option label="Feb 2023" value="2023-02-01">2023-02-01</option>
+                                        <option label="Mar 2020" value="2020-03-01">2020-03-01</option>
+                                        <option label="May 2023" value="2023-05-01">2023-05-01</option>
+                                        <option label="Aug 2023" value="2023-08-01">2023-08-01</option>
+                                        <option label="Jan 2020" value="2020-01-01">2020-01-01</option>
+                                        <option label="Jan 2023" value="2023-01-01">2023-01-01</option>
+                                        <option label="Aug 2021" value="2021-08-01">2021-08-01</option>
+                                        <option label="Jan 2021" value="2021-01-01">2021-01-01</option>
+                                        <option label="Jun 2025" value="2025-06-01">2025-06-01</option>
+                                        <option label="Feb 2020" value="2020-02-01">2020-02-01</option>
+                                        <option label="Mar 2022" value="2022-03-01">2022-03-01</option>
+                                        <option label="Dec 2020" value="2020-12-01">2020-12-01</option>
+                                        <option label="Apr 2022" value="2022-04-01">2022-04-01</option>
+                                        <option label="Aug 2024" value="2024-08-01">2024-08-01</option>
+                                        <option label="May 2022" value="2022-05-01">2022-05-01</option>
+                                        <option label="Jul 2023" value="2023-07-01">2023-07-01</option>
+                                        <option label="Nov 2023" value="2023-11-01">2023-11-01</option>
+                                        <option label="Feb 2024" value="2024-02-01">2024-02-01</option>
+                                        <option label="Jun 2020" value="2020-06-01">2020-06-01</option>
+                                        <option label="Oct 2023" value="2023-10-01">2023-10-01</option>
+                                        <option label="Dec 2022" value="2022-12-01">2022-12-01</option>
+                                        <option label="Oct 2021" value="2021-10-01">2021-10-01</option>
+                                        <option label="Jan 2025" value="2025-01-01">2025-01-01</option>
+                                        <option label="Jul 2021" value="2021-07-01">2021-07-01</option>
+                                        <option label="Feb 2022" value="2022-02-01">2022-02-01</option>
+                                        <option label="May 2020" value="2020-05-01">2020-05-01</option>
+                                        <option label="Dec 2019" value="2019-12-01">2019-12-01</option>
+                                        <option label="Nov 2021" value="2021-11-01">2021-11-01</option>
+                                        <option label="Apr 2024" value="2024-04-01">2024-04-01</option>
+                                        <option label="Sep 2025" value="2025-09-01">2025-09-01</option>
+                                        <option label="Jun 2022" value="2022-06-01">2022-06-01</option>
+                                        <option label="Sep 2022" value="2022-09-01">2022-09-01</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedStatus">Status</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedStatus"
+                                        name="selectedStatus">
+                                        <option label="All" aria-label="All statuses" value="">All</option>
+                                        <option label="Waiting to start" value="WaitingToStart">Waiting to start
+                                        </option>
+                                        <option label="Live" value="Live">Live</option>
+                                        <option label="Paused" value="Paused">Paused</option>
+                                        <option label="Stopped" value="Stopped">Stopped</option>
+                                        <option label="Completed" value="Completed">Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedAlert">Alerts</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedAlert"
+                                        name="selectedAlert">
+                                        <option label="All" aria-label="All statuses" value="">All</option>
+                                        <option label="Changes for review" value="ChangesForReview">Changes for review
+                                        </option>
+                                        <option label="Changes pending" value="ChangesPending">Changes pending</option>
+                                        <option label="Changes requested" value="ChangesRequested">Changes requested
+                                        </option>
+                                        <option label="Confirm dates" value="ConfirmDates">Confirm dates</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="govuk-grid-column-one-third">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="selectedApprenticeConfirmation">Apprentice
+                                        confirmation</label>
+                                    <select class="govuk-select govuk-!-width-full" id="selectedApprenticeConfirmation"
+                                        name="selectedApprenticeConfirmation">
+                                        <option label="All" aria-label="All confirmations" value="">All</option>
+                                        <option label="Confirmed" value="Confirmed">Confirmed</option>
+                                        <option label="Unconfirmed" value="Unconfirmed">Unconfirmed</option>
+                                        <option label="Overdue" value="Overdue">Overdue</option>
+                                        <option label="N/A" value="NA">N/A</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="govuk-button govuk-!-margin-0" type="submit">Apply filters</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="govuk-grid-row govuk-!-margin-bottom-2">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">10 apprentice records, 5 with alerts</p>
+
+            </div>
+            <div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
+                <a class="govuk-body govuk-link" aria-label="Download all data"
+                    href="/training-provider/{{version}}/">Download all data
+                    (CSV)</a>
+            </div>
+        </div>
+        <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by apprentice name"
+                            href="/training-provider/{{version}}/">
+                            Apprentice name
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by apprenticeship training course"
+                            href="/training-provider/{{version}}/">
+                            Apprenticeship training course
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by planned start date"
+                            href="/training-provider/{{version}}/">
+                            Planned start date
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by planned end date"
+                            href="/training-provider/{{version}}/">
+                            Planned end date
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by training provider"
+                            href="/training-provider/{{version}}/">
+                            Training provider
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        <a class="das-table__sort" title="Sort the table by apprentice confirmation"
+                            href="/training-provider/{{version}}/">
+                            Apprentice confirmation
+                        </a>
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        Status
+                    </th>
+                    <th scope="col" class="govuk-table__header">
+                        Alerts
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Euan Gray
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--red">Stopped</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Rufus Kelly
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Unconfirmed
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">Confirmation overdue</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Ellis Watts
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--grey">Paused</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details1">
+                            Changes requested
+                        </a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Toby Holland
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Unconfirmed
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">Confirmation overdue</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Cohen Powell
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+                        Industry, Level: 4
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Zak Day
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+                        Industry, Level: 4
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Joey Fraser
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+                        Industry, Level: 4
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Hector Parker
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Unconfirmed
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">Confirmation overdue</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Isaac Sutton
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell" data-label="Apprentice name">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details">
+                            Coby Harvey
+                        </a>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprenticeship training course">
+                        Actuarial technician, Level: 4 (Standard)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned start date">
+                        Jan 2019
+                    </td>
+                    <td class="govuk-table__cell" data-label="Planned end date">
+                        Aug 2021
+                    </td>
+                    <td class="govuk-table__cell" data-label="Training provider">
+                        SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)
+                    </td>
+                    <td class="govuk-table__cell" data-label="Apprentice confirmation">
+                        Overdue
+                    </td>
+                    <td class="govuk-table__cell" data-label="Status">
+                        <strong class="govuk-tag govuk-tag--blue">Live</strong>
+                    </td>
+                    <td class="govuk-table__cell" data-label="Alerts">
+                        <a class="govuk-link" href="/training-provider/{{version}}/details1">
+                            Changes requested
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <nav role="navigation" aria-label="Pagination">
+        <div class="das-pagination__summary">
+            Showing 101 to 200 of 348
+            apprentice records, 7 with alerts
+        </div>
+        <ul class="das-pagination">
+            <li class="das-pagination__item">
+                <a class="das-pagination__link " aria-label="Previous page" href="/BB8W4N/apprentices?PageNumber=1">
+                    Previous
+                </a>
+            </li>
+            <li class="das-pagination__item">
+                <a class="das-pagination__link " aria-label="Page 1" href="/BB8W4N/apprentices?PageNumber=1">
+                    1
+                </a>
+            </li>
+            <li class="das-pagination__item">
+                <a class="das-pagination__link current" aria-current="aria-current" aria-label="Page 2"
+                    href="/BB8W4N/apprentices?PageNumber=2">
+                    2
+                </a>
+            </li>
+            <li class="das-pagination__item">
+                <a class="das-pagination__link " aria-label="Page 3" href="/BB8W4N/apprentices?PageNumber=3">
+                    3
+                </a>
+            </li>
+            <li class="das-pagination__item">
+                <a class="das-pagination__link " aria-label="Page 4" href="/BB8W4N/apprentices?PageNumber=4">
+                    4
+                </a>
+            </li>
+            <li class="das-pagination__item">
+                <a class="das-pagination__link " aria-label="Next page" href="/BB8W4N/apprentices?PageNumber=3">
+                    Next
+                </a>
+            </li>
+        </ul>
+    </nav>
+    </div>
+</div>
+{% endblock %}
