@@ -358,477 +358,259 @@ href: "javascript:window.history.go(-1);"
       </div>
     </div>
 
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <h2 class="govuk-tabs__title">
-        Contents
-      </h2>
-      <ul class="govuk-tabs__list">
-        {# <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#alerts">
-            Pending alerts
-          </a>
-        </li> #}
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selecte">
-          <a class="govuk-tabs__tab" href="#beta">
-            Pilot apprentices (6)
+
+    <p class="govuk-body">The following apprentice have been opted into the payment simplification private beta phase.
+    </p>
+    </details>
+    <div class="govuk-grid-row govuk-!-margin-bottom-2">
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body">6 apprentice records, 3 with alerts</p>
+      </div>
+    </div>
+    <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">
+            <a class="das-table__sort" title="Sort the table by apprentice" href="/{{version}}/">
+              Apprentice
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+            <a class="das-table__sort" title="Sort the table by employer" href="/{{version}}/">
+              Employer
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-table__header govuk-!-width-one-quarter">
+            <a class="das-table__sort" title="Sort the table by apprenticeship standard" href="/{{version}}/">
+              Apprenticeship standard
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+            <a class="das-table__sort" title="Sort the table by actual start date" href="/{{version}}/">
+              Actual start date
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
+            <a class="das-table__sort" title="Sort the table by planned end date" href="/{{version}}/">
+              Planned end date
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header">
+            Status
+          </th>
+          <th scope="col" class="govuk-table__header">
+            Alerts
+          </th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Euan Gray
+            </a>
+            <br>9900008005
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Actuarial technician, Level: 4 (Standard)
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            14 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            14 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Rufus Kelly
+            </a>
+            <br>9900008102
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Actuarial technician, Level: 4 (Standard)
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            16 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            14 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--green">In learning</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+            <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Ellis Watts
+            </a>
+            <br>9900008307
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Actuarial technician, Level: 4 (Standard)
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            4 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            14 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--red">Break in learning</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+            <a class="govuk-link" href="/{{version}}/details1">
+              Changes requested
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Toby Holland
+            </a>
+            <br>9900007203
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Actuarial technician, Level: 4 (Standard)
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            19 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            11 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--green">In learning</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+            <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Cohen Powell
+            </a>
+            <br>9900007300
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+            Industry,
+            Level: 4
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            19 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            22 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--green">In learning</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Apprentice name">
+            <a class="govuk-link" href="/{{version}}/details">
+              Zak Day
+            </a>
+            <br>9900007408
+          </td>
+          <td class="govuk-table__cell" data-label="Employer">
+            LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
+          </td>
+          <td class="govuk-table__cell" data-label="Apprenticeship standard">
+            Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
+            Industry,
+            Level: 4
+          </td>
+          <td class="govuk-table__cell" data-label="Planned start date">
+            19 Jan 2019
+          </td>
+          <td class="govuk-table__cell" data-label="Planned end date">
+            24 Aug 2021
+          </td>
+          <td class="govuk-table__cell" data-label="Status">
+            <strong class="govuk-tag govuk-tag--green">In learning</strong>
+          </td>
+          <td class="govuk-table__cell" data-label="Alerts">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <nav role="navigation" aria-label="Pagination">
+      <div class="das-pagination__summary">
+        Showing 101 to 200 of 348
+        apprentice records, 7 with alerts
+      </div>
+      <ul class="das-pagination">
+        <li class="das-pagination__item">
+          <a class="das-pagination__link " aria-label="Previous page" href="/BB8W4N/apprentices?PageNumber=1">
+            Previous
           </a>
         </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#standard">
-            Regular apprentices (4)
+        <li class="das-pagination__item">
+          <a class="das-pagination__link " aria-label="Page 1" href="/BB8W4N/apprentices?PageNumber=1">
+            1
+          </a>
+        </li>
+        <li class="das-pagination__item">
+          <a class="das-pagination__link current" aria-current="aria-current" aria-label="Page 2"
+            href="/BB8W4N/apprentices?PageNumber=2">
+            2
+          </a>
+        </li>
+        <li class="das-pagination__item">
+          <a class="das-pagination__link " aria-label="Page 3" href="/BB8W4N/apprentices?PageNumber=3">
+            3
+          </a>
+        </li>
+        <li class="das-pagination__item">
+          <a class="das-pagination__link " aria-label="Page 4" href="/BB8W4N/apprentices?PageNumber=4">
+            4
+          </a>
+        </li>
+        <li class="das-pagination__item">
+          <a class="das-pagination__link " aria-label="Next page" href="/BB8W4N/apprentices?PageNumber=3">
+            Next
           </a>
         </li>
       </ul>
-
-      <div class="govuk-tabs__panel" id="beta">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Pilot apprentices</h2>
-        <p class="govuk-body-s">Apprentices you have opted into the payment simplification private beta phase
-        </p>
-        </details>
-        <div class="govuk-grid-row govuk-!-margin-bottom-2">
-          <div class="govuk-grid-column-two-thirds">
-            <p class="govuk-body">6 apprentice records, 3 with alerts</p>
-          </div>
-        </div>
-        <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">
-                <a class="das-table__sort" title="Sort the table by apprentice" href="/{{version}}/">
-                  Apprentice
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by employer" href="/{{version}}/">
-                  Employer
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by apprenticeship standard" href="/{{version}}/">
-                  Apprenticeship standard
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by actual start date" href="/{{version}}/">
-                  Actual start date
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by planned end date" href="/{{version}}/">
-                  Planned end date
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header">
-                Status
-              </th>
-              <th scope="col" class="govuk-table__header">
-                Alerts
-              </th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Euan Gray
-                </a>
-                <br>9900008005
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                14 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                14 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--red">Withdrawn</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Rufus Kelly
-                </a>
-                <br>9900008102
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                16 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                14 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--green">In learning</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-                <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Ellis Watts
-                </a>
-                <br>9900008307
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                4 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                14 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--red">Break in learning</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-                <a class="govuk-link" href="/{{version}}/details1">
-                  Changes requested
-                </a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Toby Holland
-                </a>
-                <br>9900007203
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                19 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                11 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--green">In learning</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-                <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Cohen Powell
-                </a>
-                <br>9900007300
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
-                Industry,
-                Level: 4
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                19 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                22 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--green">In learning</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Zak Day
-                </a>
-                <br>9900007408
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
-                Industry,
-                Level: 4
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                19 Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                24 Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--green">In learning</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <nav role="navigation" aria-label="Pagination">
-          <div class="das-pagination__summary">
-            Showing 101 to 200 of 348
-            apprentice records, 7 with alerts
-          </div>
-          <ul class="das-pagination">
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Previous page" href="/BB8W4N/apprentices?PageNumber=1">
-                Previous
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 1" href="/BB8W4N/apprentices?PageNumber=1">
-                1
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link current" aria-current="aria-current" aria-label="Page 2"
-                href="/BB8W4N/apprentices?PageNumber=2">
-                2
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 3" href="/BB8W4N/apprentices?PageNumber=3">
-                3
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 4" href="/BB8W4N/apprentices?PageNumber=4">
-                4
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Next page" href="/BB8W4N/apprentices?PageNumber=3">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="standard">
-        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Standard apprentices</h2>
-
-        <div class="govuk-grid-row govuk-!-margin-bottom-2">
-          <div class="govuk-grid-column-two-thirds">
-            <p class="govuk-body">4 apprentice records, 2 with alerts</p>
-          </div>
-        </div>
-        <table class="govuk-table das-table--responsive das-table--double-arrows das-table--condensed">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">
-                <a class="das-table__sort" title="Sort the table by apprentice" href="/{{version}}/">
-                  Apprentice
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by employer" href="/{{version}}/">
-                  Employer
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by Apprenticeship standard" href="/{{version}}/">
-                  Apprenticeship standard
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by planned start date" href="/{{version}}/">
-                  Planned start date
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">
-                <a class="das-table__sort" title="Sort the table by planned end date" href="/{{version}}/">
-                  Planned end date
-                </a>
-              </th>
-              <th scope="col" class="govuk-table__header">
-                Status
-              </th>
-              <th scope="col" class="govuk-table__header">
-                Alerts
-              </th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Joey Fraser
-                </a>
-                <br>9900007505
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
-                Industry,
-                Level: 4
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--blue">Live</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Hector Parker
-                </a>
-                <br>9900007602
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--blue">Live</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-                <a class="govuk-link" href="/{{version}}/details">Confirmation overdue</a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Isaac Sutton
-                </a>
-                <br>
-                9900007807
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--blue">Live</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Apprentice name">
-                <a class="govuk-link" href="/{{version}}/details">
-                  Coby Harvey
-                </a>
-                <br>9900007904
-              </td>
-              <td class="govuk-table__cell" data-label="Employer">
-                LOCKHEED MARTIN AERONAUTICAL SYSTEMS SUPPORT COMPANY
-              </td>
-              <td class="govuk-table__cell" data-label="Apprenticeship standard">
-                Actuarial technician, Level: 4 (Standard)
-              </td>
-              <td class="govuk-table__cell" data-label="Planned start date">
-                Jan 2019
-              </td>
-              <td class="govuk-table__cell" data-label="Planned end date">
-                Aug 2021
-              </td>
-              <td class="govuk-table__cell" data-label="Status">
-                <strong class="govuk-tag govuk-tag--blue">Live</strong>
-              </td>
-              <td class="govuk-table__cell" data-label="Alerts">
-                <a class="govuk-link" href="/{{version}}/details1">
-                  Changes requested
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <nav role="navigation" aria-label="Pagination">
-          <div class="das-pagination__summary">
-            Showing 101 to 200 of 348
-            apprentice records, 7 with alerts
-          </div>
-          <ul class="das-pagination">
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Previous page" href="/BB8W4N/apprentices?PageNumber=1">
-                Previous
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 1" href="/BB8W4N/apprentices?PageNumber=1">
-                1
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link current" aria-current="aria-current" aria-label="Page 2"
-                href="/BB8W4N/apprentices?PageNumber=2">
-                2
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 3" href="/BB8W4N/apprentices?PageNumber=3">
-                3
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Page 4" href="/BB8W4N/apprentices?PageNumber=4">
-                4
-              </a>
-            </li>
-            <li class="das-pagination__item">
-              <a class="das-pagination__link " aria-label="Next page" href="/BB8W4N/apprentices?PageNumber=3">
-                Next
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    </nav>
   </div>
 </div>
+</div>
 <div style="position: absolute; right:20px; top:160px">
-  <a href="v6-provider--pilot-only" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+  <a href="v6-provider" role="button" draggable="false" class="govuk-button govuk-button--secondary"
     data-module="govuk-button">
-    Pilot only
+    Both apprentice types
   </a>
 </div>
 {% endblock %}
