@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Signup beta apprentices
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+{# Redundancy #}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Signup Beta apprentices</h1>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Providers</h2>
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-4">
+            In design
+        </strong>
+        <p class="govuk-body"><a href="https://trello.com/c/qtIVR9CK" class="govuk-link govuk-link--no-visited-state"
+                target="_blank">Link to Trello card</a></p>
+
+        <ul class="govuk-list">
+            <li>
+                <a class="govuk-link" href="v1">Version 1</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-s">Clear data</h2>
+<p class="govuk-body">Clear data can now be found in the prototype footer</p>
+</div>
+
+{% endblock %}
