@@ -59,12 +59,11 @@ href: "javascript:window.history.go(-1);"
         {% endif %}
 
         <h1 class="govuk-heading-xl" id="header-standards">Manage the English and maths qualifications you deliver</h1>
-        <p class="govuk-body">Check your qualifications are correct and add any missing information.
-            Add any
+        <p class="govuk-body">
+            Add 
             qualifications that
-            you deliver that are not on the list.</p>
-        <p class="govuk-body">These skills are what you select from when adding and amending apprentices.</p>
-        <table class="govuk-table" aria-labelledby="header-standards">
+            you deliver. These skills are what you select from when adding and amending apprentices.</p>
+        {# <table class="govuk-table" aria-labelledby="header-standards">
             <caption class="govuk-table__caption govuk-table__caption--m">English</caption>
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
@@ -130,8 +129,8 @@ href: "javascript:window.history.go(-1);"
                 </tr>
                 {% endif %}
             </tbody>
-        </table>
-        <p class="govuk-body govuk-!-margin-top-9">
+        </table> #}
+        <p class="govuk-body">
             <a href="select-qualification" role="button" draggable="false" class="govuk-button"
                 data-module="govuk-button">
                 Add a qualification
@@ -144,9 +143,9 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-    <a href="qualifications--no-qualifications" role="button" draggable="false"
+    <a href="qualifications" role="button" draggable="false"
         class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        No qualifications
+        Populated qualifications
     </a>
 </div>
 
