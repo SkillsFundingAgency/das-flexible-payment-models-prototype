@@ -22,13 +22,28 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <form action="/functional-skills/approve-details/v7" method="post" novalidate>
+        <form action="/functional-skills/approve-details/v91" method="post" novalidate>
             <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            {# English #}
+            {% if data['english'] == "none" %}
+            <h3 class="govuk-heading-m">
+                English
+            </h3>
+            <p class="govuk-body govuk-!-padding-bottom-6"><a href="learning-aim-english" class="govuk-link">Add an
+                    English
+                    qualification</a></p>
+            {% else %}
             <div class="govuk-summary-card">
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">
                         English
                     </h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link govuk-link--no-visited-state"
+                                href="/functional-skills/v6/delete-confirmation">Delete</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="govuk-summary-card__content">
                     <dl class="govuk-summary-list">
@@ -75,11 +90,18 @@ href: "javascript:window.history.go(-1);"
                     </dl>
                 </div>
             </div>
+            {% endif %}
+            {# Maths #}
             <div class="govuk-summary-card">
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">
                         Maths
                     </h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link govuk-link--no-visited-state" href="#">Delete</a>
+                        </li>
+                    </ul>
 
                 </div>
                 <div class="govuk-summary-card__content">

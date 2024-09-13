@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Would you like to withdraw this apprentice from AQA Functional Skills qualification in English at
+Level
+2?" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Are you sure you want to delete the following qualification in English?</h1>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Qualification
+        </dt>
+        <dd class="govuk-summary-list__value">
+          AQA Functional Skills qualification in English at Level 2
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          10 September 2024
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          End date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          9 September 2025
+        </dd>
+
+      </div>
+    </dl>
+
+    <a href="check-your-answers?english=none" role="button" draggable="false" class="govuk-button govuk-button--warning"
+      data-module="govuk-button">
+      Delete qualification
+    </a>
+    <p class="govuk-body"><a class="govuk-link" href="javascript:window.history.go(-1);">Cancel</a></p>
+  </div>
+</div>
+
+{% endblock %}
