@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Withdraw from training" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">
+      The earliest date you can enter is this apprenticeship's start date of 1 August 2023.</p>
+    <p class="govuk-body">Any outstanding payments will be
+      made for activity up to this date.
+    </p>
+
+    <form action="/change-of-status/training-provider/v7/stop-date/action" method="post" novalidate
+      class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="withdrawal-date-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Enter the apprentice's last date of learning
+          </legend>
+          <div id="withdrawal-date-hint" class="govuk-hint">
+            For example, 27 3 2023
+          </div>
+          <div class="govuk-date-input" id="withdrawal-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="withdrawal-date-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="withdrawal-date-day"
+                  name="withdrawal-day" value="{{ data['withdrawal-day']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="withdrawal-date-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="withdrawal-date-month"
+                  name="withdrawal-month" value="{{ data['withdrawal-month']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="withdrawal-date-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="withdrawal-date-year"
+                  name="withdrawal-year" value="{{ data['withdrawal-year']}}" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+</div>
+
+
+
+{% endblock %}

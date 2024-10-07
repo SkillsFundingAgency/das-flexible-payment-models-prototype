@@ -309,3 +309,45 @@ router.post('/change-of-status/employer/v4/break-unfreeze/action', function (req
         res.redirect('../unfreeze-confirmed')
     }
 })
+// v7
+router.post('/change-of-status/training-provider/v7/edit-learner-status/action', function (req, res) {
+    var continuewithdrawal = req.session.data['continue-withdrawal']
+
+    if (continuewithdrawal == "no") {
+        res.redirect('../apprentice-details?learner-status=in-learning')
+    }
+    else {
+        res.redirect('../withdrawal-warning')
+    }
+})
+router.post('/change-of-status/training-provider/v7/reason--withdrawal/action', function (req, res) {
+    var reasonforwithdrawal = req.session.data['reason-for-withdrawal']
+if 
+    (reasonforwithdrawal == "Apprenticeship never started") {
+        res.redirect('../confirm--withdrawal-unfunded')
+    }
+    else {
+        res.redirect('../stop-date')
+    }
+})
+router.post('/change-of-status/training-provider/v7/stop-date/action', function (req, res) {
+    var year = req.session.data['withdrawal-year']
+
+if (year >= "2024") {
+        res.redirect('../funding-warning')
+    }
+    else {
+        res.redirect('../confirm--withdrawal')
+    }
+})
+
+router.post('/change-of-status/training-provider/v7/funding-warning/action', function (req, res) {
+    var continuewithdrawal = req.session.data['continue-withdrawal']
+
+if (continuewithdrawal == "no") {
+        res.redirect('../apprentice-details')
+    }
+    else {
+        res.redirect('../confirm--withdrawal-unfunded')
+    }
+})

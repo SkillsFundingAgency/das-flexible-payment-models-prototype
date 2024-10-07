@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "George Ford" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+            data-module="govuk-notification-banner">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <h3 class="govuk-notification-banner__heading">
+                    <h3 class="govuk-notification-banner__heading">
+                        Learner status changed to "Break in learning" from the 11th January 2024 [last date of learning
+                        + 1 day]
+                    </h3>
+                </h3>
+                <p class="govuk-body">The last payment you will receive for this apprenticeship will be December 2023.
+                </p>
+            </div>
+        </div>
+
+        {% include "change-of-status/training-provider/v7/includes/apprentice-details-list" %}
+    </div>
+</div>
+
+<div style="position: absolute; right:20px; top:160px">
+    <a href="apprentice-details--break-in-learning-confirmed" role="button" draggable="false"
+        class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        View withdrawn apprenticeship page
+    </a>
+</div>
+
+{% endblock %}

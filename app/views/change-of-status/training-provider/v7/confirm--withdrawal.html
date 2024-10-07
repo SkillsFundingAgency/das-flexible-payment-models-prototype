@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check and confirm status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="apprentice-details--withdrawal-confirmed" method="post" novalidate>
+
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+            <p class="govuk-body">
+                Payments will be set to inactive and the last payment for this apprenticeship will be December 2023.
+            </p>
+
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    Once you withdraw an apprenticeship, this action cannot be reversed.
+                </strong>
+            </div>
+
+            <dl class="govuk-summary-list govuk-!-margin-top-7">
+                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <dt class="govuk-summary-list__key">Learner status</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% include "change-of-status/includes/learner-status-tag.html" %}
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Reason for withdrawal</dt>
+                    <dd class="govuk-summary-list__value">
+                        {% if data['reason-for-withdrawal'] == 'Other' %}
+                        Other - {{data['other-reason']}}
+                        {% else %}
+                        {{data['reason-for-withdrawal']}}
+                        {% endif %}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="reason--withdrawal">
+                            Change<span class="govuk-visually-hidden"> reason for reason for withdrawal</span>
+                        </a>
+                    </dd>
+                </div>
+                {% if data['reason-for-withdrawal'] != 'Apprenticeship never started' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">Last date of learning</dt>
+                    <dd class="govuk-summary-list__value">
+
+                        {% if data['withdrawal-month'] == "1" or
+                        data['withdrawal-month']
+                        == "01" %}
+                        {{ data['withdrawal-day'] }} January {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "2" or
+                        data['withdrawal-month'] == "02" %}
+                        {{ data['withdrawal-day'] }} February {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "3" or
+                        data['withdrawal-month'] == "03" %}
+                        {{ data['withdrawal-day'] }} March {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "4" or
+                        data['withdrawal-month'] == "04" %}
+                        {{ data['withdrawal-day'] }} April {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "5" or
+                        data['withdrawal-month'] == "05" %}
+                        {{ data['withdrawal-day'] }} May {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "6" or
+                        data['withdrawal-month'] == "06" %}
+                        {{ data['withdrawal-day'] }} June {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "7" or
+                        data['withdrawal-month'] == "07" %}
+                        {{ data['withdrawal-day'] }} July {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "8" or
+                        data['withdrawal-month'] == "08" %}
+                        {{ data['withdrawal-day'] }} August {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "9" or
+                        data['withdrawal-month'] == "09" %}
+                        {{ data['withdrawal-day'] }} September {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "10" %}
+                        {{ data['withdrawal-day'] }} October {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "11" %}
+                        {{ data['withdrawal-day'] }} November {{ data['withdrawal-year'] }}
+                        {% elseif data['withdrawal-month'] == "12" %}
+                        {{ data['withdrawal-day'] }} December {{ data['withdrawal-year'] }}
+                        {% else %}
+                        10 January 2024
+                        {% endif %}
+
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state" href="stop-date">
+                            Change<span class="govuk-visually-hidden"> last date of learning</span>
+                        </a>
+                    </dd>
+
+                </div>
+                {% endif %}
+            </dl>
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes </button>
+
+                <a class="govuk-link govuk-link--no-visited-state" href="apprentice-details">Cancel</a>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+    <a href="confirm--withdrawal-unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        View unfunded page</a>
+</div>
+
+{% endblock %}

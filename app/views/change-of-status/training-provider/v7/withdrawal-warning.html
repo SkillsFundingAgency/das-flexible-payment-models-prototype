@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Before you continue" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You do not need to withdraw an apprenticeship after the training has been completed. If you do, this
+        will prevent the completion payment due to you.
+      </strong>
+    </div>
+
+    <div class="govuk-button-group">
+      <a href="/change-of-status/training-provider/v7/reason--withdrawal?learner-status=withdrawn" role="button"
+        draggable="false" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+      <a class="govuk-link" href="apprentice-details">Cancel</a>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

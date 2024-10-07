@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check your change before sending to the employer for approval" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m">Status update</h2>
+        <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Learner status</dt>
+                <dd class="govuk-summary-list__value">
+                    {% include "change-of-status/includes/learner-status-tag.html" %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link govuk-link--no-visited-state" href="edit-learner-status">
+                        Change<span class="govuk-visually-hidden"> learner status</span>
+                    </a>
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"> Return to learning date </dt>
+                <dd class="govuk-summary-list__value">
+                    {% if data['resume-month'] == "1" or
+                    data['resume-month']
+                    == "01" %}
+                    {{ data['resume-day'] }} January {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "2" or
+                    data['resume-month'] == "02" %}
+                    {{ data['resume-day'] }} February {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "3" or
+                    data['resume-month'] == "03" %}
+                    {{ data['resume-day'] }} March {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "4" or
+                    data['resume-month'] == "04" %}
+                    {{ data['resume-day'] }} April {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "5" or
+                    data['resume-month'] == "05" %}
+                    {{ data['resume-day'] }} May {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "6" or
+                    data['resume-month'] == "06" %}
+                    {{ data['resume-day'] }} June {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "7" or
+                    data['resume-month'] == "07" %}
+                    {{ data['resume-day'] }} July {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "8" or
+                    data['resume-month'] == "08" %}
+                    {{ data['resume-day'] }} August {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "9" or
+                    data['resume-month'] == "09" %}
+                    {{ data['resume-day'] }} September {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "10" %}
+                    {{ data['resume-day'] }} October {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "11" %}
+                    {{ data['resume-day'] }} November {{ data['resume-year'] }}
+                    {% elseif data['resume-month'] == "12" %}
+                    {{ data['resume-day'] }} December {{ data['resume-year'] }}
+                    {% else %}
+                    10 March 2024
+                    <input type="hidden" name="resume-day" value="10">
+                    <input type="hidden" name="resume-month" value="3">
+                    <input type="hidden" name="resume-year" value="2024">
+                    {% endif %}
+                <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="resume-date">
+                        Change<span class="govuk-visually-hidden"> resume date</span>
+                    </a>
+                </dd>
+            </div>
+        </dl>
+    </div>
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Updates requiring
+                employer approval
+            </caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+                    </th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Current</th>
+                    <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested </th>
+                    <td class="govuk-table__cell"></td>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Planned training end date</th>
+                    <td class="govuk-table__cell">25 June 2025</td>
+                    <td class="govuk-table__cell">25 October 2025
+                    </td>
+                    <td class="govuk-table__cell govuk-!-text-align-right"><a
+                            href="start-date-planned-end-date">Change</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+
+        <h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+        <p class="govuk-body">
+            This change will be sent to the employer to approve. The apprentice will be able to review the changes
+            in their apprenticeship account.
+        </p>
+
+
+        <form action="apprentice-details--resume-confirmed" method="post" novalidate="">
+            <input type="hidden" name="answers-checked" value="true">
+            <div class="govuk-button-group">
+                <button class="govuk-button" data-module="govuk-button">
+                    Send for approval
+                </button>
+                <a class="govuk-link" href="apprentice-details">Cancel and return</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+    <a href="confirm--resume-learning" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
+        View keep end date version
+    </a>
+</div>
+
+{% endblock %}
