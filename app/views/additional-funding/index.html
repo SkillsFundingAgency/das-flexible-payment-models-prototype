@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Flex Payments Prototype Library
+{% endblock %}
+
+{% block beforeContent %}
+
+{% include "includes/nav.html" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Additional funding and care leavers bursery</h1>
+        <p class="govuk-body">Incentive payments and care leavers bursery
+        </p>
+    </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">Pre-approval</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-4">
+            For research
+        </strong>
+        <h3 class="govuk-heading-s">Provider pre-approval funding questions
+        </h3>
+        <p class="govuk-body">Check if apprentices have EHC plan or are care leavers.</p>
+        <ul class="govuk-list">
+            <li>
+                <a href="pre-approval/v1/apprentice-details" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">Version
+                    1</a>
+            </li>
+
+        </ul>
+        {# <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Previous research
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                    <li>
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Version
+                            2</a>
+                    </li>
+                    <li>
+                        <a href="#" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener">Version
+                            1</a> - Task
+                        list
+                    </li>
+                </ul>
+            </div>
+        </details> #}
+    </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-row govuk-!-margin-top-5">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">Post-approval</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-4">
+            For research
+        </strong>
+        <h3 class="govuk-heading-s">Provider post-approval add funding
+        </h3>
+        <p class="govuk-body">Provider post-approval add additional funding and care leavers bursey</p>
+        <ul class="govuk-list">
+            <li>
+                <a href="post-approval/v1/" class="govuk-link govuk-link--no-visited-state"
+                    rel="noreferrer noopener">Version
+                    1</a>
+            </li>
+        </ul>
+        {# <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Previous research
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                <ul class="govuk-list">
+                    <li>
+                        <a href="post-approval/v1/" class="govuk-link govuk-link--no-visited-state"
+                            rel="noreferrer noopener">Version
+                            1</a>
+                    </li>
+                </ul>
+            </div>
+        </details> #}
+    </div>
+</div>
+
+
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<h2 class="govuk-heading-m">Clear data</h2>
+<p class="govuk-body">Clear data can now be found in the prototype footer</p>
+
+
+{% endblock %}

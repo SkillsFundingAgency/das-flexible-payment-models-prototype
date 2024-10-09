@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Education, health and care plan" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+        <p class="govuk-body">
+            An Education, Health, and Care (EHC) plan helps young people up to 25 who need extra support beyond
+            special educational
+            needs (SEN) services. These plans outline the young person's needs and the additional support
+            they require to succeed in their apprenticeship.
+        </p>
+
+        <p class="govuk-body">
+            <a href="https://www.gov.uk/children-with-special-educational-needs/extra-SEN-help"
+                class="govuk-link govuk-link--no-visited-state" target="_blank">Find out more about EHC
+                plans (opens in
+                new tab)</a>
+        </p>
+        <form action="/additional-funding/pre-approval/v1/ehc-plan/action" method="post" novalidate
+            class="govuk-!-margin-top-7">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Does {% if data['FirstName'] %}
+                        {{ data['FirstName'] }}
+                        {% else %}
+                        Alice
+                        {% endif %}
+                        have an EHC plan?
+
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="ehc-plan" name="ehc-plan" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="ehc-plan">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="ehc-plan-2" name="ehc-plan" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="ehc-plan-2">
+                                No
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="ehc-plan-3" name="ehc-plan" type="radio"
+                                value="dont-know">
+                            <label class="govuk-label govuk-radios__label" for="ehc-plan-3">
+                                Don't know
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

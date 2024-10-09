@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Care leavers" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+        <p class="govuk-body">
+            A care leaver is someone who was in the care of a UK local authority or health and social care trust for at
+            least 13
+            weeks after their 14th birthday and left care before turning 18.
+        </p>
+
+        <p class="govuk-body">
+            <a href="https://www.gov.uk/children-with-special-educational-needs/extra-SEN-help"
+                class="govuk-link govuk-link--no-visited-state" target="_blank">Find out more about EHC
+                plans (opens in
+                new tab)</a>
+        </p>
+
+        <form action="/additional-funding/pre-approval/v1/care-leaver/action" method="post" novalidate>
+            <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset govuk-!-margin-top-7">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Is {% if data['FirstName'] %}
+                        {{ data['FirstName'] }}
+                        {% else %}
+                        Alice
+                        {% endif %}
+                        a care leaver?
+
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="care-leaver" name="care-leaver" type="radio"
+                                value="yes">
+                            <label class="govuk-label govuk-radios__label" for="care-leaver">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="care-leaver-2" name="care-leaver" type="radio"
+                                value="no">
+                            <label class="govuk-label govuk-radios__label" for="care-leaver-2">
+                                No
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="care-leaver-3" name="care-leaver" type="radio"
+                                value="dont-know">
+                            <label class="govuk-label govuk-radios__label" for="care-leaver-3">
+                                Don't know
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

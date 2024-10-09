@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Sharing care leaver information with the employer" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-apprentice-requests" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+        <p class="govuk-body">
+            Sharing this information can help the employer provide additional support.If the apprentice chooses not to
+            share it, the
+            provider will still receive the additional funding for the apprentice's training, but the employer will not
+            receive any
+            additional funding.
+        </p>
+
+        <form action="recognise-prior-learning" method="post" novalidate>
+            <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset govuk-!-margin-top-7">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Would {% if data['FirstName'] %}
+                        {{ data['FirstName'] }}
+                        {% else %}
+                        Alice
+                        {% endif %} like to inform LAND ROVER EXPERIENCE LIMITED that they are a care leaver?
+
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="care-leaver" name="care-leaver" type="radio"
+                                value="yes">
+                            <label class="govuk-label govuk-radios__label" for="share-share-care-leaver">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="share-care-leaver-2" name="share-care-leaver"
+                                type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="share-care-leaver-2">
+                                No
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="share-care-leaver-3" name="share-care-leaver"
+                                type="radio" value="dont-know">
+                            <label class="govuk-label govuk-radios__label" for="share-care-leaver-3">
+                                Don't know
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
