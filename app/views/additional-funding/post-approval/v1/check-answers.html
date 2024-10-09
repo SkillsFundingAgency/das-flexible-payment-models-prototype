@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check your answers before applying for funding" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form action="funding-applied-for#other-payments" method="post" novalidate>
+            <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+
+            <h2 class="govuk-heading-m">Your answers</h2>
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Care leaver
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{data['care-leaver'] | capitalize | default('Yes')}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/additional-funding/pre-approval/v1/care-leaver">Change<span
+                                class="govuk-visually-hidden"> care-leaver</span></a>
+                    </dd>
+                </div>
+                {% if data['care-leaver'] == 'yes' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Inform employer about care leaver
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{data['share-care-leaver'] | capitalize | default('Yes')}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/additional-funding/pre-approval/v1/share-care-leaver">Change<span
+                                class="govuk-visually-hidden">
+                                inform employer about care leaver</span></a>
+                    </dd>
+                </div>
+                {% endif %}
+                {% if data['care-leaver'] != 'yes' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        EHC plan
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{data['ehc-plan'] | capitalize | default('Yes')}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/additional-funding/pre-approval/v1/ehc-plan">Change<span
+                                class="govuk-visually-hidden">
+                                EHC plan</span></a>
+                    </dd>
+                </div>
+                {% if data['ehc-plan'] == 'yes' %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Inform employer about EHC plan </dt>
+                    <dd class="govuk-summary-list__value">
+                        {{data['share-ehc-plan'] | capitalize | default('Yes')}}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link govuk-link--no-visited-state"
+                            href="/additional-funding/pre-approval/v1/share-care-leaver">Change<span
+                                class="govuk-visually-hidden">
+                                inform employer about EHC plan</span></a>
+                    </dd>
+                </div>
+                {% endif %}
+                {% endif %}
+
+            </dl>
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Before you apply</h2>
+
+            <p class="govuk-body">Before any payments for additional funding or care leaver bursaries are made, you must
+                provide evidence of eligibility.
+                This includes confirming age, submitting a letter from a local authority about care leaver status, or
+                providing evidence
+                of an education, health, and care (EHC) plan for apprentices aged 19 to 24.</p>
+
+
+            <div class="govuk-button-group">
+                <button class="govuk-button" type="submit" id="submit-status-change">Accept and apply for
+                    funding</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
