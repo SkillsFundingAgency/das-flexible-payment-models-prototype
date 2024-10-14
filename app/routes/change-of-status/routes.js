@@ -317,7 +317,7 @@ router.post('/change-of-status/training-provider/v7/edit-learner-status/action',
         res.redirect('../apprentice-details?learner-status=in-learning')
     }
     else {
-        res.redirect('../withdrawal-warning')
+        res.redirect('../reason--withdrawal?learner-status=withdrawn')
     }
 })
 router.post('/change-of-status/training-provider/v7/reason--withdrawal/action', function (req, res) {
