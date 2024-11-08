@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Why do you want to withdraw this apprenticeship?" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/training-provider/v3/change-of-status/reason--withdrawal/action" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="reason-hint" class="govuk-hint">
+            Select one option
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-withdrawal" name="reason-for-withdrawal" type="radio"
+                value="Apprentice left employment" {{ checked('reason-for-withdrawal','Apprentice left employment') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal">
+                Apprentice left employment
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-withdrawal-2" name="reason-for-withdrawal" type="radio"
+                value="Apprentice has withdrawn from training" {{ checked('reason-for-withdrawal','Apprentice has
+                withdrawn from training') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-2">
+                Apprentice has withdrawn from training
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-withdrawal-3" name="reason-for-withdrawal" type="radio"
+                value="Apprenticeship never started" {{ checked('reason-for-withdrawal','Apprenticeship never started')
+                }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-4">
+                Apprenticeship never started
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-withdrawal-4" name="reason-for-withdrawal" type="radio"
+                value="Other" data-aria-controls="conditional-others-withdrawal" {{
+                checked('reason-for-withdrawal','Other') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-withdrawal-4">
+                Other reason
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-withdrawal">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-reason">
+                  Specify other reason
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="other-reason" name="other-reason">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,789 @@
+{% extends "layouts/main.html" %}
+{% set version = "v3" %}
+{% set pageTitle = "Choose an employer" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+    <p class="govuk-body">Choose an employer you want to add apprentice details on behalf of.</p>
+
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="searchTerm">Search employer name or account name</label>
+        <div id="employer-container"></div>
+      </div>
+
+    </form>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Employer">
+              Employer
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Account name">
+              Account name
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header">
+            Agreement ID
+          </th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+        </tr>
+
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3D8KEM</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">LAND ROVER EXPERIENCE LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">TENNIS ANGELS LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">TENNIS ANGELS LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">WD82KV</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">TENNIS ANGELS LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">COVENTRY LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3GV5RY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">COVENTRY LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">SHAHZAD &amp; CO LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">SHAHZAD &amp; CO LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">XRG8N2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">SHAHZAD &amp; CO LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ONA CONSULTING LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ONA CONSULTING LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7DG2B6</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ONA CONSULTING LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">FENDI LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">FENDI LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">76X9MV</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">FENDI LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">DEPARTMENT OF EDUCATION LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">DEPARTMENT OF EDUCATION_Levy Payer</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">79D8GJ</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">DEPARTMENT OF EDUCATION LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">SOMEONE ELSE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">SUPER &amp; PRESTIGE MOTOR SERVICES LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7498YM</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">SOMEONE ELSE LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ATOL DEVELOPMENTS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">ATOL DEVELOPMENTS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">ZMXMBD</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ATOL DEVELOPMENTS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">2BMPV9</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ESFA LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">SECOND LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">SECOND LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">668WVV</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">SECOND LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">WAT (UK) LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">WAT (UK) LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7JX65V</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">WAT (UK) LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ASSOCIATION OF LAND ROVER CLUBS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3GJMM4</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ASSOCIATION OF LAND ROVER CLUBS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">AutomationTestForSingleOrgAorn720</td>
+          <td class="govuk-table__cell" data-label="Account name">AutomationTestForSingleOrgAorn720</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">D25PJV</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">AutomationTestForSingleOrgAorn720</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ZZA CONSULTING LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">ZZA CONSULTING LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">4E5GV5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ZZA CONSULTING LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">UK TOYS R US LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">UK TOYS R US LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">PY8EDY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">UK TOYS R US LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">COVENTRY AIRPORT LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">COVENTRY AIRPORT LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">D2P85M</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">COVENTRY AIRPORT LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">Skills Funding Agency</td>
+          <td class="govuk-table__cell" data-label="Account name">Skills Funding Agency_Levy Receiver</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3PEKJJ</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Skills Funding Agency</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+          <td class="govuk-table__cell" data-label="Account name">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE_Levy
+            Receiver</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3YBKWV</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">HMV APPAREL LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">SUPER LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7YPMMY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">HMV APPAREL LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">BARBERRY COVENTRY LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">BARBERRY COVENTRY LIMITED_Non-Levy</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">75492K</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">BARBERRY COVENTRY LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">SUPER AGILE LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">SUPER AGILE LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">66VM2Z</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">SUPER AGILE LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7X9582</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ESFA LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">BOWLAND SNAILS LANCASHIRE (5) LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">BOWLAND SNAILS LANCASHIRE (5) LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">WDVBEY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">BOWLAND SNAILS LANCASHIRE (5) LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+          <td class="govuk-table__cell" data-label="Account name">Coventry City Council_Levy Payer</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">36Z825</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Coventry City Council</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">APPLE INC LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">APPLE INC LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">754ZJE</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">APPLE INC LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">YGXMDJ</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ESFA LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">RANGE ROVER BADGES LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">79WR4G</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">RANGE ROVER BADGES LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">ZM6EJP</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ESFA LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ALPHABET LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">ALPHABET LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">WDMG2D</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ALPHABET LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">COVENTRY NEWSPAPERS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">COVENTRY NEWSPAPERS_Non Levy</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7RBJ6V</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">COVENTRY NEWSPAPERS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">LOAD ESTATES LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">LOAD ESTATES LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">D2P2GE</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">LOAD ESTATES LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">EIGHT BRANDS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">EIGHT BRANDS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">WDM9V9</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">EIGHT BRANDS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">AA LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">DEPARTMENT OF EDUCATION_Levy Payer</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">EYVXNG</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">AA LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ASDA LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">ASDA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">PY6GRY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ASDA LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">BOSE ACCOUNTANCY LTD</td>
+          <td class="govuk-table__cell" data-label="Account name">BOSE ACCOUNTANCY LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">3PJZ55</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">BOSE ACCOUNTANCY LTD</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">SCIENCE RESEARCH LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">SCIENCE RESEARCH LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">WDNWGW</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">SCIENCE RESEARCH LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">TESCO PLC</td>
+          <td class="govuk-table__cell" data-label="Account name">ESFA LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7E5698</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">TESCO PLC</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">Essex Police</td>
+          <td class="govuk-table__cell" data-label="Account name">ONA CONSULTING LTD</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">4EX6ER</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Essex Police</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">ALL TRADES TRAINING LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">WAT (UK) LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">9V9R6Y</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">ALL TRADES TRAINING LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">LAND ROVER DIAGNOSTICS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">7K5MMY</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">LAND ROVER DIAGNOSTICS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">A NAGESH LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">A NAGESH LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">YGXXX5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">A NAGESH LIMITED</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Employer">LUCKY STARTS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">LUCKY STARTS LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">9VMKXX</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
+              class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">LUCKY STARTS LIMITED</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+<style>
+  .autocomplete__wrapper {
+    position: relative;
+    max-width: 35em;
+    margin-bottom: 20px;
+    font-family: "GDS Transport", Arial, sans-serif;
+  }
+
+  @media (min-width: 40.0625em) {
+    .autocomplete__wrapper {
+      margin-bottom: 30px;
+    }
+  }
+
+  .autocomplete__hint,
+  .autocomplete__input {
+    -webkit-appearance: none;
+    border: 2px solid #0b0c0c;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .autocomplete__input {
+    background-color: transparent;
+    position: relative;
+  }
+
+  .autocomplete__hint {
+    color: #b1b4b6;
+    position: absolute;
+  }
+
+  .autocomplete__input--default {
+    padding: 5px;
+  }
+
+  .autocomplete__input--focused {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
+  }
+
+  .autocomplete__input--show-all-values {
+    padding: 5px 34px 5px 5px;
+    cursor: pointer;
+  }
+
+  .autocomplete__dropdown-arrow-down {
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+  }
+
+  .autocomplete__menu {
+    background-color: #fff;
+    border: 2px solid #0b0c0c;
+    border-top: 0;
+    color: #0b0c0c;
+    margin: 0;
+    max-height: 342px;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    width: calc(100% - 4px);
+  }
+
+  .autocomplete__menu--visible {
+    display: block;
+  }
+
+  .autocomplete__menu--hidden {
+    display: none;
+  }
+
+  .autocomplete__menu--overlay {
+    box-shadow: rgba(0, 0, 0, 0.256863) 0 2px 6px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+  }
+
+  .autocomplete__menu--inline {
+    position: relative;
+  }
+
+  .autocomplete__option {
+    border-bottom: solid #b1b4b6;
+    border-width: 1px 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  .autocomplete__option>* {
+    pointer-events: none;
+  }
+
+  .autocomplete__option:first-of-type {
+    border-top-width: 0;
+  }
+
+  .autocomplete__option:last-of-type {
+    border-bottom-width: 0;
+  }
+
+  .autocomplete__option--odd {
+    background-color: #fafafa;
+  }
+
+  .autocomplete__option--focused,
+  .autocomplete__option:hover {
+    background-color: #1d70b8;
+    border-color: #1d70b8;
+    color: #fff;
+    outline: 0;
+  }
+
+  .autocomplete__option--no-results {
+    background-color: #fafafa;
+    color: #646b6f;
+    cursor: not-allowed;
+  }
+
+  .autocomplete__hint,
+  .autocomplete__input,
+  .autocomplete__option {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .autocomplete__hint,
+  .autocomplete__option {
+    padding: 5px;
+  }
+
+  @media (min-width: 641px) {
+
+    .autocomplete__hint,
+    .autocomplete__input,
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+    }
+  }
+</style>
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+  const employers = [
+    "LAND ROVER EXPERIENCE LIMITED",
+    "TENNIS ANGELS LTD",
+    "COVENTRY LTD",
+    "SHAHZAD & CO LTD",
+    "ONA CONSULTING LTD",
+    "FENDI LTD	FENDI LTD",
+    "DEPARTMENT OF EDUCATION LTD",
+    "SOMEONE ELSE LIMITED",
+    "ATOL DEVELOPMENTS LIMITED",
+    "ESFA LTD",
+    "SECOND LIMITED",
+    "WAT (UK) LIMITED",
+    "ASSOCIATION OF LAND ROVER CLUBS LIMITED",
+    "AutomationTestForSingleOrgAorn720",
+    "ZZA CONSULTING LIMITED",
+    "UK TOYS R US LIMITED",
+    "COVENTRY AIRPORT LIMITED",
+    "Skills Funding Agency",
+    "COVENTRY & WARWICKSHIRE CHAMBER OF COMMERCE",
+    "HMV APPAREL LIMITED",
+    "BARBERRY COVENTRY LIMITED",
+    "SUPER AGILE LTD",
+    "ESFA LTD",
+    "BOWLAND SNAILS LANCASHIRE (5) LTD",
+    "Coventry City Council",
+    "APPLE INC LTD",
+    "ESFA LTD",
+    "RANGE ROVER BADGES LTD",
+    "ESFA LTD",
+    "ALPHABET LIMITED",
+    "COVENTRY NEWSPAPERS LIMITED",
+    "LOAD ESTATES LIMITED",
+    "EIGHT BRANDS LIMITED",
+    "AA LIMITED",
+    "ASDA LTD",
+    "BOSE ACCOUNTANCY LTD",
+    "SCIENCE RESEARCH LIMITED",
+    "TESCO PLC",
+    "Essex Police",
+    "ALL TRADES TRAINING LIMITED",
+    "LAND ROVER DIAGNOSTICS LIMITED",
+    "A NAGESH LIMITED",
+    "LUCKY STARTS LIMITED"
+  ];
+
+  accessibleAutocomplete({
+    autoselect: true,
+    element: document.querySelector('#employer-container'),
+    id: 'employer',
+    name: 'employer-autocomplete',
+    source: employers,
+    defaultValue: '{{ data['
+    employer - autocomplete '] }}',
+    displayMenu: 'overlay',
+    minLength: 2,
+    tNoResults: function () {
+      return "Other"
+    }
+  });
+</script>
+
+
+{% endblock %}

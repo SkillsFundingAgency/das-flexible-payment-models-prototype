@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Learner status" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+
+    <p class="govuk-body">
+      This feature is in beta. Only the functionality to withdraw apprentices is currently available.
+    </p>
+
+    <form action="/training-provider/v3/change-of-status/edit-learner-status/action" method="post" novalidate=""
+      class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Would you like to withdraw George Ford from this apprenticeship?</h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue-withdrawal" name="continue-withdrawal" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="continue-withdrawal">
+                Yes, withdraw Dina Thain
+              </label>
+
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue-withdrawal-1" name="continue-withdrawal" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="continue-withdrawal-1">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel</a>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

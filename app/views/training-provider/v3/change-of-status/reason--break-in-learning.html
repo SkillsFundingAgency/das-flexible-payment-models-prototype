@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Select reason for break in learning (optional)" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="confirm--break-in-learning" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="reason-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              {{pageTitle}}
+            </h1>
+          </legend>
+          <div id="reason-hint" class="govuk-hint">
+            Select one option
+          </div>
+
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-pause" name="reason-for-pause" type="radio"
+                value="Maternity leave" {{ checked('reason-for-pause','Maternity leave') }}>
+              <label class="govuk-label govuk-radios__label" for="reason-for-pause">
+                Maternity/paternity leave
+
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-pause-2" name="reason-for-pause" type="radio"
+                value="Injury/illness">
+              <label class="govuk-label govuk-radios__label" for="reason-for-pause-2">
+                Injury/illness
+
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-pause-3" name="reason-for-pause" type="radio"
+                value="Mental health problems">
+              <label class="govuk-label govuk-radios__label" for="reason-for-pause-4">
+                Mental health problems
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="reason-for-pause-4" name="reason-for-pause" type="radio"
+                value="Other" data-aria-controls="conditional-others-pause">
+              <label class="govuk-label govuk-radios__label" for="reason-for-pause-4">
+                Other reason
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-others-pause">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="other-reason">
+                  Specify other reason
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="other-reason" name="other-reason">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="reason-for-pause-5" name="reason-for-pause" type="radio"
+              value="Prefer not to say">
+            <label class="govuk-label govuk-radios__label" for="reason-for-pause-5">
+              Prefer not to say
+            </label>
+          </div>
+
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel</a>
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}
