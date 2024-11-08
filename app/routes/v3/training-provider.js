@@ -3,7 +3,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // Change of status
-router.post('/training-provider/v3/change-of-status/edit-learner-status/action', function (req, res) {
+router.post('/training-provider/v3/change-of-status/edit-learner-status--withdrawal-only/action', function (req, res) {
     var continuewithdrawal = req.session.data['continue-withdrawal']
 
     if (continuewithdrawal == "no") {
@@ -31,5 +31,25 @@ if (year >= "2024") {
     }
     else {
         res.redirect('../confirm--withdrawal')
+    }
+})
+
+router.post('/training-provider/v3/change-of-status/edit-learner-status/action', function (req, res) {
+    var learnerstatus = req.session.data['learner-status']
+
+    if (learnerstatus == "break") {
+        res.redirect('../pause-date')
+    }
+    else if (learnerstatus == "in-learning") {
+        res.redirect('../resume-date')
+    }
+    else if (learnerstatus == "redundant") {
+        res.redirect('../stop-date-redundant')
+    }
+    else if (learnerstatus == "withdrawn") {
+        res.redirect('../reason--withdrawal?learner-status=withdrawn')
+    }
+    else {
+        res.redirect('../edit-learner-status')
     }
 })

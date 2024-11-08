@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "Check your change before sending to the employer for approval" %}
+{% set pageTitle = "Check your changes to learner status before sending to the employer for approval" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -23,7 +23,7 @@ href: "javascript:window.history.go(-1);"
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{pageTitle}}</h1>
     </div>
-
+<h2 class="govuk-heading-m">Changes you're requesting</h2>
     <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-5">
         <h2 class="govuk-heading-m">Status update</h2>
         <dl class="govuk-summary-list">
@@ -124,11 +124,11 @@ href: "javascript:window.history.go(-1);"
         </p>
 
 
-        <form action="apprentice-details--resume-confirmed" method="post" novalidate="">
+        <form action="../details/banner/resume-confirmed" method="post" novalidate="">
             <input type="hidden" name="answers-checked" value="true">
             <div class="govuk-button-group">
                 <button class="govuk-button" data-module="govuk-button">
-                    Send for approval
+                    Send
                 </button>
                 <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel and return</a>
             </div>

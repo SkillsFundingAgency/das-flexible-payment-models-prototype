@@ -27,45 +27,95 @@ href: "javascript:window.history.go(-1);"
       {{pageTitle}}
     </h1>
 
-    <p class="govuk-body">
-      This feature is in beta. Only the functionality to withdraw apprentices is currently available.
-    </p>
+    <p class="govuk-body">Current learner status: {% include "change-of-status/includes/learner-status-tag.html" %} </p>
 
-    <form action="/training-provider/v3/change-of-status/edit-learner-status/action" method="post" novalidate=""
+    <form action="/training-provider/v3/change-of-status/edit-learner-status/action" method="post" novalidate
       class="govuk-!-margin-top-7">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
+        <fieldset class="govuk-fieldset" aria-describedby="status-update-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h1 class="govuk-fieldset__heading">Would you like to withdraw George Ford from this apprenticeship?</h1>
+            Change the status of this apprenticeship
           </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="continue-withdrawal" name="continue-withdrawal" type="radio"
-                value="yes">
-              <label class="govuk-label govuk-radios__label" for="continue-withdrawal">
-                Yes, withdraw Dina Thain
-              </label>
-
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="continue-withdrawal-1" name="continue-withdrawal" type="radio"
-                value="no">
-              <label class="govuk-label govuk-radios__label" for="continue-withdrawal-1">
-                No
-              </label>
-            </div>
+          <div id="status-update-hint" class="govuk-hint">
+            Select one option
           </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            {% if data['learner-status'] != "in-learning" %}
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="in-learning" name="learner-status" type="radio" value="in-learning"
+                aria-describedby="in-learning-hint">
+              <label class="govuk-label govuk-radios__label" for="in-learning">
+                In learning
+              </label>
+              
+              <div id="in-learning-hint" class="govuk-hint govuk-radios__hint">
+                Continuing or intending to continue the learning activities leading to the learning aim.
+              </div>
+              </div>
+              {% endif %}
+              
+              
+              <!-- Break in learning  -->
+              {% if data['learner-status'] != "break" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="break" name="learner-status" type="radio" value="break"
+                  aria-describedby="break-hint">
+                <label class="govuk-label govuk-radios__label" for="break">
+                  Break in learning
+                </label>
+                <div id="break-hint" class="govuk-hint govuk-radios__hint">
+                  Temporarily withdrawn from the aim due to an agreed break in learning
+                </div>
+                </div>
+                {% endif %}
+                
+                <!-- Withdrawal -->
+                {% if data['learner-status'] != "withdrawn" %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="withdrawal" name="learner-status" type="radio" value="withdrawn"
+                    aria-describedby="withdrawal-hint">
+                  <label class="govuk-label govuk-radios__label" for="withdrawal">
+                    Withdrawn
+                  </label>
+                  <div id="withdrawal-hint" class="govuk-hint govuk-radios__hint">
+                    Withdrawn from the learning activities leading to the learning aim
+                  </div>
+                </div>
+                {% endif %}
+                
+                
+                
+                <!-- Redundant  -->
+                {% if data['learner-status'] != "redundant" %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="redundant" name="learner-status" type="radio" value="redundant"
+                    aria-describedby="redundant-hint">
+                  <label class="govuk-label govuk-radios__label" for="redundant">
+                    Made redundant
+              </label>
+              <div id="redundant-hint" class="govuk-hint govuk-radios__hint">
+                The apprenticeship agreement has been terminated by reason of redundancy
+              </div>
+              </div>
+            {% endif %}
+
         </fieldset>
       </div>
       <div class="govuk-button-group">
         <button type="submit" class="govuk-button" data-module="govuk-button">
           Continue
         </button>
-        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel</a>
+        <a class="govuk-link" href="apprentice-details">Cancel</a>
       </div>
     </form>
-
   </div>
+</div>
+
+<div style="position: fixed; right:20px; top:160px">
+  <a href="edit-learner-status--withdrawal-only" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    View withdrawal only prototype
+  </a>
 </div>
 
 {% endblock %}
