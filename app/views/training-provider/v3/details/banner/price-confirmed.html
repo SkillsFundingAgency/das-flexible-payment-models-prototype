@@ -3,6 +3,7 @@
 {% set pageTitle = "Dina Thain" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
+
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
@@ -41,32 +42,22 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					Learner status changed to "Withdrawn"
+					Request to change the price sent to employer
 				</h3>
-				<p class="govuk-body">Payments have been set to inactive and the last payment for this apprenticeship
-					will be December
-					2023.
+				<p class="govuk-body">The employer now needs to approve the change.</p>
+				<p class="govuk-body"><a href="#price-changes" class="govuk-link">View then changes you've requested</a>
 				</p>
-				<p class="govuk-body">The employer has been informed of this update.</p>
 			</div>
 		</div>
 		{% include "../../includes/apprentice-details-list" %}
 	</div>
 </div>
 
-<div style="position: absolute; right:20px; top:160px">
+{# <div style="position: absolute; right:20px; top:160px">
 	<a href="withdrawn" role="button" draggable="false" class="govuk-button govuk-button--secondary"
 		data-module="govuk-button">
 		Withdawn banner
 	</a>
-	<a href="withdrawal-confirmed--unfunded" role="button" draggable="false"
-		class="govuk-button govuk-button--secondary" data-module="govuk-button">
-		Unfunded success
-	</a>
-	<a href="withdrawn--unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		Unfunded banner
-	</a>
-</div>
+</div> #}
 
 {% endblock %}

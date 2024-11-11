@@ -1,6 +1,7 @@
 {% extends "layouts/main.html" %}
 {% set version = "v3" %}
 {% set pageTitle = "Dina Thain" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
 {% include "includes/header.html" %}

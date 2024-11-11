@@ -124,10 +124,6 @@
             <div class="govuk-grid-column-two-thirds">
                 <h2 class="govuk-heading-m">Apprentice</h2>
             </div>
-            {# <div class="govuk-grid-column-one-third das-!-text-align-right--from-tablet">
-                <a id="edit-apprentice-link" href="#" class="govuk-link govuk-body">Edit
-                    apprentice</a>
-            </div> #}
         </div>
         <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -206,6 +202,54 @@
                     8 Aug 2025
                 </dd>
             </div>
+            {% if data['change'] == "training-price" %}
+            </dl>
+            <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
+            
+            
+                <h2 id="price-changes" class="govuk-heading-m">Price changes you've requested </h2>
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">
+            
+                            </th>
+                            <th scope="col" class="govuk-table__header app-custom-class">Current</th>
+                            <th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+                            </th>
+            
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Training price</th>
+                            <td class="govuk-table__cell">£6,000</td>
+                            <td class="govuk-table__cell" id="TrainingPrice">
+                                £6,500
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">End-point assessment price</th>
+                            <td class="govuk-table__cell">£3,000</td>
+                            <td class="govuk-table__cell" id="EndPointAssessmentPrice">
+                                £3,500
+                            </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Total price</th>
+                            <td class="govuk-table__cell">£9,000</td>
+                            <td class="govuk-table__cell">
+                                £10,000
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/view-changes" class="govuk-link">View
+                        price changes you've
+                        requested</a></p>
+            </div>
+            <dl class="govuk-summary-list govuk-!-margin-top-4">
+                {% else %}
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
                     Training price
@@ -230,11 +274,12 @@
                     £15,000
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
+                    <a class="govuk-link" href="change-of-price/update-price">
                         Change<span class="govuk-visually-hidden"> total price</span>
                     </a>
                 </dd>
             </div>
+            {% endif %}
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
                 <dt class="govuk-summary-list__key">
                     Your reference
