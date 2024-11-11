@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+{% set pageTitle = "Check your price changes before sending to the training provider for approval" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/employer-phase-banner" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+{% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
+{% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}
+{% set calculatedTotalPrice = (trainingPriceString + epaPriceString) | float %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}
+		</h1>
+		<h2 class="govuk-heading-m">Changes you're requesting</h2>
+	</div>
+	<div class="govuk-grid-column-full">
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__header"></td>
+					<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+					</th>
+					<td class="govuk-table__header"></td>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£9,000</td>
+					<td class="govuk-table__cell">
+						£10,000
+					</td>
+					<td class="govuk-table__cell" style="text-align: right;"><a class="govuk-link" href="update-price">
+							Change<span class="govuk-visually-hidden"> total price</span>
+						</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="govuk-grid-column-two-thirds">
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Effective from date
+				</dt>
+				<dd class="govuk-summary-list__value">
+					24 August 2023
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link" href="update-price#date">
+						Change<span class="govuk-visually-hidden"> date</span>
+					</a>
+				</dd>
+			</div>
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{ data['reason-for-update'] or
+					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
+				</dd>
+
+				<dd class="govuk-summary-list__actions" style="text-align: right;">
+					<a class="govuk-link" href="update-price#reason-for-change">
+						Change<span class="govuk-visually-hidden"> reason for change</span>
+					</a>
+				</dd>
+			</div>
+
+		</dl>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+		<p class="govuk-body">Your payment schedule will not change until the training provider approves your request.
+		</p>
+		<form action="../details/banner/price-confirmed?change=training-price" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Send
+				</button>
+				<a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel and return</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+</body>
+
+
+
+{% endblock %}

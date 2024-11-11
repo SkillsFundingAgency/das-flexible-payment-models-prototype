@@ -1,0 +1,123 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+{% set pageTitle = "Price changes pending training provider review" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/employer-phase-banner" %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+
+		<h2 class="govuk-heading-m">Changes you've requested</h2>
+
+	</div>
+	<div class="govuk-grid-column-full">
+		<table class="govuk-table">
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<td class="govuk-table__header"></td>
+					<th scope=" col" class="govuk-table__header app-custom-class">Current</th>
+					<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested
+					</th>
+					<td class="govuk-table__header"></td>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£9,000</td>
+					<td class="govuk-table__cell">
+						£10,000
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="govuk-grid-column-two-thirds">
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Effective from date:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-one-quarter">
+					24 August 2023
+				</dd>
+			</div>
+
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change:
+				</dt>
+				<dd class="govuk-summary-list__value govuk-!-width-three-quarters">
+					The original price was entered incorrectly, this has been confirmed with the employer.
+				</dd>
+			</div>
+
+		</dl>
+		<form method="post" action="../details?change=none">
+			<fieldset class="govuk-fieldset">
+
+				<div class="govuk-form-group">
+					<fieldset class="govuk-fieldset">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							Do you want to cancel this request?
+						</legend>
+
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
+									value="yes" data-aria-controls="conditional-withdraw">
+								<label class="govuk-label govuk-radios__label" for="withdraw">
+									Yes, cancel the request
+								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-withdraw">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="withdraw-more-details">
+										Why do you want to cancel this request?
+									</label>
+									<textarea class="govuk-textarea" id="withdraw-more-details"
+										name="withdraw-more-details" rows="5"></textarea>
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
+									value="no">
+								<label class="govuk-label govuk-radios__label" for="withdraw-2">
+									No, keep the request
+								</label>
+							</div>
+
+						</div>
+					</fieldset>
+				</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
+				</button>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+{% endblock %}

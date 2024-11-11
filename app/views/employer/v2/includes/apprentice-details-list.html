@@ -1,5 +1,4 @@
 {% set version = "v2" %}
-
 {% if data['employer-withheld'] == "true" %}
 {% set employerWithheld = true %}
 {% endif %}
@@ -217,8 +216,6 @@
             {% if data['change'] == "training-price" %}
         </dl>
         <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
-
-
             <h2 id="price-changes" class="govuk-heading-m">Price changes you've requested </h2>
             <table class="govuk-table">
                 <thead class="govuk-table__head">
@@ -241,7 +238,7 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/view-changes"
+            <p class="govuk-body"><a href="/employer/{{version}}/change-of-price/view-changes"
                     class="govuk-link">View
                     price changes you've
                     requested</a></p>
