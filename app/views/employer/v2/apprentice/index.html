@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+
+{% block pageTitle %}
+Access denied - Training provider
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+
+<div class="govuk-width-container">
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" id="breadcrumb-home" href="/employer/{{version}}/">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Apprentices</li>
+    </ol>
+  </div>
+
+  {% block content %}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+
+    <h1 class="govuk-heading-xl">Apprentices</h1>
+
+    <hr class="das-section-break das-section-break--l das-section-break--heavy-grey">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="das-cards">
+          <div class="das-card das-card--underline">
+            <h2 class="govuk-heading-m das-card__heading"><a id="AddApprentice"
+                href="/employer/{{version}}/apprentice/add/" class="govuk-link">Add an apprentice</a></h2>
+            <p>Add new apprentices or ask your training provider to add them.</p>
+          </div>
+          <div class="das-card das-card--underline">
+            <h2 class="govuk-heading-m das-card__heading"><a id="YourCohorts"
+                href="/employer/{{version}}/apprentice/requests/" class="govuk-link">Apprentice requests</a></h2>
+            <p>Review, edit, approve and add more apprentices.</p>
+          </div>
+          <div class="das-card">
+            <h2 class="govuk-heading-m das-card__heading"><a id="ManageApprentices"
+                href="/employer/{{version}}/apprentice/manage/" class="govuk-link">Manage your apprentices</a></h2>
+            <p>View approved apprentices, update details of existing apprentices, change training providers or stop and
+              pause payments to training providers.</p>
+          </div>
+          <div class="das-card">
+            <h2 class="govuk-heading-m"><a id="SetPaymentOrder" href="#" class="govuk-link">Set payment order</a></h2>
+            <p>View and change the order in which your providers are paid from your available funds.</p>
+          </div>
+        </div>
+        <hr class="das-section-break das-section-break--l das-section-break--heavy-grey">
+        <div class="das-cards">
+          <div class="das-card">
+            <h2 class="govuk-heading-m das-card__heading"><a id="ReportPublicSectorTarget" href="#"
+                class="govuk-link">Report public sector apprenticeship target</a></h2>
+            <p>Submit data on your progress towards the public sector apprenticeship target</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+{% endblock %}
+
+{% endblock %}
