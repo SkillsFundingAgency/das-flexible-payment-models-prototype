@@ -9,6 +9,18 @@
 
 {% block beforeContent %}
 
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">
+			Beta
+		</strong>
+		<span class="govuk-phase-banner__text">
+			This apprentice is part of a private Beta - <a class="govuk-link"
+				href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+		</span>
+	</p>
+</div>
+
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.go(-1);"
