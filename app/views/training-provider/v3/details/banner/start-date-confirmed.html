@@ -42,15 +42,24 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					Request to change the price sent to employer
+					Request to change the training start date sent to employer
 				</h3>
 				<p class="govuk-body">The employer now needs to approve the change.</p>
-				<p class="govuk-body"><a href="#price-changes" class="govuk-link">View then changes you've requested</a>
-				</p>
+				<p class="govuk-body"><a href="/training-provider/{{version}}/change-of-start-date/view-changes"
+						class="govuk-link govuk-link--no-visited-state">View the
+						changes
+						you've requested</a></p>
 			</div>
 		</div>
 		{% include "../../includes/apprentice-details-list" %}
 	</div>
 </div>
+
+{# <div style="position: absolute; right:20px; top:160px">
+	<a href="withdrawn" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+		data-module="govuk-button">
+		Withdawn banner
+	</a>
+</div> #}
 
 {% endblock %}

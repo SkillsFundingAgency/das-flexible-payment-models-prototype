@@ -1,4 +1,5 @@
-{% extends "layouts/main.html" %}{% set pageTitle = "Planned training end date" %}
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Planned training end date" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
@@ -8,6 +9,17 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
 
 {{ govukBackLink({
 text: "Back",
@@ -26,33 +38,35 @@ href: "javascript:window.history.go(-1);"
       Planned training end date
     </h1>
 
-  <p class="govuk-body">The current planned training end date is <strong>8 August 2025</strong>.</p>
-  <p class="govuk-body">The new start date and minimum duration for Information communications technician (level 3) means
-    that the course
-    cannot end before <strong>18 June 2025</strong>.
-  </p>
+    <p class="govuk-body">The current planned training end date is <strong>8 August 2025</strong>.</p>
+    <p class="govuk-body">The new start date and minimum duration for Information communications technician (level 3)
+      means that the course
+      cannot end before <strong>18 June 2025</strong>.
+    </p>
 
-    <form action="confirm--resume-learning" method="post" novalidate class="govuk-!-margin-top-8">
+    <form action="reason-for-change" method="post" novalidate class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             When would you like the planned training end date to be?
           </legend>
+
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio" value="yes"
-                aria-describedby="keep-existing-date-hint">
+              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio"
+                value="8 August 2025" aria-describedby="keep-existing-date-hint">
               <label class="govuk-label govuk-radios__label" for="end-date-update">
-                Keep the currnet planned end date
+                The existing end date
               </label>
               <div id="keep-existing-date-hint" class="govuk-hint govuk-radios__hint">
-                18 August 2025
+                8 August 2025
               </div>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio" value="yes"
-                aria-describedby="keep-duration-hint">
+              <input class="govuk-radios__input" id="end-date-update" name="end-date-update" type="radio"
+                value="12 October 2025" aria-describedby="keep-duration-hint">
               <label class="govuk-label govuk-radios__label" for="end-date-update">
                 Update the date to keep the existing course duration
               </label>
@@ -64,8 +78,8 @@ href: "javascript:window.history.go(-1);"
             <div class="govuk-radios__divider">or</div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="end-date-update-2" name="end-date-update" type="radio" value="no"
-                data-aria-controls="conditional-end-date-update-2">
+              <input class="govuk-radios__input" id="end-date-update-2" name="end-date-update" type="radio"
+                value="24 November 2025" data-aria-controls="conditional-end-date-update-2">
               <label class="govuk-label govuk-radios__label" for="end-date-update-2">
                 Enter a different planned training end date
               </label>
@@ -127,7 +141,7 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: fixed; right:20px; top:160px">
-  <a href="resume-date-planned-end-date-b" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+  <a href="start-date-planned-end-date-b" role="button" draggable="false" class="govuk-button govuk-button--secondary"
     data-module="govuk-button">
     View end date not valid prototype
   </a>

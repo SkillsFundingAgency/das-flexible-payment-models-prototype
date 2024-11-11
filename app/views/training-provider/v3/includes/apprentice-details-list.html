@@ -164,8 +164,7 @@
                     Apprenticeship training course
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    Mineral Products Technology: Technical and Managerial Development in Mineral Products Technology
-                    Industry, Level: 4
+                    Information communications technician (level 3)
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     <a class="govuk-link" href="#">
@@ -181,6 +180,49 @@
                     1.0
                 </dd>
             </div>
+            {% if data['change'] == "start-date" %}
+            </dl>
+            <div class="" style="border-left: 5px solid #1d70b8; padding:15px 15px 5px; margin-bottom:0px;">
+            
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption"><strong class="govuk-tag govuk-tag--yellow">Pending
+                            approval</strong></caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                <span class="govuk-visually-hidden">Apprenticship detail</span>
+                            </th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                Current
+                            </th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                Requested
+                            </th>
+                            <td class="govuk-table__cell"><span class="govuk-visually-hidden">Action</span></td>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+            
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Training start date</th>
+                            <td class="govuk-table__cell">22 January 2022</td>
+                            <td class="govuk-table__cell">18 March 2022</td>
+                        </tr>
+            
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Planned training end date</th>
+                            <td class="govuk-table__cell">8 August 2025</td>
+                            <td class="govuk-table__cell">12 October 2025</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-start-date/view-changes">
+                        View request<span class="govuk-visually-hidden">for change of start date</span>
+                    </a>
+                </p>
+            </div>
+            <dl class="govuk-summary-list govuk-!-margin-top-4">
+                {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Training start date
@@ -189,7 +231,7 @@
                     22 Jan 2022
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
+                    <a class="govuk-link" href="/training-provider/{{version}}/change-of-start-date/change-start-date">
                         Change<span class="govuk-visually-hidden"> training start date</span>
                     </a>
                 </dd>
@@ -202,6 +244,7 @@
                     8 Aug 2025
                 </dd>
             </div>
+            {% endif %}
             {% if data['change'] == "training-price" %}
             </dl>
             <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">

@@ -81,28 +81,9 @@ href: "javascript:window.history.go(-1);"
 					<td class="govuk-table__cell">£9,000</td>
 					<td class="govuk-table__cell">
 						£10,000
-						<script>
-							var tprice = '{{ data['apprenticeship-training - price']}}';
-							var eprice = '{{ data['apprenticeship-epa - price']}}';;
-
-
-							var numOne = parseInt(tprice);
-							var numTwo = parseInt(eprice);
-							var sum = numOne + numTwo;
-							document.write("" + numberWithCommas(sum));
-						</script>
-
-
-						<!-- {{
-						(data['apprenticeship-training-price']|float(format='0,0')
-						+
-						data['apprenticeship-epa-price']|float(format='0,0')) }} -->
 					</td>
 
 					<td class="govuk-table__cell">
-						<!-- <a class="govuk-link" href="update-price">
-                        Change<span class="govuk-visually-hidden"> End-point assessment price</span>
-                      </a> -->
 					</td>
 				</tr>
 			</tbody>
@@ -115,50 +96,8 @@ href: "javascript:window.history.go(-1);"
 				<dt class="govuk-summary-list__key">
 					Effective from date
 				</dt>
-
-
-				<dd class="govuk-summary-list__value govuk-!-width-one-quarter" style="padding-left:10px;">
-					{{ data['apprenticeship-price-valid-from-day'] or '24'}}
-
-					{% if data['apprenticeship-price-valid-from-month'] == "1" or
-					data['apprenticeship-price-valid-from-month']
-					== "01" %}
-					{{ data['date-of-birth-day'] }} January {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "2" or
-					data['apprenticeship-price-valid-from-month'] == "02" %}
-					{{ data['date-of-birth-day'] }} February {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "3" or
-					data['apprenticeship-price-valid-from-month'] == "03" %}
-					{{ data['date-of-birth-day'] }} March {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "4" or
-					data['apprenticeship-price-valid-from-month'] == "04" %}
-					{{ data['date-of-birth-day'] }} April {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "5" or
-					data['apprenticeship-price-valid-from-month'] == "05" %}
-					{{ data['date-of-birth-day'] }} May {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "6" or
-					data['apprenticeship-price-valid-from-month'] == "06" %}
-					{{ data['date-of-birth-day'] }} June {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "7" or
-					data['apprenticeship-price-valid-from-month'] == "07" %}
-					{{ data['date-of-birth-day'] }} July {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "8" or
-					data['apprenticeship-price-valid-from-month'] == "08" %}
-					{{ data['date-of-birth-day'] }} August {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "9" or
-					data['apprenticeship-price-valid-from-month'] == "09" %}
-					{{ data['date-of-birth-day'] }} September {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "10" %}
-					{{ data['date-of-birth-day'] }} October {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "11" %}
-					{{ data['date-of-birth-day'] }} November {{ data['date-of-birth-year'] }}
-					{% elseif data['apprenticeship-price-valid-from-month'] == "12" %}
-					{{ data['date-of-birth-day'] }} December {{ data['date-of-birth-year'] }}
-					{% else %}
-					August
-					{% endif %}
-
-					{{ data['apprenticeship-price-valid-from-year'] or '2023'}}
+				<dd class="govuk-summary-list__value">
+					24 August 2023
 				</dd>
 				<dd class="govuk-summary-list__actions">
 					<a class="govuk-link" href="update-price#date">
@@ -170,7 +109,7 @@ href: "javascript:window.history.go(-1);"
 				<dt class="govuk-summary-list__key">
 					Reason for change
 				</dt>
-				<dd class="govuk-summary-list__value govuk-!-width-three-quarters" style="padding-left:10px;">
+				<dd class="govuk-summary-list__value">
 					{{ data['reason-for-update'] or
 					'The original price was entered incorrectly, this has been confirmed with the employer.'}}
 				</dd>

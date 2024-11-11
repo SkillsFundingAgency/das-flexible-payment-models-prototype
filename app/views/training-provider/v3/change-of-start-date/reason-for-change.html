@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Why is the start date changing? (optional)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+            This apprentice is part of a private Beta - <a class="govuk-link"
+                href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+        </span>
+    </p>
+</div>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="confirm-change-start-date" method="post" novalidate>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="why-change-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            {{pageTitle}}
+                        </h1>
+                    </legend>
+                    <div id="why-change-hint" class="govuk-hint">
+                        This message will be shared with AUTOMATION & OPTIMISATION LTD
+                    </div>
+                    <textarea class="govuk-textarea" id="why-change" name="why-change" rows="5"></textarea>
+
+                </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

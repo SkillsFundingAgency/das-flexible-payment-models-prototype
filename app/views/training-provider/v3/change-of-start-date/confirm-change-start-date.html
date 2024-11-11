@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Check your training date changes before sending to the employer for approval" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">
+			Beta
+		</strong>
+		<span class="govuk-phase-banner__text">
+			This apprentice is part of a private Beta - <a class="govuk-link"
+				href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+		</span>
+	</p>
+</div>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		{% if data['effective-from-year'] == "2023" %}
+
+		{% if data['effective-from-month'] == "5" or data['effective-from-month'] == "05" or
+		data['effective-from-month'] == "4"
+		or data['effective-from-month'] == "04" or data['effective-from-month'] == "03" or data['effective-from-month']
+		== "03"
+		or data['effective-from-month'] == "2" or data['effective-from-month'] == "02" or data['effective-from-month']
+		== "1" or
+		data['effective-from-month'] == "01" %}
+
+		<div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-visually-hidden">Warning</span>
+				You will not receive funding for the apprenticeship activity before
+				1 August 2023
+				<!-- (start of the current academic year) -->
+			</strong>
+		</div>
+
+		{% elseif data['effective-from-month'] == "6" or data['effective-from-month'] == "06" or
+		data['effective-from-year']
+		<= "2022" %} <div class="govuk-warning-text">
+			<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+			<strong class="govuk-warning-text__text">
+				<span class="govuk-visually-hidden">Warning</span>
+
+				You will not receive funding for the apprenticeship activity before
+				1 August 2023
+
+			</strong>
+	</div>
+
+	{% endif %}
+
+	{% endif %}
+	<table class="govuk-table">
+		<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Changes you're requesting
+		</caption>
+		<thead class="govuk-table__head">
+			<tr class="govuk-table__row">
+				<td class="govuk-table__header govuk-!-width-one-third">
+				</td>
+				<th scope="col" class="govuk-table__header app-custom-class">Current</th>
+				<th scope="col" class="govuk-table__header app-custom-class govuk-!-width-one-third">Requested </th>
+				<td class="govuk-table__cell"></td>
+			</tr>
+		</thead>
+		<tbody class="govuk-table__body">
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Training start date</th>
+				<td class="govuk-table__cell">22 January 2022</td>
+				<td class="govuk-table__cell">18 March 2022</td>
+
+				<td class="govuk-table__cell"><a href="change-start-date">Change </a></td>
+			</tr>
+
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Planned training end date</th>
+				<td class="govuk-table__cell">8 August 2025
+				</td>
+				<td class="govuk-table__cell">{{ data['end-date-update'] or '22 November 2025'}}
+				</td>
+
+				<td class="govuk-table__cell"><a href="start-date-planned-end-date">Change </a></td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+	<dl class="govuk-summary-list">
+		<div class="govuk-summary-list__row--no-border">
+			<dt class="govuk-summary-list__key">
+				Reason for change
+			</dt>
+			<dd class="govuk-summary-list__value">
+				Wrong dates initially set
+			</dd>
+			<dd class="govuk-summary-list__actions">
+				<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change">
+					Change<span class="govuk-visually-hidden"> reason for change</span>
+				</a>
+			</dd>
+		</div>
+	</dl>
+</div>
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+
+	<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+	<p class="govuk-body">
+		This change will be sent to the employer to approve. The apprentice will be able to review the changes
+		in their apprenticeship account.
+	</p>
+
+
+	<form action="../details/banner/start-date-confirmed?change=start-date" method="post" novalidate>
+		<input type="hidden" name="answers-checked" value="true">
+		<div class="govuk-button-group">
+			<button class="govuk-button" data-module="govuk-button">
+				Send
+			</button>
+			<a class="govuk-link" href="../details">Cancel and return</a>
+		</div>
+	</form>
+
+</div>
+</div>
+
+
+{% endblock %}
