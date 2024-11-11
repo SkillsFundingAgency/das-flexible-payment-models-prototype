@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% set pageTitle = "Dina Thain" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
+			<div class="govuk-notification-banner__header">
+				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+					Important
+				</h2>
+			</div>
+			<div class="govuk-notification-banner__content">
+				<h3 class="govuk-notification-banner__heading">
+					The training provider changed the apprentice status to "In learning" on the 10th January 2024
+				</h3>
+				<p class="govuk-body">The planned training end date has been updated to 10 March 2025.
+				</p>
+				<p class="govuk-body">If you believe this was done in error please contact the training provider.</p>
+			</div>
+		</div>
+		{% include "change-of-status/employer/v4/includes/employer-apprentice-details-list" %}
+	</div>
+</div>
+
+{% endblock %}

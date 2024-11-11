@@ -1,0 +1,30 @@
+{# Employer withheld payments #}
+{% if employerWithheld == true %}
+<strong class="govuk-tag govuk-tag--red">Withheld</strong>
+{% else %}
+{# Break in learning #}
+{% if data['learner-status'] == "break" %}
+<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+
+{# Redundant #}
+{% elseif data['learner-status'] == "redundant" %}
+{% if data['government-funded'] == 'No' %}
+<strong class="govuk-tag govuk-tag--red"> Inactive</strong>
+{%else%}
+<strong class="govuk-tag govuk-tag--blue">Active</strong>
+(funded by government)
+{% endif %}
+
+{# Withdrawn #}
+{% elseif data['learner-status'] == "withdrawn" %}
+<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+
+{# Waiting to start #}
+{% elseif data['learner-status'] == "waiting-to-start" %}
+<strong class="govuk-tag govuk-tag--red">Inactive</strong>
+
+{# In learning #}
+{% else %}
+<strong class="govuk-tag govuk-tag--blue">Active</strong>
+{% endif %}
+{% endif %}

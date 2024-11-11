@@ -13,6 +13,7 @@ require('./routes/change-of-status/routes.js');
 require('./routes/functional-skills/routes.js');
 require('./routes/additional-funding/routes.js');
 
+require('./routes/v2/employer.js');
 require('./routes/v3/training-provider.js');
 
 module.exports = router

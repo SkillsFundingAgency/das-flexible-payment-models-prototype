@@ -1,4 +1,9 @@
-{% set version = "v3" %}
+{% set version = "v2" %}
+
+{% if data['employer-withheld'] == "true" %}
+{% set employerWithheld = true %}
+{% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -40,7 +45,7 @@
                     Learner status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {% include "/training-provider/v3/change-of-status/includes/learner-status-tag.html" %}
+                    {% include "/employer/v2/includes/learner-status-tag" %}
                 </dd>
             </div>
             <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -56,10 +61,14 @@
                     Provider payments status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    {% include "change-of-status/includes/payment-status-tag" %}
+                    {% include "/employer/v2/includes/payment-status-tag" %}
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a href="#" class="govuk-link">Change<span class="govuk-visually-hidden"> provider payment
+                    {% if employerWithheld == true %}
+                    <a href="/employer/{{version}}/provider-payments/activate" {% else %} 
+                    <a href="/employer/{{version}}/provider-payments/withhold" {% endif %} class="govuk-link">Change<span
+                            class="govuk-visually-hidden">
+                            provider payment
                             status</span></a>
                 </dd>
             </div>

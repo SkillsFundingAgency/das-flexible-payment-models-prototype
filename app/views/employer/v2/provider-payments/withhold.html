@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+{% set pageTitle = "Withhold provider payments" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - your <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback (opens in new tab)</a> will help improve it.
+    </span>
+  </p>
+</div>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+    <p class="govuk-body">
+      Only use this if you have a dispute with the training provider and need to withhold training provider payments.
+    </p>
+    <p class="govuk-body">
+      The learner status will not be changed. If you need to change learner status, contact the training provider.
+    </p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What happens when you withhold payments?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        When you withhold payments, all transactions are suspended. If payments are withheld on the scheduled payment
+        date, no
+        funds will be transferred to the provider for that period.
+      </div>
+    </details>
+    <form action="/employer/{{version}}/provider-payments/withhold/action" method="post" novalidate>
+      <div class="govuk-form-group govuk-!-margin-top-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to withhold training provider payments?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withhold" name="withhold" type="radio" value="yes"
+                data-aria-controls="conditional-withhold">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes, withhold future payments
+              </label>
+
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-withhold">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Specify reason for withholding training provider payments (optional)
+                </label>
+                <div id="reason-for-withhold-hint" class="govuk-hint">
+                  This reason will be shared with the training provider
+                </div>
+                <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+                  <div class="govuk-form-group">
+                    <textarea class="govuk-textarea govuk-js-character-count" id="reason-for-withhold"
+                      name="reason-for-withhold" rows="3"
+                      aria-describedby="reason-for-withhold-hint">{{ data['reason-for-withhold'] }}</textarea>
+                  </div>
+                  <div id="reason-for-withhold-info" class="govuk-hint govuk-character-count__message">
+                    You can enter up to 400 characters
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="withhold" name="withhold" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+
+            </div>
+
+
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes</button>
+
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel and return</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

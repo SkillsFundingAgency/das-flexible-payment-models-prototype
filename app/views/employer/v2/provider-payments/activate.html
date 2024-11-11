@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+{% set version = "v2" %}
+{% set pageTitle = "Activate provider payments" %}
+{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+{% include "includes/nav-employer-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - your <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback (opens in new tab)</a> will help improve it.
+    </span>
+  </p>
+</div>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      {{pageTitle}}
+    </h1>
+    <p class="govuk-body">
+      The learner status will not be changed. If you need to change learner status, contact the training provider.
+    </p>
+    <form action="/employer/{{version}}/provider-payments/active/action" method="post" novalidate>
+      <div class="govuk-form-group govuk-!-margin-top-7">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to activate training provider payments?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activate" name="activate" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes, activate future payments
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="activate" name="activate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
+            </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button class="govuk-button" type="submit" id="submit-status-change">Confirm changes</button>
+
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel and return</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}
