@@ -30,25 +30,16 @@ href: "javascript:window.history.go(-1);"
 			</div>
 			<div class="govuk-notification-banner__content">
 				<h3 class="govuk-notification-banner__heading">
-					The training provider changed this apprentice status to "In learning (made redundant)" on the 10th
+					The training provider changed the apprentice status to "Withdrawn (made redundant)" on the 10th
 					January 2024
 				</h3>
-				<p class="govuk-body">This apprenticeship will be funded by the government until the planned training
-					end
-					date 3 July 2024.
+				<p class="govuk-body">This apprenticeship will no longer be funded.
 				</p>
 				<p class="govuk-body">If you believe this was done in error please contact the training provider.</p>
 			</div>
 		</div>
 		{% include "change-of-status/employer/v4/includes/employer-apprentice-details-list" %}
 	</div>
-</div>
-
-<div style="position: absolute; right:20px; top:160px">
-	<a href="notification--redundant-withdrawn?learner-status=redundant&government-funded=No" role="button"
-		draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-		View redundant withdrawal
-	</a>
 </div>
 
 {% endblock %}

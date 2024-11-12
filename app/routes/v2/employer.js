@@ -10,7 +10,7 @@ router.post('/employer/v2/provider-payments/withhold/action', function (req, res
         res.redirect('../../details?employer-freeze=false')
     }
     else {
-        res.redirect('../../details/banner/withheld-confirmed')
+        res.redirect('../../details/banner/payments--withheld-confirmed')
     }
 })
 
@@ -21,7 +21,7 @@ router.post('/employer/v2/provider-payments/active/action', function (req,  res)
         res.redirect('../../details?employer-withheld=true')
     }
     else {
-        res.redirect('../../details/banner/active-confirmed?employer-withheld=false')
+        res.redirect('../../details/banner/payments--active-confirmed?employer-withheld=false')
     }
 })
 router.post('/employer/v2/change-of-price/view-changes/action', function (req,  res) {
@@ -42,5 +42,15 @@ router.post('/employer/v2/change-of-price/review-changes/action', function (req,
     }
     else {
         res.redirect('../../details/banner/price-approved?change=none')
+    }
+})
+router.post('/employer/v2/change-of-start-date/review-changes/action', function (req,  res) {
+    var approve = req.session.data['approve']
+
+    if (approve == "no") {
+        res.redirect('../../details/banner/start-date-rejected?change=none')
+    }
+    else {
+        res.redirect('../../details/banner/start-date-approved?change=none')
     }
 })

@@ -22,33 +22,26 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+		<div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-
 				<h3 class="govuk-notification-banner__heading">
-					Provider payments have been set to "Withheld".
+					The training provider has requested to change the training  dates. You need to
+					review and approve.
 				</h3>
-				<p class="govuk-body">The training provider has been informed of this update.
+				<p class="govuk-body"><a href="../../change-of-start-date/review-changes" class="govuk-link">Review change
+						request</a>
 				</p>
 			</div>
 		</div>
-		{% set employerWithheld = true %}
 		{% include "../../includes/apprentice-details-list" %}
 
 	</div>
-</div>
-
-<div style="position: absolute; right:20px; top:160px">
-	<a href="withheld" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View withheld notification
-	</a>
 </div>
 
 {% endblock %}

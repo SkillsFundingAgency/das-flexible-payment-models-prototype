@@ -22,31 +22,23 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner" role="alert"
+		<div class="govuk-notification-banner  govuk-notification-banner--success" role="alert"
 			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Important
+					Success
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-
 				<h3 class="govuk-notification-banner__heading">
-					Provider payments set to "Withheld" on the 10th January 2024.
+					Request to change the training dates has been rejected.
 				</h3>
+				<p class="govuk-body">The training provider has been notified.</p>
 			</div>
 		</div>
-		{% set employerWithheld = true %}
 		{% include "../../includes/apprentice-details-list" %}
 
 	</div>
-</div>
-
-<div style="position: absolute; right:20px; top:160px">
-	<a href="withheld-confirmed" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View withheld confirmation
-	</a>
 </div>
 
 {% endblock %}
