@@ -245,7 +245,7 @@
                 </dd>
             </div>
             {% endif %}
-            {% if data['change'] == "training-price" %}
+            {% if (data['change'] == "training-price") or (data['change'] == "training-price-employer") %}
             </dl>
             <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
             
@@ -287,9 +287,13 @@
                         </tr>
                     </tbody>
                 </table>
-                <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/view-changes" class="govuk-link">View
-                        price changes you've
-                        requested</a></p>
+                {% if data['change'] == "training-price-employer" %}
+                    <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/review-changes" class="govuk-link">Review change request</a></p>
+                {% else %}
+                    <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/view-changes" class="govuk-link">View
+                                price changes you've
+                                requested</a></p>
+                {% endif %}
             </div>
             <dl class="govuk-summary-list govuk-!-margin-top-4">
                 {% else %}

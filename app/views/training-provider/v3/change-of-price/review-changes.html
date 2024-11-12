@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v3" %}
-{% set pageTitle = "Price changes pending employer review" %}
+{% set pageTitle = "Price changes pending your review" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 
@@ -39,9 +39,9 @@ href: "javascript:window.history.go(-1);"
 	</div>
 	<div class="govuk-grid-column-full">
 		<table class="govuk-table">
-			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Changes you're
-				requesting
-			</caption>
+			<caption class="govuk-table__caption govuk-table__caption--m  ">AUTOMATION &
+				OPTIMISATION LTD has
+				requested these changes
 			<thead class="govuk-table__head">
 				<tr class="govuk-table__row">
 					<td class="govuk-table__header"></td>
@@ -56,14 +56,14 @@ href: "javascript:window.history.go(-1);"
 					<th scope="row" class="govuk-table__header">Training price</th>
 					<td class="govuk-table__cell">£6,000</td>
 					<td class="govuk-table__cell" id="TrainingPrice">
-						£6,500
+						Enter on next page
 					</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">End-point assessment price</th>
 					<td class="govuk-table__cell">£3,000</td>
 					<td class="govuk-table__cell" id="EndPointAssessmentPrice">
-						£3,500</td>
+						Enter on next page</td>
 				</tr>
 				<tr class="govuk-table__row">
 					<th scope="row" class="govuk-table__header">Total price</th>
@@ -97,39 +97,51 @@ href: "javascript:window.history.go(-1);"
 			</div>
 
 		</dl>
-		<form method="post" action="/training-provider/{{version}}/change-of-price/view-changes/action">
+		<form method="post" action="/training-provider/{{version}}/change-of-price/review-changes/action">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group">
-					<fieldset class="govuk-fieldset">
+					<fieldset class="govuk-fieldset" aria-describedby="apprenticeship-price-hint">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to cancel this request?
+							Do you want to approve these changes?
 						</legend>
+						<div id="apprenticeship-price-hint" class="govuk-hint">
+							Once you approve the new total price, you can enter the new training and end-point
+							assessment price. </div>
 
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
-									value="yes" data-aria-controls="conditional-withdraw">
-								<label class="govuk-label govuk-radios__label" for="withdraw">
-									Yes, cancel the request
+								<input class="govuk-radios__input" id="approve" name="approve" type="radio" value="yes">
+								<label class="govuk-label govuk-radios__label" for="approve">
+									Yes, approve these changes
 								</label>
 							</div>
 							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-								id="conditional-withdraw">
+								id="conditional-approve">
 								<div class="govuk-form-group">
-									<label class="govuk-label" for="withdraw-more-details">
+									<label class="govuk-label" for="approve-more-details">
 										Why do you want to cancel this request?
 									</label>
-									<textarea class="govuk-textarea" id="withdraw-more-details"
-										name="withdraw-more-details" rows="5"></textarea>
+									<textarea class="govuk-textarea" id="approve-more-details"
+										name="approve-more-details" rows="5"></textarea>
 								</div>
 							</div>
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
-									value="no">
-								<label class="govuk-label govuk-radios__label" for="withdraw-2">
-									No, keep the request
+								<input class="govuk-radios__input" id="approve-2" name="approve" type="radio" value="no"
+									data-aria-controls="conditional-approve">
+								<label class="govuk-label govuk-radios__label" for="approve-2">
+									No, reject these changes
 								</label>
+							</div>
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+								id="conditional-approve">
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="approve-more-details">
+										Why do you want to reject these changes?
+									</label>
+									<textarea class="govuk-textarea" id="approve-more-details"
+										name="approve-more-details" rows="5"></textarea>
+								</div>
 							</div>
 
 						</div>

@@ -75,3 +75,13 @@ router.post('/training-provider/v3/change-of-price/view-changes/action', functio
         res.redirect('../../details/banner/price-cancelled?change=none')
     }
 })
+router.post('/training-provider/v3/change-of-price/review-changes/action', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "no") {
+        res.redirect('../../details/banner/price-rejected?change=none')
+    }
+    else {
+        res.redirect('../set-costs')
+    }
+})
