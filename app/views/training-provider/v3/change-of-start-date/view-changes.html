@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "feature/Change-of-circs/cod/training-provider" %}
+{% set version = "v3" %}
 {% set pageTitle = "Training date changes pending employer review" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
@@ -79,7 +79,7 @@ href: "javascript:window.history.go(-1);"
 				</dd>
 			</div>
 		</dl>
-		<form method="post" action="../details?change=none" class="govuk-!-margin-top-9">
+		<form method="post" action="/training-provider/{{version}}/change-of-start-date/view-changes/action" class="govuk-!-margin-top-9">
 			<fieldset class="govuk-fieldset">
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">

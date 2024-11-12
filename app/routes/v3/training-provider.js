@@ -53,3 +53,25 @@ router.post('/training-provider/v3/change-of-status/edit-learner-status/action',
         res.redirect('../edit-learner-status')
     }
 })
+
+router.post('/training-provider/v3/change-of-start-date/view-changes/action', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "no") {
+        res.redirect('../../details?change=start-date')
+    }
+    else {
+        res.redirect('../../details/banner/start-date-cancelled?change=none')
+    }
+})
+
+router.post('/training-provider/v3/change-of-price/view-changes/action', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "no") {
+        res.redirect('../../details?change=training-price')
+    }
+    else {
+        res.redirect('../../details/banner/price-cancelled?change=none')
+    }
+})
