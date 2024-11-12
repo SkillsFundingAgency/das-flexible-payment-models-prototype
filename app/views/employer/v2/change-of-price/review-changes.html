@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v2" %}
-{% set pageTitle = "Price changes pending training provider review" %}
+{% set pageTitle = "Price changes pending your review" %}
 {% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 
@@ -73,39 +73,39 @@ href: "javascript:window.history.go(-1);"
 			</div>
 
 		</dl>
-		<form method="post" action="/employer/v2/change-of-price/view-changes/action">
+		<form method="post" action="/employer/v2/change-of-price/review-changes/action">
 			<fieldset class="govuk-fieldset">
 
 				<div class="govuk-form-group">
 					<fieldset class="govuk-fieldset">
 						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-							Do you want to cancel this request?
+							Do you want to approve these changes?
 						</legend>
 
 						<div class="govuk-radios" data-module="govuk-radios">
 							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw" name="withdraw" type="radio"
-									value="yes" data-aria-controls="conditional-withdraw">
-								<label class="govuk-label govuk-radios__label" for="withdraw">
-									Yes, cancel the request
+								<input class="govuk-radios__input" id="approve" name="approve" type="radio"
+									value="yes">
+								<label class="govuk-label govuk-radios__label" for="approve">
+									Yes, approve these changes
+								</label>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="approve-2" name="approve" type="radio"
+									value="no" data-aria-controls="conditional-approve">
+								<label class="govuk-label govuk-radios__label" for="approve-2">
+									No, reject these changes the request
 								</label>
 							</div>
 							<div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-								id="conditional-withdraw">
+								id="conditional-approve">
 								<div class="govuk-form-group">
-									<label class="govuk-label" for="withdraw-more-details">
+									<label class="govuk-label" for="approve-more-details">
 										Why do you want to cancel this request?
 									</label>
-									<textarea class="govuk-textarea" id="withdraw-more-details"
-										name="withdraw-more-details" rows="5"></textarea>
+									<textarea class="govuk-textarea" id="approve-more-details"
+										name="approve-more-details" rows="5"></textarea>
 								</div>
-							</div>
-							<div class="govuk-radios__item">
-								<input class="govuk-radios__input" id="withdraw-2" name="withdraw" type="radio"
-									value="no">
-								<label class="govuk-label govuk-radios__label" for="withdraw-2">
-									No, keep the request
-								</label>
 							</div>
 
 						</div>

@@ -213,7 +213,7 @@
                 </dd>
             </div>
             {% endif %}
-            {% if data['change'] == "training-price" %}
+            {% if (data['change'] == "training-price") or (data['change'] == "training-price-provider") %}
         </dl>
         <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
             <h2 id="price-changes" class="govuk-heading-m">Price changes you've requested </h2>
@@ -238,10 +238,14 @@
                     </tr>
                 </tbody>
             </table>
-            <p class="govuk-body"><a href="/employer/{{version}}/change-of-price/view-changes"
-                    class="govuk-link">View
+            {% if (data['change'] == "training-price-provider") %}
+            <p class="govuk-body"><a href="/employer/{{version}}/change-of-price/review-changes" class="govuk-link">Review change
+                    request</a></p>
+            {% else %}
+            <p class="govuk-body"><a href="/employer/{{version}}/change-of-price/view-changes" class="govuk-link">View
                     price changes you've
                     requested</a></p>
+            {% endif %}
         </div>
         <dl class="govuk-summary-list govuk-!-margin-top-4">
             {% else %}
@@ -253,7 +257,7 @@
                     £15,000
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="change-of-price/update-price">
+                    <a class="govuk-link" href="/employer/{{version}}/change-of-price/update-price">
                         Change<span class="govuk-visually-hidden"> total price</span>
                     </a>
                 </dd>
