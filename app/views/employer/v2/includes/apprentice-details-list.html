@@ -216,7 +216,11 @@
             {% if (data['change'] == "training-price") or (data['change'] == "training-price-provider") %}
         </dl>
         <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
+            {% if (data['change'] == "training-price-provider") %}
+            <h2 id="price-changes" class="govuk-heading-m">Price changes training provider has requested</h2>
+            {% else %}
             <h2 id="price-changes" class="govuk-heading-m">Price changes you've requested </h2>
+            {% endif %}
             <table class="govuk-table">
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
