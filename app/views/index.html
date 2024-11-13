@@ -46,6 +46,20 @@ Payment simplification Prototype Library
         </span>
       </summary>
       <div class="govuk-details__text">
+        <h4 class="govuk-heading-s">Price</h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="/training-provider/v3/details/banner/price-confirmed?change=training-price">Change
+              of
+              price sent</a>
+          </li>
+        
+          <li>
+            <a class="govuk-link"
+              href="/training-provider/v3/details/banner/price-request-received?change=training-price-employer">Change
+              of price request from employer</a>
+          </li>
+        </ul>
         <h4 class="govuk-heading-s">Start date</h4>
         <ul class="govuk-list">
           <li>
@@ -54,17 +68,80 @@ Payment simplification Prototype Library
               start date confirmation</a>
           </li>
         </ul>
+        <h4 class="govuk-heading-s">Break in learning</h4>
         <ul class="govuk-list">
-          <h4 class="govuk-heading-s">Price</h4>
           <li>
-            <a class="govuk-link" href="/training-provider/v3/details/banner/price-confirmed?change=training-price">Change
-              of
-              price send</a>
+            <a class="govuk-link"
+              href="/training-provider/v3/details/banner/break-in-learning-confirmed?learner-status=break">Break
+              in
+              learning confirmed</a>
           </li>
-          
           <li>
-            <a class="govuk-link" href="/training-provider/v3/details/banner/price-request-received?change=training-price-employer">Change of price request from employer</a>
+            <a class="govuk-link" href="/training-provider/v3/details/banner/on-break-in-learning?learner-status=break">Break
+              in
+              learning (persists)</a>
           </li>
+        </ul>
+        <h4 class="govuk-heading-s">Redundant</h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link"
+              href="/training-provider/v3/details/banner/redundant?learner-status=redundant&government-funded=No">Redundant -
+              Withdrawn</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/training-provider/v3/details/banner/redundant-confirmed?learner-status=redundant&government-funded=Yes">Redundant
+              confirmed (full funding)</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/training-provider/v3/details/banner/redundant-confirmed-12-week?learner-status=redundant&government-funded=Yes">Redundant
+              confirmed
+              (12 weeks funding)</a>
+          </li>
+        </ul>
+        <h4 class="govuk-heading-s">Resume learning</h4>
+        <ul class="govuk-list">
+          <li>
+            <a class="govuk-link" href="/training-provider/v3/details/banner/resume-confirmed?learner-status=in-learning">Resume
+              learning</a>
+          </li>
+        </ul>
+        <h4 class="govuk-heading-s">Waiting to start</h4>
+            <ul class="govuk-list">
+              <li>
+                <a class="govuk-link"
+                  href="/training-provider/v3/details/banner/waiting-to-start-resume-learning?learner-status=waiting-to-start">Waiting
+                  to
+                  start - resume learning</a>
+                </li>
+                </ul>
+                <h4 class="govuk-heading-s">Withdrawal</h4>
+                <ul class="govuk-list">
+                  <li>
+                    <a class="govuk-link"
+                      href="/training-provider/v3/details/banner/withdrawal-confirmed?learner-status=withdrawn">Withdrawal
+                      confirmed</a>
+                  </li>
+                  <li>
+                    <a class="govuk-link" href="/training-provider/v3/details/banner/withdrawn?learner-status=withdrawn">Withdrawal
+                      (persists)</a>
+                  </li>
+                  <li>
+                    <a class="govuk-link"
+                      href="/training-provider/v3/details/banner/withdrawal-confirmed--unfunded?learner-status=withdrawn">Withdrawan
+                      confirmed
+                      unfunded
+                    </a>
+                  </li>
+            <li>
+              <a class="govuk-link"
+                href="/training-provider/v3/details/banner/withdrawn--unfunded?learner-status=withdrawn">Withdrawan persists
+                unfunded
+              </a>
+              </li>
+            
         </ul>
       </div>
     </details>
@@ -107,49 +184,50 @@ Payment simplification Prototype Library
           </li>
           <li>
             <a class="govuk-link" href="/employer/v2/details/banner/payments--withheld">Payments withheld (persists)</a>
-            </li>
+          </li>
+          <li>
+            <a class="govuk-link" href="/employer/v2/details/banner/payments--active-confirmed">Payments activated
+              confirmed</a>
+          </li>
+          </ul>
+          <h4 class="govuk-heading-s">Start date</h4>
+          <ul class="govuk-list">
             <li>
-              <a class="govuk-link" href="/employer/v2/details/banner/payments--active-confirmed">Payments activated
-                confirmed</a>
+              <a class="govuk-link" href="/employer/v2/details/banner/start-date-request-received?change=start-date">Change of
+                start date request from provider</a>
             </li>
-            </ul>
-            <h4 class="govuk-heading-s">Start date</h4>
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" href="/employer/v2/details/banner/start-date-request-received?change=start-date">Change of
-                  start date request from provider</a>
-              </li>
             </ul>
             <h4 class="govuk-heading-s">Learner Status</h4>
             <ul class="govuk-list">
               <li>
                 <a class="govuk-link"
-                  href="/employer/v2/details/banner/learner-status--break-in-learning?learner-status=break">Break in learning</a>
-              </li>
-              <li>
-                <a class="govuk-link"
-                  href="/employer/v2/details/banner/learner-status--redundant-withdrawn?learner-status=redundant&government-funded=No">Redundant
-                  -
-                  withdrawn</a>
+              href="/employer/v2/details/banner/learner-status--break-in-learning?learner-status=break">Break in
+              learning (persists)</a>
           </li>
           <li>
             <a class="govuk-link"
-              href="/employer/v2/details/banner/learner-status--redundant?learner-status=redundant&government-funded=Yes">Redundant</a>
-            </li>
-            <li>
-              <a class="govuk-link"
-                href="/employer/v2/details/banner/learner-status--resume-learning?learner-status=in-learning">Resume
-                learning</a>
-              </li>
-              <li>
-                <a class="govuk-link"
-                  href="/employer/v2/details/banner/learner-status--waiting-to-start-resume-learning?learner-status=waiting-to-start">Waiting
-                  to
-                  start - resume learning</a>
-              </li>
-              <li>
-                <a class="govuk-link"
-                  href="/employer/v2/details/banner/learner-status--withdrawal?learner-status=withdrawn">Withdrawal</a>
+              href="/employer/v2/details/banner/learner-status--redundant?learner-status=redundant&government-funded=Yes">Redundant (persists)</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/employer/v2/details/banner/learner-status--redundant-withdrawn?learner-status=redundant&government-funded=No">Redundant
+              -
+              withdrawn (persists)</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/employer/v2/details/banner/learner-status--resume-learning?learner-status=in-learning">Resume
+              learning</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/employer/v2/details/banner/learner-status--waiting-to-start-resume-learning?learner-status=waiting-to-start">Waiting
+              to
+              start - resume learning</a>
+          </li>
+          <li>
+            <a class="govuk-link"
+              href="/employer/v2/details/banner/learner-status--withdrawal?learner-status=withdrawn">Withdrawal (persists)</a>
           </li>
         </ul>
       </div>
