@@ -76,12 +76,23 @@ router.post('/training-provider/v3/change-of-price/view-changes/action', functio
     }
 })
 router.post('/training-provider/v3/change-of-price/review-changes/action', function (req, res) {
-    var withdraw = req.session.data['withdraw']
+    var approve = req.session.data['approve']
 
-    if (withdraw == "no") {
+    if (approve == "no") {
         res.redirect('../../details/banner/price-rejected?change=none')
     }
     else {
         res.redirect('../set-costs')
+    }
+})
+router.post('/training-provider/v3/change-of-price/set-costs/action', function (req, res) {
+    var trainingprice = parseFloat(req.session.data['training-price']) || 0;
+    var endpointprice = parseFloat(req.session.data['end-point-price']) || 0;
+    var total = trainingprice + endpointprice;
+
+    if (total === 9000) {
+        res.redirect('../../details/banner/price-approved?change=none');
+    } else {
+        res.redirect('../set-costs?error=total-invalid');
     }
 })

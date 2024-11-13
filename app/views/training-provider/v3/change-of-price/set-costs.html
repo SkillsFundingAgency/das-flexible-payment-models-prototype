@@ -1,8 +1,11 @@
 {% extends "layouts/main.html" %}
 {% set version = "v3" %}
+{% if data['error'] == "total-invalid" %}
+{% set pageTitle = "Error: Confirm new training and end-point assessment price" %}
+{% else %}
 {% set pageTitle = "Confirm new training and end-point assessment price" %}
-{%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
-
+{% endif %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -34,8 +37,25 @@ href: "javascript:window.history.go(-1);"
 
 
 <div class="govuk-grid-row">
-
 	<div class="govuk-grid-column-two-thirds">
+
+		{% if data['error'] == "total-invalid" %}
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+							<a href="#Cost">The new training price and end-point assessment must match the total price requested
+								by the employer</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		{% endif %}
 
 		<h1 class="govuk-heading-l">Confirm new training and end-point assessment price</h1>
 		<p class="govuk-body">Add the new training and end-point assessment price. The
@@ -49,82 +69,46 @@ href: "javascript:window.history.go(-1);"
 
 
 		<fieldset class="govuk-fieldset">
-			<form method="post" action="c-04-approved">
-				<div class="govuk-form-group ">
+			<form method="post" action="/training-provider/{{version}}/change-of-price/set-costs/action">
+				<div class="govuk-form-group">
+					{% if data['error'] == "total-invalid" %}
+					<div class="govuk-form-group govuk-form-group--error">
+						{% else %}
+						<div class=" govuk-form-group">
+							{% endif %}
 					<label class="govuk-label govuk-!-font-weight-bold" for="Cost">Training price</label>
-					<div id="price-hint" class="govuk-hint">
+					<div id="training-price-hint" class="govuk-hint">
 						Do not include VAT. Enter price in whole pounds. For example, for £6,500 enter 6500.
 					</div>
+					{% if data['error'] == "total-invalid" %}
+					<p id="training-price-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> The new training price and end-point assessment must match the
+						total price requested by the employer
+					</p>
+					{% endif %}
 					<div class="govuk-input__wrapper govuk-!-margin-top-3">
 						<div class="govuk-input__prefix" aria-hidden="true">£</div>
 						<input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost"
-							name="a-cost" value="{{ data['a-cost']}}" spellcheck="false">
+							name="training-price" value="{{ data['training-price']}}" spellcheck="false" aria-describedby="training-price-hint">
 					</div>
 				</div>
 
 				<div class="govuk-form-group ">
 					<label class="govuk-label govuk-!-font-weight-bold" for="Cost">End-point assessment price </label>
-					<div id="price-hint" class="govuk-hint">
+					<div id="end-point-price-hint" class="govuk-hint">
 						Do not include VAT. Enter price in whole pounds. For example, for £1,500 enter 1500.
-						
-						<details class="govuk-details" data-module="govuk-details" style="display:none;">
-							<summary class="govuk-details__summary">
-								<span class="govuk-details__summary-text">
-									End-point assessments
-								</span>
-							</summary>
-							<div class="govuk-details__text">
-								<p class="govuk-body">We'll ask the employer to confirm the <a class="govuk-link"
-										href="/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
-										target="_blank" title="Opens in a new window">apprentice assessment
-										organisation</a> for
-									this
-									apprentice.
-									We'll do this before the end of the apprenticeship.</p>
-							</div>
-						</details>
-						<div class="govuk-input__wrapper govuk-!-margin-top-3">
-							<div class="govuk-input__prefix" aria-hidden="true">£</div>
-							<input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost"
-								name="a-e-cost" value="{{ data['a-e-cost']}}" spellcheck="false">
-						</div>
 					</div>
-
-
-					<div class="govuk-inset-text">
-						<div id="price-hint" class="govuk-hint">
-							The employer has changed the total price to
-
-
-							£
-							<script>
-								function numberWithCommas(x) {
-									x = x.toString();
-									var pattern = /(-?\d+)(\d{3})/;
-									while (pattern.test(x))
-										x = x.replace(pattern, "$1,$2");
-									return x;
-								}
-
-								console.log(numberWithCommas(1000))
-								var eprice = '{{ data['apprenticeship-total - price - b']}}';
-
-								document.write(numberWithCommas(eprice));
-							</script>
-
-
-							<!-- £{{ data['apprenticeship-total-price-b'] or
-					'9,000'}} -->
-						</div>
+					<div class="govuk-input__wrapper govuk-!-margin-top-3">
+						<div class="govuk-input__prefix" aria-hidden="true">£</div>
+						<input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost"
+							name="end-point-price" value="{{ data['end-point-price']}}" spellcheck="false" aria-describedby="end-point-price-hint">
 					</div>
-
-
-
-
-
-
-					<button class="govuk-button" type="submit" data-module="govuk-button">
-						Save
+				</div>
+				<div class="govuk-inset-text">
+					The employer has changed the total price to £9,000
+					</div>
+				<button class="govuk-button" type="submit" data-module="govuk-button">
+					Continue
 					</button>
 		</fieldset>
 		</form>
