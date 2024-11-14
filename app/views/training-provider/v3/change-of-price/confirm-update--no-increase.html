@@ -126,13 +126,13 @@ href: "javascript:window.history.go(-1);"
 </div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
-		<p class="govuk-body">Your payment schedule will not change until the employer approves your request.</p>
-		<form action="../details/banner/price-confirmed?change=training-price" method="post" novalidate>
+		<h2 class="govuk-heading-m">The employer does not need to approve this change as the price has not increased
+		</h2>
+		<form action="../details/banner/price-confirmed--no-increase?change=none" method="post" novalidate>
 			<input type="hidden" name="answers-checked" value="true">
 			<div class="govuk-button-group">
 				<button class="govuk-button" data-module="govuk-button">
-					Send
+					Confirm changes
 				</button>
 				<a class="govuk-link" href="../details">Cancel and return</a>
 			</div>
@@ -141,9 +141,9 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="confirm-update--no-increase" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+	<a href="confirm-update" role="button" draggable="false" class="govuk-button govuk-button--secondary"
 		data-module="govuk-button">
-		View no increase version
+		View increase version
 	</a>
 </div>
 
