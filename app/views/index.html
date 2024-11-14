@@ -50,14 +50,14 @@ Payment simplification Prototype Library
           <li>
             <a class="govuk-link" href="/training-provider/v3/details/banner/price-confirmed?change=training-price">Change
               of
-              price sent</a>
+              price request sent</a>
           </li>
           <li>
             <a class="govuk-link" href="/training-provider/v3/details/banner/price-confirmed--no-increase?change=none">Change
               of
               price confirmation - no increase</a>
           </li>
-          <li>
+          <li class="govuk-!-margin-top-4">
             <a class="govuk-link" href="/training-provider/v3/details/banner/price-approved?change=none">Change
               of price approved</a>
           </li>
@@ -66,6 +66,11 @@ Payment simplification Prototype Library
               of price rejected</a>
           </li>
           <li>
+            <a class="govuk-link" href="/training-provider/v3/details/banner/price-cancelled?change=none">Change
+              of price cancelled</a>
+            </li>
+            
+            <li class="govuk-!-margin-top-4">
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/price-request-received?change=training-price-employer">Change
               of price request from employer</a>
@@ -103,7 +108,22 @@ Payment simplification Prototype Library
             <li>
               <a class="govuk-link" href="/training-provider/v3/details/banner/start-date-confirmed?change=start-date">Change
               of
-              start date confirmation</a>
+              start date request sent</a>
+              </li>
+              <li class="govuk-!-margin-top-4">
+                <a class="govuk-link" href="/training-provider/v3/details/banner/start-date-cancelled?change=none">Change
+                  of
+                  start date cancelled</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/training-provider/v3/details/banner/start-date-approved?change=none">Change
+                  of
+                  start date approved</a>
+              </li>
+              <li>
+                <a class="govuk-link" href="/training-provider/v3/details/banner/start-date-rejected?change=none">Change
+                  of
+                  start date rejected</a>
           </li>
         </ul>
       </div>
@@ -121,7 +141,7 @@ Payment simplification Prototype Library
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--break-in-learning-confirmed?learner-status=break">Break
               in
-              learning confirmed</a>
+              learning confirmation</a>
           </li>
           <li>
             <a class="govuk-link"
@@ -136,7 +156,7 @@ Payment simplification Prototype Library
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--redundant-confirmed">Redundant
               -
-              Withdrawn confirmed</a>
+              Withdrawn confirmation</a>
           </li>
           <li>
             <a class="govuk-link"
@@ -144,15 +164,15 @@ Payment simplification Prototype Library
               -
               Withdrawn (persists)</a>
           </li>
-          <li>
+          <li class="govuk-!-margin-top-4">
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--redundant-confirmed?learner-status=redundant&government-funded=Yes">Redundant
-              confirmed - In learning (full funding)</a>
+              confirmation - In learning (full funding)</a>
           </li>
           <li>
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--redundant-confirmed-12-week?learner-status=redundant&government-funded=Yes">Redundant
-              confirmed - In learning
+              confirmation - In learning
               (12 weeks funding)</a>
           </li>
         </ul>
@@ -161,40 +181,38 @@ Payment simplification Prototype Library
           <li>
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--resume-confirmed?learner-status=in-learning">Resume
-              learning - In learner confirmed</a>
+              learning - In learner confirmation</a>
           </li>
           <li>
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--waiting-to-start-resume-learning?learner-status=waiting-to-start">Resume
               learning - Waiting
               to
-              start confirmed</a>
+              start confirmation</a>
               </li>
               </ul>
               <h4 class="govuk-heading-s">Withdrawal</h4>
               <ul class="govuk-list">
                 <li>
                   <a class="govuk-link"
-              href="/training-provider/v3/details/banner/learner-status--withdrawal-confirmed?learner-status=withdrawn">Withdrawal
-              confirmed</a>
+              href="/training-provider/v3/details/banner/learner-status--withdrawal-confirmed?learner-status=withdrawn">Withdrawal funded
+              confirmation</a>
           </li>
           <li>
             <a class="govuk-link"
-              href="/training-provider/v3/details/banner/learner-status--withdrawn?learner-status=withdrawn">Withdrawal
+              href="/training-provider/v3/details/banner/learner-status--withdrawn?learner-status=withdrawn">Withdrawal funded
               (persists)</a>
             </li>
-            <li>
+            <li class="govuk-!-margin-top-4">
               <a class="govuk-link"
-              href="/training-provider/v3/details/banner/learner-status--withdrawal-confirmed--unfunded?learner-status=withdrawn">Withdrawal
-              confirmed
-              unfunded
+              href="/training-provider/v3/details/banner/learner-status--withdrawal-confirmed--unfunded?learner-status=withdrawn">Withdrawal unfunded
+              confirmation
             </a>
           </li>
           <li>
             <a class="govuk-link"
               href="/training-provider/v3/details/banner/learner-status--withdrawn--unfunded?learner-status=withdrawn">Withdrawal
-              persists
-              unfunded
+              unfunded (persists)
             </a>
           </li>
 
@@ -225,10 +243,18 @@ Payment simplification Prototype Library
             <a class="govuk-link" href="employer/v2/details/banner/price-request-sent?change=training-price">Change of
               price sent</a>
           </li>
-          <li>
+          <li class="govuk-!-margin-top-4">
             <a class="govuk-link"
               href="/employer/v2/details/banner/price-request-received?change=training-price-provider">Change of
               price request from provider</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="employer/v2/details/banner/price-approved?change=none">Change of
+              price approved</a>
+          </li>
+          <li>
+            <a class="govuk-link" href="employer/v2/details/banner/price-rejected?change=none">Change of
+              price rejected</a>
           </li>
         </ul>
       </div>
@@ -243,14 +269,14 @@ Payment simplification Prototype Library
         <ul class="govuk-list">
           <li>
             <a class="govuk-link" href="/employer/v2/details/banner/payments--withheld-confirmed">Payments withheld
-              confirmed</a>
+              confirmation</a>
           </li>
           <li>
             <a class="govuk-link" href="/employer/v2/details/banner/payments--withheld">Payments withheld (persists)</a>
           </li>
-          <li>
+          <li class="govuk-!-margin-top-4">
             <a class="govuk-link" href="/employer/v2/details/banner/payments--active-confirmed">Payments activated
-              confirmed</a>
+              confirmation</a>
           </li>
         </ul>
       </div>
@@ -290,14 +316,18 @@ Payment simplification Prototype Library
         <ul class="govuk-list">
           <li>
             <a class="govuk-link"
-              href="/employer/v2/details/banner/learner-status--redundant?learner-status=redundant&government-funded=Yes">Redundant
+              href="/employer/v2/details/banner/learner-status--redundant?learner-status=redundant&government-funded=Yes">Redundant - In learning (full funding)
               (persists)</a>
           </li>
           <li>
             <a class="govuk-link"
-              href="/employer/v2/details/banner/learner-status--redundant-withdrawn?learner-status=redundant&government-funded=No">Redundant
+              href="/employer/v2/details/banner/learner-status--redundant-12-weeks?learner-status=redundant&government-funded=No">Redundant - In learning (12 weeks funding) (persists)</a>
+          </li>
+          <li class="govuk-!-margin-top-4">
+            <a class="govuk-link"
+              href="/employer/v2/details/banner/learner-status--redundant-withdrawn?learner-status=redundant&government-funded=No">Redundant unfunded
               -
-              withdrawn (persists)</a>
+              Withdrawn (persists)</a>
           </li>
         </ul>
         <h4 class="govuk-heading-s">Resume learning</h4>

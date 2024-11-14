@@ -1,16 +1,27 @@
 {% extends "layouts/main.html" %}
+{% set version = "v3" %}
 {% set pageTitle = "Dina Thain" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 
 {% block header %}
 {% include "includes/header.html" %}
-{% include "includes/employer-account-header.html" %}
-{% include "includes/nav-employer-apprentices" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/employer-phase-banner" %}
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">
+			Beta
+		</strong>
+		<span class="govuk-phase-banner__text">
+			This apprentice is part of a private Beta - <a class="govuk-link"
+				href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+		</span>
+	</p>
+</div>
 
 {{ govukBackLink({
 text: "Back",
@@ -30,21 +41,20 @@ href: "javascript:window.history.go(-1);"
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-
 				<h3 class="govuk-notification-banner__heading">
-					Request to change the price sent to training provider
+					Request to change the training dates has been approved
 				</h3>
-				<p class="govuk-body">The training provide now needs to approve the change.
-				</p>
-				<p class="govuk-body"><a href="../../change-of-price/view-changes" class="govuk-link">View the changes
-						you've requested</a>
-				</p>
 			</div>
 		</div>
-		{% set employerWithheld = false %}
 		{% include "../../includes/apprentice-details-list" %}
-
 	</div>
 </div>
+
+{# <div style="position: absolute; right:20px; top:160px">
+	<a href="withdrawn" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+		data-module="govuk-button">
+		Withdawn banner
+	</a>
+</div> #}
 
 {% endblock %}
