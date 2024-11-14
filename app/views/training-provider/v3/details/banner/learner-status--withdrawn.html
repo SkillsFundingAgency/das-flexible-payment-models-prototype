@@ -1,5 +1,4 @@
 {% extends "layouts/main.html" %}
-{% set version = "v3" %}
 {% set pageTitle = "Dina Thain" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
@@ -53,9 +52,17 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="redundant-confirmed" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		View redundant withdrawn success page
+	<a href="learner-status--withdrawn-confirmed" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		Withdawal confirmed
+	</a>
+	<a href="learner-status--withdrawal-confirmed--unfunded" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		Withdrawn confirmed unfunded
+	</a>
+	<a href="learner-status--withdrawn--unfunded" role="button" draggable="false"
+		class="govuk-button govuk-button--secondary" data-module="govuk-button">
+		Withdrawn unfunded (persists)
 	</a>
 </div>
 

@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set pageTitle = "George Ford" %}
+{% set pageTitle = "Dina Thain" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
 
 
@@ -44,24 +44,21 @@ href: "javascript:window.history.go(-1);"
 			<div class="govuk-notification-banner__content">
 				<p class="govuk-notification-banner__heading">
 					<!-- [Employer]  -->
-					Employer has set provider payments to Inactive
-				<p class="govuk-body">Payments were set to inactive on the 10 January 2024.
-				</p>
-				<p class="govuk-body">Reason for update: Not happy with the quality of the training.
+					Employer has set provider payments to "Active"
+
+				<p class="govuk-body">Payments were set to active on the 20 April 2024.
 				</p>
 			</div>
 		</div>
 
-		{% set employerWithheld = true %}
-		{% include "change-of-status/training-provider/v7/includes/apprentice-details-list" %}
-
+		{% include "../../includes/apprentice-details-list" %}
 	</div>
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="notification--unfrozen-payments" role="button" draggable="false"
-		class="govuk-button govuk-button--secondary" data-module="govuk-button">
-		View unfrozen
+	<a href="payments--withheld" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+		data-module="govuk-button">
+		View withheld
 	</a>
 </div>
 

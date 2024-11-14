@@ -1,15 +1,16 @@
 {% extends "layouts/main.html" %}
-{% set version = "v3" %}
 {% set pageTitle = "Dina Thain" %}
 {%block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
 
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
-{% include "includes/nav-training-provider-manage-apprentices" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
 {% endblock %}
 
 {% block beforeContent %}
+
 <div class="govuk-phase-banner">
 	<p class="govuk-phase-banner__content">
 		<strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -32,40 +33,35 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-full">
-		<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-			aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+
+		<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+			data-module="govuk-notification-banner">
 			<div class="govuk-notification-banner__header">
 				<h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-					Success
+					Important
 				</h2>
 			</div>
 			<div class="govuk-notification-banner__content">
-				<h3 class="govuk-notification-banner__heading">
-					Learner status changed to "Withdrawn"
-				</h3>
-				<p class="govuk-body">Payments have been set to inactive and the last payment for this apprenticeship
-					will be December
-					2023.
+				<p class="govuk-notification-banner__heading">
+					<!-- [Employer]  -->
+					Employer has set provider payments to "Withheld"
+				<p class="govuk-body">Payments were set to withheld on the 10 January 2024.
 				</p>
-				<p class="govuk-body">The employer has been informed of this update.</p>
+				<p class="govuk-body">Reason for update: Not happy with the quality of the training.
+				</p>
 			</div>
 		</div>
+
+		{% set employerWithheld = true %}
 		{% include "../../includes/apprentice-details-list" %}
+
 	</div>
 </div>
 
 <div style="position: absolute; right:20px; top:160px">
-	<a href="withdrawn" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+	<a href="payments--activated" role="button" draggable="false" class="govuk-button govuk-button--secondary"
 		data-module="govuk-button">
-		Withdawn banner
-	</a>
-	<a href="withdrawal-confirmed--unfunded" role="button" draggable="false"
-		class="govuk-button govuk-button--secondary" data-module="govuk-button">
-		Unfunded success
-	</a>
-	<a href="withdrawn--unfunded" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-		data-module="govuk-button">
-		Unfunded banner
+		View activated
 	</a>
 </div>
 

@@ -10,7 +10,7 @@ router.post('/training-provider/v3/change-of-status/edit-learner-status--withdra
         res.redirect('../../details?learner-status=in-learning')
     }
     else {
-        res.redirect('../reason--withdrawal?learner-status=withdrawn')
+        res.redirect('../learner-status--reason--withdrawal?learner-status=withdrawn')
     }
 })
 router.post('/training-provider/v3/change-of-status/reason--withdrawal/action', function (req, res) {

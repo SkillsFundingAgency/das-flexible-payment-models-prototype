@@ -64,11 +64,15 @@
                 </dd>
                 <dd class="govuk-summary-list__actions">
                     {% if employerWithheld == true %}
-                    <a href="/employer/{{version}}/provider-payments/activate" {% else %} 
-                    <a href="/employer/{{version}}/provider-payments/withhold" {% endif %} class="govuk-link">Change<span
+                    <a href="/employer/{{version}}/provider-payments/activate" class="govuk-link">Change<span
                             class="govuk-visually-hidden">
                             provider payment
                             status</span></a>
+                    {% else %}
+                    <a href="/employer/{{version}}/provider-payments/withhold" class="govuk-link">Change<span class="govuk-visually-hidden">
+                            provider payment
+                            status</span></a>
+                    {% endif %}
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
