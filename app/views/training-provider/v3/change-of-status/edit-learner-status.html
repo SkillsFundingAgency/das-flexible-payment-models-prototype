@@ -41,6 +41,7 @@ href: "javascript:window.history.go(-1);"
 
     <p class="govuk-body">Current learner status: {% include "change-of-status/includes/learner-status-tag.html" %} </p>
 
+    {% if data['learner-status'] != "waiting-to-start" %}
     <form action="/training-provider/v3/change-of-status/edit-learner-status/action" method="post" novalidate
       class="govuk-!-margin-top-7">
       <div class="govuk-form-group">
@@ -120,6 +121,42 @@ href: "javascript:window.history.go(-1);"
         <a class="govuk-link" href="apprentice-details">Cancel</a>
       </div>
     </form>
+    {% endif %}
+    {% if data['learner-status'] === "waiting-to-start" %}
+    <form action="/training-provider/v3/change-of-status/edit-learner-status--withdrawal-only/action" method="post"
+      novalidate="" class="govuk-!-margin-top-7">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">Would you like to withdraw Dina Thain from this apprenticeship?</h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue-withdrawal" name="continue-withdrawal" type="radio"
+                value="yes">
+              <label class="govuk-label govuk-radios__label" for="continue-withdrawal">
+                Yes, withdraw Dina Thain
+              </label>
+    
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="continue-withdrawal-1" name="continue-withdrawal" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="continue-withdrawal-1">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link govuk-link--no-visited-state" href="../details">Cancel</a>
+      </div>
+    </form>
+    {% endif %}
   </div>
 </div>
 
