@@ -159,6 +159,48 @@
                     5320150775
                 </dd>
             </div>
+            {% if (data['change'] === "standard")%}
+            </dl>
+            <div class="" style="border-left: 5px solid #1d70b8; padding:15px 15px 5px; margin-bottom:0px;">
+            
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption"><strong class="govuk-tag govuk-tag--yellow">Pending
+                            approval</strong></caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                <span class="govuk-visually-hidden">Apprenticship detail</span>
+                            </th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                Current
+                            </th>
+                            <th scope="col" class="govuk-table__header govuk-!-width-one-third">
+                                Requested
+                            </th>
+                            <td class="govuk-table__cell"><span class="govuk-visually-hidden">Action</span></td>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+            
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
+                            <td class="govuk-table__cell">Information communications technician (level 3)</td>
+                            <td class="govuk-table__cell">Game technology: Level 7</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Version</th>
+                            <td class="govuk-table__cell">1.0</td>
+                            <td class="govuk-table__cell">1.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-start-date/view-changes">
+                        View request<span class="govuk-visually-hidden">for change of start date</span>
+                    </a>
+                </p>
+            </div>
+            <dl class="govuk-summary-list govuk-!-margin-top-4">
+                {% else %}
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Apprenticeship training course
@@ -167,7 +209,7 @@
                     Information communications technician (level 3)
                 </dd>
                 <dd class="govuk-summary-list__actions">
-                    <a class="govuk-link" href="#">
+                    <a class="govuk-link" href="/training-provider/{{version}}/change-of-standard/change-course">
                         Change<span class="govuk-visually-hidden"> apprenticeship training course</span>
                     </a>
                 </dd>
@@ -180,7 +222,9 @@
                     1.0
                 </dd>
             </div>
-            {% if data['change'] == "start-date" %}
+            {% endif %}
+            
+            {% if (data['change'] === "start-date") or (data['change'] === "standard")%}
             </dl>
             <div class="" style="border-left: 5px solid #1d70b8; padding:15px 15px 5px; margin-bottom:0px;">
             
@@ -245,7 +289,8 @@
                 </dd>
             </div>
             {% endif %}
-            {% if (data['change'] == "training-price") or (data['change'] == "training-price-employer") %}
+            {% if (data['change'] == "training-price") or (data['change'] == "training-price-employer") or (data['change'] ===
+            "standard") %}
             </dl>
             <div style="border-left: 5px solid #1d70b8; padding:0 10px ;">
                 {% if (data['change'] == "training-price-employer") %}

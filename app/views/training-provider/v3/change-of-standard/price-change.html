@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% set pageTitle = "Negotiated price" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Negotiated price
+    </h1>
+
+    <p class="govuk-body">The current total price for <b>Accounting, Level: 2</b>
+      is:</p>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Training price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £6,000
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          End-point assessment price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £2,500
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total price
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £8,500
+        </dd>
+      </div>
+    </dl>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Maximum funding for Game programmer, Level: 7 is £9,000
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">The funding band maximum for Game programmer, Level: 7 is £9,000. This is the highest
+          amount
+          the apprenticeship
+          service
+          will
+          pay towards the training and end-point assessment.</p>
+
+        <p class="govuk-body">If you raise the total price above the funding band maximum, this will need to be paid by
+          the employer.</p>
+      </div>
+    </details>
+
+    <form action="/training-provider/v3/change-of-standard/price-change/action" method="post" novalidate
+      class="govuk-!-margin-top-8">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Would you like to change the current negotiated price?
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-price" name="change-price" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="change-price">
+                Yes, change the negotiated price
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="change-price-2" name="change-price" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="change-price-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}

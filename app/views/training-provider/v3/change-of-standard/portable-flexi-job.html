@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cop-cosd/employer" %}
+{% set pageTitle = "Apprenticeship delivery model" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageTitle}}</h1>
+    <p class="govuk-body"><strong>Game programmer, Level: 7</strong> can be completed by the apprentice moving between
+      multiple
+      employment contracts, known as a portable flexi-job apprenticeship. </p>
+
+
+    <form id="addApprenticeship" action="planned-training-date-start" method="post" class="govuk-!-margin-top-8">
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" role="group" "="">
+            <legend class=" govuk-fieldset__legend govuk-fieldset__legend--m">
+          Select the delivery model
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="delivery-method" name="delivery-method" type="radio"
+                value="Regular" aria-describedby="delivery-method-item-hint">
+              <label class="govuk-label govuk-radios__label" for="delivery-method">
+                Regular
+              </label>
+              <div id="delivery-method-item-hint" class="govuk-hint govuk-radios__hint">
+                The apprentice will have a single employment contract
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="delivery-method-2" name="delivery-method" type="radio"
+                value="Portable flexi-job" aria-describedby="delivery-method-2-item-hint">
+              <label class="govuk-label govuk-radios__label" for="delivery-method-2">
+                Portable flexi-job
+              </label>
+              <div id="delivery-method-2-item-hint" class="govuk-hint govuk-radios__hint">
+                The apprentice will move between multiple employment contracts
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+      <button type="submit" class="govuk-button">Continue</button>
+    </form>
+  </div>
+
+
+
+
+</div>
+
+{% endblock %}

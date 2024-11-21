@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+{% set pageTitle = "Recognition of prior learning (RPL)" %}
+{% block pageTitle %}{{pageTitle}} - {{ serviceName }}{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This apprentice is part of a private Beta - <a class="govuk-link"
+        href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+    </span>
+  </p>
+</div>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="/training-provider/v3/change-of-standard/recognise-prior-learning/action" method="post" novalidate>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Is there any recognition of prior learning for {{data['training-course'] or 'Game technology: Level
+              2'}}?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rpl" name="rpl" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="rpl">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="rpl-2" name="rpl" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="rpl-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

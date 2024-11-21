@@ -22,12 +22,10 @@
 		</span>
 	</p>
 </div>
-
 {{ govukBackLink({
 text: "Back",
 href: "javascript:window.history.go(-1);"
 }) }}
-
 {% endblock %}
 {% set trainingPriceString = data['apprenticeship-training-price'] | replace(',', '') %}
 {% set epaPriceString = data['apprenticeship-epa-price'] | replace(',', '') %}

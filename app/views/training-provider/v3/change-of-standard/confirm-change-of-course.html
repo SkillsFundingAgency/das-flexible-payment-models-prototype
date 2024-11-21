@@ -1,0 +1,274 @@
+{% extends "layouts/main.html" %}
+{% set version = "feature/Change-of-circs/cod/training-provider" %}
+{% set pageTitle = "Check your standard changes before sending to the employer for approval" %}
+
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+{% include "includes/nav-training-provider-manage-apprentices.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+	<p class="govuk-phase-banner__content">
+		<strong class="govuk-tag govuk-phase-banner__content__tag">
+			Beta
+		</strong>
+		<span class="govuk-phase-banner__text">
+			This apprentice is part of a private Beta - <a class="govuk-link"
+				href="mailto:payments.beta@education.gov.uk">feedback or report a problem (opens in new tab)</a>.
+		</span>
+	</p>
+</div>
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<h1 class="govuk-heading-l">{{pageTitle}}</h1>
+	</div>
+	<div class="govuk-grid-column-full">
+		<table class="govuk-table govuk-table--small-text-until-tablet">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Course</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-quarter"></th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Standard</th>
+					<td class="govuk-table__cell">
+						Accounting, Level: 2
+					</td>
+					<td class="govuk-table__cell">{{data['training-course'] or 'Game technology: Level 7'}}</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="change-course"
+							class="govuk-link--no-visited-state">Change<span
+								class="govuk-visually-hidden govuk-link--no-visited-state">
+								course</span></a></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Pathway</th>
+					<td class="govuk-table__cell">
+						Not applicable
+					</td>
+					<td class="govuk-table__cell">{{data['standard-option'] or 'Confirm at a later date'}}</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="select-pathway"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state">
+								standard</span></a></td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Apprenticeship delivery model</th>
+					<td class="govuk-table__cell">
+						Regular
+					</td>
+					<td class="govuk-table__cell">{{data['delivery-method'] or 'Regular'}}</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="portable-flexi-job"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state">
+								delivery method</span></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Training dates
+			</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-quarter"></th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training start date</th>
+					<td class="govuk-table__cell">22 January 2022</td>
+					<td class="govuk-table__cell">25 October 2024
+					</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="planned-training-date-start"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state">
+								training start date</span></a>
+					</td>
+				</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Planned training end date</th>
+					<td class="govuk-table__cell">8 August 2025</td>
+					<td class="govuk-table__cell">25 October 2026
+					</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="planned-training-date-end"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> planned training end
+								date</span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Negotiated price
+			</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Apprenticship detail</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-quarter"></th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Training price</th>
+					<td class="govuk-table__cell">£6,000</td>
+					<td class="govuk-table__cell">£7,000</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link--no-visited-state"
+							href="update-price">Change <span class="govuk-visually-hidden govuk-link--no-visited-state">
+								training
+								price</span></a></td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">End-point assessment price</th>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell">£3,000</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="update-price"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> end-point assessment
+								price</span></a></td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total price</th>
+					<td class="govuk-table__cell">£8,500</td>
+					<td class="govuk-table__cell">£10,000</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="update-price"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state">
+								total price</span></a></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table class="govuk-table govuk-table--small-text-until-tablet  govuk-!-margin-top-8">
+			<caption class="govuk-table__caption govuk-table__caption--m  govuk-!-margin-bottom-0">Recognition of prior
+				learning
+				(RPL)</caption>
+			<thead class="govuk-table__head">
+				<tr class="govuk-table__row">
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third"><span
+							class="govuk-visually-hidden">Weeks
+							reduced due to RPL</span>
+					</th>
+					<th scope="col" class="govuk-table__header govuk-!-width-one-third">Current</th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-third">Requested </th>
+					<th scope="col" class="govuk-table__header  govuk-!-width-one-quarter"></th>
+				</tr>
+			</thead>
+			<tbody class="govuk-table__body">
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Total off-the-job training hours required for this
+						standard</th>
+					<td class="govuk-table__cell">70 hours</td>
+					<td class="govuk-table__cell">70 hours</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="recognise-prior-learning-details"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> total off-the-job training
+								time for standard</span></a>
+					</td>
+				</tr>
+
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reduction in hours due to prior learning</th>
+					<td class="govuk-table__cell">14 hours</td>
+					<td class="govuk-table__cell">21 hours</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="recognise-prior-learning-details"
+							class="govuk-link--no-visited-state">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> off-the-job training time
+								reduction due to prior
+								learning</span></a>
+					</td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Reduction in duration due to prior learning</th>
+					<td class="govuk-table__cell">2 weeks</td>
+					<td class="govuk-table__cell">3 weeks</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="recognise-prior-learning-details"
+							class="govuk-link--no-visited-state govuk-link">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> reduction in duration due to
+								prior learning</span></a>
+					</td>
+				</tr>
+				<tr class=" govuk-table__row">
+					<th scope="row" class="govuk-table__header">Price reduction due to prior learning</th>
+					<td class="govuk-table__cell">£2,000</td>
+					<td class="govuk-table__cell">£2,500</td>
+					<td class="govuk-table__cell govuk-table__cell--numeric"><a href="recognise-prior-learning-details"
+							class="govuk-link--no-visited-state govuk-link">Change <span
+								class="govuk-visually-hidden govuk-link--no-visited-state"> price reduced due to prior
+								learning</span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="govuk-grid-column-two-thirds govuk-!-margin-top-5">
+		<dl class="govuk-summary-list govuk-summary-list--no-border">
+			<div class="govuk-summary-list__row">
+				<dt class="govuk-summary-list__key">
+					Reason for change
+				</dt>
+				<dd class="govuk-summary-list__value">
+					{{data['why-change'] or 'Agreed that this course is better suited to the apprentice needs'}}
+				</dd>
+				<dd class="govuk-summary-list__actions">
+					<a class="govuk-link govuk-link--no-visited-state" href="reason-for-change">
+						Change<span class="govuk-visually-hidden"> reason for change</span>
+					</a>
+				</dd>
+			</div>
+		</dl>
+	</div>
+
+	<div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+
+		<h2 class="govuk-heading-m">Now send to the employer for approval</h2>
+		<p class="govuk-body">
+			This change will be sent to the employer to approve. The apprentice will be able to review the changes in
+			their
+			apprenticeship account.
+		</p>
+
+
+		<form action="../details/banner/standard-confirmed?change=standard" method="post" novalidate>
+			<input type="hidden" name="answers-checked" value="true">
+			<div class="govuk-button-group">
+				<button class="govuk-button" data-module="govuk-button">
+					Send
+				</button>
+				<a class="govuk-link" href="index">Cancel and return</a>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+
+{% endblock %}

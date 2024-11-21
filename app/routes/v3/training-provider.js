@@ -96,3 +96,36 @@ router.post('/training-provider/v3/change-of-price/set-costs/action', function (
         res.redirect('../set-costs?error=total-invalid');
     }
 })
+
+
+// Change of standard
+router.post('/training-provider/v3/change-of-standard/price-change/action', function (req, res) {
+    var useProvider = req.session.data['change-price']
+
+    if (useProvider == "no") {
+        res.redirect('../recognise-prior-learning')
+    }
+    else {
+        res.redirect('../update-price')
+    }
+})
+router.post('/training-provider/v3/change-of-standard/recognise-prior-learning/action', function (req, res) {
+    var rpl = req.session.data['rpl']
+
+    if (rpl == "no") {
+        res.redirect('../reason-for-change')
+    }
+    else {
+        res.redirect('../recognise-prior-learning-current')
+    }
+})
+router.post('/training-provider/v3/change-of-standard/recognise-prior-learning-current/action', function (req, res) {
+    var priorLearning = req.session.data['prior-learning']
+
+    if (priorLearning == "no") {
+        res.redirect('../reason-for-change')
+    }
+    else {
+        res.redirect('../recognise-prior-learning-details')
+    }
+})
