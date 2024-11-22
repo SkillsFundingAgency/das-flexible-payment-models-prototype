@@ -194,10 +194,17 @@
                         </tr>
                     </tbody>
                 </table>
+                {% if (data['change'] === "standard")%}
+                <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-standard/view-changes">
+                        View request<span class="govuk-visually-hidden">for change of standard</span>
+                    </a>
+                </p>
+                {% else %}
                 <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-start-date/view-changes">
                         View request<span class="govuk-visually-hidden">for change of start date</span>
                     </a>
                 </p>
+                {% endif %}
             </div>
             <dl class="govuk-summary-list govuk-!-margin-top-4">
                 {% else %}
@@ -260,10 +267,17 @@
                         </tr>
                     </tbody>
                 </table>
+                {% if (data['change'] === "standard")%}
+                <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-standard/view-changes">
+                        View request<span class="govuk-visually-hidden">for change of standard</span>
+                    </a>
+                </p>
+                {% else %}
                 <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-start-date/view-changes">
                         View request<span class="govuk-visually-hidden">for change of start date</span>
                     </a>
                 </p>
+                {% endif %}
             </div>
             <dl class="govuk-summary-list govuk-!-margin-top-4">
                 {% else %}
@@ -336,6 +350,11 @@
                 </table>
                 {% if data['change'] == "training-price-employer" %}
                     <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/review-changes" class="govuk-link">Review change request</a></p>
+                {% elseif (data['change'] === "standard")%}
+                <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/change-of-standard/view-changes">
+                        View request<span class="govuk-visually-hidden">for change of standard</span>
+                    </a>
+                </p>
                 {% else %}
                     <p class="govuk-body"><a href="/training-provider/{{version}}/change-of-price/view-changes" class="govuk-link">View
                                 price changes you've

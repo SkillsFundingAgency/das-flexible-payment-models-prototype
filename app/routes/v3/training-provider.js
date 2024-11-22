@@ -129,3 +129,13 @@ router.post('/training-provider/v3/change-of-standard/recognise-prior-learning-c
         res.redirect('../recognise-prior-learning-details')
     }
 })
+router.post('/training-provider/v3/change-of-standard/view-changes/action', function (req, res) {
+    var withdraw = req.session.data['withdraw']
+
+    if (withdraw == "no") {
+        res.redirect('../../details?change=standard')
+    }
+    else {
+        res.redirect('../../details/banner/standard-cancelled?change=none')
+    }
+})
